@@ -201,13 +201,32 @@
 </pre></div>
 </div>
 <p>初始化的方法：</p>
-<p>| 操作                                 | 含义                                                         |
-| ———————————— | ———————————————————— |
-| <code class="docutils literal notranslate"><span class="pre">bitset&lt;n&gt;</span> <span class="pre">b</span></code>                        | 每一位均为0                                                  |
-| <code class="docutils literal notranslate"><span class="pre">bitset&lt;n&gt;</span> <span class="pre">b(u)</span></code>                     | <code class="docutils literal notranslate"><span class="pre">b</span></code>是<code class="docutils literal notranslate"><span class="pre">unsigned</span> <span class="pre">long</span> <span class="pre">long</span></code>值<code class="docutils literal notranslate"><span class="pre">u</span></code>的低<code class="docutils literal notranslate"><span class="pre">n</span></code>位的拷贝，如果<code class="docutils literal notranslate"><span class="pre">n</span></code>大于<code class="docutils literal notranslate"><span class="pre">unsigned</span> <span class="pre">long</span> <span class="pre">long</span></code>的大小，那么超过的高位被置为0 |
-| <code class="docutils literal notranslate"><span class="pre">bitset&lt;n&gt;</span> <span class="pre">b(s,</span> <span class="pre">pos,</span> <span class="pre">m,</span> <span class="pre">zero,</span> <span class="pre">one)</span></code>  | <code class="docutils literal notranslate"><span class="pre">b</span></code>是<code class="docutils literal notranslate"><span class="pre">string</span> <span class="pre">s</span></code>从位置<code class="docutils literal notranslate"><span class="pre">pos</span></code>开始<code class="docutils literal notranslate"><span class="pre">m</span></code>个字符的拷贝。<code class="docutils literal notranslate"><span class="pre">s</span></code>只能包含字符<code class="docutils literal notranslate"><span class="pre">zero</span></code>和<code class="docutils literal notranslate"><span class="pre">one</span></code>，如果包含其他字符会抛出<code class="docutils literal notranslate"><span class="pre">invalid_argument</span></code>的错误。<code class="docutils literal notranslate"><span class="pre">zero</span></code>默认为<code class="docutils literal notranslate"><span class="pre">0</span></code>而<code class="docutils literal notranslate"><span class="pre">one</span></code>默认为<code class="docutils literal notranslate"><span class="pre">1</span></code>。 |
-| <code class="docutils literal notranslate"><span class="pre">bitset&lt;n&gt;</span> <span class="pre">b(cp,</span> <span class="pre">pos,</span> <span class="pre">m,</span> <span class="pre">zero,</span> <span class="pre">one)</span></code> | 和上面类似，只不过从<code class="docutils literal notranslate"><span class="pre">cp</span></code>指向的字符数组中拷贝字符             |</p>
-</div>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>操作</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bitset&lt;n&gt; b</code></td>
+<td>每一位均为0</td>
+</tr>
+<tr>
+<td><code>bitset&lt;n&gt; b(u)</code></td>
+<td><code>b</code>是<code>unsigned long long</code>值<code>u</code>的低<code>n</code>位的拷贝，如果<code>n</code>大于<code>unsigned long long</code>的大小，那么超过的高位被置为0</td>
+</tr>
+<tr>
+<td><code>bitset&lt;n&gt; b(s, pos, m, zero, one)</code></td>
+<td><code>b</code>是<code>string s</code>从位置<code>pos</code>开始<code>m</code>个字符的拷贝。<code>s</code>只能包含字符<code>zero</code>和<code>one</code>，如果包含其他字符会抛出<code>invalid_argument</code>的错误。<code>zero</code>默认为<code>0</code>而<code>one</code>默认为<code>1</code>。</td>
+</tr>
+<tr>
+<td><code>bitset&lt;n&gt; b(cp, pos, m, zero, one)</code></td>
+<td>和上面类似，只不过从<code>cp</code>指向的字符数组中拷贝字符</td>
+</tr>
+</tbody>
+</table></div>
 <div class="section" id="id3">
 <h2>bitset操作<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <ul class="simple">

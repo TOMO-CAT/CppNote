@@ -207,13 +207,32 @@
 <div><p>Tips：下表中列举的函数不负责验证其字符串参数，用户自己必须保证传入此类函数的指针必须指向以空字符作为结束的字符数组。</p>
 </div></blockquote>
 <p>下表列举了C语言标准库提供的一组函数，它们定义在<code class="docutils literal notranslate"><span class="pre">cstring</span></code>头文件中，可用于操作C风格字符串。</p>
-<p>| 函数           | 功能                                                        |
-| ————– | ———————————————————– |
-| strlen(p)      | 返回p的长度，空字符不算在内                                 |
-| strcmp(p1, p2) | 比较p1和p2的相等性：相等返回0；p1&gt;p2返回正值；p1&lt;p2返回负值 |
-| strcat(p1, p2) | 将p2附加到p1之后， 返回p1                                   |
-| strcpy(p1, p2) | 将p2拷贝给p1，返回p1                                        |</p>
-<p>举个例子，如果我们要连接两个C风格字符串，传统的方法是使用<code class="docutils literal notranslate"><span class="pre">strcat()</span></code>函数和<code class="docutils literal notranslate"><span class="pre">strcpy()</span></code>函数，但是这种做法极容易引发严重错误：</p>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>函数</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>strlen(p)</td>
+<td>返回p的长度，空字符不算在内</td>
+</tr>
+<tr>
+<td>strcmp(p1, p2)</td>
+<td>比较p1和p2的相等性：相等返回0；p1&gt;p2返回正值；p1&lt;p2返回负值</td>
+</tr>
+<tr>
+<td>strcat(p1, p2)</td>
+<td>将p2附加到p1之后， 返回p1</td>
+</tr>
+<tr>
+<td>strcpy(p1, p2)</td>
+<td>将p2拷贝给p1，返回p1</td>
+</tr>
+</tbody>
+</table><p>举个例子，如果我们要连接两个C风格字符串，传统的方法是使用<code class="docutils literal notranslate"><span class="pre">strcat()</span></code>函数和<code class="docutils literal notranslate"><span class="pre">strcpy()</span></code>函数，但是这种做法极容易引发严重错误：</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;cstring&gt;</span><span class="cp"></span>
 

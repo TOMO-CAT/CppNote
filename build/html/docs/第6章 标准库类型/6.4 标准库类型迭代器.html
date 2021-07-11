@@ -285,11 +285,27 @@ iter1 - iter2
 <div class="section" id="id8">
 <h3>1. 插入迭代器<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
 <p>插入迭代器是一种“迭代器适配器”，它接受一个容器生成一个迭代器，能实现向给定容器添加元素。支持的操作如下：</p>
-<p>| 操作                  | 含义                    | 备注                                                         |
-| ——————— | ———————– | ———————————————————— |
-| <code class="docutils literal notranslate"><span class="pre">it</span> <span class="pre">=</span> <span class="pre">t</span></code>              | 在<code class="docutils literal notranslate"><span class="pre">it</span></code>指定的位置插入<code class="docutils literal notranslate"><span class="pre">t</span></code> | 假设<code class="docutils literal notranslate"><span class="pre">c</span></code>是<code class="docutils literal notranslate"><span class="pre">it</span></code>绑定的容器，依赖于插入迭代器的不同种类，此赋值会分别调用<code class="docutils literal notranslate"><span class="pre">c.push_back(t)</span></code>、<code class="docutils literal notranslate"><span class="pre">c.push_front(t)</span></code>或者<code class="docutils literal notranslate"><span class="pre">c.insert(t,</span> <span class="pre">p)</span></code>，其中<code class="docutils literal notranslate"><span class="pre">p</span></code>为传递给<code class="docutils literal notranslate"><span class="pre">inserter</span></code>的迭代器位置 |
-| <code class="docutils literal notranslate"><span class="pre">*it</span></code>、<code class="docutils literal notranslate"><span class="pre">++it</span></code>、<code class="docutils literal notranslate"><span class="pre">it++</span></code> |                         | 此操作虽然存在，但是不会做任何事情，每个操作都返回<code class="docutils literal notranslate"><span class="pre">it</span></code>       |</p>
-<p>插入迭代器有三种类型：</p>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>操作</th>
+<th>含义</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>it = t</code></td>
+<td>在<code>it</code>指定的位置插入<code>t</code></td>
+<td>假设<code>c</code>是<code>it</code>绑定的容器，依赖于插入迭代器的不同种类，此赋值会分别调用<code>c.push_back(t)</code>、<code>c.push_front(t)</code>或者<code>c.insert(t, p)</code>，其中<code>p</code>为传递给<code>inserter</code>的迭代器位置</td>
+</tr>
+<tr>
+<td><code>*it</code>、<code>++it</code>、<code>it++</code></td>
+<td></td>
+<td>此操作虽然存在，但是不会做任何事情，每个操作都返回<code>it</code></td>
+</tr>
+</tbody>
+</table><p>插入迭代器有三种类型：</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">back_inserter</span></code>：创建一个使用<code class="docutils literal notranslate"><span class="pre">push_back</span></code>的迭代器</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">front_inserter</span></code>：创建一个使用<code class="docutils literal notranslate"><span class="pre">push_front</span></code>的迭代器</p></li>
@@ -316,24 +332,65 @@ iter1 - iter2
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">istream_iterator</span></code>提供的操作如下：</p>
-<p>| 操作                         | 含义                                                         |
-| —————————- | ———————————————————— |
-| <code class="docutils literal notranslate"><span class="pre">istream_iterator&lt;T&gt;</span> <span class="pre">in(is)</span></code> | <code class="docutils literal notranslate"><span class="pre">in</span></code>从输入流<code class="docutils literal notranslate"><span class="pre">is</span></code>都读取类型为<code class="docutils literal notranslate"><span class="pre">T</span></code>的值                          |
-| <code class="docutils literal notranslate"><span class="pre">istream_iterator&lt;T&gt;</span> <span class="pre">end</span></code>    | 读取类型为<code class="docutils literal notranslate"><span class="pre">T</span></code>的值的<code class="docutils literal notranslate"><span class="pre">istream_iterator</span></code>迭代器，表示尾后位置    |
-| <code class="docutils literal notranslate"><span class="pre">in1</span> <span class="pre">==</span> <span class="pre">in2</span></code><br><code class="docutils literal notranslate"><span class="pre">in1</span> <span class="pre">!=</span> <span class="pre">in2</span></code> | <code class="docutils literal notranslate"><span class="pre">in1</span></code>和<code class="docutils literal notranslate"><span class="pre">in2</span></code>必须读取相同类型，如果它们都是尾后迭代器，或绑定到相同的输入，则两者相等 |
-| <code class="docutils literal notranslate"><span class="pre">in-&gt;mem</span></code>                    | 与<code class="docutils literal notranslate"><span class="pre">(*in).mem</span></code>的含义相同                                      |
-| <code class="docutils literal notranslate"><span class="pre">++in,</span> <span class="pre">in++</span></code>                 | 使用元素类型定义的<code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code>运算符从输入流中读取下一个值，前置版本返回一个指向递增后迭代器的引用，后置版本返回旧值 |</p>
-</div>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>操作</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>istream_iterator&lt;T&gt; in(is)</code></td>
+<td><code>in</code>从输入流<code>is</code>都读取类型为<code>T</code>的值</td>
+</tr>
+<tr>
+<td><code>istream_iterator&lt;T&gt; end</code></td>
+<td>读取类型为<code>T</code>的值的<code>istream_iterator</code>迭代器，表示尾后位置</td>
+</tr>
+<tr>
+<td><code>in1 == in2</code><br><code>in1 != in2</code></td>
+<td><code>in1</code>和<code>in2</code>必须读取相同类型，如果它们都是尾后迭代器，或绑定到相同的输入，则两者相等</td>
+</tr>
+<tr>
+<td><code>in-&gt;mem</code></td>
+<td>与<code>(*in).mem</code>的含义相同</td>
+</tr>
+<tr>
+<td><code>++in, in++</code></td>
+<td>使用元素类型定义的<code>&gt;&gt;</code>运算符从输入流中读取下一个值，前置版本返回一个指向递增后迭代器的引用，后置版本返回旧值</td>
+</tr>
+</tbody>
+</table></div>
 <div class="section" id="ostream-iterator">
 <h4>2.2 ostream_iterator<a class="headerlink" href="#ostream-iterator" title="永久链接至标题">¶</a></h4>
 <p>我们可以对任何具有输出运算符（<code class="docutils literal notranslate"><span class="pre">&lt;&lt;</span></code>运算符）的类型定义<code class="docutils literal notranslate"><span class="pre">ostream_iterator</span></code>。当创建一个<code class="docutils literal notranslate"><span class="pre">ostream_iterator</span></code>时，我们可以提供（可选的）第二参数，它是一个C风格字符串，在输出每个元素后都会打印此字符串。</p>
-<p>| 操作                             | 含义                                                         |
-| ——————————– | ———————————————————— |
-| <code class="docutils literal notranslate"><span class="pre">ostream_iterator&lt;T&gt;</span> <span class="pre">out(os)</span></code>    | <code class="docutils literal notranslate"><span class="pre">out</span></code>将类型为<code class="docutils literal notranslate"><span class="pre">T</span></code>的值写到输出流<code class="docutils literal notranslate"><span class="pre">os</span></code>中                         |
-| <code class="docutils literal notranslate"><span class="pre">ostream_iterator&lt;T&gt;</span> <span class="pre">out(os,</span> <span class="pre">d)</span></code> | <code class="docutils literal notranslate"><span class="pre">out</span></code>将类型为<code class="docutils literal notranslate"><span class="pre">T</span></code>的值写到输出流<code class="docutils literal notranslate"><span class="pre">os</span></code>中，每个值后面都输出一个<code class="docutils literal notranslate"><span class="pre">d</span></code>，<code class="docutils literal notranslate"><span class="pre">d</span></code>指向一个空字符结尾的字符数组 |
-| <code class="docutils literal notranslate"><span class="pre">out</span> <span class="pre">=</span> <span class="pre">val</span></code>                      | 用<code class="docutils literal notranslate"><span class="pre">&lt;&lt;</span></code>运算符将<code class="docutils literal notranslate"><span class="pre">val</span></code>写入到<code class="docutils literal notranslate"><span class="pre">out</span></code>所绑定的<code class="docutils literal notranslate"><span class="pre">ostream</span></code>中            |
-| <code class="docutils literal notranslate"><span class="pre">*out</span></code>、<code class="docutils literal notranslate"><span class="pre">++out</span></code>、<code class="docutils literal notranslate"><span class="pre">out++</span></code>         | 这些运算符是存在的，但是不会对<code class="docutils literal notranslate"><span class="pre">out</span></code>做任何事情，每个运算符都返回<code class="docutils literal notranslate"><span class="pre">out</span></code> |</p>
-</div>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>操作</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ostream_iterator&lt;T&gt; out(os)</code></td>
+<td><code>out</code>将类型为<code>T</code>的值写到输出流<code>os</code>中</td>
+</tr>
+<tr>
+<td><code>ostream_iterator&lt;T&gt; out(os, d)</code></td>
+<td><code>out</code>将类型为<code>T</code>的值写到输出流<code>os</code>中，每个值后面都输出一个<code>d</code>，<code>d</code>指向一个空字符结尾的字符数组</td>
+</tr>
+<tr>
+<td><code>out = val</code></td>
+<td>用<code>&lt;&lt;</code>运算符将<code>val</code>写入到<code>out</code>所绑定的<code>ostream</code>中</td>
+</tr>
+<tr>
+<td><code>*out</code>、<code>++out</code>、<code>out++</code></td>
+<td>这些运算符是存在的，但是不会对<code>out</code>做任何事情，每个运算符都返回<code>out</code></td>
+</tr>
+</tbody>
+</table></div>
 </div>
 <div class="section" id="id9">
 <h3>3. 反向迭代器<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h3>

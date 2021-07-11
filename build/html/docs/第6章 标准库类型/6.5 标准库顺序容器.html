@@ -213,15 +213,40 @@
 <li><p>向容器添加或从容器中删除元素的代价</p></li>
 <li><p>非顺序访问容器中元素的代价</p></li>
 </ul>
-<p>| 顺序容器             | 介绍                                                         |
-| ——————– | ———————————————————— |
-| vector可变大小数组   | 支持快速随机访问，在尾部之外的位置插入或者删除元素可能很慢   |
-| deque双端队列        | 支持快速随机访问，在头尾位置插入/删除速度很快                |
-| list双向链表         | 只支持双向顺序访问，在list中任何位置进行插入/删除操作速度都很快 |
-| forward_list单向链表 | 只支持单向顺序访问，在链表任何位置进行插入/删除操作速度都很快 |
-| array固定大小数组    | 支持快速随机访问，不能添加或者删除元素                       |
-| string字符串         | 和vector相似的容器，但专门用于保存字符，支持快速随机访问，在尾部插入/删除速度快 |</p>
-</div>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>顺序容器</th>
+<th>介绍</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>vector可变大小数组</td>
+<td>支持快速随机访问，在尾部之外的位置插入或者删除元素可能很慢</td>
+</tr>
+<tr>
+<td>deque双端队列</td>
+<td>支持快速随机访问，在头尾位置插入/删除速度很快</td>
+</tr>
+<tr>
+<td>list双向链表</td>
+<td>只支持双向顺序访问，在list中任何位置进行插入/删除操作速度都很快</td>
+</tr>
+<tr>
+<td>forward_list单向链表</td>
+<td>只支持单向顺序访问，在链表任何位置进行插入/删除操作速度都很快</td>
+</tr>
+<tr>
+<td>array固定大小数组</td>
+<td>支持快速随机访问，不能添加或者删除元素</td>
+</tr>
+<tr>
+<td>string字符串</td>
+<td>和vector相似的容器，但专门用于保存字符，支持快速随机访问，在尾部插入/删除速度快</td>
+</tr>
+</tbody>
+</table></div>
 <div class="section" id="id3">
 <h2>选择顺序容器的基本原则<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
@@ -243,18 +268,52 @@
 <div class="section" id="id5">
 <h3>1. 容器类型别名<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
 <p>通过类型别名，我们可以在不了解容器汇总元素类型的情况下使用它：</p>
-<p>| 类型别名                 | 含义                                                   |
-| ———————— | —————————————————— |
-| <code class="docutils literal notranslate"><span class="pre">iterator</span></code>               | 此容器类型的迭代器                                     |
-| <code class="docutils literal notranslate"><span class="pre">const_iterator</span></code>         | 此容器类型的const迭代器                                |
-| <code class="docutils literal notranslate"><span class="pre">reverse_iterator</span></code>       | 此容器类型的反向迭代器                                 |
-| <code class="docutils literal notranslate"><span class="pre">const_reverse_iterator</span></code> | 此容器类型的const反向迭代器                            |
-| <code class="docutils literal notranslate"><span class="pre">size_type</span></code>              | 无符号整数类型，足够保存此种容器类型最大可能容器的大小 |
-| <code class="docutils literal notranslate"><span class="pre">difference_type</span></code>        | 带符号整数类型，足够保存两个迭代器之间的距离           |
-| <code class="docutils literal notranslate"><span class="pre">value_type</span></code>             | 元素类型                                               |
-| <code class="docutils literal notranslate"><span class="pre">reference</span></code>              | 元素的左值类型，与<code class="docutils literal notranslate"><span class="pre">value_type</span> <span class="pre">&amp;</span></code>含义相同               |
-| <code class="docutils literal notranslate"><span class="pre">const_reference</span></code>        | 元素的const左值类型，与<code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">value_type&amp;</span></code>含义相同     |</p>
-</div>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>类型别名</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>iterator</code></td>
+<td>此容器类型的迭代器</td>
+</tr>
+<tr>
+<td><code>const_iterator</code></td>
+<td>此容器类型的const迭代器</td>
+</tr>
+<tr>
+<td><code>reverse_iterator</code></td>
+<td>此容器类型的反向迭代器</td>
+</tr>
+<tr>
+<td><code>const_reverse_iterator</code></td>
+<td>此容器类型的const反向迭代器</td>
+</tr>
+<tr>
+<td><code>size_type</code></td>
+<td>无符号整数类型，足够保存此种容器类型最大可能容器的大小</td>
+</tr>
+<tr>
+<td><code>difference_type</code></td>
+<td>带符号整数类型，足够保存两个迭代器之间的距离</td>
+</tr>
+<tr>
+<td><code>value_type</code></td>
+<td>元素类型</td>
+</tr>
+<tr>
+<td><code>reference</code></td>
+<td>元素的左值类型，与<code>value_type &amp;</code>含义相同</td>
+</tr>
+<tr>
+<td><code>const_reference</code></td>
+<td>元素的const左值类型，与<code>const value_type&amp;</code>含义相同</td>
+</tr>
+</tbody>
+</table></div>
 <div class="section" id="beginend">
 <h3>2. 容器的begin和end成员<a class="headerlink" href="#beginend" title="永久链接至标题">¶</a></h3>
 <p>begin和end操作生成指向容器中第一个元素和尾元素之后位置的迭代器，它们包含多个版本：</p>
@@ -266,29 +325,93 @@
 <div class="section" id="id6">
 <h3>3. 容器定义和初始化<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
 <p>容器定义和初始化的操作包括：</p>
-<p>| 操作                                      | 含义                                    | 备注                                                         |
-| —————————————– | ————————————— | ———————————————————— |
-| <code class="docutils literal notranslate"><span class="pre">C</span> <span class="pre">c</span></code>                                     | 默认构造函数                            | 如果C是一个array，则c中元素按默认方式初始化；否则c为空       |
-| <code class="docutils literal notranslate"><span class="pre">C</span> <span class="pre">c1(c2)</span></code><br><code class="docutils literal notranslate"><span class="pre">C</span> <span class="pre">c1</span> <span class="pre">=</span> <span class="pre">c2</span></code>                 | c1初始化为c2的拷贝                      | c1和c2必须是相同的容器类型，且保存相同的元素类型（对于array而言，两者还必须具有相同大小） |
-| <code class="docutils literal notranslate"><span class="pre">C</span> <span class="pre">c{a,</span> <span class="pre">b,</span> <span class="pre">c...}</span></code><br><code class="docutils literal notranslate"><span class="pre">C</span> <span class="pre">c</span> <span class="pre">=</span> <span class="pre">{a,</span> <span class="pre">b,</span> <span class="pre">c...}</span></code> | c初始化为初始化列表中元素的拷贝         | 对于array类型列表中元素数目必须小于等于array的大小，任何遗漏的元素都进行值初始化 |
-| <code class="docutils literal notranslate"><span class="pre">C</span> <span class="pre">c(b,</span> <span class="pre">e)</span></code>                               | c初始化为迭代器b和e指定范围中元素的拷贝 |                                                              |
-| <code class="docutils literal notranslate"><span class="pre">C</span> <span class="pre">seq(n)</span></code>                                | seq包含n个元素，这些元素进行了值初始化  | 此构造函数是explicit的，array和string不适用                  |
-| <code class="docutils literal notranslate"><span class="pre">C</span> <span class="pre">seq(n,</span> <span class="pre">t)</span></code>                             | seq包含n个初始化为值t的元素             | array不适用                                                  |</p>
-</div>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>操作</th>
+<th>含义</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>C c</code></td>
+<td>默认构造函数</td>
+<td>如果C是一个array，则c中元素按默认方式初始化；否则c为空</td>
+</tr>
+<tr>
+<td><code>C c1(c2)</code><br><code>C c1 = c2</code></td>
+<td>c1初始化为c2的拷贝</td>
+<td>c1和c2必须是相同的容器类型，且保存相同的元素类型（对于array而言，两者还必须具有相同大小）</td>
+</tr>
+<tr>
+<td><code>C c{a, b, c...}</code><br><code>C c = {a, b, c...}</code></td>
+<td>c初始化为初始化列表中元素的拷贝</td>
+<td>对于array类型列表中元素数目必须小于等于array的大小，任何遗漏的元素都进行值初始化</td>
+</tr>
+<tr>
+<td><code>C c(b, e)</code></td>
+<td>c初始化为迭代器b和e指定范围中元素的拷贝</td>
+<td></td>
+</tr>
+<tr>
+<td><code>C seq(n)</code></td>
+<td>seq包含n个元素，这些元素进行了值初始化</td>
+<td>此构造函数是explicit的，array和string不适用</td>
+</tr>
+<tr>
+<td><code>C seq(n, t)</code></td>
+<td>seq包含n个初始化为值t的元素</td>
+<td>array不适用</td>
+</tr>
+</tbody>
+</table></div>
 <div class="section" id="swap">
 <h3>4. 容器赋值和swap<a class="headerlink" href="#swap" title="永久链接至标题">¶</a></h3>
 <blockquote>
 <div><p>Tips：assign操作不适用于关联容器和array</p>
 </div></blockquote>
-<p>| 操作                            | 含义                                              | 备注                                                       |
-| ——————————- | ————————————————- | ———————————————————- |
-| <code class="docutils literal notranslate"><span class="pre">c1</span> <span class="pre">=</span> <span class="pre">c2</span></code>                       | 将c1中的元素替换为c2中元素的拷贝                  | c1和c2必须具有相同的类型                                   |
-| <code class="docutils literal notranslate"><span class="pre">c</span> <span class="pre">=</span> <span class="pre">{a,</span> <span class="pre">b,</span> <span class="pre">c}</span></code>                 | 将c1中元素替换为初始化列表中元素的拷贝            | array不适用                                                |
-| <code class="docutils literal notranslate"><span class="pre">swap(c1,</span> <span class="pre">c2)</span></code><br><code class="docutils literal notranslate"><span class="pre">c1.swap(c2)</span></code> | 交换c1和c2中的元素                                | c1和c2必须具有相同的类型，swap通常比从c2向c1拷贝元素快得多 |
-| <code class="docutils literal notranslate"><span class="pre">seq.assign(b,</span> <span class="pre">e)</span></code>              | 将seq中的元素替换为迭代器b和e所表示的范围中的元素 | 迭代器b和e不能指向seq中的元素                              |
-| <code class="docutils literal notranslate"><span class="pre">seq.assign(il)</span></code>                | 将seq中的元素替换为初始化列表il中的元素           |                                                            |
-| <code class="docutils literal notranslate"><span class="pre">seq.assign(n,</span> <span class="pre">t)</span></code>              | 将seq中的元素替换为n个值为t的元素                 |                                                            |</p>
-<ul class="simple">
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>操作</th>
+<th>含义</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>c1 = c2</code></td>
+<td>将c1中的元素替换为c2中元素的拷贝</td>
+<td>c1和c2必须具有相同的类型</td>
+</tr>
+<tr>
+<td><code>c = {a, b, c}</code></td>
+<td>将c1中元素替换为初始化列表中元素的拷贝</td>
+<td>array不适用</td>
+</tr>
+<tr>
+<td><code>swap(c1, c2)</code><br><code>c1.swap(c2)</code></td>
+<td>交换c1和c2中的元素</td>
+<td>c1和c2必须具有相同的类型，swap通常比从c2向c1拷贝元素快得多</td>
+</tr>
+<tr>
+<td><code>seq.assign(b, e)</code></td>
+<td>将seq中的元素替换为迭代器b和e所表示的范围中的元素</td>
+<td>迭代器b和e不能指向seq中的元素</td>
+</tr>
+<tr>
+<td><code>seq.assign(il)</code></td>
+<td>将seq中的元素替换为初始化列表il中的元素</td>
+<td></td>
+</tr>
+<tr>
+<td><code>seq.assign(n, t)</code></td>
+<td>将seq中的元素替换为n个值为t的元素</td>
+<td></td>
+</tr>
+</tbody>
+</table><ul class="simple">
 <li><p>除array外，swap不对任何元素进行拷贝、删除或插入操作，因此可以保证在常数时间内完成</p></li>
 <li><p>与其他容器不同，swap两个array会真正交换它们的元素，因此交换两个array所需的时间与array中元素的数目成正比</p></li>
 <li><p>赋值相关操作会导致左边容器内部的迭代器、引用和指针失效，而swap操作将容器内容交换不会导致指向容器的迭代器、引用和指针失效（容器类型为array和string的情况除外）</p></li>
@@ -296,12 +419,32 @@
 </div>
 <div class="section" id="id7">
 <h3>5. 容器大小操作<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
-<p>| 操作           | 含义                                     | 备注                 |
-| ————– | —————————————- | ——————– |
-| <code class="docutils literal notranslate"><span class="pre">c.size()</span></code>     | c中元素的数目                            | 不支持<code class="docutils literal notranslate"><span class="pre">forward_list</span></code> |
-| <code class="docutils literal notranslate"><span class="pre">c.max_size()</span></code> | c中可保存的最大元素数目                  |                      |
-| <code class="docutils literal notranslate"><span class="pre">c.empty()</span></code>    | 若c中存储了元素，返回false，否则返回true |                      |</p>
-<div class="section" id="id8">
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>操作</th>
+<th>含义</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>c.size()</code></td>
+<td>c中元素的数目</td>
+<td>不支持<code>forward_list</code></td>
+</tr>
+<tr>
+<td><code>c.max_size()</code></td>
+<td>c中可保存的最大元素数目</td>
+<td></td>
+</tr>
+<tr>
+<td><code>c.empty()</code></td>
+<td>若c中存储了元素，返回false，否则返回true</td>
+<td></td>
+</tr>
+</tbody>
+</table><div class="section" id="id8">
 <h4>6. 容器的关系运算符<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h4>
 <blockquote>
 <div><p>Tips：无序关联容器不支持关系运算符。</p>
@@ -330,15 +473,47 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">forward_list</span></code>有自己专有版本的<code class="docutils literal notranslate"><span class="pre">insert</span></code>和<code class="docutils literal notranslate"><span class="pre">emplae</span></code>，不支持<code class="docutils literal notranslate"><span class="pre">push_back</span></code>和<code class="docutils literal notranslate"><span class="pre">emplace_back</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">vector</span></code>和<code class="docutils literal notranslate"><span class="pre">string</span></code>不支持<code class="docutils literal notranslate"><span class="pre">push_front</span></code>和<code class="docutils literal notranslate"><span class="pre">emmplace_front</span></code></p></li>
 </ul>
-<p>| 操作                                         | 含义                                                         | 备注 |
-| ——————————————– | ———————————————————— | —- |
-| <code class="docutils literal notranslate"><span class="pre">c.push_back(t)</span></code><br><code class="docutils literal notranslate"><span class="pre">c.emplace_back(args)</span></code>   | 在c的尾部创建一个值为t或者由args创建的元素，返回void         |      |
-| <code class="docutils literal notranslate"><span class="pre">c.push_front(t)</span></code><br><code class="docutils literal notranslate"><span class="pre">c.emplace_front(args)</span></code> | 在c的头部创建一个值为t或者由args创建的元素，返回void         |      |
-| <code class="docutils literal notranslate"><span class="pre">c.insert(p,</span> <span class="pre">t)</span></code><br><code class="docutils literal notranslate"><span class="pre">c.emplace(p,</span> <span class="pre">args)</span></code>     | 在迭代器p指向的元素之前创建一个值为t或者由args创建的元素，返回指向新添加元素的迭代器 |      |
-| <code class="docutils literal notranslate"><span class="pre">c.insert(p,</span> <span class="pre">n,</span> <span class="pre">t)</span></code>                          | 在迭代器p指向的元素之前插入n个值为t的元素，返回指向新添加的第一个元素的迭代器，如果n为0则返回p |      |
-| <code class="docutils literal notranslate"><span class="pre">c.insert(p,</span> <span class="pre">b,</span> <span class="pre">e)</span></code>                          | 将迭代器b和e指定范围内的元素插入到迭代器p指向的元素之前，b和e不能指向c中的元素，返回指向新添加的第一个元素的迭代器，如果范围为空则返回p |      |
-| <code class="docutils literal notranslate"><span class="pre">c.insert(p,</span> <span class="pre">il)</span></code>                            | il是一个花括号包围的元素值列表，将这些给定值插入到迭代器p指向的元素之前，返回指向新添加的第一个元素的迭代器，若列表为空则返回p |      |</p>
-<blockquote>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>操作</th>
+<th>含义</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>c.push_back(t)</code><br><code>c.emplace_back(args)</code></td>
+<td>在c的尾部创建一个值为t或者由args创建的元素，返回void</td>
+<td></td>
+</tr>
+<tr>
+<td><code>c.push_front(t)</code><br><code>c.emplace_front(args)</code></td>
+<td>在c的头部创建一个值为t或者由args创建的元素，返回void</td>
+<td></td>
+</tr>
+<tr>
+<td><code>c.insert(p, t)</code><br><code>c.emplace(p, args)</code></td>
+<td>在迭代器p指向的元素之前创建一个值为t或者由args创建的元素，返回指向新添加元素的迭代器</td>
+<td></td>
+</tr>
+<tr>
+<td><code>c.insert(p, n, t)</code></td>
+<td>在迭代器p指向的元素之前插入n个值为t的元素，返回指向新添加的第一个元素的迭代器，如果n为0则返回p</td>
+<td></td>
+</tr>
+<tr>
+<td><code>c.insert(p, b, e)</code></td>
+<td>将迭代器b和e指定范围内的元素插入到迭代器p指向的元素之前，b和e不能指向c中的元素，返回指向新添加的第一个元素的迭代器，如果范围为空则返回p</td>
+<td></td>
+</tr>
+<tr>
+<td><code>c.insert(p, il)</code></td>
+<td>il是一个花括号包围的元素值列表，将这些给定值插入到迭代器p指向的元素之前，返回指向新添加的第一个元素的迭代器，若列表为空则返回p</td>
+<td></td>
+</tr>
+</tbody>
+</table><blockquote>
 <div><p>Tips：向vector、string或者deque插入元素会使得所有指向容器的迭代器、引用和指针失效。</p>
 </div></blockquote>
 <p><code class="docutils literal notranslate"><span class="pre">emplace_back()</span></code>是<code class="docutils literal notranslate"><span class="pre">C++11</span></code>加入的新特性，都是用于将一个临时对象<code class="docutils literal notranslate"><span class="pre">push</span></code>到容器的末尾。不同在于<code class="docutils literal notranslate"><span class="pre">push_back()</span></code>需要先临时构造对象，再将这个对象拷贝到容器的末尾；而<code class="docutils literal notranslate"><span class="pre">emplace_back()</span></code>直接在容器的末尾构造对象，省去了拷贝的过程。</p>
@@ -358,13 +533,37 @@
 <li><p>在容器中访问元素的成员函数（front、back、下标和at）返回的都是引用，如果容器是一个const对象则返回const的引用</p></li>
 <li><p>如果我们希望下包是合法的，可以使用at成员函数（at成员函数类似于下标运算符，但是在下标越界时会抛出一个<code class="docutils literal notranslate"><span class="pre">out_of_range</span></code>异常）</p></li>
 </ul>
-<p>| 操作        | 含义                       | 备注                                               |
-| ———– | ————————– | ————————————————– |
-| <code class="docutils literal notranslate"><span class="pre">c.back()</span></code>  | 返回c中尾元素的引用        | 若c为空，则函数行为未定义                          |
-| <code class="docutils literal notranslate"><span class="pre">c.front()</span></code> | 返回c中首元素的引用        | 若c为空，则函数行为未定义                          |
-| <code class="docutils literal notranslate"><span class="pre">c[n]</span></code>      | 返回c中下标为n的元素的引用 | n是一个无符号整数，若<code class="docutils literal notranslate"><span class="pre">n&gt;=c.size()</span></code>则函数行为未定义 |
-| <code class="docutils literal notranslate"><span class="pre">c.at(n)</span></code>   | 返回下标为n的元素的引用    | 如果下标越界，则抛出<code class="docutils literal notranslate"><span class="pre">out_of_range</span></code>异常             |</p>
-</div>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>操作</th>
+<th>含义</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>c.back()</code></td>
+<td>返回c中尾元素的引用</td>
+<td>若c为空，则函数行为未定义</td>
+</tr>
+<tr>
+<td><code>c.front()</code></td>
+<td>返回c中首元素的引用</td>
+<td>若c为空，则函数行为未定义</td>
+</tr>
+<tr>
+<td><code>c[n]</code></td>
+<td>返回c中下标为n的元素的引用</td>
+<td>n是一个无符号整数，若<code>n&gt;=c.size()</code>则函数行为未定义</td>
+</tr>
+<tr>
+<td><code>c.at(n)</code></td>
+<td>返回下标为n的元素的引用</td>
+<td>如果下标越界，则抛出<code>out_of_range</code>异常</td>
+</tr>
+</tbody>
+</table></div>
 <div class="section" id="id12">
 <h3>3. 删除元素<a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h3>
 <blockquote>
@@ -376,24 +575,68 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">forward_list</span></code>有特殊版本的erase</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">forward_list</span></code>不支持<code class="docutils literal notranslate"><span class="pre">pop_back</span></code>，<code class="docutils literal notranslate"><span class="pre">vector</span></code>和<code class="docutils literal notranslate"><span class="pre">string</span></code>不支持<code class="docutils literal notranslate"><span class="pre">pop_front</span></code></p></li>
 </ul>
-<p>| 操作            | 含义                                                         | 备注                                          |
-| ————— | ———————————————————— | ——————————————— |
-| <code class="docutils literal notranslate"><span class="pre">c.pop_back()</span></code>  | 删除c中尾元素，返回void                                      | 若c为空，则函数行为未定义                     |
-| <code class="docutils literal notranslate"><span class="pre">c.pop_front</span></code>   | 删除c中首元素，返回void                                      | 若c为空，则函数行为未定义                     |
-| <code class="docutils literal notranslate"><span class="pre">c.erase(p)</span></code>    | 删除迭代器p所指向的元素，返回一个指向被删元素之后元素的迭代器 | 若p是尾后迭代器，则函数行为未定义             |
-| <code class="docutils literal notranslate"><span class="pre">c.erase(b,</span> <span class="pre">e)</span></code> | 删除迭代器b和e所指定范围的元素，返回一个指向最后一个被删元素之后的元素的迭代器 | 若e本身就是尾后迭代器，则函数也返回尾后迭代器 |
-| <code class="docutils literal notranslate"><span class="pre">c.clear()</span></code>     | 删除c中的所有元素，返回void                                  |                                               |</p>
-</div>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>操作</th>
+<th>含义</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>c.pop_back()</code></td>
+<td>删除c中尾元素，返回void</td>
+<td>若c为空，则函数行为未定义</td>
+</tr>
+<tr>
+<td><code>c.pop_front</code></td>
+<td>删除c中首元素，返回void</td>
+<td>若c为空，则函数行为未定义</td>
+</tr>
+<tr>
+<td><code>c.erase(p)</code></td>
+<td>删除迭代器p所指向的元素，返回一个指向被删元素之后元素的迭代器</td>
+<td>若p是尾后迭代器，则函数行为未定义</td>
+</tr>
+<tr>
+<td><code>c.erase(b, e)</code></td>
+<td>删除迭代器b和e所指定范围的元素，返回一个指向最后一个被删元素之后的元素的迭代器</td>
+<td>若e本身就是尾后迭代器，则函数也返回尾后迭代器</td>
+</tr>
+<tr>
+<td><code>c.clear()</code></td>
+<td>删除c中的所有元素，返回void</td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
 <div class="section" id="id13">
 <h3>4. 改变容器大小<a class="headerlink" href="#id13" title="永久链接至标题">¶</a></h3>
 <blockquote>
 <div><p>Tips：如果resize缩小元素，那么指向被删除元素的迭代器、引用和指针都会失效；对vector、string或者deque进行resize可能导致迭代器、指针和引用失效。</p>
 </div></blockquote>
-<p>| 操作             | 含义                                                         | 备注          |
-| —————- | ———————————————————— | ————- |
-| <code class="docutils literal notranslate"><span class="pre">c.resize(n)</span></code>    | 调整c的大小为n个元素，若<code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">&lt;</span> <span class="pre">c.size()</span></code>则多出的元素被丢弃，若必须添加新元素则对新元素进行值初始化 | 不适用于array |
-| <code class="docutils literal notranslate"><span class="pre">c.resize(n,</span> <span class="pre">t)</span></code> | 调整c的大小为n个元素，任何新添加的元素都初始化为值t          | 不适用于array |</p>
-</div>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>操作</th>
+<th>含义</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>c.resize(n)</code></td>
+<td>调整c的大小为n个元素，若<code>n &lt; c.size()</code>则多出的元素被丢弃，若必须添加新元素则对新元素进行值初始化</td>
+<td>不适用于array</td>
+</tr>
+<tr>
+<td><code>c.resize(n, t)</code></td>
+<td>调整c的大小为n个元素，任何新添加的元素都初始化为值t</td>
+<td>不适用于array</td>
+</tr>
+</tbody>
+</table></div>
 <div class="section" id="id14">
 <h3>5. 容器操作可能使得迭代器失效<a class="headerlink" href="#id14" title="永久链接至标题">¶</a></h3>
 <p>向容器中添加元素和从容器中删除元素的操作可能使得指向容器元素的指针、引用或者迭代器失效。</p>
@@ -433,13 +676,37 @@
 <div class="section" id="forward-list">
 <h2>特殊的forward_list操作<a class="headerlink" href="#forward-list" title="永久链接至标题">¶</a></h2>
 <p>从一个单向链表中添加或删除元素时，还会改变其前一个元素指向的下一个元素。由于这些操作与其他容器上的操作实现方式不同，因此<code class="docutils literal notranslate"><span class="pre">forward_list</span></code>并未定义<code class="docutils literal notranslate"><span class="pre">insert</span></code>、<code class="docutils literal notranslate"><span class="pre">emplace</span></code>和<code class="docutils literal notranslate"><span class="pre">erase</span></code>，而是定义了名为<code class="docutils literal notranslate"><span class="pre">insert_after</span></code>、<code class="docutils literal notranslate"><span class="pre">emplace_after</span></code>和<code class="docutils literal notranslate"><span class="pre">erase_after</span></code>的操作。&gt; Tips：为了支持这些操作，<code class="docutils literal notranslate"><span class="pre">forward_list</span></code>定义了<code class="docutils literal notranslate"><span class="pre">before_begin</span></code>首前迭代器。</p>
-<p>| 操作                                                         | 含义                                                         | 备注                                                         |
-| ———————————————————— | ———————————————————— | ———————————————————— |
-| <code class="docutils literal notranslate"><span class="pre">lst.before_begin()</span></code><br><code class="docutils literal notranslate"><span class="pre">lst.cbefore_begin()</span></code>                | 返回指向链表首元素之前不存在的元素的迭代器，此迭代器不能解引用，<code class="docutils literal notranslate"><span class="pre">cbefore_begin()</span></code>返回一个<code class="docutils literal notranslate"><span class="pre">const_iterator</span></code> |                                                              |
-| <code class="docutils literal notranslate"><span class="pre">lst.insert_after(p,</span> <span class="pre">t)</span></code><br><code class="docutils literal notranslate"><span class="pre">lst.insert_after(p,</span> <span class="pre">n,</span> <span class="pre">t)</span></code><br><code class="docutils literal notranslate"><span class="pre">lst.insert_after(p,</span> <span class="pre">b,</span> <span class="pre">e)</span></code><br><code class="docutils literal notranslate"><span class="pre">lst.insert_after(p,</span> <span class="pre">il)</span></code> | 在迭代器p之后的位置插入元素，其中t是一个对象，n是数量，b和e是表示范围的一对迭代器（b和e不能指向lst内），il是一个花括号列表 | 返回一个指向最后一个插入元素的迭代器，如果范围为空则返回p，若p为尾后迭代器则函数行为未定义 |
-| <code class="docutils literal notranslate"><span class="pre">emplace_after(p,</span> <span class="pre">args)</span></code>                                     | 使用args在p指定的位置之后创建一个元素                        | 返回一个指向这个新元素的迭代器，若p为尾后迭代器则函数行为未定义 |
-| <code class="docutils literal notranslate"><span class="pre">lst.erase_after(p)</span></code><br><code class="docutils literal notranslate"><span class="pre">lst.erase_after(b,</span> <span class="pre">e)</span></code>              | 删除p指向的位置之后的元素，或删除从b之后直到e之间的元素      | 返回一个指向被删元素之后的迭代器，若不存在这样的元素则返回尾后迭代器，如果p指向lst的尾元素或者一个尾后迭代器则函数行为未定义 |</p>
-</div>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>操作</th>
+<th>含义</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>lst.before_begin()</code><br><code>lst.cbefore_begin()</code></td>
+<td>返回指向链表首元素之前不存在的元素的迭代器，此迭代器不能解引用，<code>cbefore_begin()</code>返回一个<code>const_iterator</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>lst.insert_after(p, t)</code><br><code>lst.insert_after(p, n, t)</code><br><code>lst.insert_after(p, b, e)</code><br><code>lst.insert_after(p, il)</code></td>
+<td>在迭代器p之后的位置插入元素，其中t是一个对象，n是数量，b和e是表示范围的一对迭代器（b和e不能指向lst内），il是一个花括号列表</td>
+<td>返回一个指向最后一个插入元素的迭代器，如果范围为空则返回p，若p为尾后迭代器则函数行为未定义</td>
+</tr>
+<tr>
+<td><code>emplace_after(p, args)</code></td>
+<td>使用args在p指定的位置之后创建一个元素</td>
+<td>返回一个指向这个新元素的迭代器，若p为尾后迭代器则函数行为未定义</td>
+</tr>
+<tr>
+<td><code>lst.erase_after(p)</code><br><code>lst.erase_after(b, e)</code></td>
+<td>删除p指向的位置之后的元素，或删除从b之后直到e之间的元素</td>
+<td>返回一个指向被删元素之后的迭代器，若不存在这样的元素则返回尾后迭代器，如果p指向lst的尾元素或者一个尾后迭代器则函数行为未定义</td>
+</tr>
+</tbody>
+</table></div>
 </div>
 
 

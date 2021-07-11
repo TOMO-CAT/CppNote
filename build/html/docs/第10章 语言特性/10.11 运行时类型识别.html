@@ -333,13 +333,32 @@
 <div class="section" id="type-info">
 <h2>type_info类<a class="headerlink" href="#type-info" title="永久链接至标题">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">type_info</span></code>的操作包括：</p>
-<p>| 操作            | 含义                                                         |
-| ————— | ———————————————————— |
-| <code class="docutils literal notranslate"><span class="pre">t1</span> <span class="pre">==</span> <span class="pre">t2</span></code>      | 如果<code class="docutils literal notranslate"><span class="pre">type_info</span></code>对象<code class="docutils literal notranslate"><span class="pre">t1</span></code>和<code class="docutils literal notranslate"><span class="pre">t2</span></code>表示同一种类型，则返回<code class="docutils literal notranslate"><span class="pre">true</span></code>    |
-| <code class="docutils literal notranslate"><span class="pre">t1</span> <span class="pre">!=</span>&#160; <span class="pre">t2</span></code>     | 如果<code class="docutils literal notranslate"><span class="pre">type_info</span></code>对象<code class="docutils literal notranslate"><span class="pre">t1</span></code>和<code class="docutils literal notranslate"><span class="pre">t2</span></code>表示不同的类型，则返回<code class="docutils literal notranslate"><span class="pre">true</span></code>    |
-| <code class="docutils literal notranslate"><span class="pre">t.name()</span></code>      | 返回一个C风格字符串，表示类型名字的可打印形式                |
-| <code class="docutils literal notranslate"><span class="pre">t1.before(t2)</span></code> | 返回一个<code class="docutils literal notranslate"><span class="pre">bool</span></code>值，表示<code class="docutils literal notranslate"><span class="pre">t1</span></code>是否位于<code class="docutils literal notranslate"><span class="pre">t2</span></code>之前，顺序关系依赖于编译器 |</p>
-<ul class="simple">
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>操作</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>t1 == t2</code></td>
+<td>如果<code>type_info</code>对象<code>t1</code>和<code>t2</code>表示同一种类型，则返回<code>true</code></td>
+</tr>
+<tr>
+<td><code>t1 !=  t2</code></td>
+<td>如果<code>type_info</code>对象<code>t1</code>和<code>t2</code>表示不同的类型，则返回<code>true</code></td>
+</tr>
+<tr>
+<td><code>t.name()</code></td>
+<td>返回一个C风格字符串，表示类型名字的可打印形式</td>
+</tr>
+<tr>
+<td><code>t1.before(t2)</code></td>
+<td>返回一个<code>bool</code>值，表示<code>t1</code>是否位于<code>t2</code>之前，顺序关系依赖于编译器</td>
+</tr>
+</tbody>
+</table><ul class="simple">
 <li><p>t1 ==  t2：如果type_info对象t1和t2表示同一种类型，则返回true</p></li>
 <li><p>t1 !=  t2：如果type_info对象t1和t2表示不同的类型，则返回true</p></li>
 <li><p>t.name()：返回一个C风格字符串，表示类型名字的可打印形式</p></li>

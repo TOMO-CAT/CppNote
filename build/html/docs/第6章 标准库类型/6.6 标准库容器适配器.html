@@ -200,18 +200,62 @@
 <div class="section" id="id3">
 <h2>容器适配器操作<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <p>所有容器适配器都支持的操作和类型如下：</p>
-<p>| 操作或类型                  | 含义                                                         | 备注 |
-| ————————— | ———————————————————— | —- |
-| <code class="docutils literal notranslate"><span class="pre">size_type</span></code>                 | 足以保存当前类型的最大对象的大小                             |      |
-| <code class="docutils literal notranslate"><span class="pre">value_type</span></code>                | 元素类型                                                     |      |
-| <code class="docutils literal notranslate"><span class="pre">container_type</span></code>            | 实现适配器的底层容器类型                                     |      |
-| <code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">a;</span></code>                      | 创建一个名为a的空适配器                                      |      |
-| <code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">a(c);</span></code>                   | 创建一个名为a的适配器，带有容器c的一个拷贝                   |      |
-| 关系运算符                  | 每个适配器都支持所有关系运算符：<code class="docutils literal notranslate"><span class="pre">==</span></code>、<code class="docutils literal notranslate"><span class="pre">!=</span></code>、<code class="docutils literal notranslate"><span class="pre">&lt;</span></code>、<code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>、<code class="docutils literal notranslate"><span class="pre">&gt;</span></code>和<code class="docutils literal notranslate"><span class="pre">&gt;=</span></code> |      |
-| <code class="docutils literal notranslate"><span class="pre">a.empty()</span></code>                 | 若a白喊任何元素则返回false，否则返回true                     |      |
-| <code class="docutils literal notranslate"><span class="pre">a.size()</span></code>                  | 返回a中元素数目                                              |      |
-| <code class="docutils literal notranslate"><span class="pre">swap(a,</span> <span class="pre">b)</span></code><br><code class="docutils literal notranslate"><span class="pre">a.swap(b)</span></code> | 交换a和b的内容，a和b必须有相同类型，包括底层容器类型也必须相同 |      |</p>
-</div>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>操作或类型</th>
+<th>含义</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>size_type</code></td>
+<td>足以保存当前类型的最大对象的大小</td>
+<td></td>
+</tr>
+<tr>
+<td><code>value_type</code></td>
+<td>元素类型</td>
+<td></td>
+</tr>
+<tr>
+<td><code>container_type</code></td>
+<td>实现适配器的底层容器类型</td>
+<td></td>
+</tr>
+<tr>
+<td><code>A a;</code></td>
+<td>创建一个名为a的空适配器</td>
+<td></td>
+</tr>
+<tr>
+<td><code>A a(c);</code></td>
+<td>创建一个名为a的适配器，带有容器c的一个拷贝</td>
+<td></td>
+</tr>
+<tr>
+<td>关系运算符</td>
+<td>每个适配器都支持所有关系运算符：<code>==</code>、<code>!=</code>、<code>&lt;</code>、<code>&lt;=</code>、<code>&gt;</code>和<code>&gt;=</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>a.empty()</code></td>
+<td>若a白喊任何元素则返回false，否则返回true</td>
+<td></td>
+</tr>
+<tr>
+<td><code>a.size()</code></td>
+<td>返回a中元素数目</td>
+<td></td>
+</tr>
+<tr>
+<td><code>swap(a, b)</code><br><code>a.swap(b)</code></td>
+<td>交换a和b的内容，a和b必须有相同类型，包括底层容器类型也必须相同</td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
 <div class="section" id="id4">
 <h2>例子<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
 <blockquote>
@@ -242,28 +286,84 @@
 <div><p>Tips：栈默认基于deque实现，也可以在list或者vector</p>
 </div></blockquote>
 <p><code class="docutils literal notranslate"><span class="pre">stack</span></code>类型定义在<code class="docutils literal notranslate"><span class="pre">stack</span></code>头文件中，特属于<code class="docutils literal notranslate"><span class="pre">stack</span></code>的操作如下：</p>
-<p>| 操作              | 含义                                           | 备注 |
-| —————– | ———————————————- | —- |
-| <code class="docutils literal notranslate"><span class="pre">s.pop()</span></code>         | 删除栈顶元素，但不返回该元素值                 |      |
-| <code class="docutils literal notranslate"><span class="pre">s.push(item)</span></code>    | 创建一个新元素压入栈顶，该元素通过拷贝或者item |      |
-| <code class="docutils literal notranslate"><span class="pre">s.emplace(args)</span></code> | 创建一个新元素压入栈顶，该元素                 |      |
-| <code class="docutils literal notranslate"><span class="pre">s.top()</span></code>         | 返回栈顶元素，但不将该元素                     |      |</p>
-</div>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>操作</th>
+<th>含义</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>s.pop()</code></td>
+<td>删除栈顶元素，但不返回该元素值</td>
+<td></td>
+</tr>
+<tr>
+<td><code>s.push(item)</code></td>
+<td>创建一个新元素压入栈顶，该元素通过拷贝或者item</td>
+<td></td>
+</tr>
+<tr>
+<td><code>s.emplace(args)</code></td>
+<td>创建一个新元素压入栈顶，该元素</td>
+<td></td>
+</tr>
+<tr>
+<td><code>s.top()</code></td>
+<td>返回栈顶元素，但不将该元素</td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
 <div class="section" id="id7">
 <h2>队列适配器<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
 <blockquote>
 <div><p><code class="docutils literal notranslate"><span class="pre">queue</span></code>默认基于deque实现，<code class="docutils literal notranslate"><span class="pre">priority_queue</span></code>默认基于vector实现；<code class="docutils literal notranslate"><span class="pre">queue</span></code>也可以用<code class="docutils literal notranslate"><span class="pre">list</span></code>或者<code class="docutils literal notranslate"><span class="pre">vector</span></code>实现，<code class="docutils literal notranslate"><span class="pre">priority_queue</span></code>也可以用<code class="docutils literal notranslate"><span class="pre">deque</span></code>实现</p>
 </div></blockquote>
 <p><code class="docutils literal notranslate"><span class="pre">queue</span></code>和<code class="docutils literal notranslate"><span class="pre">priority_queue</span></code>适配器定义在<code class="docutils literal notranslate"><span class="pre">queue</span></code>头文件中，特属于它们的操作如下：</p>
-<p>| 操作           | 含义                                                         | 备注                     |
-| ————– | ———————————————————— | ———————— |
-| <code class="docutils literal notranslate"><span class="pre">q.pop()</span></code>      | 删除<code class="docutils literal notranslate"><span class="pre">queue</span></code>的首元素或者<code class="docutils literal notranslate"><span class="pre">priority_queue</span></code>最高优先级的元素，但不返回此元素 |                          |
-| <code class="docutils literal notranslate"><span class="pre">q.front()</span></code>    | 返回首元素，但不删除此元素                                   | 只适用于queue            |
-| <code class="docutils literal notranslate"><span class="pre">q.back()</span></code>     | 返回尾元素，但不删除此元素                                   | 只适用于queue            |
-| <code class="docutils literal notranslate"><span class="pre">q.top()</span></code>      | 返回最高优先级元素，但不删除该元素                           | 只适用于<code class="docutils literal notranslate"><span class="pre">priority_queue</span></code> |
-| <code class="docutils literal notranslate"><span class="pre">q.push(i)</span></code>    | 在queue末尾或者<code class="docutils literal notranslate"><span class="pre">priority_queue</span></code>中恰当的位置创建一个元素，其  |                          |
-| <code class="docutils literal notranslate"><span class="pre">q.empalce(a)</span></code> | 在queue末尾或者<code class="docutils literal notranslate"><span class="pre">priority_queue</span></code>中恰当的位置创建一个元素，其由 |                          |</p>
-</div>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>操作</th>
+<th>含义</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>q.pop()</code></td>
+<td>删除<code>queue</code>的首元素或者<code>priority_queue</code>最高优先级的元素，但不返回此元素</td>
+<td></td>
+</tr>
+<tr>
+<td><code>q.front()</code></td>
+<td>返回首元素，但不删除此元素</td>
+<td>只适用于queue</td>
+</tr>
+<tr>
+<td><code>q.back()</code></td>
+<td>返回尾元素，但不删除此元素</td>
+<td>只适用于queue</td>
+</tr>
+<tr>
+<td><code>q.top()</code></td>
+<td>返回最高优先级元素，但不删除该元素</td>
+<td>只适用于<code>priority_queue</code></td>
+</tr>
+<tr>
+<td><code>q.push(i)</code></td>
+<td>在queue末尾或者<code>priority_queue</code>中恰当的位置创建一个元素，其</td>
+<td></td>
+</tr>
+<tr>
+<td><code>q.empalce(a)</code></td>
+<td>在queue末尾或者<code>priority_queue</code>中恰当的位置创建一个元素，其由</td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
 </div>
 
 

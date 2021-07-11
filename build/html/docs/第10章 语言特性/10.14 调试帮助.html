@@ -198,14 +198,36 @@
 <div class="section" id="id2">
 <h2>调试变量<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>预处理器定义了5个对于程序调试很有用的名字：</p>
-<p>| 名字       | 含义                       |
-| ———- | ————————– |
-| <code class="docutils literal notranslate"><span class="pre">__func__</span></code> | 函数名字的字符串字面值     |
-| <code class="docutils literal notranslate"><span class="pre">__FILE__</span></code> | 文件名的字符串字面值       |
-| <code class="docutils literal notranslate"><span class="pre">__LINE__</span></code> | 当前行号的整型字面值       |
-| <code class="docutils literal notranslate"><span class="pre">__TIME__</span></code> | 文件编译时间的字符串字面值 |
-| <code class="docutils literal notranslate"><span class="pre">__DATE__</span></code> | 文件编译日期的字符串字面值 |</p>
-</div>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>名字</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>__func__</code></td>
+<td>函数名字的字符串字面值</td>
+</tr>
+<tr>
+<td><code>__FILE__</code></td>
+<td>文件名的字符串字面值</td>
+</tr>
+<tr>
+<td><code>__LINE__</code></td>
+<td>当前行号的整型字面值</td>
+</tr>
+<tr>
+<td><code>__TIME__</code></td>
+<td>文件编译时间的字符串字面值</td>
+</tr>
+<tr>
+<td><code>__DATE__</code></td>
+<td>文件编译日期的字符串字面值</td>
+</tr>
+</tbody>
+</table></div>
 <div class="section" id="assert">
 <h2>assert预处理宏<a class="headerlink" href="#assert" title="永久链接至标题">¶</a></h2>
 <p>assert定义在<code class="docutils literal notranslate"><span class="pre">cassert</span></code>头文件中，它会对括号内的表达式求值，如果表达式为假（即0），assert输出信息并终止程序的执行：</p>

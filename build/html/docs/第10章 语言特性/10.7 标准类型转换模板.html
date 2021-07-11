@@ -200,19 +200,67 @@
 </div>
 <div class="section" id="id3">
 <h2>操作<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
-<p>| 对<code class="docutils literal notranslate"><span class="pre">Mod&lt;T&gt;</span></code>。其中<code class="docutils literal notranslate"><span class="pre">Mod</span></code>为 | 若<code class="docutils literal notranslate"><span class="pre">T</span></code>为                     | 则<code class="docutils literal notranslate"><span class="pre">Mod&lt;T&gt;::type</span></code>为  |
-| ———————– | ————————— | ——————- |
-| <code class="docutils literal notranslate"><span class="pre">remove_reference</span></code>      | <code class="docutils literal notranslate"><span class="pre">X&amp;</span></code>或<code class="docutils literal notranslate"><span class="pre">X&amp;&amp;</span></code><br>否则         | <code class="docutils literal notranslate"><span class="pre">X</span></code><br><code class="docutils literal notranslate"><span class="pre">T</span></code>          |
-| <code class="docutils literal notranslate"><span class="pre">add_const</span></code>             | <code class="docutils literal notranslate"><span class="pre">X&amp;,</span> <span class="pre">const</span> <span class="pre">X</span></code>或函数<br>否则 | <code class="docutils literal notranslate"><span class="pre">T</span></code><br><code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">T</span></code>    |
-| <code class="docutils literal notranslate"><span class="pre">add_lvalue_reference</span></code>  | <code class="docutils literal notranslate"><span class="pre">X&amp;</span></code><br><code class="docutils literal notranslate"><span class="pre">X&amp;&amp;</span></code><br>否则       | <code class="docutils literal notranslate"><span class="pre">T</span></code><br><code class="docutils literal notranslate"><span class="pre">X&amp;</span></code><br><code class="docutils literal notranslate"><span class="pre">T&amp;</span></code> |
-| <code class="docutils literal notranslate"><span class="pre">add_rvalue_reference</span></code>  | <code class="docutils literal notranslate"><span class="pre">X&amp;</span></code>或<code class="docutils literal notranslate"><span class="pre">X&amp;&amp;</span></code><br>否则         | <code class="docutils literal notranslate"><span class="pre">T</span></code><br><code class="docutils literal notranslate"><span class="pre">T&amp;&amp;</span></code>        |
-| <code class="docutils literal notranslate"><span class="pre">remove_pointer</span></code>        | <code class="docutils literal notranslate"><span class="pre">X*</span></code><br>否则                | <code class="docutils literal notranslate"><span class="pre">X</span></code><br>T            |
-| <code class="docutils literal notranslate"><span class="pre">add_pointer</span></code>           | <code class="docutils literal notranslate"><span class="pre">X&amp;</span></code>或<code class="docutils literal notranslate"><span class="pre">X&amp;&amp;</span></code><br>否则         | <code class="docutils literal notranslate"><span class="pre">X*</span></code><br><code class="docutils literal notranslate"><span class="pre">T*</span></code>        |
-| <code class="docutils literal notranslate"><span class="pre">make_signed</span></code>           | <code class="docutils literal notranslate"><span class="pre">unsigned</span> <span class="pre">X</span></code><br>否则        | <code class="docutils literal notranslate"><span class="pre">X</span></code><br><code class="docutils literal notranslate"><span class="pre">T</span></code>          |
-| <code class="docutils literal notranslate"><span class="pre">make_unsigned</span></code>         | 带符号类型<br>否则          | <code class="docutils literal notranslate"><span class="pre">unsigned</span> <span class="pre">X</span></code><br><code class="docutils literal notranslate"><span class="pre">T</span></code> |
-| <code class="docutils literal notranslate"><span class="pre">remove_extent</span></code>         | <code class="docutils literal notranslate"><span class="pre">X[n]</span></code><br>否则              | <code class="docutils literal notranslate"><span class="pre">X</span></code><br><code class="docutils literal notranslate"><span class="pre">T</span></code>          |
-| <code class="docutils literal notranslate"><span class="pre">remove_all_extent</span></code>     | <code class="docutils literal notranslate"><span class="pre">X[n1][n2]</span></code><br>否则         | <code class="docutils literal notranslate"><span class="pre">X</span></code><br><code class="docutils literal notranslate"><span class="pre">T</span></code>          |</p>
-</div>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>对<code>Mod&lt;T&gt;</code>。其中<code>Mod</code>为</th>
+<th>若<code>T</code>为</th>
+<th>则<code>Mod&lt;T&gt;::type</code>为</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>remove_reference</code></td>
+<td><code>X&amp;</code>或<code>X&amp;&amp;</code><br>否则</td>
+<td><code>X</code><br><code>T</code></td>
+</tr>
+<tr>
+<td><code>add_const</code></td>
+<td><code>X&amp;, const X</code>或函数<br>否则</td>
+<td><code>T</code><br><code>const T</code></td>
+</tr>
+<tr>
+<td><code>add_lvalue_reference</code></td>
+<td><code>X&amp;</code><br><code>X&amp;&amp;</code><br>否则</td>
+<td><code>T</code><br><code>X&amp;</code><br><code>T&amp;</code></td>
+</tr>
+<tr>
+<td><code>add_rvalue_reference</code></td>
+<td><code>X&amp;</code>或<code>X&amp;&amp;</code><br>否则</td>
+<td><code>T</code><br><code>T&amp;&amp;</code></td>
+</tr>
+<tr>
+<td><code>remove_pointer</code></td>
+<td><code>X*</code><br>否则</td>
+<td><code>X</code><br>T</td>
+</tr>
+<tr>
+<td><code>add_pointer</code></td>
+<td><code>X&amp;</code>或<code>X&amp;&amp;</code><br>否则</td>
+<td><code>X*</code><br><code>T*</code></td>
+</tr>
+<tr>
+<td><code>make_signed</code></td>
+<td><code>unsigned X</code><br>否则</td>
+<td><code>X</code><br><code>T</code></td>
+</tr>
+<tr>
+<td><code>make_unsigned</code></td>
+<td>带符号类型<br>否则</td>
+<td><code>unsigned X</code><br><code>T</code></td>
+</tr>
+<tr>
+<td><code>remove_extent</code></td>
+<td><code>X[n]</code><br>否则</td>
+<td><code>X</code><br><code>T</code></td>
+</tr>
+<tr>
+<td><code>remove_all_extent</code></td>
+<td><code>X[n1][n2]</code><br>否则</td>
+<td><code>X</code><br><code>T</code></td>
+</tr>
+</tbody>
+</table></div>
 </div>
 
 

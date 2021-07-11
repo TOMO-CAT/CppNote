@@ -179,64 +179,404 @@
             
   <div class="section" id="id1">
 <h1>4.2 运算符优先级<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
-<p>| 优先级 | 结合律 | 运算符          | 功能               | 用法                    |
-| —— | —— | ————— | —————— | ———————– |
-| 1      | 左     | <code class="docutils literal notranslate"><span class="pre">::</span></code>            | 全局作用域         | <code class="docutils literal notranslate"><span class="pre">::name</span></code>                |
-| 1      | 左     | <code class="docutils literal notranslate"><span class="pre">::</span></code>            | 类作用域           | <code class="docutils literal notranslate"><span class="pre">class::name</span></code>           |
-| 1      | 左     | <code class="docutils literal notranslate"><span class="pre">::</span></code>            | 命名空间作用域     | <code class="docutils literal notranslate"><span class="pre">namespace::name</span></code>       |
-| 2      | 左     | <code class="docutils literal notranslate"><span class="pre">.</span></code>             | 成员选择           | <code class="docutils literal notranslate"><span class="pre">object.member</span></code>         |
-| 2      | 左     | <code class="docutils literal notranslate"><span class="pre">-&gt;</span></code>            | 成员选择           | <code class="docutils literal notranslate"><span class="pre">pointer-&gt;member</span></code>       |
-| 2      | 左     | <code class="docutils literal notranslate"><span class="pre">[]</span></code>            | 下标               | <code class="docutils literal notranslate"><span class="pre">expr[expr]</span></code>            |
-| 2      | 左     | <code class="docutils literal notranslate"><span class="pre">()</span></code>            | 函数调用           | <code class="docutils literal notranslate"><span class="pre">name(epxr_list)</span></code>       |
-| 2      | 左     | <code class="docutils literal notranslate"><span class="pre">()</span></code>            | 类型构造           | <code class="docutils literal notranslate"><span class="pre">type(expr_list)</span></code>       |
-| 3      | 右     | <code class="docutils literal notranslate"><span class="pre">++</span></code>            | 后置递增运算       | <code class="docutils literal notranslate"><span class="pre">lvalue++</span></code>              |
-| 3      | 右     | <code class="docutils literal notranslate"><span class="pre">--</span></code>            | 后置递减运算       | <code class="docutils literal notranslate"><span class="pre">lvalue--</span></code>              |
-| 3      | 右     | <code class="docutils literal notranslate"><span class="pre">typeid</span></code>        | 类型ID             | <code class="docutils literal notranslate"><span class="pre">typeid(type)</span></code>          |
-| 3      | 右     | <code class="docutils literal notranslate"><span class="pre">typeid</span></code>        | 运行时类型ID       | <code class="docutils literal notranslate"><span class="pre">typeid(expr)</span></code>          |
-| 3      | 右     | <code class="docutils literal notranslate"><span class="pre">explicit</span> <span class="pre">cast</span></code> | 类型转换           | <code class="docutils literal notranslate"><span class="pre">cast_name&lt;type&gt;(expr)</span></code> |
-| 4      | 右     | <code class="docutils literal notranslate"><span class="pre">++</span></code>            | 前置递增运算       | <code class="docutils literal notranslate"><span class="pre">++lvalue</span></code>              |
-| 4      | 右     | <code class="docutils literal notranslate"><span class="pre">--</span></code>            | 前置递减运算       | <code class="docutils literal notranslate"><span class="pre">--lvalue</span></code>              |
-| 4      | 右     | <code class="docutils literal notranslate"><span class="pre">~</span></code>             | 位求反             | <code class="docutils literal notranslate"><span class="pre">~expr</span></code>                 |
-| 4      | 右     | <code class="docutils literal notranslate"><span class="pre">!</span></code>             | 逻辑非             | <code class="docutils literal notranslate"><span class="pre">!expr</span></code>                 |
-| 4      | 右     | <code class="docutils literal notranslate"><span class="pre">-</span></code>             | 一元负号           | <code class="docutils literal notranslate"><span class="pre">-expr</span></code>                 |
-| 4      | 右     | <code class="docutils literal notranslate"><span class="pre">+</span></code>             | 一元正号           | <code class="docutils literal notranslate"><span class="pre">+expr</span></code>                 |
-| 4      | 右     | <code class="docutils literal notranslate"><span class="pre">*</span></code>             | 解引用             | <code class="docutils literal notranslate"><span class="pre">*expr</span></code>                 |
-| 4      | 右     | <code class="docutils literal notranslate"><span class="pre">&amp;</span></code>             | 取地址             | <code class="docutils literal notranslate"><span class="pre">&amp;lvalue</span></code>               |
-| 4      | 右     | <code class="docutils literal notranslate"><span class="pre">()</span></code>            | 类型转换           | <code class="docutils literal notranslate"><span class="pre">(type)expr</span></code>            |
-| 4      | 右     | <code class="docutils literal notranslate"><span class="pre">sizeof</span></code>        | 对象的大小         | <code class="docutils literal notranslate"><span class="pre">sizeof</span> <span class="pre">expr</span></code>           |
-| 4      | 右     | <code class="docutils literal notranslate"><span class="pre">sizeof</span></code>        | 类型的大小         | <code class="docutils literal notranslate"><span class="pre">sizeof(type)</span></code>          |
-| 4      | 右     | <code class="docutils literal notranslate"><span class="pre">sizeof...</span></code>     | 参数包的大小       | <code class="docutils literal notranslate"><span class="pre">sizeof...(name)</span></code>       |
-| 4      | 右     | <code class="docutils literal notranslate"><span class="pre">new</span></code>           | 创建对象           | <code class="docutils literal notranslate"><span class="pre">new</span> <span class="pre">type</span></code>              |
-| 4      | 右     | <code class="docutils literal notranslate"><span class="pre">new[]</span></code>         | 创建数组           | <code class="docutils literal notranslate"><span class="pre">new</span> <span class="pre">type[size]</span></code>        |
-| 4      | 右     | <code class="docutils literal notranslate"><span class="pre">delete</span></code>        | 释放对象           | <code class="docutils literal notranslate"><span class="pre">delete</span> <span class="pre">expr</span></code>           |
-| 4      | 右     | <code class="docutils literal notranslate"><span class="pre">delete[]</span></code>      | 释放数组           | <code class="docutils literal notranslate"><span class="pre">delete</span> <span class="pre">[]expr</span></code>         |
-| 4      | 右     | <code class="docutils literal notranslate"><span class="pre">noexcept</span></code>      | 能否抛出异常       | <code class="docutils literal notranslate"><span class="pre">noexcept(expr)</span></code>        |
-| 5      | 左     | <code class="docutils literal notranslate"><span class="pre">-&gt;*</span></code>           | 指向成员选择的指针 | <code class="docutils literal notranslate"><span class="pre">ptr-&gt;*ptr_to_member</span></code>   |
-| 5      | 左     | <code class="docutils literal notranslate"><span class="pre">.*</span></code>            | 指向成员选择的指针 | <code class="docutils literal notranslate"><span class="pre">obj.*ptr_to_member</span></code>    |
-| 6      | 左     | <code class="docutils literal notranslate"><span class="pre">*</span></code>             | 乘法               | <code class="docutils literal notranslate"><span class="pre">expr</span> <span class="pre">*</span> <span class="pre">expr</span></code>           |
-| 6      | 左     | <code class="docutils literal notranslate"><span class="pre">/</span></code>             | 除法               | <code class="docutils literal notranslate"><span class="pre">expr</span> <span class="pre">/</span> <span class="pre">expr</span></code>           |
-| 6      | 左     | <code class="docutils literal notranslate"><span class="pre">%</span></code>             | 取模（取余）       | <code class="docutils literal notranslate"><span class="pre">expr</span> <span class="pre">%</span> <span class="pre">expr</span></code>           |
-| 7      | 左     | <code class="docutils literal notranslate"><span class="pre">+</span></code>             | 加法               | <code class="docutils literal notranslate"><span class="pre">expr</span> <span class="pre">+</span> <span class="pre">expr</span></code>           |
-| 7      | 左     | <code class="docutils literal notranslate"><span class="pre">-</span></code>             | 减法               | <code class="docutils literal notranslate"><span class="pre">expr</span> <span class="pre">-</span> <span class="pre">expr</span></code>           |
-| 8      | 左     | <code class="docutils literal notranslate"><span class="pre">&lt;&lt;</span></code>            | 向左移位           | <code class="docutils literal notranslate"><span class="pre">expr</span> <span class="pre">&lt;&lt;</span> <span class="pre">expr</span></code>          |
-| 8      | 左     | <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code>            | 向右移位           | <code class="docutils literal notranslate"><span class="pre">expr</span> <span class="pre">&gt;&gt;</span> <span class="pre">expr</span></code>          |
-| 9      | 左     | <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>             | 小于               | <code class="docutils literal notranslate"><span class="pre">expr</span> <span class="pre">&lt;</span> <span class="pre">expr</span></code>           |
-| 9      | 左     | <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>            | 小于等于           | <code class="docutils literal notranslate"><span class="pre">expr</span> <span class="pre">&lt;=</span> <span class="pre">expr</span></code>          |
-| 9      | 左     | <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>             | 大于               | <code class="docutils literal notranslate"><span class="pre">expr</span> <span class="pre">&gt;</span> <span class="pre">expr</span></code>           |
-| 9      | 左     | <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code>            | 大于等于           | <code class="docutils literal notranslate"><span class="pre">expr</span> <span class="pre">&gt;=</span> <span class="pre">expr</span></code>          |
-| 10     | 左     | <code class="docutils literal notranslate"><span class="pre">==</span></code>            | 相等               | <code class="docutils literal notranslate"><span class="pre">expr</span> <span class="pre">==</span> <span class="pre">expr</span></code>          |
-| 10     | 左     | <code class="docutils literal notranslate"><span class="pre">!=</span></code>            | 不相等             | <code class="docutils literal notranslate"><span class="pre">expr</span> <span class="pre">!=</span> <span class="pre">expr</span></code>          |
-| 11     | 左     | <code class="docutils literal notranslate"><span class="pre">&amp;</span></code>             | 位与               | <code class="docutils literal notranslate"><span class="pre">expr</span> <span class="pre">&amp;</span> <span class="pre">expr</span></code>           |
-| 12     | 左     | <code class="docutils literal notranslate"><span class="pre">^</span></code>             | 位异或             | <code class="docutils literal notranslate"><span class="pre">expr</span> <span class="pre">^</span> <span class="pre">expr</span></code>           |
-| 13     | 左     | <code class="docutils literal notranslate"><span class="pre">|</span></code>             | 位或               | <code class="docutils literal notranslate"><span class="pre">expr</span> <span class="pre">|</span> <span class="pre">expr</span></code>           |
-| 14     | 左     | <code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code>            | 逻辑与             | <code class="docutils literal notranslate"><span class="pre">expr</span> <span class="pre">&amp;&amp;</span> <span class="pre">expr</span></code>          |
-| 15     | 左     | <code class="docutils literal notranslate"><span class="pre">||</span></code>            | 逻辑或             | <code class="docutils literal notranslate"><span class="pre">expr</span> <span class="pre">||</span> <span class="pre">expr</span></code>          |
-| 16     | 右     | <code class="docutils literal notranslate"><span class="pre">?</span> <span class="pre">:</span></code>           | 条件               | <code class="docutils literal notranslate"><span class="pre">expr</span> <span class="pre">?</span> <span class="pre">expr</span> <span class="pre">:</span> <span class="pre">expr</span></code>    |
-| 16     | 右     | <code class="docutils literal notranslate"><span class="pre">=</span></code>             | 赋值               | <code class="docutils literal notranslate"><span class="pre">lvalue</span> <span class="pre">=</span> <span class="pre">expr</span></code>         |
-| 16     | 右     | <code class="docutils literal notranslate"><span class="pre">+=</span></code>等          | 复合赋值           | <code class="docutils literal notranslate"><span class="pre">lvalue</span> <span class="pre">+=</span> <span class="pre">expr</span></code>等      |
-| 17     | 右     | <code class="docutils literal notranslate"><span class="pre">throw</span></code>         | 抛出异常           | <code class="docutils literal notranslate"><span class="pre">throw</span> <span class="pre">expr</span></code>            |
-| 18     | 左     | <code class="docutils literal notranslate"><span class="pre">,</span></code>             | 逗号               | <code class="docutils literal notranslate"><span class="pre">expr,</span> <span class="pre">expr</span></code>            |</p>
-</div>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>优先级</th>
+<th>结合律</th>
+<th>运算符</th>
+<th>功能</th>
+<th>用法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>左</td>
+<td><code>::</code></td>
+<td>全局作用域</td>
+<td><code>::name</code></td>
+</tr>
+<tr>
+<td>1</td>
+<td>左</td>
+<td><code>::</code></td>
+<td>类作用域</td>
+<td><code>class::name</code></td>
+</tr>
+<tr>
+<td>1</td>
+<td>左</td>
+<td><code>::</code></td>
+<td>命名空间作用域</td>
+<td><code>namespace::name</code></td>
+</tr>
+<tr>
+<td>2</td>
+<td>左</td>
+<td><code>.</code></td>
+<td>成员选择</td>
+<td><code>object.member</code></td>
+</tr>
+<tr>
+<td>2</td>
+<td>左</td>
+<td><code>-&gt;</code></td>
+<td>成员选择</td>
+<td><code>pointer-&gt;member</code></td>
+</tr>
+<tr>
+<td>2</td>
+<td>左</td>
+<td><code>[]</code></td>
+<td>下标</td>
+<td><code>expr[expr]</code></td>
+</tr>
+<tr>
+<td>2</td>
+<td>左</td>
+<td><code>()</code></td>
+<td>函数调用</td>
+<td><code>name(epxr_list)</code></td>
+</tr>
+<tr>
+<td>2</td>
+<td>左</td>
+<td><code>()</code></td>
+<td>类型构造</td>
+<td><code>type(expr_list)</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td>右</td>
+<td><code>++</code></td>
+<td>后置递增运算</td>
+<td><code>lvalue++</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td>右</td>
+<td><code>--</code></td>
+<td>后置递减运算</td>
+<td><code>lvalue--</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td>右</td>
+<td><code>typeid</code></td>
+<td>类型ID</td>
+<td><code>typeid(type)</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td>右</td>
+<td><code>typeid</code></td>
+<td>运行时类型ID</td>
+<td><code>typeid(expr)</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td>右</td>
+<td><code>explicit cast</code></td>
+<td>类型转换</td>
+<td><code>cast_name&lt;type&gt;(expr)</code></td>
+</tr>
+<tr>
+<td>4</td>
+<td>右</td>
+<td><code>++</code></td>
+<td>前置递增运算</td>
+<td><code>++lvalue</code></td>
+</tr>
+<tr>
+<td>4</td>
+<td>右</td>
+<td><code>--</code></td>
+<td>前置递减运算</td>
+<td><code>--lvalue</code></td>
+</tr>
+<tr>
+<td>4</td>
+<td>右</td>
+<td><code>~</code></td>
+<td>位求反</td>
+<td><code>~expr</code></td>
+</tr>
+<tr>
+<td>4</td>
+<td>右</td>
+<td><code>!</code></td>
+<td>逻辑非</td>
+<td><code>!expr</code></td>
+</tr>
+<tr>
+<td>4</td>
+<td>右</td>
+<td><code>-</code></td>
+<td>一元负号</td>
+<td><code>-expr</code></td>
+</tr>
+<tr>
+<td>4</td>
+<td>右</td>
+<td><code>+</code></td>
+<td>一元正号</td>
+<td><code>+expr</code></td>
+</tr>
+<tr>
+<td>4</td>
+<td>右</td>
+<td><code>*</code></td>
+<td>解引用</td>
+<td><code>*expr</code></td>
+</tr>
+<tr>
+<td>4</td>
+<td>右</td>
+<td><code>&amp;</code></td>
+<td>取地址</td>
+<td><code>&amp;lvalue</code></td>
+</tr>
+<tr>
+<td>4</td>
+<td>右</td>
+<td><code>()</code></td>
+<td>类型转换</td>
+<td><code>(type)expr</code></td>
+</tr>
+<tr>
+<td>4</td>
+<td>右</td>
+<td><code>sizeof</code></td>
+<td>对象的大小</td>
+<td><code>sizeof expr</code></td>
+</tr>
+<tr>
+<td>4</td>
+<td>右</td>
+<td><code>sizeof</code></td>
+<td>类型的大小</td>
+<td><code>sizeof(type)</code></td>
+</tr>
+<tr>
+<td>4</td>
+<td>右</td>
+<td><code>sizeof...</code></td>
+<td>参数包的大小</td>
+<td><code>sizeof...(name)</code></td>
+</tr>
+<tr>
+<td>4</td>
+<td>右</td>
+<td><code>new</code></td>
+<td>创建对象</td>
+<td><code>new type</code></td>
+</tr>
+<tr>
+<td>4</td>
+<td>右</td>
+<td><code>new[]</code></td>
+<td>创建数组</td>
+<td><code>new type[size]</code></td>
+</tr>
+<tr>
+<td>4</td>
+<td>右</td>
+<td><code>delete</code></td>
+<td>释放对象</td>
+<td><code>delete expr</code></td>
+</tr>
+<tr>
+<td>4</td>
+<td>右</td>
+<td><code>delete[]</code></td>
+<td>释放数组</td>
+<td><code>delete []expr</code></td>
+</tr>
+<tr>
+<td>4</td>
+<td>右</td>
+<td><code>noexcept</code></td>
+<td>能否抛出异常</td>
+<td><code>noexcept(expr)</code></td>
+</tr>
+<tr>
+<td>5</td>
+<td>左</td>
+<td><code>-&gt;*</code></td>
+<td>指向成员选择的指针</td>
+<td><code>ptr-&gt;*ptr_to_member</code></td>
+</tr>
+<tr>
+<td>5</td>
+<td>左</td>
+<td><code>.*</code></td>
+<td>指向成员选择的指针</td>
+<td><code>obj.*ptr_to_member</code></td>
+</tr>
+<tr>
+<td>6</td>
+<td>左</td>
+<td><code>*</code></td>
+<td>乘法</td>
+<td><code>expr * expr</code></td>
+</tr>
+<tr>
+<td>6</td>
+<td>左</td>
+<td><code>/</code></td>
+<td>除法</td>
+<td><code>expr / expr</code></td>
+</tr>
+<tr>
+<td>6</td>
+<td>左</td>
+<td><code>%</code></td>
+<td>取模（取余）</td>
+<td><code>expr % expr</code></td>
+</tr>
+<tr>
+<td>7</td>
+<td>左</td>
+<td><code>+</code></td>
+<td>加法</td>
+<td><code>expr + expr</code></td>
+</tr>
+<tr>
+<td>7</td>
+<td>左</td>
+<td><code>-</code></td>
+<td>减法</td>
+<td><code>expr - expr</code></td>
+</tr>
+<tr>
+<td>8</td>
+<td>左</td>
+<td><code>&lt;&lt;</code></td>
+<td>向左移位</td>
+<td><code>expr &lt;&lt; expr</code></td>
+</tr>
+<tr>
+<td>8</td>
+<td>左</td>
+<td><code>&gt;&gt;</code></td>
+<td>向右移位</td>
+<td><code>expr &gt;&gt; expr</code></td>
+</tr>
+<tr>
+<td>9</td>
+<td>左</td>
+<td><code>&lt;</code></td>
+<td>小于</td>
+<td><code>expr &lt; expr</code></td>
+</tr>
+<tr>
+<td>9</td>
+<td>左</td>
+<td><code>&lt;=</code></td>
+<td>小于等于</td>
+<td><code>expr &lt;= expr</code></td>
+</tr>
+<tr>
+<td>9</td>
+<td>左</td>
+<td><code>&gt;</code></td>
+<td>大于</td>
+<td><code>expr &gt; expr</code></td>
+</tr>
+<tr>
+<td>9</td>
+<td>左</td>
+<td><code>&gt;=</code></td>
+<td>大于等于</td>
+<td><code>expr &gt;= expr</code></td>
+</tr>
+<tr>
+<td>10</td>
+<td>左</td>
+<td><code>==</code></td>
+<td>相等</td>
+<td><code>expr == expr</code></td>
+</tr>
+<tr>
+<td>10</td>
+<td>左</td>
+<td><code>!=</code></td>
+<td>不相等</td>
+<td><code>expr != expr</code></td>
+</tr>
+<tr>
+<td>11</td>
+<td>左</td>
+<td><code>&amp;</code></td>
+<td>位与</td>
+<td><code>expr &amp; expr</code></td>
+</tr>
+<tr>
+<td>12</td>
+<td>左</td>
+<td><code>^</code></td>
+<td>位异或</td>
+<td><code>expr ^ expr</code></td>
+</tr>
+<tr>
+<td>13</td>
+<td>左</td>
+<td><code>|</code></td>
+<td>位或</td>
+<td><code>expr | expr</code></td>
+</tr>
+<tr>
+<td>14</td>
+<td>左</td>
+<td><code>&amp;&amp;</code></td>
+<td>逻辑与</td>
+<td><code>expr &amp;&amp; expr</code></td>
+</tr>
+<tr>
+<td>15</td>
+<td>左</td>
+<td><code>||</code></td>
+<td>逻辑或</td>
+<td><code>expr || expr</code></td>
+</tr>
+<tr>
+<td>16</td>
+<td>右</td>
+<td><code>? :</code></td>
+<td>条件</td>
+<td><code>expr ? expr : expr</code></td>
+</tr>
+<tr>
+<td>16</td>
+<td>右</td>
+<td><code>=</code></td>
+<td>赋值</td>
+<td><code>lvalue = expr</code></td>
+</tr>
+<tr>
+<td>16</td>
+<td>右</td>
+<td><code>+=</code>等</td>
+<td>复合赋值</td>
+<td><code>lvalue += expr</code>等</td>
+</tr>
+<tr>
+<td>17</td>
+<td>右</td>
+<td><code>throw</code></td>
+<td>抛出异常</td>
+<td><code>throw expr</code></td>
+</tr>
+<tr>
+<td>18</td>
+<td>左</td>
+<td><code>,</code></td>
+<td>逗号</td>
+<td><code>expr, expr</code></td>
+</tr>
+</tbody>
+</table></div>
 
 
            </div>

@@ -213,12 +213,28 @@
 <blockquote>
 <div><p>Tips：为了支持使用宽字符的语言，标准库定义了一组类型和对象来操纵<code class="docutils literal notranslate"><span class="pre">wchar_t</span></code>类型的数据，例如wcin、wcout和wcerr分别对应cin、cout和cerr的宽字符版对象。</p>
 </div></blockquote>
-<p>| 头文件   | 类型                                                         |
-| ——– | ———————————————————— |
-| iostream | istream和wistream：从流读取数据<br>ostream和wostream：向流写入数据<br>iostream和wiostream：读写流 |
-| fstream  | ifstream和wifstream：从文件读取数据<br>ofstream和wofstream：向文件写入数据<br>fstream和wfstream：读写文件 |
-| sstream  | istringstream和wistringstream：从string读取数据<br/>ostringstream和wostringstream：向string写入数据<br/>stringstream和wstringstream：读写string |</p>
-</div>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>头文件</th>
+<th>类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>iostream</td>
+<td>istream和wistream：从流读取数据<br>ostream和wostream：向流写入数据<br>iostream和wiostream：读写流</td>
+</tr>
+<tr>
+<td>fstream</td>
+<td>ifstream和wifstream：从文件读取数据<br>ofstream和wofstream：向文件写入数据<br>fstream和wfstream：读写文件</td>
+</tr>
+<tr>
+<td>sstream</td>
+<td>istringstream和wistringstream：从string读取数据<br/>ostringstream和wostringstream：向string写入数据<br/>stringstream和wstringstream：读写string</td>
+</tr>
+</tbody>
+</table></div>
 <div class="section" id="id2">
 <h2>IO类<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <div class="section" id="id3">
@@ -238,20 +254,60 @@
 <div class="section" id="id5">
 <h3>3. IO类的条件状态<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
 <p>IO操作一个与生俱来的问题就是可能发生错误，下面列举出了IO类所定义的一些函数和标志，用于帮助我们访问和操纵流的条件状态：</p>
-<p>| 条件状态            | 含义                                                       |
-| ——————- | ———————————————————- |
-| <code class="docutils literal notranslate"><span class="pre">strm::badbit</span></code>      | 流已崩溃                                                   |
-| <code class="docutils literal notranslate"><span class="pre">strm::failbit</span></code>     | IO操作失败                                                 |
-| <code class="docutils literal notranslate"><span class="pre">strm::eofbit</span></code>      | 流到达了文件结束                                           |
-| <code class="docutils literal notranslate"><span class="pre">strm::goodbit</span></code>     | 流未处于错误状态，此值保证为0                              |
-| <code class="docutils literal notranslate"><span class="pre">s.eof()</span></code>           | 若s的eofbit置位，则返回true                                |
-| <code class="docutils literal notranslate"><span class="pre">s.bad()</span></code>           | 若s的failbit或者badbit置位，则返回true                     |
-| <code class="docutils literal notranslate"><span class="pre">s.good()</span></code>          | 若s处于有效状态，则返回true                                |
-| <code class="docutils literal notranslate"><span class="pre">s.clear()</span></code>         | 将流s中所有条件状态复位，将流状态设置为有效，返回void      |
-| <code class="docutils literal notranslate"><span class="pre">s.clear(flags)</span></code>    | 根据给定的flags标志位，将流s中对应条件状态位复位，返回void |
-| <code class="docutils literal notranslate"><span class="pre">s.setstate(flags)</span></code> | 根据给定的flags标志位，将流s中对应条件状态位置位，返回void |
-| <code class="docutils literal notranslate"><span class="pre">s.rdstate()</span></code>       | 返回流s的当前条件状态                                      |</p>
-<p>举个IO错误的例子：</p>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>条件状态</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>strm::badbit</code></td>
+<td>流已崩溃</td>
+</tr>
+<tr>
+<td><code>strm::failbit</code></td>
+<td>IO操作失败</td>
+</tr>
+<tr>
+<td><code>strm::eofbit</code></td>
+<td>流到达了文件结束</td>
+</tr>
+<tr>
+<td><code>strm::goodbit</code></td>
+<td>流未处于错误状态，此值保证为0</td>
+</tr>
+<tr>
+<td><code>s.eof()</code></td>
+<td>若s的eofbit置位，则返回true</td>
+</tr>
+<tr>
+<td><code>s.bad()</code></td>
+<td>若s的failbit或者badbit置位，则返回true</td>
+</tr>
+<tr>
+<td><code>s.good()</code></td>
+<td>若s处于有效状态，则返回true</td>
+</tr>
+<tr>
+<td><code>s.clear()</code></td>
+<td>将流s中所有条件状态复位，将流状态设置为有效，返回void</td>
+</tr>
+<tr>
+<td><code>s.clear(flags)</code></td>
+<td>根据给定的flags标志位，将流s中对应条件状态位复位，返回void</td>
+</tr>
+<tr>
+<td><code>s.setstate(flags)</code></td>
+<td>根据给定的flags标志位，将流s中对应条件状态位置位，返回void</td>
+</tr>
+<tr>
+<td><code>s.rdstate()</code></td>
+<td>返回流s的当前条件状态</td>
+</tr>
+</tbody>
+</table><p>举个IO错误的例子：</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// 如果我们在标准输入上键入Boo, cin就会进入错误状态</span>
 <span class="c1">// 如果我们输入一个文件结束标识, cin也会进入错误状态</span>
 <span class="kt">int</span> <span class="n">ival</span><span class="p">;</span>
@@ -302,15 +358,40 @@
 <div class="section" id="id8">
 <h3>1. 操作<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
 <p>头文件fstream定义了三个类型来支持文件IO：ifstream从一个给定文件读取数据，ofstream向一个给定文件写入数据，以及fstream可以读写给定文件。除了继承自iostream类型的行为之外，fstream中定义的类型还增加了一些新的成员来管理与流相关联的文件。下面列举了这些操作，我们可以对fstream、ifstream和ofstream对象调用这些操作：</p>
-<p>| 操作                     | 含义                                                         |
-| ———————— | ———————————————————— |
-| <code class="docutils literal notranslate"><span class="pre">fstream</span> <span class="pre">fstrm</span></code>          | 创建一个未绑定的文件流                                       |
-| <code class="docutils literal notranslate"><span class="pre">fstream</span> <span class="pre">fstrm(s)</span></code>       | 创建一个fstream，并打开名为s的文件，默认文件模式mode依赖于fstream的类型 |
-| <code class="docutils literal notranslate"><span class="pre">fstream</span> <span class="pre">fstrm(s,</span> <span class="pre">mode)</span></code> | 与前一个构造函数类似，但按指定mode打开文件                   |
-| <code class="docutils literal notranslate"><span class="pre">fstrm.open(s)</span></code>          | 打开名为s的文件，并将文件与fstrm绑定，默认的文件mode依赖于fstrm的类型，返回void |
-| <code class="docutils literal notranslate"><span class="pre">fstrm.close()</span></code>          | 关闭与fstrm绑定的文件，返回void                              |
-| <code class="docutils literal notranslate"><span class="pre">fstrm.is_open()</span></code>        | 返回一个bool值，指出与fstrm关联的问价是否成功打开且尚未关闭  |</p>
-</div>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>操作</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>fstream fstrm</code></td>
+<td>创建一个未绑定的文件流</td>
+</tr>
+<tr>
+<td><code>fstream fstrm(s)</code></td>
+<td>创建一个fstream，并打开名为s的文件，默认文件模式mode依赖于fstream的类型</td>
+</tr>
+<tr>
+<td><code>fstream fstrm(s, mode)</code></td>
+<td>与前一个构造函数类似，但按指定mode打开文件</td>
+</tr>
+<tr>
+<td><code>fstrm.open(s)</code></td>
+<td>打开名为s的文件，并将文件与fstrm绑定，默认的文件mode依赖于fstrm的类型，返回void</td>
+</tr>
+<tr>
+<td><code>fstrm.close()</code></td>
+<td>关闭与fstrm绑定的文件，返回void</td>
+</tr>
+<tr>
+<td><code>fstrm.is_open()</code></td>
+<td>返回一个bool值，指出与fstrm关联的问价是否成功打开且尚未关闭</td>
+</tr>
+</tbody>
+</table></div>
 <div class="section" id="id9">
 <h3>2. 例子<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h3>
 <blockquote>
@@ -349,15 +430,40 @@
 <div class="section" id="id10">
 <h3>3. 文件模式<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h3>
 <p>每个流都有一个关联的文件模式，用来指出如何使用文件：</p>
-<p>| 文件模式 | 含义                         |
-| ——– | —————————- |
-| <code class="docutils literal notranslate"><span class="pre">in</span></code>     | 以读方式打开                 |
-| <code class="docutils literal notranslate"><span class="pre">out</span></code>    | 以写方式打开                 |
-| <code class="docutils literal notranslate"><span class="pre">app</span></code>    | 每次写操作前均定位到文件末尾 |
-| <code class="docutils literal notranslate"><span class="pre">ate</span></code>    | 打开文件后立即定位到文件末尾 |
-| <code class="docutils literal notranslate"><span class="pre">trunc</span></code>  | 截断文件                     |
-| <code class="docutils literal notranslate"><span class="pre">binary</span></code> | 以二进制方式进行IO           |</p>
-<p>注意：</p>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>文件模式</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>in</code></td>
+<td>以读方式打开</td>
+</tr>
+<tr>
+<td><code>out</code></td>
+<td>以写方式打开</td>
+</tr>
+<tr>
+<td><code>app</code></td>
+<td>每次写操作前均定位到文件末尾</td>
+</tr>
+<tr>
+<td><code>ate</code></td>
+<td>打开文件后立即定位到文件末尾</td>
+</tr>
+<tr>
+<td><code>trunc</code></td>
+<td>截断文件</td>
+</tr>
+<tr>
+<td><code>binary</code></td>
+<td>以二进制方式进行IO</td>
+</tr>
+</tbody>
+</table><p>注意：</p>
 <blockquote>
 <div><p>Tips：保留被ofstream打开的文件中已有数据的唯一方式是显式指定app或in模式。</p>
 </div></blockquote>
@@ -397,13 +503,32 @@
 <li><p>stringstream：既可从string读取数据也可以向string写入数据</p></li>
 </ul>
 <p>上述三种类型都分别继承自我们前面提到的iostream头文件中定义的类型，除了继承得到的操作，sstream中定义的类型还增加了一些成员来管理与流相关联的string。下面列举出来的操作可以对stringstream对象调用，但是不能对其他IO类型调用：</p>
-<p>| 操作              | 含义                                         |
-| —————– | ——————————————– |
-| <code class="docutils literal notranslate"><span class="pre">sstream</span> <span class="pre">strm</span></code>    | strm是一个未绑定的stringstream对象           |
-| <code class="docutils literal notranslate"><span class="pre">sstream</span> <span class="pre">strm(s)</span></code> | strm是一个sstream对象，保存strng s的一个拷贝 |
-| <code class="docutils literal notranslate"><span class="pre">strm.str()</span></code>      | 返回strm保存的string的拷贝                   |
-| <code class="docutils literal notranslate"><span class="pre">strm.str(s)</span></code>     | 将string s拷贝到strm中，返回void             |</p>
-</div>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>操作</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>sstream strm</code></td>
+<td>strm是一个未绑定的stringstream对象</td>
+</tr>
+<tr>
+<td><code>sstream strm(s)</code></td>
+<td>strm是一个sstream对象，保存strng s的一个拷贝</td>
+</tr>
+<tr>
+<td><code>strm.str()</code></td>
+<td>返回strm保存的string的拷贝</td>
+</tr>
+<tr>
+<td><code>strm.str(s)</code></td>
+<td>将string s拷贝到strm中，返回void</td>
+</tr>
+</tbody>
+</table></div>
 <div class="section" id="istringstream">
 <h3>2. 使用istringstream<a class="headerlink" href="#istringstream" title="永久链接至标题">¶</a></h3>
 <blockquote>
