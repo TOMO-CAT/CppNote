@@ -1,0 +1,62 @@
+# 6.8 标准库类型：tuple
+
+## 简介
+
+`tuple`是类似`pair`的模板，每个`pair`的成员类型都不相同，但是每个`pair`恰好有两个成员。我们希望将一些数据组合成单一对象，但又不想麻烦地定义一个新数据结构来表示这些数据，这时候就可以用到`tuple`。
+
+> Tips：我们可以将`tuple`当做一个”快速而随意”的数据结构。
+
+## 操作
+
+它支持的操作包括：
+
+| 操作                                         | 含义                                                         |
+| -------------------------------------------- | ------------------------------------------------------------ |
+| `tuple<T1, T2, ..., Tn> t;`                  | 成员素为`n`，第`i`个成员为`Ti`，所有成员进行值初始化         |
+| `tuple<T1, T2, ..., Tn> t(v1, v2, ..., vn);` | 每个成员用对应的初始值`vi`进行初始化，此构造函数是`explicit`的 |
+| `make_tuple(v1, v2, ..., vn)`                | 返回一个用给定初始值初始化的`tuple`，`tuple`的类型从初始值的类型推断 |
+| `t1 == t2`或`t1 != t2`                       | 两个`tuple`具有相同数量的成员且成员对应相等时则两个`tuple`相等 |
+| `t1 relop t2`                                | 两个`tuple`必须具有相同数量的成员，用`<`运算符比较`t1`和`t2`对应的成员 |
+| `get<i>(t)`                                  | 返回`t`的第`i`个数据成员的引用，如果`t`是一个左值则返回左值引用，否则返回一个右值引用 |
+| `tuple_size<tupleType>::value`               | 一个类模板，可以通过`tuple`类型来初始化，表示给定`tuple`类型中成员的数量 |
+| `tuple_element<i, tupleType>::type`          | 一个类模板，可以通过一个整型常量和一个`tuple`类型初始化，返回`tuple`类型中指定成员的类型 |
+
+## 定义和初始化tuple
+
+使用构造函数：
+
+```c++
+// 三个成员都值初始化为0
+std::tuple<size_t, size_t, size_t> threeD;
+// 为每个成员提供初始值
+std::tuple<std::string, std::vector<double>, int, std::list<int>> someValue("constants", {3.14, 2.718}, 42, {0, 1, 2, 3});
+
+// 注意tuple这个构造函数是explicit的, 因此我们必须使用直接初始化语法
+std::tuple<size_t, size_t, size_t> threeD = {1, 2, 3};    // 错误
+std::tuple<size_t, size_t, size_t> threeD(1, 2, 3);       // 正确
+std::tuple<size_t, size_t, size_t> threeD{1, 2, 3};       // 正确: 列表初始化
+```
+
+也可以使用`make_tuple`：
+
+```c++
+auto item = std::make_tuple("0-999-78345-X", 3, 20.00);
+```
+
+## 访问tuple的成员
+
+使用`get<i>(t)`即可返回`tuple`第`i`个成员的引用，如果我们不知道`tuple`准备的类型细节，可以使用两个辅助类模板来查询`tuple`成员的数量和类型：
+
+```c++
+// trans类型是item的类型(某种tuple)
+typedef decltype(item) trans;          
+// 返回trans中成员数量: 返回3
+size_t sz = tuple_size<trans>::value;
+// cnt的类型与item中第二个成员相同: int
+tuple_element<1, trans>::type cnt = get<1>(item);
+```
+
+## 使用tuple返回多个值
+
+`tuple`的一个常见用途就是从一个函数返回多个相关的值，如果函数返回两个值我们可以使用`pair`，返回三个值及以上我们就可以使用`tuple`了。
+

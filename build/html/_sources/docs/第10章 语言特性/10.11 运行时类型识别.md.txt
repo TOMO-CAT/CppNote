@@ -1,0 +1,161 @@
+# 10.11 运行时类型识别
+
+## 简介
+
+运行时类型识别`run-time type identification, RTTI`的功能由两个运算符实现：
+
+* `typeid`运算符：用于返回表达式的类型
+* `dynamic_cast`运算符：用于将基类的指针或引用安全地转换成派生类的指针或引用
+
+当我们将两个运算符用于某种类型的指针或者引用时，并且该类型含有虚函数时，运算符将使用指针或者引用所绑定对象的动态类型。
+
+这两个运算符特别适用于如下情况：当我们想使用基类对象的指针或者引用执行某个派生类操作并且该操作不是虚函数。一般来说，只要有可能我们应该尽量使用虚函数，当操作被定义成虚函数时，编译器将根据对象的动态类型自动地选择正确的函数版本。然而并非任何时候都能定义一个虚函数。假设我们无法使用虚函数，那么可以使用一个`RTTI`运算符。另一方面，与虚成员函数相比，使用RTTI运算符蕴涵着更多潜在的风险：程序员必须清楚地知道转换的目标类型并且必须检查类型转换是否被成功执行。
+
+> Tips：使用RTTI必须加倍小心，在可能的情况下，最好定义虚函数而非直接接管类型管理的重任。
+
+## dynamic_cast运算符
+
+dynamic_cast运算符的使用形式如下所示：
+
+```c++
+dynamic_cast<type*>(e)   // e必须是一个有效的指针
+dynamic_cast<type&>(e)   // e必须是一个左值
+dynamic_cast<type&&>(e)  // e不能是左值
+```
+
+在上面的所有形式中，`e`的类型必须符合以下三个条件的任意一个：
+
+* `e`的类型是目标`type`的公有派生类
+* `e`的类型是目标`type`的公有基类
+* `e`的类型是目标`type`本身
+
+如果符合则转换可以成功，否则转换失败。如果一条`dynamic_cast`的转换目标是指针类型并且失败了，则结果为0；如果转换目标是引用类型并且失败了，则抛出一个`bad_cast`异常。
+
+#### 1. 指针类型的dynamic_cast
+
+假定`Base`类至少含有一个虚函数，`Derived`是`Base`的公有派生类。如果有一个指向`Base`的指针`bp`，则我们在运行时将它转换成指向`Derived`的指针：
+
+```c++
+if (Derived *dp = dynamic_cast<Derived*>(bp)) {
+    // 使用dp指向的Derived对象
+} else {  // bp指向一个Base对象
+    // 使用bp指向的Base对象
+}
+```
+
+#### 2. 引用类型的dynamic_cast
+
+```c++
+void f(const Base &b) {
+    try {
+        const Derived &d = dynamic_cast<const Derived&>(b);
+        // 使用b引用的Derived对象
+    } catch (bad_cast) {
+        // 处理类型转换失败的情况
+    }
+}
+```
+
+## typeid运算符
+
+`typeid`表达式的形式是`typeid(e)`，其中`e`可以是任意表达式或类型的名字。`typeid`操作的结果是一个常量对象的引用，该对象的类型是标准库类型`type_info`或者`type_info`的公有派生类型。
+
+和往常一样，顶层const被忽略，如果表达式是一个引用，则`typeid`返回该引用所引对象的类型。不过当`typeid`作用于数组或者函数时，并不会执行向指针的标准类型转换。比如我们对数组`a`执行`typeid(a)`。所得的结果是数组类型而非指针类型。
+
+> Tips：当运算对象不属于类类型或者是一个不包含任何虚函数的类时，`typeid`运算符指示的是运算对象的静态类型。而当运算对象是定义了至少一个虚函数的类的左值时，`typeid`的结果直到运行时才会求得。
+
+通常情况下我们使用typeid比较两条表达式的类型是否相同，或者比较一条表达式的类型是否与指定类型相同：
+
+```c++
+// 两个指针都指向Derived对象
+Derived *dp = new Derived;
+Base *bp = dp;
+
+// 在运行时比较两个对象的类型
+if (typeid(*bp) == typeid(*dp)) {
+	// bp和dp指向通医药类型对象 
+}
+// 检查类型是否是某种指定类型
+if (typeid(*bp) == typeid(Derived)) {
+	// bp实际指向Derived类型
+}
+```
+
+注意`typeid`应该作用于对象，因此我们使用`*bp`而不是`bp`：
+
+```c++
+// 下面检查永远失败: bp类型是指向Base的指针
+if (typeid(bp) == typeid(Derived)) {
+	// 此处代码永远不会执行
+}
+```
+
+> Tips：当`typeid`作用于指针时(而非指针指向的对象)，返回的结果是该指针的静态编译时类型。
+
+## 使用RTTI
+
+在某些情况下`RTTI`非常有用，比如我们想为具有继承关系的类实现相等运算符时。对于两个对象来说，如果他们的类型相同并且对应的数据成员取值相同，则我们说这两个类是相等的。
+
+我们定义两个示例类：
+
+```c++
+class Base {
+    friend bool operator==(const Base&, const Base&);
+ public:
+    // Base的接口成员
+ protected:
+    virtual bool equal(const Base&) const;
+    // Base的数据成员和其他用于实现的成员
+};
+
+class Derived: public Base {
+ public:	
+    // Derived的其他接口成员
+ protected:
+    bool equal(const Base&) const;
+    // Derived的数据成员和其他用于实现的成员
+};
+
+// 虚equal函数: 继承体系中的每个类都必须定义自己的equal函数, 派生类的所有函数要做的第一件事情就是将实参的类型转换为派生类类型
+bool Derived::equal(const Base &rhs) const {
+    // 我们清楚两个类型是相等的, 所以转换不会抛出异常
+    auto r = dynamic_cast<const Derived&>(rhs);
+    // 执行比较两个Derived对象的操作并返回结果
+}
+
+// 基类equal函数
+bool Base::equal(const Base &rhs) const {
+	// 执行比较Base对象的操作    
+}
+```
+
+类型敏感的相等运算符：
+
+```c++
+bool operator==(const Base &lhs, const Base &rhs) {
+    // 如果typeid不相同,则返回fallse; 否则虚调用equal
+    // 当运算对象是Base的对象时调用Base::equal, 否则调用Derived::equal
+    return typeid(lhs) == typeid(rhs) && lhs.equal(rhs);
+}
+```
+
+## type_info类
+
+`type_info`的操作包括：
+
+| 操作            | 含义                                                         |
+| --------------- | ------------------------------------------------------------ |
+| `t1 == t2`      | 如果`type_info`对象`t1`和`t2`表示同一种类型，则返回`true`    |
+| `t1 !=  t2`     | 如果`type_info`对象`t1`和`t2`表示不同的类型，则返回`true`    |
+| `t.name()`      | 返回一个C风格字符串，表示类型名字的可打印形式                |
+| `t1.before(t2)` | 返回一个`bool`值，表示`t1`是否位于`t2`之前，顺序关系依赖于编译器 |
+
+
+
+* t1 ==  t2：如果type_info对象t1和t2表示同一种类型，则返回true
+* t1 !=  t2：如果type_info对象t1和t2表示不同的类型，则返回true
+* t.name()：返回一个C风格字符串，表示类型名字的可打印形式
+* t1.before(t2)：返回一个bool值，表示t1是否位于t2之前，顺序关系依赖于编译器
+
+`type_info`类没有默认构造函数，而且它的拷贝和移动构造函数以及赋值运算符都被定义为删除的。因此，我们无法定义或者拷贝`type_info`类型的对象，也不能为`type_info`对象赋值。创建`type_info`对象的唯一途径就是使用`typeid`运算符。
+

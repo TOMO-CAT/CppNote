@@ -1,0 +1,296 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>11.1 标准库bind函数 &mdash; C++语法笔记 v1.0 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="11.12 Lambda表达式" href="11.2%20Lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F.html" />
+    <link rel="prev" title="C++11关键字：override和final" href="C%2B%2B11%E5%85%B3%E9%94%AE%E5%AD%97/override%E5%92%8Cfinal.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> C++语法笔记
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC1%E7%AB%A0%20%E5%8F%98%E9%87%8F%E4%B8%8E%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B/index.html">第1章 变量与基本类型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC2%E7%AB%A0%20%E8%AF%AD%E5%8F%A5/index.html">第2章 语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC3%E7%AB%A0%20%E5%87%BD%E6%95%B0/index.html">第3章 函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC4%E7%AB%A0%20%E8%BF%90%E7%AE%97%E7%AC%A6/index.html">第4章 运算符</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC5%E7%AB%A0%20%E7%B1%BB/index.html">第5章类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC6%E7%AB%A0%20%E6%A0%87%E5%87%86%E5%BA%93%E7%B1%BB%E5%9E%8B/index.html">第6章 标准库类型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC7%E7%AB%A0%20%E6%A8%A1%E6%9D%BF/index.html">第7章 模板</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC8%E7%AB%A0%20%E5%85%B3%E9%94%AE%E5%AD%97%E6%A6%82%E5%BF%B5/index.html">第8章 关键字概念</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC9%E7%AB%A0%20%E7%AE%97%E6%B3%95/index.html">第9章 算法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC10%E7%AB%A0%20%E8%AF%AD%E8%A8%80%E7%89%B9%E6%80%A7/index.html">第10章 语法特性</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">第11章 C++11新标准</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="C%2B%2B11%E5%85%B3%E9%94%AE%E5%AD%97/index.html">C++11关键字</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">11.1 标准库bind函数</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">简介</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">bind的参数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">绑定引用参数</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="11.2%20Lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F.html">11.12 Lambda表达式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11.3%20%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88.html">11.3 智能指针</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11.4%20%E5%8F%B3%E5%80%BC%E5%BC%95%E7%94%A8.html">11.4 右值引用</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11.5%20%E5%88%9D%E5%A7%8B%E5%8C%96%E5%88%97%E8%A1%A8.html">11.5 初始化列表</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11.6%20%E6%A0%87%E5%87%86%E5%BA%93function%E7%B1%BB%E5%9E%8B.html">11.6 标准库function类型</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../README.html">README</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">C++语法笔记</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">第11章 C++11新标准</a> &raquo;</li>
+        
+      <li>11.1 标准库bind函数</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/docs/第11章 C++11新标准/11.1 标准库bind函数.md.txt" rel="nofollow"> 查看页面源码</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="bind">
+<h1>11.1 标准库bind函数<a class="headerlink" href="#bind" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id1">
+<h2>简介<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p>标准库<code class="docutils literal notranslate"><span class="pre">bind</span></code>函数定义在头文件<code class="docutils literal notranslate"><span class="pre">functional</span></code>中，我们可以将<code class="docutils literal notranslate"><span class="pre">bind</span></code>看做是一个通用的函数适配器：它接受一个可调用对象，生成一个新的可调用对象来“适应”原对象的参数列表：</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm"> * 功能: 当我们调用newCallable时, 相当于调用callbale, 并传递给它arg_list指定的参数</span>
+<span class="cm"> *</span>
+<span class="cm"> * newCallable: 新生成的可调用对象</span>
+<span class="cm"> * callable: 原有的可调用对象</span>
+<span class="cm"> * arg_list: 逗号分隔的参数列表, _n表示newCallable中第n个参数</span>
+<span class="cm"> */</span>
+<span class="k">auto</span> <span class="n">newCallable</span> <span class="o">=</span> <span class="n">bind</span><span class="p">(</span><span class="n">callable</span><span class="p">,</span> <span class="n">arg_list</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>bind的参数<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>假设<code class="docutils literal notranslate"><span class="pre">f</span></code>是一个有<code class="docutils literal notranslate"><span class="pre">5</span></code>个参数的可调用对象，<code class="docutils literal notranslate"><span class="pre">g</span></code>是一个有<code class="docutils literal notranslate"><span class="pre">2</span></code>的参数的可调用对象，我们构造下述<code class="docutils literal notranslate"><span class="pre">bind</span></code>的调用：</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">using</span> <span class="k">namespace</span> <span class="nn">std</span><span class="o">::</span><span class="nn">placeholders</span><span class="p">;</span>
+<span class="k">auto</span> <span class="n">g</span> <span class="o">=</span> <span class="n">bind</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">_2</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">_1</span><span class="p">);</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>新生成的<code class="docutils literal notranslate"><span class="pre">g</span></code>可调用对象有两个参数，分别用占位符<code class="docutils literal notranslate"><span class="pre">_2</span></code>和<code class="docutils literal notranslate"><span class="pre">_1</span></code>表示</p></li>
+<li><p>新的可调用对象<code class="docutils literal notranslate"><span class="pre">g</span></code>将它自己的参数作为第三个和第五个参数传递给<code class="docutils literal notranslate"><span class="pre">f</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">f</span></code>的第一个、第二个和第四个参数分别被绑定到给定的值<code class="docutils literal notranslate"><span class="pre">a</span></code>、<code class="docutils literal notranslate"><span class="pre">b</span></code>和<code class="docutils literal notranslate"><span class="pre">c</span></code>上</p></li>
+</ul>
+<p>总结一下：<code class="docutils literal notranslate"><span class="pre">bind</span></code>调用会将<code class="docutils literal notranslate"><span class="pre">g(_1,</span> <span class="pre">_2)</span></code>映射成<code class="docutils literal notranslate"><span class="pre">f(a,</span> <span class="pre">b,</span> <span class="pre">_2,</span> <span class="pre">c,</span> <span class="pre">_1)</span></code>，通过占位符我们也可以<strong>重排参数顺序</strong>。</p>
+</div>
+<div class="section" id="id3">
+<h2>绑定引用参数<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>默认情况下<code class="docutils literal notranslate"><span class="pre">bind</span></code>那些不是占位符的参数被拷贝到<code class="docutils literal notranslate"><span class="pre">bind</span></code>返回的可调用对象中。与<code class="docutils literal notranslate"><span class="pre">lambda</span></code>表达式类似，有时候我们希望以引用的方式传递绑定的参数，或是绑定的参数无法拷贝，比如构造一个以引用方式捕获<code class="docutils literal notranslate"><span class="pre">ostream</span></code>的<code class="docutils literal notranslate"><span class="pre">lambda</span></code>：</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// os是一个局部变量, 引用一个输出流</span>
+<span class="c1">// c是一个局部变量, 类型为char</span>
+<span class="n">for_each</span><span class="p">(</span><span class="n">words</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">words</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> 
+    <span class="p">[</span><span class="o">&amp;</span><span class="n">os</span><span class="p">,</span> <span class="n">c</span><span class="p">](</span><span class="k">const</span> <span class="n">string</span> <span class="o">&amp;</span><span class="n">s</span><span class="p">)</span> <span class="p">{</span> <span class="n">os</span> <span class="o">&lt;&lt;</span> <span class="n">s</span> <span class="o">&lt;&lt;</span> <span class="n">c</span><span class="p">;</span> <span class="p">});</span>
+</pre></div>
+</div>
+<p>我们可以编写一个函数完成这个功能：</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">ostream</span> <span class="o">&amp;</span><span class="nf">print</span><span class="p">(</span><span class="n">ostream</span> <span class="o">&amp;</span><span class="n">os</span><span class="p">,</span> <span class="k">const</span> <span class="n">string</span> <span class="o">&amp;</span><span class="n">s</span><span class="p">,</span> <span class="kt">char</span> <span class="n">c</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">os</span> <span class="o">&lt;&lt;</span> <span class="n">s</span> <span class="o">&lt;&lt;</span> <span class="n">c</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>不过需要注意<code class="docutils literal notranslate"><span class="pre">bind</span></code>不能拷贝一个<code class="docutils literal notranslate"><span class="pre">ostream</span></code>，当我们希望传递给<code class="docutils literal notranslate"><span class="pre">bind</span></code>一个对象而又不拷贝它，就必须用标准库函数<code class="docutils literal notranslate"><span class="pre">ref</span></code>：</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// 错误用法：os无法被拷贝</span>
+<span class="n">for_each</span><span class="p">(</span><span class="n">words</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">words</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">bind</span><span class="p">(</span><span class="n">print</span><span class="p">,</span> <span class="n">os</span><span class="p">,</span> <span class="n">_1</span><span class="p">,</span> <span class="sc">&#39; &#39;</span><span class="p">));</span>
+
+<span class="c1">// 正确用法：使用ref</span>
+<span class="n">for_each</span><span class="p">(</span><span class="n">words</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">words</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">bind</span><span class="p">(</span><span class="n">print</span><span class="p">,</span> <span class="n">ref</span><span class="p">(</span><span class="n">os</span><span class="p">),</span> <span class="n">_1</span><span class="p">,</span> <span class="sc">&#39; &#39;</span><span class="p">));</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>Tips：标准库中还有一个<code class="docutils literal notranslate"><span class="pre">cref</span></code>函数可以生成一个保存<code class="docutils literal notranslate"><span class="pre">const</span></code>引用的类。</p>
+</div></blockquote>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="11.2%20Lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F.html" class="btn btn-neutral float-right" title="11.12 Lambda表达式" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="C%2B%2B11%E5%85%B3%E9%94%AE%E5%AD%97/override%E5%92%8Cfinal.html" class="btn btn-neutral float-left" title="C++11关键字：override和final" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; 版权所有 2021, TOMOCAT.
+
+    </p>
+  </div>
+    
+    
+    
+    利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

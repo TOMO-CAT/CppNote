@@ -1,0 +1,551 @@
+# 11.3 智能指针
+
+## C++内存
+
+我们的C++程序主要包含如下三种内存：
+
+* 静态内存：保存局部`static`对象、类`static`数据成员以及定义在任何函数之外的变量
+* 栈内存：保存定义在函数内的非`static`对象
+* 自由空间/堆：存储动态分配的对象，即在程序运行时分配的对象
+
+## 从动态内存到智能指针
+
+#### 1. 动态内存管理
+
+在C++中，动态内存的管理是通过一对运算符来完成的：
+
+* `new`：在动态内存中为对象分配空间并返回一个指向该对象的指针
+* `delete`：接受一个动态对象的指针，销毁该对象，并释放与之关联的内存
+
+#### 2. 手动管理动态内存的问题
+
+由于确保在正确的时间释放内存是极其困难的，动态内存的使用很容易出问题：
+
+* 忘记释放内存时会产生内存泄漏
+* 在尚有指针引用内存的情况下就释放内存，会产生引用非法内存的指针
+
+#### 3. 智能指针
+
+> Tips：下述三种智能指针都定义在`memory`头文件中。
+
+为了更容易且更安全地使用动态内存，新的标准库提供了智能指针类型来管理动态对象：
+
+* `shared_ptr`：允许多个指针指向同个对象
+* `unique_ptr`：“独占”所指向的对象
+* `weak_ptr`：弱引用，指向`shared_ptr`所管理的对象
+
+## C++类使用动态生存期资源的原因
+
+在C++类外使用动态生存期资源可能是为了手动管理对象的生命周期或者是因为栈空间不足，而在C++类中使用动态生存期资源主要出于如下三种原因：
+
+* 程序不知道自己需要多少对象
+* 程序不知道所需对象的准确类型
+* 程序需要在多个对象间共享数据
+
+#### 1. 程序不知道自己需要多少对象
+
+某些类需要在运行时分配可变大小的内存空间，这些类通常可以（如果确实可以的话，一般应该）使用标准库容器来保存它们的数据。容器类就是出于第一种原因而使用动态内存的典型例子。
+
+#### 2. 程序不知道所需对象的准确类型
+
+当我们希望在容器中存放具有继承关系的对象时，我们实际上存放的通常是基类的指针（更好的选择是智能指针），这些指针所指对象的动态类型可能是基类类型，也可能是派生类类型：
+
+```c++
+// 我们可以将一个派生类的(智能)指针转换为基类的(智能)指针, make_shared<Bulk_quote>返回shared_ptr<Bulk_quote>, 但是调用push_back时该对象被转换为shared_ptr<Quote>
+vector<shared_ptr<Quote>> basket;
+basket.push_back(make_shared<Quote>("0-201-82470-1", 50));
+basket.push_back(make_shared<Bulk_quote>("0-201-54848-8", 50, 10, .25));、
+
+// 调用Quote定义的版本; 打印562.5, 即在15*50中扣掉折扣金额
+cout << basket.back()->net_price(15) << endl;
+```
+
+
+因为`basket`存放着`shared_ptr`，所以我们必须解引用`basket.back()`的返回值以获得运行`net_price`的对象，实际上调用的`net_price`版本取决于指针所指对象的动态类型。
+
+#### 3. 程序需要在多个对象间共享数据
+
+到目前为止，我们使用的类分配的资源都与对应对象生存期一致。例如每个`vector`“拥有”自己的元素，当我们拷贝一个“vector”时，原`vector`和副本`vector`中的元素是相互分离的。但是某些类分配的资源具有与原对象相独立的生存期。
+
+例如假定我们希望定义一个名为`StrBlob`的类，保存一组`string`元素。与容器不同，我们希望`Blob`对象的不同拷贝之间共享相同的元素。即当我们拷贝一个`StrBlob`时，原`StrBlob`对象及其拷贝应该引用相同的底层元素。
+
+```c++
+#include <iostream>
+#include <string>
+#include <vector>
+#include <memory>
+#include <stdexcept>
+
+using std::vector;
+
+// StrBlob: 管理string的类, StrBlob对象的不同拷贝之间共享相同的底层数据
+class StrBlob {
+ public:
+    typedef std::vector<std::string>::size_type size_type;
+
+    // 默认构造函数
+    StrBlob() : data(std::make_shared<std::vector<std::string>>()) { }
+    // 接收初始化列表的构造函数
+    StrBlob(std::initializer_list<std::string> il) :
+        data(std::make_shared<std::vector<std::string>>(il)) { }
+
+    // 返回data的大小
+    size_type size() const { return data->size(); }
+    // 返回data是否为空
+    bool empty() const { return data->empty(); }
+    // 添加元素
+    void push_back(const std::string &t) { data->push_back(t); }
+    // 删除元素
+    void pop_back();
+    // 元素访问
+    std::string& front();
+    std::string& back();
+
+ private:
+    // StrBlob对象的底层数据
+    std::shared_ptr<std::vector<std::string>> data;
+    // 如果data[i]不合法, 则抛出异常
+    void check(size_type i, const std::string &msg) const {
+        if (i >= data->size())
+            throw std::out_of_range(msg);
+    }
+};
+
+std::string& StrBlob::front() {
+    check(0, "front on empty StrBlob");
+    return data->front();
+}
+
+std::string& StrBlob::back() {
+    check(0, "back on empty StrBlob");
+    return data->back();
+}
+
+void StrBlob::pop_back() {
+    check(0, "pop_back on empty StrBlob");
+    data->pop_back();
+}
+
+int main(void) {
+    // 空StrBlob
+    StrBlob b1;
+    // 此时b1管理的底层data为空
+    std::cout << "b1.size(): " << b1.size() << std::endl;
+
+    {   // 新作用域
+        StrBlob b2 = {"tomo", "cat", "tomocat"};
+        b1 = b2;
+    }   // 离开作用域, b2被销毁, 但b1指向最初由b2创建的元素
+    std::cout << "b1.size(): " << b1.size() << std::endl;
+}
+
+// 输出:
+b1.size(): 0
+b1.size(): 3
+```
+
+## C++类管理动态生存期资源的表现：行为像值或者指针
+
+通常管理类外资源的类需要通过析构函数来释放对象所分配的资源，根据“三/五原则”它也必须自定义拷贝构造函数和拷贝赋值运算符（`delete`拷贝构造函数和拷贝赋值运算符也算自定义的一种）。
+
+对于管理类外资源的类，根据如何拷贝指针成员我们可以大致分为如下三类：
+
+* 既不像值也不像指针的类：`IO`类型和`unique_ptr`这种不允许拷贝和赋值的类
+* 行为像值的类：标准库容器和`string`类
+* 行为像指针的类：`shared_ptr`
+
+#### 1. 行为像值的类
+
+为了提供类值的行为，对于类管理的资源，每个对象都应该有自己的一份拷贝。以管理`string`资源的类`HasPtr`的类而言：
+
+* 拷贝构造函数：完成`string`的拷贝而不是拷贝指针
+* 析构函数：释放`string`对象
+* 拷贝赋值运算符：释放对象当前的`string`，并从右侧运算对象拷贝`string`
+
+```c++
+class HasPtr {
+ public:
+    // 构造函数: 分配string动态内存
+    explicit HasPtr(const std::string &s) : ps_(new std::string(s)) { }
+    // 拷贝构造函数
+    HasPtr(const HasPtr &p) : ps_(new std::string(*p.ps_)) { }
+    // 拷贝赋值运算符
+    HasPtr& operator=(const HasPtr &);
+    // 析构函数: 释放构造函数中分配的动态内存
+    ~HasPtr() { delete ps_; }
+    // 类自定义的swap成员函数
+    friend void swap(HasPtr&, HasPtr&);
+
+ private:
+    std::string *ps_;
+};
+
+// 拷贝赋值运算符:
+// 1) 组合了析构函数和拷贝构造函数: 先销毁左侧运算对象资源, 然后从右侧运算对象拷贝数据
+// 2) 自赋值安全: 如果将一个对象赋予它自身, 赋值运算符必须能正确工作
+// 3) 异常安全: 当异常发生时能将左侧运算对象置于一个有意义的状态
+HasPtr& HasPtr::operator=(const HasPtr &rhs) {
+    auto newp = new std::string(*rhs.ps_);  // 拷贝底层string
+    delete ps_;                             // 释放本对象的旧内存
+    ps_ = newp;                             // 从右侧运算对象拷贝数据到本对象
+    return *this;
+}
+```
+
+#### 2. 行为像指针的类
+
+令一个类展现类似指针的行为的最好方法是使用`shared_ptr`来管理类中的资源，拷贝（或赋值）一个`shared_ptr`会拷贝（或赋值）`shared_ptr`所指向的指针。`shared_ptr`类会自己记录有多少用户共享它所指向的对象，当没有用户使用对象时，`shared_ptr`类负责释放资源。
+
+#### 3. swap交换操作
+
+> Tips：管理动态资源的类通常除了自定义拷贝控制成员外，还需要定义一个名为`swap`的函数。如果一个类定义了自己的`swap`成员函数，那么算法将使用类自定义版本，否则算法将使用标准库定义的`swap`。
+
+```c++
+// 交换指针而非string数据, 提高性能
+inline void swap(HasPtr &lhs, HasPtr &rhs) {
+    std::swap(lhs.ps_, rhs.ps_);
+}
+```
+
+定义了`swap`的类通常用`swap`来定义它们的“拷贝并交换赋值运算符”，这些运算符使用了一种名为拷贝并交换`copy and swap`的技术，将左侧运算对象与右侧运算对象的一个副本进行交换：
+
+> Tips：
+>
+> * 这种技术天生是自赋值安全且异常安全的，一方面它通过在改变左侧运算对象之前拷贝右侧运算对象保证了自赋值的安全性，另一方面代码唯一可能抛出异常的是拷贝构造函数中的`new`表达式，如果真的抛出异常也是在我们改变左侧运算对象之前发生
+> * 由于接受的参数并不是一个引用，因此该参数需要进行拷贝初始化，既有可能调用拷贝构造函数（左值）也有可能调用移动构造函数（右值）
+> * 当类定义了移动构造函数时，拷贝并交换赋值运算符也会为该类实现一个移动赋值运算符
+
+```c++
+// 拷贝并交换赋值运算符既是移动赋值运算符也是拷贝赋值运算符:
+// 1) 参数并不是一个引用: 调用拷贝/移动构造函数以值传递传入一个右侧运算对象的副本
+// 2) 交换左侧运算对象与右侧运算对象的副本
+HasPtr& HasPtr::operator=(HasPtr rhs) {
+    swap(*this, rhs);  // rhs现在指向本对象曾经使用过的内存
+    return *this;      // rhs销毁, 从而delete了rhs中的指针
+}
+```
+
+## shared_ptr类
+
+#### 1. 简介
+
+类似于`vector`，`shared_ptr`也是模板，因此当我们创建一个智能指针时必须提供额外的信息——指针可以指向的类型。
+
+```c++
+// 默认初始化的智能指针中保存一个空指针
+shared_ptr<string> p1;     // shared_ptr, 可以指向string
+shared_ptr<list<int>> p2;  // shared_ptr, 可以指向int的list
+
+// 解引用一个智能指针返回它指向的对象
+// 如果p1不为空, 检查它是否指向一个空string
+if (p1 && p1->empty())
+	*p1 = "hi";  // 如果p1指向一个空string, 解引用p1并赋予一个新值
+```
+
+#### 2. 提供的操作
+
+`shared_ptr`和`unique_ptr`都支持的操作：
+
+| 操作                                     | 含义                                                         | 备注 |
+| ---------------------------------------- | ------------------------------------------------------------ | ---- |
+| `shared_ptr<T> sp`<br>`unique_ptr<T> up` | 空智能指针，可以指向类型为`T`的对象                          |      |
+| `p`                                      | 将`p`作为一个条件判断，若`p`指向一个对象则为true             |      |
+| `*p`                                     | 解引用`p`，获得它指向的对象                                  |      |
+| `p->mem`                                 | 等价于`(*p).mem`                                             |      |
+| `p.get()`                                | 返回`p`中保存的指针，要小心使用，如果智能指针释放了其对象，返回的指针所指向的对象也就消失了 |      |
+| `swap(p,q)`<br>`p.swap(q)`               | 交换`p`和`q`中的指针                                         |      |
+
+`shared_ptr`独有的操作：
+
+| 操作                                           | 含义                                                         | 备注                                                     |
+| ---------------------------------------------- | ------------------------------------------------------------ | -------------------------------------------------------- |
+| `make_shared<T>(args)`                         | 返回一个`shared_ptr`，指向一个动态分配的类型为`T`的对象，使用`args`初始化此对象 |                                                          |
+| `shared_ptr<T>p(q)`                            | `p`是`shared_ptr q`的拷贝：此操作会递增`q`中的计数器，`q`中的指针必须能转换为`T*` |                                                          |
+| `p = q`                                        | `p`和`q`都是`shared_ptr`，所保存的指针必须能相互转换。此操作会递减`p`的引用计数，递增`q`的引用计数；若`p`的引用计数变为0，则将其管理的原内存释放 |                                                          |
+| `p.unique()`                                   | 若`p.use_count()`为1则返回true                               |                                                          |
+| `p.use_count()`                                | 返回与`p`共享对象的智能指针数量；可能很慢，主要用于调试      |                                                          |
+|                                                |                                                              |                                                          |
+| `shared_ptr<T> p(q)`                           | `p`管理内置指针`q`，`q`必须指向`new`分配的内存               |                                                          |
+| `shared_ptr<T> p(u)`                           | `p`从`unique_ptr u`那里接管了`u`的所有权，并将`u`置为空      |                                                          |
+| `shared_ptr<T> p(q, d)`                        | `p`接管了内置指针`q`所指向对象的所有权，`q`必须能转换成`T*`类型，`p`将使用可调用对象`d`来代替`delete` |                                                          |
+| `shared_ptr<T> p(p2, d)`                       | `p`是`shared_ptr p2`的拷贝，唯一的区别是`p`将用可调用对象`d`来代替`delete` |                                                          |
+| `p.reset()`<br>`p.reset(q)`<br>`p.reset(q, d)` | 若传递了`q`，会令`p`指向`q`，否则会将`p`置为空，若还传递了参数`d`，将会调用`d`而不是`delete`来释放`q` | 若`p`是唯一指向其对象的`shared_ptr`，`reset`会释放此对象 |
+
+
+
+#### 3. make_shared函数
+
+最安全的分配和使用动态内存的方法是调用一个名为`make_shared`的标准库函数，此函数在动态内存中分配一个对象并初始化它，返回指向该对象的`shared_ptr`。
+
+
+```c++
+// p1指向一个值为42的int的shared_ptr
+shared_ptr<int> p1 = make_shared<int>(42);
+// p2指向一个值为"9999999999"的string
+shared_ptr<int> p2 = make_shared<string>(10, '9');
+// p3指向一个值初始化的int, 即值为0
+shared_ptr<int> p3 = make_shared<int>();
+```
+
+> 类似于顺序容器的`emplace`成员，`make_shared`用其参数来构造给定类型的对象。例如，调用`make_shared<string>`时传递的参数必须与`string`的某个构造函数相匹配，调用`make_shared<int>`时传递的参数必须能用来初始化一个`int`。如果我们不传递任何参数，那么就会进行值初始化。
+
+#### 4. shared_ptr的拷贝和赋值
+
+> 当进行拷贝或者赋值时，每个`shared_ptr`都会记录有多少个其他的`shared_ptr`指向相同的对象：
+>
+> ```c++
+> auto p = make_shared<int>(42);  // p指向的对象只有p一个引用者
+> auto q(p);                      // q是p的拷贝, p和q指向相同对象, 此对象有两个引用者
+> ```
+
+我们可以认为每个`shared_ptr`都有一个关联的计数器，通常称其为引用计数`reference count`。无论何时我们拷贝一个`shared_ptr`，计数器都会递增。
+
+计数器递增的场景包括：
+
+* 用一个`shared_ptr`初始化另一个`shared_ptr`
+* 将一个`shared_ptr`作为参数传递给一个函数
+* 作为函数的返回值
+
+计数器递减的场景包括：
+
+* 给`shared_ptr`赋予一个新值
+* `shared_ptr`被销毁（局部的`shared_ptr`离开作用域）
+
+> 一旦一个`shared_ptr`的计数器变为0，它就会自动释放自己管理的对象。
+
+```c++
+auto r = make_shared<int>(42);   // r指向的int只有一个引用者
+r = q;  // 给r赋值, 令它指向另一个地址
+        // 递增q指向对象的引用计数
+        // 递减r原来指向对象的引用计数
+        // r原来指向的对象已没有引用者, 会自动释放
+```
+
+#### 5. shared_ptr自动销毁管理的对象
+当指向对象的最后一个`shared_ptr`被销毁时，`shared_ptr`类会自动销毁此对象。它是通过另一个特殊的成员函数——析构函数`destructor`完成销毁工作的。
+> 就像构造函数控制初始化一样，析构函数控制此类型的对象销毁时做什么操作。
+
+析构函数一般用于释放对象所分配的资源。例如`string`的构造函数会分配内存来保存构成`string`的字符，`string`的析构函数就负责释放这些内存。`vector`的若干操作都会分配内存来保存元素，`vector`的析构函数就负责销毁这些元素，并释放它们占用的内存。
+
+> `shared_ptr`的析构函数会递减它所指向的对象的引用计数，如果引用计数变为0，`shared_ptr`的析构函数就会销毁对象，并释放它占用的内存。
+
+#### 6. 智能指针忘记释放内存的场景
+对于某个对象，由于在最后一个`shared_ptr`被销毁前内存都不会释放，保证`shared_ptr`在无用之后不再保留就非常重要了。`shared_ptr`在无用之后仍然保留的一种可能情况是，你将`shared_ptr`存放在一个容器中，随后重排了容器，从而不再需要某些元素，在这种情况下，你应该确保用`erase`删除那些不再需要的`shared_ptr`元素。
+
+#### 7. shared_ptr和new结合使用
+
+我们可以用`new`返回的指针来初始化只能指针：
+
+```c++
+// 接受指针参数的智能指针构造函数是explicit的, 我们无法将一个内置指针隐式地转换为一个智能指针
+shared_ptr<int> p1(new int(42));     // 正确
+shared_ptr<int> p2 = new int(1024);  // 错误: 必须使用直接初始化形式
+```
+
+## 智能指针与异常
+
+如果使用智能指针，那么即使程序块过早结束，那么智能指针类也能确保在内存不再需要时将其释放：
+
+```c++
+void f() {
+    shared_prt<int> sp(new int(42));  // 分配一个新对象
+    // 这段代码抛出异常, 且在f中未被捕获
+}   // 函数结束时shared_ptr自动释放内存
+```
+
+与之相对的是，如果使用内置指针管理内存 ，且在`new`之后在对应的`delete`之前发生了异常，则内存不会被释放：
+
+```c++
+void f() {
+    int *pi = new int(42);  // 动态分配一个新对象
+    // 这段代码抛出异常, 且在f中未被捕获
+    delete pi;              // 抛出异常后不会走到这里, 这块内存不会被释放
+}
+```
+
+## unique_ptr
+
+> 编码规范：如果必须使用动态内存分配，那么更倾向于将所有权保存在分配者手中，如果其他地方要使用这个对象，最好用`std::unique_ptr`来明确所有权传递，例如：
+>
+> ```c++
+> // 分配动态内存
+> std::unique_ptr<Foo> FooFactory();
+> // 使用动态内存
+> void FooConsumer(std::unique_ptr<Foo> ptr);
+> ```
+
+#### 1. 简介
+
+一个`unique_ptr`“拥有”它所指向的对象，与`shared_ptr`不同，某个时刻只能有一个`unique_ptr`指向一个给定对象。当`unique_ptr`被销毁时，它所指向的对象也被销毁。
+
+#### 2. 提供的操作
+
+| 操作                                              | 含义                                                         | 备注 |
+| ------------------------------------------------- | ------------------------------------------------------------ | ---- |
+| `unique_ptr<T> u1`                                | 空`unique_ptr`对象，`u1`调用`delete`来释放它的指针           |      |
+| `unique_ptr<T, D> u2`                             | 空`unique_ptr`对象，`u2`会使用一个类型为`D`的可调用对象来释放它的指针 |      |
+| `unique_ptr<T, D> u(d)`                           | 空`unique_ptr`对象，指向类型为`T`的对象，用类型为`D`的对象`d`来代替`delete` |      |
+| `u = nullptr`                                     | 释放`u`指向的对象，将`u`置为空                               |      |
+| `u.release()`                                     | `u`放弃对指针的控制权，返回指针，并将`u`置为空               |      |
+| `u.reset()`<br>`u.reset(q)`<br>`u.reset(nullptr)` | 释放`u`指向的对象，如果提供了内置指针`q`，令`u`指向这个对象；否则将`u`置为空 |      |
+
+#### 3. 转移unique_ptr指针的所有权
+
+> Tips：`reset()`方法接受一个可选的指针参数，令`unique_ptr`重新指向给定的指针，如果`unique_ptr`不为空，则它原来指向的对象将被释放。调用`release()`方法会切断`unique_ptr`和它原来管理的对象之间的联系，`release()`方法返回的指针通常被用来初始化另一个智能指针或者给另一个智能指针赋值。如果我们不用另一个智能指针来保存`release()`返回的指针，那么我们的程序就必须负责资源的释放。
+
+虽然我们不能拷贝或赋值`unique_ptr`，但是我们可以通过`release`或`reset`将指针的所有权从一个非`const`的`unique_ptr`转移到另一个`unique_ptr`：
+
+```c++
+// release()将指针所有权从p1转向p2, 并将p1置为空
+unique_ptr<string> p1(new string("tomocat"));
+unique_ptr<string> p2(p1.release());
+
+// 将所有权从p3转向p2
+unique_ptr<string> p3(new string("cat"));
+p2.reset(p3.release());
+```
+
+不能拷贝`unique_ptr`有一个例外：我们可以拷贝或赋值将要被销毁的`unique_ptr`，最常见的例子就是从函数返回一个`unique_ptr`：
+
+```c++
+unique_ptr<int> clone(int p) {
+    // 正确: 从int*创建一个unique_ptr<int>
+    return unique_ptr<int>(new int(p));
+}
+
+// 还可以返回一个局部对象的拷贝
+unique_ptr<int> clone(int p) {
+    unique_ptr<int> ret(new int(p));
+    // ...
+    return ret;
+}
+```
+
+## weak_ptr
+
+#### 1. 简介
+
+> Tips：一旦最后一个指向对象的`shared_ptr`被销毁，即使有`weak_ptr`指向对象，该对象也还是会被释放。
+
+`weak_ptr`是一种不控制所指向对象生存期的智能指针，它指向一个`shared_ptr`管理的对象，但是将一个`weak_ptr`绑定到一个`shared_ptr`不会改变`shared_ptr`的引用计数。
+
+#### 2. 提供的操作
+
+| 操作                | 含义                                                         | 备注 |
+| ------------------- | ------------------------------------------------------------ | ---- |
+| `weak_ptr<T> w`     | 空`weak_ptr`，可以指向类型为`T`的对象                        |      |
+| `weak_ptr<T> w(sp)` | 与`shared_ptr sp`指向相同对象的`weak_ptr`                    |      |
+| `w = p`             | `p`可以是一个`shared_ptr`或是一个`weak_ptr`，赋值后`w`和`p`共享对象 |      |
+| `w.reset()`         | 将`w`置为空                                                  |      |
+| `w.use_count()`     | 与`w`共享对象的`shared_ptr`数量                              |      |
+| `w.expired()`       | 若`w.use_count()`为0则返回true                               |      |
+| `w.lock()`          | 如果`expired`为true，返回一个空`shared_ptr`，否则返回一个指向`w`的`shared_ptr` |      |
+
+#### 3. 访问对象
+
+由于对象可能不存在，因此我们不能直接使用`weak_ptr`访问对象，必须调用`lock`函数检查指向的对象是否仍存在：
+
+```c++
+// 初始化一个weak_ptr
+auto p = make_shared<int>(42);
+weak_ptr<int> wp(p);
+
+// 判断weak_ptr指向的对象是否仍存在
+if (shared_ptr<int> np = wp.lock()) {
+    // do something
+}
+```
+
+
+
+## 智能指针和哑类
+
+包括所有标准库在内的很多C++类都定义了析构函数，负责清理对象使用的资源。但是不是所有的类都是这么良好定义的，特别是哪些为C和C++两种语言设计的类，通常都要求用户显式地释放所使用的任何资源。
+
+> Tips：那些分配了资源，但是又没有定义析构函数来释放这些资源的类，可能会遇到与使用动态内存相同的错误——程序员非常容易忘记释放内存。另外，如果在资源分配和释放之间发生了异常，程序也会发生资源泄漏。
+
+假定我们在使用一个C和C++都使用的网络库，其中`connection`没有析构函数来释放它的资源，我们可以使用`shared_ptr`来保证`connection`被正确关闭：
+
+```c++
+/*
+ * 未使用shared_ptr时
+ */
+struct destination;                 // 表示我们正在连接什么
+struct connection;                  // 使用连接所需的信息
+connection connect(destination*);   // 打开连接
+void disconnect(connection);        // 关闭给定的连接
+
+void f(destination &d /* 其他参数 */) {
+    // 获得一个连接, 程序员需要保证在使用后关闭它
+    connection c = connect(&d);
+    // 使用连接
+    // 如果我们在f退出前忘记调用disconnect, 就无法关闭c了
+}
+
+/*
+ * 使用shared_ptr
+ */
+
+// 自定义一个删除器
+void end_connection(connection *p) { disconnect(*p); }
+void f(destination &d /* 其他参数 */ ) {
+    connection c = connect(&d);
+    shared_ptr<connection> p(&c, end_connection);
+    // 使用连接
+    // 当f退出时(即使是因为异常而退出), connection也会被正确关闭
+}
+```
+
+## 智能指针陷阱
+
+智能指针可以提供对动态分配的内存安全而又方便的管理，但这建立在正确使用的前提下。为了正确使用智能指针，我们必须坚持一些基本规范：
+
+* 不使用相同的内置指针值初始化（或`reset`）多个智能指针
+* 不`delete get()`返回的指针
+* 不使用`get()`初始化或`reset`另一个智能指针
+* 如果你使用`get()`返回的指针，记得当最后一个对应的智能指针销毁后，你的指针就失效了
+* 如果你使用智能指针管理的资源不是`new`分配的内存，记住传递给它一个删除器
+
+## 智能指针与动态数组
+
+标准库提供了一个可以管理`new`分配数组的`unique_ptr`版本，对应的操作如下：
+
+> Tips：指向动态数组的`unique_ptr`不支持成员访问运算符（点和箭头运算符），其他`unique_ptr`操作不变。
+
+| 操作                   | 含义                                           |
+| ---------------------- | ---------------------------------------------- |
+| `unique_ptr<T[]> u`    | `u`可以指向一个动态分配的数组，数组元素类型为T |
+| `unique_ptr<T[]> u(p)` | `u`可以指向内置指针`p`所指向的动态分配的数组   |
+| `u[i]`                 | 返回`u`拥有的数组中位置`i`处的对象             |
+
+```c++
+// up指向10个未初始化的int数组, 当up销毁它管理的指针时会自动使用delete[]
+unique_ptr<int[]> up(new int[10]);
+
+// 使用下标运算符来访问数组元素
+for (size_t i = 0; i != 10; ++i) {
+    up[i] = i;
+}
+```
+
+`shared_ptr`不支持管理动态数组，强行管理的话必须提供自己定义的删除器：
+
+```c++
+// 定义一个shared_ptr管理int数组, 传递一个lambda表达式作为删除器
+shared_ptr<int> sp(new int[10], [](int *p) { delete[] p; });
+
+// shared_ptr未定义下标运算符, 并且不支持指针的算数运算
+for (size_t i = 0; i != 10; ++i) {
+    *(sp.get() + i) = i;
+}
+
+// 使用lambda释放数组
+sp.reset();
+```
+
+
+## Reference
+
+[1] https://www.cnblogs.com/tenosdoit/p/3456704.html
+
+[2] https://zhuanlan.zhihu.com/p/54078587

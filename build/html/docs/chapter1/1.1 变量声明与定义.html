@@ -1,0 +1,525 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>1.1 变量声明与定义 &mdash; C++语法笔记 v1.0 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="1.2 数据类型" href="1.2%20%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B.html" />
+    <link rel="prev" title="第1章 变量与基本类型" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> C++语法笔记
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">第1章 变量与基本类型</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">1.1 变量声明与定义</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">声明与定义分离</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#extern">extern</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#static">static</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id3">1. 静态局部变量</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#c">2. 静态全局变量（C++废弃，用匿名命名空间替代）</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">3. 总结</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#auto">auto</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#c-98auto-c-11">1. C++98中auto用法（C++11已废弃）</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5">2. auto会去除变量的引用语义</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#autoconst">3. auto忽略顶层const</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#const">const</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id6">1. const对象必须初始化</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id7">2. 默认情况下const仅在文件内有效</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id8">3. 允许常量引用绑定非常量对象、字面值甚至一般表达式</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#constconst">4. 顶层const与底层const</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#constexpr">constexpr</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id9">1. 字面值是常量表达式</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id10">2. constexpr是对指针的限制</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#reference">Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="1.2%20%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B.html">1.2 数据类型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.3%20C%E9%A3%8E%E6%A0%BC%E5%AD%97%E7%AC%A6%E4%B8%B2.html">1.3 C风格字符串</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.4%20%E6%95%B0%E7%BB%84.html">1.4 数组</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.5%20%E6%9E%9A%E4%B8%BE%E7%B1%BB%E5%9E%8B.html">1.5 枚举类型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.6%20%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2.html">1.6 类型转换</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.7%20%E5%88%9D%E5%A7%8B%E5%8C%96.html">1.7 初始化</a></li>
+<li class="toctree-l2"><a class="reference internal" href="%5B%E9%80%89%E8%AF%BB%5DPOD%E7%B1%BB%E5%9E%8B.html">[选读] POD类型</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter5/index.html">第5章类</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">C++语法笔记</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">第1章 变量与基本类型</a> &raquo;</li>
+        
+      <li>1.1 变量声明与定义</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/docs/chapter1/1.1 变量声明与定义.md.txt" rel="nofollow"> 查看页面源码</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>1.1 变量声明与定义<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id2">
+<h2>声明与定义分离<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<blockquote>
+<div><p>Tips：变量能且仅能被定义一次，但是可以被多次声明。</p>
+</div></blockquote>
+<p>为了支持分离式编译，C++将定义和声明区分开。其中声明规定了变量的类型和名字，定义除此功能外还会申请存储空间并可能为变量赋一个初始值。</p>
+</div>
+<div class="section" id="extern">
+<h2>extern<a class="headerlink" href="#extern" title="永久链接至标题">¶</a></h2>
+<p>如果想声明一个变量而非定义它，就使用关键字<code class="docutils literal notranslate"><span class="pre">extern</span></code>并且不要显式地初始化变量：</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">extern</span> <span class="kt">int</span> <span class="n">i</span><span class="p">;</span>      <span class="c1">// 声明i而非定义i</span>
+<span class="k">extern</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>  <span class="c1">// 定义i, 这样做抵消了extern的作用 </span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="static">
+<h2>static<a class="headerlink" href="#static" title="永久链接至标题">¶</a></h2>
+<p>当我们在C/C++用<code class="docutils literal notranslate"><span class="pre">static</span></code>修饰变量或函数时，主要有三种用途：</p>
+<ul class="simple">
+<li><p>局部静态变量</p></li>
+<li><p>外部静态变量/函数</p></li>
+<li><p>类内静态数据成员/成员函数</p></li>
+</ul>
+<p>其中第三种只有C++中有，我们后续在面向对象程序设计中再探讨，这里只讨论静态局部/全局变量。</p>
+<div class="section" id="id3">
+<h3>1. 静态局部变量<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
+<p>在局部变量前面加上<code class="docutils literal notranslate"><span class="pre">static</span></code>说明符就构成静态局部变量，例如：</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="c1">// 声明局部静态变量</span>
+<span class="k">static</span> <span class="kt">int</span> <span class="n">a</span><span class="p">;</span>
+<span class="k">static</span> <span class="kt">int</span> <span class="n">array</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">};</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>静态局部变量在函数内定义，但不像自动变量那样当函数被调用时就存在，调用结束就消失，静态变量的生存期为整个源程序</p></li>
+<li><p>静态变量的生存期虽然为整个源程序，但是作用域与自动变量相同，即只能在定义该变量的函数内使用该变量，退出函数后虽然变量还存在，但不能够使用它</p></li>
+<li><p>对基本类型的静态局部变量如果在声明时未赋初始值，则系统自动赋0值；而对普通局部变量不赋初始值，那么它的值是不确定的</p></li>
+</ul>
+<p>根据静态局部变量的特点，它的生存期为整个源程序，在离开定义它的函数（作用域）但再次调用定义它的函数时，它又可继续使用，而且保存了前次被调用后留下的值。因此，当多次调用一个函数且要求在调用之间保留某些变量的值时，可考虑采用静态局部变量，虽然用全局变量也可以达到上述目的，但全局变量有时会造成意外的副作用，因此最好采用局部静态变量。例如：</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
+<span class="kt">void</span> <span class="nf">foo</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>         <span class="c1">// 普通局部变量</span>
+    <span class="k">static</span> <span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>  <span class="c1">// 静态局部变量</span>
+    <span class="o">++</span><span class="n">j</span><span class="p">;</span>
+    <span class="o">++</span><span class="n">k</span><span class="p">;</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;j:%d, k:%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">5</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">foo</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// 输出:</span>
+<span class="nl">j</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="nl">k</span><span class="p">:</span><span class="mi">1</span>
+<span class="nl">j</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="nl">k</span><span class="p">:</span><span class="mi">2</span>
+<span class="nl">j</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="nl">k</span><span class="p">:</span><span class="mi">3</span>
+<span class="nl">j</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="nl">k</span><span class="p">:</span><span class="mi">4</span>
+<span class="nl">j</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="nl">k</span><span class="p">:</span><span class="mi">5</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="c">
+<h3>2. 静态全局变量（C++废弃，用匿名命名空间替代）<a class="headerlink" href="#c" title="永久链接至标题">¶</a></h3>
+<blockquote>
+<div><p>Tips：对于全局变量，不管是否被static修饰，它的存储区域都是在静态存储区，生存期为整个源程序。只不过加上static后限制这个全局变量的作用域只能在定义该变量的源文件内。</p>
+</div></blockquote>
+<p>全局变量（外部变量）的声明之前加上static就构成了静态的全局变量，全局变量本身就是静态存储变量，静态全局变量当然也是静态存储方式。这两者在存储方式上并无不同，这两者的区别在于<strong>非静态全局变量的作用域是整个源程序</strong>。当一个源程序由多个源程序组成时，非静态的全局变量在各个源文件中都是有效的，而静态全局变量则限制了其作用域，即只在定义该变量的源文件内有效，在同一源程序的其他源文件中不能使用它。</p>
+<p>这种在文件中进行静态声明的做法是从C语言继承而来的，在C语言中声明为static的全局变量在其所在的文件外不可见。这种做法已经被C++标准取消了，现在的替代做法是使用匿名命名空间。</p>
+<blockquote>
+<div><p>匿名命名空间：指关键字<code class="docutils literal notranslate"><span class="pre">namespace</span></code>后紧跟花括号括起来的一系列声明语句，具有如下特点：</p>
+<ul class="simple">
+<li><p>在匿名命名空间内定义的变量具有静态生命周期</p></li>
+<li><p>匿名空间在某个给定的文件内可以不连续，但是不能跨越多个文件</p></li>
+<li><p>每个文件定义自己的匿名命名空间，不同文件匿名命名空间中定义的名字对应不同实体</p></li>
+<li><p>如果在一个头文件中定义了匿名命名空间，则该命名空间内定义的名字在每个包含该头文件的文件中对应不同实体</p></li>
+</ul>
+</div></blockquote>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">namespace</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">i</span><span class="p">;</span>  <span class="c1">// 匿名命名空间内定义的变量具有静态生命周期, 作用域仅限于当前文件</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h3>3. 总结<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">static</span></code>这个说明符在不同地方所起的作用域是不同的，比如把局部变量改变为静态变量后是改变了它的存储方式即改变了它的生存期，把全局变量改变为静态变量后是改变了它的作用域，限制了它的使用范围。</p>
+</div>
+</div>
+<div class="section" id="auto">
+<h2>auto<a class="headerlink" href="#auto" title="永久链接至标题">¶</a></h2>
+<div class="section" id="c-98auto-c-11">
+<h3>1. C++98中auto用法（C++11已废弃）<a class="headerlink" href="#c-98auto-c-11" title="永久链接至标题">¶</a></h3>
+<p>C++98 <code class="docutils literal notranslate"><span class="pre">auto</span></code>用于声明变量为自动变量（拥有自动的生命周期），<code class="docutils literal notranslate"><span class="pre">C++11</span></code>已经删除了该用法，取而代之的是“变量的自动类型推断方法”。</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// c++ 98:</span>
+<span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>         <span class="c1">// 拥有自动生命期</span>
+<span class="k">auto</span> <span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>    <span class="c1">// 拥有自动生命期(C++11编译不过)</span>
+<span class="k">static</span> <span class="kt">int</span> <span class="n">c</span> <span class="o">=</span> <span class="mi">30</span><span class="p">;</span>  <span class="c1">// 延长了生命期</span>
+</pre></div>
+</div>
+<p>C++11新标准引入了<code class="docutils literal notranslate"><span class="pre">auto</span></code>类型说明符，让编译器通过初始值来自动推断变量类型（这意味着通过<code class="docutils literal notranslate"><span class="pre">auto</span></code>定义的变量必须有初始值）。</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// c++ 11:</span>
+<span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="k">auto</span> <span class="n">auto_a</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span>  <span class="c1">// 自动类型推断为int类型</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id5">
+<h3>2. auto会去除变量的引用语义<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+<p>当引用对象作为初始值时，真正参与初始化的是引用对象的值，此时编译器会以引用对象的类型作为<code class="docutils literal notranslate"><span class="pre">auto</span></code>推算的类型：</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="o">&amp;</span><span class="n">ri</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+    <span class="k">auto</span> <span class="n">auto_i</span> <span class="o">=</span> <span class="n">ri</span><span class="p">;</span>  <span class="c1">// 去除引用语义, 自动推断为int</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>如果希望推断出来的<code class="docutils literal notranslate"><span class="pre">auto</span></code>类型包含引用语义，我们需要用<code class="docutils literal notranslate"><span class="pre">&amp;</span></code>明确指出：</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="k">auto</span> <span class="o">&amp;</span><span class="n">auto_i</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>  <span class="c1">// 加上引用语义, 自动推断为int&amp;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="autoconst">
+<h3>3. auto忽略顶层const<a class="headerlink" href="#autoconst" title="永久链接至标题">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">auto</span></code>一般会忽略掉顶层<code class="docutils literal notranslate"><span class="pre">const</span></code>，同时底层<code class="docutils literal notranslate"><span class="pre">const</span></code>会被保留下来：</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">const</span> <span class="kt">int</span> <span class="n">ci</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>    <span class="c1">// 常量int</span>
+    <span class="k">auto</span> <span class="n">auto_ci</span> <span class="o">=</span> <span class="n">ci</span><span class="p">;</span>    <span class="c1">// auto_ci被推断为int类型</span>
+    <span class="n">auto_ci</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>         <span class="c1">// 正确: auto_ci非常量</span>
+
+    <span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">cr</span> <span class="o">=</span> <span class="n">ci</span><span class="p">;</span>   <span class="c1">// cr是指向常量int的常量引用</span>
+    <span class="k">auto</span> <span class="n">auto_cr</span> <span class="o">=</span> <span class="n">cr</span><span class="p">;</span>    <span class="c1">// auto_cr被推断为int类型: 去除了引用语义 + 去除了顶层const</span>
+    <span class="n">auto_cr</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>         <span class="c1">// 正确: auto_cr非常量</span>
+
+    <span class="k">const</span> <span class="kt">int</span> <span class="o">*</span><span class="n">cp</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">ci</span><span class="p">;</span>  <span class="c1">// cp是指向常量int(底层)的常量指针(顶层)</span>
+    <span class="k">auto</span> <span class="n">auto_cp</span> <span class="o">=</span> <span class="n">cp</span><span class="p">;</span>    <span class="c1">// auto_cp被推断为const int*类型(指向常量int的指针): 去除了顶层const + 保留底层const</span>
+    <span class="c1">// *auto_cp = 10;     // 错误: 不能修改auto_cp指向的常量</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>如果希望推断出来的<code class="docutils literal notranslate"><span class="pre">auto</span></code>类型是一个顶层<code class="docutils literal notranslate"><span class="pre">const</span></code>，我们需要通过<code class="docutils literal notranslate"><span class="pre">const</span></code>关键字明确指出：</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">const</span> <span class="kt">int</span> <span class="n">ci</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>          <span class="c1">// 常量int</span>
+    <span class="k">const</span> <span class="k">auto</span> <span class="n">auto_ci</span> <span class="o">=</span> <span class="n">ci</span><span class="p">;</span>    <span class="c1">// auto_ci被推断为const int类型</span>
+    <span class="c1">// auto_ci = 20;            // 错误: auto_ci是一个常量, 禁止修改</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="const">
+<h2>const<a class="headerlink" href="#const" title="永久链接至标题">¶</a></h2>
+<p>有时我们希望定义一个不能被改变值的变量，可以使用关键字<code class="docutils literal notranslate"><span class="pre">const</span></code>对变量类型加以限定。</p>
+<div class="section" id="id6">
+<h3>1. const对象必须初始化<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
+<p>因为const对象一经创建后其值就不能再改变，所以const对象必须初始化，但是初始值可以是任意复杂的表达式：</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">const</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">get_size</span><span class="p">();</span>  <span class="c1">// 正确: 运行时初始化</span>
+<span class="k">const</span> <span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>          <span class="c1">// 正确: 编译时初始化</span>
+<span class="k">const</span> <span class="kt">int</span> <span class="n">k</span><span class="p">;</span>               <span class="c1">// 错误: k是一个未经初始化的常量</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id7">
+<h3>2. 默认情况下const仅在文件内有效<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
+<p>举个例子，我们在编译时初始化一个<code class="docutils literal notranslate"><span class="pre">const</span></code>对象：</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">const</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>编译器会在编译过程把用到该变量的地方都替换为对应的值。为了执行这个替换，编译器必须知道变量的初始值，如果程序包含多个文件，那么每个用了这个<code class="docutils literal notranslate"><span class="pre">const</span></code>对象的文件都必须得能访问到它的初始值才行（即每个文件都要定义<code class="docutils literal notranslate"><span class="pre">const</span></code>对象）。为了避免对同一变量的重复定义，当多个文件中出现同名的<code class="docutils literal notranslate"><span class="pre">const</span></code>对象时，其实等同于在不同文件中分别定义了独立的变量。</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm"> * 下面是合法的, 不存在变量i重复定义问题</span>
+<span class="cm"> */</span>
+
+<span class="c1">// foo.cpp</span>
+<span class="k">const</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+
+<span class="c1">// bar.cpp</span>
+<span class="k">const</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>如果想在多个文件之间共享<code class="docutils literal notranslate"><span class="pre">const</span></code>对象，那么必须在变量的定义之前添加<code class="docutils literal notranslate"><span class="pre">extern</span></code>关键字：</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm"> * 下面是合法的, main.cpp和foo.cpp中的const int对象是同一个</span>
+<span class="cm"> */</span>
+
+<span class="c1">// foo.cpp</span>
+<span class="k">extern</span> <span class="k">const</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+
+<span class="c1">// main.cpp</span>
+<span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">extern</span> <span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;i:&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id8">
+<h3>3. 允许常量引用绑定非常量对象、字面值甚至一般表达式<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
+<p>一般而言，引用的类型必须与其所引用对象的类型一致，但是有两个例外：</p>
+<ul class="simple">
+<li><p>初始化常量引用时允许用任意表达式作为初始值，只要该表达式的结果能转换成引用类型即可，允许为一个常量引用绑定非常量的对象、字面值甚至是一个一般表达式（如下）</p></li>
+<li><p>可以将基类的指针或引用绑定到派生类对象上（后续面向对象章节再探讨）</p></li>
+</ul>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+
+<span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">ri1</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>      <span class="c1">// 合法: 绑定到非常量对象</span>
+<span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">ri2</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>    <span class="c1">// 合法: 绑定到字面值</span>
+<span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">ri3</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>  <span class="c1">// 合法: 绑定到一般表达式</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="constconst">
+<h3>4. 顶层const与底层const<a class="headerlink" href="#constconst" title="永久链接至标题">¶</a></h3>
+<p>指针本身是一个对象，因此指针本身是不是常量与指针所指对象是不是常量是两个独立的问题，前者被称为顶层<code class="docutils literal notranslate"><span class="pre">const</span></code>，后者被称为底层<code class="docutils literal notranslate"><span class="pre">const</span></code>。</p>
+<blockquote>
+<div><p>Tips：指针类型既可以是顶层<code class="docutils literal notranslate"><span class="pre">const</span></code>也可以是底层<code class="docutils literal notranslate"><span class="pre">const</span></code>，其他类型要么是顶层常量要么是底层常量。</p>
+</div></blockquote>
+<p>顶层<code class="docutils literal notranslate"><span class="pre">const</span></code>用于表示任意的对象是常量，包括算数类型、类和指针等，底层<code class="docutils literal notranslate"><span class="pre">const</span></code>用于表示引用和指针等复合类型的基本类型部分是否是常量。</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="o">*</span><span class="k">const</span> <span class="n">p1</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">i</span><span class="p">;</span>        <span class="c1">// 顶层const: 不能改变p1的值</span>
+<span class="k">const</span> <span class="kt">int</span> <span class="o">*</span><span class="n">p2</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">i</span><span class="p">;</span>        <span class="c1">// 底层const: 不能通过p2改变i的值</span>
+<span class="k">const</span> <span class="kt">int</span> <span class="o">*</span><span class="k">const</span> <span class="n">p3</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">i</span><span class="p">;</span>  <span class="c1">// 底层const + 顶层const</span>
+
+<span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">r1</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>         <span class="c1">// 底层const: 不能通过r1改变i的值</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="constexpr">
+<h2>constexpr<a class="headerlink" href="#constexpr" title="永久链接至标题">¶</a></h2>
+<p>C++11引入了常量表达式<code class="docutils literal notranslate"><span class="pre">constexpr</span></code>的概念，指的是值不会改变并且在<strong>编译期间</strong>就能得到计算结果的表达式。</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">const</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>          <span class="c1">// 常量表达式</span>
+<span class="k">const</span> <span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>       <span class="c1">// 常量表达式</span>
+<span class="k">const</span> <span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="n">size</span><span class="p">();</span>      <span class="c1">// 仅当size()是一个constexpr函数时才是常量表达式, 运行时才能获得具体值就不是常量表达式</span>
+</pre></div>
+</div>
+<p>在一个复杂系统中，我们很难分辨一个初始值是否是常量表达式，通过<code class="docutils literal notranslate"><span class="pre">constexpr</span></code>关键字声明一个变量，我们可以让编译器来验证变量的值是否是一个常量表达式。</p>
+<div class="section" id="id9">
+<h3>1. 字面值是常量表达式<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h3>
+<p>算术类型、引用和指针都属于字面值类型，自定义类则不属于字面值类型，因此也无法被定义为<code class="docutils literal notranslate"><span class="pre">constexpr</span></code>。</p>
+<blockquote>
+<div><p>Tips：尽管指针和引用都能被定义成<code class="docutils literal notranslate"><span class="pre">constexpr</span></code>，但它们的初始值却受到严格限制。一个<code class="docutils literal notranslate"><span class="pre">constexpr</span></code>指针的初始值必须是<code class="docutils literal notranslate"><span class="pre">nullptr</span></code>、0或者是存储于某个固定地址中的对象。</p>
+</div></blockquote>
+</div>
+<div class="section" id="id10">
+<h3>2. constexpr是对指针的限制<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h3>
+<p>在<code class="docutils literal notranslate"><span class="pre">constexpr</span></code>声明中定义了一个指针，限定符<code class="docutils literal notranslate"><span class="pre">constexpr</span></code>仅对指针有效，与指针所指对象无关：</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">const</span> <span class="kt">int</span> <span class="o">*</span><span class="n">pi1</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>      <span class="c1">// 底层const: pi1是指向整型常量的普通指针</span>
+<span class="k">constexpr</span> <span class="kt">int</span> <span class="o">*</span><span class="n">pi2</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>  <span class="c1">// 顶层const: pi2是指向整型的常量指针</span>
+</pre></div>
+</div>
+<p>我们也可以让<code class="docutils literal notranslate"><span class="pre">constexpr</span></code>指针指向常量：</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">constexpr</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="k">constexpr</span> <span class="k">const</span> <span class="kt">int</span> <span class="o">*</span><span class="n">pi</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">i</span><span class="p">;</span>  <span class="c1">// 顶层const + 底层const </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="reference">
+<h2>Reference<a class="headerlink" href="#reference" title="永久链接至标题">¶</a></h2>
+<p>[1] https://www.cnblogs.com/lca1826/p/6503194.html</p>
+<p>[2] https://blog.csdn.net/u012679707/article/details/80188124</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="1.2%20%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B.html" class="btn btn-neutral float-right" title="1.2 数据类型" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="index.html" class="btn btn-neutral float-left" title="第1章 变量与基本类型" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; 版权所有 2021, TOMOCAT.
+
+    </p>
+  </div>
+    
+    
+    
+    利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

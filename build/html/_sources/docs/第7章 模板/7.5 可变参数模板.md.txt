@@ -1,0 +1,138 @@
+# 7.5 可变参数模板
+
+## 简介
+
+一个可变参数模板指的是一个接受可变数目参数的函数模板或类模板，其中可变数目的参数被称为参数包。存在两种参数包：
+
+* 模板参数包：零个或多个模板参数
+* 函数参数包：零个或多个函数参数
+
+## 实例
+
+```c++
+// Args是一个模板参数包; rest是一个函数参数包
+// Args表示零个或多个模板参数类型
+// rest表示零个或多个函数参数
+template <typename T, typename... Args>
+void foo(const T &t, const Args&... rest);
+```
+
+给定下面的调用：
+
+```c++
+int i =0; double d = 3.14; string s = "tomocat";
+foo(i, s, 42, d);   // 包中有三个参数
+foo(s, 42, "cat");  // 包中有两个参数
+foo(d, s);          // 包中有一个参数
+foo("cat");         // 空包
+```
+
+编译器会为`foo`依次实例化出四个不同的版本：
+
+```c++
+void foo(const int&, const string&, const int&, const double&);
+void foo(const string&, const int&, const char[4]]&);
+void foo(const double&, const string&);
+void foo(const char[4]);
+```
+
+## sizeof...运算符
+
+当我们需要知道包中有多少元素时，可以使用`sizeof...`运算符，它返回一个常量表达式，而且不会对齐实参求值：
+
+```c++
+template <typename... Args> void f(Args... args) {
+    cout << sizeof...(Args) << endl;  // 模板参数的数目
+    cout << sizeof...(args) << endl;  // 函数参数的数目
+}
+```
+
+## 实战: print函数
+
+我们定义一个`print`函数，用于在给定流上打印给定实参列表的内容。可变参数函数通常是递归的，第一步调用处理包中的第一个实参，然后用剩余实参调用自身。我们的`print`函数也是这样的形式，每次递归调用将第二个实参打印到第一个实参表示的流中。为了终止递归，我们还需要定义一个非可变参数的`print`函数，它接受一个流和一个对象：
+
+```c++
+#include <iostream>
+#include <string>
+
+// 用来终止递归并打印最后一个元素的函数
+template <typename T>
+std::ostream &print(std::ostream &os, const T &t) {
+    return os << t << std::endl;  // 包中最后一个元素打印换行符
+}
+
+// 包中除最后一个元素之外的其他元素都会调用这个版本的print
+template <typename T, typename... Args>
+std::ostream &print(std::ostream &os, const T &t, const Args&... rest) {
+    os << t << ", ";
+    return print(os, rest...);
+}
+
+int main(void) {
+    int i =0; double d = 3.14; std::string s = "tomocat";
+
+    print(std::cout, i, s, 42);  // 输出0, tomocat, 42
+    print(std::cout, s, 42);     // 输出tomocat, 42
+    print(std::cout, 42);        // 输出42
+}
+```
+
+对于`print(std::cout, 42)`这一次调用而言，两个模板函数都提供同样好的匹配。但是非可变参数模板比可变参数模板更加特例化，因此编译器选择非可变参数版本。
+
+> Tips：当定义可变参数版本的`print`时，费可变参数版本的声明必须在作用域中，否则可变参数版本会无限递归。
+
+## 参数包扩展
+
+对于一个参数包，除了获取其大小外，我们能对它做的唯一的事情是扩展它，我们通过在模式右边放一个省略号`...`来触发扩展操作。例如我们的`print`函数包含两个扩展：
+
+```c++
+template <typename T, typename... Args>
+// 扩展Args
+std::ostream &print(std::ostream &os, const T &t, const Args&... rest) {
+    os << t << ", ";
+    // 扩展rest
+    return print(os, rest...);
+}
+```
+
+除了上面这种简单的扩展外，C++语言还允许更复杂的扩展模式。例如我们可以编写第二个可变参数函数，对其每个实参调用`debug_rep`，然后再调用`print`打印结果：
+
+```c++
+// 在print调用中对每个实参调用debug_rep
+template <typename... Args>
+std::ostream &errorMsg(std::ostream &os, const Args&... rest) {
+    // print(os, debug(a1), debug(a2), ..., debug_rep(an))
+    return print(os, debug_rep(rest)...);
+}
+```
+
+调用方式如下：
+
+```c++
+errorMsg(std::cerr, 10, "cat", 3.14);
+// 等价于
+print(std::cerr, debug_rep(10), debug_rep("cat"), debug_rep(3.14));
+```
+
+注意下面这种模式会编译失败：
+
+```c++
+// 错误的写法: 此调用无匹配函数
+// 相当于print(os, debug_rep(a1, a2, ..., an))
+// 但是并不存在接受五个参数的debug_rep函数
+print(os, debug_rep(rest...));
+```
+
+## 转发参数包
+
+在C++11新标准下，我们可以组合使用可变参数模板与`forward`机制来编写函数，实现将其实参不变地传递给其他函数。
+
+```c++
+// fun有零个或多个参数, 每个参数都是一个模板参数类型的右值引用
+// fun的参数是右值引用, 因此我们可以传递给它任意类型的实参
+template <typename... Args>
+void func(Args&&... args) {
+    work(std::forward<Args>(args)...);
+}
+```
+

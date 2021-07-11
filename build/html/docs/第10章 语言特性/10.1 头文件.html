@@ -1,0 +1,336 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>10.1 头文件 &mdash; C++语法笔记 v1.0 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="10.2 在main函数之前或者之后打印消息" href="10.2%20%E5%9C%A8main%E5%87%BD%E6%95%B0%E4%B9%8B%E5%89%8D%E6%88%96%E4%B9%8B%E5%90%8E%E6%89%93%E5%8D%B0%E6%B6%88%E6%81%AF.html" />
+    <link rel="prev" title="第10章 语法特性" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> C++语法笔记
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC1%E7%AB%A0%20%E5%8F%98%E9%87%8F%E4%B8%8E%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B/index.html">第1章 变量与基本类型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC2%E7%AB%A0%20%E8%AF%AD%E5%8F%A5/index.html">第2章 语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC3%E7%AB%A0%20%E5%87%BD%E6%95%B0/index.html">第3章 函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC4%E7%AB%A0%20%E8%BF%90%E7%AE%97%E7%AC%A6/index.html">第4章 运算符</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC5%E7%AB%A0%20%E7%B1%BB/index.html">第5章类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC6%E7%AB%A0%20%E6%A0%87%E5%87%86%E5%BA%93%E7%B1%BB%E5%9E%8B/index.html">第6章 标准库类型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC7%E7%AB%A0%20%E6%A8%A1%E6%9D%BF/index.html">第7章 模板</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC8%E7%AB%A0%20%E5%85%B3%E9%94%AE%E5%AD%97%E6%A6%82%E5%BF%B5/index.html">第8章 关键字概念</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC9%E7%AB%A0%20%E7%AE%97%E6%B3%95/index.html">第9章 算法</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">第10章 语法特性</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">10.1 头文件</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">简介</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">声明与定义分离</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">头文件存放的内容</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id5">1. 类定义和函数声明</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6">2. 函数模板或者类模板成员函数的定义</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#constexpr">3. 内联函数和constexpr函数</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id9">4. 类的内联函数</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id10">头文件不该存放的内容</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#using">1. 头文件不要包含命名空间的using声明或指示</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#c-c">使用C++版本的C标准库头文件</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="10.2%20%E5%9C%A8main%E5%87%BD%E6%95%B0%E4%B9%8B%E5%89%8D%E6%88%96%E4%B9%8B%E5%90%8E%E6%89%93%E5%8D%B0%E6%B6%88%E6%81%AF.html">10.2 在main函数之前或者之后打印消息</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10.3%20%E5%B7%A6%E5%80%BC%E4%B8%8E%E5%8F%B3%E5%80%BC.html">10.3 左值与右值</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10.4%20%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4.html">10.4 命名空间</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10.5%20%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83.html">10.5 命名规范</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10.6%20%E5%8F%98%E9%87%8F%E7%94%9F%E5%AD%98%E6%9C%9F%E5%92%8C%E5%8F%98%E9%87%8F%E4%BD%9C%E7%94%A8%E5%9F%9F.html">10.6 变量生存期和变量作用域</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10.7%20%E6%A0%87%E5%87%86%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E6%A8%A1%E6%9D%BF.html">10.7 标准类型转换模板</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10.8%20%E6%89%8B%E5%8A%A8%E7%AE%A1%E7%90%86%E5%86%85%E5%AD%98.html">10.8 手动管理内存</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10.9%20%E5%B9%B6%E8%A1%8C%E5%92%8C%E5%B9%B6%E5%8F%91.html">10.9 并行和并发</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10.10%20%E5%9B%BA%E6%9C%89%E7%9A%84%E4%B8%8D%E5%8F%AF%E7%A7%BB%E6%A4%8D%E7%9A%84%E7%89%B9%E6%80%A7.html">10.10 固有的不可移植的特性</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10.11%20%E8%BF%90%E8%A1%8C%E6%97%B6%E7%B1%BB%E5%9E%8B%E8%AF%86%E5%88%AB.html">10.11 运行时类型识别</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10.12%20%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86.html">10.12 异常处理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10.13%20%E5%86%85%E5%AD%98%E5%88%86%E5%B8%83.html">10.13 内存分布</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10.14%20%E8%B0%83%E8%AF%95%E5%B8%AE%E5%8A%A9.html">10.14 调试帮助</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC11%E7%AB%A0%20C%2B%2B11%E6%96%B0%E6%A0%87%E5%87%86/index.html">第11章 C++11新标准</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../README.html">README</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">C++语法笔记</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">第10章 语法特性</a> &raquo;</li>
+        
+      <li>10.1 头文件</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/docs/第10章 语言特性/10.1 头文件.md.txt" rel="nofollow"> 查看页面源码</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>10.1 头文件<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id2">
+<h2>简介<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>通常每一个<code class="docutils literal notranslate"><span class="pre">.cpp</span></code>文件都有一个对应的<code class="docutils literal notranslate"><span class="pre">.h</span></code>文件，不过也有一些例外，如单元测试代码和只包含<code class="docutils literal notranslate"><span class="pre">main()</span></code>函数的<code class="docutils literal notranslate"><span class="pre">.cpp</span></code>文件。</p>
+</div>
+<div class="section" id="id3">
+<h2>声明与定义分离<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">C++</span></code>支持分离式编译机制，该机制允许将程序分割为若干个文件，每个文件可独立编译。</p>
+</div></blockquote>
+<p>为了支持分离式编译，<code class="docutils literal notranslate"><span class="pre">C++</span></code>将定义和声明区分开。其中声明规定了变量的类型和名字，定义除此功能外还会申请存储空间并可能为变量赋一个初始值。如果想声明一个变量而非定义它，就使用关键字<code class="docutils literal notranslate"><span class="pre">extern</span></code>并且不要显式地初始化变量：</p>
+<blockquote>
+<div><p>变量能且仅能被定义一次，但是可以被多次声明。</p>
+</div></blockquote>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">extern</span> <span class="kt">int</span> <span class="n">i</span><span class="p">;</span>      <span class="c1">// 声明i而非定义i</span>
+<span class="k">extern</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>  <span class="c1">// 定义i, 这样做抵消了extern的作用 </span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>头文件存放的内容<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id5">
+<h3>1. 类定义和函数声明<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+<p>通常当我们调用一个函数时，编译器只需要掌握函数的声明；类似地，当我们使用一个类类型的对象时，类定义必须是可用的，但是成员函数的定义不必已经出现。因此我们通常<strong>将类定义和函数声明放在头文件中</strong>，而普通函数和成员函数的定义放在源文件中。</p>
+</div>
+<div class="section" id="id6">
+<h3>2. 函数模板或者类模板成员函数的定义<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id7">
+<h4>2.1 模板头文件包含声明与定义<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h4>
+<blockquote>
+<div><p>Tips：一个头文件所需要的所有模板声明通常一起放置在文件开始位置，出现于任何使用这些模板的代码之前。</p>
+</div></blockquote>
+<p>当编译器遇到一个模板定义时它并不生成代码，只有当我们实例出模板的一个特定版本时，编译器才会生成代码。即当我们使用而非定义模板时，编译器才生成代码。</p>
+<p>为了生成一个实例化版本，编译器必须掌握函数模板或者类模板成员函数的定义，因此与非模板文件不同，<strong>模板的头文件通常既包含声明也包含定义</strong>。</p>
+</div>
+<div class="section" id="id8">
+<h4>2.2 定义函数模板时声明所有重载的函数版本<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h4>
+<blockquote>
+<div><p>Tips：在定义任何函数模板之前，记得声明所有重载的函数版本，这样就不必担心编译器由于未遇到你希望调用的函数而实例化一个并非你需要的版本。</p>
+</div></blockquote>
+<p>如果使用了一个忘记声明的非模板函数，那么代码将编译失败。但是对于重载函数模板的函数而言，如果编译器可以从模板实例化出与调用匹配的版本，则缺少的声明不会报错。</p>
+<p>以下面的场景为例，如果缺少接受<code class="docutils literal notranslate"><span class="pre">T*</span></code>的模板版本，那么编译器会默认实例化接受<code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">T&amp;</span></code>的模板版本，这可能与程序员的本意不符。</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// 考虑如下调用方式</span>
+<span class="n">foo</span><span class="p">(</span><span class="s">&quot;bar&quot;</span><span class="p">);</span>
+
+<span class="c1">// 有三个重载的foo版本</span>
+<span class="n">foo</span><span class="p">(</span><span class="k">const</span> <span class="n">T</span><span class="o">&amp;</span><span class="p">);</span>       <span class="c1">// T被绑定到char[4]</span>
+<span class="n">foo</span><span class="p">(</span><span class="n">T</span><span class="o">*</span><span class="p">);</span>             <span class="c1">// T被绑定到const char</span>
+<span class="n">foo</span><span class="p">(</span><span class="k">const</span> <span class="n">string</span><span class="o">&amp;</span><span class="p">);</span>  <span class="c1">// 要求从const char*到string的类型转化</span>
+
+<span class="c1">// 结论: 两个模板提供精确匹配, 所以都是可能被调用的函数, 由于第二个模板T*更加特例化, 因此编译器会选择第二个函数</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="constexpr">
+<h3>3. 内联函数和constexpr函数<a class="headerlink" href="#constexpr" title="永久链接至标题">¶</a></h3>
+<p>和其他函数不同，内联函数和constexpr函数可以在程序中多次定义。毕竟编译器想要展开函数仅有函数声明时不够的，还需要函数的定义。由于对于某个给定的内联函数或者constexpr函数来说，它的多个定义必须完全一致，基于这个原因内联函数和constexpr函数通常定义在头文件中。</p>
+</div>
+<div class="section" id="id9">
+<h3>4. 类的内联函数<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h3>
+<p>和我们在头文件中定义inline函数的原因一样，inline成员函数也应该与相应的类定义在同一个头文件中。</p>
+</div>
+</div>
+<div class="section" id="id10">
+<h2>头文件不该存放的内容<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h2>
+<div class="section" id="using">
+<h3>1. 头文件不要包含命名空间的using声明或指示<a class="headerlink" href="#using" title="永久链接至标题">¶</a></h3>
+<p>头文件如果在其顶层作用域中含有<code class="docutils literal notranslate"><span class="pre">using</span></code>指示或<code class="docutils literal notranslate"><span class="pre">using</span></code>声明，则会将名字注入到所有包含该头文件的文件中。通常情况下，头文件应该只负责定义接口部分的名字，而不定义实现部分的名字。因此头文件最多只能在它的函数或命名空间中使用<code class="docutils literal notranslate"><span class="pre">using</span></code>指示或<code class="docutils literal notranslate"><span class="pre">using</span></code>声明。</p>
+</div>
+</div>
+<div class="section" id="c-c">
+<h2>使用C++版本的C标准库头文件<a class="headerlink" href="#c-c" title="永久链接至标题">¶</a></h2>
+<blockquote>
+<div><p>Tips：C++程序员如果需要使用C语言标准库，应该使用C++重命名后的从属于命名空间std的头文件。</p>
+</div></blockquote>
+<p>C++标准库除了定义C++特有的功能外，也兼容了C语言的标准库，但是将C标准库的头文件去掉了<code class="docutils literal notranslate"><span class="pre">.h</span></code>后缀，加上了<code class="docutils literal notranslate"><span class="pre">c</span></code>前缀。比如C标准库的头文件<code class="docutils literal notranslate"><span class="pre">ctype.h</span></code>被C++重命名为<code class="docutils literal notranslate"><span class="pre">cctype</span></code>。尽管<code class="docutils literal notranslate"><span class="pre">cctype</span></code>和<code class="docutils literal notranslate"><span class="pre">ctype.h</span></code>头文件的内容基本一样，但是<code class="docutils literal notranslate"><span class="pre">cctype</span></code>头文件中定义的名字从属于命名空间std。</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="10.2%20%E5%9C%A8main%E5%87%BD%E6%95%B0%E4%B9%8B%E5%89%8D%E6%88%96%E4%B9%8B%E5%90%8E%E6%89%93%E5%8D%B0%E6%B6%88%E6%81%AF.html" class="btn btn-neutral float-right" title="10.2 在main函数之前或者之后打印消息" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="index.html" class="btn btn-neutral float-left" title="第10章 语法特性" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; 版权所有 2021, TOMOCAT.
+
+    </p>
+  </div>
+    
+    
+    
+    利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

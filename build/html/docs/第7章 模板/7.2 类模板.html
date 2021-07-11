@@ -1,0 +1,392 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>7.2 类模板 &mdash; C++语法笔记 v1.0 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="7.3 模板参数" href="7.3%20%E6%A8%A1%E6%9D%BF%E5%8F%82%E6%95%B0.html" />
+    <link rel="prev" title="7.1 函数模板" href="7.1%20%E5%87%BD%E6%95%B0%E6%A8%A1%E6%9D%BF.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> C++语法笔记
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC1%E7%AB%A0%20%E5%8F%98%E9%87%8F%E4%B8%8E%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B/index.html">第1章 变量与基本类型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC2%E7%AB%A0%20%E8%AF%AD%E5%8F%A5/index.html">第2章 语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC3%E7%AB%A0%20%E5%87%BD%E6%95%B0/index.html">第3章 函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC4%E7%AB%A0%20%E8%BF%90%E7%AE%97%E7%AC%A6/index.html">第4章 运算符</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC5%E7%AB%A0%20%E7%B1%BB/index.html">第5章类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC6%E7%AB%A0%20%E6%A0%87%E5%87%86%E5%BA%93%E7%B1%BB%E5%9E%8B/index.html">第6章 标准库类型</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">第7章 模板</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="7.1%20%E5%87%BD%E6%95%B0%E6%A8%A1%E6%9D%BF.html">7.1 函数模板</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">7.2 类模板</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">简介</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">实例化类模板</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">类模板的成员函数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">类代码内简化类模板名的使用</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">类模板与友元</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id7">1. 简介</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id8">2. 一对一友好关系</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id9">3. 通用和特定的友好关系</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id10">4. 令模板自己的类型参数成为友元</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id11">类模板的类型别名</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#static">类模板的static成员</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="7.3%20%E6%A8%A1%E6%9D%BF%E5%8F%82%E6%95%B0.html">7.3 模板参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="7.4%20%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0%E6%A8%A1%E6%9D%BF.html">7.4 成员函数模板</a></li>
+<li class="toctree-l2"><a class="reference internal" href="7.5%20%E5%8F%AF%E5%8F%98%E5%8F%82%E6%95%B0%E6%A8%A1%E6%9D%BF.html">7.5 可变参数模板</a></li>
+<li class="toctree-l2"><a class="reference internal" href="7.6%20%E6%A8%A1%E6%9D%BF%E7%89%B9%E6%80%A7.html">7.6 模板特性</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC8%E7%AB%A0%20%E5%85%B3%E9%94%AE%E5%AD%97%E6%A6%82%E5%BF%B5/index.html">第8章 关键字概念</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC9%E7%AB%A0%20%E7%AE%97%E6%B3%95/index.html">第9章 算法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC10%E7%AB%A0%20%E8%AF%AD%E8%A8%80%E7%89%B9%E6%80%A7/index.html">第10章 语法特性</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC11%E7%AB%A0%20C%2B%2B11%E6%96%B0%E6%A0%87%E5%87%86/index.html">第11章 C++11新标准</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../README.html">README</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">C++语法笔记</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">第7章 模板</a> &raquo;</li>
+        
+      <li>7.2 类模板</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/docs/第7章 模板/7.2 类模板.md.txt" rel="nofollow"> 查看页面源码</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>7.2 类模板<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id2">
+<h2>简介<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>类模板是用于生成类的蓝图的。与函数模板不同的是，编译器不能为类模板推断模板参数类型。为了使用类模板，我们必须在模板名后的尖括号中提供额外信息——用来代替模板参数的模板实参列表。</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span> <span class="k">class</span> <span class="nc">Foo</span> <span class="p">{</span>
+	<span class="c1">// 类模板实现</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>实例化类模板<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>使用一个类模板时，我们必须提供显式模板实参列表。它们被绑定到模板参数，编译器使用这些模板实参来实例化出特定的类。</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// 实例化出Foo&lt;int&gt;类</span>
+<span class="n">Foo</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">fi</span><span class="p">;</span>
+<span class="c1">// 实例化出Foo&lt;double&gt;类</span>
+<span class="n">Foo</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span> <span class="n">fd</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>需要注意的是，如果一个成员函数没有被使用，则它不会被实例化。成员函数只有在被用到时才进行实例化，这一特性使得即使某种类型不能完全符合模板操作的要求，我们仍然能用该类型实例化类。</p>
+</div>
+<div class="section" id="id4">
+<h2>类模板的成员函数<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<p>与其他任何类相同，我们既可以在类模板内部也可以在类模板外部为其定义成员函数，且定义在类模板内的成员函数被隐式声明为内联函数。但是定义在类模板之外的成员函数必须以关键字<code class="docutils literal notranslate"><span class="pre">template</span></code>开始，后接类模板参数列表。</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span>
+<span class="n">ret</span><span class="o">-</span><span class="n">type</span> <span class="n">Foo</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;::</span><span class="n">member</span><span class="o">-</span><span class="n">name</span><span class="p">(</span><span class="n">parm</span><span class="o">-</span><span class="n">list</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>类代码内简化类模板名的使用<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<p>当我们在类模板外定义其成员时，由于我们并不在类的作用域中，直到遇到类名才表示进入类的作用域，因此我们在使用类模板名时必须重复模板实参。在一个类模板的作用域内，我们可以直接使用模板名而不必指定模板实参：</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span>
+<span class="n">Foo</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">Foo</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;::</span><span class="n">bar</span><span class="p">()</span> <span class="p">{</span>  <span class="c1">// 类外使用类模板名时必须重复模板实参</span>
+    <span class="n">Foo</span> <span class="n">ret</span> <span class="o">=</span> <span class="o">*</span><span class="k">this</span><span class="p">;</span>    <span class="c1">// 类内使用类模板名不必指定模板实参, 等价于Foo&lt;T&gt; ret = *this;</span>
+    <span class="k">return</span> <span class="n">ret</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id6">
+<h2>类模板与友元<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id7">
+<h3>1. 简介<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
+<p>当一个类包含一个友元声明时，类和友元各自是否是模板是相互无关的。如果一个类模板包含一个非模板友元，则友元被授权可以访问所有模板实例。如果友元自身是模板，则类可以授权给所有友元模板实例，也可以只授权给特定实例。</p>
+</div>
+<div class="section" id="id8">
+<h3>2. 一对一友好关系<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
+<p>类模板与另一个（类或函数）模板间友好关系的最常见形式是建立对应实例及其友元间的友好关系。</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// 前置声明</span>
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span> <span class="k">class</span> <span class="nc">Foo</span><span class="p">;</span>
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span> <span class="k">class</span> <span class="nc">FooPtr</span><span class="p">;</span>
+
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span> <span class="kt">bool</span> <span class="k">operator</span><span class="o">==</span><span class="p">(</span><span class="k">const</span> <span class="n">Foo</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span><span class="p">,</span> <span class="k">const</span> <span class="n">Foo</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span><span class="p">);</span>
+
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span> <span class="k">class</span> <span class="nc">Foo</span> <span class="p">{</span>
+    <span class="c1">// 每个Foo实例将访问权限授予相同类型实例化的FooPtr和相等运算符</span>
+    <span class="k">friend</span> <span class="k">class</span> <span class="nc">FooPtr</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">;</span>
+    <span class="k">friend</span> <span class="kt">bool</span> <span class="k">operator</span><span class="o">==&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">(</span><span class="k">const</span> <span class="n">Foo</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span><span class="p">,</span> <span class="k">const</span> <span class="n">Foo</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="n">Foo</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">fi</span><span class="p">;</span>  <span class="c1">// FooPtr&lt;int&gt;和operator==&lt;int&gt;都是本对象的友元</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id9">
+<h3>3. 通用和特定的友好关系<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h3>
+<p>一个类也可以将另一个模板的每个实例都声明为自己的友元，或者限定特定的实例为友元：</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// 前置声明</span>
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span> <span class="k">class</span> <span class="nc">Pal</span><span class="p">;</span>
+
+<span class="c1">// C是一个普通的非模板类</span>
+<span class="k">class</span> <span class="nc">C</span> <span class="p">{</span>
+    <span class="c1">// 用类C实例化的Pal是C的友元</span>
+    <span class="k">friend</span> <span class="k">class</span> <span class="nc">Pal</span><span class="o">&lt;</span><span class="n">C</span><span class="o">&gt;</span><span class="p">;</span>
+    <span class="c1">// Pal2的所有实例都是C的友元, 这种情况下无须前置声明</span>
+    <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span> <span class="k">friend</span> <span class="k">class</span> <span class="nc">Pal2</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="c1">// C2是一个类模板</span>
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span> <span class="k">class</span> <span class="nc">C2</span> <span class="p">{</span>
+    <span class="c1">// C2的每个实例都将相同相同实例化的Pal声明为友元</span>
+    <span class="k">friend</span> <span class="k">class</span> <span class="nc">Pal</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">;</span>
+    <span class="c1">// Pal2的所有实例都是C2每个实例的友元, 不需要前置声明</span>
+    <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">X</span><span class="o">&gt;</span> <span class="k">friend</span> <span class="k">class</span> <span class="nc">Pal2</span><span class="p">;</span>
+    <span class="c1">// Pal3是一个非模板类, 它是C2所有实例的友元, 不需要前置声明</span>
+    <span class="k">friend</span> <span class="k">class</span> <span class="nc">Pal3</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id10">
+<h3>4. 令模板自己的类型参数成为友元<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h3>
+<p>在C++11新标准中，我们可以将模板类型参数声明为友元：</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span> <span class="k">class</span> <span class="nc">Foo</span> <span class="p">{</span>
+    <span class="c1">// 将模板类型参数声明为友元</span>
+    <span class="k">friend</span> <span class="n">T</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id11">
+<h2>类模板的类型别名<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h2>
+<p>C++11新标准允许我们为类模板定义一个类型别名：</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// authors的类型是pair&lt;string, string&gt;</span>
+<span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span> <span class="k">using</span> <span class="n">twin</span> <span class="o">=</span> <span class="n">pair</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span> <span class="n">T</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="n">twin</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">authors</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>当我们定义一个模板类型别名时，也可以固定一个或多个模板参数：</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span> <span class="k">using</span> <span class="n">partNo</span> <span class="o">=</span> <span class="n">pair</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span> <span class="kt">unsigned</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="n">partNo</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">books</span><span class="p">;</span>  <span class="c1">// books类型是pair&lt;string, unsigned&gt;</span>
+<span class="n">partNo</span><span class="o">&lt;</span><span class="n">Student</span><span class="o">&gt;</span> <span class="n">kids</span><span class="p">;</span>  <span class="c1">// kids类型是pair&lt;Student, unsigned&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="static">
+<h2>类模板的static成员<a class="headerlink" href="#static" title="永久链接至标题">¶</a></h2>
+<blockquote>
+<div><p>Tips：类似任何其他成员函数，一个<code class="docutils literal notranslate"><span class="pre">static</span></code>成员函数只有在使用时才会实例化。</p>
+</div></blockquote>
+<p>与任何其他类一样，类模板可以声明<code class="docutils literal notranslate"><span class="pre">static</span></code>成员：</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span> <span class="k">class</span> <span class="nc">Foo</span> <span class="p">{</span>
+ <span class="k">public</span><span class="o">:</span>
+    <span class="k">static</span> <span class="kt">size_t</span> <span class="n">count</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="n">ctr</span><span class="p">;</span> <span class="p">}</span>
+ <span class="k">private</span><span class="o">:</span>
+    <span class="k">static</span> <span class="kt">size_t</span> <span class="n">ctr</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="c1">// 定义并初始化ctr成员</span>
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span>
+<span class="kt">size_t</span> <span class="n">Foo</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;::</span><span class="n">ctr</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+<span class="c1">// 使用static成员</span>
+<span class="n">Foo</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">fi</span><span class="p">;</span>                  <span class="c1">// 实例化Foo&lt;int&gt;类和static成员ctr</span>
+<span class="k">auto</span> <span class="n">ct</span> <span class="o">=</span> <span class="n">Foo</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;::</span><span class="n">count</span><span class="p">();</span>  <span class="c1">// 实例化Foo&lt;int&gt;::count</span>
+<span class="n">ct</span> <span class="o">=</span> <span class="n">fi</span><span class="p">.</span><span class="n">count</span><span class="p">();</span>              <span class="c1">// 使用Foo&lt;&gt;</span>
+<span class="n">ct</span> <span class="o">=</span> <span class="n">Foo</span><span class="o">::</span><span class="n">count</span><span class="p">();</span>            <span class="c1">// 错误: 没有指定哪个模板实例的count</span>
+</pre></div>
+</div>
+<p>每个<code class="docutils literal notranslate"><span class="pre">Foo</span></code>的实例都有一个<code class="docutils literal notranslate"><span class="pre">static</span></code>成员实例，即对任意给定类型<code class="docutils literal notranslate"><span class="pre">X</span></code>，都有一个<code class="docutils literal notranslate"><span class="pre">Foo&lt;X&gt;::ctr</span></code>和一个<code class="docutils literal notranslate"><span class="pre">Foo&lt;X&gt;::count</span></code>成员，所有<code class="docutils literal notranslate"><span class="pre">Foo&lt;X&gt;</span></code>类型的对象共享相同的<code class="docutils literal notranslate"><span class="pre">ctr</span></code>对象和<code class="docutils literal notranslate"><span class="pre">count</span></code>函数。</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="7.3%20%E6%A8%A1%E6%9D%BF%E5%8F%82%E6%95%B0.html" class="btn btn-neutral float-right" title="7.3 模板参数" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="7.1%20%E5%87%BD%E6%95%B0%E6%A8%A1%E6%9D%BF.html" class="btn btn-neutral float-left" title="7.1 函数模板" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; 版权所有 2021, TOMOCAT.
+
+    </p>
+  </div>
+    
+    
+    
+    利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,134 @@
+# 6.2 标准库类型：vector
+
+## 头文件
+
+```c++
+#include <vector>
+using std::vector;
+```
+
+## 定义和初始化
+
+vector常用的初始化方法为：
+
+```c++
+// 默认初始化: v不含任何元素, 但是只能添加类型T的元素
+vector<T> v1;
+
+// 拷贝初始化: v2中包含v1所有元素的副本
+vector<T> v2 = v1;
+vector<T> v2(v1);
+
+// 初始化指定数量元素
+vector<T> v1(n, val);  // 包含n个值为val的元素
+vector<T> v1(n);       // 包含n个执行了值初始化(内置类型零初始化, 类类型默认构造函数初始化)的元素
+
+// 列表初始化
+vector<T> v1 {a, b, c};
+vector<T> v1 = {a, b, c};
+```
+
+注意vector的圆括号与花括号初始化是不同的：圆括号是通过调用vector的构造函数进行初始化的，如果使用了花括号那么初始化过程会尽可能会把花括号内的值当做元素初始值的列表来处理。如果初始化时使用了花括号但是提供的值又无法用来列表初始化，那么就考虑用这些值来调用vector的构造函数了。
+
+```c++
+#include <string>
+#include <vector>
+
+int main() {
+    std::vector<std::string> v1{"tomo", "cat", "tomocat"};  // 列表初始化: 包含3个string元素的vector
+    // std::vector<std::string> v2("a", "b", "c");          // 错误: 找不到合适的构造函数
+
+    std::vector<std::string> v3(10, "tomocat");             // 10个string元素的vector, 每个string初始化为"tomocat"
+    std::vector<std::string> v4{10, "tomocat"};             // 10个string元素的vector, 每个string初始化为"tomocat"
+
+    std::vector<int> v5(10);     // 10个int元素, 每个都初始化为0
+    std::vector<int> v6{10};     // 1个int元素, 该元素的值时10
+    std::vector<int> v7(10, 1);  // 10个int元素, 每个都初始化为1
+    std::vector<int> v8{10, 1};  // 2个int元素, 值分别是10和1
+}
+```
+
+## 添加元素
+
+`push_back`负责把一个值加到vector对象的尾端：
+
+```c++
+// 初始化一个空vector对象, 依次将0~99
+vector<int> vi;
+for (int i = 0; i != 100; ++i) {
+    vi.push_back(i);
+}
+```
+
+## vector其他操作
+
+```c++
+v.empty()     // v中不含有任何元素时返回true
+v.size()      // 返回v中元素数量
+v[n]          // 返回v中第n个位置上元素的引用
+v1 == v2
+v1 != v2      // v1和v2相等当且仅当它们的元素数量相同且对应位置的元素值相同
+<, <=, >, >=  // 以字典顺序进行比较
+```
+
+## vector常见错误
+
+#### 1. 范围for循环内给vector对象添加/删除元素
+
+在范围for循环中预存了`end()`的值，一旦在序列中添加（删除）元素，那么`end()`函数的值就可能变得无效了。
+
+#### 2. 不能用下标添加元素，也不能访问不存在的元素
+
+> Tips：vector与string等对象的下标运算符可用于访问已存在的元素，但不能用于添加元素。确保下标有效的一种有效手段就是尽可能地使用范围for语句。
+
+```c++
+vector<int> vi;
+vi[0] = 10;      // 严重错误: 访问了不存在的元素
+```
+
+#### 3. vector扩容导致引用或者指针失效
+
+> `push_back()`函数在插入元素时可能导致vector扩容，进而导致引用或者指针绑定的地址失效，这时候访问垃圾地址就会触发运行时错误。
+
+```c++
+// 编译能过, 但运行时crash
+#include <iostream>
+#include <vector>
+#include <string>
+
+int main() {
+    std::vector<std::string> v;
+    v.push_back("tomo");
+    const std::string &x = v[0];
+    v.push_back("cat");
+    std::cout << x << std::endl;
+}
+```
+
+## vector对象增长
+
+#### 1. vector对象能高效增长
+
+> Tips：开始的时候创建空的vector对象，在运行时再动态添加元素，这一做法与C语言以及其他大多数语言中内置数组类型的用法不同。特别是如果习惯了C或者Java，可能预计在创建vector对象时顺便指定其容量是最好的，然而事实上恰恰相反。
+
+C++标准要求vector能在运行时高效快速地添加元素，既然vector对象能高效地增长，那么定义vector对象的时候设定其大小也就没什么必要了，事实上如果这么做性能可能更差。只有一种例外情况，就是所有元素的值都一样。一旦元素的值有所不同，更有效的方法是先定义一个空的vector对象，再在运行时向其中添加具体值。
+
+#### 2. vector对象增长机制
+
+> Tips：这种分配策略比每次添加新元素时都重新分配容器内存空间的策略要高效得多。对比其他容器而言，虽然vector在每次重新分配内存空间时都要移动所有元素，但其扩张操作通常比list和deque还要快。
+
+为了支持快速随机访问，vector将元素连续存储到一块内存区域。由于元素必须连续存储，每次添加新元素时容器必须分配新的内容空间来保存已有元素和新的元素，将已有元素从旧位置移动到新空间中，添加完新元素后释放旧存储空间。如果我们每次添加一次新元素vector就执行一次这样的内存分配和释放操作，那么性能会慢到不可接受。
+
+为了避免这种操作，标准库采用了可以减少容器空间重新分配次数的策略，当不得不获取新的内存空间时，vector和string的实现通常会分配比新的空间需求更大的内存空间，容器预留这些空间作为备用来存储可能新增的元素。这样就不需要每次添加新元素都重新分配容器的内存空间了。
+
+#### 3. size和capacity
+
+vector中的size指它已经保存的元素数量，capacity指的是在不分配新的内存空间条件下可以容纳的元素数量。
+
+vector和string类型提供了一些成员函数让我们可以参与它的内存分配：
+
+```c++
+c.shrink_to_fit();  // 将capacity()减少到与size()相同大小
+c.capacity();       // 不重新分配内存的情况下c可以容纳的元素数量
+c.reserve(n);       // 分配至少能容纳n个元素的内存空间
+```

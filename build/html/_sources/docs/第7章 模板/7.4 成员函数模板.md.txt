@@ -1,0 +1,80 @@
+
+
+# 7.4 成员函数模板
+
+## 简介
+
+> Tips：成员模板不能是虚函数。
+
+一个类（无论是普通类还是类模板）可以包含本身是模板的成员函数，这种成员被称为成员模板。
+
+## 普通类的成员模板
+
+我们定义一个类，类似`unique_ptr`使用的默认删除器类型，我们的类将包含一个重载的函数调用运算符，它接受一个指针并对此指针执行`delete`。与默认删除器不同，我们的类还将在删除器被执行时打印一条信息。由于希望删除器适用于任何类型，所以我们将调用运算符定义为一个模板：
+
+```c++
+#include <iostream>
+#include <memory>
+
+// 函数对象类, 对给定指针执行delete
+class DebugDelete {
+ public:
+    explicit DebugDelete(std::ostream &s = std::cerr) : os_(s) { }
+    template <typename T> void operator()(T *p) const {
+        os_ << "deleting unique_ptr" << std::endl;
+        delete p;
+    }
+ private:
+    std::ostream &os_;
+};
+
+int main() {
+    // 在一个临时对象上调用operator()(int*)
+    double *pd = new double;
+    DebugDelete()(pd);
+
+    // 将DebugDelete用作unique_ptr的删除器
+    // 实例化DebugDelete::operator()<int>(int*)
+    std::unique_ptr<int, DebugDelete>p(new int, DebugDelete());
+    return 0;
+}
+```
+
+## 类模板的成员模板
+
+对于类模板，我们也可以为其定义成员模板。在此情况下，类和成员各自有各自的、独立的模板参数。
+
+```c++
+#include <iostream>
+#include <memory>
+#include <vector>
+#include <list>
+#include <string>
+
+// 定义Foo的构造函数, 接受两个迭代器表示要拷贝的元素范围
+template <typename T> class Foo {
+ public:
+    template <typename It> Foo(It b, It e);
+ private:
+    std::shared_ptr<std::vector<T>> data_;
+};
+
+template <typename T>
+template <typename It>
+    Foo<T>::Foo(It b, It e) : data_(std::make_shared<std::vector<T>>(b, e)) { }
+
+int main() {
+    // 实例化Foo<int>类的接受两个int*参数的构造函数
+    int ia[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+    Foo<int> f1(std::begin(ia), std::end(ia));
+
+    // 实例化Foo<int>类的接受两个vector<long>::iterator参数的构造函数
+    std::vector<int64_t> vi = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+    Foo<int> f2(vi.begin(), vi.end());
+
+    // 实例化Foo<string>类的接受两个list<const char*>::iterator参数的构造函数
+    std::list<const char*> w = {"tomo", "cat", "tomocat"};
+    Foo<std::string> f3(w.begin(), w.end());
+}
+```
+

@@ -1,0 +1,380 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>10.3 左值与右值 &mdash; C++语法笔记 v1.0 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="10.4 命名空间" href="10.4%20%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4.html" />
+    <link rel="prev" title="10.2 在main函数之前或者之后打印消息" href="10.2%20%E5%9C%A8main%E5%87%BD%E6%95%B0%E4%B9%8B%E5%89%8D%E6%88%96%E4%B9%8B%E5%90%8E%E6%89%93%E5%8D%B0%E6%B6%88%E6%81%AF.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> C++语法笔记
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC1%E7%AB%A0%20%E5%8F%98%E9%87%8F%E4%B8%8E%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B/index.html">第1章 变量与基本类型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC2%E7%AB%A0%20%E8%AF%AD%E5%8F%A5/index.html">第2章 语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC3%E7%AB%A0%20%E5%87%BD%E6%95%B0/index.html">第3章 函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC4%E7%AB%A0%20%E8%BF%90%E7%AE%97%E7%AC%A6/index.html">第4章 运算符</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC5%E7%AB%A0%20%E7%B1%BB/index.html">第5章类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC6%E7%AB%A0%20%E6%A0%87%E5%87%86%E5%BA%93%E7%B1%BB%E5%9E%8B/index.html">第6章 标准库类型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC7%E7%AB%A0%20%E6%A8%A1%E6%9D%BF/index.html">第7章 模板</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC8%E7%AB%A0%20%E5%85%B3%E9%94%AE%E5%AD%97%E6%A6%82%E5%BF%B5/index.html">第8章 关键字概念</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC9%E7%AB%A0%20%E7%AE%97%E6%B3%95/index.html">第9章 算法</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">第10章 语法特性</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="10.1%20%E5%A4%B4%E6%96%87%E4%BB%B6.html">10.1 头文件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10.2%20%E5%9C%A8main%E5%87%BD%E6%95%B0%E4%B9%8B%E5%89%8D%E6%88%96%E4%B9%8B%E5%90%8E%E6%89%93%E5%8D%B0%E6%B6%88%E6%81%AF.html">10.2 在main函数之前或者之后打印消息</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">10.3 左值与右值</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">简介</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">运算符与左值右值</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#decltype">decltype与左值右值</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">右值引用</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#move">1. 标准库move函数获得右值引用</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5">2. 接受右值引用参数的成员函数</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6">3. 成员函数的右值引用限定符</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="10.4%20%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4.html">10.4 命名空间</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10.5%20%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83.html">10.5 命名规范</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10.6%20%E5%8F%98%E9%87%8F%E7%94%9F%E5%AD%98%E6%9C%9F%E5%92%8C%E5%8F%98%E9%87%8F%E4%BD%9C%E7%94%A8%E5%9F%9F.html">10.6 变量生存期和变量作用域</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10.7%20%E6%A0%87%E5%87%86%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E6%A8%A1%E6%9D%BF.html">10.7 标准类型转换模板</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10.8%20%E6%89%8B%E5%8A%A8%E7%AE%A1%E7%90%86%E5%86%85%E5%AD%98.html">10.8 手动管理内存</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10.9%20%E5%B9%B6%E8%A1%8C%E5%92%8C%E5%B9%B6%E5%8F%91.html">10.9 并行和并发</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10.10%20%E5%9B%BA%E6%9C%89%E7%9A%84%E4%B8%8D%E5%8F%AF%E7%A7%BB%E6%A4%8D%E7%9A%84%E7%89%B9%E6%80%A7.html">10.10 固有的不可移植的特性</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10.11%20%E8%BF%90%E8%A1%8C%E6%97%B6%E7%B1%BB%E5%9E%8B%E8%AF%86%E5%88%AB.html">10.11 运行时类型识别</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10.12%20%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86.html">10.12 异常处理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10.13%20%E5%86%85%E5%AD%98%E5%88%86%E5%B8%83.html">10.13 内存分布</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10.14%20%E8%B0%83%E8%AF%95%E5%B8%AE%E5%8A%A9.html">10.14 调试帮助</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC11%E7%AB%A0%20C%2B%2B11%E6%96%B0%E6%A0%87%E5%87%86/index.html">第11章 C++11新标准</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../README.html">README</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">C++语法笔记</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">第10章 语法特性</a> &raquo;</li>
+        
+      <li>10.3 左值与右值</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/docs/第10章 语言特性/10.3 左值与右值.md.txt" rel="nofollow"> 查看页面源码</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>10.3 左值与右值<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id2">
+<h2>简介<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>C++中的表达式要么是左值要么是右值，在C语言中可以位于赋值语句左侧的是左值，不能的被称为右值。但是在C++中两者的区别没有那么明显，但是可以简单归纳为：</p>
+<ul class="simple">
+<li><p>左值有持久的状态，而右值要么是字面常量，要么是在表达式求值过程中创建的临时对象</p></li>
+<li><p>当一个对象被用作右值的时候，用的是对象的值（内容）；当一个对象被用作左值的时候，用的是对象的身份（在内存中的位置）</p></li>
+</ul>
+<blockquote>
+<div><p>Tips：左值有持久的状态，而右值要么是字面常量，要么是在表达式求值过程中创建的临时对象。。</p>
+</div></blockquote>
+</div>
+<div class="section" id="id3">
+<h2>运算符与左值右值<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>不同的运算符对运算对象的要求不尽相同：有的需要左值运算对象，有的需要右值运算对象；有的返回值得到左值结果，有的得到右值结果。</p>
+<blockquote>
+<div><p>Tips：一个重要的原则是：在需要右值的地方可以用左值代替，但是不能把右值当做左值（也就是位置）来使用。</p>
+</div></blockquote>
+<p>下面列举几种需要用到左值的常用运算符：</p>
+<ul class="simple">
+<li><p>赋值运算符：需要一个非常量左值作为左侧运算对象，返回一个左值</p></li>
+<li><p>取地址符：作用于一个左值运算对象，返回一个指向该运算对象的指针右值</p></li>
+<li><p>内置解引用运算符、下标运算符、迭代器解引用运算符、vector和string的下标运算符：求值结果都是左值</p></li>
+<li><p>内置类型和迭代器的递增递减运算符：作用于左值运算对象，其前置版本所得的结果也是左值</p></li>
+</ul>
+</div>
+<div class="section" id="decltype">
+<h2>decltype与左值右值<a class="headerlink" href="#decltype" title="永久链接至标题">¶</a></h2>
+<p>如果表达式的求值结果是左值，那么关键字decltype作用于该表达式（不是变量）会得到一个引用类型。举个例子：</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="o">*</span><span class="n">pi</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">a</span><span class="p">;</span>
+<span class="k">decltype</span><span class="p">(</span><span class="o">*</span><span class="n">pi</span><span class="p">)</span> <span class="n">x</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span>  <span class="c1">// 解引用符生成左值, 因此decltype(*pi)结果是int&amp;, 引用类型必须初始化</span>
+<span class="k">decltype</span><span class="p">(</span><span class="o">&amp;</span><span class="n">pi</span><span class="p">)</span> <span class="n">y</span><span class="p">;</span>      <span class="c1">// 取地址符生成右值, 因此decltype(&amp;p)的结果是int**</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>右值引用<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<p>右值引用指的是必须绑定到右值的引用，我们可以通过<code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code>来获取右值引用。右值引用一个重要的性质就是只能绑定到一个将要销毁的对象，因此我们可以自由地讲一个右值引用的资源“移动”到另一个对象中去。</p>
+<blockquote>
+<div><p>Tips：正常来说左值引用只能绑定到左值上，右值引用只能绑定到右值上，但是我们可以将一个<code class="docutils literal notranslate"><span class="pre">const</span></code>的左值引用绑定到一个右值上。</p>
+</div></blockquote>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
+<span class="kt">int</span> <span class="o">&amp;</span><span class="n">r</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>              <span class="c1">// 正确: 左值引用</span>
+<span class="kt">int</span> <span class="o">&amp;&amp;</span><span class="n">rr</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>            <span class="c1">// 错误: 不能将一个右值引用绑定到一个左值上</span>
+<span class="kt">int</span> <span class="o">&amp;</span><span class="n">r2</span> <span class="o">=</span> <span class="n">i</span> <span class="o">*</span> <span class="mi">42</span><span class="p">;</span>        <span class="c1">// 错误: 不能讲一个左值引用绑定到一个右值上</span>
+<span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">r3</span> <span class="o">=</span> <span class="n">i</span> <span class="o">*</span> <span class="mi">42</span><span class="p">;</span>  <span class="c1">// 正确: 我们可以将一个const的左值引用绑定到右值上</span>
+<span class="kt">int</span> <span class="o">&amp;&amp;</span><span class="n">rr2</span> <span class="o">=</span> <span class="n">i</span> <span class="o">*</span> <span class="mi">42</span><span class="p">;</span>      <span class="c1">// 正确: 右值引用</span>
+</pre></div>
+</div>
+<p>需要注意的是我们不能将一个右值引用绑定到一个右值引用类型的变量上：</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// 正确: 字面常量是右值, 可以被右值引用</span>
+<span class="kt">int</span> <span class="o">&amp;&amp;</span><span class="n">rr1</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
+<span class="c1">// 错误: 变量是左值, 我们不能讲一个右值引用绑定到一个变量上, 即使这个变量是右值引用类型也不行</span>
+<span class="kt">int</span> <span class="o">&amp;&amp;</span><span class="n">rr2</span> <span class="o">=</span> <span class="n">rr1</span><span class="p">;</span> 
+</pre></div>
+</div>
+<div class="section" id="move">
+<h3>1. 标准库move函数获得右值引用<a class="headerlink" href="#move" title="永久链接至标题">¶</a></h3>
+<p>虽然我们不能将一个右值引用直接绑定到左值上，但我们可以使用<code class="docutils literal notranslate"><span class="pre">utility</span></code>头文件中的<code class="docutils literal notranslate"><span class="pre">std::move</span></code>函数来获得绑定到左值上的右值引用：</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="o">&amp;&amp;</span><span class="n">rr1</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
+<span class="kt">int</span> <span class="o">&amp;&amp;</span><span class="n">rr2</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">rr1</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>需要注意的是：</p>
+<ul class="simple">
+<li><p>使用<code class="docutils literal notranslate"><span class="pre">move</span></code>的代码应该明确使用<code class="docutils literal notranslate"><span class="pre">std::move</span></code>而不是在提供<code class="docutils literal notranslate"><span class="pre">using</span></code>声明后使用<code class="docutils literal notranslate"><span class="pre">move</span></code>函数，防止和用户程序定义的接受单一形参的<code class="docutils literal notranslate"><span class="pre">move</span></code>函数冲突</p></li>
+<li><p>调用<code class="docutils literal notranslate"><span class="pre">std::move</span></code>就意味着承诺除了对原来的左值对象赋值或销毁它外，我们将不再使用这个对象的值</p></li>
+</ul>
+</div>
+<div class="section" id="id5">
+<h3>2. 接受右值引用参数的成员函数<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+<p>除了构造函数和赋值运算符外，一个成员函数也可以同时提供拷贝和移动版本（一个版本接受指向<code class="docutils literal notranslate"><span class="pre">const</span></code>的左值引用，一个版本指向非<code class="docutils literal notranslate"><span class="pre">const</span></code>的右值引用）：</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// 定义push_back的标准库容器提供两个版本: 右值引用参数和const左值引用参数</span>
+<span class="kt">void</span> <span class="nf">push_back</span><span class="p">(</span><span class="k">const</span> <span class="n">T</span><span class="o">&amp;</span><span class="p">);</span>  <span class="c1">// 拷贝: 绑定到任意类型的T</span>
+<span class="kt">void</span> <span class="nf">push_back</span><span class="p">(</span><span class="n">T</span><span class="o">&amp;&amp;</span><span class="p">);</span>       <span class="c1">// 移动: 只能绑定到类型T的可修改的右值</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>Tips：一般情况下我们不需要为函数定义接受一个<code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">T&amp;&amp;</span></code>或是一个普通的<code class="docutils literal notranslate"><span class="pre">T&amp;</span></code>参数的版本。因为当我们希望从实参“窃取”数据时，通常传一个右值引用参数且该实参不能是<code class="docutils literal notranslate"><span class="pre">const</span></code>的，当我们希望从一个对象拷贝数据时，通常不需要定义一个接受普通<code class="docutils literal notranslate"><span class="pre">T&amp;</span></code>参数的版本。</p>
+</div></blockquote>
+</div>
+<div class="section" id="id6">
+<h3>3. 成员函数的右值引用限定符<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
+<p>通常情况下我们在一个对象上调用成员函数不需要管该对象是一个左值还是右值，比如：</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">string</span> <span class="n">s1</span> <span class="o">=</span> <span class="s">&quot;tomo&quot;</span><span class="p">,</span> <span class="n">s2</span> <span class="o">=</span> <span class="s">&quot;cat&quot;</span><span class="p">;</span>
+<span class="k">auto</span> <span class="n">n</span> <span class="o">=</span> <span class="p">(</span><span class="n">s1</span> <span class="o">+</span> <span class="n">s2</span><span class="p">).</span><span class="n">find</span><span class="p">(</span><span class="sc">&#39;a&#39;</span><span class="p">);</span>  <span class="c1">// 在一个string右值上调用find成员</span>
+<span class="n">s1</span> <span class="o">+</span> <span class="n">s2</span> <span class="o">=</span> <span class="s">&quot;test&quot;</span><span class="p">;</span>              <span class="c1">// 对一个string右值赋值</span>
+</pre></div>
+</div>
+<p>在旧标准中我们无法阻止上述这种使用方式，为了维持向后兼容性，新标准库类仍然允许向右值赋值。但是在新标准中如果我们想在自定义的类中阻止这种用法，可以强制左侧运算对象（即<code class="docutils literal notranslate"><span class="pre">this</span></code>指针指向的对象）是一个左值。</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Foo</span> <span class="p">{</span>
+ <span class="k">public</span><span class="o">:</span>
+    <span class="c1">// 左值引用限定符: 拷贝赋值运算符只可向可修改的左值赋值</span>
+    <span class="n">Foo</span> <span class="o">&amp;</span><span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span> <span class="n">Foo</span> <span class="o">&amp;</span><span class="n">rhs</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="o">*</span><span class="k">this</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="n">Foo</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">;</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">b</span><span class="p">;</span>             <span class="c1">// 正确</span>
+<span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">=</span> <span class="n">b</span><span class="p">;</span>  <span class="c1">// 错误: 不可向右值赋值</span>
+</pre></div>
+</div>
+<p>和左值引用限定符用法相似，右值引用限定符<code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code>表示该成员函数只可应用于右值。我们可以综合引用限定符和<code class="docutils literal notranslate"><span class="pre">const</span></code>限定符来区分一个成员函数的重载版本：</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Foo</span> <span class="p">{</span>
+ <span class="k">public</span><span class="o">:</span>
+    <span class="c1">// 用于类型Foo的可改变的右值: 提高排序性能</span>
+    <span class="n">Foo</span> <span class="n">sorted</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="p">{</span>
+        <span class="c1">// 本对象为右值, 可以原址排序</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">sort</span><span class="p">(</span><span class="n">data_</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">data_</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+        <span class="k">return</span> <span class="o">*</span><span class="k">this</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="c1">// 可用于任何类型的Foo</span>
+    <span class="n">Foo</span> <span class="n">sorted</span><span class="p">()</span> <span class="k">const</span> <span class="o">&amp;</span> <span class="p">{</span>
+        <span class="c1">// 本对象是const或者一个左值, 不能原址排序</span>
+        <span class="n">Foo</span> <span class="nf">ret</span><span class="p">(</span><span class="o">*</span><span class="k">this</span><span class="p">);</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">sort</span><span class="p">(</span><span class="n">ret</span><span class="p">.</span><span class="n">data_</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">ret</span><span class="p">.</span><span class="n">data_</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+        <span class="k">return</span> <span class="n">ret</span><span class="p">;</span>
+    <span class="p">}</span>
+ <span class="k">private</span><span class="o">:</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">data_</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="10.4%20%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4.html" class="btn btn-neutral float-right" title="10.4 命名空间" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="10.2%20%E5%9C%A8main%E5%87%BD%E6%95%B0%E4%B9%8B%E5%89%8D%E6%88%96%E4%B9%8B%E5%90%8E%E6%89%93%E5%8D%B0%E6%B6%88%E6%81%AF.html" class="btn btn-neutral float-left" title="10.2 在main函数之前或者之后打印消息" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; 版权所有 2021, TOMOCAT.
+
+    </p>
+  </div>
+    
+    
+    
+    利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

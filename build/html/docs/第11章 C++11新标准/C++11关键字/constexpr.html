@@ -1,0 +1,279 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>C++11关键字：constexpr &mdash; C++语法笔记 v1.0 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../../../genindex.html" />
+    <link rel="search" title="搜索" href="../../../search.html" />
+    <link rel="next" title="C++11关键字：decltype" href="decltype.html" />
+    <link rel="prev" title="C++11关键字" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> C++语法笔记
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../%E7%AC%AC1%E7%AB%A0%20%E5%8F%98%E9%87%8F%E4%B8%8E%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B/index.html">第1章 变量与基本类型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../%E7%AC%AC2%E7%AB%A0%20%E8%AF%AD%E5%8F%A5/index.html">第2章 语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../%E7%AC%AC3%E7%AB%A0%20%E5%87%BD%E6%95%B0/index.html">第3章 函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../%E7%AC%AC4%E7%AB%A0%20%E8%BF%90%E7%AE%97%E7%AC%A6/index.html">第4章 运算符</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../%E7%AC%AC5%E7%AB%A0%20%E7%B1%BB/index.html">第5章类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../%E7%AC%AC6%E7%AB%A0%20%E6%A0%87%E5%87%86%E5%BA%93%E7%B1%BB%E5%9E%8B/index.html">第6章 标准库类型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../%E7%AC%AC7%E7%AB%A0%20%E6%A8%A1%E6%9D%BF/index.html">第7章 模板</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../%E7%AC%AC8%E7%AB%A0%20%E5%85%B3%E9%94%AE%E5%AD%97%E6%A6%82%E5%BF%B5/index.html">第8章 关键字概念</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../%E7%AC%AC9%E7%AB%A0%20%E7%AE%97%E6%B3%95/index.html">第9章 算法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../%E7%AC%AC10%E7%AB%A0%20%E8%AF%AD%E8%A8%80%E7%89%B9%E6%80%A7/index.html">第10章 语法特性</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">第11章 C++11新标准</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">C++11关键字</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">C++11关键字：constexpr</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">简介</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">字面值是常量表达式</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#constexpr">constexpr是对指针的限制</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="decltype.html">C++11关键字：decltype</a></li>
+<li class="toctree-l3"><a class="reference internal" href="noexcept.html">C++11关键字：noexcept</a></li>
+<li class="toctree-l3"><a class="reference internal" href="override%E5%92%8Cfinal.html">C++11关键字：override和final</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../11.1%20%E6%A0%87%E5%87%86%E5%BA%93bind%E5%87%BD%E6%95%B0.html">11.1 标准库bind函数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../11.2%20Lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F.html">11.12 Lambda表达式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../11.3%20%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88.html">11.3 智能指针</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../11.4%20%E5%8F%B3%E5%80%BC%E5%BC%95%E7%94%A8.html">11.4 右值引用</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../11.5%20%E5%88%9D%E5%A7%8B%E5%8C%96%E5%88%97%E8%A1%A8.html">11.5 初始化列表</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../11.6%20%E6%A0%87%E5%87%86%E5%BA%93function%E7%B1%BB%E5%9E%8B.html">11.6 标准库function类型</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html">README</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">C++语法笔记</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">第11章 C++11新标准</a> &raquo;</li>
+        
+          <li><a href="index.html">C++11关键字</a> &raquo;</li>
+        
+      <li>C++11关键字：constexpr</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/docs/第11章 C++11新标准/C++11关键字/constexpr.md.txt" rel="nofollow"> 查看页面源码</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="c-11-constexpr">
+<h1>C++11关键字：constexpr<a class="headerlink" href="#c-11-constexpr" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id1">
+<h2>简介<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p>C++11引入了常量表达式constexpr的概念，指的是值不会改变并且在<strong>编译期间</strong>就能得到计算结果的表达式。</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">const</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>          <span class="c1">// 常量表达式</span>
+<span class="k">const</span> <span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>       <span class="c1">// 常量表达式</span>
+<span class="k">const</span> <span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="n">size</span><span class="p">();</span>      <span class="c1">// 仅当size()是一个constexpr函数时才是常量表达式, 运行时才能获得具体值就不是常量表达式</span>
+</pre></div>
+</div>
+<p>在一个复杂系统中，我们很难分辨一个初始值是否是常量表达式，通过constexpr关键字声明一个变量，我们可以让编译器来验证变量的值是否是一个常量表达式。</p>
+</div>
+<div class="section" id="id2">
+<h2>字面值是常量表达式<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>算术类型、引用和指针都属于字面值类型，自定义类则不属于字面值类型，因此也无法被定义为constexpr。</p>
+<blockquote>
+<div><p>Tips：尽管指针和引用都能被定义成constexpr，但它们的初始值却受到严格限制。一个constexpr指针的初始值必须是nullptr、0或者是存储于某个固定地址中的对象。</p>
+</div></blockquote>
+</div>
+<div class="section" id="constexpr">
+<h2>constexpr是对指针的限制<a class="headerlink" href="#constexpr" title="永久链接至标题">¶</a></h2>
+<p>在constexpr声明中定义了一个指针，限定符constexpr仅对指针有效，与指针所指对象无关：</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">const</span> <span class="kt">int</span> <span class="o">*</span><span class="n">pi1</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>      <span class="c1">// 底层const: pi1是指向整型常量的普通指针</span>
+<span class="k">constexpr</span> <span class="kt">int</span> <span class="o">*</span><span class="n">pi2</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>  <span class="c1">// 顶层const: pi2是指向整型的常量指针</span>
+</pre></div>
+</div>
+<p>我们也可以让constexpr指针指向常量：</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">constexpr</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="k">constexpr</span> <span class="k">const</span> <span class="kt">int</span> <span class="o">*</span><span class="n">pi</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">i</span><span class="p">;</span>  <span class="c1">// 顶层const + 底层const </span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="decltype.html" class="btn btn-neutral float-right" title="C++11关键字：decltype" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="index.html" class="btn btn-neutral float-left" title="C++11关键字" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; 版权所有 2021, TOMOCAT.
+
+    </p>
+  </div>
+    
+    
+    
+    利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

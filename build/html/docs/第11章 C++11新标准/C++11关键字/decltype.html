@@ -1,0 +1,289 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>C++11关键字：decltype &mdash; C++语法笔记 v1.0 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../../../genindex.html" />
+    <link rel="search" title="搜索" href="../../../search.html" />
+    <link rel="next" title="C++11关键字：noexcept" href="noexcept.html" />
+    <link rel="prev" title="C++11关键字：constexpr" href="constexpr.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> C++语法笔记
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../%E7%AC%AC1%E7%AB%A0%20%E5%8F%98%E9%87%8F%E4%B8%8E%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B/index.html">第1章 变量与基本类型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../%E7%AC%AC2%E7%AB%A0%20%E8%AF%AD%E5%8F%A5/index.html">第2章 语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../%E7%AC%AC3%E7%AB%A0%20%E5%87%BD%E6%95%B0/index.html">第3章 函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../%E7%AC%AC4%E7%AB%A0%20%E8%BF%90%E7%AE%97%E7%AC%A6/index.html">第4章 运算符</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../%E7%AC%AC5%E7%AB%A0%20%E7%B1%BB/index.html">第5章类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../%E7%AC%AC6%E7%AB%A0%20%E6%A0%87%E5%87%86%E5%BA%93%E7%B1%BB%E5%9E%8B/index.html">第6章 标准库类型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../%E7%AC%AC7%E7%AB%A0%20%E6%A8%A1%E6%9D%BF/index.html">第7章 模板</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../%E7%AC%AC8%E7%AB%A0%20%E5%85%B3%E9%94%AE%E5%AD%97%E6%A6%82%E5%BF%B5/index.html">第8章 关键字概念</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../%E7%AC%AC9%E7%AB%A0%20%E7%AE%97%E6%B3%95/index.html">第9章 算法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../%E7%AC%AC10%E7%AB%A0%20%E8%AF%AD%E8%A8%80%E7%89%B9%E6%80%A7/index.html">第10章 语法特性</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">第11章 C++11新标准</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">C++11关键字</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="constexpr.html">C++11关键字：constexpr</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">C++11关键字：decltype</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">简介</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#decltypeconst">decltype处理顶层const和引用</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#decltype">decltype与左值右值</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="noexcept.html">C++11关键字：noexcept</a></li>
+<li class="toctree-l3"><a class="reference internal" href="override%E5%92%8Cfinal.html">C++11关键字：override和final</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../11.1%20%E6%A0%87%E5%87%86%E5%BA%93bind%E5%87%BD%E6%95%B0.html">11.1 标准库bind函数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../11.2%20Lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F.html">11.12 Lambda表达式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../11.3%20%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88.html">11.3 智能指针</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../11.4%20%E5%8F%B3%E5%80%BC%E5%BC%95%E7%94%A8.html">11.4 右值引用</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../11.5%20%E5%88%9D%E5%A7%8B%E5%8C%96%E5%88%97%E8%A1%A8.html">11.5 初始化列表</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../11.6%20%E6%A0%87%E5%87%86%E5%BA%93function%E7%B1%BB%E5%9E%8B.html">11.6 标准库function类型</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html">README</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">C++语法笔记</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">第11章 C++11新标准</a> &raquo;</li>
+        
+          <li><a href="index.html">C++11关键字</a> &raquo;</li>
+        
+      <li>C++11关键字：decltype</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/docs/第11章 C++11新标准/C++11关键字/decltype.md.txt" rel="nofollow"> 查看页面源码</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="c-11-decltype">
+<h1>C++11关键字：decltype<a class="headerlink" href="#c-11-decltype" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id1">
+<h2>简介<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p>C++11引入的关键字decltype允许我们从表达式的类型推断出要定义的变量类型，编译器会分析表达式并得到的类型，却不实际计算该表达式的值。</p>
+</div>
+<div class="section" id="decltypeconst">
+<h2>decltype处理顶层const和引用<a class="headerlink" href="#decltypeconst" title="永久链接至标题">¶</a></h2>
+<blockquote>
+<div><p>Tips：引用从来都是作为其所指对象的同义词出现的，只有用在decltype处是一个例外。</p>
+</div></blockquote>
+<p>decltype处理顶层const和引用的方式与auto稍有不同，如果decltype使用的表达式是一个变量，那么decltype会返回该变量的类型（包括顶层const和引用在内）：</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">const</span> <span class="kt">int</span> <span class="n">ci</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">cj</span> <span class="o">=</span> <span class="n">ci</span><span class="p">;</span>
+
+<span class="k">decltype</span><span class="p">(</span><span class="n">ci</span><span class="p">)</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>  <span class="c1">// x的类型是const int</span>
+<span class="k">decltype</span><span class="p">(</span><span class="n">cj</span><span class="p">)</span> <span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span>  <span class="c1">// y的类型是const int&amp;, y绑定到x</span>
+<span class="k">decltype</span><span class="p">(</span><span class="n">cj</span><span class="p">)</span> <span class="n">z</span><span class="p">;</span>      <span class="c1">// 错误: z是一个引用, 必须初始化</span>
+</pre></div>
+</div>
+<p>如果decltype使用的表达式不是一个变量，则decltype返回表达式结果对应的类型（后面会提到有一些表达式返回左值，会向decltype返回一个引用类型）。前面提到decltype作用于一个变量时得到的结果就是该变量的类型，但是如果我们给变量加上一层或多层括号，编译器就会把它当做一个表达式得到引用类型：</p>
+<blockquote>
+<div><p>Tips：变量是一种可以作为赋值语句左值的特殊表达式，所以<code class="docutils literal notranslate"><span class="pre">decltype((variable))</span></code>的结果永远都是引用，而<code class="docutils literal notranslate"><span class="pre">decltype(variable)</span></code>的结果只有当<code class="docutils literal notranslate"><span class="pre">variable</span></code>本身是一个引用时才是引用。</p>
+</div></blockquote>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
+
+<span class="k">decltype</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="n">a</span><span class="p">;</span>    <span class="c1">// 正确: a是一个未初始化的int</span>
+<span class="k">decltype</span><span class="p">((</span><span class="n">i</span><span class="p">))</span> <span class="n">b</span><span class="p">;</span>  <span class="c1">// 错误: b的类型是int&amp;, 必须初始化</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="decltype">
+<h2>decltype与左值右值<a class="headerlink" href="#decltype" title="永久链接至标题">¶</a></h2>
+<p>如果表达式的求值结果是左值，那么关键字decltype作用于该表达式（不是变量）会得到一个引用类型。举个例子：</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="o">*</span><span class="n">pi</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="n">a</span><span class="p">;</span>
+<span class="k">decltype</span><span class="p">(</span><span class="o">*</span><span class="n">pi</span><span class="p">)</span> <span class="n">x</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span>  <span class="c1">// 解引用符生成左值, 因此decltype(*pi)结果是int&amp;, 引用类型必须初始化</span>
+<span class="k">decltype</span><span class="p">(</span><span class="o">&amp;</span><span class="n">pi</span><span class="p">)</span> <span class="n">y</span><span class="p">;</span>      <span class="c1">// 取地址符生成右值, 因此decltype(&amp;p)的结果是int**</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="noexcept.html" class="btn btn-neutral float-right" title="C++11关键字：noexcept" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="constexpr.html" class="btn btn-neutral float-left" title="C++11关键字：constexpr" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; 版权所有 2021, TOMOCAT.
+
+    </p>
+  </div>
+    
+    
+    
+    利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

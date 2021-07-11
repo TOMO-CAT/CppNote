@@ -1,0 +1,7 @@
+# 2.4 continue语句
+
+## 简介
+
+> Tips：和break语句不同的是，只有当switch语句嵌套在迭代语句内部时，才能在switch里使用continue，用于结束外层循环中的当前迭代。
+
+continue语句终止最近的循环中的当前迭代并立即开始下一次迭代。只能出现在for、while、do while循环的内部，或者嵌套在此类循环里的语句或块的内部。

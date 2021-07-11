@@ -1,0 +1,760 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>6.5 标准库类型：顺序容器 &mdash; C++语法笔记 v1.0 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="6.6 标准库类型：容器适配器" href="6.6%20%E6%A0%87%E5%87%86%E5%BA%93%E5%AE%B9%E5%99%A8%E9%80%82%E9%85%8D%E5%99%A8.html" />
+    <link rel="prev" title="6.4 标准库类型：迭代器" href="6.4%20%E6%A0%87%E5%87%86%E5%BA%93%E7%B1%BB%E5%9E%8B%E8%BF%AD%E4%BB%A3%E5%99%A8.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> C++语法笔记
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC1%E7%AB%A0%20%E5%8F%98%E9%87%8F%E4%B8%8E%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B/index.html">第1章 变量与基本类型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC2%E7%AB%A0%20%E8%AF%AD%E5%8F%A5/index.html">第2章 语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC3%E7%AB%A0%20%E5%87%BD%E6%95%B0/index.html">第3章 函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC4%E7%AB%A0%20%E8%BF%90%E7%AE%97%E7%AC%A6/index.html">第4章 运算符</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC5%E7%AB%A0%20%E7%B1%BB/index.html">第5章类</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">第6章 标准库类型</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="6.1%20%E6%A0%87%E5%87%86%E5%BA%93%E7%B1%BB%E5%9E%8Bstring.html">6.1 标准库类型：string</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6.2%20%E6%A0%87%E5%87%86%E5%BA%93%E7%B1%BB%E5%9E%8Bvector.html">6.2 标准库类型：vector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6.3%20%E6%A0%87%E5%87%86%E5%BA%93%E7%B1%BB%E5%9E%8BIO%E7%B1%BB.html">6.3 标准库类型：IO库</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6.4%20%E6%A0%87%E5%87%86%E5%BA%93%E7%B1%BB%E5%9E%8B%E8%BF%AD%E4%BB%A3%E5%99%A8.html">6.4 标准库类型：迭代器</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">6.5 标准库类型：顺序容器</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">概述</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">选择顺序容器的基本原则</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">容器库概览</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id5">1. 容器类型别名</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#beginend">2. 容器的begin和end成员</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6">3. 容器定义和初始化</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#swap">4. 容器赋值和swap</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id7">5. 容器大小操作</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">顺序容器操作</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id10">1. 向顺序容器添加元素</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id11">2. 访问元素</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id12">3. 删除元素</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id13">4. 改变容器大小</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id14">5. 容器操作可能使得迭代器失效</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#forward-list">特殊的forward_list操作</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="6.6%20%E6%A0%87%E5%87%86%E5%BA%93%E5%AE%B9%E5%99%A8%E9%80%82%E9%85%8D%E5%99%A8.html">6.6 标准库类型：容器适配器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6.7%20%E6%A0%87%E5%87%86%E5%BA%93%E5%85%B3%E8%81%94%E5%AE%B9%E5%99%A8.html">6.7 标准库：关联容器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6.8%20%E6%A0%87%E5%87%86%E5%BA%93%E7%B1%BB%E5%9E%8Btuple.html">6.8 标准库类型：tuple</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6.9%20%E6%A0%87%E5%87%86%E5%BA%93%E7%B1%BB%E5%9E%8Bbitset.html">6.9 标准库类型：bitset</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC7%E7%AB%A0%20%E6%A8%A1%E6%9D%BF/index.html">第7章 模板</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC8%E7%AB%A0%20%E5%85%B3%E9%94%AE%E5%AD%97%E6%A6%82%E5%BF%B5/index.html">第8章 关键字概念</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC9%E7%AB%A0%20%E7%AE%97%E6%B3%95/index.html">第9章 算法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC10%E7%AB%A0%20%E8%AF%AD%E8%A8%80%E7%89%B9%E6%80%A7/index.html">第10章 语法特性</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC11%E7%AB%A0%20C%2B%2B11%E6%96%B0%E6%A0%87%E5%87%86/index.html">第11章 C++11新标准</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../README.html">README</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">C++语法笔记</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">第6章 标准库类型</a> &raquo;</li>
+        
+      <li>6.5 标准库类型：顺序容器</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/docs/第6章 标准库类型/6.5 标准库顺序容器.md.txt" rel="nofollow"> 查看页面源码</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>6.5 标准库类型：顺序容器<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id2">
+<h2>概述<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>除我们介绍过的string和vector这两种外，C++标准库还包含其他的顺序容器，他们在下述两种方面存在不同的性能折中：</p>
+<ul class="simple">
+<li><p>向容器添加或从容器中删除元素的代价</p></li>
+<li><p>非顺序访问容器中元素的代价</p></li>
+</ul>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>顺序容器</th>
+<th>介绍</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>vector可变大小数组</td>
+<td>支持快速随机访问，在尾部之外的位置插入或者删除元素可能很慢</td>
+</tr>
+<tr>
+<td>deque双端队列</td>
+<td>支持快速随机访问，在头尾位置插入/删除速度很快</td>
+</tr>
+<tr>
+<td>list双向链表</td>
+<td>只支持双向顺序访问，在list中任何位置进行插入/删除操作速度都很快</td>
+</tr>
+<tr>
+<td>forward_list单向链表</td>
+<td>只支持单向顺序访问，在链表任何位置进行插入/删除操作速度都很快</td>
+</tr>
+<tr>
+<td>array固定大小数组</td>
+<td>支持快速随机访问，不能添加或者删除元素</td>
+</tr>
+<tr>
+<td>string字符串</td>
+<td>和vector相似的容器，但专门用于保存字符，支持快速随机访问，在尾部插入/删除速度快</td>
+</tr>
+</tbody>
+</table></div>
+<div class="section" id="id3">
+<h2>选择顺序容器的基本原则<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><p>除非你有很好的理由选择其他容器，否则优先用vector</p></li>
+<li><p>如果你的程序有很多小元素，且空间的额外开销很重要，那么不要使用list或者<code class="docutils literal notranslate"><span class="pre">forward_list</span></code></p></li>
+<li><p>如果程序要求随机访问元素，应使用vector或者deque</p></li>
+<li><p>如果程序要求在容器的中间插入或删除元素，应使用list或者<code class="docutils literal notranslate"><span class="pre">forward_list</span></code>；如果程序需要在头尾位置插入或删除元素，但不会在中间位置进行插入或删除操作，则使用deque</p></li>
+<li><p>如果程序只有在读取输入时才需要在容器中间位置插入元素，随后需要随机访问元素</p>
+<ul>
+<li><p>先判断是否真的需要在容器中间位置添加元素，如果仅仅是为了保证容器元素有序的话，可以在输入数据时直接向vector尾部追加数据，然后调用标准库中的sort函数重排容器中元素，从而避免在中间位置添加元素</p></li>
+<li><p>如果必须在中间位置插入元素，那么可以考虑在输入阶段使用list，一旦输入完成，将list中的内容拷贝到一个vector中</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="id4">
+<h2>容器库概览<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<p>以下列举所有容器（顺序容器和关联容器）都支持的操作。</p>
+<div class="section" id="id5">
+<h3>1. 容器类型别名<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+<p>通过类型别名，我们可以在不了解容器汇总元素类型的情况下使用它：</p>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>类型别名</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>iterator</code></td>
+<td>此容器类型的迭代器</td>
+</tr>
+<tr>
+<td><code>const_iterator</code></td>
+<td>此容器类型的const迭代器</td>
+</tr>
+<tr>
+<td><code>reverse_iterator</code></td>
+<td>此容器类型的反向迭代器</td>
+</tr>
+<tr>
+<td><code>const_reverse_iterator</code></td>
+<td>此容器类型的const反向迭代器</td>
+</tr>
+<tr>
+<td><code>size_type</code></td>
+<td>无符号整数类型，足够保存此种容器类型最大可能容器的大小</td>
+</tr>
+<tr>
+<td><code>difference_type</code></td>
+<td>带符号整数类型，足够保存两个迭代器之间的距离</td>
+</tr>
+<tr>
+<td><code>value_type</code></td>
+<td>元素类型</td>
+</tr>
+<tr>
+<td><code>reference</code></td>
+<td>元素的左值类型，与<code>value_type &amp;</code>含义相同</td>
+</tr>
+<tr>
+<td><code>const_reference</code></td>
+<td>元素的const左值类型，与<code>const value_type&amp;</code>含义相同</td>
+</tr>
+</tbody>
+</table></div>
+<div class="section" id="beginend">
+<h3>2. 容器的begin和end成员<a class="headerlink" href="#beginend" title="永久链接至标题">¶</a></h3>
+<p>begin和end操作生成指向容器中第一个元素和尾元素之后位置的迭代器，它们包含多个版本：</p>
+<ul class="simple">
+<li><p>带<code class="docutils literal notranslate"><span class="pre">r</span></code>的版本返回反向迭代器</p></li>
+<li><p>带<code class="docutils literal notranslate"><span class="pre">c</span></code>的版本返回const迭代器</p></li>
+</ul>
+</div>
+<div class="section" id="id6">
+<h3>3. 容器定义和初始化<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
+<p>容器定义和初始化的操作包括：</p>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>操作</th>
+<th>含义</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>C c</code></td>
+<td>默认构造函数</td>
+<td>如果C是一个array，则c中元素按默认方式初始化；否则c为空</td>
+</tr>
+<tr>
+<td><code>C c1(c2)</code><br><code>C c1 = c2</code></td>
+<td>c1初始化为c2的拷贝</td>
+<td>c1和c2必须是相同的容器类型，且保存相同的元素类型（对于array而言，两者还必须具有相同大小）</td>
+</tr>
+<tr>
+<td><code>C c{a, b, c...}</code><br><code>C c = {a, b, c...}</code></td>
+<td>c初始化为初始化列表中元素的拷贝</td>
+<td>对于array类型列表中元素数目必须小于等于array的大小，任何遗漏的元素都进行值初始化</td>
+</tr>
+<tr>
+<td><code>C c(b, e)</code></td>
+<td>c初始化为迭代器b和e指定范围中元素的拷贝</td>
+<td></td>
+</tr>
+<tr>
+<td><code>C seq(n)</code></td>
+<td>seq包含n个元素，这些元素进行了值初始化</td>
+<td>此构造函数是explicit的，array和string不适用</td>
+</tr>
+<tr>
+<td><code>C seq(n, t)</code></td>
+<td>seq包含n个初始化为值t的元素</td>
+<td>array不适用</td>
+</tr>
+</tbody>
+</table></div>
+<div class="section" id="swap">
+<h3>4. 容器赋值和swap<a class="headerlink" href="#swap" title="永久链接至标题">¶</a></h3>
+<blockquote>
+<div><p>Tips：assign操作不适用于关联容器和array</p>
+</div></blockquote>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>操作</th>
+<th>含义</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>c1 = c2</code></td>
+<td>将c1中的元素替换为c2中元素的拷贝</td>
+<td>c1和c2必须具有相同的类型</td>
+</tr>
+<tr>
+<td><code>c = {a, b, c}</code></td>
+<td>将c1中元素替换为初始化列表中元素的拷贝</td>
+<td>array不适用</td>
+</tr>
+<tr>
+<td><code>swap(c1, c2)</code><br><code>c1.swap(c2)</code></td>
+<td>交换c1和c2中的元素</td>
+<td>c1和c2必须具有相同的类型，swap通常比从c2向c1拷贝元素快得多</td>
+</tr>
+<tr>
+<td><code>seq.assign(b, e)</code></td>
+<td>将seq中的元素替换为迭代器b和e所表示的范围中的元素</td>
+<td>迭代器b和e不能指向seq中的元素</td>
+</tr>
+<tr>
+<td><code>seq.assign(il)</code></td>
+<td>将seq中的元素替换为初始化列表il中的元素</td>
+<td></td>
+</tr>
+<tr>
+<td><code>seq.assign(n, t)</code></td>
+<td>将seq中的元素替换为n个值为t的元素</td>
+<td></td>
+</tr>
+</tbody>
+</table><ul class="simple">
+<li><p>除array外，swap不对任何元素进行拷贝、删除或插入操作，因此可以保证在常数时间内完成</p></li>
+<li><p>与其他容器不同，swap两个array会真正交换它们的元素，因此交换两个array所需的时间与array中元素的数目成正比</p></li>
+<li><p>赋值相关操作会导致左边容器内部的迭代器、引用和指针失效，而swap操作将容器内容交换不会导致指向容器的迭代器、引用和指针失效（容器类型为array和string的情况除外）</p></li>
+</ul>
+</div>
+<div class="section" id="id7">
+<h3>5. 容器大小操作<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>操作</th>
+<th>含义</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>c.size()</code></td>
+<td>c中元素的数目</td>
+<td>不支持<code>forward_list</code></td>
+</tr>
+<tr>
+<td><code>c.max_size()</code></td>
+<td>c中可保存的最大元素数目</td>
+<td></td>
+</tr>
+<tr>
+<td><code>c.empty()</code></td>
+<td>若c中存储了元素，返回false，否则返回true</td>
+<td></td>
+</tr>
+</tbody>
+</table><div class="section" id="id8">
+<h4>6. 容器的关系运算符<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h4>
+<blockquote>
+<div><p>Tips：无序关联容器不支持关系运算符。</p>
+</div></blockquote>
+<p>每个容器类型都支持相等运算符（<code class="docutils literal notranslate"><span class="pre">==</span></code>和<code class="docutils literal notranslate"><span class="pre">!=</span></code>），除了无序关联容器外所有容器都支持关系运算符（<code class="docutils literal notranslate"><span class="pre">&gt;</span></code>、<code class="docutils literal notranslate"><span class="pre">&gt;=</span></code>、<code class="docutils literal notranslate"><span class="pre">&lt;</span></code>和<code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>）。关系运算符左右两边的运算对象必须是相同类型的容器，且必须保存相同类型的元素。</p>
+<blockquote>
+<div><p>Tips：比较两个容器实际上是进行元素的逐对比较：</p>
+<ul class="simple">
+<li><p>如果两个容器具有相同大小且所有元素都两两对应相同，则这两个容器相等；否则两个容器不等</p></li>
+<li><p>如果两个容器大小不同，但较小容器中每个元素都等于较大容器中的对应元素，则较小容器小于较大容器</p></li>
+<li><p>如果两个容器都不是另一个容器的前缀子序列，则它们的比较结果取决于第一个不相等元素的比较结果</p></li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+</div>
+<div class="section" id="id9">
+<h2>顺序容器操作<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id10">
+<h3>1. 向顺序容器添加元素<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h3>
+<blockquote>
+<div><p>Tips：除array外，所有标准库容器都提供灵活的内存管理，运行时可以动态添加或者删除元素来改变容器大小。</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>array不支持添加元素</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">forward_list</span></code>有自己专有版本的<code class="docutils literal notranslate"><span class="pre">insert</span></code>和<code class="docutils literal notranslate"><span class="pre">emplae</span></code>，不支持<code class="docutils literal notranslate"><span class="pre">push_back</span></code>和<code class="docutils literal notranslate"><span class="pre">emplace_back</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vector</span></code>和<code class="docutils literal notranslate"><span class="pre">string</span></code>不支持<code class="docutils literal notranslate"><span class="pre">push_front</span></code>和<code class="docutils literal notranslate"><span class="pre">emmplace_front</span></code></p></li>
+</ul>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>操作</th>
+<th>含义</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>c.push_back(t)</code><br><code>c.emplace_back(args)</code></td>
+<td>在c的尾部创建一个值为t或者由args创建的元素，返回void</td>
+<td></td>
+</tr>
+<tr>
+<td><code>c.push_front(t)</code><br><code>c.emplace_front(args)</code></td>
+<td>在c的头部创建一个值为t或者由args创建的元素，返回void</td>
+<td></td>
+</tr>
+<tr>
+<td><code>c.insert(p, t)</code><br><code>c.emplace(p, args)</code></td>
+<td>在迭代器p指向的元素之前创建一个值为t或者由args创建的元素，返回指向新添加元素的迭代器</td>
+<td></td>
+</tr>
+<tr>
+<td><code>c.insert(p, n, t)</code></td>
+<td>在迭代器p指向的元素之前插入n个值为t的元素，返回指向新添加的第一个元素的迭代器，如果n为0则返回p</td>
+<td></td>
+</tr>
+<tr>
+<td><code>c.insert(p, b, e)</code></td>
+<td>将迭代器b和e指定范围内的元素插入到迭代器p指向的元素之前，b和e不能指向c中的元素，返回指向新添加的第一个元素的迭代器，如果范围为空则返回p</td>
+<td></td>
+</tr>
+<tr>
+<td><code>c.insert(p, il)</code></td>
+<td>il是一个花括号包围的元素值列表，将这些给定值插入到迭代器p指向的元素之前，返回指向新添加的第一个元素的迭代器，若列表为空则返回p</td>
+<td></td>
+</tr>
+</tbody>
+</table><blockquote>
+<div><p>Tips：向vector、string或者deque插入元素会使得所有指向容器的迭代器、引用和指针失效。</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">emplace_back()</span></code>是<code class="docutils literal notranslate"><span class="pre">C++11</span></code>加入的新特性，都是用于将一个临时对象<code class="docutils literal notranslate"><span class="pre">push</span></code>到容器的末尾。不同在于<code class="docutils literal notranslate"><span class="pre">push_back()</span></code>需要先临时构造对象，再将这个对象拷贝到容器的末尾；而<code class="docutils literal notranslate"><span class="pre">emplace_back()</span></code>直接在容器的末尾构造对象，省去了拷贝的过程。</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">push_back()</span></code>会先使用构造函数构造临时对象，然后需要调用拷贝构造函数将这个临时对象放入容器中，最后释放临时对象。这样造成的问题就是临时对象申请资源的浪费。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">emplact_back()</span></code>在容器尾部添加一个元素，不需要触发拷贝构造和转移构造</p></li>
+</ul>
+</div>
+<div class="section" id="id11">
+<h3>2. 访问元素<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h3>
+<blockquote>
+<div><p>Tips：at和下标操作只适用于string、vector、deque和array；back不适用于<code class="docutils literal notranslate"><span class="pre">forward_list</span></code></p>
+</div></blockquote>
+<p>需要注意：</p>
+<ul class="simple">
+<li><p>对一个空容器调用front或者back，就像使用一个越界的下标一样，是一种严重的程序设计错误</p></li>
+<li><p>在容器中访问元素的成员函数（front、back、下标和at）返回的都是引用，如果容器是一个const对象则返回const的引用</p></li>
+<li><p>如果我们希望下包是合法的，可以使用at成员函数（at成员函数类似于下标运算符，但是在下标越界时会抛出一个<code class="docutils literal notranslate"><span class="pre">out_of_range</span></code>异常）</p></li>
+</ul>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>操作</th>
+<th>含义</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>c.back()</code></td>
+<td>返回c中尾元素的引用</td>
+<td>若c为空，则函数行为未定义</td>
+</tr>
+<tr>
+<td><code>c.front()</code></td>
+<td>返回c中首元素的引用</td>
+<td>若c为空，则函数行为未定义</td>
+</tr>
+<tr>
+<td><code>c[n]</code></td>
+<td>返回c中下标为n的元素的引用</td>
+<td>n是一个无符号整数，若<code>n&gt;=c.size()</code>则函数行为未定义</td>
+</tr>
+<tr>
+<td><code>c.at(n)</code></td>
+<td>返回下标为n的元素的引用</td>
+<td>如果下标越界，则抛出<code>out_of_range</code>异常</td>
+</tr>
+</tbody>
+</table></div>
+<div class="section" id="id12">
+<h3>3. 删除元素<a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h3>
+<blockquote>
+<div><p>Tips：删除deque除首尾元素之外的任何元素都会使所有迭代器、引用和指针失效；指向vector或string中删除点之后位置的迭代器、引用和指针都会失效。</p>
+</div></blockquote>
+<p>需要注意：</p>
+<ul class="simple">
+<li><p>array不支持删除元素</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">forward_list</span></code>有特殊版本的erase</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">forward_list</span></code>不支持<code class="docutils literal notranslate"><span class="pre">pop_back</span></code>，<code class="docutils literal notranslate"><span class="pre">vector</span></code>和<code class="docutils literal notranslate"><span class="pre">string</span></code>不支持<code class="docutils literal notranslate"><span class="pre">pop_front</span></code></p></li>
+</ul>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>操作</th>
+<th>含义</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>c.pop_back()</code></td>
+<td>删除c中尾元素，返回void</td>
+<td>若c为空，则函数行为未定义</td>
+</tr>
+<tr>
+<td><code>c.pop_front</code></td>
+<td>删除c中首元素，返回void</td>
+<td>若c为空，则函数行为未定义</td>
+</tr>
+<tr>
+<td><code>c.erase(p)</code></td>
+<td>删除迭代器p所指向的元素，返回一个指向被删元素之后元素的迭代器</td>
+<td>若p是尾后迭代器，则函数行为未定义</td>
+</tr>
+<tr>
+<td><code>c.erase(b, e)</code></td>
+<td>删除迭代器b和e所指定范围的元素，返回一个指向最后一个被删元素之后的元素的迭代器</td>
+<td>若e本身就是尾后迭代器，则函数也返回尾后迭代器</td>
+</tr>
+<tr>
+<td><code>c.clear()</code></td>
+<td>删除c中的所有元素，返回void</td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<div class="section" id="id13">
+<h3>4. 改变容器大小<a class="headerlink" href="#id13" title="永久链接至标题">¶</a></h3>
+<blockquote>
+<div><p>Tips：如果resize缩小元素，那么指向被删除元素的迭代器、引用和指针都会失效；对vector、string或者deque进行resize可能导致迭代器、指针和引用失效。</p>
+</div></blockquote>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>操作</th>
+<th>含义</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>c.resize(n)</code></td>
+<td>调整c的大小为n个元素，若<code>n &lt; c.size()</code>则多出的元素被丢弃，若必须添加新元素则对新元素进行值初始化</td>
+<td>不适用于array</td>
+</tr>
+<tr>
+<td><code>c.resize(n, t)</code></td>
+<td>调整c的大小为n个元素，任何新添加的元素都初始化为值t</td>
+<td>不适用于array</td>
+</tr>
+</tbody>
+</table></div>
+<div class="section" id="id14">
+<h3>5. 容器操作可能使得迭代器失效<a class="headerlink" href="#id14" title="永久链接至标题">¶</a></h3>
+<p>向容器中添加元素和从容器中删除元素的操作可能使得指向容器元素的指针、引用或者迭代器失效。</p>
+<blockquote>
+<div><p>Tips：使用失效的指针、引用或者迭代器是一种严重的程序设计错误，很可能引用与使用未初始化指针一样的问题。</p>
+</div></blockquote>
+<p>向容器添加元素后：</p>
+<ul class="simple">
+<li><p>vector和string：</p>
+<ul>
+<li><p>存储空间被重新分配：指向容器的迭代器、指针和引用都会失效</p></li>
+<li><p>存储空间未被重新分配：指向插入位置之前的元素的迭代器、指针和引用仍然有效，但指向插入位置之后元素的迭代器、指针和引用将会失效</p></li>
+</ul>
+</li>
+<li><p>deque：</p>
+<ul>
+<li><p>插入到除首尾位置之外的任何位置：迭代器、指针和引用都会失效</p></li>
+<li><p>在首尾位置添加元素：迭代器会失效，但指向存在的元素的引用和指针不会失效</p></li>
+</ul>
+</li>
+<li><p>list和<code class="docutils literal notranslate"><span class="pre">forward_list</span></code>：指向容器的迭代器（包括尾后迭代器和首前迭代器）、引用和指针仍然有效</p></li>
+</ul>
+<p>当我们从容器删除一个元素后：</p>
+<ul class="simple">
+<li><p>list和<code class="docutils literal notranslate"><span class="pre">forward_list</span></code>：指向容器其他位置的迭代器（包括尾后迭代器和首前迭代器）、引用和指针仍然有效</p></li>
+<li><p>deque：</p>
+<ul>
+<li><p>在首尾之外的任何位置删除元素：指向被删除元素外其他元素的迭代器、引用或指针也会失效</p></li>
+<li><p>删除deque的尾元素：尾后迭代器失效，但其他迭代器、引用和指针不受影响</p></li>
+<li><p>删除首元素：其他迭代器、引用和指针不受影响</p></li>
+</ul>
+</li>
+<li><p>vector和string：指向被删元素之前元素的迭代器、引用和指针仍然有效</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="forward-list">
+<h2>特殊的forward_list操作<a class="headerlink" href="#forward-list" title="永久链接至标题">¶</a></h2>
+<p>从一个单向链表中添加或删除元素时，还会改变其前一个元素指向的下一个元素。由于这些操作与其他容器上的操作实现方式不同，因此<code class="docutils literal notranslate"><span class="pre">forward_list</span></code>并未定义<code class="docutils literal notranslate"><span class="pre">insert</span></code>、<code class="docutils literal notranslate"><span class="pre">emplace</span></code>和<code class="docutils literal notranslate"><span class="pre">erase</span></code>，而是定义了名为<code class="docutils literal notranslate"><span class="pre">insert_after</span></code>、<code class="docutils literal notranslate"><span class="pre">emplace_after</span></code>和<code class="docutils literal notranslate"><span class="pre">erase_after</span></code>的操作。&gt; Tips：为了支持这些操作，<code class="docutils literal notranslate"><span class="pre">forward_list</span></code>定义了<code class="docutils literal notranslate"><span class="pre">before_begin</span></code>首前迭代器。</p>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>操作</th>
+<th>含义</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>lst.before_begin()</code><br><code>lst.cbefore_begin()</code></td>
+<td>返回指向链表首元素之前不存在的元素的迭代器，此迭代器不能解引用，<code>cbefore_begin()</code>返回一个<code>const_iterator</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>lst.insert_after(p, t)</code><br><code>lst.insert_after(p, n, t)</code><br><code>lst.insert_after(p, b, e)</code><br><code>lst.insert_after(p, il)</code></td>
+<td>在迭代器p之后的位置插入元素，其中t是一个对象，n是数量，b和e是表示范围的一对迭代器（b和e不能指向lst内），il是一个花括号列表</td>
+<td>返回一个指向最后一个插入元素的迭代器，如果范围为空则返回p，若p为尾后迭代器则函数行为未定义</td>
+</tr>
+<tr>
+<td><code>emplace_after(p, args)</code></td>
+<td>使用args在p指定的位置之后创建一个元素</td>
+<td>返回一个指向这个新元素的迭代器，若p为尾后迭代器则函数行为未定义</td>
+</tr>
+<tr>
+<td><code>lst.erase_after(p)</code><br><code>lst.erase_after(b, e)</code></td>
+<td>删除p指向的位置之后的元素，或删除从b之后直到e之间的元素</td>
+<td>返回一个指向被删元素之后的迭代器，若不存在这样的元素则返回尾后迭代器，如果p指向lst的尾元素或者一个尾后迭代器则函数行为未定义</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="6.6%20%E6%A0%87%E5%87%86%E5%BA%93%E5%AE%B9%E5%99%A8%E9%80%82%E9%85%8D%E5%99%A8.html" class="btn btn-neutral float-right" title="6.6 标准库类型：容器适配器" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="6.4%20%E6%A0%87%E5%87%86%E5%BA%93%E7%B1%BB%E5%9E%8B%E8%BF%AD%E4%BB%A3%E5%99%A8.html" class="btn btn-neutral float-left" title="6.4 标准库类型：迭代器" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; 版权所有 2021, TOMOCAT.
+
+    </p>
+  </div>
+    
+    
+    
+    利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

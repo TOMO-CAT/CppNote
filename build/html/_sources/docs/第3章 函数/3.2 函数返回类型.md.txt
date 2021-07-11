@@ -1,0 +1,113 @@
+# 3.2 函数返回类型
+
+## 不要返回局部对象的引用或指针
+
+函数完成后它所占用的存储空间也会被释放掉，因此局部变量的引用将指向不再有效的内存区域：
+
+```c++
+// 严重错误: 试图返回局部对象的引用
+const string &foo() {
+    string ret;
+    if (!ret.empty()) {
+        return ret;      // 错误: 返回局部对象的引用
+    } else {
+        return "Empty";  // 错误: 返回局部对象的引用
+    }
+}
+```
+
+## 列表初始化返回值
+
+C++11新标准规定，函数可以通过列表初始化来对函数返回的临时量进行初始化：
+
+```c++
+#include <string>
+#include <vector>
+
+std::vector<std::string> foo(int i) {
+    if (i < 5) {
+        return {};  // 返回一个空vector对象
+    }
+    return {"tomo", "cat", "tomocat"};  // 返回列表初始化的vector对象
+}
+
+int main() {
+    foo(10);
+}
+```
+
+## main函数返回值
+
+main函数的返回值可以看成是状态指示器，返回0表示成功，返回其他值表示失败。`cstdlib`头文件定义了两个预处理变量，分别表示成功和失败：
+
+```c++
+int main() {
+    if (some_failure) {
+        return EXIT_FAILURE;
+    } else {
+        return EXIT_SUCCESS:
+    }
+}
+```
+
+## 返回函数指针
+
+由于数组不能拷贝，因此函数不能返回数组，不过可以返回数组的指针或者引用。想要定义一个返回数组的引用或者指针的函数比较繁琐，不过我们可以使用类型别名来简化这一任务：
+
+```c++
+// arrT: 包含10个整型元素数组的类型别名
+typedef int arrT[10];
+// arrT的等价声明
+using arrT = int[10];
+
+arrT* func(int i);  // 返回指向10个整数的数组的指针
+```
+
+如果不使用类型别名，那么相同的函数我们需要写成：
+
+```c++
+int (*func(int i))[10];
+```
+
+C++11允许我们使用尾置返回类型：
+
+```c++
+auto func(int i) -> int(*)[10];
+```
+
+还有一种情况是如果我们直到函数返回的指针将指向哪个数组，就可以使用decltype关键字声明返回类型：
+
+```c++
+int odd[] = {1, 3, 5, 7, 9};
+int even[] = {0, 2, 4, 6, 8};
+
+// 根据i指向的不同返回两个已知数组中的一个
+decltype(odd) *arrPtr(int i) {
+    return (i % 2) ? &odd : &even;
+}
+```
+
+## 尾置返回类型
+
+> 编码规范：只有在常规写法（返回类型前置）不便于书写或者不便于阅读时才使用返回类型后置语法。
+
+C++现在允许两种不同的函数声明方式，以往的写法是将返回类型置于函数名之前：
+
+```c++
+int foo(int x);
+```
+
+C++11新标准引入了尾置返回类型，可以在函数名前使用`auto`关键字，在参数列表之后后置返回类型，例如：
+
+> Tips：尾置返回类型是显式地指定`Lambda`表达式返回值的唯一方式，当返回类型依赖模板参数时也可以使用使用尾置返回类型。
+
+```c++
+// 普通函数
+auto foo(int x) -> int;
+
+// lambda表达式
+auto f = []() -> int { return 42; };
+
+// 模型函数
+template <class T, class U> auto add(T t, U u) -> decltype(t + u);
+```

@@ -1,0 +1,98 @@
+# 5.2 类的静态成员
+
+## 简介
+
+有的时候类需要它的一些成员与类本身直接相关，而不是与类的各个对象保持关联。
+
+## 声明静态成员
+
+我们可以在成员的声明之前加上关键字`static`使得其与类关联在一起，静态成员可以是`public`或者`private`的，它的类型可以是常量、引用、指针或者类类型等。
+
+> Tips：静态成员函数不与任何对象绑定在一起，因此它们不包含`this`指针，也不能声明成`const`的。
+
+```c++
+class Account {
+public:
+    void Calculate() { amount += amount * interestRate; }
+    static double rate() { return interestRate; }
+    static void rate(double);
+private:
+    std::string owner;
+    double amount;
+    // interestRate对象被所有的Account对象共享
+    static double interestRate;
+    static double initRate();
+};
+```
+
+## 使用静态成员
+
+我们可以使用作用域直接访问静态成员：
+
+```c++
+double r = Account::rate();
+```
+
+虽然静态成员不属于类的某个对象，但是我们仍然可以使用类的对象、引用或者指针来访问静态成员：
+
+```c++
+Account ac1;
+Account *ac2 = &ac1;
+
+double r;
+r = ac1.rate();
+r = ac2->rate();
+```
+
+## 定义静态成员
+
+#### 1. 定义静态函数成员
+
+和其他的成员函数一样，我们既可以在类的内部也可以在类的外部定义静态成员函数。当在类的外部定义静态成员时，不能重复`static`关键字（类似`explicit`关键字），该关键字只出现在类内部的声明语句：
+
+```c++
+void Accout::rate(double newRate) {
+    interestRate = newRate;
+}
+```
+
+#### 2. 定义静态数据成员
+
+> Tips：类似于全部变量，静态数据成员被定义在任何函数之外，因为一旦它被定义，就将一直存在于程序的整个生命周期中。不要在头文件`foo.h`中定义静态数据成员，会存在重复定义的问题（`foo.cpp`和`main.cpp`中都有该静态数据成员的定义）。
+
+由于静态数据成员不属于类的任何一个对象，所以它们并不是在创建类的对象时被定义的，这意味着它们不是由类的构造函数初始化的。而且一般而言我们不能在类的内部初始化静态成员，而应该在类的外部定义和初始化每个静态数据成员。
+
+```c++
+// 定义并初始化一个静态成员
+double Account::interestRate = initRate();
+```
+
+> Tips：要确保静态数据成员只定义一次，最好是把静态数据成员的定义与其他非内联函数的定义放在同一个文件中（放在源文件`foo.cpp`中）。
+
+#### 3. 静态数据成员的类内初始化
+
+通常情况下，类的静态成员不应该在类的内部初始化。但是我们可以给静态成员提供`const`整数类型的类内初始值，不过要求静态成员必须是字面值常量类型的`constexpr`。
+
+```c++
+class Account {
+ public:
+    static double rate() { return interestRate; }
+    static void rate(double);
+ private:
+    static constexpr int period = 30;  // period是常量表达式
+    double daily_tbl[period];
+};
+
+// 即使一个常量静态数据成员在类内部被初始化了, 通常情况下也应该在类的外部定义一下该成员
+constexpr int Account::period;
+```
+
+## 继承与静态成员
+
+#### 1. 基类中的静态成员只有唯一实例
+
+如果一个基类定义了一个静态成员，则在整个继承体系中只存在该成员的唯一定义。不论从基类中派生出多少个派生类，对于每个静态成员来说都只存在唯一的实例。
+
+#### 2. 基类中的静态成员的访问控制规则
+
+基类中的静态成员遵循通用的访问控制规则：如果基类中的静态成员是`private`的，则派生类无权访问它；如果基类中的静态成员是可访问的，则我们既可以通过基类使用它也可以通过派生类使用它。

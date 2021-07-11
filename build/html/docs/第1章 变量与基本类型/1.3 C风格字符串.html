@@ -1,0 +1,343 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>1.3 C风格字符串 &mdash; C++语法笔记 v1.0 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="1.4 数组" href="1.4%20%E6%95%B0%E7%BB%84.html" />
+    <link rel="prev" title="1.2 数据类型" href="1.2%20%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> C++语法笔记
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">第1章 变量与基本类型</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="1.1%20%E5%8F%98%E9%87%8F%E5%A3%B0%E6%98%8E%E4%B8%8E%E5%AE%9A%E4%B9%89.html">1.1 变量声明与定义</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.2%20%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B.html">1.2 数据类型</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">1.3 C风格字符串</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">简介</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">C风格字符串标准库函数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">兼容旧代码中的C风格字符串</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#cstringstring">1. C风格字符串初始化string对象或为string对象赋值</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#stringc">2. string加法运算中允许使用C风格字符串</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">3. string可以转换为C风格字符串</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="1.4%20%E6%95%B0%E7%BB%84.html">1.4 数组</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.5%20%E6%9E%9A%E4%B8%BE%E7%B1%BB%E5%9E%8B.html">1.5 枚举类型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.6%20%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2.html">1.6 类型转换</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.7%20%E5%88%9D%E5%A7%8B%E5%8C%96.html">1.7 初始化</a></li>
+<li class="toctree-l2"><a class="reference internal" href="%5B%E9%80%89%E8%AF%BB%5DPOD%E7%B1%BB%E5%9E%8B.html">[选读] POD类型</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC2%E7%AB%A0%20%E8%AF%AD%E5%8F%A5/index.html">第2章 语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC3%E7%AB%A0%20%E5%87%BD%E6%95%B0/index.html">第3章 函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC4%E7%AB%A0%20%E8%BF%90%E7%AE%97%E7%AC%A6/index.html">第4章 运算符</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC5%E7%AB%A0%20%E7%B1%BB/index.html">第5章类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC6%E7%AB%A0%20%E6%A0%87%E5%87%86%E5%BA%93%E7%B1%BB%E5%9E%8B/index.html">第6章 标准库类型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC7%E7%AB%A0%20%E6%A8%A1%E6%9D%BF/index.html">第7章 模板</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC8%E7%AB%A0%20%E5%85%B3%E9%94%AE%E5%AD%97%E6%A6%82%E5%BF%B5/index.html">第8章 关键字概念</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC9%E7%AB%A0%20%E7%AE%97%E6%B3%95/index.html">第9章 算法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC10%E7%AB%A0%20%E8%AF%AD%E8%A8%80%E7%89%B9%E6%80%A7/index.html">第10章 语法特性</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC11%E7%AB%A0%20C%2B%2B11%E6%96%B0%E6%A0%87%E5%87%86/index.html">第11章 C++11新标准</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../README.html">README</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">C++语法笔记</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">第1章 变量与基本类型</a> &raquo;</li>
+        
+      <li>1.3 C风格字符串</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/docs/第1章 变量与基本类型/1.3 C风格字符串.md.txt" rel="nofollow"> 查看页面源码</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="c">
+<h1>1.3 C风格字符串<a class="headerlink" href="#c" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id1">
+<h2>简介<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p>C风格字符串不是一种类型，而是为了表达和使用字符串而形成的一种约定俗成的写法：将字符串存放在字符数组中并以空字符<code class="docutils literal notranslate"><span class="pre">\0</span></code>结束。一般利用指针来操作这些字符串。</p>
+<blockquote>
+<div><p>Tips：尽管C++支持C风格字符串，但是在C++程序中最好还是不要使用它们。这是因为C风格字符串不仅使用起来不太方便，而且极其容易引发系统漏洞。</p>
+</div></blockquote>
+</div>
+<div class="section" id="id2">
+<h2>C风格字符串标准库函数<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<blockquote>
+<div><p>Tips：下表中列举的函数不负责验证其字符串参数，用户自己必须保证传入此类函数的指针必须指向以空字符作为结束的字符数组。</p>
+</div></blockquote>
+<p>下表列举了C语言标准库提供的一组函数，它们定义在<code class="docutils literal notranslate"><span class="pre">cstring</span></code>头文件中，可用于操作C风格字符串。</p>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>函数</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>strlen(p)</td>
+<td>返回p的长度，空字符不算在内</td>
+</tr>
+<tr>
+<td>strcmp(p1, p2)</td>
+<td>比较p1和p2的相等性：相等返回0；p1&gt;p2返回正值；p1&lt;p2返回负值</td>
+</tr>
+<tr>
+<td>strcat(p1, p2)</td>
+<td>将p2附加到p1之后， 返回p1</td>
+</tr>
+<tr>
+<td>strcpy(p1, p2)</td>
+<td>将p2拷贝给p1，返回p1</td>
+</tr>
+</tbody>
+</table><p>举个例子，如果我们要连接两个C风格字符串，传统的方法是使用<code class="docutils literal notranslate"><span class="pre">strcat()</span></code>函数和<code class="docutils literal notranslate"><span class="pre">strcpy()</span></code>函数，但是这种做法极容易引发严重错误：</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;cstring&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">const</span> <span class="kt">char</span> <span class="n">str1</span><span class="p">[]</span> <span class="o">=</span> <span class="s">&quot;tomo&quot;</span><span class="p">;</span>
+    <span class="k">const</span> <span class="kt">char</span> <span class="n">str2</span><span class="p">[]</span> <span class="o">=</span> <span class="s">&quot;cat&quot;</span><span class="p">;</span>
+
+    <span class="c1">// 如果我们计算错了outputStr的大小将引发严重错误:</span>
+    <span class="kt">char</span> <span class="n">outputStr</span><span class="p">[</span><span class="mi">8</span><span class="p">];</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">strcpy</span><span class="p">(</span><span class="n">outputStr</span><span class="p">,</span> <span class="n">str1</span><span class="p">);</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">strcat</span><span class="p">(</span><span class="n">outputStr</span><span class="p">,</span> <span class="n">str2</span><span class="p">);</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">outputStr</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>有一种简单的方法是将其中一个C风格字符串转化为<code class="docutils literal notranslate"><span class="pre">string</span></code>，就可以直接使用<code class="docutils literal notranslate"><span class="pre">string</span></code>类型的<code class="docutils literal notranslate"><span class="pre">+</span></code>号运算符：</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">const</span> <span class="kt">char</span> <span class="n">str1</span><span class="p">[]</span> <span class="o">=</span> <span class="s">&quot;tomo&quot;</span><span class="p">;</span>
+    <span class="k">const</span> <span class="kt">char</span> <span class="n">str2</span><span class="p">[]</span> <span class="o">=</span> <span class="s">&quot;cat&quot;</span><span class="p">;</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">outputStr</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">(</span><span class="n">str1</span><span class="p">)</span> <span class="o">+</span> <span class="n">str2</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">outputStr</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>兼容旧代码中的C风格字符串<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>尽管我们不推荐使用C风格字符串，但是现代C++程序不得不与那些充满了C风格字符串的旧代码衔接，因此C++提供了对应的一组功能。</p>
+<div class="section" id="cstringstring">
+<h3>1. C风格字符串初始化string对象或为string对象赋值<a class="headerlink" href="#cstringstring" title="永久链接至标题">¶</a></h3>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">const</span> <span class="kt">char</span> <span class="n">ca</span><span class="p">[]</span> <span class="o">=</span> <span class="s">&quot;tomocat&quot;</span><span class="p">;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">str1</span> <span class="o">=</span> <span class="n">ca</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="stringc">
+<h3>2. string加法运算中允许使用C风格字符串<a class="headerlink" href="#stringc" title="永久链接至标题">¶</a></h3>
+<p>在string对象的加法运算中允许使用C风格字符串作为其中的一个运算对象（不能两个运算对象都是C风格字符串）。</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">const</span> <span class="kt">char</span> <span class="n">ca</span><span class="p">[]</span> <span class="o">=</span> <span class="s">&quot;tomo&quot;</span><span class="p">;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">str</span> <span class="o">=</span> <span class="s">&quot;cat&quot;</span><span class="p">;</span>
+
+<span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">outputStr</span> <span class="o">=</span> <span class="n">ca</span> <span class="o">+</span> <span class="n">str</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h3>3. string可以转换为C风格字符串<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+<blockquote>
+<div><p>Tips：我们无法保证<code class="docutils literal notranslate"><span class="pre">c_str()</span></code>函数返回的字符数组一直有效，如果后续的操作改变了string的值就可能让之前返回的数组失效。如果执行完<code class="docutils literal notranslate"><span class="pre">c_str()</span></code>函数后程序想一直都能使用返回的数组，最好将该数组重新拷贝一份。</p>
+</div></blockquote>
+<p>可以使用<code class="docutils literal notranslate"><span class="pre">c_str()</span></code>成员函数将string对象转换为C风格字符串。</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="1.4%20%E6%95%B0%E7%BB%84.html" class="btn btn-neutral float-right" title="1.4 数组" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="1.2%20%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B.html" class="btn btn-neutral float-left" title="1.2 数据类型" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; 版权所有 2021, TOMOCAT.
+
+    </p>
+  </div>
+    
+    
+    
+    利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

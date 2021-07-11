@@ -1,0 +1,65 @@
+# 11.5 初始化列表
+
+## 简介
+
+初始化是一个非常重要的语言特性，最常见的就是在对象进行初始化时使用。在传统C++中不同的对象有着不同的初始化方法，比如普通数组和POD类型都可以用`{}`初始化（即我们说的初始化列表），而对于类对象的初始化要么通过拷贝构造，要么就需要使用`()`。
+
+## 初始化列表构造函数
+
+为了上述提到的这个问题，C++11首先将初始化列表的概念绑定到了类型上，并将其称为`std::initializer_list`，允许构造函数或其他函数像参数一样使用初始化列表，这就为类对象的初始化、普通数组和POD的初始化方法提供了统一的桥梁：
+
+```c++
+#include <initializer_list>
+#include <vector>
+
+class MagicFoo {
+ public:
+    std::vector<int> vec;
+    // 初始化列表构造函数
+    MagicFoo(std::initializer_list<int> list) {
+        for (std::initializer_list<int>::iterator it = list.begin(); it != list.end(); ++it) {
+            vec.push_back(*it);
+        }
+    }
+};
+
+int main() {
+    MagicFoo magicFoo = {1, 2, 3, 4, 5};
+}
+```
+
+## 初始化列表作为普通函数形参
+
+初始化列表除了用在对象构造上，还可以作为普通函数的形参：
+
+```c++
+#include <initializer_list>
+#include <string>
+#include <iostream>
+
+void print(std::initializer_list<std::string> list) {
+    for (auto it = list.begin(); it != list.end(); ++it) {
+        std::cout << *it << std::endl;
+    }
+}
+
+int main() {
+    print({"tomo", "cat", "tomocat"});
+}
+```
+
+## 列表初始化：统一的初始化语法
+
+C++11新标准提供了统一的语法来初始化任意对象，例如：
+
+```c++
+// 类类型
+std::string name{"tomocat"};
+// 内置类型
+double d{3.14};
+// 容器类
+std::vector<int> vi{1, 2, 3, 4, 5};
+// 内置数组
+int arr[]{1, 2, 3, 4, 5};
+```
+

@@ -1,0 +1,71 @@
+# 6.6 标准库类型：容器适配器
+
+## 简介
+
+除了顺序容器外，标准库还定义了三个顺序容器适配器：`stack`、`queue`和`priority_queue`。一个容器适配器接受一种已有的容器类型，使其行为看起来像是一种不同的类型。
+
+## 容器适配器操作
+
+所有容器适配器都支持的操作和类型如下：
+
+| 操作或类型                  | 含义                                                         | 备注 |
+| --------------------------- | ------------------------------------------------------------ | ---- |
+| `size_type`                 | 足以保存当前类型的最大对象的大小                             |      |
+| `value_type`                | 元素类型                                                     |      |
+| `container_type`            | 实现适配器的底层容器类型                                     |      |
+| `A a;`                      | 创建一个名为a的空适配器                                      |      |
+| `A a(c);`                   | 创建一个名为a的适配器，带有容器c的一个拷贝                   |      |
+| 关系运算符                  | 每个适配器都支持所有关系运算符：`==`、`!=`、`<`、`<=`、`>`和`>=` |      |
+| `a.empty()`                 | 若a白喊任何元素则返回false，否则返回true                     |      |
+| `a.size()`                  | 返回a中元素数目                                              |      |
+| `swap(a, b)`<br>`a.swap(b)` | 交换a和b的内容，a和b必须有相同类型，包括底层容器类型也必须相同 |      |
+
+## 例子
+
+> Tips：默认情况下stack和queue是基于deque实现的，`priority_queue`是在`vector`之上实现的，我们可以在创建一个适配器时讲一个命名的顺序容器作为第二个类型参数来重载默认容器类型。
+
+```c++
+deque<int> deq;
+stack<int> stk(deq);
+
+// 在vector上实现的空栈
+stack<string, vector<string>> str_stk;
+// 在vector上实现的栈, 初始化时保存svec的拷贝
+stack<string, vector<string>> str_stk2(svec);
+```
+
+## 适用范围
+
+* 所有适配器都要求容器具有添加、删除以及访问尾元素的能力，因此容器不能构造在`array`和`forward_list`上构造适配器
+* `stack`只要求`push_back`、`pop_back`和`back`操作，因此可以在除`array`和`forward_list`外的任何容器上构造
+* `queue`适配器要求`back`、`push_back`、`front`和`push_front`，因此它可以构造于`list`或者`queue`上，但不能基于`vector`构造
+* `priority_queue`除了`front`、`push_back`和`pop_back`操作外还要求随机访问的能力，因此它可以构造于`vector`或`deque`之上，但不能基于`list`构造
+
+## 栈适配器
+
+> Tips：栈默认基于deque实现，也可以在list或者vector
+
+`stack`类型定义在`stack`头文件中，特属于`stack`的操作如下：
+
+| 操作              | 含义                                           | 备注 |
+| ----------------- | ---------------------------------------------- | ---- |
+| `s.pop()`         | 删除栈顶元素，但不返回该元素值                 |      |
+| `s.push(item)`    | 创建一个新元素压入栈顶，该元素通过拷贝或者item |      |
+| `s.emplace(args)` | 创建一个新元素压入栈顶，该元素                 |      |
+| `s.top()`         | 返回栈顶元素，但不将该元素                     |      |
+
+## 队列适配器
+
+> `queue`默认基于deque实现，`priority_queue`默认基于vector实现；`queue`也可以用`list`或者`vector`实现，`priority_queue`也可以用`deque`实现
+
+`queue`和`priority_queue`适配器定义在`queue`头文件中，特属于它们的操作如下：
+
+| 操作           | 含义                                                         | 备注                     |
+| -------------- | ------------------------------------------------------------ | ------------------------ |
+| `q.pop()`      | 删除`queue`的首元素或者`priority_queue`最高优先级的元素，但不返回此元素 |                          |
+| `q.front()`    | 返回首元素，但不删除此元素                                   | 只适用于queue            |
+| `q.back()`     | 返回尾元素，但不删除此元素                                   | 只适用于queue            |
+| `q.top()`      | 返回最高优先级元素，但不删除该元素                           | 只适用于`priority_queue` |
+| `q.push(i)`    | 在queue末尾或者`priority_queue`中恰当的位置创建一个元素，其  |                          |
+| `q.empalce(a)` | 在queue末尾或者`priority_queue`中恰当的位置创建一个元素，其由 |                          |
+

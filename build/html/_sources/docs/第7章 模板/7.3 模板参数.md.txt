@@ -1,0 +1,79 @@
+# 7.3 模板参数
+
+## 模板参数命名
+
+类似函数参数的名字，一个模板参数的名字没有什么内在含义。我们通常将类型参数命名为`T`，但实际上我们可以使用任何名字：
+
+```c++
+// 模板参数名为Foo
+template <typename Foo> Foo bar(const Foo &a) {
+    Foo tmp = a;
+    return tmp;
+}
+```
+
+## 模板参数与作用域
+
+与任何其他名字一样，模板参数会隐藏外层作用域中声明的相同名字。但是，与大多数其他上下文不同，在模板内不能重用模板参数名：
+
+```c++
+typedef double A;
+template <typename A, typename B> void f(A a, B b) {
+    A tmp = a;  // tmp的类型是模板参数A的类型, 而非外层的double
+    double B;   // 错误: 重声明模板参数B
+}
+
+// 错误: 非法重用模板参数名V
+template <typename V, typename V> //...
+```
+
+## 使用模板参数的类型成员
+
+我们可以用作用域运算符`::`来访问`static`成员和类型成员。在非模板类代码中，编译器掌握类的定义，因此编译器直到通过作用域运算符访问的名字是类型还是`static`成员。比如`string::size_type`，编译器有`string`的定义，从而直到`size_type`是一个类型。
+
+但是对于模板代码就存在困难，假定`T`是一个模板类型参数，当编译器遇到类似`T::mem`这样的代码时，编译器不知道`mem`是一个类型成员还是一个`static`数据成员，直至实例化时才会知道。但是为了处理模板，编译器必须知道名字是否表示一个类型，比如当编译器遇到如下形式的语句时：
+
+```c++
+// 包含两种意思
+// 1) 定义一个名为p的变量, 类型是T::size_type
+// 2) 将一个名为T::size_type的static数据与名为p的变量相乘
+T::size_type *p;
+```
+
+默认情况下，C++假定通过作用域运算符访问的名字不是类型，如果我们希望一个模板类型参数的类型成员，就必须显式高速编译器该名字是一个类型，我们可以通过关键字`typename`来实现这一点：
+
+```c++
+template <typename T>
+typename T::value_type top(const T& c) {
+    if (c.empty()) {
+        return c.back();
+    } else {
+        return typename T::value_type();
+    }
+}
+```
+
+## 默认模板实参
+
+在C++11新标准中，我们可以为函数模板和类模板提供默认实参：
+
+```c++
+// compare函数模板有一个默认模板实参less<T>和一个默认函数实参F()
+template <typename T, typename F = less<T>>
+int compare(const T &v1, const T &v2, F f = F()) {
+    if (f(v1, v2)) return -1;
+    if (f(v2, v1)) return 1;
+    return 0;
+}
+
+// Numbers类模板有一个默认模板实参int
+template <class T = int> class Numbers {
+ public:
+    Numbers(T v = 0) : val(v) { }
+ private:
+    T val;
+};
+Numbers<long double> nl;  // 用long double代替T实例化
+Numbers<> ni;             // 用int代替T实例化
+```
+

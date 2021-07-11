@@ -1,0 +1,100 @@
+# 10.2 在main函数之前或者之后打印消息
+
+## 全局对象的构造和析构函数
+
+> C++中全局对象的构造函数在main函数之前，析构函数执行在main函数之后。
+
+```c++
+#include<stdio.h>
+
+class Foo {
+ public:
+    Foo() {
+        printf("Foo constructor\n");
+    }
+    ~Foo() {
+        printf("Foo destructor\n");
+    }
+};
+
+Foo foo;
+
+int main() {
+    printf("main start\n");
+    printf("main end\n");
+    return 0;
+}
+
+// 输出:
+Foo constructor
+main start
+main end
+Foo destructor
+```
+
+## `__attribute__`的使用
+
+```c++
+#include<stdio.h>
+
+void before_main() __attribute__((constructor));
+void after_main() __attribute__((destructor));
+
+void before_main() {
+    printf("before_main func\n");
+}
+
+void after_main() {
+    printf("after_main func\n");
+}
+
+int main() {
+    printf("main start\n");
+    printf("main end\n");
+    return 0;
+}
+
+// 输出:
+before_main func
+main start
+main end
+after_main func
+```
+
+## 使用atexit注册函数
+
+```c++
+#include<stdio.h>
+#include<stdlib.h>
+
+void after_main_1(void);
+void after_main_2(void);
+
+void after_main_1(void) {
+    printf("after_main_1\n");
+}
+void after_main_2(void) {
+    printf("after_main_2\n");
+}
+
+int main() {
+    printf("main start\n");
+
+    // 调用顺序与注册顺序相反
+    atexit(after_main_1);
+    atexit(after_main_2);
+
+    printf("main end\n");
+    return 0;
+}
+
+// 输出:
+main start
+main end
+after_main_2
+after_main_1
+```
+
+## Reference
+
+[1] https://blog.csdn.net/qq_43313035/article/details/88735476

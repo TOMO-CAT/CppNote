@@ -1,0 +1,176 @@
+# 5.1 类的成员
+
+## 类的类型成员
+
+除了定义数据和函数成员外，类还可以自定义某种类型在类中的别名。由类定义的类型名字和其他成员一样存在访问限制：
+
+> Tips：用来定义类型的成员和普通成员不同，必须先定义后使用，因此类型成员通常出现在类开始的地方。
+
+```c++
+class Screen {
+ public:
+    // 类型别名, 等价于: using pos = std::string::size_type
+    typedef std::string::size_type pos;
+ private:
+    pos cursor = 0;
+    pos height = 0, width = 0;
+    std::string contents;
+};
+```
+
+## 类的函数成员
+
+#### 1. 声明与定义
+
+> Tips：定义在类内部的函数是隐式的inline函数。
+
+类的成员函数必须在类的内部声明，但是它的定义既可以在类的内部也可以在类的外部。
+
+#### 2. this指针
+
+> Tips：this是一个常量指针，不允许改变this中保存的地址。
+
+成员函数通过一个名为this的隐式参数来访问调用它的哪个对象，当我们调用一个成员函数时，用请求该函数的对象地址初始化this。
+
+#### 3. const限定符
+
+> Tips：常量对象，以及常量对象的引用或指针都只能调用常量成员函数，因此如果一个成员函数不改变调用它的对象的内容，那么最好申明成const成员函数。
+
+默认情况下this是指向类类型非常量版本的常量指针，C++语言允许把const关键字放在成员函数的参数列表之后，用于表示this是一个指向常量类类型的常量指针。
+
+#### 4. 返回this对象的函数
+
+> Tips：一个const成员函数如果以引用的形式返回`*this`，那么它的返回类型将是常量引用。
+
+```c++
+// 将this对象作为左值返回: 返回的是对象本身而非对象的副本
+return *this;
+```
+
+#### 5. 内联函数
+
+> Tips：和我们在头文件中定义inline函数的原因一样，inline成员函数也应该与相应的类定义在同一个头文件中。
+
+在类中常有一些规模较小的函数适合于被声明成内联函数，其中定义在类内部的成员函数或者友元函数是自动inline的，在类的外部我们可以用inline关键字修饰函数定义将其显式声明为内联函数。
+
+#### 6. 友元函数
+
+类的友元函数包括两种，它们都可以访问类的私有成员：
+
+* 普通的非成员函数作为友元
+* 另一个类的成员函数作为友元
+
+```c++
+class Foo {
+    // 非成员函数作为友元
+    friend std::istream &read(std::istream&, Foo&);
+    
+    // 另一个类的成员函数作为友元
+    firend void Bar::clear();
+};
+```
+
+#### 7. 引用限定符 
+
+通常情况下我们在一个对象上调用成员函数不需要管该对象是一个左值还是右值，比如：
+
+```c++
+string s1 = "tomo", s2 = "cat";
+auto n = (s1 + s2).find('a');  // 在一个string右值上调用find成员
+s1 + s2 = "test";              // 对一个string右值赋值
+```
+
+在旧标准中我们无法阻止上述这种使用方式，为了维持向后兼容性，新标准库类仍然允许向右值赋值。但是在新标准中如果我们想在自定义的类中阻止这种用法，可以强制左侧运算对象（即`this`指针指向的对象）是一个左值。
+
+```c++
+class Foo {
+ public:
+    // 左值引用限定符: 拷贝赋值运算符只可向可修改的左值赋值
+    Foo &operator=(const Foo &rhs) & {
+        return *this;
+    }
+};
+
+Foo a, b;
+a = b;             // 正确
+std::move(a) = b;  // 错误: 不可向右值赋值
+```
+
+和左值引用限定符用法相似，右值引用限定符`&&`表示该成员函数只可应用于右值。我们可以综合引用限定符和`const`限定符来区分一个成员函数的重载版本：
+
+```c++
+class Foo {
+ public:
+    // 用于类型Foo的可改变的右值: 提高排序性能
+    Foo sorted() && {
+        // 本对象为右值, 可以原址排序
+        std::sort(data_.begin(), data_.end());
+        return *this;
+    }
+    // 可用于任何类型的Foo
+    Foo sorted() const & {
+        // 本对象是const或者一个左值, 不能原址排序
+        Foo ret(*this);
+        std::sort(ret.data_.begin(), ret.data_.end());
+        return ret;
+    }
+ private:
+    std::vector<int> data_;
+};
+```
+
+## 类的数据成员
+
+> 编码规范：最好将所有数据成员声明为`private`，除非是`static const`类型成员，数据成员的存取函数一般内联在头文件中。
+
+#### 1. 类数据成员的初始值
+
+> Tips：当我们提供类内初始值时，必须以符号=或者花括号表示。
+
+```c++
+struct Foo {
+    // 默认构造函数
+    Foo() = default;
+    // 接受一个参数的构造函数: d和i使用类内初始值值初始化
+    Foo(const std::string &s) : str(s) { }
+    // 接受三个参数的构造函数: 通过构造函数初始值列表初始化
+    Foo(const std::string &s, double d, int i) : str(s), d(d), i(i) { }
+
+    std::string str;
+    // 类内初始值: 等于号=表示
+    double d = 3.14;
+    // 类内初始值: 花括号表示
+    int i{5};
+};
+```
+
+#### 2. 可变数据成员
+
+> Tips：一个可变数据成员`mutable data member`永远不会是`const`，即使它是`const`对象的成员。
+
+有时我们希望能修改类的每某个数据成员（即使是在一个`const`成员函数内），可以通过在变量的声明中加入`mutable`关键字来实现。
+
+```c++
+class Screen {
+public:
+    void some_member() const;
+private:
+    mutable size_t access_ctr;  // 可变数据成员, 用于记录成员函数被调用的次数
+}
+
+void Screen::some_member() const {
+    ++access_ctr;
+    // do something
+}
+```
+
+#### 3. 类的友元类
+
+> Tips：友元关系不存在传递性，类的友元的友元不是它的友元。
+
+```c++
+class Foo {
+    // Bar的成员可以访问Foo类的私有成员
+    friend class Bar;
+};
+```

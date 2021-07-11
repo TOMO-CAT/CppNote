@@ -1,0 +1,46 @@
+# 10.14 调试帮助
+
+## 调试变量
+
+预处理器定义了5个对于程序调试很有用的名字：
+
+| 名字       | 含义                       |
+| ---------- | -------------------------- |
+| `__func__` | 函数名字的字符串字面值     |
+| `__FILE__` | 文件名的字符串字面值       |
+| `__LINE__` | 当前行号的整型字面值       |
+| `__TIME__` | 文件编译时间的字符串字面值 |
+| `__DATE__` | 文件编译日期的字符串字面值 |
+
+
+
+## assert预处理宏
+
+assert定义在`cassert`头文件中，它会对括号内的表达式求值，如果表达式为假（即0），assert输出信息并终止程序的执行：
+
+```c++
+// 用于检查在运行时"不能发生"的情况, 如果出现则终止程序
+assert(expr);
+```
+
+## NDEBUG预处理变量
+
+assert的行为依赖于一个名为NDEBUG的预处理变量，如果定义了NDEBUG，那么assert就什么都不做。默认情况下没有定义NDEBUG，此时assert将执行运行时检查，我们可以通过命令行选项定义NDEBUG，从而关闭调试状态：
+
+```bash
+# 等价于在main.cpp文件的一开始写#define NDEBUG
+$ g++ -D NDEBUG main.cpp
+```
+
+除了控制assert的行为外，我们也可以使用NDEBUG编写自己的条件调试代码：
+
+```c++
+// 如果定义了NDEBUG, 那么忽略#ifndef和#endif之间的代码
+void print(const int ia[], size_t size) {
+#ifndef NDEBUG
+    cerr << __func__ << ": array size is " << size << endl;
+#endif
+}
+```
+
+

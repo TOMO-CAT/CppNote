@@ -1,0 +1,336 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>10.13 内存分布 &mdash; C++语法笔记 v1.0 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="10.14 调试帮助" href="10.14%20%E8%B0%83%E8%AF%95%E5%B8%AE%E5%8A%A9.html" />
+    <link rel="prev" title="10.12 异常处理" href="10.12%20%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> C++语法笔记
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC1%E7%AB%A0%20%E5%8F%98%E9%87%8F%E4%B8%8E%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B/index.html">第1章 变量与基本类型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC2%E7%AB%A0%20%E8%AF%AD%E5%8F%A5/index.html">第2章 语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC3%E7%AB%A0%20%E5%87%BD%E6%95%B0/index.html">第3章 函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC4%E7%AB%A0%20%E8%BF%90%E7%AE%97%E7%AC%A6/index.html">第4章 运算符</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC5%E7%AB%A0%20%E7%B1%BB/index.html">第5章类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC6%E7%AB%A0%20%E6%A0%87%E5%87%86%E5%BA%93%E7%B1%BB%E5%9E%8B/index.html">第6章 标准库类型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC7%E7%AB%A0%20%E6%A8%A1%E6%9D%BF/index.html">第7章 模板</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC8%E7%AB%A0%20%E5%85%B3%E9%94%AE%E5%AD%97%E6%A6%82%E5%BF%B5/index.html">第8章 关键字概念</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC9%E7%AB%A0%20%E7%AE%97%E6%B3%95/index.html">第9章 算法</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">第10章 语法特性</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="10.1%20%E5%A4%B4%E6%96%87%E4%BB%B6.html">10.1 头文件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10.2%20%E5%9C%A8main%E5%87%BD%E6%95%B0%E4%B9%8B%E5%89%8D%E6%88%96%E4%B9%8B%E5%90%8E%E6%89%93%E5%8D%B0%E6%B6%88%E6%81%AF.html">10.2 在main函数之前或者之后打印消息</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10.3%20%E5%B7%A6%E5%80%BC%E4%B8%8E%E5%8F%B3%E5%80%BC.html">10.3 左值与右值</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10.4%20%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4.html">10.4 命名空间</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10.5%20%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83.html">10.5 命名规范</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10.6%20%E5%8F%98%E9%87%8F%E7%94%9F%E5%AD%98%E6%9C%9F%E5%92%8C%E5%8F%98%E9%87%8F%E4%BD%9C%E7%94%A8%E5%9F%9F.html">10.6 变量生存期和变量作用域</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10.7%20%E6%A0%87%E5%87%86%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E6%A8%A1%E6%9D%BF.html">10.7 标准类型转换模板</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10.8%20%E6%89%8B%E5%8A%A8%E7%AE%A1%E7%90%86%E5%86%85%E5%AD%98.html">10.8 手动管理内存</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10.9%20%E5%B9%B6%E8%A1%8C%E5%92%8C%E5%B9%B6%E5%8F%91.html">10.9 并行和并发</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10.10%20%E5%9B%BA%E6%9C%89%E7%9A%84%E4%B8%8D%E5%8F%AF%E7%A7%BB%E6%A4%8D%E7%9A%84%E7%89%B9%E6%80%A7.html">10.10 固有的不可移植的特性</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10.11%20%E8%BF%90%E8%A1%8C%E6%97%B6%E7%B1%BB%E5%9E%8B%E8%AF%86%E5%88%AB.html">10.11 运行时类型识别</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10.12%20%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86.html">10.12 异常处理</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">10.13 内存分布</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#linux">回顾Linux进程的虚拟内存</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#c">C++内存分布</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#free-storeheap">2. 自由存储区free store和堆heap的区别</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">3. 堆和栈的区别</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">4. 静态内存、栈内存和堆</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#reference">Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="10.14%20%E8%B0%83%E8%AF%95%E5%B8%AE%E5%8A%A9.html">10.14 调试帮助</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC11%E7%AB%A0%20C%2B%2B11%E6%96%B0%E6%A0%87%E5%87%86/index.html">第11章 C++11新标准</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../README.html">README</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">C++语法笔记</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">第10章 语法特性</a> &raquo;</li>
+        
+      <li>10.13 内存分布</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/docs/第10章 语言特性/10.13 内存分布.md.txt" rel="nofollow"> 查看页面源码</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>10.13 内存分布<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<div class="section" id="linux">
+<h2>回顾Linux进程的虚拟内存<a class="headerlink" href="#linux" title="永久链接至标题">¶</a></h2>
+<p>我们编写的程序都运行在计算机的内存（一般指的是计算机的随机存储器<code class="docutils literal notranslate"><span class="pre">RAM</span></code>），<code class="docutils literal notranslate"><span class="pre">UNIX</span></code>环境内存的大致分布如下：</p>
+<p><img alt="../../_images/virtual_memory.jpg" src="../../_images/virtual_memory.jpg" /></p>
+<blockquote>
+<div><p>当应用程序被加载到内存空间中执行时，操作系统负责代码段、数据段和<code class="docutils literal notranslate"><span class="pre">BSS</span></code>段的加载，并在内存中为这些段分配空间。在程序运行期间，栈段也交给操作系统进行管理，只有堆段是程序员自行管理（可显式地申请和释放空间）的内存区域。</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>代码段<code class="docutils literal notranslate"><span class="pre">Text</span> <span class="pre">Segment</span></code>：存放程序执行代码的一段内存区域，这部分区域的大小在程序运行前就已经确定，并且内存区域通常属于只读（不过某些架构也允许修改程序）。代码段中的指令包含操作码和被操作对象（或对象地址引用）。只读常量将直接包含在代码段中；局部变量会在栈区分配内存空间并引用；全局变量会引用<code class="docutils literal notranslate"><span class="pre">BSS</span></code>段和数据段中的地址。</p></li>
+<li><p>数据段<code class="docutils literal notranslate"><span class="pre">Data</span> <span class="pre">Segment</span></code>：静态内存分配，存放静态变量、初始化的全局变量和常量。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BSS</span></code>段：静态内存分配，包含了程序中未初始化的全部变量，在内存中<code class="docutils literal notranslate"><span class="pre">BSS</span></code>段全部置零。</p></li>
+<li><p>堆<code class="docutils literal notranslate"><span class="pre">heap</span></code>：动态内存分配，当进程调用<code class="docutils literal notranslate"><span class="pre">malloc</span></code>等函数分配内存时，堆会扩张用于存放新申请的变量，使用<code class="docutils literal notranslate"><span class="pre">free</span></code>等函数释放内存时，被释放的内存从堆中剔除。</p></li>
+<li><p>栈<code class="docutils literal notranslate"><span class="pre">stack</span></code>：存放程序的局部变量，即在函数括弧<code class="docutils literal notranslate"><span class="pre">{}</span></code>中定义的变量。除此之外，在函数被调用时参数会被压入栈中，函数调用结束后函数的返回值也会被存放在栈中。另外，栈具有先进先出的特点，经常用于保存/恢复调用现场，这也是我们在程序<code class="docutils literal notranslate"><span class="pre">crash</span></code>时打印<code class="docutils literal notranslate"><span class="pre">stack</span></code>的原因。</p></li>
+</ul>
+</div>
+<div class="section" id="c">
+<h2>C++内存分布<a class="headerlink" href="#c" title="永久链接至标题">¶</a></h2>
+<p>C++中内存被分为如下几个区域：</p>
+<ul class="simple">
+<li><p>栈<code class="docutils literal notranslate"><span class="pre">stack</span></code>：由编译器分配释放，存放函数的参数值和局部变量的值等</p></li>
+<li><p>堆<code class="docutils literal notranslate"><span class="pre">heap</span></code>：操作系统维护的一块可供动态分配的特殊内存，程序运行时调用<code class="docutils literal notranslate"><span class="pre">malloc()</span></code>从堆上申请内存，调用<code class="docutils literal notranslate"><span class="pre">free()</span></code>返还内存</p></li>
+<li><p>自由存储区<code class="docutils literal notranslate"><span class="pre">free</span> <span class="pre">store</span></code>：一般由程序员主动申请（new）和释放（delete），如果程序员忘记释放申请的内存则可能存在内存泄漏，这些内存只能等到程序结束后被操作系统自动回收</p></li>
+<li><p>全局/静态存储区：存放全局变量和静态变量</p></li>
+<li><p>常量存储区：存放不允许修改的常量（不过也可以通过非正当手段修改）</p></li>
+<li><p>程序代码区：存储函数体（类的成员函数和全局函数）的二进制代码</p></li>
+</ul>
+<div class="section" id="free-storeheap">
+<h3>2. 自由存储区free store和堆heap的区别<a class="headerlink" href="#free-storeheap" title="永久链接至标题">¶</a></h3>
+<p>很多编译器的<code class="docutils literal notranslate"><span class="pre">new</span></code>和<code class="docutils literal notranslate"><span class="pre">delete</span></code>都是通过<code class="docutils literal notranslate"><span class="pre">malloc</span></code>和<code class="docutils literal notranslate"><span class="pre">free</span></code>来实现的，那么有一个问题：</p>
+<blockquote>
+<div><p>Q：以<code class="docutils literal notranslate"><span class="pre">malloc</span></code>实现的<code class="docutils literal notranslate"><span class="pre">new</span></code>，所申请的内存是在堆上还是在自由存储区上？</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>堆：C语言和操作系统的术语，指的是操作系统维护的一块提供动态分配功能的特殊内存（可以通过<code class="docutils literal notranslate"><span class="pre">malloc</span></code>和<code class="docutils literal notranslate"><span class="pre">free</span></code>来动态地申请和释放内存）</p></li>
+<li><p>自由存储区：C++的术语，指的是通过<code class="docutils literal notranslate"><span class="pre">new</span></code>和<code class="docutils literal notranslate"><span class="pre">delete</span></code>动态分配和释放内存的内存区域</p></li>
+</ul>
+<blockquote>
+<div><p>A：C++编译器默认使用堆来实现自由存储，即缺省的全局运算符<code class="docutils literal notranslate"><span class="pre">new</span></code>和<code class="docutils literal notranslate"><span class="pre">delete</span></code>是通过<code class="docutils literal notranslate"><span class="pre">malloc</span></code>和<code class="docutils literal notranslate"><span class="pre">free</span></code>来实现的。这时候以<code class="docutils literal notranslate"><span class="pre">malloc</span></code>实现的<code class="docutils literal notranslate"><span class="pre">new</span></code>既可以说是在堆上也可以说在自由存储区上（前者是具象的概念，后者是抽象的概念）。不过程序员可以通过重载<code class="docutils literal notranslate"><span class="pre">new</span></code>操作符来使用其他内存实现自由存储，此时自由存储区和堆就不是同一个概念了。</p>
+</div></blockquote>
+</div>
+<div class="section" id="id2">
+<h3>3. 堆和栈的区别<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th></th>
+<th>堆</th>
+<th>栈</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>管理方式</td>
+<td>编译器自动管理</td>
+<td>程序员手动控制</td>
+</tr>
+<tr>
+<td>空间大小</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<div class="section" id="id3">
+<h3>4. 静态内存、栈内存和堆<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
+<ul class="simple">
+<li><p>静态内存：用于保存局部<code class="docutils literal notranslate"><span class="pre">static</span></code>、类<code class="docutils literal notranslate"><span class="pre">static</span></code>数据成员和定义在任何函数之外的变量</p></li>
+<li><p>栈内存：保存定义在函数内的非<code class="docutils literal notranslate"><span class="pre">static</span></code>对象</p></li>
+</ul>
+<p>分配在静态内存或者栈内存的对象由编译器自动创建和销毁，对于栈对象仅在其定义的程序块运行时才存在，<code class="docutils literal notranslate"><span class="pre">static</span></code>对象在使用之前分配，在程序结束时销毁。</p>
+<p>C++程序还拥有一个内存池（被称为自由空间<code class="docutils literal notranslate"><span class="pre">free</span> <span class="pre">store</span></code>或者堆<code class="docutils literal notranslate"><span class="pre">heap</span></code>，两者的区别在前面已经描述了），程序用内存池来存储动态分配的对象，当动态对象不再使用时，我们的代码必须显式销毁他们。</p>
+</div>
+</div>
+<div class="section" id="reference">
+<h2>Reference<a class="headerlink" href="#reference" title="永久链接至标题">¶</a></h2>
+<p>[1] https://chenqx.github.io/2014/09/25/Cpp-Memory-Management/</p>
+<p>[2] https://www.cnblogs.com/QG-whz/p/5060894.html</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="10.14%20%E8%B0%83%E8%AF%95%E5%B8%AE%E5%8A%A9.html" class="btn btn-neutral float-right" title="10.14 调试帮助" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="10.12%20%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86.html" class="btn btn-neutral float-left" title="10.12 异常处理" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; 版权所有 2021, TOMOCAT.
+
+    </p>
+  </div>
+    
+    
+    
+    利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

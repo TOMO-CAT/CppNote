@@ -1,0 +1,45 @@
+# 2.2 for语句
+
+## 传统的for语句
+
+#### 1. 语法
+
+for语句的语法形式是：
+
+```c++
+for (initializer; condition; expression)
+    statement
+```
+
+* initializer：初始化值
+* condition：循环控制条件，为真就会执行一次statement
+* expression：修改initializer初始化的变量
+
+#### 2. for语句头中的多重定义
+
+initializer中可以定义多个对象，但是只能有一条声明语句，因此所有变量的基础类型必须相同：
+
+```c++
+// 通过for循环把vector的元素拷贝一份添加到原来的元素后面
+vector<int> v;
+for (decltype(v.size()) i = 0, sz = v.size(); i != sz; ++i) {
+    v.push_back(v[i]);
+}
+```
+
+## 范围for语句
+
+#### 1. 语法
+
+C++11新标准引入了范围for语句：
+
+```c++
+for (declaration : expression)
+    statement
+```
+
+其中expression表示的是一个序列，比如用花括号括起来的初始值列表、数组或者vector等类型的对象，这些类型的特点是拥有能返回迭代器begin和end成员。declaration定义一个变量，序列中每个元素都能转换成该变量的类型。确保类型相容最简单的办法是使用auto类型说明符。
+
+#### 2. 注意事项
+
+在范围for循环中预存了`end()`的值，一旦在序列中添加（删除）元素，end函数的值就可能变得无效。

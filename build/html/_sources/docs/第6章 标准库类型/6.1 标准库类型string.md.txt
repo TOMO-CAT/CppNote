@@ -1,0 +1,316 @@
+# 6.1 标准库类型：string
+
+## 头文件
+
+```c++
+#include <string>
+using std::string;
+```
+
+## 定义与初始化
+
+初始化string对象的方法比较多，下面列出最常用的几种：
+
+```c++
+#include <string>
+#include <iostream>
+
+int main(void) {
+    using std::string;
+
+    string s1;              // 默认初始化: 空串
+    string s2 = "tomocat";  // s2是字面值"tomocat"的副本, 等价于s2("tomocat")
+    string s3 = s2;         // s3是s2的副本, 等价于s3(s2)
+    string s4(5, 'a');      // 5个a组成的字符串
+
+    std::cout << "s1:" << s1 << std::endl;
+    std::cout << "s2:" << s2 << std::endl;
+    std::cout << "s3:" << s3 << std::endl;
+    std::cout << "s4:" << s4 << std::endl;
+}
+
+// 输出:
+s1:
+s2:tomocat
+s3:tomocat
+s4:aaaaa
+```
+
+string对象还支持从C风格字符串提取子串的三个构造函数：
+
+| 操作                       | 含义                                       | 备注                                                         |
+| -------------------------- | ------------------------------------------ | ------------------------------------------------------------ |
+| `string s(cp, n)`          | s是cp指向的数组中前n个字符的拷贝           | 此数组至少应该包含n个字符                                    |
+| `string s(s2, pos2)`       | s是string s2从下标pos2开始的字符的拷贝     | 若`pos2 > s2.size()`，则构造函数的行为未定义                 |
+| `string s(s2, pos2, len2)` | s是string s2从下标pos2开始len2个字符的拷贝 | 若`pos2 > s2.size()`，则构造函数的行为未定义，不管len2的值是多少，构造函数至多拷贝`s2.size() - pos2`个字符 |
+
+## string对象上的操作
+
+#### 1. 读写string
+
+string对象提供了`<<`和`>>`操作符，可用于读写：
+
+> Tips：注意这种写法在执行读取操作时，会自动忽略开头的空白（空格符、换行符和制表符等），从第一个真正的字符开始读起，直到遇到下一处空白停下。举个例子，如果用户输入`"  Tomo  Cat "`，那么最终将输出`"Tomo"`。
+
+```c++
+#include <string>
+#include <iostream>
+
+int main(void) {
+    std::string s;
+    std::cin >> s;                // 将string对象读入cin, 遇到空白停止
+    std::cout << s << std::endl;  // 将string对象输出到cout
+}
+```
+
+上面的程序每次仅能读取一个单词，如果我们要读取多个string对象，那么可以写成：
+
+```c++
+#include <string>
+#include <iostream>
+
+int main(void) {
+    std::string word;
+
+    while (std::cin >> word) {  // 遇到文件结束标记或者非法输入时退出循环
+        std::cout << word << std::endl;
+    }
+    return 0;
+}
+```
+
+如果我们希望读取到的string对象保留输入时的空白符，应该使用`getline`函数，它接收一个输入流和一个string对象作为参数，函数从给定的输入流中读入文件，直到遇到换行符为止（注意换行符也会被读入），然后把所读的内容存入到string对象中去（注意不存换行符）。`getline`函数只要一遇到换行符就结束读取操作并返回结果，如果输入的就是一个换行符，那么返回空string。
+
+> Tips：`getline`函数会读取到输入的换行符，但是返回时将换行符丢弃了。
+
+```c++
+#include <string>
+#include <iostream>
+
+int main(void) {
+    std::string line;
+
+    // 每次读入一整行, 直到到达文件末尾
+    while (getline(std::cin, line)) {
+        std::cout << line << std::endl;
+    }
+    return 0;
+}
+```
+
+#### 2. 常用的成员函数
+
+```c++
+std::string s;
+s.empty();  // 字符串s为空时返回true, 否则返回false
+s.size();   // 返回字符串s中的字符个数
+```
+
+注意string类型的`size()`函数返回的是`string::size_type`类型，它具有如下几个特点：
+
+* 体现了标准库类型与机器无关的特性
+* 是一个无符号类型的值
+* 足够存放下任意string对象的大小
+
+回顾一下前面提到的类型转换，由于`size()`函数返回的是一个无符号整数，因此不要混用`size()`函数返回值和带符号数，举个例子：
+
+```c++
+// 注意下面这段程序几乎每次都会非预期地输出error, 尽管s.size()返回一个正数, 不可能小于-1
+// 但是混用带符号数和无符号数会将n转换成一个比较大的无符号数
+
+#include <iostream>
+
+int main() {
+    std::string s = "tomocat";
+    int n = -1;
+    if (s.size() < n) {
+        std::cout << "error" << std::endl;
+    }
+}
+```
+
+#### 3. 比较string对象
+
+```c++
+std::string s1, s2;
+s1 == s2       // 包含字符的内容和顺序都相同
+s1 != s2       // 依赖于==的定义
+<, <=, >, >=   // 利用字符在字段中的额顺序进行比较，且对字母的大小写敏感
+```
+
+#### 4. 字符串拼接
+
+> Tips：基于历史原因，C++语言中的字符串字面值并不是标准库类型string的对象。
+
+两个string对象可以通过加法运算符（+）或者复合赋值运算符（+=）直接拼接：
+
+```c++
+std::string s1 = "tomo";
+std::string s2 = "cat";
+
+std::string s3 = s1 + s2;  // s3是"tomocat"
+s1 += s2;                  // s1变成"tomocat"
+```
+
+标准库允许我们将字符字面值和字符串字面值转换成string对象，前提是每个加法运算符（+）两侧的运算对象至少有一个是string：
+
+```c++
+#include <iostream>
+#include <string>
+
+int main() {
+    // 正确: 两个string相加
+    std::string s1 = std::string("tomo") + std::string("cat");
+    std::cout << "s1:" << s1 << std::endl;
+
+    // 正确: +号两边至少有一个string对象, 字面值字面值与字符串字面值会自动转换成string对象
+    std::string s2 = "tomo" + std::string("cat") + '!';
+    std::cout << "s2:" << s2 << std::endl;
+
+    // 错误: 两个运算对象都不是string
+    // std::string s3 = "tomo" + "cat";
+}
+
+// 输出:
+s1:tomocat
+s2:tomocat!
+```
+
+#### 5. substr提取子串
+
+> Tips：substr可以提取一个string的子串。
+
+| 操作               | 含义                                            | 备注                                                         |
+| ------------------ | ----------------------------------------------- | ------------------------------------------------------------ |
+| `s.substr(pos, n)` | 返回一个string，包含s中从pos开始的n个字符的拷贝 | pos的默认值为0，n的默认值为`s.size() - pos`，即拷贝从pos开始的所有字符；如果开始位置超过了string的大小，那么substr函数会抛出一个`out_of_range`异常，如果开始位置加上计数值大于string的大小，则substr会调整计数值只拷贝到string的末尾 |
+
+#### 6. 改变string的方法
+
+string类型支持顺序容器的赋值运算符以及assign、insert和erase操作，除此之外还定义了额外的insert和erase版本。
+
+| 操作                     | 含义                                           | 备注                                                         |
+| ------------------------ | ---------------------------------------------- | ------------------------------------------------------------ |
+| `s.insert(pos, args)`    | 在pos之前插入args指定的字符                    | pos可以是一个下标或一个迭代器，接受下标的版本返回一个指向s的引用，接受迭代器的版本返回指向第一个插入字符的迭代器 |
+| `s.erase(pos, len)`      | 删除从pos开始的len个字符                       | 如果len被省略，则删除从pos开始直至s末尾的所有字符，返回一个指向s的引用 |
+| `s.assign(args)`         | 将s中字符替换为args指定的字符                  | 返回一个指向s的引用                                          |
+| `s.append(args)`         | 将args追加到s                                  | 返回一个指向s的引用                                          |
+| `s.replace(range, args)` | 删除s中范围range内的字符，替换为args指定的字符 | range可以是一个下标和一个长度，也可以是一对指向s的迭代器，返回一个指向s的引用 |
+
+注意args可以是下列形式之一（str不能与s相同，迭代器b和e不能指向s）：
+
+* `str`：字符串str
+* `str, pos, len`：str中从pos开始最多len个字符
+* `cp, len`：从cp指向的字符数组的前（最多）len个字符
+* `cp`：cp指向的以空字符结尾的字符数组
+* `n, c`：n个字符c
+* `b, e`：迭代器b和e指定的范围内的字符
+* 初始化列表：花括号包围的，以逗号分隔的字符列表
+
+> TIps：append和assign可以使用上述的所有形式，但是replace和insert允许的args形式依赖于range和pos是如何指定的。
+
+| args类型        | `replace(pos, len, args)` | `replace(b, e, args)` | `insert(pos, args)` | `insert(iter, args)` |
+| --------------- | ------------------------- | --------------------- | ------------------- | -------------------- |
+| `str`           | 是                        | 是                    | 是                  | 否                   |
+| `str, pos, len` | 是                        | 否                    | 是                  | 否                   |
+| `cp, len`       | 是                        | 是                    | 是                  | 否                   |
+| `cp`            | 是                        | 是                    | 否                  | 否                   |
+| `n, c`          | 是                        | 是                    | 是                  | 是                   |
+| `b2, e2`        | 否                        | 是                    | 否                  | 是                   |
+| 初始化列表      | 否                        | 是                    | 否                  | 是                   |
+
+#### 7. string搜索操作
+
+> Tips：string搜索函数返回`string::size_type`值，该类型是一个`unsigned`类型，用一个int或其他带符号类型来保存这些函数的返回值不是一个好主意。
+
+搜索操作返回指定字符出现的下标，如果未找到则返回一个名为`string::npos`的static成员，标准库将`npos`定义为一个`const string::size_type`类型并初始化为值-1，由于npos是一个unsigned类型，此初始值意味着npos等于任何string最大的可能大小。
+
+| 操作                        | 含义                                          | 备注 |
+| --------------------------- | --------------------------------------------- | ---- |
+| `s.find(args)`              | 查找s中args第一次出现的位置                   |      |
+| `s.rfind(args)`             | 查找s中args最后一次出现的位置                 |      |
+| `s.find_first_of(args)`     | 在s中查找args中任何一个字符第一次出现的位置   |      |
+| `s.find_last_of(args)`      | 在s中查找args中任何一个字符最后一次出现的位置 |      |
+| `s.find_first_not_of(args)` | 在s中查找第一个不在args中的字符               |      |
+| `s.find_last_not_of(args)`  | 在s中查找最后一个不在args中的字符             |      |
+
+args必须是如下形式之一：
+
+* `c, pos`：从s中位置pos开始查找字符c，pos默认为0
+* `s2, pos`：从s中位置pos开始查找字符串s2，pos默认为0
+* `cp, pos`：从s中位置pos开始查找指针cp指向的以空字符结尾的C风格字符串，pos默认为0
+* `cp, pos, n`：从s中位置pos开始查找指针cp指向的数组的前n个字符，pos和n无默认值
+
+#### 8. string比较操作
+
+除了关系运算符外，标准库string类型还提供了一组compare函数，根据s是等于、大于还是小于参数指定的字符串，`s.compare`返回0、正数或负数。
+
+`s.compare`根据参数形式共有6个版本：
+
+| 参数                     | 含义                                                         | 备注 |
+| ------------------------ | ------------------------------------------------------------ | ---- |
+| `s2`                     | 比较s和s2                                                    |      |
+| `pos1, n1, s2`           | 将s中从pos1开始的n1个字符与s2进行比价                        |      |
+| `pos1, n1, s2, pos2, n2` | 将s中从pos1开始的n1个字符与s2中从pos2开始的n2个字符进行比较  |      |
+| `cp`                     | 比较s与cp指向的C风格字符串                                   |      |
+| `pos1, n1, cp`           | 将s中从pos1开始的n1个字符与cp指向的C风格字符串进行比较       |      |
+| `pos1, n1, cp, n2`       | 将s中从pos1开始的n1个字符与cp指向的C风格字符串开始的n2个字符进行比较 |      |
+
+#### 9. 数值转换
+
+新标准引入了多个函数可以实现数值数据与标准库string之间的转换，如果string不能转换为一个数组，则这些函数抛出一个`invalid_argument`的异常，如果转换的数值无法用任何类型表示，则抛出一个`out_of_range`异常：
+
+| 操作                                                         | 含义                                                         | 备注                                                         |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `to_string(val)`                                             | 一组重载函数，返回数值val的string表示                        | val可以是任何算数类型，对每个浮点类型和int或更大的整型都有相应版本的`to_string` |
+| `stoi(s, p, b)`<br>`stol(s, p, b)`<br>`stoul(s, p, b)`<br>`stoll(s, p, b)`<br>`stoull(s, p, b)` | 返回s的起始子串（表示整数内容）的数值，返回值类型分别是int、long、unsigned long、 long long、unsigned long long | b表示转换的基数默认值为10，p是`size_t`指，用于保存s中第一个非数值字符的下标，p默认为0即不保存下标 |
+| `stof(s, p)`<br>`stod(s, p)`<br>`stold(s, p)`                | 返回s的起始子串（表示浮点数内容）的数值，返回值类型分别是float、double或long double | 参数p的作用与整数转换函数中一样                              |
+
+
+
+## 处理string对象的单个字符
+
+#### 1. cctype头文件提供的字符操作函数
+
+在`cctype`头文件中定义了一组标准库函数用于单个字符，下面是主要的函数名及其含义：
+
+| 函数名     | 功能                                                         |
+| ---------- | ------------------------------------------------------------ |
+| isalnum(c) | 当c是字母或数字时为真                                        |
+| isalpha(c) | 当c是字母时为真                                              |
+| iscntrl(c) | 当c是控制字符时为真                                          |
+| isdigit(c) | 当c是数字时为真                                              |
+| isgraph(c) | 当c不是空格但可打印时为真                                    |
+| islower(c) | 当c是小写字母时为真                                          |
+| isupper(c) | 当c是大写字母时为真                                          |
+| isprint(c) | 当c是可打印字符时为真（即c是空格或c具有可视形式）            |
+| ispunct(c) | 当c是标点符号时为真（即c不是控制字符、数字、字母、可打印空白中的一种） |
+| isspace(c) | 当c是空白时为真（即c是空格、横向制表符、纵向制表符、回车符、换行符、进纸符中的一种） |
+| tolower(c) | 如果c是大写字母，输出对应的小写字母，否则原样输出c           |
+| toupper(c) | 如果c是小写字母，输出对应的大写字母，否则原样输出c           |
+
+#### 2. 遍历string中的字符
+
+使用时注意：
+
+* string对象的下标必须大于等于0而小于`s.size()`，使用超出此范围的下标将引发不可预知的错误（如果s为空string对象，那么s[0]的结果是未定义的）
+* 最好使用C++11新标准提供的范围for循环语句
+* 不要混用带符号数与服务好书，因此最好设置下标类型为`string::size_type`
+
+```c++
+#include <iostream>
+#include <string>
+
+int main() {
+    std::string s = "tomocat";
+
+    // 传统方法
+    for (std::string::size_type i = 0; i != s.size(); ++i) {
+        std::cout << s[i] << std::endl;
+    }
+
+    // C++11新标准: 范围for循环
+    for (auto c : s) {
+        std::cout << c << std::endl;
+    }
+}
+```

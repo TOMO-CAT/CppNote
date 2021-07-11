@@ -1,0 +1,558 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>5.7 类的多重继承与虚继承 &mdash; C++语法笔记 v1.0 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="5.8 类的类型转换" href="5.8%20%E7%B1%BB%E7%9A%84%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2.html" />
+    <link rel="prev" title="5.6 类的继承与多态" href="5.6%20%E7%B1%BB%E7%9A%84%E7%BB%A7%E6%89%BF%E4%B8%8E%E5%A4%9A%E6%80%81.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> C++语法笔记
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC1%E7%AB%A0%20%E5%8F%98%E9%87%8F%E4%B8%8E%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B/index.html">第1章 变量与基本类型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC2%E7%AB%A0%20%E8%AF%AD%E5%8F%A5/index.html">第2章 语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC3%E7%AB%A0%20%E5%87%BD%E6%95%B0/index.html">第3章 函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC4%E7%AB%A0%20%E8%BF%90%E7%AE%97%E7%AC%A6/index.html">第4章 运算符</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">第5章类</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="5.1%20%E7%B1%BB%E7%9A%84%E6%88%90%E5%91%98.html">5.1 类的成员</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5.2%20%E7%B1%BB%E7%9A%84%E9%9D%99%E6%80%81%E6%88%90%E5%91%98.html">5.2 类的静态成员</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5.3%20%E7%B1%BB%E7%9A%84%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6.html">5.3 类的访问控制</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5.4%20%E7%B1%BB%E7%9A%84%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0.html">5.4 类的构造函数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5.5%20%E7%B1%BB%E7%9A%84%E6%8B%B7%E8%B4%9D%E6%8E%A7%E5%88%B6%E6%93%8D%E4%BD%9C.html">5.5 类的拷贝控制操作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5.6%20%E7%B1%BB%E7%9A%84%E7%BB%A7%E6%89%BF%E4%B8%8E%E5%A4%9A%E6%80%81.html">5.6 类的继承与多态</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">5.7 类的多重继承与虚继承</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">多重继承</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id3">1. 简介</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">2. 实例</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5">3. 派生类构造函数初始化所有基类</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6">4. 继承的构造函数与多重继承</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id7">5. 析构函数与多重继承</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id8">6. 多重继承的派生类的拷贝与移动操作</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id9">7. 类型转换与多个基类</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id10">8. 多重继承下的类作用域</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id11">虚继承</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id12">1. 简介</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#panda">2. 实例：另一个Panda类</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id13">3. 支持向基类的常规类型转换</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id14">4. 构造函数与虚继承</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id15">5. 虚继承的对象的构造方式</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id16">6. 构造函数与析构函数的次序</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="5.8%20%E7%B1%BB%E7%9A%84%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2.html">5.8 类的类型转换</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5.9%20%E7%B1%BB%E6%88%90%E5%91%98%E6%8C%87%E9%92%88.html">5.9 类成员指针</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5.10%20union.html">5.10 union</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5.11%20%E5%B5%8C%E5%A5%97%E7%B1%BB.html">5.11 嵌套类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5.12%20%E5%B1%80%E9%83%A8%E7%B1%BB.html">5.12 局部类</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC6%E7%AB%A0%20%E6%A0%87%E5%87%86%E5%BA%93%E7%B1%BB%E5%9E%8B/index.html">第6章 标准库类型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC7%E7%AB%A0%20%E6%A8%A1%E6%9D%BF/index.html">第7章 模板</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC8%E7%AB%A0%20%E5%85%B3%E9%94%AE%E5%AD%97%E6%A6%82%E5%BF%B5/index.html">第8章 关键字概念</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC9%E7%AB%A0%20%E7%AE%97%E6%B3%95/index.html">第9章 算法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC10%E7%AB%A0%20%E8%AF%AD%E8%A8%80%E7%89%B9%E6%80%A7/index.html">第10章 语法特性</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC11%E7%AB%A0%20C%2B%2B11%E6%96%B0%E6%A0%87%E5%87%86/index.html">第11章 C++11新标准</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../README.html">README</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">C++语法笔记</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">第5章类</a> &raquo;</li>
+        
+      <li>5.7 类的多重继承与虚继承</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/docs/第5章 类/5.7 类的多重继承与虚继承.md.txt" rel="nofollow"> 查看页面源码</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>5.7 类的多重继承与虚继承<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id2">
+<h2>多重继承<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<blockquote>
+<div><p>编码规范：真正需要用到多重继承的情况少之又少，只有在以下情况下我们才允许多重继承：最多只有一个基类是非抽象类，其他基类都是以<code class="docutils literal notranslate"><span class="pre">Interface</span></code>为后缀的纯接口类。</p>
+<p>接口是指满足如下特定条件的类，它们最好以<code class="docutils literal notranslate"><span class="pre">Interface</span></code>为后缀：</p>
+<ul class="simple">
+<li><p>只有纯虚函数（<code class="docutils literal notranslate"><span class="pre">=0</span></code>）和静态函数（除了析构函数）</p></li>
+<li><p>没有非静态数据成员</p></li>
+<li><p>没有定义任何构造函数，如果有也不能带参数，且必须为<code class="docutils literal notranslate"><span class="pre">protected</span></code></p></li>
+<li><p>如果它是一个子类，也只能从满足上述条件的并以<code class="docutils literal notranslate"><span class="pre">Interface</span></code>为后缀的类继承</p></li>
+</ul>
+</div></blockquote>
+<div class="section" id="id3">
+<h3>1. 简介<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
+<p>多重继承（multiple inheritance）是指从多个直接基类中产生派生类的能力，多重继承的派生类继承了所有父类的属性。</p>
+</div>
+<div class="section" id="id4">
+<h3>2. 实例<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+<p>在派生类的派生列表中可以包含多个基类：</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Bear</span> <span class="o">:</span> <span class="k">public</span> <span class="n">ZooAnimal</span> <span class="p">{</span> <span class="cm">/*...*/</span> <span class="p">};</span>
+<span class="k">class</span> <span class="nc">Panda</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Bear</span><span class="p">,</span> <span class="k">public</span> <span class="n">Endangered</span> <span class="p">{</span> <span class="cm">/*...*/</span> <span class="p">};</span>
+</pre></div>
+</div>
+<p>在多重继承关系中，派生类的对象包含每个基类的子对象。如下图所示，在<code class="docutils literal notranslate"><span class="pre">Panda</span></code>对象中含有一个<code class="docutils literal notranslate"><span class="pre">Bear</span></code>部分（其中又含有一个<code class="docutils literal notranslate"><span class="pre">ZooAnimal</span></code>部分）、一个<code class="docutils literal notranslate"><span class="pre">Endangered</span></code>部分以及在<code class="docutils literal notranslate"><span class="pre">Panda</span></code>中声明的非静态数据成员。</p>
+<p><img alt="Panda对象的概念结构" src="../../_images/1.png" /></p>
+</div>
+<div class="section" id="id5">
+<h3>3. 派生类构造函数初始化所有基类<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// 显式地初始化所有基类</span>
+<span class="n">Panda</span><span class="o">::</span><span class="n">Panda</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">name</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">onExhibit</span><span class="p">)</span>
+    <span class="o">:</span> <span class="n">Bear</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">onExhibit</span><span class="p">,</span> <span class="s">&quot;Panda&quot;</span><span class="p">),</span>
+	  <span class="n">Endangered</span><span class="p">(</span><span class="n">Endagered</span><span class="o">::</span><span class="n">critical</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+<span class="c1">// 隐式地使用Bear的默认构造函数初始化Bear子对象</span>
+<span class="n">Panda</span><span class="o">::</span><span class="n">Panda</span><span class="p">()</span>
+    <span class="o">:</span> <span class="n">Endangered</span><span class="p">(</span><span class="n">Endagered</span><span class="o">::</span><span class="n">critical</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+</pre></div>
+</div>
+<p>其中基类的构造顺序与派生列表中基类的出现顺序保持一致，而与派生类构造函数初始值列表中基类的顺序无关。一个<code class="docutils literal notranslate"><span class="pre">Panda</span></code>对象按照如下次序进行初始化：</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ZooAnimal</span></code>：首先初始化<code class="docutils literal notranslate"><span class="pre">ZooAnimal</span></code>这个整个继承体系中的最终基类</p></li>
+<li><p>接下来初始化<code class="docutils literal notranslate"><span class="pre">Panda</span></code>的第一个直接基类<code class="docutils literal notranslate"><span class="pre">Bear</span></code></p></li>
+<li><p>初始化<code class="docutils literal notranslate"><span class="pre">Panda</span></code>的第二个直接基类<code class="docutils literal notranslate"><span class="pre">Endangered</span></code></p></li>
+<li><p>最后初始化<code class="docutils literal notranslate"><span class="pre">Panda</span></code></p></li>
+</ul>
+</div>
+<div class="section" id="id6">
+<h3>4. 继承的构造函数与多重继承<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
+<p>在C++11新标准中，允许派生类从它的一个或几个基类中继承构造函数。但是如果从多个基类中继承了相同的构造函数（即形参列表完全相同），则程序会出错：</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span> <span class="nc">Base1</span> <span class="p">{</span>
+    <span class="n">Base1</span><span class="p">()</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
+    <span class="n">Base1</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="p">);</span>
+    <span class="n">Base1</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">);</span>
+<span class="p">};</span>
+<span class="k">struct</span> <span class="nc">Base2</span> <span class="p">{</span>
+    <span class="n">Base2</span><span class="p">()</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
+    <span class="n">Base2</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="p">);</span>
+    <span class="n">Base2</span><span class="p">(</span><span class="kt">int</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="c1">// 错误: D1试图从两个基类中都继承D1::D1(const string&amp;)</span>
+<span class="k">struct</span> <span class="nc">D1</span><span class="o">:</span> <span class="k">public</span> <span class="n">Base1</span><span class="p">,</span> <span class="k">public</span> <span class="n">Base2</span> <span class="p">{</span>
+	<span class="k">using</span> <span class="n">Base1</span><span class="o">::</span><span class="n">Base1</span><span class="p">;</span>   <span class="c1">// 从Base1继承构造函数</span>
+    <span class="k">using</span> <span class="n">Base2</span><span class="o">::</span><span class="n">Base2</span><span class="p">;</span>   <span class="c1">// 从Base2继承构造函数</span>
+    <span class="c1">// 补救方法: 如果一个类从它的多个基类中继承了相同的构造函数, 则这个类必须为该构造函数定义它自己的版本</span>
+    <span class="n">D1</span><span class="p">(</span><span class="k">const</span> <span class="n">string</span> <span class="o">&amp;</span><span class="n">s</span><span class="p">)</span> <span class="o">:</span> <span class="n">Base1</span><span class="p">(</span><span class="n">s</span><span class="p">),</span> <span class="n">Base2</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+    <span class="n">D1</span><span class="p">()</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>       <span class="c1">// D1一旦定义了它自己的构造函数, 则不会合成默认构造函数</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id7">
+<h3>5. 析构函数与多重继承<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
+<p>派生类的析构函数只负责清除派生类本身分配的资源，派生类的成员以及基类都是自动销毁的，合成的析构函数体为空。析构函数的调用顺序正好与构造函数相反，在上面的例子中析构函数的调用函数是：</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="o">~</span><span class="n">Panda</span> <span class="o">~</span><span class="n">Endangered</span> <span class="o">~</span><span class="n">Bear</span> <span class="o">~</span><span class="n">ZooAnimal</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id8">
+<h3>6. 多重继承的派生类的拷贝与移动操作<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
+<p>与只有一个基类的继承一样，多重继承的派生类如果定义了自己的拷贝/赋值构造函数和赋值运算符，则必须在完整的对象上执行拷贝、移动或赋值操作。</p>
+<blockquote>
+<div><p>Tips：只有当派生类使用的是合成版本的拷贝、移动或赋值成员时，才会自动对其基类部分执行这些操作。在合成的拷贝控制成员中，每个基类分别使用自己对应成员隐式地完成构造、赋值或销毁等工作。</p>
+</div></blockquote>
+<p>比如<code class="docutils literal notranslate"><span class="pre">Panda</span></code>合成版本的拷贝构造函数：</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Panda</span></code>会首先调用<code class="docutils literal notranslate"><span class="pre">Bear</span></code>的拷贝构造函数，后者又会在执行自己的拷贝任务之前先调用<code class="docutils literal notranslate"><span class="pre">ZooAnimal</span></code>的拷贝构造函数</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Bear</span></code>部分构造完成就会调用<code class="docutils literal notranslate"><span class="pre">Endangered</span></code>的拷贝构造函数创建对象对应的部分</p></li>
+<li><p>最后执行<code class="docutils literal notranslate"><span class="pre">Panda</span></code>的拷贝构造函数</p></li>
+</ul>
+<p>合成的移动构造函数工作机理与合成的拷贝构造函数类似。合成的拷贝赋值运算符首先赋值<code class="docutils literal notranslate"><span class="pre">Bear</span></code>部分（并且通过<code class="docutils literal notranslate"><span class="pre">Bear</span></code>赋值<code class="docutils literal notranslate"><span class="pre">ZooAnimal</span></code>部分），然后赋值<code class="docutils literal notranslate"><span class="pre">Endangered</span></code>部分，最后是<code class="docutils literal notranslate"><span class="pre">Panda</span></code>部分。移动赋值运算符的工作机理与之类似。</p>
+</div>
+<div class="section" id="id9">
+<h3>7. 类型转换与多个基类<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h3>
+<blockquote>
+<div><p>Tips：在只有一个基类的情况下，派生类的指针或者引用能自动转换成一个可访问基类的指针或者引用，多个基类的情况也与之类似。</p>
+</div></blockquote>
+<p>在上面的例子中，我们令某个可访问基类的指针或引用直接指向一个派生类对象，例如一个<code class="docutils literal notranslate"><span class="pre">ZooAnimal</span></code>、<code class="docutils literal notranslate"><span class="pre">Bear</span></code>或<code class="docutils literal notranslate"><span class="pre">Endangered</span></code>类型的指针或引用可以绑定到<code class="docutils literal notranslate"><span class="pre">Panda</span></code>对象上：</p>
+<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// 接收Panda基类引用的一系列操作</span>
+<span class="kt">void</span> <span class="nf">print</span><span class="p">(</span><span class="k">const</span> <span class="n">Bear</span><span class="o">&amp;</span><span class="p">);</span>
+<span class="kt">void</span> <span class="nf">highlight</span><span class="p">(</span><span class="k">const</span> <span class="n">Endangered</span><span class="o">&amp;</span><span class="p">);</span>
+<span class="n">ostream</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">ostream</span><span class="o">&amp;</span><span class="p">,</span> <span class="k">const</span> <span class="n">ZooAnimal</span><span class="o">&amp;</span><span class="p">);</span>
+
+<span class="n">Panda</span> <span class="nf">ying_yang</span><span class="p">(</span><span class="s">&quot;ying_yang&quot;</span><span class="p">);</span>
+<span class="n">print</span><span class="p">(</span><span class="n">ying_yang</span><span class="p">);</span>           <span class="c1">// 把一个Panda对象传递给一个Bear的引用</span>
+<span class="n">highlight</span><span class="p">(</span><span class="n">ying_yang</span><span class="p">);</span>       <span class="c1">// 把一个Panda对象传递给一个Endangered的引用</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">ying_yang</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>  <span class="c1">// 把一个Panda对象传递给一个ZooAnimal的引用</span>
+</pre></div>
+</div>
+<p>注意编译器不会在派生类向基类的几种转换中进行比较和选择，因为在它看来转换到任意一种基类都一样好。要注意避免二义性错误：</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">print</span><span class="p">(</span><span class="k">const</span> <span class="n">Bear</span><span class="o">&amp;</span><span class="p">);</span>
+<span class="kt">void</span> <span class="nf">print</span><span class="p">(</span><span class="k">const</span> <span class="n">Endangered</span><span class="o">&amp;</span><span class="p">);</span>
+
+<span class="n">Panda</span> <span class="nf">ying_yang</span><span class="p">(</span><span class="s">&quot;ying_yang&quot;</span><span class="p">);</span>
+<span class="n">print</span><span class="p">(</span><span class="n">ying_yang</span><span class="p">);</span>  <span class="c1">// 二义性操作, print函数需要带上前缀限定符</span>
+</pre></div>
+</div>
+<p>与只有一个基类的继承一样，对象、指针和引用的静态类型决定了我们能够使用哪些成员。举个例子，比如我们在不同类中定义了如下的虚函数：</p>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>函数</th>
+<th>含有自定义版本的类</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>print</td>
+<td>ZooAnimal::ZooAnimal<br />Bear::Bear<br />Endangered::Endangered<br />Panda::Panda</td>
+</tr>
+<tr>
+<td>highlight</td>
+<td>Endangered::Endangered<br />Panda::Panda</td>
+</tr>
+<tr>
+<td>toes</td>
+<td>Bear::Bear<br />Panda::Panda</td>
+</tr>
+<tr>
+<td>cuddle</td>
+<td>Panda::Panda</td>
+</tr>
+<tr>
+<td>析构函数</td>
+<td>ZooAnimal::ZooAnimal<br />Endangered::Endangered</td>
+</tr>
+</tbody>
+</table><p>考虑一下如下调用：</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">Bear</span> <span class="o">*</span><span class="n">pb</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Panda</span><span class="p">(</span><span class="s">&quot;ying_yang&quot;</span><span class="p">);</span>
+<span class="n">pb</span><span class="o">-&gt;</span><span class="n">print</span><span class="p">();</span>            <span class="c1">// 正确: Panda::print()</span>
+<span class="n">pb</span><span class="o">-&gt;</span><span class="n">cuddle</span><span class="p">();</span>           <span class="c1">// 错误: 不属于Bear的接口</span>
+<span class="n">pb</span><span class="o">-&gt;</span><span class="n">highlignt</span><span class="p">();</span>        <span class="c1">// 错误: 不属于Bear的接口</span>
+<span class="k">delete</span> <span class="n">pb</span><span class="p">;</span>              <span class="c1">// 正确: Panda::~Panda()</span>
+</pre></div>
+</div>
+<p>当我们通过<code class="docutils literal notranslate"><span class="pre">Endangered</span></code>的指针或者引用访问一个<code class="docutils literal notranslate"><span class="pre">Panda</span></code>对象时，<code class="docutils literal notranslate"><span class="pre">Panda</span></code>接口中<code class="docutils literal notranslate"><span class="pre">Panda</span></code>特有的部分以及属于<code class="docutils literal notranslate"><span class="pre">Bear</span></code>部分是不可见的：</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">Endangered</span> <span class="o">*</span><span class="n">pe</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Panda</span><span class="p">(</span><span class="s">&quot;ying_yang&quot;</span><span class="p">);</span>
+<span class="n">pe</span><span class="o">-&gt;</span><span class="n">print</span><span class="p">();</span>            <span class="c1">// 正确: Panda::print()</span>
+<span class="n">pe</span><span class="o">-&gt;</span><span class="n">toes</span><span class="p">();</span>             <span class="c1">// 错误: 不属于Endangered的接口</span>
+<span class="n">pe</span><span class="o">-&gt;</span><span class="n">cuddle</span><span class="p">();</span>           <span class="c1">// 错误: 不属于Endangered的接口</span>
+<span class="n">pe</span><span class="o">-&gt;</span><span class="n">highlignt</span><span class="p">();</span>        <span class="c1">// 正确: Panda::highlight()</span>
+<span class="k">delete</span> <span class="n">pb</span><span class="p">;</span>              <span class="c1">// 正确: Panda::~Panda()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id10">
+<h3>8. 多重继承下的类作用域<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h3>
+<p>在只有一个基类的情况下，派生类的作用域嵌套在直接基类和间接基类的作用域中。查找过程沿着继承体系自底向上进行，直到找到所需的名字。派生类的名字将隐藏基类的同名成员。</p>
+<p>在多重继承的情况下，相同的查找过程在所有直接基类中同时进行，如果名字在多个基类中都被找到，则对该名字的使用将具有二义性。对于一个派生类而言，从它的几个基类中分别继承名字相同的成员是完全合法的，只不过在使用这个名字时必须明确指出它的版本。当一个类具有多个基类时，有可能出现派生类从两个或者多个基类中继承了同名成员的情况。此时不加前缀限定符直接使用该名字将引发二义性。</p>
+<p>举个例子，如果<code class="docutils literal notranslate"><span class="pre">ZooAnimal</span></code>和<code class="docutils literal notranslate"><span class="pre">Endangered</span></code>都定义了<code class="docutils literal notranslate"><span class="pre">max_weight</span></code>的成员，并且<code class="docutils literal notranslate"><span class="pre">Panda</span></code>没有定义该成员，那么下面的调用是错误的：</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// Panda对象、指针或引用使用了某个名字, 则程序会并行在Endangered和Bear/ZooAnimal两棵子树中查找该名字</span>
+<span class="c1">// 如果名字在超过一棵子树中被找到, 则该名字的使用具有二义性错误</span>
+<span class="kt">double</span> <span class="n">d</span> <span class="o">=</span> <span class="n">ying_yang</span><span class="p">.</span><span class="n">max_weight</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>如果每次调用<code class="docutils literal notranslate"><span class="pre">max_weight</span></code>时都指出所调用的版本，也可以避免二义性错误：</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">ZooAnimal</span><span class="o">::</span><span class="n">max_weight</span>
+<span class="n">Endangered</span><span class="o">::</span><span class="n">max_weight</span>
+</pre></div>
+</div>
+<p>要想避免潜在的二义性，最好的办法是在派生类中为该函数定义一个新版本。例如：</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span> <span class="nf">Panda::max_weight</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">std</span><span class="o">::</span><span class="n">max</span><span class="p">(</span><span class="n">ZooAnimal</span><span class="o">::</span><span class="n">max_weight</span><span class="p">(),</span>
+                   <span class="n">Endangered</span><span class="o">::</span><span class="n">max_weight</span><span class="p">());</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id11">
+<h2>虚继承<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id12">
+<h3>1. 简介<a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h3>
+<p>尽管在派生类列表中同一个基类只能出现一次，但实际上派生类可以多次继承同一个类：</p>
+<ul class="simple">
+<li><p>派生类可以通过它的两个直接基类分别继承同一个间接基类</p></li>
+<li><p>直接继承某个基类，然后通过另一个基类再一次间接继承该类</p></li>
+</ul>
+<p>在默认情况下，派生类含有继承链上每个类对应的子部分。如果某个类在派生过程中出现了多次，则派生类中将包含该类的多个子对象。</p>
+<blockquote>
+<div><p>举个例子，IO标准库的<code class="docutils literal notranslate"><span class="pre">istream</span></code>和<code class="docutils literal notranslate"><span class="pre">ostream</span></code>分别继承了一个名为<code class="docutils literal notranslate"><span class="pre">base_ios</span></code>的抽象基类，派生类包含基类多个子对象的情况对于形如<code class="docutils literal notranslate"><span class="pre">iostream</span></code>的类显然是行不通的。一个<code class="docutils literal notranslate"><span class="pre">iostream</span></code>对象肯定希望在同一个缓冲区中进行读写操作，也会要求条件状态能同时反映输入和输出操作的情况。假如<code class="docutils literal notranslate"><span class="pre">iostream</span></code>对象中真的包含<code class="docutils literal notranslate"><span class="pre">base_ios</span></code>的两份拷贝，则上述的共享行为就无法实现了。</p>
+</div></blockquote>
+<p>在C++中我们通过虚继承的机制解决问题。虚继承的目的是令某个类作出声明，承诺愿意共享它的基类。这种机制下，无论虚基类在继承体系中出现了多少次，在派生类中都只包含唯一一个共享的虚基类子对象。</p>
+</div>
+<div class="section" id="panda">
+<h3>2. 实例：另一个Panda类<a class="headerlink" href="#panda" title="永久链接至标题">¶</a></h3>
+<p>我们令<code class="docutils literal notranslate"><span class="pre">Panda</span></code>类同时继承<code class="docutils literal notranslate"><span class="pre">Bear</span></code>和<code class="docutils literal notranslate"><span class="pre">Raccoon</span></code>。为了避免赋予<code class="docutils literal notranslate"><span class="pre">Panda</span></code>两份<code class="docutils literal notranslate"><span class="pre">ZooAnimal</span></code>子对象，我们将<code class="docutils literal notranslate"><span class="pre">Bear</span></code>和<code class="docutils literal notranslate"><span class="pre">Raccoon</span></code>继承<code class="docutils literal notranslate"><span class="pre">ZooAnimal</span></code>的方式改成虚继承。新的继承体系如下图：</p>
+<p><img alt="Panda的虚继承体系" src="../../_images/21.png" /></p>
+<blockquote>
+<div><p>Tips：虚派生只影响从指定了虚基类的派生类中进一步派生出的类，它不会影响派生类本身。</p>
+</div></blockquote>
+<p>我们指定虚基类的方式是在派生列表中添加关键字<code class="docutils literal notranslate"><span class="pre">virtual</span></code>：</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// 关键字public和virtual的顺序随意</span>
+<span class="k">class</span> <span class="nc">Raccoon</span> <span class="o">:</span> <span class="k">public</span> <span class="k">virtual</span> <span class="n">ZooAnimal</span> <span class="p">{</span> <span class="cm">/*...*/</span> <span class="p">};</span>
+<span class="k">class</span> <span class="nc">Bear</span> <span class="o">:</span> <span class="k">virtual</span> <span class="k">public</span> <span class="n">ZooAnimal</span> <span class="p">{</span> <span class="cm">/*...*/</span> <span class="p">};</span>
+</pre></div>
+</div>
+<p>如果某个类指定了虚基类，则该类的派生仍然按常规方式进行：</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Panda</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Bear</span><span class="p">,</span>
+			  <span class="k">public</span> <span class="n">Raccoon</span><span class="p">,</span> <span class="k">public</span> <span class="n">Endangered</span> <span class="p">{</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id13">
+<h3>3. 支持向基类的常规类型转换<a class="headerlink" href="#id13" title="永久链接至标题">¶</a></h3>
+<p>不论基类是不是虚基类，派生类对象都能被可访问基类的指针或引用操作。例如下面这些从<code class="docutils literal notranslate"><span class="pre">Panda</span></code>向基类的类型转换都是合法的：</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">dance</span><span class="p">(</span><span class="k">const</span> <span class="n">Bear</span><span class="o">&amp;</span><span class="p">);</span>
+<span class="kt">void</span> <span class="nf">rummage</span><span class="p">(</span><span class="k">const</span> <span class="n">Raccoon</span><span class="o">&amp;</span><span class="p">);</span>
+<span class="n">ostream</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">ostream</span><span class="o">&amp;</span><span class="p">,</span> <span class="k">const</span> <span class="n">ZooAnimal</span><span class="o">&amp;</span><span class="p">);</span>
+<span class="n">Panda</span> <span class="n">ying_yang</span><span class="p">;</span>
+<span class="n">dance</span><span class="p">(</span><span class="n">ying_yang</span><span class="p">);</span>     <span class="c1">// 正确: 把一个Panda对象当成Bear传递</span>
+<span class="n">rummage</span><span class="p">(</span><span class="n">ying_yang</span><span class="p">);</span>   <span class="c1">// 正确: 把一个Panda对象当成Raccoon传递</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">ying_yang</span><span class="p">;</span>    <span class="c1">// 正确: 把一个Panda对象当成ZooAnimal传递</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id14">
+<h3>4. 构造函数与虚继承<a class="headerlink" href="#id14" title="永久链接至标题">¶</a></h3>
+<p>在虚派生中，虚基类是由最底层的派生类初始化的。以我们的程序为例，当创建<code class="docutils literal notranslate"><span class="pre">Panda</span></code>对象时，由<code class="docutils literal notranslate"><span class="pre">Panda</span></code>的构造函数独自控制<code class="docutils literal notranslate"><span class="pre">ZooAnimal</span></code>的初始化过程。在此例中，虚基类将会在多条继承路径上被重复初始化。以<code class="docutils literal notranslate"><span class="pre">ZooAnimal</span></code>为例，如果应用普通规则，则<code class="docutils literal notranslate"><span class="pre">Raccoon</span></code>和<code class="docutils literal notranslate"><span class="pre">Bear</span></code>都会试图初始化<code class="docutils literal notranslate"><span class="pre">Panda</span></code>对象的<code class="docutils literal notranslate"><span class="pre">ZooAnimal</span></code>部分。</p>
+<p>当然，继承体系中的每个类都可能在某个时刻成为“最底层的派生类”。只要我们能创建虚基类的派生类对象，该派生类的构造函数就必须初始化它的虚基类。假如在我们继承体系中，当创建一个<code class="docutils literal notranslate"><span class="pre">Bear</span></code>或者<code class="docutils literal notranslate"><span class="pre">Raccoon</span></code>的对象时，它就已经位于派生的最底层，因为<code class="docutils literal notranslate"><span class="pre">Bear</span></code>或<code class="docutils literal notranslate"><span class="pre">Raccoon</span></code>的构造函数将直接初始化器<code class="docutils literal notranslate"><span class="pre">ZooAnimal</span></code>基类部分：</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">Bear</span><span class="o">::</span><span class="n">Bear</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">name</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">onExhibit</span><span class="p">)</span> <span class="o">:</span>
+	<span class="n">ZooAnimal</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">onExhibit</span><span class="p">,</span> <span class="s">&quot;Bear&quot;</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+<span class="n">Raccoon</span><span class="o">::</span><span class="n">Raccoon</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">name</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">onExhibit</span><span class="p">)</span> <span class="o">:</span>
+    <span class="n">ZooAnimal</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">onExihibit</span><span class="p">,</span> <span class="s">&quot;Raccoon&quot;</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+</pre></div>
+</div>
+<p>而当创建一个<code class="docutils literal notranslate"><span class="pre">Panda</span></code>对象时，<code class="docutils literal notranslate"><span class="pre">Panda</span></code>位于派生的最底层并由它负责初始化共享的<code class="docutils literal notranslate"><span class="pre">ZooAnimal</span></code>基类部分。即使<code class="docutils literal notranslate"><span class="pre">ZooAnimal</span></code>不是<code class="docutils literal notranslate"><span class="pre">Panda</span></code>的直接基类，<code class="docutils literal notranslate"><span class="pre">Panda</span></code>的构造函数也可以初始化<code class="docutils literal notranslate"><span class="pre">ZooAnimal</span></code>：</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">Panda</span><span class="o">::</span><span class="n">Panda</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">name</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">onExihibit</span><span class="p">)</span>
+    <span class="o">:</span> <span class="n">ZooAnimal</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">onExihibit</span><span class="p">,</span> <span class="s">&quot;Panda&quot;</span><span class="p">),</span>
+	  <span class="n">Bear</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">onExihibit</span><span class="p">),</span>
+	  <span class="n">Raccoon</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">onExihibit</span><span class="p">),</span>
+      <span class="n">Endangered</span><span class="p">(</span><span class="n">Endangered</span><span class="o">::</span><span class="n">critical</span><span class="p">),</span>
+	  <span class="n">sleeping_flag</span><span class="p">(</span><span class="nb">false</span><span class="p">)</span> <span class="p">{</span>  <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id15">
+<h3>5. 虚继承的对象的构造方式<a class="headerlink" href="#id15" title="永久链接至标题">¶</a></h3>
+<p>当我们创建一个<code class="docutils literal notranslate"><span class="pre">Panda</span></code>对象时，初始化顺序：</p>
+<ul class="simple">
+<li><p>使用<code class="docutils literal notranslate"><span class="pre">Panda</span></code>的构造函数初始值列表中提供的初始值构造虚基类<code class="docutils literal notranslate"><span class="pre">ZooAnimal</span></code>部分</p></li>
+<li><p>接下来构造<code class="docutils literal notranslate"><span class="pre">Bear</span></code>部分</p></li>
+<li><p>然后构造<code class="docutils literal notranslate"><span class="pre">Raccoon</span></code>部分</p></li>
+<li><p>构造第三个直接基类<code class="docutils literal notranslate"><span class="pre">Endangered</span></code></p></li>
+<li><p>最后构造<code class="docutils literal notranslate"><span class="pre">Panda</span></code>部分</p></li>
+</ul>
+<p>如果<code class="docutils literal notranslate"><span class="pre">Panda</span></code>没有显式地初始化<code class="docutils literal notranslate"><span class="pre">ZooAnimal</span></code>基类，则<code class="docutils literal notranslate"><span class="pre">ZooAnimal</span></code>的默认构造函数会被调用。如果<code class="docutils literal notranslate"><span class="pre">ZooAnimal</span></code>没有默认构造函数，那么代码将发生错误。</p>
+<blockquote>
+<div><p>Tips：虚基类总是先于非虚基类构造，与它们在继承体系中的次序和位置无关。</p>
+</div></blockquote>
+</div>
+<div class="section" id="id16">
+<h3>6. 构造函数与析构函数的次序<a class="headerlink" href="#id16" title="永久链接至标题">¶</a></h3>
+<p>一个类可以有很多虚基类，这些虚的子对象按照它们在派生列表中出现的顺序从左往右依次构造。例如：</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Bear</span> <span class="o">:</span> <span class="k">virtual</span> <span class="k">public</span> <span class="n">ZooAnimal</span> <span class="p">{</span> <span class="cm">/*...*/</span> <span class="p">};</span>
+<span class="k">class</span> <span class="nc">Character</span> <span class="p">{</span> <span class="cm">/*...*/</span> <span class="p">};</span>
+<span class="k">class</span> <span class="nc">BookCharacter</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Character</span> <span class="p">{</span> <span class="cm">/*...*/</span> <span class="p">};</span>
+<span class="k">class</span> <span class="nc">ToyAnimal</span> <span class="p">{</span> <span class="cm">/*...*/</span> <span class="p">};</span>
+<span class="k">class</span> <span class="nc">TeddyBear</span> <span class="o">:</span> <span class="n">Public</span> <span class="n">BookCharacter</span><span class="p">,</span>
+				  <span class="n">Public</span> <span class="n">Bear</span><span class="p">,</span> <span class="k">public</span> <span class="n">vritual</span> <span class="n">ToyAnimal</span>
+                  <span class="p">{</span> <span class="cm">/*...*/</span> <span class="p">};</span>
+</pre></div>
+</div>
+<p>编译器按照直接基类的声明顺序对其依次进行检查，以确定其中是否含有虚基类。如果有则先构造虚基类，然后按照声明的顺序逐一构造其他非虚基类。因此，想要创建一个<code class="docutils literal notranslate"><span class="pre">TeddyBear</span></code>对象时会按照如下次序调用构造函数：</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">ZooAnimal</span><span class="p">();</span>       <span class="c1">// Bear的虚基类</span>
+<span class="n">ToyAnimal</span><span class="p">();</span>       <span class="c1">// 直接虚基类</span>
+<span class="n">Character</span><span class="p">();</span>       <span class="c1">// 第一个非虚基类的间接基类</span>
+<span class="n">BookCharacter</span><span class="p">();</span>   <span class="c1">// 第一个直接非虚基类</span>
+<span class="n">Bear</span><span class="p">();</span>            <span class="c1">// 第二个直接非虚基类</span>
+<span class="n">TeddyBear</span><span class="p">();</span>       <span class="c1">// 最底层的派生类</span>
+</pre></div>
+</div>
+<p>合成的拷贝和移动构造函数按照完全相同的顺序执行，合成的赋值运算符中的成员也按照该顺序赋值。和往常一样，对象的销毁顺序和构造顺序正好相反，首先销毁<code class="docutils literal notranslate"><span class="pre">TeddyBear</span></code>部分，最后销毁<code class="docutils literal notranslate"><span class="pre">ZooAnimal</span></code>部分。</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="5.8%20%E7%B1%BB%E7%9A%84%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2.html" class="btn btn-neutral float-right" title="5.8 类的类型转换" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="5.6%20%E7%B1%BB%E7%9A%84%E7%BB%A7%E6%89%BF%E4%B8%8E%E5%A4%9A%E6%80%81.html" class="btn btn-neutral float-left" title="5.6 类的继承与多态" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; 版权所有 2021, TOMOCAT.
+
+    </p>
+  </div>
+    
+    
+    
+    利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

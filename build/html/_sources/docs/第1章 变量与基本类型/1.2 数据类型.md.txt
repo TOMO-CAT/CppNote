@@ -1,0 +1,178 @@
+# 1.2 数据类型
+
+## 简介
+
+C++数据类型包括基本内置类型、复合类型和自定义数据结构。
+
+* 基本内置类型：编译器内置的基本类型，包括算数类型（字符、整型数、布尔值、浮点数）和空类型`void`
+* 复合类型：基于其他类型定义的类型，包括数组、C风格字符串、指针、引用、C风格结构体（POD）和联合体（Union）
+* 自定义数据结构：用`struct`或者`class`定义的类
+
+> POD：Plain Old Data，用来表明C++中和C相兼容的数据类型，在C++中可以用`is_pod<T>::value`判断是否是POD类型。
+
+## 内置类型
+
+> Tips：C++中整型大小因编译器和操作系统的不同而不同，通常人们假定short是16位，int是32位，long是32位，long long是64位。
+>
+> 实际开发中我们仅使用C++内置整型中的int，如果程序中需要大小不同的整型，那么：
+>
+> * 在合适情况下，推荐用`size_t`和`ptrdiff_t`
+> * 我们可以认为int至少32位，如果需要使用64位整数，那么使用`int64_t`
+> * 不要使用`uint32_t`等无符号类型，你应该使用断言来指出变量为非负数，混用有符号类型和无符号类型可能导致非预期的结果（见下文）
+>
+> 执行浮点数运算时使用double，因为float通常精度不够且双精度浮点数和单精度浮点数的计算代码相差无几
+
+| 类型           | 类型名                  | 占字节数 | 数值范围                                                     |
+| -------------- | ----------------------- | -------- | ------------------------------------------------------------ |
+| 整型           | int(signed int)         | 4        | $-2147483648 \sim +2147483647 (-2^{31} \sim 2^{31}-1)$       |
+| 无符号整型     | unsigned (unsigned int) | 4        | $0 \sim 4294967295(0 \sim 2^{32}-1)$                         |
+| 短整型         | short(signed short)     | 2        | $-32768 \sim +32767(-2^{15} \sim 2^{15}-1)$                  |
+| 无符号短整型   | unsigned short          | 2        | $0 \sim 65535(0 \sim 2^{16}-1)$                              |
+| 长整型         | long (signed long)      | 4        | $-2147483648 \sim +2147483647(-2^{31} \sim 2^{31}-1)$        |
+| 无符号长整型   | unsigned long           | 4        | $0 \sim 4294967295(0 \sim 2^{32}-1)$                         |
+| 双长型         | long long               | 8        | $-9223372036854775808 \sim 9223372036854775807(-2^{63} \sim 2^{63}-1)$ |
+| 字符型         | char                    | 1        | $-128 \sim +127(-2^7 \sim 2^7-1)$                            |
+| 无符号字符型   | unsigned char           | 1        | $0 \sim 255(0 \sim 2^8-1)$                                   |
+| 单精度型       | float                   | 4        | $-3.4×10^{38} \sim 3.4×10^{38}$                              |
+| 双精度浮点型   | double                  | 8        | $-1.7×10^{308} \sim 1.7×10^{308}$                            |
+| 长双精度浮点型 | long double             | 8        | $-1.7×10^{308} \sim 1.7×10^{308}$                            |
+| 布尔型         | bool                    | 1        | true, false                                                  |
+| 空类型         | void                    |          |                                                              |
+
+> 字节`byte`：可寻址的最小内存块，大多数机器的字节由`8`比特构成
+
+以我所在的64位机器为例：
+
+```c++
+#include <iostream>
+
+int main() {
+    std::cout << "size of int:" << sizeof(int) << std::endl;
+    std::cout << "size of unsigned:" << sizeof(unsigned) << std::endl;
+    std::cout << "size of short:" << sizeof(short) << std::endl;
+    std::cout << "size of unsigned short:" << sizeof(unsigned short) << std::endl;
+    std::cout << "size of long:" << sizeof(long) << std::endl;
+    std::cout << "size of unsigned long:" << sizeof(unsigned long) << std::endl;
+    std::cout << "size of long long:" << sizeof(long long) << std::endl;
+    std::cout << "size of char:" << sizeof(char) << std::endl;
+    std::cout << "size of unsigned char:" << sizeof(unsigned char) << std::endl;
+    std::cout << "size of float:" << sizeof(float) << std::endl;
+    std::cout << "size of double:" << sizeof(double) << std::endl;
+    std::cout << "size of long double:" << sizeof(long double) << std::endl;
+    std::cout << "size of bool:" << sizeof(bool) << std::endl;
+}
+
+// 输出:
+size of int:4
+size of unsigned:4
+size of short:2
+size of unsigned short:2
+size of long:8
+size of unsigned long:8
+size of long long:8
+size of char:1
+size of unsigned char:1
+size of float:4
+size of double:8
+size of long double:16
+size of bool:1
+```
+
+## 字面值常量literal
+
+#### 1. 整形和浮点型字面量
+
+以0开头的整数表示八进制，以0x或者0X开头的整数表示十六进制，我们可以用下面三种方式表示20：
+
+```c++
+20    // 十进制
+024   // 八进制
+0x14  // 十六进制
+```
+
+浮点型字面量是一个double，其中指数部分用E或者e标识：
+
+```c++
+3.14159
+3.14159E0
+0.
+0e0
+.001
+```
+
+#### 2. 字符和字符串字面量
+
+`'a'`表示一个字符；`"a"`字符串字面量包含字母`a`和空字符`\0`。当书写的字符串字面量比较长，我们可以采取分开书写的方式：
+
+```c++
+std::cout << "line one"
+             "line two" << std::endl;
+```
+
+#### 3. 布尔字面量与指针字面量
+
+* `true`和`false`和布尔类型的字面量
+* `nullptr`是指针类型的字面量
+
+## 引用
+
+> C++11新增了右值引用的概念，我们这里只提及左值引用。
+
+#### 1. 引用概念
+
+引用为对象起了另一个名字，定义引用时程序把引用和它的初始值绑定在一起，一旦初始化完成引用将一直和它的初始值对象绑定在一起。
+
+* 因为无法令引用重新绑定到另一个对象，因此引用必须初始化
+* 因为引用不是一个对象，所以不能定义引用的引用
+
+#### 2. 使用引用的原因
+
+* 引用类型可以避免对元素拷贝
+* 引用类型可以修改元素（如果仅仅是为了避免拷贝可以使用常量引用）
+
+## 指针
+
+指针是指向（point to）另外一种类型的复合类型。
+
+#### 1. 操作符&与*
+
+获取对象地址时可以用`&`取地址符，利用指针访问对象时可以用`*`解引用符。
+
+```c++
+int iVal = 42;
+int *p = &iVal;  // p是指向iVal变量的指针
+cout << *p;      // 解引用获得p指向的对象 
+```
+
+#### 2. 空指针
+
+> Tips：建议初始化所有指针，不清楚指向何处时初始化为`nullptr`。
+>
+> 使用未经初始化的指针是引发运行时错误的一大原因，如果使用了未经初始化的指针，那么指针所占空间的当前内容将被当成一个地址值，当这个地址值指向的内存空间中正好有内容时，就可能引发难以预料的后果。实际开发过程中，我们尽量等定义了对象之后再定义指向它的指针，如果实在不清楚指针应该指向何处，那么将它初始化为`nullptr`，这样程序就能检测并指导它有没有指向任何具体的对象了。
+
+C++11中我们可以用字面量`nullptr`初始化指针来得到空指针，它可以被转化成任意其他的指针类型。
+
+#### 3. void*
+
+> Tips：由于我们不知道`void*`指针指向什么类型的对象，因此不能直接操作它所指向的对象。
+
+`void*`是一种特殊的指针类型，可以存放任意对象的地址，一般只能做如下操作：
+
+* 拿`void*`指针和别的指针比较
+* 作为函数的输入输出
+* 赋值给另一个`void*`指针
+
+## 自定义数据结构
+
+C++允许用户以类的形式自定义数据类型，关于类的知识我们主要在后面的面向对象编程中讲解，这里简单给出一个例子：
+
+```c++
+// C++11支持为数据成员提供一个类内初始值, 没有初始值的成员将被默认初始化
+struct bar {
+    std::string name;
+    int foo = 0;
+};
+```
+
+
+

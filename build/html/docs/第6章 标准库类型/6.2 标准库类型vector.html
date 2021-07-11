@@ -1,0 +1,388 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>6.2 标准库类型：vector &mdash; C++语法笔记 v1.0 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="6.3 标准库类型：IO库" href="6.3%20%E6%A0%87%E5%87%86%E5%BA%93%E7%B1%BB%E5%9E%8BIO%E7%B1%BB.html" />
+    <link rel="prev" title="6.1 标准库类型：string" href="6.1%20%E6%A0%87%E5%87%86%E5%BA%93%E7%B1%BB%E5%9E%8Bstring.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> C++语法笔记
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC1%E7%AB%A0%20%E5%8F%98%E9%87%8F%E4%B8%8E%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B/index.html">第1章 变量与基本类型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC2%E7%AB%A0%20%E8%AF%AD%E5%8F%A5/index.html">第2章 语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC3%E7%AB%A0%20%E5%87%BD%E6%95%B0/index.html">第3章 函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC4%E7%AB%A0%20%E8%BF%90%E7%AE%97%E7%AC%A6/index.html">第4章 运算符</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC5%E7%AB%A0%20%E7%B1%BB/index.html">第5章类</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">第6章 标准库类型</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="6.1%20%E6%A0%87%E5%87%86%E5%BA%93%E7%B1%BB%E5%9E%8Bstring.html">6.1 标准库类型：string</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">6.2 标准库类型：vector</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">头文件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">定义和初始化</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">添加元素</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">vector其他操作</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">vector常见错误</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#forvector">1. 范围for循环内给vector对象添加/删除元素</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6">2. 不能用下标添加元素，也不能访问不存在的元素</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id7">3. vector扩容导致引用或者指针失效</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">vector对象增长</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id9">1. vector对象能高效增长</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id10">2. vector对象增长机制</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sizecapacity">3. size和capacity</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="6.3%20%E6%A0%87%E5%87%86%E5%BA%93%E7%B1%BB%E5%9E%8BIO%E7%B1%BB.html">6.3 标准库类型：IO库</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6.4%20%E6%A0%87%E5%87%86%E5%BA%93%E7%B1%BB%E5%9E%8B%E8%BF%AD%E4%BB%A3%E5%99%A8.html">6.4 标准库类型：迭代器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6.5%20%E6%A0%87%E5%87%86%E5%BA%93%E9%A1%BA%E5%BA%8F%E5%AE%B9%E5%99%A8.html">6.5 标准库类型：顺序容器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6.6%20%E6%A0%87%E5%87%86%E5%BA%93%E5%AE%B9%E5%99%A8%E9%80%82%E9%85%8D%E5%99%A8.html">6.6 标准库类型：容器适配器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6.7%20%E6%A0%87%E5%87%86%E5%BA%93%E5%85%B3%E8%81%94%E5%AE%B9%E5%99%A8.html">6.7 标准库：关联容器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6.8%20%E6%A0%87%E5%87%86%E5%BA%93%E7%B1%BB%E5%9E%8Btuple.html">6.8 标准库类型：tuple</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6.9%20%E6%A0%87%E5%87%86%E5%BA%93%E7%B1%BB%E5%9E%8Bbitset.html">6.9 标准库类型：bitset</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC7%E7%AB%A0%20%E6%A8%A1%E6%9D%BF/index.html">第7章 模板</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC8%E7%AB%A0%20%E5%85%B3%E9%94%AE%E5%AD%97%E6%A6%82%E5%BF%B5/index.html">第8章 关键字概念</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC9%E7%AB%A0%20%E7%AE%97%E6%B3%95/index.html">第9章 算法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC10%E7%AB%A0%20%E8%AF%AD%E8%A8%80%E7%89%B9%E6%80%A7/index.html">第10章 语法特性</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC11%E7%AB%A0%20C%2B%2B11%E6%96%B0%E6%A0%87%E5%87%86/index.html">第11章 C++11新标准</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../README.html">README</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">C++语法笔记</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">第6章 标准库类型</a> &raquo;</li>
+        
+      <li>6.2 标准库类型：vector</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/docs/第6章 标准库类型/6.2 标准库类型vector.md.txt" rel="nofollow"> 查看页面源码</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="vector">
+<h1>6.2 标准库类型：vector<a class="headerlink" href="#vector" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id1">
+<h2>头文件<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp"></span>
+<span class="k">using</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>定义和初始化<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>vector常用的初始化方法为：</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// 默认初始化: v不含任何元素, 但是只能添加类型T的元素</span>
+<span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">v1</span><span class="p">;</span>
+
+<span class="c1">// 拷贝初始化: v2中包含v1所有元素的副本</span>
+<span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">v2</span> <span class="o">=</span> <span class="n">v1</span><span class="p">;</span>
+<span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">v2</span><span class="p">(</span><span class="n">v1</span><span class="p">);</span>
+
+<span class="c1">// 初始化指定数量元素</span>
+<span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">v1</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">val</span><span class="p">);</span>  <span class="c1">// 包含n个值为val的元素</span>
+<span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">v1</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>       <span class="c1">// 包含n个执行了值初始化(内置类型零初始化, 类类型默认构造函数初始化)的元素</span>
+
+<span class="c1">// 列表初始化</span>
+<span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">v1</span> <span class="p">{</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">};</span>
+<span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">v1</span> <span class="o">=</span> <span class="p">{</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">};</span>
+</pre></div>
+</div>
+<p>注意vector的圆括号与花括号初始化是不同的：圆括号是通过调用vector的构造函数进行初始化的，如果使用了花括号那么初始化过程会尽可能会把花括号内的值当做元素初始值的列表来处理。如果初始化时使用了花括号但是提供的值又无法用来列表初始化，那么就考虑用这些值来调用vector的构造函数了。</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">v1</span><span class="p">{</span><span class="s">&quot;tomo&quot;</span><span class="p">,</span> <span class="s">&quot;cat&quot;</span><span class="p">,</span> <span class="s">&quot;tomocat&quot;</span><span class="p">};</span>  <span class="c1">// 列表初始化: 包含3个string元素的vector</span>
+    <span class="c1">// std::vector&lt;std::string&gt; v2(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;);          // 错误: 找不到合适的构造函数</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">v3</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="s">&quot;tomocat&quot;</span><span class="p">);</span>             <span class="c1">// 10个string元素的vector, 每个string初始化为&quot;tomocat&quot;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">v4</span><span class="p">{</span><span class="mi">10</span><span class="p">,</span> <span class="s">&quot;tomocat&quot;</span><span class="p">};</span>             <span class="c1">// 10个string元素的vector, 每个string初始化为&quot;tomocat&quot;</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">v5</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>     <span class="c1">// 10个int元素, 每个都初始化为0</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">v6</span><span class="p">{</span><span class="mi">10</span><span class="p">};</span>     <span class="c1">// 1个int元素, 该元素的值时10</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">v7</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>  <span class="c1">// 10个int元素, 每个都初始化为1</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">v8</span><span class="p">{</span><span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">};</span>  <span class="c1">// 2个int元素, 值分别是10和1</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>添加元素<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">push_back</span></code>负责把一个值加到vector对象的尾端：</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// 初始化一个空vector对象, 依次将0~99</span>
+<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">vi</span><span class="p">;</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">!=</span> <span class="mi">100</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">vi</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>vector其他操作<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">v</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span>     <span class="c1">// v中不含有任何元素时返回true</span>
+<span class="n">v</span><span class="p">.</span><span class="n">size</span><span class="p">()</span>      <span class="c1">// 返回v中元素数量</span>
+<span class="n">v</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>          <span class="c1">// 返回v中第n个位置上元素的引用</span>
+<span class="n">v1</span> <span class="o">==</span> <span class="n">v2</span>
+<span class="n">v1</span> <span class="o">!=</span> <span class="n">v2</span>      <span class="c1">// v1和v2相等当且仅当它们的元素数量相同且对应位置的元素值相同</span>
+<span class="o">&lt;</span><span class="p">,</span> <span class="o">&lt;=</span><span class="p">,</span> <span class="o">&gt;</span><span class="p">,</span> <span class="o">&gt;=</span>  <span class="c1">// 以字典顺序进行比较</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>vector常见错误<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<div class="section" id="forvector">
+<h3>1. 范围for循环内给vector对象添加/删除元素<a class="headerlink" href="#forvector" title="永久链接至标题">¶</a></h3>
+<p>在范围for循环中预存了<code class="docutils literal notranslate"><span class="pre">end()</span></code>的值，一旦在序列中添加（删除）元素，那么<code class="docutils literal notranslate"><span class="pre">end()</span></code>函数的值就可能变得无效了。</p>
+</div>
+<div class="section" id="id6">
+<h3>2. 不能用下标添加元素，也不能访问不存在的元素<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
+<blockquote>
+<div><p>Tips：vector与string等对象的下标运算符可用于访问已存在的元素，但不能用于添加元素。确保下标有效的一种有效手段就是尽可能地使用范围for语句。</p>
+</div></blockquote>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">vi</span><span class="p">;</span>
+<span class="n">vi</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>      <span class="c1">// 严重错误: 访问了不存在的元素</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id7">
+<h3>3. vector扩容导致引用或者指针失效<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">push_back()</span></code>函数在插入元素时可能导致vector扩容，进而导致引用或者指针绑定的地址失效，这时候访问垃圾地址就会触发运行时错误。</p>
+</div></blockquote>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// 编译能过, 但运行时crash</span>
+<span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">v</span><span class="p">;</span>
+    <span class="n">v</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="s">&quot;tomo&quot;</span><span class="p">);</span>
+    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">x</span> <span class="o">=</span> <span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+    <span class="n">v</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="s">&quot;cat&quot;</span><span class="p">);</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">x</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id8">
+<h2>vector对象增长<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id9">
+<h3>1. vector对象能高效增长<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h3>
+<blockquote>
+<div><p>Tips：开始的时候创建空的vector对象，在运行时再动态添加元素，这一做法与C语言以及其他大多数语言中内置数组类型的用法不同。特别是如果习惯了C或者Java，可能预计在创建vector对象时顺便指定其容量是最好的，然而事实上恰恰相反。</p>
+</div></blockquote>
+<p>C++标准要求vector能在运行时高效快速地添加元素，既然vector对象能高效地增长，那么定义vector对象的时候设定其大小也就没什么必要了，事实上如果这么做性能可能更差。只有一种例外情况，就是所有元素的值都一样。一旦元素的值有所不同，更有效的方法是先定义一个空的vector对象，再在运行时向其中添加具体值。</p>
+</div>
+<div class="section" id="id10">
+<h3>2. vector对象增长机制<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h3>
+<blockquote>
+<div><p>Tips：这种分配策略比每次添加新元素时都重新分配容器内存空间的策略要高效得多。对比其他容器而言，虽然vector在每次重新分配内存空间时都要移动所有元素，但其扩张操作通常比list和deque还要快。</p>
+</div></blockquote>
+<p>为了支持快速随机访问，vector将元素连续存储到一块内存区域。由于元素必须连续存储，每次添加新元素时容器必须分配新的内容空间来保存已有元素和新的元素，将已有元素从旧位置移动到新空间中，添加完新元素后释放旧存储空间。如果我们每次添加一次新元素vector就执行一次这样的内存分配和释放操作，那么性能会慢到不可接受。</p>
+<p>为了避免这种操作，标准库采用了可以减少容器空间重新分配次数的策略，当不得不获取新的内存空间时，vector和string的实现通常会分配比新的空间需求更大的内存空间，容器预留这些空间作为备用来存储可能新增的元素。这样就不需要每次添加新元素都重新分配容器的内存空间了。</p>
+</div>
+<div class="section" id="sizecapacity">
+<h3>3. size和capacity<a class="headerlink" href="#sizecapacity" title="永久链接至标题">¶</a></h3>
+<p>vector中的size指它已经保存的元素数量，capacity指的是在不分配新的内存空间条件下可以容纳的元素数量。</p>
+<p>vector和string类型提供了一些成员函数让我们可以参与它的内存分配：</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">c</span><span class="p">.</span><span class="n">shrink_to_fit</span><span class="p">();</span>  <span class="c1">// 将capacity()减少到与size()相同大小</span>
+<span class="n">c</span><span class="p">.</span><span class="n">capacity</span><span class="p">();</span>       <span class="c1">// 不重新分配内存的情况下c可以容纳的元素数量</span>
+<span class="n">c</span><span class="p">.</span><span class="n">reserve</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>       <span class="c1">// 分配至少能容纳n个元素的内存空间</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="6.3%20%E6%A0%87%E5%87%86%E5%BA%93%E7%B1%BB%E5%9E%8BIO%E7%B1%BB.html" class="btn btn-neutral float-right" title="6.3 标准库类型：IO库" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="6.1%20%E6%A0%87%E5%87%86%E5%BA%93%E7%B1%BB%E5%9E%8Bstring.html" class="btn btn-neutral float-left" title="6.1 标准库类型：string" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; 版权所有 2021, TOMOCAT.
+
+    </p>
+  </div>
+    
+    
+    
+    利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

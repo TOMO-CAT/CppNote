@@ -1,0 +1,69 @@
+# 5.11 嵌套类
+
+## 简介
+
+一个类可以定义在另一个类的内部，前者被定义为嵌套类。嵌套类的名字在外层类作用域中是可见的，在外层作用域之外不可见。
+
+## 声明一个嵌套类
+
+我们为`TextQuery`类定义了一个名为`QueryResult`的配套类。`QueryResult`类的主要作用是表示`TextQuery`对象上`query`操作的结果，显然将`QueryResult`用作其他目的没有任何意义。
+
+```c++
+class TextQuery {
+ public:
+    // 嵌套类稍后定义
+    class QueryResult;
+    using line_no = std::vector<std::string>::size_type;
+    TextQuery(std::ifstream&);
+    QueryResult query(const std::string&) const;
+ private:
+    // 输入文件
+    std::shared_ptr<std::vector<std::string>> file;
+    // 每个单词到它所在行号的集合的映射
+    std::map<std::string, std::shared_ptr<std::set<line_no>>> wm;
+};
+```
+
+## 定义一个嵌套类
+
+```c++
+// QueryResult是TextQuery的成员
+class TextQuery::QueryResult {
+    // 位于类的作用域内, 因此我们不必对QueryResult形参进行限定
+    friend std::ostream& print(std::ostream&, const QueryResult&);
+ public:
+    // 嵌套类可以直接使用外层类的成员line_no, 无须对该名字进行限定
+    QueryResult(std::string, std::shared_ptr<std::set<line_no>>,
+               std::shared_ptr<std::vector<std::string>>);
+ private:
+    // 查询单词
+    std::string sought;
+    // 出现的行号
+    std::shared_ptr<std::set<line_no>> lines;
+    // 输入文件
+    std::shared_ptr<std::vector<std::string>> file;
+};
+```
+
+## 定义嵌套类的成员
+
+前面我们并没有在`QueryResult`类中定义其构造函数，为其定义构造函数时必须指明`QueryResult`是嵌套在`TestQuery`的作用域之内的：
+
+```c++
+// QueryResult类嵌套在TestQuery类中
+TextQuery::QueryResult::QueryResult(string s, shared_ptr<set<line_no>> p,
+                                   std::shared_ptr<std::vector<std::string>> f) :
+	sought(s), lines(p), file(f) { }
+```
+
+## 定义嵌套类的静态成员
+
+如果`QueryResult`声明了一个静态成员，则该成员的定义将位于`TestQuery`的作用域之外。例如`QueryResult`有一个静态成员，则该成员的定义如下：
+
+```c++
+int TestQuery::QueryResult::static_mem = 1024;
+```
+
+## 嵌套类和外层类是互相独立的
+
+尽管嵌套类定义在其外层类的作用域中，但是外层类的对象和嵌套类的对象没有任何关系。嵌套类的对象只包含嵌套类定义的成员，同样外层类的对象只包含外层类定义的成员，在外层类对象中不会有任何嵌套类的成员。

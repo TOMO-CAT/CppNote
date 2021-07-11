@@ -1,0 +1,11 @@
+# 8.4 关键字：typedef
+
+## typedef定义类型别名
+
+> 定义类型别名的传统方法是使用typedef关键字，C++11新标准还提供了using关键字定义类型别名。
+
+```c++
+typedef std::map<std::string, std::string> Dict;
+Dict dict;  // dict的类型是map<string, string> 
+```
+
