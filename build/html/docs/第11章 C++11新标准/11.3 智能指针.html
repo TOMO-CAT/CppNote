@@ -478,113 +478,29 @@ cout &lt;&lt; basket.back()-&gt;net_price(15) &lt;&lt; endl;
 <div class="section" id="id14">
 <h3>2. 提供的操作<a class="headerlink" href="#id14" title="永久链接至标题">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">shared_ptr</span></code>和<code class="docutils literal notranslate"><span class="pre">unique_ptr</span></code>都支持的操作：</p>
-<table border="1" class="docutils">
-<thead>
-<tr>
-<th>操作</th>
-<th>含义</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>shared_ptr&lt;T&gt; sp</code><br><code>unique_ptr&lt;T&gt; up</code></td>
-<td>空智能指针，可以指向类型为<code>T</code>的对象</td>
-<td></td>
-</tr>
-<tr>
-<td><code>p</code></td>
-<td>将<code>p</code>作为一个条件判断，若<code>p</code>指向一个对象则为true</td>
-<td></td>
-</tr>
-<tr>
-<td><code>*p</code></td>
-<td>解引用<code>p</code>，获得它指向的对象</td>
-<td></td>
-</tr>
-<tr>
-<td><code>p-&gt;mem</code></td>
-<td>等价于<code>(*p).mem</code></td>
-<td></td>
-</tr>
-<tr>
-<td><code>p.get()</code></td>
-<td>返回<code>p</code>中保存的指针，要小心使用，如果智能指针释放了其对象，返回的指针所指向的对象也就消失了</td>
-<td></td>
-</tr>
-<tr>
-<td><code>swap(p,q)</code><br><code>p.swap(q)</code></td>
-<td>交换<code>p</code>和<code>q</code>中的指针</td>
-<td></td>
-</tr>
-</tbody>
-</table><p><code class="docutils literal notranslate"><span class="pre">shared_ptr</span></code>独有的操作：</p>
-<table border="1" class="docutils">
-<thead>
-<tr>
-<th>操作</th>
-<th>含义</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>make_shared&lt;T&gt;(args)</code></td>
-<td>返回一个<code>shared_ptr</code>，指向一个动态分配的类型为<code>T</code>的对象，使用<code>args</code>初始化此对象</td>
-<td></td>
-</tr>
-<tr>
-<td><code>shared_ptr&lt;T&gt;p(q)</code></td>
-<td><code>p</code>是<code>shared_ptr q</code>的拷贝：此操作会递增<code>q</code>中的计数器，<code>q</code>中的指针必须能转换为<code>T*</code></td>
-<td></td>
-</tr>
-<tr>
-<td><code>p = q</code></td>
-<td><code>p</code>和<code>q</code>都是<code>shared_ptr</code>，所保存的指针必须能相互转换。此操作会递减<code>p</code>的引用计数，递增<code>q</code>的引用计数；若<code>p</code>的引用计数变为0，则将其管理的原内存释放</td>
-<td></td>
-</tr>
-<tr>
-<td><code>p.unique()</code></td>
-<td>若<code>p.use_count()</code>为1则返回true</td>
-<td></td>
-</tr>
-<tr>
-<td><code>p.use_count()</code></td>
-<td>返回与<code>p</code>共享对象的智能指针数量；可能很慢，主要用于调试</td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><code>shared_ptr&lt;T&gt; p(q)</code></td>
-<td><code>p</code>管理内置指针<code>q</code>，<code>q</code>必须指向<code>new</code>分配的内存</td>
-<td></td>
-</tr>
-<tr>
-<td><code>shared_ptr&lt;T&gt; p(u)</code></td>
-<td><code>p</code>从<code>unique_ptr u</code>那里接管了<code>u</code>的所有权，并将<code>u</code>置为空</td>
-<td></td>
-</tr>
-<tr>
-<td><code>shared_ptr&lt;T&gt; p(q, d)</code></td>
-<td><code>p</code>接管了内置指针<code>q</code>所指向对象的所有权，<code>q</code>必须能转换成<code>T*</code>类型，<code>p</code>将使用可调用对象<code>d</code>来代替<code>delete</code></td>
-<td></td>
-</tr>
-<tr>
-<td><code>shared_ptr&lt;T&gt; p(p2, d)</code></td>
-<td><code>p</code>是<code>shared_ptr p2</code>的拷贝，唯一的区别是<code>p</code>将用可调用对象<code>d</code>来代替<code>delete</code></td>
-<td></td>
-</tr>
-<tr>
-<td><code>p.reset()</code><br><code>p.reset(q)</code><br><code>p.reset(q, d)</code></td>
-<td>若传递了<code>q</code>，会令<code>p</code>指向<code>q</code>，否则会将<code>p</code>置为空，若还传递了参数<code>d</code>，将会调用<code>d</code>而不是<code>delete</code>来释放<code>q</code></td>
-<td>若<code>p</code>是唯一指向其对象的<code>shared_ptr</code>，<code>reset</code>会释放此对象</td>
-</tr>
-</tbody>
-</table></div>
+<p>| 操作                                     | 含义                                                         | 备注 |
+| —————————————- | ———————————————————— | —- |
+| <code class="docutils literal notranslate"><span class="pre">shared_ptr&lt;T&gt;</span> <span class="pre">sp</span></code><br><code class="docutils literal notranslate"><span class="pre">unique_ptr&lt;T&gt;</span> <span class="pre">up</span></code> | 空智能指针，可以指向类型为<code class="docutils literal notranslate"><span class="pre">T</span></code>的对象                          |      |
+| <code class="docutils literal notranslate"><span class="pre">p</span></code>                                      | 将<code class="docutils literal notranslate"><span class="pre">p</span></code>作为一个条件判断，若<code class="docutils literal notranslate"><span class="pre">p</span></code>指向一个对象则为true             |      |
+| <code class="docutils literal notranslate"><span class="pre">*p</span></code>                                     | 解引用<code class="docutils literal notranslate"><span class="pre">p</span></code>，获得它指向的对象                                  |      |
+| <code class="docutils literal notranslate"><span class="pre">p-&gt;mem</span></code>                                 | 等价于<code class="docutils literal notranslate"><span class="pre">(*p).mem</span></code>                                             |      |
+| <code class="docutils literal notranslate"><span class="pre">p.get()</span></code>                                | 返回<code class="docutils literal notranslate"><span class="pre">p</span></code>中保存的指针，要小心使用，如果智能指针释放了其对象，返回的指针所指向的对象也就消失了 |      |
+| <code class="docutils literal notranslate"><span class="pre">swap(p,q)</span></code><br><code class="docutils literal notranslate"><span class="pre">p.swap(q)</span></code>               | 交换<code class="docutils literal notranslate"><span class="pre">p</span></code>和<code class="docutils literal notranslate"><span class="pre">q</span></code>中的指针                                         |      |</p>
+<p><code class="docutils literal notranslate"><span class="pre">shared_ptr</span></code>独有的操作：</p>
+<p>| 操作                                           | 含义                                                         | 备注                                                     |
+| ———————————————- | ———————————————————— | ——————————————————– |
+| <code class="docutils literal notranslate"><span class="pre">make_shared&lt;T&gt;(args)</span></code>                         | 返回一个<code class="docutils literal notranslate"><span class="pre">shared_ptr</span></code>，指向一个动态分配的类型为<code class="docutils literal notranslate"><span class="pre">T</span></code>的对象，使用<code class="docutils literal notranslate"><span class="pre">args</span></code>初始化此对象 |                                                          |
+| <code class="docutils literal notranslate"><span class="pre">shared_ptr&lt;T&gt;p(q)</span></code>                            | <code class="docutils literal notranslate"><span class="pre">p</span></code>是<code class="docutils literal notranslate"><span class="pre">shared_ptr</span> <span class="pre">q</span></code>的拷贝：此操作会递增<code class="docutils literal notranslate"><span class="pre">q</span></code>中的计数器，<code class="docutils literal notranslate"><span class="pre">q</span></code>中的指针必须能转换为<code class="docutils literal notranslate"><span class="pre">T*</span></code> |                                                          |
+| <code class="docutils literal notranslate"><span class="pre">p</span> <span class="pre">=</span> <span class="pre">q</span></code>                                        | <code class="docutils literal notranslate"><span class="pre">p</span></code>和<code class="docutils literal notranslate"><span class="pre">q</span></code>都是<code class="docutils literal notranslate"><span class="pre">shared_ptr</span></code>，所保存的指针必须能相互转换。此操作会递减<code class="docutils literal notranslate"><span class="pre">p</span></code>的引用计数，递增<code class="docutils literal notranslate"><span class="pre">q</span></code>的引用计数；若<code class="docutils literal notranslate"><span class="pre">p</span></code>的引用计数变为0，则将其管理的原内存释放 |                                                          |
+| <code class="docutils literal notranslate"><span class="pre">p.unique()</span></code>                                   | 若<code class="docutils literal notranslate"><span class="pre">p.use_count()</span></code>为1则返回true                               |                                                          |
+| <code class="docutils literal notranslate"><span class="pre">p.use_count()</span></code>                                | 返回与<code class="docutils literal notranslate"><span class="pre">p</span></code>共享对象的智能指针数量；可能很慢，主要用于调试      |                                                          |
+|                                                |                                                              |                                                          |
+| <code class="docutils literal notranslate"><span class="pre">shared_ptr&lt;T&gt;</span> <span class="pre">p(q)</span></code>                           | <code class="docutils literal notranslate"><span class="pre">p</span></code>管理内置指针<code class="docutils literal notranslate"><span class="pre">q</span></code>，<code class="docutils literal notranslate"><span class="pre">q</span></code>必须指向<code class="docutils literal notranslate"><span class="pre">new</span></code>分配的内存               |                                                          |
+| <code class="docutils literal notranslate"><span class="pre">shared_ptr&lt;T&gt;</span> <span class="pre">p(u)</span></code>                           | <code class="docutils literal notranslate"><span class="pre">p</span></code>从<code class="docutils literal notranslate"><span class="pre">unique_ptr</span> <span class="pre">u</span></code>那里接管了<code class="docutils literal notranslate"><span class="pre">u</span></code>的所有权，并将<code class="docutils literal notranslate"><span class="pre">u</span></code>置为空      |                                                          |
+| <code class="docutils literal notranslate"><span class="pre">shared_ptr&lt;T&gt;</span> <span class="pre">p(q,</span> <span class="pre">d)</span></code>                        | <code class="docutils literal notranslate"><span class="pre">p</span></code>接管了内置指针<code class="docutils literal notranslate"><span class="pre">q</span></code>所指向对象的所有权，<code class="docutils literal notranslate"><span class="pre">q</span></code>必须能转换成<code class="docutils literal notranslate"><span class="pre">T*</span></code>类型，<code class="docutils literal notranslate"><span class="pre">p</span></code>将使用可调用对象<code class="docutils literal notranslate"><span class="pre">d</span></code>来代替<code class="docutils literal notranslate"><span class="pre">delete</span></code> |                                                          |
+| <code class="docutils literal notranslate"><span class="pre">shared_ptr&lt;T&gt;</span> <span class="pre">p(p2,</span> <span class="pre">d)</span></code>                       | <code class="docutils literal notranslate"><span class="pre">p</span></code>是<code class="docutils literal notranslate"><span class="pre">shared_ptr</span> <span class="pre">p2</span></code>的拷贝，唯一的区别是<code class="docutils literal notranslate"><span class="pre">p</span></code>将用可调用对象<code class="docutils literal notranslate"><span class="pre">d</span></code>来代替<code class="docutils literal notranslate"><span class="pre">delete</span></code> |                                                          |
+| <code class="docutils literal notranslate"><span class="pre">p.reset()</span></code><br><code class="docutils literal notranslate"><span class="pre">p.reset(q)</span></code><br><code class="docutils literal notranslate"><span class="pre">p.reset(q,</span> <span class="pre">d)</span></code> | 若传递了<code class="docutils literal notranslate"><span class="pre">q</span></code>，会令<code class="docutils literal notranslate"><span class="pre">p</span></code>指向<code class="docutils literal notranslate"><span class="pre">q</span></code>，否则会将<code class="docutils literal notranslate"><span class="pre">p</span></code>置为空，若还传递了参数<code class="docutils literal notranslate"><span class="pre">d</span></code>，将会调用<code class="docutils literal notranslate"><span class="pre">d</span></code>而不是<code class="docutils literal notranslate"><span class="pre">delete</span></code>来释放<code class="docutils literal notranslate"><span class="pre">q</span></code> | 若<code class="docutils literal notranslate"><span class="pre">p</span></code>是唯一指向其对象的<code class="docutils literal notranslate"><span class="pre">shared_ptr</span></code>，<code class="docutils literal notranslate"><span class="pre">reset</span></code>会释放此对象 |</p>
+</div>
 <div class="section" id="make-shared">
 <h3>3. make_shared函数<a class="headerlink" href="#make-shared" title="永久链接至标题">¶</a></h3>
 <p>最安全的分配和使用动态内存的方法是调用一个名为<code class="docutils literal notranslate"><span class="pre">make_shared</span></code>的标准库函数，此函数在动态内存中分配一个对象并初始化它，返回指向该对象的<code class="docutils literal notranslate"><span class="pre">shared_ptr</span></code>。</p>
@@ -692,47 +608,15 @@ cout &lt;&lt; basket.back()-&gt;net_price(15) &lt;&lt; endl;
 </div>
 <div class="section" id="id20">
 <h3>2. 提供的操作<a class="headerlink" href="#id20" title="永久链接至标题">¶</a></h3>
-<table border="1" class="docutils">
-<thead>
-<tr>
-<th>操作</th>
-<th>含义</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>unique_ptr&lt;T&gt; u1</code></td>
-<td>空<code>unique_ptr</code>对象，<code>u1</code>调用<code>delete</code>来释放它的指针</td>
-<td></td>
-</tr>
-<tr>
-<td><code>unique_ptr&lt;T, D&gt; u2</code></td>
-<td>空<code>unique_ptr</code>对象，<code>u2</code>会使用一个类型为<code>D</code>的可调用对象来释放它的指针</td>
-<td></td>
-</tr>
-<tr>
-<td><code>unique_ptr&lt;T, D&gt; u(d)</code></td>
-<td>空<code>unique_ptr</code>对象，指向类型为<code>T</code>的对象，用类型为<code>D</code>的对象<code>d</code>来代替<code>delete</code></td>
-<td></td>
-</tr>
-<tr>
-<td><code>u = nullptr</code></td>
-<td>释放<code>u</code>指向的对象，将<code>u</code>置为空</td>
-<td></td>
-</tr>
-<tr>
-<td><code>u.release()</code></td>
-<td><code>u</code>放弃对指针的控制权，返回指针，并将<code>u</code>置为空</td>
-<td></td>
-</tr>
-<tr>
-<td><code>u.reset()</code><br><code>u.reset(q)</code><br><code>u.reset(nullptr)</code></td>
-<td>释放<code>u</code>指向的对象，如果提供了内置指针<code>q</code>，令<code>u</code>指向这个对象；否则将<code>u</code>置为空</td>
-<td></td>
-</tr>
-</tbody>
-</table></div>
+<p>| 操作                                              | 含义                                                         | 备注 |
+| ————————————————- | ———————————————————— | —- |
+| <code class="docutils literal notranslate"><span class="pre">unique_ptr&lt;T&gt;</span> <span class="pre">u1</span></code>                                | 空<code class="docutils literal notranslate"><span class="pre">unique_ptr</span></code>对象，<code class="docutils literal notranslate"><span class="pre">u1</span></code>调用<code class="docutils literal notranslate"><span class="pre">delete</span></code>来释放它的指针           |      |
+| <code class="docutils literal notranslate"><span class="pre">unique_ptr&lt;T,</span> <span class="pre">D&gt;</span> <span class="pre">u2</span></code>                             | 空<code class="docutils literal notranslate"><span class="pre">unique_ptr</span></code>对象，<code class="docutils literal notranslate"><span class="pre">u2</span></code>会使用一个类型为<code class="docutils literal notranslate"><span class="pre">D</span></code>的可调用对象来释放它的指针 |      |
+| <code class="docutils literal notranslate"><span class="pre">unique_ptr&lt;T,</span> <span class="pre">D&gt;</span> <span class="pre">u(d)</span></code>                           | 空<code class="docutils literal notranslate"><span class="pre">unique_ptr</span></code>对象，指向类型为<code class="docutils literal notranslate"><span class="pre">T</span></code>的对象，用类型为<code class="docutils literal notranslate"><span class="pre">D</span></code>的对象<code class="docutils literal notranslate"><span class="pre">d</span></code>来代替<code class="docutils literal notranslate"><span class="pre">delete</span></code> |      |
+| <code class="docutils literal notranslate"><span class="pre">u</span> <span class="pre">=</span> <span class="pre">nullptr</span></code>                                     | 释放<code class="docutils literal notranslate"><span class="pre">u</span></code>指向的对象，将<code class="docutils literal notranslate"><span class="pre">u</span></code>置为空                               |      |
+| <code class="docutils literal notranslate"><span class="pre">u.release()</span></code>                                     | <code class="docutils literal notranslate"><span class="pre">u</span></code>放弃对指针的控制权，返回指针，并将<code class="docutils literal notranslate"><span class="pre">u</span></code>置为空               |      |
+| <code class="docutils literal notranslate"><span class="pre">u.reset()</span></code><br><code class="docutils literal notranslate"><span class="pre">u.reset(q)</span></code><br><code class="docutils literal notranslate"><span class="pre">u.reset(nullptr)</span></code> | 释放<code class="docutils literal notranslate"><span class="pre">u</span></code>指向的对象，如果提供了内置指针<code class="docutils literal notranslate"><span class="pre">q</span></code>，令<code class="docutils literal notranslate"><span class="pre">u</span></code>指向这个对象；否则将<code class="docutils literal notranslate"><span class="pre">u</span></code>置为空 |      |</p>
+</div>
 <div class="section" id="id21">
 <h3>3. 转移unique_ptr指针的所有权<a class="headerlink" href="#id21" title="永久链接至标题">¶</a></h3>
 <blockquote>
@@ -775,52 +659,16 @@ cout &lt;&lt; basket.back()-&gt;net_price(15) &lt;&lt; endl;
 </div>
 <div class="section" id="id23">
 <h3>2. 提供的操作<a class="headerlink" href="#id23" title="永久链接至标题">¶</a></h3>
-<table border="1" class="docutils">
-<thead>
-<tr>
-<th>操作</th>
-<th>含义</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>weak_ptr&lt;T&gt; w</code></td>
-<td>空<code>weak_ptr</code>，可以指向类型为<code>T</code>的对象</td>
-<td></td>
-</tr>
-<tr>
-<td><code>weak_ptr&lt;T&gt; w(sp)</code></td>
-<td>与<code>shared_ptr sp</code>指向相同对象的<code>weak_ptr</code></td>
-<td></td>
-</tr>
-<tr>
-<td><code>w = p</code></td>
-<td><code>p</code>可以是一个<code>shared_ptr</code>或是一个<code>weak_ptr</code>，赋值后<code>w</code>和<code>p</code>共享对象</td>
-<td></td>
-</tr>
-<tr>
-<td><code>w.reset()</code></td>
-<td>将<code>w</code>置为空</td>
-<td></td>
-</tr>
-<tr>
-<td><code>w.use_count()</code></td>
-<td>与<code>w</code>共享对象的<code>shared_ptr</code>数量</td>
-<td></td>
-</tr>
-<tr>
-<td><code>w.expired()</code></td>
-<td>若<code>w.use_count()</code>为0则返回true</td>
-<td></td>
-</tr>
-<tr>
-<td><code>w.lock()</code></td>
-<td>如果<code>expired</code>为true，返回一个空<code>shared_ptr</code>，否则返回一个指向<code>w</code>的<code>shared_ptr</code></td>
-<td></td>
-</tr>
-</tbody>
-</table></div>
+<p>| 操作                | 含义                                                         | 备注 |
+| ——————- | ———————————————————— | —- |
+| <code class="docutils literal notranslate"><span class="pre">weak_ptr&lt;T&gt;</span> <span class="pre">w</span></code>     | 空<code class="docutils literal notranslate"><span class="pre">weak_ptr</span></code>，可以指向类型为<code class="docutils literal notranslate"><span class="pre">T</span></code>的对象                        |      |
+| <code class="docutils literal notranslate"><span class="pre">weak_ptr&lt;T&gt;</span> <span class="pre">w(sp)</span></code> | 与<code class="docutils literal notranslate"><span class="pre">shared_ptr</span> <span class="pre">sp</span></code>指向相同对象的<code class="docutils literal notranslate"><span class="pre">weak_ptr</span></code>                    |      |
+| <code class="docutils literal notranslate"><span class="pre">w</span> <span class="pre">=</span> <span class="pre">p</span></code>             | <code class="docutils literal notranslate"><span class="pre">p</span></code>可以是一个<code class="docutils literal notranslate"><span class="pre">shared_ptr</span></code>或是一个<code class="docutils literal notranslate"><span class="pre">weak_ptr</span></code>，赋值后<code class="docutils literal notranslate"><span class="pre">w</span></code>和<code class="docutils literal notranslate"><span class="pre">p</span></code>共享对象 |      |
+| <code class="docutils literal notranslate"><span class="pre">w.reset()</span></code>         | 将<code class="docutils literal notranslate"><span class="pre">w</span></code>置为空                                                  |      |
+| <code class="docutils literal notranslate"><span class="pre">w.use_count()</span></code>     | 与<code class="docutils literal notranslate"><span class="pre">w</span></code>共享对象的<code class="docutils literal notranslate"><span class="pre">shared_ptr</span></code>数量                              |      |
+| <code class="docutils literal notranslate"><span class="pre">w.expired()</span></code>       | 若<code class="docutils literal notranslate"><span class="pre">w.use_count()</span></code>为0则返回true                               |      |
+| <code class="docutils literal notranslate"><span class="pre">w.lock()</span></code>          | 如果<code class="docutils literal notranslate"><span class="pre">expired</span></code>为true，返回一个空<code class="docutils literal notranslate"><span class="pre">shared_ptr</span></code>，否则返回一个指向<code class="docutils literal notranslate"><span class="pre">w</span></code>的<code class="docutils literal notranslate"><span class="pre">shared_ptr</span></code> |      |</p>
+</div>
 <div class="section" id="id24">
 <h3>3. 访问对象<a class="headerlink" href="#id24" title="永久链接至标题">¶</a></h3>
 <p>由于对象可能不存在，因此我们不能直接使用<code class="docutils literal notranslate"><span class="pre">weak_ptr</span></code>访问对象，必须调用<code class="docutils literal notranslate"><span class="pre">lock</span></code>函数检查指向的对象是否仍存在：</p>
@@ -890,28 +738,12 @@ cout &lt;&lt; basket.back()-&gt;net_price(15) &lt;&lt; endl;
 <blockquote>
 <div><p>Tips：指向动态数组的<code class="docutils literal notranslate"><span class="pre">unique_ptr</span></code>不支持成员访问运算符（点和箭头运算符），其他<code class="docutils literal notranslate"><span class="pre">unique_ptr</span></code>操作不变。</p>
 </div></blockquote>
-<table border="1" class="docutils">
-<thead>
-<tr>
-<th>操作</th>
-<th>含义</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>unique_ptr&lt;T[]&gt; u</code></td>
-<td><code>u</code>可以指向一个动态分配的数组，数组元素类型为T</td>
-</tr>
-<tr>
-<td><code>unique_ptr&lt;T[]&gt; u(p)</code></td>
-<td><code>u</code>可以指向内置指针<code>p</code>所指向的动态分配的数组</td>
-</tr>
-<tr>
-<td><code>u[i]</code></td>
-<td>返回<code>u</code>拥有的数组中位置<code>i</code>处的对象</td>
-</tr>
-</tbody>
-</table><div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// up指向10个未初始化的int数组, 当up销毁它管理的指针时会自动使用delete[]</span>
+<p>| 操作                   | 含义                                           |
+| ———————- | ———————————————- |
+| <code class="docutils literal notranslate"><span class="pre">unique_ptr&lt;T[]&gt;</span> <span class="pre">u</span></code>    | <code class="docutils literal notranslate"><span class="pre">u</span></code>可以指向一个动态分配的数组，数组元素类型为T |
+| <code class="docutils literal notranslate"><span class="pre">unique_ptr&lt;T[]&gt;</span> <span class="pre">u(p)</span></code> | <code class="docutils literal notranslate"><span class="pre">u</span></code>可以指向内置指针<code class="docutils literal notranslate"><span class="pre">p</span></code>所指向的动态分配的数组   |
+| <code class="docutils literal notranslate"><span class="pre">u[i]</span></code>                 | 返回<code class="docutils literal notranslate"><span class="pre">u</span></code>拥有的数组中位置<code class="docutils literal notranslate"><span class="pre">i</span></code>处的对象             |</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// up指向10个未初始化的int数组, 当up销毁它管理的指针时会自动使用delete[]</span>
 <span class="n">unique_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">[]</span><span class="o">&gt;</span> <span class="n">up</span><span class="p">(</span><span class="k">new</span> <span class="kt">int</span><span class="p">[</span><span class="mi">10</span><span class="p">]);</span>
 
 <span class="c1">// 使用下标运算符来访问数组元素</span>

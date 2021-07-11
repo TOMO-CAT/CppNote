@@ -230,102 +230,23 @@
 </ul>
 <p>执行浮点数运算时使用double，因为float通常精度不够且双精度浮点数和单精度浮点数的计算代码相差无几</p>
 </div></blockquote>
-<table border="1" class="docutils">
-<thead>
-<tr>
-<th>类型</th>
-<th>类型名</th>
-<th>占字节数</th>
-<th>数值范围</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>整型</td>
-<td>int(signed int)</td>
-<td>4</td>
-<td>$-2147483648 \sim +2147483647 (-2^{31} \sim 2^{31}-1)$</td>
-</tr>
-<tr>
-<td>无符号整型</td>
-<td>unsigned (unsigned int)</td>
-<td>4</td>
-<td>$0 \sim 4294967295(0 \sim 2^{32}-1)$</td>
-</tr>
-<tr>
-<td>短整型</td>
-<td>short(signed short)</td>
-<td>2</td>
-<td>$-32768 \sim +32767(-2^{15} \sim 2^{15}-1)$</td>
-</tr>
-<tr>
-<td>无符号短整型</td>
-<td>unsigned short</td>
-<td>2</td>
-<td>$0 \sim 65535(0 \sim 2^{16}-1)$</td>
-</tr>
-<tr>
-<td>长整型</td>
-<td>long (signed long)</td>
-<td>4</td>
-<td>$-2147483648 \sim +2147483647(-2^{31} \sim 2^{31}-1)$</td>
-</tr>
-<tr>
-<td>无符号长整型</td>
-<td>unsigned long</td>
-<td>4</td>
-<td>$0 \sim 4294967295(0 \sim 2^{32}-1)$</td>
-</tr>
-<tr>
-<td>双长型</td>
-<td>long long</td>
-<td>8</td>
-<td>$-9223372036854775808 \sim 9223372036854775807(-2^{63} \sim 2^{63}-1)$</td>
-</tr>
-<tr>
-<td>字符型</td>
-<td>char</td>
-<td>1</td>
-<td>$-128 \sim +127(-2^7 \sim 2^7-1)$</td>
-</tr>
-<tr>
-<td>无符号字符型</td>
-<td>unsigned char</td>
-<td>1</td>
-<td>$0 \sim 255(0 \sim 2^8-1)$</td>
-</tr>
-<tr>
-<td>单精度型</td>
-<td>float</td>
-<td>4</td>
-<td>$-3.4×10^{38} \sim 3.4×10^{38}$</td>
-</tr>
-<tr>
-<td>双精度浮点型</td>
-<td>double</td>
-<td>8</td>
-<td>$-1.7×10^{308} \sim 1.7×10^{308}$</td>
-</tr>
-<tr>
-<td>长双精度浮点型</td>
-<td>long double</td>
-<td>8</td>
-<td>$-1.7×10^{308} \sim 1.7×10^{308}$</td>
-</tr>
-<tr>
-<td>布尔型</td>
-<td>bool</td>
-<td>1</td>
-<td>true, false</td>
-</tr>
-<tr>
-<td>空类型</td>
-<td>void</td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table><blockquote>
+<p>| 类型           | 类型名                  | 占字节数 | 数值范围                                                     |
+| ————– | ———————– | ——– | ———————————————————— |
+| 整型           | int(signed int)         | 4        | $-2147483648 \sim +2147483647 (-2^{31} \sim 2^{31}-1)$       |
+| 无符号整型     | unsigned (unsigned int) | 4        | $0 \sim 4294967295(0 \sim 2^{32}-1)$                         |
+| 短整型         | short(signed short)     | 2        | $-32768 \sim +32767(-2^{15} \sim 2^{15}-1)$                  |
+| 无符号短整型   | unsigned short          | 2        | $0 \sim 65535(0 \sim 2^{16}-1)$                              |
+| 长整型         | long (signed long)      | 4        | $-2147483648 \sim +2147483647(-2^{31} \sim 2^{31}-1)$        |
+| 无符号长整型   | unsigned long           | 4        | $0 \sim 4294967295(0 \sim 2^{32}-1)$                         |
+| 双长型         | long long               | 8        | $-9223372036854775808 \sim 9223372036854775807(-2^{63} \sim 2^{63}-1)$ |
+| 字符型         | char                    | 1        | $-128 \sim +127(-2^7 \sim 2^7-1)$                            |
+| 无符号字符型   | unsigned char           | 1        | $0 \sim 255(0 \sim 2^8-1)$                                   |
+| 单精度型       | float                   | 4        | $-3.4×10^{38} \sim 3.4×10^{38}$                              |
+| 双精度浮点型   | double                  | 8        | $-1.7×10^{308} \sim 1.7×10^{308}$                            |
+| 长双精度浮点型 | long double             | 8        | $-1.7×10^{308} \sim 1.7×10^{308}$                            |
+| 布尔型         | bool                    | 1        | true, false                                                  |
+| 空类型         | void                    |          |                                                              |</p>
+<blockquote>
 <div><p>字节<code class="docutils literal notranslate"><span class="pre">byte</span></code>：可寻址的最小内存块，大多数机器的字节由<code class="docutils literal notranslate"><span class="pre">8</span></code>比特构成</p>
 </div></blockquote>
 <p>以我所在的64位机器为例：</p>

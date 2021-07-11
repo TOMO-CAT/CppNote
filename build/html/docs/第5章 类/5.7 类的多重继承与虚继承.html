@@ -327,36 +327,14 @@
 </pre></div>
 </div>
 <p>与只有一个基类的继承一样，对象、指针和引用的静态类型决定了我们能够使用哪些成员。举个例子，比如我们在不同类中定义了如下的虚函数：</p>
-<table border="1" class="docutils">
-<thead>
-<tr>
-<th>函数</th>
-<th>含有自定义版本的类</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>print</td>
-<td>ZooAnimal::ZooAnimal<br />Bear::Bear<br />Endangered::Endangered<br />Panda::Panda</td>
-</tr>
-<tr>
-<td>highlight</td>
-<td>Endangered::Endangered<br />Panda::Panda</td>
-</tr>
-<tr>
-<td>toes</td>
-<td>Bear::Bear<br />Panda::Panda</td>
-</tr>
-<tr>
-<td>cuddle</td>
-<td>Panda::Panda</td>
-</tr>
-<tr>
-<td>析构函数</td>
-<td>ZooAnimal::ZooAnimal<br />Endangered::Endangered</td>
-</tr>
-</tbody>
-</table><p>考虑一下如下调用：</p>
+<p>| 函数      | 含有自定义版本的类                                           |
+| ——— | ———————————————————— |
+| print     | ZooAnimal::ZooAnimal<br />Bear::Bear<br />Endangered::Endangered<br />Panda::Panda |
+| highlight | Endangered::Endangered<br />Panda::Panda                     |
+| toes      | Bear::Bear<br />Panda::Panda                                 |
+| cuddle    | Panda::Panda                                                 |
+| 析构函数  | ZooAnimal::ZooAnimal<br />Endangered::Endangered             |</p>
+<p>考虑一下如下调用：</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">Bear</span> <span class="o">*</span><span class="n">pb</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Panda</span><span class="p">(</span><span class="s">&quot;ying_yang&quot;</span><span class="p">);</span>
 <span class="n">pb</span><span class="o">-&gt;</span><span class="n">print</span><span class="p">();</span>            <span class="c1">// 正确: Panda::print()</span>
 <span class="n">pb</span><span class="o">-&gt;</span><span class="n">cuddle</span><span class="p">();</span>           <span class="c1">// 错误: 不属于Bear的接口</span>

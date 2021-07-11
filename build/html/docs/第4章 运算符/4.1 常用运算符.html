@@ -222,52 +222,16 @@
 <h1>4.1 常用运算符<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
 <div class="section" id="id2">
 <h2>算术运算符<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
-<table border="1" class="docutils">
-<thead>
-<tr>
-<th>运算符</th>
-<th>功能</th>
-<th>用法</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>+</td>
-<td>一元正号</td>
-<td>+ expr</td>
-</tr>
-<tr>
-<td>-</td>
-<td>一元负号</td>
-<td>- expr</td>
-</tr>
-<tr>
-<td>*</td>
-<td>乘法</td>
-<td>expr * expr</td>
-</tr>
-<tr>
-<td>/</td>
-<td>除法</td>
-<td>expr / expr</td>
-</tr>
-<tr>
-<td>%</td>
-<td>求余</td>
-<td>expr % expr</td>
-</tr>
-<tr>
-<td>+</td>
-<td>加法</td>
-<td>expr + expr</td>
-</tr>
-<tr>
-<td>-</td>
-<td>减法</td>
-<td>expr - expr</td>
-</tr>
-</tbody>
-</table><div class="section" id="id3">
+<p>| 运算符 | 功能     | 用法        |
+| —— | ——– | ———– |
+| +      | 一元正号 | + expr      |
+| -      | 一元负号 | - expr      |
+| *      | 乘法     | expr * expr |
+| /      | 除法     | expr / expr |
+| %      | 求余     | expr % expr |
+| +      | 加法     | expr + expr |
+| -      | 减法     | expr - expr |</p>
+<div class="section" id="id3">
 <h3>1. 优先级和结合律<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
 <p>一元运算符的优先级最高，然后是乘法和除法，优先级最低的是加法和减法。上面所有的运算符都满足左结合律，意味着优先级相同时满足从左到右的顺序进行组合。</p>
 </div>
@@ -302,72 +266,18 @@
 </div>
 <div class="section" id="id7">
 <h2>逻辑运算符<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
-<table border="1" class="docutils">
-<thead>
-<tr>
-<th>结合律</th>
-<th>运算符</th>
-<th>功能</th>
-<th>用法</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>右</td>
-<td>!</td>
-<td>逻辑非</td>
-<td>!expr</td>
-</tr>
-<tr>
-<td>左</td>
-<td>&lt;</td>
-<td>小于</td>
-<td>expr &lt; expr</td>
-</tr>
-<tr>
-<td>左</td>
-<td>&lt;=</td>
-<td>小于等于</td>
-<td>expr &lt;= expr</td>
-</tr>
-<tr>
-<td>左</td>
-<td>&gt;</td>
-<td>大于</td>
-<td>expr &gt; expr</td>
-</tr>
-<tr>
-<td>左</td>
-<td>>=</td>
-<td>大于等于</td>
-<td>expr &gt;= expr</td>
-</tr>
-<tr>
-<td>左</td>
-<td>==</td>
-<td>相等</td>
-<td>expr == expr</td>
-</tr>
-<tr>
-<td>左</td>
-<td>!=</td>
-<td>不等</td>
-<td>expr != expr</td>
-</tr>
-<tr>
-<td>左</td>
-<td>&amp;&amp;</td>
-<td>逻辑与</td>
-<td>expr &amp;&amp; expr</td>
-</tr>
-<tr>
-<td>左</td>
-<td>||</td>
-<td>逻辑或</td>
-<td>expr || expr</td>
-</tr>
-</tbody>
-</table><div class="section" id="id8">
+<p>| 结合律 | 运算符 | 功能     | 用法           |
+| —— | —— | ——– | ————– |
+| 右     | !      | 逻辑非   | !expr          |
+| 左     | &lt;      | 小于     | expr &lt; expr    |
+| 左     | &lt;=     | 小于等于 | expr &lt;= expr   |
+| 左     | &gt;      | 大于     | expr &gt; expr    |
+| 左     | &gt;=    | 大于等于 | expr &gt;= expr   |
+| 左     | ==     | 相等     | expr == expr   |
+| 左     | !=     | 不等     | expr != expr   |
+| 左     | &amp;&amp;     | 逻辑与   | expr &amp;&amp; expr   |
+| 左     | ||   | 逻辑或   | expr || expr |</p>
+<div class="section" id="id8">
 <h3>1. 逻辑与和逻辑或的短路求值<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
 <p>逻辑与<code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code>和逻辑或<code class="docutils literal notranslate"><span class="pre">||</span></code>都是先求左侧对象的值再求右侧运算对象的值，<strong>当且仅当左侧运算对象无法确定表达式的结果才会计算右侧运算对象的值</strong>，这种策略被称为短路求值。基于短路求值的特点，我们可以通过左侧运算对象来确保右侧运算对象求值的正确性和安全性：</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// 只能左侧运算对象为真则右侧运算对象才安全</span>
@@ -487,47 +397,15 @@
 <blockquote>
 <div><p>Tips：如果运算对象是带符号的且它的值为负，那么位运算符如何处理运算对象的“符号位”依赖于机器，而且此时的左移操作可能会改变符号位的值，因此是一种未定义的行为。关于符号位如何处理没有明确的规定，所以强烈建议仅将位运算符用于处理无符号类型。</p>
 </div></blockquote>
-<table border="1" class="docutils">
-<thead>
-<tr>
-<th>运算符</th>
-<th>功能</th>
-<th>用法</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>~</td>
-<td>位求反</td>
-<td>~ expr</td>
-</tr>
-<tr>
-<td>&lt;&lt;</td>
-<td>左移</td>
-<td>expr1 &lt;&lt; expr2</td>
-</tr>
-<tr>
-<td>>></td>
-<td>右移</td>
-<td>expr1 &gt;&gt; expr2</td>
-</tr>
-<tr>
-<td>&amp;</td>
-<td>位与</td>
-<td>expr &amp; expr</td>
-</tr>
-<tr>
-<td>^</td>
-<td>位异或</td>
-<td>expr ^ expr</td>
-</tr>
-<tr>
-<td>|</td>
-<td>位或</td>
-<td>expr | expr</td>
-</tr>
-</tbody>
-</table><div class="section" id="id21">
+<p>| 运算符 | 功能   | 用法           |
+| —— | —— | ————– |
+| ~      | 位求反 | ~ expr         |
+| &lt;&lt;     | 左移   | expr1 &lt;&lt; expr2 |
+| &gt;&gt;   | 右移   | expr1 &gt;&gt; expr2 |
+| &amp;      | 位与   | expr &amp; expr    |
+| ^      | 位异或 | expr ^ expr    |
+| |     | 位或   | expr | expr   |</p>
+<div class="section" id="id21">
 <h3>1. 移位运算符<a class="headerlink" href="#id21" title="永久链接至标题">¶</a></h3>
 <p>左移运算符<code class="docutils literal notranslate"><span class="pre">&lt;&lt;</span></code>在右侧插入值为<code class="docutils literal notranslate"><span class="pre">0</span></code>的二进制位，右移运算符<code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code>的行为则依赖其左侧运算对象的类型，如果该运算对象是无符号类型，在左侧插入值为<code class="docutils literal notranslate"><span class="pre">0</span></code>的二进制位。</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// 假定char占8位, int占32位</span>

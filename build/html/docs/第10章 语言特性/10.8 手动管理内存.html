@@ -481,28 +481,12 @@
 <blockquote>
 <div><p>Tips：指向动态数组的<code class="docutils literal notranslate"><span class="pre">unique_ptr</span></code>不支持成员访问运算符（点和箭头运算符），其他<code class="docutils literal notranslate"><span class="pre">unique_ptr</span></code>操作不变。</p>
 </div></blockquote>
-<table border="1" class="docutils">
-<thead>
-<tr>
-<th>操作</th>
-<th>含义</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>unique_ptr&lt;T[]&gt; u</code></td>
-<td><code>u</code>可以指向一个动态分配的数组，数组元素类型为T</td>
-</tr>
-<tr>
-<td><code>unique_ptr&lt;T[]&gt; u(p)</code></td>
-<td><code>u</code>可以指向内置指针<code>p</code>所指向的动态分配的数组</td>
-</tr>
-<tr>
-<td><code>u[i]</code></td>
-<td>返回<code>u</code>拥有的数组中位置<code>i</code>处的对象</td>
-</tr>
-</tbody>
-</table><div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// up指向10个未初始化的int数组, 当up销毁它管理的指针时会自动使用delete[]</span>
+<p>| 操作                   | 含义                                           |
+| ———————- | ———————————————- |
+| <code class="docutils literal notranslate"><span class="pre">unique_ptr&lt;T[]&gt;</span> <span class="pre">u</span></code>    | <code class="docutils literal notranslate"><span class="pre">u</span></code>可以指向一个动态分配的数组，数组元素类型为T |
+| <code class="docutils literal notranslate"><span class="pre">unique_ptr&lt;T[]&gt;</span> <span class="pre">u(p)</span></code> | <code class="docutils literal notranslate"><span class="pre">u</span></code>可以指向内置指针<code class="docutils literal notranslate"><span class="pre">p</span></code>所指向的动态分配的数组   |
+| <code class="docutils literal notranslate"><span class="pre">u[i]</span></code>                 | 返回<code class="docutils literal notranslate"><span class="pre">u</span></code>拥有的数组中位置<code class="docutils literal notranslate"><span class="pre">i</span></code>处的对象             |</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// up指向10个未初始化的int数组, 当up销毁它管理的指针时会自动使用delete[]</span>
 <span class="n">unique_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">[]</span><span class="o">&gt;</span> <span class="n">up</span><span class="p">(</span><span class="k">new</span> <span class="kt">int</span><span class="p">[</span><span class="mi">10</span><span class="p">]);</span>
 
 <span class="c1">// 使用下标运算符来访问数组元素</span>
@@ -558,42 +542,14 @@
 <div class="section" id="id16">
 <h3>2. allocator类<a class="headerlink" href="#id16" title="永久链接至标题">¶</a></h3>
 <p>标准库<code class="docutils literal notranslate"><span class="pre">allocator</span></code>类定义在头文件<code class="docutils literal notranslate"><span class="pre">memory</span></code>中，它帮助我们将内存分配与对象构造分隔开。它提供一种类型感知的内存分配方法，它分配的内存是原始的、未构造的。</p>
-<table border="1" class="docutils">
-<thead>
-<tr>
-<th>操作</th>
-<th>含义</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>allocator&lt;T&gt; a</code></td>
-<td>定义一个<code>allocator</code>对象，可以为类型<code>T</code>的对象分配内存</td>
-<td></td>
-</tr>
-<tr>
-<td><code>a.allocate(n)</code></td>
-<td>分配一段原始的、未构造的内存，保存<code>n</code>个类型为<code>T</code>的对象</td>
-<td></td>
-</tr>
-<tr>
-<td><code>a.deallocate(p, n)</code></td>
-<td>释放从<code>T*</code>指针<code>p</code>中地址开始的内存，这块内存保存了<code>n</code>个类型为<code>T</code>的对象</td>
-<td><code>p</code>必须是先前由<code>allocate</code>返回的指针，<code>n</code>必须是<code>p</code>创建时所要求的大小，在调用<code>deallocate</code>之前用户必须对每个在这块内存中创建的对象调用<code>destory</code></td>
-</tr>
-<tr>
-<td><code>a.construct(p, args)</code></td>
-<td><code>args</code>被传递给类型为<code>T</code>的构造函数，用于在<code>p</code>指向的内存中构造一个对象</td>
-<td></td>
-</tr>
-<tr>
-<td><code>a.destory(p)</code></td>
-<td>对<code>p</code>指向的对象执行析构函数</td>
-<td></td>
-</tr>
-</tbody>
-</table><div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// 可以分配string的allocator对象</span>
+<p>| 操作                   | 含义                                                         | 备注                                                         |
+| ———————- | ———————————————————— | ———————————————————— |
+| <code class="docutils literal notranslate"><span class="pre">allocator&lt;T&gt;</span> <span class="pre">a</span></code>       | 定义一个<code class="docutils literal notranslate"><span class="pre">allocator</span></code>对象，可以为类型<code class="docutils literal notranslate"><span class="pre">T</span></code>的对象分配内存         |                                                              |
+| <code class="docutils literal notranslate"><span class="pre">a.allocate(n)</span></code>        | 分配一段原始的、未构造的内存，保存<code class="docutils literal notranslate"><span class="pre">n</span></code>个类型为<code class="docutils literal notranslate"><span class="pre">T</span></code>的对象       |                                                              |
+| <code class="docutils literal notranslate"><span class="pre">a.deallocate(p,</span> <span class="pre">n)</span></code>   | 释放从<code class="docutils literal notranslate"><span class="pre">T*</span></code>指针<code class="docutils literal notranslate"><span class="pre">p</span></code>中地址开始的内存，这块内存保存了<code class="docutils literal notranslate"><span class="pre">n</span></code>个类型为<code class="docutils literal notranslate"><span class="pre">T</span></code>的对象 | <code class="docutils literal notranslate"><span class="pre">p</span></code>必须是先前由<code class="docutils literal notranslate"><span class="pre">allocate</span></code>返回的指针，<code class="docutils literal notranslate"><span class="pre">n</span></code>必须是<code class="docutils literal notranslate"><span class="pre">p</span></code>创建时所要求的大小，在调用<code class="docutils literal notranslate"><span class="pre">deallocate</span></code>之前用户必须对每个在这块内存中创建的对象调用<code class="docutils literal notranslate"><span class="pre">destory</span></code> |
+| <code class="docutils literal notranslate"><span class="pre">a.construct(p,</span> <span class="pre">args)</span></code> | <code class="docutils literal notranslate"><span class="pre">args</span></code>被传递给类型为<code class="docutils literal notranslate"><span class="pre">T</span></code>的构造函数，用于在<code class="docutils literal notranslate"><span class="pre">p</span></code>指向的内存中构造一个对象 |                                                              |
+| <code class="docutils literal notranslate"><span class="pre">a.destory(p)</span></code>         | 对<code class="docutils literal notranslate"><span class="pre">p</span></code>指向的对象执行析构函数                                  |                                                              |</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// 可以分配string的allocator对象</span>
 <span class="n">allocator</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">alloc</span><span class="p">;</span>
 <span class="c1">// 分配n个未初始化的string</span>
 <span class="k">auto</span> <span class="k">const</span> <span class="n">p</span> <span class="o">=</span> <span class="n">alloc</span><span class="p">.</span><span class="n">allocate</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
@@ -611,37 +567,13 @@
 </pre></div>
 </div>
 <p>标准库为<code class="docutils literal notranslate"><span class="pre">allocator</span></code>类提供了两个伴随算法，可以在未初始化内存中创建对象：</p>
-<table border="1" class="docutils">
-<thead>
-<tr>
-<th>操作</th>
-<th>含义</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>uninitialized_copy(b, e, b2)</code></td>
-<td>从迭代器<code>b</code>和<code>e</code>指定的输入范围中拷贝元素到迭代器<code>b2</code>指定的未构造的原始内存中</td>
-<td><code>b2</code>指向的内存必足够大以容纳输入序列中元素的拷贝</td>
-</tr>
-<tr>
-<td><code>uninitialized_copy_n(b, n, b2)</code></td>
-<td>从迭代器<code>b</code>指向的元素开始，拷贝<code>n</code>个元素到<code>b2</code>开始的内存中</td>
-<td></td>
-</tr>
-<tr>
-<td><code>uninitialized_fill(b, e, t)</code></td>
-<td>在迭代器<code>b</code>和<code>e</code>指定的原始内存范围中创建对象，对象的值均为<code>t</code>的拷贝</td>
-<td></td>
-</tr>
-<tr>
-<td><code>uninitialized_fill_n(b, n, t)</code></td>
-<td>在迭代器<code>b</code>指向的内存地址开始创建<code>n</code>的对象</td>
-<td><code>b</code>必须指向足够大的未构造的原始内存，能够容纳给定数量的对象</td>
-</tr>
-</tbody>
-</table><div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<p>| 操作                             | 含义                                                         | 备注                                                        |
+| ——————————– | ———————————————————— | ———————————————————– |
+| <code class="docutils literal notranslate"><span class="pre">uninitialized_copy(b,</span> <span class="pre">e,</span> <span class="pre">b2)</span></code>   | 从迭代器<code class="docutils literal notranslate"><span class="pre">b</span></code>和<code class="docutils literal notranslate"><span class="pre">e</span></code>指定的输入范围中拷贝元素到迭代器<code class="docutils literal notranslate"><span class="pre">b2</span></code>指定的未构造的原始内存中 | <code class="docutils literal notranslate"><span class="pre">b2</span></code>指向的内存必足够大以容纳输入序列中元素的拷贝            |
+| <code class="docutils literal notranslate"><span class="pre">uninitialized_copy_n(b,</span> <span class="pre">n,</span> <span class="pre">b2)</span></code> | 从迭代器<code class="docutils literal notranslate"><span class="pre">b</span></code>指向的元素开始，拷贝<code class="docutils literal notranslate"><span class="pre">n</span></code>个元素到<code class="docutils literal notranslate"><span class="pre">b2</span></code>开始的内存中   |                                                             |
+| <code class="docutils literal notranslate"><span class="pre">uninitialized_fill(b,</span> <span class="pre">e,</span> <span class="pre">t)</span></code>    | 在迭代器<code class="docutils literal notranslate"><span class="pre">b</span></code>和<code class="docutils literal notranslate"><span class="pre">e</span></code>指定的原始内存范围中创建对象，对象的值均为<code class="docutils literal notranslate"><span class="pre">t</span></code>的拷贝 |                                                             |
+| <code class="docutils literal notranslate"><span class="pre">uninitialized_fill_n(b,</span> <span class="pre">n,</span> <span class="pre">t)</span></code>  | 在迭代器<code class="docutils literal notranslate"><span class="pre">b</span></code>指向的内存地址开始创建<code class="docutils literal notranslate"><span class="pre">n</span></code>的对象                   | <code class="docutils literal notranslate"><span class="pre">b</span></code>必须指向足够大的未构造的原始内存，能够容纳给定数量的对象 |</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cm">/*</span>
 <span class="cm"> * 例子: 假定有一个vector&lt;int&gt;, 我们希望将其拷贝到一块比它所占空间大一倍的动态内存中, 再对后一半空间进行给定值填充</span>
 <span class="cm"> */</span>
 

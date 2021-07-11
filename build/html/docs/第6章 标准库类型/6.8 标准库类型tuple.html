@@ -202,48 +202,17 @@
 <div class="section" id="id2">
 <h2>操作<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>它支持的操作包括：</p>
-<table border="1" class="docutils">
-<thead>
-<tr>
-<th>操作</th>
-<th>含义</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>tuple&lt;T1, T2, ..., Tn&gt; t;</code></td>
-<td>成员素为<code>n</code>，第<code>i</code>个成员为<code>Ti</code>，所有成员进行值初始化</td>
-</tr>
-<tr>
-<td><code>tuple&lt;T1, T2, ..., Tn&gt; t(v1, v2, ..., vn);</code></td>
-<td>每个成员用对应的初始值<code>vi</code>进行初始化，此构造函数是<code>explicit</code>的</td>
-</tr>
-<tr>
-<td><code>make_tuple(v1, v2, ..., vn)</code></td>
-<td>返回一个用给定初始值初始化的<code>tuple</code>，<code>tuple</code>的类型从初始值的类型推断</td>
-</tr>
-<tr>
-<td><code>t1 == t2</code>或<code>t1 != t2</code></td>
-<td>两个<code>tuple</code>具有相同数量的成员且成员对应相等时则两个<code>tuple</code>相等</td>
-</tr>
-<tr>
-<td><code>t1 relop t2</code></td>
-<td>两个<code>tuple</code>必须具有相同数量的成员，用<code>&lt;</code>运算符比较<code>t1</code>和<code>t2</code>对应的成员</td>
-</tr>
-<tr>
-<td><code>get&lt;i&gt;(t)</code></td>
-<td>返回<code>t</code>的第<code>i</code>个数据成员的引用，如果<code>t</code>是一个左值则返回左值引用，否则返回一个右值引用</td>
-</tr>
-<tr>
-<td><code>tuple_size&lt;tupleType&gt;::value</code></td>
-<td>一个类模板，可以通过<code>tuple</code>类型来初始化，表示给定<code>tuple</code>类型中成员的数量</td>
-</tr>
-<tr>
-<td><code>tuple_element&lt;i, tupleType&gt;::type</code></td>
-<td>一个类模板，可以通过一个整型常量和一个<code>tuple</code>类型初始化，返回<code>tuple</code>类型中指定成员的类型</td>
-</tr>
-</tbody>
-</table></div>
+<p>| 操作                                         | 含义                                                         |
+| ——————————————– | ———————————————————— |
+| <code class="docutils literal notranslate"><span class="pre">tuple&lt;T1,</span> <span class="pre">T2,</span> <span class="pre">...,</span> <span class="pre">Tn&gt;</span> <span class="pre">t;</span></code>                  | 成员素为<code class="docutils literal notranslate"><span class="pre">n</span></code>，第<code class="docutils literal notranslate"><span class="pre">i</span></code>个成员为<code class="docutils literal notranslate"><span class="pre">Ti</span></code>，所有成员进行值初始化         |
+| <code class="docutils literal notranslate"><span class="pre">tuple&lt;T1,</span> <span class="pre">T2,</span> <span class="pre">...,</span> <span class="pre">Tn&gt;</span> <span class="pre">t(v1,</span> <span class="pre">v2,</span> <span class="pre">...,</span> <span class="pre">vn);</span></code> | 每个成员用对应的初始值<code class="docutils literal notranslate"><span class="pre">vi</span></code>进行初始化，此构造函数是<code class="docutils literal notranslate"><span class="pre">explicit</span></code>的 |
+| <code class="docutils literal notranslate"><span class="pre">make_tuple(v1,</span> <span class="pre">v2,</span> <span class="pre">...,</span> <span class="pre">vn)</span></code>                | 返回一个用给定初始值初始化的<code class="docutils literal notranslate"><span class="pre">tuple</span></code>，<code class="docutils literal notranslate"><span class="pre">tuple</span></code>的类型从初始值的类型推断 |
+| <code class="docutils literal notranslate"><span class="pre">t1</span> <span class="pre">==</span> <span class="pre">t2</span></code>或<code class="docutils literal notranslate"><span class="pre">t1</span> <span class="pre">!=</span> <span class="pre">t2</span></code>                       | 两个<code class="docutils literal notranslate"><span class="pre">tuple</span></code>具有相同数量的成员且成员对应相等时则两个<code class="docutils literal notranslate"><span class="pre">tuple</span></code>相等 |
+| <code class="docutils literal notranslate"><span class="pre">t1</span> <span class="pre">relop</span> <span class="pre">t2</span></code>                                | 两个<code class="docutils literal notranslate"><span class="pre">tuple</span></code>必须具有相同数量的成员，用<code class="docutils literal notranslate"><span class="pre">&lt;</span></code>运算符比较<code class="docutils literal notranslate"><span class="pre">t1</span></code>和<code class="docutils literal notranslate"><span class="pre">t2</span></code>对应的成员 |
+| <code class="docutils literal notranslate"><span class="pre">get&lt;i&gt;(t)</span></code>                                  | 返回<code class="docutils literal notranslate"><span class="pre">t</span></code>的第<code class="docutils literal notranslate"><span class="pre">i</span></code>个数据成员的引用，如果<code class="docutils literal notranslate"><span class="pre">t</span></code>是一个左值则返回左值引用，否则返回一个右值引用 |
+| <code class="docutils literal notranslate"><span class="pre">tuple_size&lt;tupleType&gt;::value</span></code>               | 一个类模板，可以通过<code class="docutils literal notranslate"><span class="pre">tuple</span></code>类型来初始化，表示给定<code class="docutils literal notranslate"><span class="pre">tuple</span></code>类型中成员的数量 |
+| <code class="docutils literal notranslate"><span class="pre">tuple_element&lt;i,</span> <span class="pre">tupleType&gt;::type</span></code>          | 一个类模板，可以通过一个整型常量和一个<code class="docutils literal notranslate"><span class="pre">tuple</span></code>类型初始化，返回<code class="docutils literal notranslate"><span class="pre">tuple</span></code>类型中指定成员的类型 |</p>
+</div>
 <div class="section" id="id3">
 <h2>定义和初始化tuple<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <p>使用构造函数：</p>

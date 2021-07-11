@@ -219,56 +219,21 @@
 <p><code class="docutils literal notranslate"><span class="pre">function</span></code>定义在<code class="docutils literal notranslate"><span class="pre">functional</span></code>头文件中，可以将可调用对象按照调用形式进行分类。</p>
 <div class="section" id="id3">
 <h3>1. 操作<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
-<table border="1" class="docutils">
-<thead>
-<tr>
-<th>操作</th>
-<th>功能</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>function&lt;T&gt; f</code></td>
-<td><code>f</code>是一个用来存储可调用对象的空<code>function</code>，这些可调用对象的调用形式应该与函数类型<code>T</code>相同</td>
-</tr>
-<tr>
-<td><code>function&lt;T&gt; f(nullptr)</code></td>
-<td>显式地构造一个空<code>funciton</code></td>
-</tr>
-<tr>
-<td><code>function&lt;T&gt; f(obj)</code></td>
-<td>在<code>f</code>中存储可调用对象<code>obj</code>的副本</td>
-</tr>
-<tr>
-<td><code>f</code></td>
-<td>将<code>f</code>作为条件：当<code>f</code>含有一个可调用对象时为真；否则为假</td>
-</tr>
-<tr>
-<td><code>f(args)</code></td>
-<td>调用<code>f</code>中的对象，参数是<code>args</code></td>
-</tr>
-</tbody>
-</table></div>
+<p>| 操作                       | 功能                                                         |
+| ————————– | ———————————————————— |
+| <code class="docutils literal notranslate"><span class="pre">function&lt;T&gt;</span> <span class="pre">f</span></code>            | <code class="docutils literal notranslate"><span class="pre">f</span></code>是一个用来存储可调用对象的空<code class="docutils literal notranslate"><span class="pre">function</span></code>，这些可调用对象的调用形式应该与函数类型<code class="docutils literal notranslate"><span class="pre">T</span></code>相同 |
+| <code class="docutils literal notranslate"><span class="pre">function&lt;T&gt;</span> <span class="pre">f(nullptr)</span></code> | 显式地构造一个空<code class="docutils literal notranslate"><span class="pre">funciton</span></code>                                   |
+| <code class="docutils literal notranslate"><span class="pre">function&lt;T&gt;</span> <span class="pre">f(obj)</span></code>       | 在<code class="docutils literal notranslate"><span class="pre">f</span></code>中存储可调用对象<code class="docutils literal notranslate"><span class="pre">obj</span></code>的副本                             |
+| <code class="docutils literal notranslate"><span class="pre">f</span></code>                        | 将<code class="docutils literal notranslate"><span class="pre">f</span></code>作为条件：当<code class="docutils literal notranslate"><span class="pre">f</span></code>含有一个可调用对象时为真；否则为假       |
+| <code class="docutils literal notranslate"><span class="pre">f(args)</span></code>                  | 调用<code class="docutils literal notranslate"><span class="pre">f</span></code>中的对象，参数是<code class="docutils literal notranslate"><span class="pre">args</span></code>                                |</p>
+</div>
 <div class="section" id="id4">
 <h3>2. 类型成员<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
-<table border="1" class="docutils">
-<thead>
-<tr>
-<th>类型成员</th>
-<th>含义</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>result_type</code></td>
-<td>该<code>function</code>类型的可调用对象返回的类型</td>
-</tr>
-<tr>
-<td><code>argument_type</code><br><code>first_argument_type</code><br><code>second_argument_type</code></td>
-<td>当<code>T</code>有一个或两个实参时定义的类型，如果<code>T</code>只有一个实参，则<code>argument_type</code>是该类型的同义词；如果<code>T</code>有两个实参，则<code>first_argument_type</code>和<code>second_argument_type</code>分别代表两个实参的类型</td>
-</tr>
-</tbody>
-</table></div>
+<p>| 类型成员                                                     | 含义                                                         |
+| ———————————————————— | ———————————————————— |
+| <code class="docutils literal notranslate"><span class="pre">result_type</span></code>                                                | 该<code class="docutils literal notranslate"><span class="pre">function</span></code>类型的可调用对象返回的类型                       |
+| <code class="docutils literal notranslate"><span class="pre">argument_type</span></code><br><code class="docutils literal notranslate"><span class="pre">first_argument_type</span></code><br><code class="docutils literal notranslate"><span class="pre">second_argument_type</span></code> | 当<code class="docutils literal notranslate"><span class="pre">T</span></code>有一个或两个实参时定义的类型，如果<code class="docutils literal notranslate"><span class="pre">T</span></code>只有一个实参，则<code class="docutils literal notranslate"><span class="pre">argument_type</span></code>是该类型的同义词；如果<code class="docutils literal notranslate"><span class="pre">T</span></code>有两个实参，则<code class="docutils literal notranslate"><span class="pre">first_argument_type</span></code>和<code class="docutils literal notranslate"><span class="pre">second_argument_type</span></code>分别代表两个实参的类型 |</p>
+</div>
 <div class="section" id="id5">
 <h3>3. 例子<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
