@@ -1,8 +1,11 @@
 # C++语法笔记
 
-## 停止更新说明
+## 说明
 
-由于ReadTheDocs更新比较麻烦，最新的C++语法笔记可以看下面的语雀链接：
+ReadTheDocs电子书链接：
+> https://cpp-note.readthedocs.io/zh/latest/
+
+网络不好的同学可以看下面的语雀链接（尽量同步更新）：
 > https://www.yuque.com/tomocat/txc11h/atgr07
 
 ## 参考书籍
