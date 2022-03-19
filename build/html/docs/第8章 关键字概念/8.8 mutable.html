@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>8.8 关键字：mutable &mdash; C++语法笔记 v1.0 文档</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/translations.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> C++语法笔记
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC1%E7%AB%A0%20%E5%8F%98%E9%87%8F%E4%B8%8E%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B/index.html">第1章 变量与基本类型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC2%E7%AB%A0%20%E8%AF%AD%E5%8F%A5/index.html">第2章 语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC3%E7%AB%A0%20%E5%87%BD%E6%95%B0/index.html">第3章 函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC4%E7%AB%A0%20%E8%BF%90%E7%AE%97%E7%AC%A6/index.html">第4章 运算符</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC5%E7%AB%A0%20%E7%B1%BB/index.html">第5章类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC6%E7%AB%A0%20%E6%A0%87%E5%87%86%E5%BA%93%E7%B1%BB%E5%9E%8B/index.html">第6章 标准库类型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC7%E7%AB%A0%20%E6%A8%A1%E6%9D%BF/index.html">第7章 模板</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC9%E7%AB%A0%20%E7%AE%97%E6%B3%95/index.html">第9章 算法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC10%E7%AB%A0%20%E8%AF%AD%E8%A8%80%E7%89%B9%E6%80%A7/index.html">第10章 语法特性</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC11%E7%AB%A0%20C%2B%2B11%E6%96%B0%E6%A0%87%E5%87%86/index.html">第11章 C++11新标准</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../README.html">README</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">C++语法笔记</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>8.8 关键字：mutable</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/docs/第8章 关键字概念/8.8 mutable.md.txt" rel="nofollow"> 查看页面源码</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="mutable">
+<h1>8.8 关键字：mutable<a class="headerlink" href="#mutable" title="永久链接至标题"></a></h1>
+<section id="id1">
+<h2>功能<a class="headerlink" href="#id1" title="永久链接至标题"></a></h2>
+<p>C++编译器强制实施bitwise constness，mutable可以释放掉const成员函数中non-static变量的bitwise constness约束。</p>
+</section>
+<section id="bitwise-constnesslogical-constness">
+<h2>bitwise constness与logical constness<a class="headerlink" href="#bitwise-constnesslogical-constness" title="永久链接至标题"></a></h2>
+<p>关于const成员函数有两类说法：</p>
+<ul class="simple">
+<li><p>bitwise constness（或称physical constness）：成员函数只有在不更改对象任何成员变量（static除外）时才可以说是const的，即不更改对象内的任何一个bit。</p></li>
+<li><p>logical constness：一个const成员函数可以修改它所处理的对象内的某些bits，但只有在客户端侦测不出的情况下才得如此。</p></li>
+</ul>
+<section id="bitwise-constness">
+<h3>1. bitwise constness存在的问题<a class="headerlink" href="#bitwise-constness" title="永久链接至标题"></a></h3>
+<blockquote>
+<div><p>bitwise constness正是C++对常量性（constness）的定义，因此const成员函数不可以更改对象内任何non-static成员变量。</p>
+<p>尽管编译器强制实施bitwise constness，但你编写程序的时候应该尽量使用“概念上的常量”。</p>
+</div></blockquote>
+<p>不幸的是许多成员函数虽然不十足具备const性质但却能通过bitwise测试。更具体地说，一个更改了“指针所指物”的成员函数虽然不能算是const，但如果只有指针（而非其所指物）隶属于对象，那么称此函数为bitwise const不会引发编译器异议。</p>
+<p>举个例子，CTextBlock类返回一个reference指向对象内部值，但是却不适当地将其<code class="docutils literal notranslate"><span class="pre">operator[]</span></code>声明为const成员函数。不过<code class="docutils literal notranslate"><span class="pre">operator[]</span></code>实现代码并不更改<code class="docutils literal notranslate"><span class="pre">text_ptr_</span></code>，因此编译器认为它是bitwise constness并产出目标码。</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">CTextBlock</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w"> </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="w">    </span><span class="k">explicit</span><span class="w"> </span><span class="n">CTextBlock</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">text</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">text_ptr_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">char</span><span class="p">[</span><span class="n">std</span><span class="o">::</span><span class="n">strlen</span><span class="p">(</span><span class="n">text</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">];</span><span class="w"></span>
+<span class="w">        </span><span class="n">snprintf</span><span class="p">(</span><span class="n">text_ptr_</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">strlen</span><span class="p">(</span><span class="n">text</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">text</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="o">~</span><span class="n">CTextBlock</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">delete</span><span class="w"> </span><span class="n">text_ptr_</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">text_ptr_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">print</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">text_ptr_</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="kt">char</span><span class="o">&amp;</span><span class="w"> </span><span class="k">operator</span><span class="p">[](</span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="w"> </span><span class="n">position</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">text_ptr_</span><span class="p">[</span><span class="n">position</span><span class="p">];</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w"> </span><span class="k">private</span><span class="o">:</span><span class="w"></span>
+<span class="w">    </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">text_ptr_</span><span class="p">;</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">CTextBlock</span><span class="w"> </span><span class="n">foo</span><span class="p">(</span><span class="s">&quot;Cat&quot;</span><span class="p">);</span><span class="w">  </span><span class="c1">// 声明一个常量</span>
+<span class="w">    </span><span class="n">foo</span><span class="p">.</span><span class="n">print</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="n">foo</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">&#39;D&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">foo</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">&#39;o&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">foo</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">&#39;g&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">foo</span><span class="p">.</span><span class="n">print</span><span class="p">();</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="c1">// 输出:</span>
+<span class="n">$g</span><span class="o">++</span><span class="w"> </span><span class="o">-</span><span class="n">g</span><span class="w"> </span><span class="n">test</span><span class="p">.</span><span class="n">cpp</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="n">test</span><span class="w"> </span><span class="o">-</span><span class="n">std</span><span class="o">=</span><span class="n">c</span><span class="o">++</span><span class="mi">11</span><span class="w"></span>
+<span class="n">$</span><span class="p">.</span><span class="o">/</span><span class="n">test</span><span class="w"> </span>
+<span class="n">Cat</span><span class="w"></span>
+<span class="n">Dog</span><span class="w"></span>
+<span class="n">root</span><span class="w"></span>
+</pre></div>
+</div>
+<p>在上面的例子中，我们创建了一个常量CTextBlock且调用了它的const成员函数<code class="docutils literal notranslate"><span class="pre">operator[]</span></code>，最终还是修改了它的值。</p>
+</section>
+<section id="logic-constness">
+<h3>2. logic constness<a class="headerlink" href="#logic-constness" title="永久链接至标题"></a></h3>
+<p>bitwise constness这种情况导出所谓的logic constness，这一派拥护者主张一个const成员函数可以修改它所处理的对象内的某些bits，但只有在客户端侦测不出的情况下才得如此。例如你的CTextBlock类有可能高速缓存（cache）文本区块的长度以便应付询问。</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">CTextBlock</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w"> </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="w"> </span><span class="n">length</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">length_is_valid_</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">text_length_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">strlen</span><span class="p">(</span><span class="n">text_ptr_</span><span class="p">);</span><span class="w">  </span><span class="c1">// 编译不通过, 在const成员函数</span>
+<span class="w">            </span><span class="n">length_is_valid_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span><span class="w">                </span><span class="c1">// 内不能给成员变量赋值</span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w"> </span><span class="k">private</span><span class="o">:</span><span class="w"></span>
+<span class="w">    </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">text_ptr_</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="w"> </span><span class="n">text_length_</span><span class="p">;</span><span class="w">  </span><span class="c1">// 最近一次计算的文本区块长度</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">length_is_valid_</span><span class="p">;</span><span class="w">     </span><span class="c1">// 目前的长度是否有效</span>
+<span class="p">};</span><span class="w"></span>
+</pre></div>
+</div>
+<p>成员函数<code class="docutils literal notranslate"><span class="pre">length()</span></code>并不是bitwise const的，因为<code class="docutils literal notranslate"><span class="pre">text_length_</span></code>和<code class="docutils literal notranslate"><span class="pre">length_is_valid_</span></code>变量都可能被修改。这两个成员变量被修改对const CTextBlock变量而言是可以接受的，但是编译器并不接受（编译器只同意bitwise constness），这该怎么办？</p>
+</section>
+<section id="mutablelogical-constness">
+<h3>3. 基于mutable实现logical constness<a class="headerlink" href="#mutablelogical-constness" title="永久链接至标题"></a></h3>
+<p>解决方法很简单：利用C++一个与const相关的关键字mutable（可变的），它可以释放掉non-static变量的bitwise constness约束。</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">CTextBlock</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w"> </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="w"> </span><span class="n">length</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">length_is_valid_</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">text_length_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">strlen</span><span class="p">(</span><span class="n">text_ptr_</span><span class="p">);</span><span class="w">  </span><span class="c1">// 这些成员变量可能被修改, 即使</span>
+<span class="w">            </span><span class="n">length_is_valid_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span><span class="w">                </span><span class="c1">// 在const成员函数内部</span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w"> </span><span class="k">private</span><span class="o">:</span><span class="w"></span>
+<span class="w">    </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">text_ptr_</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">mutable</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="w"> </span><span class="n">text_length_</span><span class="p">;</span><span class="w">  </span><span class="c1">// 最近一次计算的文本区块长度</span>
+<span class="w">    </span><span class="k">mutable</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">length_is_valid_</span><span class="p">;</span><span class="w">     </span><span class="c1">// 目前的长度是否有效</span>
+<span class="p">};</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2021, TOMOCAT.</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

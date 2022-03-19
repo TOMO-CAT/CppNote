@@ -1,74 +1,35 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="zh-CN" >
 <head>
-  <meta charset="utf-8" />
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>10.11 运行时类型识别 &mdash; C++语法笔记 v1.0 文档</title>
-  
-
-  
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script src="../../_static/translations.js"></script>
-    
-    <script type="text/javascript" src="../../_static/js/theme.js"></script>
-
-    
+    <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
     <link rel="next" title="10.12 异常处理" href="10.12%20%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86.html" />
     <link rel="prev" title="10.10 固有的不可移植的特性" href="10.10%20%E5%9B%BA%E6%9C%89%E7%9A%84%E4%B8%8D%E5%8F%AF%E7%A7%BB%E6%A4%8D%E7%9A%84%E7%89%B9%E6%80%A7.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="../../index.html" class="icon icon-home"> C++语法笔记
-          
-
-          
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="在文档中搜索" />
@@ -76,18 +37,7 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC1%E7%AB%A0%20%E5%8F%98%E9%87%8F%E4%B8%8E%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B/index.html">第1章 变量与基本类型</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC2%E7%AB%A0%20%E8%AF%AD%E5%8F%A5/index.html">第2章 语句</a></li>
@@ -96,7 +46,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC5%E7%AB%A0%20%E7%B1%BB/index.html">第5章类</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC6%E7%AB%A0%20%E6%A0%87%E5%87%86%E5%BA%93%E7%B1%BB%E5%9E%8B/index.html">第6章 标准库类型</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC7%E7%AB%A0%20%E6%A8%A1%E6%9D%BF/index.html">第7章 模板</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC8%E7%AB%A0%20%E5%85%B3%E9%94%AE%E5%AD%97%E6%A6%82%E5%BF%B5/index.html">第8章 关键字概念</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC9%E7%AB%A0%20%E7%AE%97%E6%B3%95/index.html">第9章 算法</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">第10章 语法特性</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="10.1%20%E5%A4%B4%E6%96%87%E4%BB%B6.html">10.1 头文件</a></li>
@@ -124,6 +73,7 @@
 <li class="toctree-l2"><a class="reference internal" href="10.12%20%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86.html">10.12 异常处理</a></li>
 <li class="toctree-l2"><a class="reference internal" href="10.13%20%E5%86%85%E5%AD%98%E5%88%86%E5%B8%83.html">10.13 内存分布</a></li>
 <li class="toctree-l2"><a class="reference internal" href="10.14%20%E8%B0%83%E8%AF%95%E5%B8%AE%E5%8A%A9.html">10.14 调试帮助</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10.15%20%E7%BC%96%E8%AF%91%E9%93%BE%E6%8E%A5%E5%8E%9F%E7%90%86.html">10.15 编译链接原理</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC11%E7%AB%A0%20C%2B%2B11%E6%96%B0%E6%A0%87%E5%87%86/index.html">第11章 C++11新标准</a></li>
@@ -132,77 +82,35 @@
 <li class="toctree-l1"><a class="reference internal" href="../README.html">README</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../index.html">C++语法笔记</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-        
           <li><a href="index.html">第10章 语法特性</a> &raquo;</li>
-        
       <li>10.11 运行时类型识别</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
             <a href="../../_sources/docs/第10章 语言特性/10.11 运行时类型识别.md.txt" rel="nofollow"> 查看页面源码</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="id1">
-<h1>10.11 运行时类型识别<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
-<div class="section" id="id2">
-<h2>简介<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+             
+  <section id="id1">
+<h1>10.11 运行时类型识别<a class="headerlink" href="#id1" title="永久链接至标题"></a></h1>
+<section id="id2">
+<h2>简介<a class="headerlink" href="#id2" title="永久链接至标题"></a></h2>
 <p>运行时类型识别<code class="docutils literal notranslate"><span class="pre">run-time</span> <span class="pre">type</span> <span class="pre">identification,</span> <span class="pre">RTTI</span></code>的功能由两个运算符实现：</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">typeid</span></code>运算符：用于返回表达式的类型</p></li>
@@ -213,13 +121,13 @@
 <blockquote>
 <div><p>Tips：使用RTTI必须加倍小心，在可能的情况下，最好定义虚函数而非直接接管类型管理的重任。</p>
 </div></blockquote>
-</div>
-<div class="section" id="dynamic-cast">
-<h2>dynamic_cast运算符<a class="headerlink" href="#dynamic-cast" title="永久链接至标题">¶</a></h2>
+</section>
+<section id="dynamic-cast">
+<h2>dynamic_cast运算符<a class="headerlink" href="#dynamic-cast" title="永久链接至标题"></a></h2>
 <p>dynamic_cast运算符的使用形式如下所示：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">dynamic_cast</span><span class="o">&lt;</span><span class="n">type</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>   <span class="c1">// e必须是一个有效的指针</span>
-<span class="k">dynamic_cast</span><span class="o">&lt;</span><span class="n">type</span><span class="o">&amp;&gt;</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>   <span class="c1">// e必须是一个左值</span>
-<span class="k">dynamic_cast</span><span class="o">&lt;</span><span class="n">type</span><span class="o">&amp;&amp;&gt;</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>  <span class="c1">// e不能是左值</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">dynamic_cast</span><span class="o">&lt;</span><span class="n">type</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="w">   </span><span class="c1">// e必须是一个有效的指针</span>
+<span class="k">dynamic_cast</span><span class="o">&lt;</span><span class="n">type</span><span class="o">&amp;&gt;</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="w">   </span><span class="c1">// e必须是一个左值</span>
+<span class="k">dynamic_cast</span><span class="o">&lt;</span><span class="n">type</span><span class="o">&amp;&amp;&gt;</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="w">  </span><span class="c1">// e不能是左值</span>
 </pre></div>
 </div>
 <p>在上面的所有形式中，<code class="docutils literal notranslate"><span class="pre">e</span></code>的类型必须符合以下三个条件的任意一个：</p>
@@ -229,33 +137,33 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">e</span></code>的类型是目标<code class="docutils literal notranslate"><span class="pre">type</span></code>本身</p></li>
 </ul>
 <p>如果符合则转换可以成功，否则转换失败。如果一条<code class="docutils literal notranslate"><span class="pre">dynamic_cast</span></code>的转换目标是指针类型并且失败了，则结果为0；如果转换目标是引用类型并且失败了，则抛出一个<code class="docutils literal notranslate"><span class="pre">bad_cast</span></code>异常。</p>
-<div class="section" id="id3">
-<h3>1. 指针类型的dynamic_cast<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
+<section id="id3">
+<h3>1. 指针类型的dynamic_cast<a class="headerlink" href="#id3" title="永久链接至标题"></a></h3>
 <p>假定<code class="docutils literal notranslate"><span class="pre">Base</span></code>类至少含有一个虚函数，<code class="docutils literal notranslate"><span class="pre">Derived</span></code>是<code class="docutils literal notranslate"><span class="pre">Base</span></code>的公有派生类。如果有一个指向<code class="docutils literal notranslate"><span class="pre">Base</span></code>的指针<code class="docutils literal notranslate"><span class="pre">bp</span></code>，则我们在运行时将它转换成指向<code class="docutils literal notranslate"><span class="pre">Derived</span></code>的指针：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">Derived</span> <span class="o">*</span><span class="n">dp</span> <span class="o">=</span> <span class="k">dynamic_cast</span><span class="o">&lt;</span><span class="n">Derived</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">bp</span><span class="p">))</span> <span class="p">{</span>
-    <span class="c1">// 使用dp指向的Derived对象</span>
-<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>  <span class="c1">// bp指向一个Base对象</span>
-    <span class="c1">// 使用bp指向的Base对象</span>
-<span class="p">}</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Derived</span><span class="w"> </span><span class="o">*</span><span class="n">dp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">dynamic_cast</span><span class="o">&lt;</span><span class="n">Derived</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">bp</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// 使用dp指向的Derived对象</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="c1">// bp指向一个Base对象</span>
+<span class="w">    </span><span class="c1">// 使用bp指向的Base对象</span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id4">
-<h3>2. 引用类型的dynamic_cast<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">f</span><span class="p">(</span><span class="k">const</span> <span class="n">Base</span> <span class="o">&amp;</span><span class="n">b</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">try</span> <span class="p">{</span>
-        <span class="k">const</span> <span class="n">Derived</span> <span class="o">&amp;</span><span class="n">d</span> <span class="o">=</span> <span class="k">dynamic_cast</span><span class="o">&lt;</span><span class="k">const</span> <span class="n">Derived</span><span class="o">&amp;&gt;</span><span class="p">(</span><span class="n">b</span><span class="p">);</span>
-        <span class="c1">// 使用b引用的Derived对象</span>
-    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">bad_cast</span><span class="p">)</span> <span class="p">{</span>
-        <span class="c1">// 处理类型转换失败的情况</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+</section>
+<section id="id4">
+<h3>2. 引用类型的dynamic_cast<a class="headerlink" href="#id4" title="永久链接至标题"></a></h3>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Base</span><span class="w"> </span><span class="o">&amp;</span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="n">Derived</span><span class="w"> </span><span class="o">&amp;</span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">dynamic_cast</span><span class="o">&lt;</span><span class="k">const</span><span class="w"> </span><span class="n">Derived</span><span class="o">&amp;&gt;</span><span class="p">(</span><span class="n">b</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// 使用b引用的Derived对象</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">bad_cast</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// 处理类型转换失败的情况</span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="typeid">
-<h2>typeid运算符<a class="headerlink" href="#typeid" title="永久链接至标题">¶</a></h2>
+</section>
+</section>
+<section id="typeid">
+<h2>typeid运算符<a class="headerlink" href="#typeid" title="永久链接至标题"></a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">typeid</span></code>表达式的形式是<code class="docutils literal notranslate"><span class="pre">typeid(e)</span></code>，其中<code class="docutils literal notranslate"><span class="pre">e</span></code>可以是任意表达式或类型的名字。<code class="docutils literal notranslate"><span class="pre">typeid</span></code>操作的结果是一个常量对象的引用，该对象的类型是标准库类型<code class="docutils literal notranslate"><span class="pre">type_info</span></code>或者<code class="docutils literal notranslate"><span class="pre">type_info</span></code>的公有派生类型。</p>
 <p>和往常一样，顶层const被忽略，如果表达式是一个引用，则<code class="docutils literal notranslate"><span class="pre">typeid</span></code>返回该引用所引对象的类型。不过当<code class="docutils literal notranslate"><span class="pre">typeid</span></code>作用于数组或者函数时，并不会执行向指针的标准类型转换。比如我们对数组<code class="docutils literal notranslate"><span class="pre">a</span></code>执行<code class="docutils literal notranslate"><span class="pre">typeid(a)</span></code>。所得的结果是数组类型而非指针类型。</p>
 <blockquote>
@@ -263,75 +171,75 @@
 </div></blockquote>
 <p>通常情况下我们使用typeid比较两条表达式的类型是否相同，或者比较一条表达式的类型是否与指定类型相同：</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// 两个指针都指向Derived对象</span>
-<span class="n">Derived</span> <span class="o">*</span><span class="n">dp</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Derived</span><span class="p">;</span>
-<span class="n">Base</span> <span class="o">*</span><span class="n">bp</span> <span class="o">=</span> <span class="n">dp</span><span class="p">;</span>
+<span class="n">Derived</span><span class="w"> </span><span class="o">*</span><span class="n">dp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Derived</span><span class="p">;</span><span class="w"></span>
+<span class="n">Base</span><span class="w"> </span><span class="o">*</span><span class="n">bp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dp</span><span class="p">;</span><span class="w"></span>
 
 <span class="c1">// 在运行时比较两个对象的类型</span>
-<span class="k">if</span> <span class="p">(</span><span class="k">typeid</span><span class="p">(</span><span class="o">*</span><span class="n">bp</span><span class="p">)</span> <span class="o">==</span> <span class="k">typeid</span><span class="p">(</span><span class="o">*</span><span class="n">dp</span><span class="p">))</span> <span class="p">{</span>
-	<span class="c1">// bp和dp指向通医药类型对象 </span>
-<span class="p">}</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">typeid</span><span class="p">(</span><span class="o">*</span><span class="n">bp</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">typeid</span><span class="p">(</span><span class="o">*</span><span class="n">dp</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">	</span><span class="c1">// bp和dp指向通医药类型对象 </span>
+<span class="p">}</span><span class="w"></span>
 <span class="c1">// 检查类型是否是某种指定类型</span>
-<span class="k">if</span> <span class="p">(</span><span class="k">typeid</span><span class="p">(</span><span class="o">*</span><span class="n">bp</span><span class="p">)</span> <span class="o">==</span> <span class="k">typeid</span><span class="p">(</span><span class="n">Derived</span><span class="p">))</span> <span class="p">{</span>
-	<span class="c1">// bp实际指向Derived类型</span>
-<span class="p">}</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">typeid</span><span class="p">(</span><span class="o">*</span><span class="n">bp</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">typeid</span><span class="p">(</span><span class="n">Derived</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">	</span><span class="c1">// bp实际指向Derived类型</span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>注意<code class="docutils literal notranslate"><span class="pre">typeid</span></code>应该作用于对象，因此我们使用<code class="docutils literal notranslate"><span class="pre">*bp</span></code>而不是<code class="docutils literal notranslate"><span class="pre">bp</span></code>：</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// 下面检查永远失败: bp类型是指向Base的指针</span>
-<span class="k">if</span> <span class="p">(</span><span class="k">typeid</span><span class="p">(</span><span class="n">bp</span><span class="p">)</span> <span class="o">==</span> <span class="k">typeid</span><span class="p">(</span><span class="n">Derived</span><span class="p">))</span> <span class="p">{</span>
-	<span class="c1">// 此处代码永远不会执行</span>
-<span class="p">}</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">typeid</span><span class="p">(</span><span class="n">bp</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">typeid</span><span class="p">(</span><span class="n">Derived</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">	</span><span class="c1">// 此处代码永远不会执行</span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <blockquote>
 <div><p>Tips：当<code class="docutils literal notranslate"><span class="pre">typeid</span></code>作用于指针时(而非指针指向的对象)，返回的结果是该指针的静态编译时类型。</p>
 </div></blockquote>
-</div>
-<div class="section" id="rtti">
-<h2>使用RTTI<a class="headerlink" href="#rtti" title="永久链接至标题">¶</a></h2>
+</section>
+<section id="rtti">
+<h2>使用RTTI<a class="headerlink" href="#rtti" title="永久链接至标题"></a></h2>
 <p>在某些情况下<code class="docutils literal notranslate"><span class="pre">RTTI</span></code>非常有用，比如我们想为具有继承关系的类实现相等运算符时。对于两个对象来说，如果他们的类型相同并且对应的数据成员取值相同，则我们说这两个类是相等的。</p>
 <p>我们定义两个示例类：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Base</span> <span class="p">{</span>
-    <span class="k">friend</span> <span class="kt">bool</span> <span class="k">operator</span><span class="o">==</span><span class="p">(</span><span class="k">const</span> <span class="n">Base</span><span class="o">&amp;</span><span class="p">,</span> <span class="k">const</span> <span class="n">Base</span><span class="o">&amp;</span><span class="p">);</span>
- <span class="k">public</span><span class="o">:</span>
-    <span class="c1">// Base的接口成员</span>
- <span class="k">protected</span><span class="o">:</span>
-    <span class="k">virtual</span> <span class="kt">bool</span> <span class="n">equal</span><span class="p">(</span><span class="k">const</span> <span class="n">Base</span><span class="o">&amp;</span><span class="p">)</span> <span class="k">const</span><span class="p">;</span>
-    <span class="c1">// Base的数据成员和其他用于实现的成员</span>
-<span class="p">};</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Base</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">friend</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="k">operator</span><span class="o">==</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Base</span><span class="o">&amp;</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Base</span><span class="o">&amp;</span><span class="p">);</span><span class="w"></span>
+<span class="w"> </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// Base的接口成员</span>
+<span class="w"> </span><span class="k">protected</span><span class="o">:</span><span class="w"></span>
+<span class="w">    </span><span class="k">virtual</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">equal</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Base</span><span class="o">&amp;</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// Base的数据成员和其他用于实现的成员</span>
+<span class="p">};</span><span class="w"></span>
 
-<span class="k">class</span> <span class="nc">Derived</span><span class="o">:</span> <span class="k">public</span> <span class="n">Base</span> <span class="p">{</span>
- <span class="k">public</span><span class="o">:</span>	
-    <span class="c1">// Derived的其他接口成员</span>
- <span class="k">protected</span><span class="o">:</span>
-    <span class="kt">bool</span> <span class="n">equal</span><span class="p">(</span><span class="k">const</span> <span class="n">Base</span><span class="o">&amp;</span><span class="p">)</span> <span class="k">const</span><span class="p">;</span>
-    <span class="c1">// Derived的数据成员和其他用于实现的成员</span>
-<span class="p">};</span>
+<span class="k">class</span> <span class="nc">Derived</span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">Base</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w"> </span><span class="k">public</span><span class="o">:</span><span class="w">	</span>
+<span class="w">    </span><span class="c1">// Derived的其他接口成员</span>
+<span class="w"> </span><span class="k">protected</span><span class="o">:</span><span class="w"></span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">equal</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Base</span><span class="o">&amp;</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// Derived的数据成员和其他用于实现的成员</span>
+<span class="p">};</span><span class="w"></span>
 
 <span class="c1">// 虚equal函数: 继承体系中的每个类都必须定义自己的equal函数, 派生类的所有函数要做的第一件事情就是将实参的类型转换为派生类类型</span>
-<span class="kt">bool</span> <span class="nf">Derived::equal</span><span class="p">(</span><span class="k">const</span> <span class="n">Base</span> <span class="o">&amp;</span><span class="n">rhs</span><span class="p">)</span> <span class="k">const</span> <span class="p">{</span>
-    <span class="c1">// 我们清楚两个类型是相等的, 所以转换不会抛出异常</span>
-    <span class="k">auto</span> <span class="n">r</span> <span class="o">=</span> <span class="k">dynamic_cast</span><span class="o">&lt;</span><span class="k">const</span> <span class="n">Derived</span><span class="o">&amp;&gt;</span><span class="p">(</span><span class="n">rhs</span><span class="p">);</span>
-    <span class="c1">// 执行比较两个Derived对象的操作并返回结果</span>
-<span class="p">}</span>
+<span class="kt">bool</span><span class="w"> </span><span class="nf">Derived::equal</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Base</span><span class="w"> </span><span class="o">&amp;</span><span class="n">rhs</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// 我们清楚两个类型是相等的, 所以转换不会抛出异常</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">dynamic_cast</span><span class="o">&lt;</span><span class="k">const</span><span class="w"> </span><span class="n">Derived</span><span class="o">&amp;&gt;</span><span class="p">(</span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// 执行比较两个Derived对象的操作并返回结果</span>
+<span class="p">}</span><span class="w"></span>
 
 <span class="c1">// 基类equal函数</span>
-<span class="kt">bool</span> <span class="nf">Base::equal</span><span class="p">(</span><span class="k">const</span> <span class="n">Base</span> <span class="o">&amp;</span><span class="n">rhs</span><span class="p">)</span> <span class="k">const</span> <span class="p">{</span>
-	<span class="c1">// 执行比较Base对象的操作    </span>
-<span class="p">}</span>
+<span class="kt">bool</span><span class="w"> </span><span class="nf">Base::equal</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Base</span><span class="w"> </span><span class="o">&amp;</span><span class="n">rhs</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">	</span><span class="c1">// 执行比较Base对象的操作    </span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>类型敏感的相等运算符：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">bool</span> <span class="k">operator</span><span class="o">==</span><span class="p">(</span><span class="k">const</span> <span class="n">Base</span> <span class="o">&amp;</span><span class="n">lhs</span><span class="p">,</span> <span class="k">const</span> <span class="n">Base</span> <span class="o">&amp;</span><span class="n">rhs</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">// 如果typeid不相同,则返回fallse; 否则虚调用equal</span>
-    <span class="c1">// 当运算对象是Base的对象时调用Base::equal, 否则调用Derived::equal</span>
-    <span class="k">return</span> <span class="k">typeid</span><span class="p">(</span><span class="n">lhs</span><span class="p">)</span> <span class="o">==</span> <span class="k">typeid</span><span class="p">(</span><span class="n">rhs</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="n">lhs</span><span class="p">.</span><span class="n">equal</span><span class="p">(</span><span class="n">rhs</span><span class="p">);</span>
-<span class="p">}</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">bool</span><span class="w"> </span><span class="k">operator</span><span class="o">==</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Base</span><span class="w"> </span><span class="o">&amp;</span><span class="n">lhs</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Base</span><span class="w"> </span><span class="o">&amp;</span><span class="n">rhs</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// 如果typeid不相同,则返回fallse; 否则虚调用equal</span>
+<span class="w">    </span><span class="c1">// 当运算对象是Base的对象时调用Base::equal, 否则调用Derived::equal</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">typeid</span><span class="p">(</span><span class="n">lhs</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">typeid</span><span class="p">(</span><span class="n">rhs</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">lhs</span><span class="p">.</span><span class="n">equal</span><span class="p">(</span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="type-info">
-<h2>type_info类<a class="headerlink" href="#type-info" title="永久链接至标题">¶</a></h2>
+</section>
+<section id="type-info">
+<h2>type_info类<a class="headerlink" href="#type-info" title="永久链接至标题"></a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">type_info</span></code>的操作包括：</p>
 <table border="1" class="docutils">
 <thead>
@@ -365,55 +273,38 @@
 <li><p>t1.before(t2)：返回一个bool值，表示t1是否位于t2之前，顺序关系依赖于编译器</p></li>
 </ul>
 <p><code class="docutils literal notranslate"><span class="pre">type_info</span></code>类没有默认构造函数，而且它的拷贝和移动构造函数以及赋值运算符都被定义为删除的。因此，我们无法定义或者拷贝<code class="docutils literal notranslate"><span class="pre">type_info</span></code>类型的对象，也不能为<code class="docutils literal notranslate"><span class="pre">type_info</span></code>对象赋值。创建<code class="docutils literal notranslate"><span class="pre">type_info</span></code>对象的唯一途径就是使用<code class="docutils literal notranslate"><span class="pre">typeid</span></code>运算符。</p>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="10.12%20%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86.html" class="btn btn-neutral float-right" title="10.12 异常处理" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="10.10%20%E5%9B%BA%E6%9C%89%E7%9A%84%E4%B8%8D%E5%8F%AF%E7%A7%BB%E6%A4%8D%E7%9A%84%E7%89%B9%E6%80%A7.html" class="btn btn-neutral float-left" title="10.10 固有的不可移植的特性" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="10.12%20%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86.html" class="btn btn-neutral float-right" title="10.12 异常处理" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; 版权所有 2021, TOMOCAT.
-
-    </p>
+    <p>&#169; 版权所有 2021, TOMOCAT.</p>
   </div>
-    
-    
-    
-    利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
-    
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
-    
-    由 <a href="https://readthedocs.org">Read the Docs</a>开发. 
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

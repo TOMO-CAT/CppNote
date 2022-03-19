@@ -455,3 +455,104 @@ HasPtr& HasPtr::operator=(HasPtr rhs) {
 }
 ```
 
+## 编码规范：在资源管理类中小心copying行为
+
+> Effective C++：Think carefully about copying behavior in resource-managing classes.
+>
+> * 复制RAII对象必须一并复制它所管理的资源，所以资源的copying行为决定了RAII对象的copying行为。
+> * 普通而常见的RAII类的copying行为是：抑制copying、施行引用计数法（reference counting）。不过其他行为也都可能被实现。
+
+考虑我们前面构造的Mutex资源管理类Lock，如果Lock对象被复制时可能出现非预期的效果：
+
+```c++
+Mutex m;
+
+Lock m1(&m);  // 锁定m
+Lock m2(m1);  // 将m1复制到m2, 这会发生什么?
+```
+
+每一个RAII类作者都要面对这个问题：当一个RAII对象被复制时会发生什么？
+
+大多数你会选择如下两种做法之一。
+
+#### 1. 禁止拷贝
+
+许多时候允许RAII对象被复制并不合理。我们可以将其拷贝操作声明为private（C++11中设置为delete）。
+
+```c++
+class Lock : private Uncopyable {  // 禁止拷贝
+ public:
+    ...
+};
+```
+
+#### 2. 对底层资源使用“引用计数法”
+
+这种情况下复制RAII对象应该将资源的“被引用数”递增。通常只需要包含一个`std::shared_ptr`成员变量RAII类就可以实现reference-counting copying行为。
+
+`std::shared_ptr`的默认行为时“当引用计数为0时删除所指的对象”，这并不是Lock类想要的行为。幸运的是`std::shared_ptr`允许指定所谓的删除器（deleter）。
+
+```c++
+class Lock {
+ public:
+    explicit Lock(Mutex* pm) : mutex_ptr_(pm, unlock) {
+        lock(mutex_ptr_.get());
+    }
+
+ private:
+    std::shared_ptr<Mutex> mutex_ptr_;
+};
+```
+
+注意Lock类中不再声明析构函数。
+
+## 编码规范： 在资源管理类中提供对原始资源的访问
+
+> Effective C++：Provide access to raw resources in resource-managing classes.
+>
+> * APIs往往要求访问原始资源（raw resources），所以每一个RAII类应该提供一个“取得其管理之资源”的办法。
+> * 对原始资源的访问可能经由显式转换或隐式转换。一般而言显式转换比较安全，但隐式转换对客户比较方便。
+
+由于许多API要求传入原始指针，因此我们在RAII类中还是必须提供原始资源的访问。
+
+```c++
+// C API
+FontHandle getFont();
+void releaseFont(FontHandle fh);
+
+// RAII class: 管理动态资源 FontHandle
+class Font {
+ public:
+    explicit Font(FontHandle fh) : f(fh) {}
+    ~Font() { releaseFont(f); }
+ private:
+    FontHandle f;
+};
+```
+
+假设有大量与FontHandle相关的C API，那么将Font对象转换为FontHandle会是比较频繁的需求。我们有显式转换函数和隐式转换函数两种方法。
+
+#### 1. 显式转换函数
+
+```c++
+class Font {
+ public:
+    ...
+    FontHandle get() const { return f; }  // 显式转换函数
+    ...
+};
+```
+
+#### 2. 隐式转换函数
+
+隐式转换函数可以让客户调用C API时更加轻松且自然：
+
+```c++
+class Font {
+ public:
+    ...
+    operator FontHandle() const  // 显式转换函数
+    { return f; }
+    ...
+};
+```

@@ -1,74 +1,35 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="zh-CN" >
 <head>
-  <meta charset="utf-8" />
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>4.3 重载运算符 &mdash; C++语法笔记 v1.0 文档</title>
-  
-
-  
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script src="../../_static/translations.js"></script>
-    
-    <script type="text/javascript" src="../../_static/js/theme.js"></script>
-
-    
+    <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
     <link rel="next" title="第5章类" href="../%E7%AC%AC5%E7%AB%A0%20%E7%B1%BB/index.html" />
     <link rel="prev" title="4.2 运算符优先级" href="4.2%20%E8%BF%90%E7%AE%97%E7%AC%A6%E4%BC%98%E5%85%88%E7%BA%A7.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="../../index.html" class="icon icon-home"> C++语法笔记
-          
-
-          
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="在文档中搜索" />
@@ -76,18 +37,7 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC1%E7%AB%A0%20%E5%8F%98%E9%87%8F%E4%B8%8E%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B/index.html">第1章 变量与基本类型</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC2%E7%AB%A0%20%E8%AF%AD%E5%8F%A5/index.html">第2章 语句</a></li>
@@ -141,7 +91,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC5%E7%AB%A0%20%E7%B1%BB/index.html">第5章类</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC6%E7%AB%A0%20%E6%A0%87%E5%87%86%E5%BA%93%E7%B1%BB%E5%9E%8B/index.html">第6章 标准库类型</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC7%E7%AB%A0%20%E6%A8%A1%E6%9D%BF/index.html">第7章 模板</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC8%E7%AB%A0%20%E5%85%B3%E9%94%AE%E5%AD%97%E6%A6%82%E5%BF%B5/index.html">第8章 关键字概念</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC9%E7%AB%A0%20%E7%AE%97%E6%B3%95/index.html">第9章 算法</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC10%E7%AB%A0%20%E8%AF%AD%E8%A8%80%E7%89%B9%E6%80%A7/index.html">第10章 语法特性</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC11%E7%AB%A0%20C%2B%2B11%E6%96%B0%E6%A0%87%E5%87%86/index.html">第11章 C++11新标准</a></li>
@@ -150,104 +99,62 @@
 <li class="toctree-l1"><a class="reference internal" href="../README.html">README</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../index.html">C++语法笔记</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-        
           <li><a href="index.html">第4章 运算符</a> &raquo;</li>
-        
       <li>4.3 重载运算符</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
             <a href="../../_sources/docs/第4章 运算符/4.3 重载运算符.md.txt" rel="nofollow"> 查看页面源码</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="id1">
-<h1>4.3 重载运算符<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
-<div class="section" id="id2">
-<h2>基本概念<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
-<div class="section" id="id3">
-<h3>1. 定义<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
+             
+  <section id="id1">
+<h1>4.3 重载运算符<a class="headerlink" href="#id1" title="永久链接至标题"></a></h1>
+<section id="id2">
+<h2>基本概念<a class="headerlink" href="#id2" title="永久链接至标题"></a></h2>
+<section id="id3">
+<h3>1. 定义<a class="headerlink" href="#id3" title="永久链接至标题"></a></h3>
 <p>重载的运算符是具有特殊名字的函数，它们的名字由关键字<code class="docutils literal notranslate"><span class="pre">operator</span></code>和其后要定义的运算符号共同组成。</p>
 <p>我们也可以直接调用一个重载的运算符函数：</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// 非成员运算符函数的等价调用</span>
-<span class="n">data1</span> <span class="o">+</span> <span class="n">data2</span><span class="p">;</span>
-<span class="k">operator</span><span class="o">+</span><span class="p">(</span><span class="n">data1</span><span class="p">,</span> <span class="n">data2</span><span class="p">);</span>
+<span class="n">data1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">data2</span><span class="p">;</span><span class="w"></span>
+<span class="k">operator</span><span class="o">+</span><span class="p">(</span><span class="n">data1</span><span class="p">,</span><span class="w"> </span><span class="n">data2</span><span class="p">);</span><span class="w"></span>
 
 <span class="c1">// 成员运算符函数的等价调用</span>
-<span class="n">data1</span> <span class="o">+=</span> <span class="n">data2</span><span class="p">;</span>
-<span class="n">data1</span><span class="p">.</span><span class="k">operator</span><span class="o">+=</span><span class="p">(</span><span class="n">data2</span><span class="p">);</span>
+<span class="n">data1</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">data2</span><span class="p">;</span><span class="w"></span>
+<span class="n">data1</span><span class="p">.</span><span class="k">operator</span><span class="o">+=</span><span class="p">(</span><span class="n">data2</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id4">
-<h3>2. 参数数量<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id4">
+<h3>2. 参数数量<a class="headerlink" href="#id4" title="永久链接至标题"></a></h3>
 <p>重载运算符函数的参数数量与该运算符作用的运算对象数量一样多。一元运算符有一个参数，二元运算符有两个。对于二元运算符来说，左侧运算对象传递给第一个参数，而右侧运算对象传递给第二个参数。==除了重载的函数调用运算符<code class="docutils literal notranslate"><span class="pre">operator()</span></code>之外，其他重载运算符不能含有默认实参。==</p>
 <blockquote>
 <div><p>Tips：当一个重载符是成员函数时，<code class="docutils literal notranslate"><span class="pre">this</span></code>绑定到左侧运算对象，成员运算符的（显式）参数数量比运算对象的数量少一个。</p>
 </div></blockquote>
-</div>
-<div class="section" id="id5">
-<h3>3. 参数类型<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id5">
+<h3>3. 参数类型<a class="headerlink" href="#id5" title="永久链接至标题"></a></h3>
 <p>对于一个运算符而言，它要么是类的成员函数，要么至少含有一个类类型的参数。这意味当运算符作用于内置类型的运算对象时，我们无法改变该运算符的含义。</p>
-</div>
-<div class="section" id="id6">
-<h3>4. 不应该重载的运算符<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id6">
+<h3>4. 不应该重载的运算符<a class="headerlink" href="#id6" title="永久链接至标题"></a></h3>
 <blockquote>
 <div><p>Tips：我们可以重载大部分的运算符，但是<code class="docutils literal notranslate"><span class="pre">::</span></code>、<code class="docutils literal notranslate"> <span class="pre">.*</span></code>、<code class="docutils literal notranslate"><span class="pre">.</span></code>和<code class="docutils literal notranslate"><span class="pre">?:</span></code>这四个运算符是不能被重载的</p>
 </div></blockquote>
@@ -256,9 +163,9 @@
 <li><p>不建议重载逗号运算符<code class="docutils literal notranslate"><span class="pre">,</span></code>和取地址运算符<code class="docutils literal notranslate"><span class="pre">&amp;</span></code>：C++语言定义了这两种运算符用于类类型对象时的特殊含义，重载它们容易导致类的用户无法适应</p></li>
 <li><p>我们只能重载已有的运算符，而不能发明新的运算符</p></li>
 </ul>
-</div>
-<div class="section" id="vs">
-<h3>5. 成员运算符函数vs非成员运算符函数<a class="headerlink" href="#vs" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="vs">
+<h3>5. 成员运算符函数vs非成员运算符函数<a class="headerlink" href="#vs" title="永久链接至标题"></a></h3>
 <p>我们定义重载的运算符时，必须首先决定它是声明为类的成员函数还是声明为一个普通的非成员函数：</p>
 <ul class="simple">
 <li><p>赋值<code class="docutils literal notranslate"><span class="pre">=</span></code>、下标<code class="docutils literal notranslate"><span class="pre">[]</span></code>、调用<code class="docutils literal notranslate"><span class="pre">()</span></code>和成员访问箭头<code class="docutils literal notranslate"><span class="pre">-&gt;</span></code>运算符必须是成员函数</p></li>
@@ -266,42 +173,42 @@
 <li><p>改变对象状态的运算符或者与给定类型密切相关的运算符，如递增、递减和解引用运算符，通常应该是成员函数</p></li>
 <li><p>具有对称性的运算符可能转换任意一端的运算对象，例如算术、相等性、关系和位运算符等，因此它们通常应该是普通的非成员函数</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="id7">
-<h2>输入和输出运算符<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
+</section>
+</section>
+<section id="id7">
+<h2>输入和输出运算符<a class="headerlink" href="#id7" title="永久链接至标题"></a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">IO</span></code>库分别使用<code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code>和<code class="docutils literal notranslate"><span class="pre">&lt;&lt;</span></code>执行输入和输出操作，并定义了其读写内置类型的版本，而类需要自定义适合其对象的新版本以支持<code class="docutils literal notranslate"><span class="pre">IO</span></code>操作。</p>
-<div class="section" id="id8">
-<h3>1. 重载输出运算符&lt;&lt;<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
+<section id="id8">
+<h3>1. 重载输出运算符&lt;&lt;<a class="headerlink" href="#id8" title="永久链接至标题"></a></h3>
 <p>通常情况下，输出运算符的第一个形参是非常量<code class="docutils literal notranslate"><span class="pre">ostream</span></code>对象的引用。因为向流写入内容会改变其状态所以不能是常量，另外一个形参是引用是因为我们无法直接复制一个<code class="docutils literal notranslate"><span class="pre">ostream</span></code>对象。第二个形参一般是一个常量引用。引用的原因是我们希望避免复制形参，常量是因为打印对象不会改变对象的内容。并且为了和其他输出运算符保持一致，<code class="docutils literal notranslate"><span class="pre">operator&lt;&lt;</span></code>一般要返回它的<code class="docutils literal notranslate"><span class="pre">ostream</span></code>形参。</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
 <span class="cp">#include</span><span class="cpf">&lt;string&gt;</span><span class="cp"></span>
 
-<span class="k">class</span> <span class="nc">Cat</span> <span class="p">{</span>
-    <span class="c1">// 输出运算符访问类的非公有成员数据成员时需要定义成友元函数</span>
-    <span class="k">friend</span> <span class="n">std</span><span class="o">::</span><span class="n">ostream</span> <span class="o">&amp;</span><span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">ostream</span> <span class="o">&amp;</span><span class="n">os</span><span class="p">,</span> <span class="k">const</span> <span class="n">Cat</span> <span class="o">&amp;</span><span class="n">cat</span><span class="p">);</span>
- <span class="k">public</span><span class="o">:</span>
-    <span class="n">Cat</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">name</span><span class="p">,</span> <span class="kt">int</span> <span class="n">age</span><span class="p">)</span> <span class="o">:</span> <span class="n">name_</span><span class="p">(</span><span class="n">name</span><span class="p">),</span> <span class="n">age_</span><span class="p">(</span><span class="n">age</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+<span class="k">class</span> <span class="nc">Cat</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// 输出运算符访问类的非公有成员数据成员时需要定义成友元函数</span>
+<span class="w">    </span><span class="k">friend</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="w"> </span><span class="o">&amp;</span><span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="w"> </span><span class="o">&amp;</span><span class="n">os</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Cat</span><span class="w"> </span><span class="o">&amp;</span><span class="n">cat</span><span class="p">);</span><span class="w"></span>
+<span class="w"> </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="w">    </span><span class="n">Cat</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">name_</span><span class="p">(</span><span class="n">name</span><span class="p">),</span><span class="w"> </span><span class="n">age_</span><span class="p">(</span><span class="n">age</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
 
- <span class="k">private</span><span class="o">:</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">name_</span><span class="p">;</span>
-    <span class="kt">int</span> <span class="n">age_</span><span class="p">;</span>
-<span class="p">};</span>
+<span class="w"> </span><span class="k">private</span><span class="o">:</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">name_</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">age_</span><span class="p">;</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
 
-<span class="n">std</span><span class="o">::</span><span class="n">ostream</span> <span class="o">&amp;</span><span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">ostream</span> <span class="o">&amp;</span><span class="n">os</span><span class="p">,</span> <span class="k">const</span> <span class="n">Cat</span> <span class="o">&amp;</span><span class="n">cat</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">os</span> <span class="o">&lt;&lt;</span> <span class="n">cat</span><span class="p">.</span><span class="n">age_</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">cat</span><span class="p">.</span><span class="n">name_</span><span class="p">;</span>
-    <span class="k">return</span> <span class="n">os</span><span class="p">;</span>
-<span class="p">}</span>
+<span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="w"> </span><span class="o">&amp;</span><span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="w"> </span><span class="o">&amp;</span><span class="n">os</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Cat</span><span class="w"> </span><span class="o">&amp;</span><span class="n">cat</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">os</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">cat</span><span class="p">.</span><span class="n">age_</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">cat</span><span class="p">.</span><span class="n">name_</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">os</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="kt">int</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">Cat</span> <span class="nf">cat1</span><span class="p">(</span><span class="s">&quot;tomo&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">cat2</span><span class="p">(</span><span class="s">&quot;cola&quot;</span><span class="p">,</span> <span class="mi">8</span><span class="p">);</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;cat1: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">cat1</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;cat2: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">cat2</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="p">}</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">Cat</span><span class="w"> </span><span class="nf">cat1</span><span class="p">(</span><span class="s">&quot;tomo&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">),</span><span class="w"> </span><span class="n">cat2</span><span class="p">(</span><span class="s">&quot;cola&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;cat1: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">cat1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;cat2: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">cat2</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
 <span class="c1">// 输出:</span>
-<span class="nl">cat1</span><span class="p">:</span> <span class="mi">10</span> <span class="n">tomo</span>
-<span class="nl">cat2</span><span class="p">:</span> <span class="mi">8</span> <span class="n">cola</span>
+<span class="nl">cat1</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="n">tomo</span><span class="w"></span>
+<span class="nl">cat2</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="n">cola</span><span class="w"></span>
 </pre></div>
 </div>
 <p>需要注意以下几点：</p>
@@ -309,18 +216,18 @@
 <li><p>输出运算符尽量避免格式化操作，尤其不要打印换行符</p></li>
 <li><p>输入输出运算符必须是非成员函数（否则它的左侧运算对象必须是我们类的一个对象），但是<code class="docutils literal notranslate"><span class="pre">IO</span></code>运算符通常需要读写类的非公有数据成员，所以<code class="docutils literal notranslate"><span class="pre">IO</span></code>运算符一般被声明为友元</p></li>
 </ul>
-</div>
-<div class="section" id="id9">
-<h3>2. 重载输入运算符&gt;&gt;<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id9">
+<h3>2. 重载输入运算符&gt;&gt;<a class="headerlink" href="#id9" title="永久链接至标题"></a></h3>
 <p>通常情况下，输入运算符的一个形参是运算符将要读取的流的引用，第二个形参是将要读入到的（非常量）对象的引用。和输出运算符<code class="docutils literal notranslate"><span class="pre">&lt;&lt;</span></code>不一样的是，输入运算符必须处理输入可能失败的情况，确保对象处于正确的状态。</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">istream</span> <span class="o">&amp;</span><span class="k">operator</span><span class="o">&gt;&gt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">istream</span> <span class="o">&amp;</span><span class="n">is</span><span class="p">,</span> <span class="n">Cat</span> <span class="o">&amp;</span><span class="n">cat</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">is</span> <span class="o">&gt;&gt;</span> <span class="n">cat</span><span class="p">.</span><span class="n">age_</span> <span class="o">&gt;&gt;</span> <span class="n">cat</span><span class="p">.</span><span class="n">name_</span><span class="p">;</span>
-    <span class="c1">// 发生IO错误时将给定的对象重置为空Cat, 确保对象处于正确的状态</span>
-    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">is</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">cat</span> <span class="o">=</span> <span class="n">Cat</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
-    <span class="p">}</span>
-    <span class="k">return</span> <span class="n">is</span><span class="p">;</span>
-<span class="p">}</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">istream</span><span class="w"> </span><span class="o">&amp;</span><span class="k">operator</span><span class="o">&gt;&gt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">istream</span><span class="w"> </span><span class="o">&amp;</span><span class="n">is</span><span class="p">,</span><span class="w"> </span><span class="n">Cat</span><span class="w"> </span><span class="o">&amp;</span><span class="n">cat</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">is</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">cat</span><span class="p">.</span><span class="n">age_</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">cat</span><span class="p">.</span><span class="n">name_</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// 发生IO错误时将给定的对象重置为空Cat, 确保对象处于正确的状态</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">is</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">cat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Cat</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">is</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>在执行输入运算符时可能发生下列错误：</p>
@@ -328,16 +235,16 @@
 <li><p>当流含有错误类型的数据时读取操作可能失败，例如输入运算符假定接下来读入的是两个数字数据，但是输入的不是数字数据，则读取数据及后续对流的其他使用都将失败</p></li>
 <li><p>当读取操作到达文件末尾或者遇到输入流的其他错误时也会失败</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="id10">
-<h2>算术和关系运算符<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h2>
+</section>
+</section>
+<section id="id10">
+<h2>算术和关系运算符<a class="headerlink" href="#id10" title="永久链接至标题"></a></h2>
 <p>我们一般把算术和关系运算符定义成非成员函数以允许对左侧或者右侧的运算对象进行转换。因为这些运算符一般不需要改变运算对象的状态，所以形参都是常量引用。</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">Cat</span> <span class="k">operator</span><span class="o">+</span><span class="p">(</span><span class="k">const</span> <span class="n">Cat</span> <span class="o">&amp;</span><span class="n">lhs</span><span class="p">,</span> <span class="k">const</span> <span class="n">Cat</span> <span class="o">&amp;</span><span class="n">rhs</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">Cat</span> <span class="n">sum</span> <span class="o">=</span> <span class="n">lhs</span><span class="p">;</span>
-    <span class="n">sum</span> <span class="o">+=</span> <span class="n">rhs</span><span class="p">;</span>  <span class="c1">// 使用对应的复合赋值运算符来实现算数运算符</span>
-    <span class="k">return</span> <span class="n">sum</span><span class="p">;</span>
-<span class="p">}</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">Cat</span><span class="w"> </span><span class="k">operator</span><span class="o">+</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Cat</span><span class="w"> </span><span class="o">&amp;</span><span class="n">lhs</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Cat</span><span class="w"> </span><span class="o">&amp;</span><span class="n">rhs</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">Cat</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lhs</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">sum</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">rhs</span><span class="p">;</span><span class="w">  </span><span class="c1">// 使用对应的复合赋值运算符来实现算数运算符</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">sum</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>注意：</p>
@@ -345,8 +252,8 @@
 <li><p>一般将累加的值放到一个局部变量，操作完成后返回该局部变量的副本作为结果</p></li>
 <li><p>如果类同时定义了算术运算符和相关的复合赋值运算符，则通常情况下应该使用复合赋值来实现算术运算符</p></li>
 </ul>
-<div class="section" id="id11">
-<h3>1. 相等运算符<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h3>
+<section id="id11">
+<h3>1. 相等运算符<a class="headerlink" href="#id11" title="永久链接至标题"></a></h3>
 <ul class="simple">
 <li><p>如果有一个类含有判断两个对象是否相等的操作，那么它应该把函数定义成<code class="docutils literal notranslate"><span class="pre">operator==</span></code>而非一个普通的命名函数，这样用户无须再费时费力去学习并记忆一个全新的函数名字</p></li>
 <li><p>如果类定义了<code class="docutils literal notranslate"><span class="pre">operator==</span></code>，那么该运算符也应该能判断一组给定的对象中是否含有重复数据</p></li>
@@ -354,49 +261,49 @@
 <li><p>如果类定义了<code class="docutils literal notranslate"><span class="pre">operator==</span></code>，那么也应该定义<code class="docutils literal notranslate"><span class="pre">operator!=</span></code></p></li>
 <li><p>相等运算符和不相等运算符中的一个应该把工作委托给另外一个，这意味着其中一个运算符应该负责实际比较对象的工作，另一个只是调用真正工作的运算符</p></li>
 </ul>
-</div>
-<div class="section" id="id12">
-<h3>2. 关系运算符<a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id12">
+<h3>2. 关系运算符<a class="headerlink" href="#id12" title="永久链接至标题"></a></h3>
 <p>通常情况下，关系运算符应该：</p>
 <ul class="simple">
 <li><p>定义顺序关系，令其与关联容器中对关键字的要求一致</p></li>
 <li><p>如果类同时也有<code class="docutils literal notranslate"><span class="pre">==</span></code>运算符，则定义一种关系令其与<code class="docutils literal notranslate"><span class="pre">==</span></code>保持一致，特别是如果两个对象是<code class="docutils literal notranslate"><span class="pre">!=</span></code>的，那么一个对象应该<code class="docutils literal notranslate"><span class="pre">&lt;</span></code>另一个</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="id13">
-<h2>赋值运算符<a class="headerlink" href="#id13" title="永久链接至标题">¶</a></h2>
-<div class="section" id="id14">
-<h3>1. 普通赋值运算符<a class="headerlink" href="#id14" title="永久链接至标题">¶</a></h3>
+</section>
+</section>
+<section id="id13">
+<h2>赋值运算符<a class="headerlink" href="#id13" title="永久链接至标题"></a></h2>
+<section id="id14">
+<h3>1. 普通赋值运算符<a class="headerlink" href="#id14" title="永久链接至标题"></a></h3>
 <p>我们之前定义过拷贝赋值和移动赋值运算符，它们可以把类的一个对象赋值给该类的另一个对象。类还可以定义其他赋值运算符使用别的类作为右侧运算对象。</p>
 <blockquote>
 <div><p>Tips：我们可以重载赋值运算符，但是无论形参是什么，赋值运算符都必须被定义为成员函数。（Why？）</p>
 </div></blockquote>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">Cat</span> <span class="o">&amp;</span><span class="n">Cat</span><span class="o">::</span><span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">s</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">name_</span> <span class="o">=</span> <span class="n">s</span><span class="p">;</span>
-    <span class="k">return</span> <span class="o">*</span><span class="k">this</span><span class="p">;</span>
-<span class="p">}</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">Cat</span><span class="w"> </span><span class="o">&amp;</span><span class="n">Cat</span><span class="o">::</span><span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">name_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="o">*</span><span class="k">this</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id15">
-<h3>2. 复合赋值运算符<a class="headerlink" href="#id15" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id15">
+<h3>2. 复合赋值运算符<a class="headerlink" href="#id15" title="永久链接至标题"></a></h3>
 <blockquote>
 <div><p>Tips：赋值运算符都必须定义成类的成员，复合赋值运算符通常情况下也应该这么做，这两类运算符都应该返回左侧运算对象的引用。</p>
 </div></blockquote>
 <p>复合赋值运算符不非得是类的成员，不过我们还是倾向于把包括复合赋值在内的所有赋值运算都定义在类的内部。为了与内置类型的复合赋值保持一致，类中的符合赋值运算符也要返回其左侧运算对象的引用：</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// 作为成员的二元运算符：左侧运算对象绑定到隐式的this指针</span>
-<span class="n">Cat</span> <span class="o">&amp;</span><span class="n">Cat</span><span class="o">::</span><span class="k">operator</span><span class="o">+=</span><span class="p">(</span><span class="k">const</span> <span class="n">Cat</span> <span class="o">&amp;</span><span class="n">rhs</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">// 假设两个Cat对象的name_相同</span>
-    <span class="n">age_</span> <span class="o">+=</span> <span class="n">rhs</span><span class="p">.</span><span class="n">age_</span><span class="p">;</span>
-    <span class="k">return</span> <span class="o">*</span><span class="k">this</span><span class="p">;</span>
-<span class="p">}</span>
+<span class="n">Cat</span><span class="w"> </span><span class="o">&amp;</span><span class="n">Cat</span><span class="o">::</span><span class="k">operator</span><span class="o">+=</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Cat</span><span class="w"> </span><span class="o">&amp;</span><span class="n">rhs</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// 假设两个Cat对象的name_相同</span>
+<span class="w">    </span><span class="n">age_</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">rhs</span><span class="p">.</span><span class="n">age_</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="o">*</span><span class="k">this</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="id16">
-<h2>下标运算符<a class="headerlink" href="#id16" title="永久链接至标题">¶</a></h2>
+</section>
+</section>
+<section id="id16">
+<h2>下标运算符<a class="headerlink" href="#id16" title="永久链接至标题"></a></h2>
 <p>表示容器的类可以通过元素在容器中的位置访问元素，这些类一般会定义下标运算符<code class="docutils literal notranslate"><span class="pre">operator[]</span></code>。</p>
 <blockquote>
 <div><p>Tips：下标运算符必须是成员函数。如果一个类包含下标运算符，那么它通常会定义两个版本：一个返回普通引用，另一个是类的常量成员并返回常量引用。</p>
@@ -406,71 +313,71 @@
 <li><p>下标运算符通常以所访问元素的引用作为返回值，这样下标可以出现在赋值运算符的任意一端</p></li>
 <li><p>最好定义下标运算符的常量和非常量版本，当作用于一个常量对象时下标运算符返回常量引用以确保我们不会给返回的对象赋值</p></li>
 </ul>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">StrVec</span> <span class="p">{</span>
- <span class="k">public</span><span class="o">:</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="k">operator</span><span class="p">[](</span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span> <span class="n">n</span><span class="p">)</span>
-        <span class="p">{</span> <span class="k">return</span> <span class="n">elements</span><span class="p">[</span><span class="n">n</span><span class="p">];</span> <span class="p">}</span>
-    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="k">operator</span><span class="p">[](</span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span> <span class="n">n</span><span class="p">)</span> <span class="k">const</span>
-        <span class="p">{</span> <span class="k">return</span> <span class="n">elements</span><span class="p">[</span><span class="n">n</span><span class="p">];</span> <span class="p">}</span>
- <span class="k">private</span><span class="o">:</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">*</span><span class="n">elements</span><span class="p">;</span>
-<span class="p">};</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">StrVec</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w"> </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="k">operator</span><span class="p">[](</span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">elements</span><span class="p">[</span><span class="n">n</span><span class="p">];</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="k">operator</span><span class="p">[](</span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"></span>
+<span class="w">        </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">elements</span><span class="p">[</span><span class="n">n</span><span class="p">];</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="w"> </span><span class="k">private</span><span class="o">:</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="o">*</span><span class="n">elements</span><span class="p">;</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id17">
-<h2>递增和递减运算符<a class="headerlink" href="#id17" title="永久链接至标题">¶</a></h2>
+</section>
+<section id="id17">
+<h2>递增和递减运算符<a class="headerlink" href="#id17" title="永久链接至标题"></a></h2>
 <p>定义递增和递减运算符的类应该同时定义前置版本和后置版本，这些运算符通常应该被定义为类的成员（因为它们改变的正好是所操作对象的状态）。同时为了保持与内置版本一致，前置运算符应该返回递增或者递减后对象的引用。</p>
-<div class="section" id="id18">
-<h3>1. 前置版本<a class="headerlink" href="#id18" title="永久链接至标题">¶</a></h3>
+<section id="id18">
+<h3>1. 前置版本<a class="headerlink" href="#id18" title="永久链接至标题"></a></h3>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// 前置版本：返回递增/递减对象的引用</span>
-<span class="n">Cat</span><span class="o">&amp;</span> <span class="n">Cat</span><span class="o">::</span><span class="k">operator</span><span class="o">++</span><span class="p">()</span> <span class="p">{</span>
-    <span class="o">++</span><span class="n">age_</span><span class="p">;</span>
-    <span class="k">return</span> <span class="o">*</span><span class="k">this</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="n">Cat</span><span class="o">&amp;</span> <span class="n">Cat</span><span class="o">::</span><span class="k">operator</span><span class="o">--</span><span class="p">()</span> <span class="p">{</span>
-    <span class="o">--</span><span class="n">age_</span><span class="p">;</span>
-    <span class="k">return</span> <span class="o">*</span><span class="k">this</span><span class="p">;</span>
-<span class="p">}</span>
+<span class="n">Cat</span><span class="o">&amp;</span><span class="w"> </span><span class="n">Cat</span><span class="o">::</span><span class="k">operator</span><span class="o">++</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="o">++</span><span class="n">age_</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="o">*</span><span class="k">this</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="n">Cat</span><span class="o">&amp;</span><span class="w"> </span><span class="n">Cat</span><span class="o">::</span><span class="k">operator</span><span class="o">--</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="o">--</span><span class="n">age_</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="o">*</span><span class="k">this</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>后置版本接收一个额外的（不被使用的）<code class="docutils literal notranslate"><span class="pre">int</span></code>类型的形参，当我们使用后置运算符时，编译器为这个形参提供一个值为<code class="docutils literal notranslate"><span class="pre">0</span></code>的形参。</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// 后置版本：递增/递减对象的值但是返回原值</span>
-<span class="n">Cat</span> <span class="n">Cat</span><span class="o">::</span><span class="k">operator</span><span class="o">++</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">Cat</span> <span class="n">ret</span> <span class="o">=</span> <span class="o">*</span><span class="k">this</span><span class="p">;</span>
-    <span class="o">++*</span><span class="k">this</span><span class="p">;</span>
-    <span class="k">return</span> <span class="n">ret</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="n">Cat</span> <span class="n">Cat</span><span class="o">::</span><span class="k">operator</span><span class="o">--</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">Cat</span> <span class="n">ret</span> <span class="o">=</span> <span class="o">*</span><span class="k">this</span><span class="p">;</span>
-    <span class="o">--*</span><span class="k">this</span><span class="p">;</span>
-    <span class="k">return</span> <span class="n">ret</span><span class="p">;</span>
-<span class="p">}</span>
+<span class="n">Cat</span><span class="w"> </span><span class="n">Cat</span><span class="o">::</span><span class="k">operator</span><span class="o">++</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">Cat</span><span class="w"> </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="k">this</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="o">++*</span><span class="k">this</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">ret</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="n">Cat</span><span class="w"> </span><span class="n">Cat</span><span class="o">::</span><span class="k">operator</span><span class="o">--</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">Cat</span><span class="w"> </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="k">this</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="o">--*</span><span class="k">this</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">ret</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="id19">
-<h2>成员访问运算符<a class="headerlink" href="#id19" title="永久链接至标题">¶</a></h2>
+</section>
+</section>
+<section id="id19">
+<h2>成员访问运算符<a class="headerlink" href="#id19" title="永久链接至标题"></a></h2>
 <p>在迭代器和智能指针类中常常用到解引用运算符<code class="docutils literal notranslate"><span class="pre">*</span></code>和箭头运算符<code class="docutils literal notranslate"><span class="pre">-&gt;</span></code>，其中箭头运算符必须是类的成员呢，解引用运算符往往也是类的成员。</p>
 <p>对于形如<code class="docutils literal notranslate"><span class="pre">point-&gt;mem</span></code>的表达式来说，<code class="docutils literal notranslate"><span class="pre">point</span></code>必须是指向类的对象的指针或者是一个重载了<code class="docutils literal notranslate"><span class="pre">operator-&gt;</span></code>的类的对象。根据<code class="docutils literal notranslate"><span class="pre">point</span></code>类型的不同，<code class="docutils literal notranslate"><span class="pre">point-&gt;mem</span></code>分别等价于：</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">(*point).mem</span></code>：<code class="docutils literal notranslate"><span class="pre">point</span></code>是一个内置的指针类型</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">point.operator()-&gt;mem</span></code>：<code class="docutils literal notranslate"><span class="pre">point</span></code>是类的一个对象</p></li>
 </ul>
-</div>
-<div class="section" id="id20">
-<h2>函数调用运算符<a class="headerlink" href="#id20" title="永久链接至标题">¶</a></h2>
+</section>
+<section id="id20">
+<h2>函数调用运算符<a class="headerlink" href="#id20" title="永久链接至标题"></a></h2>
 <p>如果类重载了函数调用运算符，那么我们可以像使用函数一样使用该类的对象，因为这样的类同时也能存储状态，所以与普通函数相比它们更加灵活。</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span> <span class="nc">absInt</span> <span class="p">{</span>
-    <span class="kt">int</span> <span class="nf">operator</span><span class="p">()(</span><span class="kt">int</span> <span class="n">val</span><span class="p">)</span> <span class="k">const</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="n">val</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">?</span> <span class="o">-</span><span class="nl">val</span> <span class="p">:</span> <span class="n">val</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">};</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span> <span class="nc">absInt</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="nf">operator</span><span class="p">()(</span><span class="kt">int</span><span class="w"> </span><span class="n">val</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">val</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="o">-</span><span class="nl">val</span> <span class="p">:</span><span class="w"> </span><span class="n">val</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
 
 <span class="c1">// 调用</span>
-<span class="n">absInt</span> <span class="n">absObj</span><span class="p">;</span>
-<span class="kt">int</span> <span class="n">ui</span> <span class="o">=</span> <span class="n">absObj</span><span class="p">(</span><span class="mi">-42</span><span class="p">);</span>
+<span class="n">absInt</span><span class="w"> </span><span class="n">absObj</span><span class="p">;</span><span class="w"></span>
+<span class="kt">int</span><span class="w"> </span><span class="n">ui</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">absObj</span><span class="p">(</span><span class="mi">-42</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 <blockquote>
@@ -481,73 +388,73 @@
 <span class="cp">#include</span><span class="cpf">&lt;string&gt;</span><span class="cp"></span>
 <span class="cp">#include</span><span class="cpf">&lt;vector&gt;</span><span class="cp"></span>
 
-<span class="k">class</span> <span class="nc">PrintString</span> <span class="p">{</span>
- <span class="k">public</span><span class="o">:</span>
-    <span class="k">explicit</span> <span class="n">PrintString</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">ostream</span> <span class="o">&amp;</span><span class="n">o</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="p">,</span> <span class="kt">char</span> <span class="n">c</span> <span class="o">=</span> <span class="sc">&#39; &#39;</span><span class="p">)</span><span class="o">:</span> <span class="n">os</span><span class="p">(</span><span class="n">o</span><span class="p">),</span> <span class="n">sep</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
-    <span class="kt">void</span> <span class="k">operator</span><span class="p">()(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">s</span><span class="p">)</span> <span class="k">const</span> <span class="p">{</span> <span class="n">os</span> <span class="o">&lt;&lt;</span> <span class="n">s</span> <span class="o">&lt;&lt;</span> <span class="n">sep</span><span class="p">;</span> <span class="p">}</span>
- <span class="k">private</span><span class="o">:</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">ostream</span> <span class="o">&amp;</span><span class="n">os</span><span class="p">;</span>   <span class="c1">// 用于写入的目的流</span>
-    <span class="kt">char</span> <span class="n">sep</span><span class="p">;</span>      <span class="c1">// 用于将不同输出隔开的字符</span>
-<span class="p">};</span>
+<span class="k">class</span> <span class="nc">PrintString</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w"> </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="w">    </span><span class="k">explicit</span><span class="w"> </span><span class="n">PrintString</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="w"> </span><span class="o">&amp;</span><span class="n">o</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">&#39; &#39;</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="n">os</span><span class="p">(</span><span class="n">o</span><span class="p">),</span><span class="w"> </span><span class="n">sep</span><span class="p">(</span><span class="n">c</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="k">operator</span><span class="p">()(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">os</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">sep</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="w"> </span><span class="k">private</span><span class="o">:</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="w"> </span><span class="o">&amp;</span><span class="n">os</span><span class="p">;</span><span class="w">   </span><span class="c1">// 用于写入的目的流</span>
+<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">sep</span><span class="p">;</span><span class="w">      </span><span class="c1">// 用于将不同输出隔开的字符</span>
+<span class="p">};</span><span class="w"></span>
 
 
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-    <span class="c1">// 在cout中打印字符串, 后面跟一个空格</span>
-    <span class="n">PrintString</span> <span class="n">printer</span><span class="p">;</span>
-    <span class="n">printer</span><span class="p">(</span><span class="s">&quot;tomocat&quot;</span><span class="p">);</span>
-    <span class="c1">// 在cerr中打印字符串, 后面跟一个换行符</span>
-    <span class="n">PrintString</span> <span class="n">errors</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">cerr</span><span class="p">,</span> <span class="sc">&#39;\n&#39;</span><span class="p">);</span>
-    <span class="n">errors</span><span class="p">(</span><span class="s">&quot;error&quot;</span><span class="p">);</span>
-<span class="p">}</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// 在cout中打印字符串, 后面跟一个空格</span>
+<span class="w">    </span><span class="n">PrintString</span><span class="w"> </span><span class="n">printer</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">printer</span><span class="p">(</span><span class="s">&quot;tomocat&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// 在cerr中打印字符串, 后面跟一个换行符</span>
+<span class="w">    </span><span class="n">PrintString</span><span class="w"> </span><span class="n">errors</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">cerr</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;\n&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">errors</span><span class="p">(</span><span class="s">&quot;error&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>使用标准库<code class="docutils literal notranslate"><span class="pre">for_each</span></code>算法和我们的<code class="docutils literal notranslate"><span class="pre">PrintString</span></code>类来打印容器的内容：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">for_each</span><span class="p">(</span><span class="n">vs</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">vs</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">PrintString</span><span class="p">(</span><span class="n">cerr</span><span class="p">,</span> <span class="sc">&#39;\n&#39;</span><span class="p">));</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">for_each</span><span class="p">(</span><span class="n">vs</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">vs</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="w"> </span><span class="n">PrintString</span><span class="p">(</span><span class="n">cerr</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;\n&#39;</span><span class="p">));</span><span class="w"></span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id21">
-<h2>类型转换运算符<a class="headerlink" href="#id21" title="永久链接至标题">¶</a></h2>
-<div class="section" id="id22">
-<h3>1. 简介<a class="headerlink" href="#id22" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id21">
+<h2>类型转换运算符<a class="headerlink" href="#id21" title="永久链接至标题"></a></h2>
+<section id="id22">
+<h3>1. 简介<a class="headerlink" href="#id22" title="永久链接至标题"></a></h3>
 <p>类型转换运算符<code class="docutils literal notranslate"><span class="pre">conversion</span> <span class="pre">operator</span></code>是类的一种特殊成员函数，它负责将一个类类型的值转换成其他类型。类型转换函数的一般形式如下所示：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">operator</span> <span class="n">type</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">operator</span><span class="w"> </span><span class="n">type</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
 <p>其中<code class="docutils literal notranslate"><span class="pre">type</span></code>表示某种类型，类型转换运算符可以面向任意类型（除了<code class="docutils literal notranslate"><span class="pre">void</span></code>之外）进行定义，只要该类型能作为函数的返回类型。因此，我们不允许转换成数组或者函数类型，但允许转换成指针（包括数组指针以及函数指针）或者引用类型。类型转换运算符既没有显式的返回类型，也没有形参，而且必须定义成类的成员函数。类型转换运算符通常不应该改变待转换对象的内容，所以一般被定义为<code class="docutils literal notranslate"><span class="pre">const</span></code>成员。</p>
-</div>
-<div class="section" id="id23">
-<h3>2. 例子<a class="headerlink" href="#id23" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id23">
+<h3>2. 例子<a class="headerlink" href="#id23" title="永久链接至标题"></a></h3>
 <p>我们定义一个表示<code class="docutils literal notranslate"><span class="pre">0~255</span></code>之间一个整数的一个类：</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// 类型转换运算符支持将SmallInt对象转化成int</span>
-<span class="k">class</span> <span class="nc">SmallInt</span> <span class="p">{</span>
- <span class="k">public</span><span class="o">:</span>
-    <span class="n">SmallInt</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> <span class="o">:</span> <span class="n">val_</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">255</span><span class="p">)</span>
-            <span class="k">throw</span> <span class="n">std</span><span class="o">::</span><span class="n">out_of_range</span><span class="p">(</span><span class="s">&quot;Bad SmallInt value&quot;</span><span class="p">);</span>
-    <span class="p">}</span>
-    <span class="k">operator</span> <span class="kt">int</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">val_</span><span class="p">;</span> <span class="p">}</span>
- <span class="k">private</span><span class="o">:</span>
-    <span class="n">std</span><span class="o">::</span><span class="kt">size_t</span> <span class="n">val_</span><span class="p">;</span>
-<span class="p">};</span>
+<span class="k">class</span> <span class="nc">SmallInt</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w"> </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="w">    </span><span class="n">SmallInt</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">val_</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">255</span><span class="p">)</span><span class="w"></span>
+<span class="w">            </span><span class="k">throw</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">out_of_range</span><span class="p">(</span><span class="s">&quot;Bad SmallInt value&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">operator</span><span class="w"> </span><span class="kt">int</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">val_</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="w"> </span><span class="k">private</span><span class="o">:</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="w"> </span><span class="n">val_</span><span class="p">;</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
 
 <span class="c1">// 首先将4隐式地转换成SmallInt，然后调用SmallInt::operator=</span>
-<span class="n">si</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+<span class="n">si</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span><span class="w"></span>
 <span class="c1">// 首先将si隐式地转换成int，然后执行整数的加法</span>
-<span class="n">si</span> <span class="o">+</span> <span class="mi">3</span><span class="p">;</span> 
+<span class="n">si</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"> </span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id24">
-<h3>3. 显式的类型转换运算符<a class="headerlink" href="#id24" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id24">
+<h3>3. 显式的类型转换运算符<a class="headerlink" href="#id24" title="永久链接至标题"></a></h3>
 <blockquote>
 <div><p>Tips：实践中类很少提供类型转换运算符，所以类型转换运算符常被<code class="docutils literal notranslate"><span class="pre">explicit</span></code>修饰以阻止隐式转换。</p>
 </div></blockquote>
 <p>在实践中类很少提供类型转换运算符，在大多数情况下，如果类型转换自动发生，用户可能会感觉比较意外，而不是感觉受到了帮助。然而这条经验法则存在一种例外情况：对于类来说，定义向<code class="docutils literal notranslate"><span class="pre">bool</span></code>的类型转换还是比较普遍的现象。但是这种类型转换可能引发意想不到的结果，特别是当<code class="docutils literal notranslate"><span class="pre">istream</span></code>含有向<code class="docutils literal notranslate"><span class="pre">bool</span></code>的类型转换时，下面的代码仍然编译通过：</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// 如果向bool的类型转换不是显式的，则该代码在编译器看来将是合法的</span>
 <span class="c1">// 因为istream本身并没有定义&lt;&lt;运算符，所以本来这段代码应该产生错误</span>
-<span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
-<span class="n">cin</span> <span class="o">&lt;&lt;</span> <span class="n">i</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">42</span><span class="p">;</span><span class="w"></span>
+<span class="n">cin</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w"></span>
 
 <span class="c1">// 执行过程如下:</span>
 <span class="c1">// 1) istream的bool类型转换符将cin转换为bool</span>
@@ -556,32 +463,32 @@
 </pre></div>
 </div>
 <p>为了防止这样的异常发生，<code class="docutils literal notranslate"><span class="pre">C++</span></code>新标准引入了显式的类型转换运算符：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">SmallInt</span> <span class="p">{</span>
- <span class="k">public</span><span class="o">:</span>
-    <span class="c1">// 转换构造函数: 编译支持int到SmallInt的隐式转换</span>
-    <span class="n">SmallInt</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> <span class="o">:</span> <span class="n">val_</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">255</span><span class="p">)</span>
-            <span class="k">throw</span> <span class="n">std</span><span class="o">::</span><span class="n">out_of_range</span><span class="p">(</span><span class="s">&quot;Bad SmallInt value&quot;</span><span class="p">);</span>
-    <span class="p">}</span>
-    <span class="c1">// 类类型转换运算符: 编译器不支持SmallInt到int的隐式转换</span>
-    <span class="k">explicit</span> <span class="k">operator</span> <span class="kt">int</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">val_</span><span class="p">;</span> <span class="p">}</span>
-    <span class="c1">// ...其他成员</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">SmallInt</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w"> </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// 转换构造函数: 编译支持int到SmallInt的隐式转换</span>
+<span class="w">    </span><span class="n">SmallInt</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">val_</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">255</span><span class="p">)</span><span class="w"></span>
+<span class="w">            </span><span class="k">throw</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">out_of_range</span><span class="p">(</span><span class="s">&quot;Bad SmallInt value&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// 类类型转换运算符: 编译器不支持SmallInt到int的隐式转换</span>
+<span class="w">    </span><span class="k">explicit</span><span class="w"> </span><span class="k">operator</span><span class="w"> </span><span class="kt">int</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">val_</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// ...其他成员</span>
 
- <span class="k">private</span><span class="o">:</span>
-    <span class="kt">int</span> <span class="n">val_</span><span class="p">;</span>
-<span class="p">};</span>
+<span class="w"> </span><span class="k">private</span><span class="o">:</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">val_</span><span class="p">;</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
 
 <span class="c1">// 正确：SmallInt的构造函数不是显式的</span>
-<span class="n">SmallInt</span> <span class="n">si</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="n">SmallInt</span><span class="w"> </span><span class="n">si</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"></span>
 <span class="c1">// 错误: 此处需要隐式的类型转换，但类的运算符是显式的</span>
-<span class="n">si</span> <span class="o">+</span> <span class="mi">3</span><span class="p">;</span>
+<span class="n">si</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"></span>
 <span class="c1">// 正确: 显式地请求类型转换</span>
-<span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">si</span><span class="p">)</span> <span class="o">+</span> <span class="mi">3</span><span class="p">;</span>
+<span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">si</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id25">
-<h3>4. 避免有二义性的类型转换<a class="headerlink" href="#id25" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id25">
+<h3>4. 避免有二义性的类型转换<a class="headerlink" href="#id25" title="永久链接至标题"></a></h3>
 <p>如果类中包含一个或多个类型转换，则必须确保在类类型和目标类型之间只存在唯一一种转换方式。否则我们编写的代码将很可能会具有二义性。</p>
 <p>两种情况下可能存在多重转换路径：</p>
 <ul class="simple">
@@ -591,108 +498,91 @@
 <blockquote>
 <div><p>Tips：通常情况下，不要为类定义相同的类型转换，也不要在类中定义两个及两个以上转换源或转换目标是算术类型的转换</p>
 </div></blockquote>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span> <span class="nc">B</span><span class="p">;</span>
-<span class="k">struct</span> <span class="nc">A</span> <span class="p">{</span>
-    <span class="n">A</span><span class="p">()</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
-    <span class="n">A</span><span class="p">(</span><span class="k">const</span> <span class="n">B</span><span class="o">&amp;</span><span class="p">);</span>
-<span class="p">};</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span> <span class="nc">B</span><span class="p">;</span><span class="w"></span>
+<span class="k">struct</span> <span class="nc">A</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">A</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">A</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">B</span><span class="o">&amp;</span><span class="p">);</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
 
-<span class="k">struct</span> <span class="nc">B</span> <span class="p">{</span>
-    <span class="k">operator</span> <span class="n">A</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
-<span class="p">};</span>
+<span class="k">struct</span> <span class="nc">B</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">operator</span><span class="w"> </span><span class="n">A</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
 
-<span class="n">A</span> <span class="nf">f</span><span class="p">(</span><span class="k">const</span> <span class="n">A</span><span class="o">&amp;</span><span class="p">);</span>
-<span class="n">B</span> <span class="n">b</span><span class="p">;</span>
+<span class="n">A</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">A</span><span class="o">&amp;</span><span class="p">);</span><span class="w"></span>
+<span class="n">B</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w"></span>
 <span class="c1">// 二义性错误: 含义可能是f(B::operator A())或f(A::A(const B&amp;))</span>
-<span class="n">A</span> <span class="n">a</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">b</span><span class="p">);</span>
+<span class="n">A</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f</span><span class="p">(</span><span class="n">b</span><span class="p">);</span><span class="w"></span>
 <span class="c1">// 正确: 显式地使用B的类型转换运算符</span>
-<span class="n">A</span> <span class="n">a1</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">b</span><span class="p">.</span><span class="k">operator</span> <span class="n">A</span><span class="p">());</span>
+<span class="n">A</span><span class="w"> </span><span class="n">a1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f</span><span class="p">(</span><span class="n">b</span><span class="p">.</span><span class="k">operator</span><span class="w"> </span><span class="n">A</span><span class="p">());</span><span class="w"></span>
 <span class="c1">// 正确: 显式地调用A的转换构造函数</span>
-<span class="n">A</span> <span class="n">a2</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">A</span><span class="p">(</span><span class="n">b</span><span class="p">));</span>
+<span class="n">A</span><span class="w"> </span><span class="n">a2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f</span><span class="p">(</span><span class="n">A</span><span class="p">(</span><span class="n">b</span><span class="p">));</span><span class="w"></span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="id26">
-<h2>函数匹配与重载运算符<a class="headerlink" href="#id26" title="永久链接至标题">¶</a></h2>
+</section>
+</section>
+<section id="id26">
+<h2>函数匹配与重载运算符<a class="headerlink" href="#id26" title="永久链接至标题"></a></h2>
 <blockquote>
 <div><p>Tips：如果我们对同一个类既提供了转换目标是算术类型的类型转换，也提供了重载的运算符，则将会遇到重载运算符与内置运算符的二义性问题。</p>
 </div></blockquote>
 <p>如果<code class="docutils literal notranslate"><span class="pre">a</span></code>是一种类类型，那么表达式<code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">sym</span> <span class="pre">b</span></code>可能是如下两种。这意味着表达式中运算符的候选函数集既应该包含成员函数，也应该包含非成员函数。</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">.</span><span class="n">operatorsym</span><span class="p">(</span><span class="n">b</span><span class="p">);</span>   <span class="c1">// a有一个operatorsym成员函数</span>
-<span class="n">operatorsym</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">);</span>  <span class="c1">// operatorsym是一个普通函数</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">.</span><span class="n">operatorsym</span><span class="p">(</span><span class="n">b</span><span class="p">);</span><span class="w">   </span><span class="c1">// a有一个operatorsym成员函数</span>
+<span class="n">operatorsym</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">);</span><span class="w">  </span><span class="c1">// operatorsym是一个普通函数</span>
 </pre></div>
 </div>
 <p>举个例子，我们为<code class="docutils literal notranslate"><span class="pre">SmallInt</span></code>类定义一个加法运算符：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">SmallInt</span> <span class="p">{</span>
-    <span class="k">friend</span> <span class="n">SmallInt</span> <span class="k">operator</span><span class="o">+</span><span class="p">(</span><span class="k">const</span> <span class="n">SmallInt</span><span class="o">&amp;</span><span class="p">,</span> <span class="k">const</span> <span class="n">SmallInt</span><span class="o">&amp;</span><span class="p">);</span>
- <span class="k">public</span><span class="o">:</span>
-    <span class="c1">// 转换源为int的类型转换</span>
-    <span class="n">SmallInt</span><span class="p">(</span><span class="kt">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">);</span>
-    <span class="c1">// 转换目标为int的类型转换</span>
-    <span class="k">operator</span> <span class="kt">int</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">val_</span><span class="p">;</span> <span class="p">}</span>
- <span class="k">private</span><span class="o">:</span>
-    <span class="n">std</span><span class="o">::</span><span class="kt">size_t</span> <span class="n">val_</span><span class="p">;</span>
-<span class="p">};</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">SmallInt</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">friend</span><span class="w"> </span><span class="n">SmallInt</span><span class="w"> </span><span class="k">operator</span><span class="o">+</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">SmallInt</span><span class="o">&amp;</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">SmallInt</span><span class="o">&amp;</span><span class="p">);</span><span class="w"></span>
+<span class="w"> </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// 转换源为int的类型转换</span>
+<span class="w">    </span><span class="n">SmallInt</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// 转换目标为int的类型转换</span>
+<span class="w">    </span><span class="k">operator</span><span class="w"> </span><span class="kt">int</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">val_</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="w"> </span><span class="k">private</span><span class="o">:</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="w"> </span><span class="n">val_</span><span class="p">;</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
 </pre></div>
 </div>
 <p>我们可以将两个<code class="docutils literal notranslate"><span class="pre">SmallInt</span></code>对象相加，但如果我们试图执行混合模式的算术运算，就将遇到二义性的问题：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">SmallInt</span> <span class="n">s1</span><span class="p">,</span> <span class="n">s2</span><span class="p">;</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">SmallInt</span><span class="w"> </span><span class="n">s1</span><span class="p">,</span><span class="w"> </span><span class="n">s2</span><span class="p">;</span><span class="w"></span>
 <span class="c1">// 使用重载的operator</span>
-<span class="n">SmallInt</span> <span class="n">s3</span> <span class="o">=</span> <span class="n">s1</span> <span class="o">+</span> <span class="n">s2</span><span class="p">;</span> 
+<span class="n">SmallInt</span><span class="w"> </span><span class="n">s3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">s2</span><span class="p">;</span><span class="w"> </span>
 <span class="c1">// 二义性错误: 既可以把0转换成SmallInt, 然后使用SmallInt的+; 也可以将s3转换成int, 对int执行内置的加法运算</span>
-<span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">s3</span> <span class="o">+</span> <span class="mi">0</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s3</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="../%E7%AC%AC5%E7%AB%A0%20%E7%B1%BB/index.html" class="btn btn-neutral float-right" title="第5章类" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="4.2%20%E8%BF%90%E7%AE%97%E7%AC%A6%E4%BC%98%E5%85%88%E7%BA%A7.html" class="btn btn-neutral float-left" title="4.2 运算符优先级" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../%E7%AC%AC5%E7%AB%A0%20%E7%B1%BB/index.html" class="btn btn-neutral float-right" title="第5章类" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; 版权所有 2021, TOMOCAT.
-
-    </p>
+    <p>&#169; 版权所有 2021, TOMOCAT.</p>
   </div>
-    
-    
-    
-    利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
-    
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
-    
-    由 <a href="https://readthedocs.org">Read the Docs</a>开发. 
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

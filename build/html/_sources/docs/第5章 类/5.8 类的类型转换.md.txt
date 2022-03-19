@@ -170,5 +170,3 @@ Foo = str;
 Foo(str);
 static_cast<Foo>(str);
 ```
-
-##  

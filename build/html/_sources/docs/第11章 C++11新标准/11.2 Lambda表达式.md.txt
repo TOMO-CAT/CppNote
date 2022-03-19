@@ -1,4 +1,4 @@
-# 11.12 Lambda表达式
+# 11.2 Lambda表达式
 
 ## lambda表达式
 
@@ -9,6 +9,7 @@
 > ```c++
 > [capture list](parameter list) -> return type { function body }
 > ```
+
 #### 0. 使用场景
 
 对于那些只在一两个地方使用的简单操作，lambda表达式是最有用的。如果我们需要在很多地方使用相同的操作或者一个操作需要很多语句才能完成，那么通常使用函数更好。
@@ -194,7 +195,7 @@ tomo cat tomocat aaa bbbb ccccccc
 > ```bash
 > src/main/main.cpp: In lambda function:
 > src/main/main.cpp:5:32: error: increment of read-only variable ‘i’
->      auto f = [i] () { return ++i; };
+>   auto f = [i] () { return ++i; };
 > ```
 
 ```c++

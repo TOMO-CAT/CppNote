@@ -1,74 +1,35 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="zh-CN" >
 <head>
-  <meta charset="utf-8" />
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>7.1 函数模板 &mdash; C++语法笔记 v1.0 文档</title>
-  
-
-  
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script src="../../_static/translations.js"></script>
-    
-    <script type="text/javascript" src="../../_static/js/theme.js"></script>
-
-    
+    <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
     <link rel="next" title="7.2 类模板" href="7.2%20%E7%B1%BB%E6%A8%A1%E6%9D%BF.html" />
     <link rel="prev" title="第7章 模板" href="index.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="../../index.html" class="icon icon-home"> C++语法笔记
-          
-
-          
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="在文档中搜索" />
@@ -76,18 +37,7 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC1%E7%AB%A0%20%E5%8F%98%E9%87%8F%E4%B8%8E%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B/index.html">第1章 变量与基本类型</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC2%E7%AB%A0%20%E8%AF%AD%E5%8F%A5/index.html">第2章 语句</a></li>
@@ -139,7 +89,6 @@
 <li class="toctree-l2"><a class="reference internal" href="7.6%20%E6%A8%A1%E6%9D%BF%E7%89%B9%E6%80%A7.html">7.6 模板特性</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC8%E7%AB%A0%20%E5%85%B3%E9%94%AE%E5%AD%97%E6%A6%82%E5%BF%B5/index.html">第8章 关键字概念</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC9%E7%AB%A0%20%E7%AE%97%E6%B3%95/index.html">第9章 算法</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC10%E7%AB%A0%20%E8%AF%AD%E8%A8%80%E7%89%B9%E6%80%A7/index.html">第10章 语法特性</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC11%E7%AB%A0%20C%2B%2B11%E6%96%B0%E6%A0%87%E5%87%86/index.html">第11章 C++11新标准</a></li>
@@ -148,131 +97,89 @@
 <li class="toctree-l1"><a class="reference internal" href="../README.html">README</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../index.html">C++语法笔记</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-        
           <li><a href="index.html">第7章 模板</a> &raquo;</li>
-        
       <li>7.1 函数模板</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
             <a href="../../_sources/docs/第7章 模板/7.1 函数模板.md.txt" rel="nofollow"> 查看页面源码</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="id1">
-<h1>7.1 函数模板<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
-<div class="section" id="id2">
-<h2>定义函数模板<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+             
+  <section id="id1">
+<h1>7.1 函数模板<a class="headerlink" href="#id1" title="永久链接至标题"></a></h1>
+<section id="id2">
+<h2>定义函数模板<a class="headerlink" href="#id2" title="永久链接至标题"></a></h2>
 <p>一个函数模板就是一个公式，用于生成针对类型的函数版本。模板定义以一个关键字<code class="docutils literal notranslate"><span class="pre">template</span></code>开始，后跟一个模板参数列表（逗号分隔的一个或多个模板参数的列表）。</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// 比较大小的函数模板</span>
-<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span>
-<span class="kt">int</span> <span class="n">compare</span><span class="p">(</span><span class="k">const</span> <span class="n">T</span> <span class="o">&amp;</span><span class="n">v1</span><span class="p">,</span> <span class="k">const</span> <span class="n">T</span> <span class="o">&amp;</span><span class="n">v2</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">v1</span> <span class="o">&lt;</span> <span class="n">v2</span><span class="p">)</span> <span class="k">return</span> <span class="mi">-1</span><span class="p">;</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">v2</span> <span class="o">&lt;</span> <span class="n">v1</span><span class="p">)</span> <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
+<span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span><span class="w"></span>
+<span class="kt">int</span><span class="w"> </span><span class="n">compare</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="o">&amp;</span><span class="n">v1</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="o">&amp;</span><span class="n">v2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">v1</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">v2</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">v2</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">v1</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id3">
-<h2>实例化函数模板<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+</section>
+<section id="id3">
+<h2>实例化函数模板<a class="headerlink" href="#id3" title="永久链接至标题"></a></h2>
 <p>当我们调用一个函数模板时，编译器通常用函数实参为我们推断模板实参，然后用推断出来的模板参数来为我们实例化一个特定版本的函数。例如：</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// T为int, 实例化出int compare(const int&amp;, const int&amp;)</span>
-<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">compare</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">compare</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id4">
-<h2>模板类型参数<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+</section>
+<section id="id4">
+<h2>模板类型参数<a class="headerlink" href="#id4" title="永久链接至标题"></a></h2>
 <blockquote>
 <div><p>Tips：类型参数必须使用关键字<code class="docutils literal notranslate"><span class="pre">class</span></code>或者<code class="docutils literal notranslate"><span class="pre">typename</span></code>，由于<code class="docutils literal notranslate"><span class="pre">typename</span></code>是在模板已经广泛使用后才引入C++语言的，某些程序员仍然只使用<code class="docutils literal notranslate"><span class="pre">class</span></code>。</p>
 </div></blockquote>
 <p>一般来说，我们可以将类型参数看做类型说明符，就像内置类型或类类型说明符一样使用。特别是，类型参数可以用来指定返回类型或者函数的参数类型，以及在函数体内用于遍历声明或类型转换：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span>
-<span class="n">T</span> <span class="n">foo</span><span class="p">(</span><span class="n">T</span> <span class="o">*</span><span class="n">p</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">T</span> <span class="n">tmp</span> <span class="o">=</span> <span class="o">*</span><span class="n">p</span><span class="p">;</span>
-    <span class="c1">// ...</span>
-    <span class="k">return</span> <span class="n">tmp</span><span class="p">;</span>
-<span class="p">}</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span><span class="w"></span>
+<span class="n">T</span><span class="w"> </span><span class="n">foo</span><span class="p">(</span><span class="n">T</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">T</span><span class="w"> </span><span class="n">tmp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// ...</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">tmp</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id5">
-<h2>非类型模板参数<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
-<div class="section" id="id6">
-<h3>1. 例子<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id5">
+<h2>非类型模板参数<a class="headerlink" href="#id5" title="永久链接至标题"></a></h2>
+<section id="id6">
+<h3>1. 例子<a class="headerlink" href="#id6" title="永久链接至标题"></a></h3>
 <p>除了定义类型参数，还可以在模板中定义非类型参数（非类型参数表示一个值而非一个类型）。当一个模板被实例化时，非类型参数被一个用户提供的或编译器推断出的值所代替，这些值必须是常量表达式，从而允许编译器在编译时实例化模板。</p>
 <p>举个例子，我们可以编写一个<code class="docutils literal notranslate"><span class="pre">compare</span></code>版本处理字符串字面常量：</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// 第一个模板参数表示第一个数组的长度, 第二个模板参数表示第二个数组的长度</span>
 <span class="c1">// 由于不能拷贝数组, 因此我们将自己的参数定义为数组的引用</span>
-<span class="k">template</span><span class="o">&lt;</span><span class="kt">unsigned</span> <span class="n">N</span><span class="p">,</span> <span class="kt">unsigned</span> <span class="n">M</span><span class="o">&gt;</span>
-<span class="kt">int</span> <span class="n">compare</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span><span class="p">(</span><span class="o">&amp;</span><span class="n">p1</span><span class="p">)[</span><span class="n">N</span><span class="p">],</span> <span class="k">const</span> <span class="kt">char</span><span class="p">(</span><span class="o">&amp;</span><span class="n">p2</span><span class="p">)[</span><span class="n">M</span><span class="p">])</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="n">strcmp</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">);</span>
-<span class="p">}</span>
+<span class="k">template</span><span class="o">&lt;</span><span class="kt">unsigned</span><span class="w"> </span><span class="n">N</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="n">M</span><span class="o">&gt;</span><span class="w"></span>
+<span class="kt">int</span><span class="w"> </span><span class="n">compare</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="p">(</span><span class="o">&amp;</span><span class="n">p1</span><span class="p">)[</span><span class="n">N</span><span class="p">],</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="p">(</span><span class="o">&amp;</span><span class="n">p2</span><span class="p">)[</span><span class="n">M</span><span class="p">])</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">strcmp</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span><span class="w"> </span><span class="n">p2</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
 <span class="c1">// 实例化出int compare(const char (&amp;p1)[3], const char(&amp;p2)[4])</span>
-<span class="n">compare</span><span class="p">(</span><span class="s">&quot;hi&quot;</span><span class="p">,</span> <span class="s">&quot;cat&quot;</span><span class="p">);</span>
+<span class="n">compare</span><span class="p">(</span><span class="s">&quot;hi&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;cat&quot;</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id7">
-<h3>2. 类型与要求<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id7">
+<h3>2. 类型与要求<a class="headerlink" href="#id7" title="永久链接至标题"></a></h3>
 <blockquote>
 <div><p>Tips：非类型模板参数的模板实参必须是一个常量表达式。</p>
 </div></blockquote>
@@ -281,23 +188,23 @@
 <li><p>绑定到非类型整形参数的实参必须是一个常量表达式</p></li>
 <li><p>绑定到指针或左值引用非类型参数的实参必须具有静态的生存期（也可以用<code class="docutils literal notranslate"><span class="pre">nullptr</span></code>或值为0的常量表达式来实例化）</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="inlineconstexpr">
-<h2>inline和constexpr的函数模板<a class="headerlink" href="#inlineconstexpr" title="永久链接至标题">¶</a></h2>
+</section>
+</section>
+<section id="inlineconstexpr">
+<h2>inline和constexpr的函数模板<a class="headerlink" href="#inlineconstexpr" title="永久链接至标题"></a></h2>
 <p>函数模板可以声明为<code class="docutils literal notranslate"><span class="pre">inline</span></code>或<code class="docutils literal notranslate"><span class="pre">constexpr</span></code>，这两个说明符要放在模板参数列表之后，返回类型之前：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span> <span class="kr">inline</span> <span class="n">T</span> <span class="n">min</span><span class="p">(</span><span class="k">const</span> <span class="n">T</span><span class="o">&amp;</span><span class="p">,</span> <span class="k">const</span> <span class="n">T</span><span class="o">&amp;</span><span class="p">);</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="n">min</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">T</span><span class="o">&amp;</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">T</span><span class="o">&amp;</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id8">
-<h2>模板实参推断<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h2>
-<div class="section" id="id9">
-<h3>1. 简介<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id8">
+<h2>模板实参推断<a class="headerlink" href="#id8" title="永久链接至标题"></a></h2>
+<section id="id9">
+<h3>1. 简介<a class="headerlink" href="#id9" title="永久链接至标题"></a></h3>
 <p>对于函数模板，编译器利用调用中的函数实参来确定其模板参数。从函数实参来确定模板实参的过程被称为模板实参推断（template argument deduction）。在模板实参推断过程中，编译器使用函数调用中的实参类型来寻找模板实参，用这些模板实参生成的函数版本与给定的函数调用最为匹配。</p>
-</div>
-<div class="section" id="id10">
-<h3>2. 类型转换与模板类型参数<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id10">
+<h3>2. 类型转换与模板类型参数<a class="headerlink" href="#id10" title="永久链接至标题"></a></h3>
 <p>只有很有限的几种类型转换会自动地应用于这些实参，编译器通常不是对实参进行类型转换，而是生成一个新的模板实例。与往常一样，顶层<code class="docutils literal notranslate"><span class="pre">const</span></code>无论是在形参中还是在实参中都会被忽略。在其他类型转换中，能在调用中应用于函数模板的包括如下两项：</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">const</span></code>转换：可以将一个非<code class="docutils literal notranslate"><span class="pre">const</span></code>对象的引用（或指针）传递给一个<code class="docutils literal notranslate"><span class="pre">const</span></code>的引用（或指针）形参</p></li>
@@ -306,81 +213,81 @@
 <blockquote>
 <div><p>Tips：其他类型转换，例如算数转换、派生类向基类的转换以及用户定义的转换都不能用于函数模板。</p>
 </div></blockquote>
-</div>
-<div class="section" id="id11">
-<h3>3. 函数模板显式实参<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id11">
+<h3>3. 函数模板显式实参<a class="headerlink" href="#id11" title="永久链接至标题"></a></h3>
 <p>当函数返回类型与参数列表中任何类型都不相同时，编译器无法推断出模板实参的类型，我们希望用户控制模板实例化。假设我们定义一个<code class="docutils literal notranslate"><span class="pre">sum</span></code>函数模板，它接受两个不同类型的参数，我们希望用户指定结果的类型从而控制合适的精度。</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// 编译器无法推断T1, 它未出现在函数参数列表中</span>
-<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T1</span><span class="p">,</span> <span class="k">typename</span> <span class="nc">T2</span><span class="p">,</span> <span class="k">typename</span> <span class="nc">T3</span><span class="o">&gt;</span>
-<span class="n">T1</span> <span class="n">sum</span><span class="p">(</span><span class="k">const</span> <span class="n">T2</span> <span class="o">&amp;</span><span class="n">v1</span><span class="p">,</span> <span class="k">const</span> <span class="n">T3</span><span class="o">&amp;</span> <span class="n">v2</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">v1</span> <span class="o">+</span> <span class="n">v2</span><span class="p">;</span> <span class="p">}</span>
+<span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T1</span><span class="p">,</span><span class="w"> </span><span class="k">typename</span> <span class="nc">T2</span><span class="p">,</span><span class="w"> </span><span class="k">typename</span> <span class="nc">T3</span><span class="o">&gt;</span><span class="w"></span>
+<span class="n">T1</span><span class="w"> </span><span class="n">sum</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">T2</span><span class="w"> </span><span class="o">&amp;</span><span class="n">v1</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">T3</span><span class="o">&amp;</span><span class="w"> </span><span class="n">v2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">v1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">v2</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>在上面例子中，由于没有任何函数实参的类型可以用来推断<code class="docutils literal notranslate"><span class="pre">T1</span></code>的类型，因此每次调用<code class="docutils literal notranslate"><span class="pre">sum</span></code>时调用者必须为<code class="docutils literal notranslate"><span class="pre">T1</span></code>提供一个显式模板实参。</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// T1是显式指定的, T2和T3是从函数实参类型推断而来的</span>
 <span class="c1">// long long sum(int, long);</span>
-<span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
-<span class="kt">long</span> <span class="n">lng</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
-<span class="k">auto</span> <span class="n">res</span> <span class="o">=</span> <span class="n">sum</span><span class="o">&lt;</span><span class="kt">long</span> <span class="kt">long</span><span class="o">&gt;</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">lng</span><span class="p">);</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"></span>
+<span class="kt">long</span><span class="w"> </span><span class="n">lng</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span><span class="w"></span>
+<span class="k">auto</span><span class="w"> </span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sum</span><span class="o">&lt;</span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="o">&gt;</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">lng</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 <p>需要注意的是显式模板实参按从左到右的顺序与对应的模板参数匹配，只有尾部（最右）参数的显式模板实参才可以忽略，前提是他们可以从函数参数推断出来。注意下面的写法是糟糕的，用户必须制定所有三个模板实参：</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// 糟糕的设计: 用户必须制定所有三个模板参数</span>
-<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T1</span><span class="p">,</span> <span class="k">typename</span> <span class="nc">T2</span><span class="p">,</span> <span class="k">typename</span> <span class="nc">T3</span><span class="o">&gt;</span>
-<span class="n">T3</span> <span class="n">alternative_sum</span><span class="p">(</span><span class="k">const</span> <span class="n">T2</span> <span class="o">&amp;</span><span class="n">v1</span><span class="p">,</span> <span class="k">const</span> <span class="n">T1</span><span class="o">&amp;</span> <span class="n">v2</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">v1</span> <span class="o">+</span> <span class="n">v2</span><span class="p">;</span> <span class="p">}</span>
+<span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T1</span><span class="p">,</span><span class="w"> </span><span class="k">typename</span> <span class="nc">T2</span><span class="p">,</span><span class="w"> </span><span class="k">typename</span> <span class="nc">T3</span><span class="o">&gt;</span><span class="w"></span>
+<span class="n">T3</span><span class="w"> </span><span class="n">alternative_sum</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">T2</span><span class="w"> </span><span class="o">&amp;</span><span class="n">v1</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">T1</span><span class="o">&amp;</span><span class="w"> </span><span class="n">v2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">v1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">v2</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
 <span class="c1">// 错误: 不能推断前几个模板参数</span>
-<span class="k">auto</span> <span class="n">res</span> <span class="o">=</span> <span class="n">alternative_sum</span><span class="o">&lt;</span><span class="kt">long</span> <span class="kt">long</span><span class="o">&gt;</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">lng</span><span class="p">);</span>
+<span class="k">auto</span><span class="w"> </span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">alternative_sum</span><span class="o">&lt;</span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="o">&gt;</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">lng</span><span class="p">);</span><span class="w"></span>
 <span class="c1">// 正确: 显式指定了所有三个参数</span>
-<span class="k">auto</span> <span class="n">res</span> <span class="o">=</span> <span class="n">alternative_sum</span><span class="o">&lt;</span><span class="kt">long</span><span class="p">,</span> <span class="kt">int</span><span class="p">,</span> <span class="kt">long</span> <span class="kt">long</span><span class="o">&gt;</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">lng</span><span class="p">);</span>
+<span class="k">auto</span><span class="w"> </span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">alternative_sum</span><span class="o">&lt;</span><span class="kt">long</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="o">&gt;</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">lng</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id12">
-<h3>4. 尾置返回类型与类型转换<a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id12">
+<h3>4. 尾置返回类型与类型转换<a class="headerlink" href="#id12" title="永久链接至标题"></a></h3>
 <p>当我们希望用户确定返回类型时，用显式模板实参表示模板函数的返回类型是很有效的。但是在其他情况下，要求显式指定模板实参会给用户增添额外负担，而且不会带来什么好处。我们可以使用尾置返回类型来指定函数的返回类型：</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// 尾置返回类型允许我们在参数列表之后声明返回类型</span>
 <span class="c1">// 该函数模板接收表示序列的一对迭代器并返回序列中一个元素的引用</span>
-<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">It</span><span class="o">&gt;</span>
-<span class="k">auto</span> <span class="n">foo</span><span class="p">(</span><span class="n">It</span> <span class="n">beg</span><span class="p">,</span> <span class="n">It</span> <span class="n">end</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="k">decltype</span><span class="p">(</span><span class="o">*</span><span class="n">beg</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">// ... 处理序列</span>
-    <span class="k">return</span> <span class="o">*</span><span class="n">beg</span><span class="p">;</span>
-<span class="p">}</span>
+<span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">It</span><span class="o">&gt;</span><span class="w"></span>
+<span class="k">auto</span><span class="w"> </span><span class="n">foo</span><span class="p">(</span><span class="n">It</span><span class="w"> </span><span class="n">beg</span><span class="p">,</span><span class="w"> </span><span class="n">It</span><span class="w"> </span><span class="n">end</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="k">decltype</span><span class="p">(</span><span class="o">*</span><span class="n">beg</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// ... 处理序列</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="o">*</span><span class="n">beg</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>有时候为了获取元素类型，我们可以使用标准库的类型转换模板，这些模板定义在<code class="docutils literal notranslate"><span class="pre">type_traits</span></code>中。如果我们用一个引用类型实例化<code class="docutils literal notranslate"><span class="pre">remove_reference</span></code>，则<code class="docutils literal notranslate"><span class="pre">type</span></code>类型成员将表示被引用的类型。例如我们实例化<code class="docutils literal notranslate"><span class="pre">remove_reference&lt;int&amp;&gt;</span></code>，则<code class="docutils literal notranslate"><span class="pre">type</span></code>成员将是<code class="docutils literal notranslate"><span class="pre">int</span></code>。</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">It</span><span class="o">&gt;</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">It</span><span class="o">&gt;</span><span class="w"></span>
 <span class="c1">// 为了使用模板参数的成员, 必须用typename</span>
-<span class="k">auto</span> <span class="n">foo</span><span class="p">(</span><span class="n">It</span> <span class="n">beg</span><span class="p">,</span> <span class="n">It</span> <span class="n">end</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="k">typename</span> <span class="nc">remove_reference</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="o">*</span><span class="n">beg</span><span class="p">)</span><span class="o">&gt;::</span><span class="n">type</span> <span class="p">{</span>
-    <span class="c1">// ...处理序列</span>
-    <span class="k">return</span> <span class="o">*</span><span class="n">beg</span><span class="p">;</span>  <span class="c1">// 返回序列中一个元素的拷贝</span>
-<span class="p">}</span>
+<span class="k">auto</span><span class="w"> </span><span class="n">foo</span><span class="p">(</span><span class="n">It</span><span class="w"> </span><span class="n">beg</span><span class="p">,</span><span class="w"> </span><span class="n">It</span><span class="w"> </span><span class="n">end</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="k">typename</span> <span class="nc">remove_reference</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="o">*</span><span class="n">beg</span><span class="p">)</span><span class="o">&gt;::</span><span class="n">type</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// ...处理序列</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="o">*</span><span class="n">beg</span><span class="p">;</span><span class="w">  </span><span class="c1">// 返回序列中一个元素的拷贝</span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id13">
-<h3>5. 模板实参推断和引用<a class="headerlink" href="#id13" title="永久链接至标题">¶</a></h3>
-<div class="section" id="id14">
-<h4>5.1 从左值引用函数参数推断类型<a class="headerlink" href="#id14" title="永久链接至标题">¶</a></h4>
+</section>
+<section id="id13">
+<h3>5. 模板实参推断和引用<a class="headerlink" href="#id13" title="永久链接至标题"></a></h3>
+<section id="id14">
+<h4>5.1 从左值引用函数参数推断类型<a class="headerlink" href="#id14" title="永久链接至标题"></a></h4>
 <p>当一个函数参数是模板类型参数的一个普通左值引用时（即形如<code class="docutils literal notranslate"><span class="pre">T&amp;</span></code>），绑定规则告诉我们只能传递给它一个左值（如一个变量或一个返回引用类型的表达式）。实参可以是<code class="docutils literal notranslate"><span class="pre">const</span></code>类型也可以不是，如果实参是<code class="docutils literal notranslate"><span class="pre">const</span></code>的，则<code class="docutils literal notranslate"><span class="pre">T</span></code>将被推断为<code class="docutils literal notranslate"><span class="pre">const</span></code>类型。</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span> <span class="kt">void</span> <span class="n">f1</span><span class="p">(</span><span class="n">T</span><span class="o">&amp;</span><span class="p">);</span>  <span class="c1">// 实参必须是一个左值</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">f1</span><span class="p">(</span><span class="n">T</span><span class="o">&amp;</span><span class="p">);</span><span class="w">  </span><span class="c1">// 实参必须是一个左值</span>
 
-<span class="n">f1</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>   <span class="c1">// i是一个int, 模板参数T是int</span>
-<span class="n">f1</span><span class="p">(</span><span class="n">ci</span><span class="p">);</span>  <span class="c1">// ci是一个const int; 模板参数T是const int</span>
-<span class="n">f1</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>   <span class="c1">// 错误: 传递给一个&amp;参数必须是一个左值</span>
+<span class="n">f1</span><span class="p">(</span><span class="n">i</span><span class="p">);</span><span class="w">   </span><span class="c1">// i是一个int, 模板参数T是int</span>
+<span class="n">f1</span><span class="p">(</span><span class="n">ci</span><span class="p">);</span><span class="w">  </span><span class="c1">// ci是一个const int; 模板参数T是const int</span>
+<span class="n">f1</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span><span class="w">   </span><span class="c1">// 错误: 传递给一个&amp;参数必须是一个左值</span>
 </pre></div>
 </div>
 <p>当一个函数参数是模板类型参数的一个<code class="docutils literal notranslate"><span class="pre">const</span></code>左值引用（即形如<code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">T&amp;</span></code>），绑定规则告诉我们可以传递给它任何类型的实参——一个对象（<code class="docutils literal notranslate"><span class="pre">const</span></code>或者非<code class="docutils literal notranslate"><span class="pre">const</span></code>的）、一个临时对象或是一个字面常量值。</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span> <span class="kt">void</span> <span class="n">f2</span><span class="p">(</span><span class="k">const</span> <span class="n">T</span><span class="o">&amp;</span><span class="p">);</span>  <span class="c1">// 实参可以是任何类型(包括右值)</span>
-<span class="n">f2</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>   <span class="c1">// i是一个int, 模板参数T是int</span>
-<span class="n">f2</span><span class="p">(</span><span class="n">ci</span><span class="p">);</span>  <span class="c1">// ci是一个const int, 模板参数T是int</span>
-<span class="n">f2</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>   <span class="c1">// 字面常量值, 模板参数T是int</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">f2</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">T</span><span class="o">&amp;</span><span class="p">);</span><span class="w">  </span><span class="c1">// 实参可以是任何类型(包括右值)</span>
+<span class="n">f2</span><span class="p">(</span><span class="n">i</span><span class="p">);</span><span class="w">   </span><span class="c1">// i是一个int, 模板参数T是int</span>
+<span class="n">f2</span><span class="p">(</span><span class="n">ci</span><span class="p">);</span><span class="w">  </span><span class="c1">// ci是一个const int, 模板参数T是int</span>
+<span class="n">f2</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span><span class="w">   </span><span class="c1">// 字面常量值, 模板参数T是int</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id15">
-<h4>5.2 从右值引用函数参数推断类型<a class="headerlink" href="#id15" title="永久链接至标题">¶</a></h4>
+</section>
+<section id="id15">
+<h4>5.2 从右值引用函数参数推断类型<a class="headerlink" href="#id15" title="永久链接至标题"></a></h4>
 <p>当一个函数参数是一个右值引用时（即形如<code class="docutils literal notranslate"><span class="pre">T&amp;&amp;</span></code>），绑定规则告诉我们可以传递给它一个右值，推断出的<code class="docutils literal notranslate"><span class="pre">T</span></code>类型是该右值实参的类型：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span> <span class="kt">void</span> <span class="n">f3</span><span class="p">(</span><span class="n">T</span><span class="o">&amp;&amp;</span><span class="p">);</span>
-<span class="n">f3</span><span class="p">(</span><span class="mi">42</span><span class="p">);</span>  <span class="c1">// 实参是一个int类型的右值, 模板参数T是int</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">f3</span><span class="p">(</span><span class="n">T</span><span class="o">&amp;&amp;</span><span class="p">);</span><span class="w"></span>
+<span class="n">f3</span><span class="p">(</span><span class="mi">42</span><span class="p">);</span><span class="w">  </span><span class="c1">// 实参是一个int类型的右值, 模板参数T是int</span>
 </pre></div>
 </div>
 <p>假定<code class="docutils literal notranslate"><span class="pre">i</span></code>是一个<code class="docutils literal notranslate"><span class="pre">int</span></code>对象，我们可能认为像<code class="docutils literal notranslate"><span class="pre">f3(i)</span></code>这样的调用是不合法的。毕竟<code class="docutils literal notranslate"><span class="pre">i</span></code>是一个左值，而通常我们不能将一个右值引用绑定到一个左值上，但是C++语言在正常绑定规则之外定义了两个例外规则允许这种绑定，这两个规则也是<code class="docutils literal notranslate"><span class="pre">move</span></code>这种标准库设施正常工作的基础。</p>
@@ -397,169 +304,169 @@
 </ul>
 </div></blockquote>
 <p>将两个例外规则组合起来，意味着我们可以对一个左值调用<code class="docutils literal notranslate"><span class="pre">f3</span></code>：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">f3</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>   <span class="c1">// i是一个int, 模板参数T是int&amp;</span>
-<span class="n">f3</span><span class="p">(</span><span class="n">ci</span><span class="p">);</span>  <span class="c1">// ci是一个const int, 模板参数T是一个const int&amp;</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">f3</span><span class="p">(</span><span class="n">i</span><span class="p">);</span><span class="w">   </span><span class="c1">// i是一个int, 模板参数T是int&amp;</span>
+<span class="n">f3</span><span class="p">(</span><span class="n">ci</span><span class="p">);</span><span class="w">  </span><span class="c1">// ci是一个const int, 模板参数T是一个const int&amp;</span>
 </pre></div>
 </div>
 <blockquote>
 <div><p>Tips：上面两个例外规则暗示我们可以将任意类型的实参传递给<code class="docutils literal notranslate"><span class="pre">T&amp;&amp;</span></code>类型的函数模板参数。</p>
 </div></blockquote>
-</div>
-</div>
-<div class="section" id="id16">
-<h3>3. 编写接受右值引用参数的函数模板<a class="headerlink" href="#id16" title="永久链接至标题">¶</a></h3>
+</section>
+</section>
+<section id="id16">
+<h3>3. 编写接受右值引用参数的函数模板<a class="headerlink" href="#id16" title="永久链接至标题"></a></h3>
 <p>前面提到模板参数可以推断为一个引用类型，这一特性对模板内的代码可能有令人惊讶的影响：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span> <span class="kt">void</span> <span class="n">f3</span><span class="p">(</span><span class="n">T</span><span class="o">&amp;&amp;</span> <span class="n">val</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">T</span> <span class="n">t</span> <span class="o">=</span> <span class="n">val</span><span class="p">;</span>       <span class="c1">// 拷贝还是绑定一个引用?</span>
-    <span class="n">t</span> <span class="o">=</span> <span class="n">fcn</span><span class="p">(</span><span class="n">t</span><span class="p">);</span>      <span class="c1">// 赋值只改变t还是既改变t又改变val?</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">val</span> <span class="o">==</span> <span class="n">t</span><span class="p">)</span> <span class="p">{</span>  <span class="c1">// 若T是引用类型, 则一直为true</span>
-        <span class="c1">// ...</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">f3</span><span class="p">(</span><span class="n">T</span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">val</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">T</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">val</span><span class="p">;</span><span class="w">       </span><span class="c1">// 拷贝还是绑定一个引用?</span>
+<span class="w">    </span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fcn</span><span class="p">(</span><span class="n">t</span><span class="p">);</span><span class="w">      </span><span class="c1">// 赋值只改变t还是既改变t又改变val?</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">val</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">t</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="c1">// 若T是引用类型, 则一直为true</span>
+<span class="w">        </span><span class="c1">// ...</span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-<div class="section" id="id17">
-<h4>3.1 传递右值<a class="headerlink" href="#id17" title="永久链接至标题">¶</a></h4>
+<section id="id17">
+<h4>3.1 传递右值<a class="headerlink" href="#id17" title="永久链接至标题"></a></h4>
 <p>当我们对一个右值（例如字面值42）调用<code class="docutils literal notranslate"><span class="pre">f3</span></code>时，<code class="docutils literal notranslate"><span class="pre">T</span></code>被推断为<code class="docutils literal notranslate"><span class="pre">int</span></code>。在此情况下局部变量<code class="docutils literal notranslate"><span class="pre">t</span></code>的类型为<code class="docutils literal notranslate"><span class="pre">int</span></code>，且通过拷贝参数<code class="docutils literal notranslate"><span class="pre">val</span></code>的值被初始化。当我们对<code class="docutils literal notranslate"><span class="pre">t</span></code>赋值时，参数<code class="docutils literal notranslate"><span class="pre">val</span></code>保持不变。</p>
-</div>
-<div class="section" id="id18">
-<h4>3.2 传递左值<a class="headerlink" href="#id18" title="永久链接至标题">¶</a></h4>
+</section>
+<section id="id18">
+<h4>3.2 传递左值<a class="headerlink" href="#id18" title="永久链接至标题"></a></h4>
 <p>当我们对一个左值<code class="docutils literal notranslate"><span class="pre">i</span></code>调用<code class="docutils literal notranslate"><span class="pre">f3</span></code>时，则<code class="docutils literal notranslate"><span class="pre">T</span></code>被推断为<code class="docutils literal notranslate"><span class="pre">int&amp;</span></code>。当我们定义并初始化局部变量<code class="docutils literal notranslate"><span class="pre">t</span></code>时，赋予它类型<code class="docutils literal notranslate"><span class="pre">int&amp;</span></code>。因此对<code class="docutils literal notranslate"><span class="pre">t</span></code>的初始化将其绑定到<code class="docutils literal notranslate"><span class="pre">val</span></code>。当我们对<code class="docutils literal notranslate"><span class="pre">t</span></code>赋值时，也同时改变了<code class="docutils literal notranslate"><span class="pre">val</span></code>的值。在<code class="docutils literal notranslate"><span class="pre">f3</span></code>的这个实例化版本中，<code class="docutils literal notranslate"><span class="pre">if</span></code>判断将永远为<code class="docutils literal notranslate"><span class="pre">true</span></code>。</p>
-</div>
-</div>
-<div class="section" id="id19">
-<h3>3.3 实际开发中的处理<a class="headerlink" href="#id19" title="永久链接至标题">¶</a></h3>
+</section>
+</section>
+<section id="id19">
+<h3>3.3 实际开发中的处理<a class="headerlink" href="#id19" title="永久链接至标题"></a></h3>
 <p>在实际开发中，右值引用通常用于模板转发其实参或模板被重载两种情况。使用右值引用的函数模板通常以如下方式进行重载：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span> <span class="kt">void</span> <span class="n">f</span><span class="p">(</span><span class="n">T</span><span class="o">&amp;&amp;</span><span class="p">);</span>       <span class="c1">// 绑定到非const右值</span>
-<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span> <span class="kt">void</span> <span class="n">f</span><span class="p">(</span><span class="k">const</span> <span class="n">T</span><span class="o">&amp;</span><span class="p">);</span>  <span class="c1">// 左值和const右值</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">f</span><span class="p">(</span><span class="n">T</span><span class="o">&amp;&amp;</span><span class="p">);</span><span class="w">       </span><span class="c1">// 绑定到非const右值</span>
+<span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">f</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">T</span><span class="o">&amp;</span><span class="p">);</span><span class="w">  </span><span class="c1">// 左值和const右值</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="id20">
-<h2>转发函数参数<a class="headerlink" href="#id20" title="永久链接至标题">¶</a></h2>
+</section>
+</section>
+<section id="id20">
+<h2>转发函数参数<a class="headerlink" href="#id20" title="永久链接至标题"></a></h2>
 <p>某些函数需要将其一个或多个实参连同参数不变地转发给其他函数。在此情况下我们需要保持被转发实参的所有性质，包括实参类型是否是<code class="docutils literal notranslate"><span class="pre">const</span></code>的一级实参是左值还是右值。</p>
-<div class="section" id="const">
-<h3>1. 参数转化时可能丢失顶层const和引用<a class="headerlink" href="#const" title="永久链接至标题">¶</a></h3>
+<section id="const">
+<h3>1. 参数转化时可能丢失顶层const和引用<a class="headerlink" href="#const" title="永久链接至标题"></a></h3>
 <p>举个例子，我们编写接受一个可调用表达式和两个额外实参的函数。我们的函数将调用给定的可调用对象并将两个额外参数逆序传递给它。下面是我们翻转函数的初步模样：</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// 接受一个可调用对象与另外两个参数的模板, 对&quot;翻转&quot;的参数调用给定的可调用对象</span>
 <span class="c1">// flip1是一个不完整的实现: 顶层const和引用丢失了</span>
-<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">F</span><span class="p">,</span> <span class="k">typename</span> <span class="nc">T1</span><span class="p">,</span> <span class="k">typename</span> <span class="nc">T2</span><span class="o">&gt;</span> <span class="kt">void</span> <span class="n">flip1</span><span class="p">(</span><span class="n">F</span> <span class="n">f</span><span class="p">,</span> <span class="n">T1</span> <span class="n">t1</span><span class="p">,</span> <span class="n">T2</span> <span class="n">t2</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">f</span><span class="p">(</span><span class="n">t2</span><span class="p">,</span> <span class="n">t1</span><span class="p">);</span>
-<span class="p">}</span>
+<span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">F</span><span class="p">,</span><span class="w"> </span><span class="k">typename</span> <span class="nc">T1</span><span class="p">,</span><span class="w"> </span><span class="k">typename</span> <span class="nc">T2</span><span class="o">&gt;</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">flip1</span><span class="p">(</span><span class="n">F</span><span class="w"> </span><span class="n">f</span><span class="p">,</span><span class="w"> </span><span class="n">T1</span><span class="w"> </span><span class="n">t1</span><span class="p">,</span><span class="w"> </span><span class="n">T2</span><span class="w"> </span><span class="n">t2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">f</span><span class="p">(</span><span class="n">t2</span><span class="p">,</span><span class="w"> </span><span class="n">t1</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>上面的函数一般情况下都能正常工作，但是当我们希望它调用一个接受引用参数的函数时就会出现问题：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
 
 <span class="c1">// 接受一个可调用对象与另外两个参数的模板, 对&quot;翻转&quot;的参数调用给定的可调用对象</span>
 <span class="c1">// flip1是一个不完整的实现: 顶层const和引用丢失了</span>
-<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">F</span><span class="p">,</span> <span class="k">typename</span> <span class="nc">T1</span><span class="p">,</span> <span class="k">typename</span> <span class="nc">T2</span><span class="o">&gt;</span> <span class="kt">void</span> <span class="n">flip1</span><span class="p">(</span><span class="n">F</span> <span class="n">f</span><span class="p">,</span> <span class="n">T1</span> <span class="n">t1</span><span class="p">,</span> <span class="n">T2</span> <span class="n">t2</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">f</span><span class="p">(</span><span class="n">t2</span><span class="p">,</span> <span class="n">t1</span><span class="p">);</span>
-<span class="p">}</span>
+<span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">F</span><span class="p">,</span><span class="w"> </span><span class="k">typename</span> <span class="nc">T1</span><span class="p">,</span><span class="w"> </span><span class="k">typename</span> <span class="nc">T2</span><span class="o">&gt;</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">flip1</span><span class="p">(</span><span class="n">F</span><span class="w"> </span><span class="n">f</span><span class="p">,</span><span class="w"> </span><span class="n">T1</span><span class="w"> </span><span class="n">t1</span><span class="p">,</span><span class="w"> </span><span class="n">T2</span><span class="w"> </span><span class="n">t2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">f</span><span class="p">(</span><span class="n">t2</span><span class="p">,</span><span class="w"> </span><span class="n">t1</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="kt">void</span> <span class="n">f</span><span class="p">(</span><span class="kt">int</span> <span class="n">v1</span><span class="p">,</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">v2</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">v1</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span> <span class="o">&lt;&lt;</span> <span class="o">++</span><span class="n">v2</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="p">}</span>
+<span class="kt">void</span><span class="w"> </span><span class="n">f</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">v1</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">&amp;</span><span class="n">v2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">v1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">++</span><span class="n">v2</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
 
-<span class="kt">int</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
-    <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
-    <span class="n">f</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="n">i</span><span class="p">);</span>                     <span class="c1">// 输出100, 11</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>  <span class="c1">// i被修改了, 输出11</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">f</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">);</span><span class="w">                     </span><span class="c1">// 输出100, 11</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w">  </span><span class="c1">// i被修改了, 输出11</span>
 
-    <span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
-    <span class="n">flip1</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>              <span class="c1">// 输出100, 10</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">j</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>  <span class="c1">// j不会被修改, 输出10(f函数丢失了j的左值引用)</span>
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">flip1</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">);</span><span class="w">              </span><span class="c1">// 输出100, 10</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w">  </span><span class="c1">// j不会被修改, 输出10(f函数丢失了j的左值引用)</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id21">
-<h3>2. 定义能保持类型信息的函数参数<a class="headerlink" href="#id21" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id21">
+<h3>2. 定义能保持类型信息的函数参数<a class="headerlink" href="#id21" title="永久链接至标题"></a></h3>
 <blockquote>
 <div><p>Tips：如果一个函数参数是指向模板类型参数的右值引用（如<code class="docutils literal notranslate"><span class="pre">T&amp;&amp;</span></code>），它对应实参的<code class="docutils literal notranslate"><span class="pre">const</span></code>属性和左值/右值属性将得到保持。</p>
 </div></blockquote>
 <p>通过将一个函数参数定义为一个指向模板类型参数的右值引用，我们可以保持其对应实参的所有类型信息。而使用引用参数（无论是左值还是右值）使得我们可以保持<code class="docutils literal notranslate"><span class="pre">const</span></code>属性，因为在引用类型中<code class="docutils literal notranslate"><span class="pre">const</span></code>是底层的。如果我们将函数参数定义为<code class="docutils literal notranslate"><span class="pre">T1&amp;&amp;</span></code>和<code class="docutils literal notranslate"><span class="pre">T2&amp;&amp;</span></code>，通过引用折叠就可以翻转实参的左值/右值属性：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
 
-<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">F</span><span class="p">,</span> <span class="k">typename</span> <span class="nc">T1</span><span class="p">,</span> <span class="k">typename</span> <span class="nc">T2</span><span class="o">&gt;</span> <span class="kt">void</span> <span class="n">flip2</span><span class="p">(</span><span class="n">F</span> <span class="n">f</span><span class="p">,</span> <span class="n">T1</span> <span class="o">&amp;&amp;</span><span class="n">t1</span><span class="p">,</span> <span class="n">T2</span> <span class="o">&amp;&amp;</span><span class="n">t2</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">f</span><span class="p">(</span><span class="n">t2</span><span class="p">,</span> <span class="n">t1</span><span class="p">);</span>
-<span class="p">}</span>
+<span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">F</span><span class="p">,</span><span class="w"> </span><span class="k">typename</span> <span class="nc">T1</span><span class="p">,</span><span class="w"> </span><span class="k">typename</span> <span class="nc">T2</span><span class="o">&gt;</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">flip2</span><span class="p">(</span><span class="n">F</span><span class="w"> </span><span class="n">f</span><span class="p">,</span><span class="w"> </span><span class="n">T1</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="n">t1</span><span class="p">,</span><span class="w"> </span><span class="n">T2</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="n">t2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">f</span><span class="p">(</span><span class="n">t2</span><span class="p">,</span><span class="w"> </span><span class="n">t1</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="kt">void</span> <span class="n">f</span><span class="p">(</span><span class="kt">int</span> <span class="n">v1</span><span class="p">,</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">v2</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">v1</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span> <span class="o">&lt;&lt;</span> <span class="o">++</span><span class="n">v2</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="p">}</span>
+<span class="kt">void</span><span class="w"> </span><span class="n">f</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">v1</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">&amp;</span><span class="n">v2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">v1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">++</span><span class="n">v2</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
 
-<span class="kt">int</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
-    <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
-    <span class="n">f</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="n">i</span><span class="p">);</span>                     <span class="c1">// 输出100, 11</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>  <span class="c1">// i被修改了, 输出11</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">f</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">);</span><span class="w">                     </span><span class="c1">// 输出100, 11</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w">  </span><span class="c1">// i被修改了, 输出11</span>
 
-    <span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
-    <span class="n">flip2</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>              <span class="c1">// j递增: 输出100, 11</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">j</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>  <span class="c1">// j被修改了, 输出11</span>
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">flip2</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">);</span><span class="w">              </span><span class="c1">// j递增: 输出100, 11</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w">  </span><span class="c1">// j被修改了, 输出11</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>这个版本的<code class="docutils literal notranslate"><span class="pre">flip2</span></code>解决了一半问题，它对于接受一个左值引用的函数工作得很好，但不能用于接收右值引用参数的函数：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
 
-<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">F</span><span class="p">,</span> <span class="k">typename</span> <span class="nc">T1</span><span class="p">,</span> <span class="k">typename</span> <span class="nc">T2</span><span class="o">&gt;</span> <span class="kt">void</span> <span class="n">flip1</span><span class="p">(</span><span class="n">F</span> <span class="n">f</span><span class="p">,</span> <span class="n">T1</span> <span class="o">&amp;&amp;</span><span class="n">t1</span><span class="p">,</span> <span class="n">T2</span> <span class="o">&amp;&amp;</span><span class="n">t2</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">f</span><span class="p">(</span><span class="n">t2</span><span class="p">,</span> <span class="n">t1</span><span class="p">);</span>
-<span class="p">}</span>
+<span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">F</span><span class="p">,</span><span class="w"> </span><span class="k">typename</span> <span class="nc">T1</span><span class="p">,</span><span class="w"> </span><span class="k">typename</span> <span class="nc">T2</span><span class="o">&gt;</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">flip1</span><span class="p">(</span><span class="n">F</span><span class="w"> </span><span class="n">f</span><span class="p">,</span><span class="w"> </span><span class="n">T1</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="n">t1</span><span class="p">,</span><span class="w"> </span><span class="n">T2</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="n">t2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">f</span><span class="p">(</span><span class="n">t2</span><span class="p">,</span><span class="w"> </span><span class="n">t1</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="kt">void</span> <span class="n">g</span><span class="p">(</span><span class="kt">int</span> <span class="o">&amp;&amp;</span><span class="n">v1</span><span class="p">,</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">v2</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">v1</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">v2</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="p">}</span>
+<span class="kt">void</span><span class="w"> </span><span class="n">g</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="n">v1</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">&amp;</span><span class="n">v2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">v1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">v2</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
 
-<span class="kt">int</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
-    <span class="c1">// 错误: 不能从一个左值实例化int&amp;&amp;</span>
-    <span class="c1">// error: cannot bind ‘int’ lvalue to ‘int&amp;&amp;’</span>
-    <span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
-    <span class="n">flip1</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// 错误: 不能从一个左值实例化int&amp;&amp;</span>
+<span class="w">    </span><span class="c1">// error: cannot bind ‘int’ lvalue to ‘int&amp;&amp;’</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">flip1</span><span class="p">(</span><span class="n">g</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="std-forword">
-<h3>3. 在调用中使用std::forword保持类型信息<a class="headerlink" href="#std-forword" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="std-forword">
+<h3>3. 在调用中使用std::forword保持类型信息<a class="headerlink" href="#std-forword" title="永久链接至标题"></a></h3>
 <p>我们可以使用一个定义在<code class="docutils literal notranslate"><span class="pre">utility</span></code>头文件中名为<code class="docutils literal notranslate"><span class="pre">forward</span></code>的新标准库设施来传递<code class="docutils literal notranslate"><span class="pre">flip3</span></code>的参数，它能保持原始实参的类型。与<code class="docutils literal notranslate"><span class="pre">move</span></code>不同，<code class="docutils literal notranslate"><span class="pre">forward</span></code>必须通过显式模板实参来调用，它返回该显式实参类型的右值引用，即<code class="docutils literal notranslate"><span class="pre">forward&lt;T&gt;</span></code>的返回类型是<code class="docutils literal notranslate"><span class="pre">T&amp;&amp;</span></code>。</p>
 <p>通常情况下，我们使用<code class="docutils literal notranslate"><span class="pre">forward</span></code>传递那些定义为模板类型参数的右值引用的函数参数。通过其返回类型上的引用折叠，<code class="docutils literal notranslate"><span class="pre">forward</span></code>可以保持给定实参的左值/右值属性。</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
 
-<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">F</span><span class="p">,</span> <span class="k">typename</span> <span class="nc">T1</span><span class="p">,</span> <span class="k">typename</span> <span class="nc">T2</span><span class="o">&gt;</span> <span class="kt">void</span> <span class="n">flip3</span><span class="p">(</span><span class="n">F</span> <span class="n">f</span><span class="p">,</span> <span class="n">T1</span> <span class="o">&amp;&amp;</span><span class="n">t1</span><span class="p">,</span> <span class="n">T2</span> <span class="o">&amp;&amp;</span><span class="n">t2</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">f</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="n">T2</span><span class="o">&gt;</span><span class="p">(</span><span class="n">t2</span><span class="p">),</span> <span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="n">T1</span><span class="o">&gt;</span><span class="p">(</span><span class="n">t1</span><span class="p">));</span>
-<span class="p">}</span>
+<span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">F</span><span class="p">,</span><span class="w"> </span><span class="k">typename</span> <span class="nc">T1</span><span class="p">,</span><span class="w"> </span><span class="k">typename</span> <span class="nc">T2</span><span class="o">&gt;</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">flip3</span><span class="p">(</span><span class="n">F</span><span class="w"> </span><span class="n">f</span><span class="p">,</span><span class="w"> </span><span class="n">T1</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="n">t1</span><span class="p">,</span><span class="w"> </span><span class="n">T2</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="n">t2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">f</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="n">T2</span><span class="o">&gt;</span><span class="p">(</span><span class="n">t2</span><span class="p">),</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="n">T1</span><span class="o">&gt;</span><span class="p">(</span><span class="n">t1</span><span class="p">));</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="kt">void</span> <span class="n">g</span><span class="p">(</span><span class="kt">int</span> <span class="o">&amp;&amp;</span><span class="n">v1</span><span class="p">,</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">v2</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">v1</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span> <span class="o">&lt;&lt;</span> <span class="o">++</span><span class="n">v2</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="p">}</span>
+<span class="kt">void</span><span class="w"> </span><span class="n">g</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="n">v1</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">&amp;</span><span class="n">v2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">v1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">++</span><span class="n">v2</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
 
-<span class="kt">int</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
-    <span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
-    <span class="n">flip3</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>             <span class="c1">// 输出100, 11</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">j</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>  <span class="c1">// j被修改了, 输出11</span>
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">flip3</span><span class="p">(</span><span class="n">g</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">);</span><span class="w">             </span><span class="c1">// 输出100, 11</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w">  </span><span class="c1">// j被修改了, 输出11</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="id22">
-<h2>函数模板与重载<a class="headerlink" href="#id22" title="永久链接至标题">¶</a></h2>
-<div class="section" id="id23">
-<h3>1. 简介<a class="headerlink" href="#id23" title="永久链接至标题">¶</a></h3>
+</section>
+</section>
+<section id="id22">
+<h2>函数模板与重载<a class="headerlink" href="#id22" title="永久链接至标题"></a></h2>
+<section id="id23">
+<h3>1. 简介<a class="headerlink" href="#id23" title="永久链接至标题"></a></h3>
 <p>函数模板可以被另一个模板或一个普通非模板函数重载。与普通的重载一样，名字相同的函数必须具有不同数量或类型的参数。</p>
-</div>
-<div class="section" id="id24">
-<h3>2. 函数匹配规则<a class="headerlink" href="#id24" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id24">
+<h3>2. 函数匹配规则<a class="headerlink" href="#id24" title="永久链接至标题"></a></h3>
 <p>如果涉及函数模板，则函数匹配规则会在以下几方面收到影响：</p>
 <ul class="simple">
 <li><p>对于一个调用，其候选函数包括所有模板实参推断成功的函数模板实例</p></li>
@@ -574,40 +481,40 @@
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="id25">
-<h3>3. 编写重载模板<a class="headerlink" href="#id25" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id25">
+<h3>3. 编写重载模板<a class="headerlink" href="#id25" title="永久链接至标题"></a></h3>
 <p>我们构造一组调试函数<code class="docutils literal notranslate"><span class="pre">debug_rep</span></code>，每个函数都返回一个给定对象的<code class="docutils literal notranslate"><span class="pre">string</span></code>表示。我们首先编写此函数的最通用版本，将它定义为一个模板，接受一个<code class="docutils literal notranslate"><span class="pre">const</span></code>对象的引用：</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// 打印任何我们不能处理的类型: 该对象可以是任意具有输出运算符的类型</span>
-<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span> <span class="n">string</span> <span class="n">debug_rep</span><span class="p">(</span><span class="k">const</span> <span class="n">T</span> <span class="o">&amp;</span><span class="n">t</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">ostringstream</span> <span class="n">ret</span><span class="p">;</span>
-    <span class="n">ret</span> <span class="o">&lt;&lt;</span> <span class="n">t</span><span class="p">;</span>
-    <span class="k">return</span> <span class="n">ret</span><span class="p">.</span><span class="n">str</span><span class="p">();</span>
-<span class="p">}</span>
+<span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="n">debug_rep</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="o">&amp;</span><span class="n">t</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">ostringstream</span><span class="w"> </span><span class="n">ret</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">ret</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">t</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">ret</span><span class="p">.</span><span class="n">str</span><span class="p">();</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>接下来我们定义打印指针的<code class="docutils literal notranslate"><span class="pre">debug_rep</span></code>版本：</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// 注意此函数不能用于char*对象, 因为IO库为char*值定义了一个&lt;&lt;版本, 此版本假定指针表示一个空字符结尾的字符数组, 并打印数组的内容而非地址值</span>
-<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span> <span class="n">string</span> <span class="n">debug_rep</span><span class="p">(</span><span class="n">T</span> <span class="o">*</span><span class="n">p</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">ostringstream</span> <span class="n">ret</span><span class="p">;</span>
-    <span class="n">ret</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;pointer: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">p</span><span class="p">;</span>      <span class="c1">// 打印指针本身的值</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">ret</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">debug</span><span class="p">(</span><span class="o">*</span><span class="n">p</span><span class="p">);</span>  <span class="c1">// 打印p指向的值</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="n">ret</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; null pointer&quot;</span><span class="p">;</span>   <span class="c1">// 或者指出指针p为空</span>
-    <span class="p">}</span>
-    <span class="k">return</span> <span class="n">ret</span><span class="p">.</span><span class="n">str</span><span class="p">();</span>
-<span class="p">}</span>
+<span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="n">debug_rep</span><span class="p">(</span><span class="n">T</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">ostringstream</span><span class="w"> </span><span class="n">ret</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">ret</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;pointer: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">p</span><span class="p">;</span><span class="w">      </span><span class="c1">// 打印指针本身的值</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">ret</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">debug</span><span class="p">(</span><span class="o">*</span><span class="n">p</span><span class="p">);</span><span class="w">  </span><span class="c1">// 打印p指向的值</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">ret</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; null pointer&quot;</span><span class="p">;</span><span class="w">   </span><span class="c1">// 或者指出指针p为空</span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">ret</span><span class="p">.</span><span class="n">str</span><span class="p">();</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>我们可以这样使用这些函数：</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// 传递的是一个非指针对象, 因此只有第一个版本的debug_rep是可行的</span>
-<span class="n">string</span> <span class="nf">s</span><span class="p">(</span><span class="s">&quot;hi&quot;</span><span class="p">);</span>
-<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">debug_rep</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="n">string</span><span class="w"> </span><span class="nf">s</span><span class="p">(</span><span class="s">&quot;hi&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">debug_rep</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
 <p>如果我们用一个指针调用<code class="docutils literal notranslate"><span class="pre">debug_rep</span></code>：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">debug_rep</span><span class="p">(</span><span class="o">&amp;</span><span class="n">s</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">debug_rep</span><span class="p">(</span><span class="o">&amp;</span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
 <p>那么两个函数都生成可行的实例：</p>
@@ -617,8 +524,8 @@
 </ul>
 <p>第二个版本的实例是此调用的精确匹配，第一个版本需要进行普通指针到<code class="docutils literal notranslate"><span class="pre">const</span></code>指针的转换，编译器会选择第二个<code class="docutils literal notranslate"><span class="pre">debug_rep</span></code>版本。</p>
 <p>考虑下面这个例子，它提供了多个可行模板：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">const</span> <span class="n">string</span> <span class="o">*</span><span class="n">sp</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">s</span><span class="p">;</span>
-<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">debug_rep</span><span class="p">(</span><span class="n">sp</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">const</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="o">*</span><span class="n">sp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">s</span><span class="p">;</span><span class="w"></span>
+<span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">debug_rep</span><span class="p">(</span><span class="n">sp</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
 <p>此时两个模板都是可行的，而且都是精确匹配：</p>
@@ -631,9 +538,9 @@
 <div><p>Tips：当有多个重载模板对一个调用提供同样好的匹配时，应该选择最特例化的版本。</p>
 <p>设计这条规则的原因在于，如果没有它将无法对一个<code class="docutils literal notranslate"><span class="pre">const</span></code>的指针调用指针版本的<code class="docutils literal notranslate"><span class="pre">debug_rep</span></code>。问题在于模板<code class="docutils literal notranslate"><span class="pre">debug_rep(const</span> <span class="pre">T&amp;)</span></code>本质上可以用于任何类型，包括指针类型。此模板比<code class="docutils literal notranslate"><span class="pre">debug_rep(T*)</span></code>更通用，后者只能用于指针类型。没有这条规则的话，传递<code class="docutils literal notranslate"><span class="pre">const</span></code>指针的调用永远是有歧义的。</p>
 </div></blockquote>
-</div>
-<div class="section" id="id26">
-<h3>4. 非模板函数与模板重载<a class="headerlink" href="#id26" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id26">
+<h3>4. 非模板函数与模板重载<a class="headerlink" href="#id26" title="永久链接至标题"></a></h3>
 <blockquote>
 <div><p>Tips：对于一个调用，如果一个非函数模板与一个函数模板提供同样好的匹配，则选择非模板版本。</p>
 </div></blockquote>
@@ -644,8 +551,8 @@
 </pre></div>
 </div>
 <p>此时我们对一个<code class="docutils literal notranslate"><span class="pre">string</span></code>调用<code class="docutils literal notranslate"><span class="pre">debug_rep</span></code>时：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">string</span> <span class="nf">s</span><span class="p">(</span><span class="s">&quot;hi&quot;</span><span class="p">);</span>
-<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">debug_rep</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">string</span><span class="w"> </span><span class="nf">s</span><span class="p">(</span><span class="s">&quot;hi&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">debug_rep</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
 <p>有两个同样好的可行函数：</p>
@@ -654,12 +561,12 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">debug_rep&lt;const</span> <span class="pre">string&amp;&gt;</span></code>，普通非模板函数</p></li>
 </ul>
 <p>在本例中两个函数具有相同的参数列表，因此显然两者提供同样好的匹配，但是编译器会选择非模板版本。当存在多个同样好的函数模板时，编译器选择最特例化的版本，处于同样的原因，一个非模板函数比一个函数模板好。</p>
-</div>
-<div class="section" id="id27">
-<h3>5. 类型转换与模板重载<a class="headerlink" href="#id27" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id27">
+<h3>5. 类型转换与模板重载<a class="headerlink" href="#id27" title="永久链接至标题"></a></h3>
 <p>对于C风格字符串和字符串字面常量而言，考虑如下调用：</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// 调用debug_rep(T*)</span>
-<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">debug_rep</span><span class="p">(</span><span class="s">&quot;tomocat&quot;</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">debug_rep</span><span class="p">(</span><span class="s">&quot;tomocat&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
 <p>下面三个<code class="docutils literal notranslate"><span class="pre">debug_rep</span></code>版本都是可行的：</p>
@@ -670,72 +577,55 @@
 </ul>
 <p>对于给定参数而言，前两个函数模板版本都提供精确匹配（虽然第二个模板需要进行数组到指针的转换，但是对于函数匹配而言，这种转换被认为是精确匹配）。非模板版本是可行的，但是需要进行一次用户定义的类型转换，因此它没有精确匹配那么好，所以两个模板成为可能调用的函数。与之前提到的一样，<code class="docutils literal notranslate"><span class="pre">T*</span></code>版本更加特例化，因此编译器会选择它。</p>
 <p>由于接受<code class="docutils literal notranslate"><span class="pre">T*</span></code>指针的函数模板不能正确处理<code class="docutils literal notranslate"><span class="pre">char*</span></code>，因此我们定义另外两个非模板重载版本：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span> <span class="n">string</span> <span class="n">debug_rep</span><span class="p">(</span><span class="k">const</span> <span class="n">T</span> <span class="o">&amp;</span><span class="n">t</span><span class="p">);</span>
-<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span> <span class="n">string</span> <span class="n">debug_rep</span><span class="p">(</span><span class="n">T</span> <span class="o">*</span><span class="n">p</span><span class="p">);</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="n">debug_rep</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="o">&amp;</span><span class="n">t</span><span class="p">);</span><span class="w"></span>
+<span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="n">debug_rep</span><span class="p">(</span><span class="n">T</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">);</span><span class="w"></span>
 <span class="c1">// 为了使debug_rep(char*)的定义正确工作, 下面的声明必须在作用域中</span>
-<span class="n">string</span> <span class="nf">debug_rep</span><span class="p">(</span><span class="k">const</span> <span class="n">string</span><span class="o">&amp;</span><span class="p">);</span>
+<span class="n">string</span><span class="w"> </span><span class="nf">debug_rep</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">string</span><span class="o">&amp;</span><span class="p">);</span><span class="w"></span>
 <span class="c1">// 将字符指针按string处理, 并调用string版本的debug_rep</span>
-<span class="n">string</span> <span class="nf">debug_rep</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">p</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="n">debug_rep</span><span class="p">(</span><span class="n">string</span><span class="p">(</span><span class="n">p</span><span class="p">));</span>
-<span class="p">}</span>
-<span class="n">string</span> <span class="nf">debug_rep</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">p</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="n">debug_rep</span><span class="p">(</span><span class="n">string</span><span class="p">(</span><span class="n">p</span><span class="p">));</span>
-<span class="p">}</span>
+<span class="n">string</span><span class="w"> </span><span class="nf">debug_rep</span><span class="p">(</span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">debug_rep</span><span class="p">(</span><span class="n">string</span><span class="p">(</span><span class="n">p</span><span class="p">));</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="n">string</span><span class="w"> </span><span class="nf">debug_rep</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">debug_rep</span><span class="p">(</span><span class="n">string</span><span class="p">(</span><span class="n">p</span><span class="p">));</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <blockquote>
 <div><p>Tips：一般情况下如果使用了一个忘记声明的函数，代码将编译失败。但对于重载函数模板的函数而言，如果编译器可以从模板实例化出与调用匹配的版本，则缺少的声明就不重要的。在上面的例子中，如果忘记声明接受<code class="docutils literal notranslate"><span class="pre">string</span></code>参数的<code class="docutils literal notranslate"><span class="pre">debug_rep</span></code>版本，编译器会默认地接收<code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">T&amp;</span></code>的模板版本。</p>
 </div></blockquote>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="7.2%20%E7%B1%BB%E6%A8%A1%E6%9D%BF.html" class="btn btn-neutral float-right" title="7.2 类模板" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="index.html" class="btn btn-neutral float-left" title="第7章 模板" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="7.2%20%E7%B1%BB%E6%A8%A1%E6%9D%BF.html" class="btn btn-neutral float-right" title="7.2 类模板" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; 版权所有 2021, TOMOCAT.
-
-    </p>
+    <p>&#169; 版权所有 2021, TOMOCAT.</p>
   </div>
-    
-    
-    
-    利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
-    
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
-    
-    由 <a href="https://readthedocs.org">Read the Docs</a>开发. 
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

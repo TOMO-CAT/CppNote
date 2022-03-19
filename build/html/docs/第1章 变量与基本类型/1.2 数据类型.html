@@ -1,74 +1,35 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="zh-CN" >
 <head>
-  <meta charset="utf-8" />
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>1.2 数据类型 &mdash; C++语法笔记 v1.0 文档</title>
-  
-
-  
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script src="../../_static/translations.js"></script>
-    
-    <script type="text/javascript" src="../../_static/js/theme.js"></script>
-
-    
+    <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
     <link rel="next" title="1.3 C风格字符串" href="1.3%20C%E9%A3%8E%E6%A0%BC%E5%AD%97%E7%AC%A6%E4%B8%B2.html" />
     <link rel="prev" title="1.1 变量声明与定义" href="1.1%20%E5%8F%98%E9%87%8F%E5%A3%B0%E6%98%8E%E4%B8%8E%E5%AE%9A%E4%B9%89.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="../../index.html" class="icon icon-home"> C++语法笔记
-          
-
-          
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="在文档中搜索" />
@@ -76,18 +37,7 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">第1章 变量与基本类型</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="1.1%20%E5%8F%98%E9%87%8F%E5%A3%B0%E6%98%8E%E4%B8%8E%E5%AE%9A%E4%B9%89.html">1.1 变量声明与定义</a></li>
@@ -116,7 +66,6 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="1.3%20C%E9%A3%8E%E6%A0%BC%E5%AD%97%E7%AC%A6%E4%B8%B2.html">1.3 C风格字符串</a></li>
 <li class="toctree-l2"><a class="reference internal" href="1.4%20%E6%95%B0%E7%BB%84.html">1.4 数组</a></li>
-<li class="toctree-l2"><a class="reference internal" href="1.5%20%E6%9E%9A%E4%B8%BE%E7%B1%BB%E5%9E%8B.html">1.5 枚举类型</a></li>
 <li class="toctree-l2"><a class="reference internal" href="1.6%20%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2.html">1.6 类型转换</a></li>
 <li class="toctree-l2"><a class="reference internal" href="1.7%20%E5%88%9D%E5%A7%8B%E5%8C%96.html">1.7 初始化</a></li>
 <li class="toctree-l2"><a class="reference internal" href="%5B%E9%80%89%E8%AF%BB%5DPOD%E7%B1%BB%E5%9E%8B.html">[选读] POD类型</a></li>
@@ -128,7 +77,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC5%E7%AB%A0%20%E7%B1%BB/index.html">第5章类</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC6%E7%AB%A0%20%E6%A0%87%E5%87%86%E5%BA%93%E7%B1%BB%E5%9E%8B/index.html">第6章 标准库类型</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC7%E7%AB%A0%20%E6%A8%A1%E6%9D%BF/index.html">第7章 模板</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC8%E7%AB%A0%20%E5%85%B3%E9%94%AE%E5%AD%97%E6%A6%82%E5%BF%B5/index.html">第8章 关键字概念</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC9%E7%AB%A0%20%E7%AE%97%E6%B3%95/index.html">第9章 算法</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC10%E7%AB%A0%20%E8%AF%AD%E8%A8%80%E7%89%B9%E6%80%A7/index.html">第10章 语法特性</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC11%E7%AB%A0%20C%2B%2B11%E6%96%B0%E6%A0%87%E5%87%86/index.html">第11章 C++11新标准</a></li>
@@ -137,77 +85,35 @@
 <li class="toctree-l1"><a class="reference internal" href="../README.html">README</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../index.html">C++语法笔记</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-        
           <li><a href="index.html">第1章 变量与基本类型</a> &raquo;</li>
-        
       <li>1.2 数据类型</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
             <a href="../../_sources/docs/第1章 变量与基本类型/1.2 数据类型.md.txt" rel="nofollow"> 查看页面源码</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="id1">
-<h1>1.2 数据类型<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
-<div class="section" id="id2">
-<h2>简介<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+             
+  <section id="id1">
+<h1>1.2 数据类型<a class="headerlink" href="#id1" title="永久链接至标题"></a></h1>
+<section id="id2">
+<h2>简介<a class="headerlink" href="#id2" title="永久链接至标题"></a></h2>
 <p>C++数据类型包括基本内置类型、复合类型和自定义数据结构。</p>
 <ul class="simple">
 <li><p>基本内置类型：编译器内置的基本类型，包括算数类型（字符、整型数、布尔值、浮点数）和空类型<code class="docutils literal notranslate"><span class="pre">void</span></code></p></li>
@@ -217,9 +123,9 @@
 <blockquote>
 <div><p>POD：Plain Old Data，用来表明C++中和C相兼容的数据类型，在C++中可以用<code class="docutils literal notranslate"><span class="pre">is_pod&lt;T&gt;::value</span></code>判断是否是POD类型。</p>
 </div></blockquote>
-</div>
-<div class="section" id="id3">
-<h2>内置类型<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+</section>
+<section id="id3">
+<h2>内置类型<a class="headerlink" href="#id3" title="永久链接至标题"></a></h2>
 <blockquote>
 <div><p>Tips：C++中整型大小因编译器和操作系统的不同而不同，通常人们假定short是16位，int是32位，long是32位，long long是64位。</p>
 <p>实际开发中我们仅使用C++内置整型中的int，如果程序中需要大小不同的整型，那么：</p>
@@ -329,119 +235,119 @@
 <div><p>字节<code class="docutils literal notranslate"><span class="pre">byte</span></code>：可寻址的最小内存块，大多数机器的字节由<code class="docutils literal notranslate"><span class="pre">8</span></code>比特构成</p>
 </div></blockquote>
 <p>以我所在的64位机器为例：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
 
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;size of int:&quot;</span> <span class="o">&lt;&lt;</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;size of unsigned:&quot;</span> <span class="o">&lt;&lt;</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">unsigned</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;size of short:&quot;</span> <span class="o">&lt;&lt;</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">short</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;size of unsigned short:&quot;</span> <span class="o">&lt;&lt;</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">short</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;size of long:&quot;</span> <span class="o">&lt;&lt;</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">long</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;size of unsigned long:&quot;</span> <span class="o">&lt;&lt;</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">long</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;size of long long:&quot;</span> <span class="o">&lt;&lt;</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">long</span> <span class="kt">long</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;size of char:&quot;</span> <span class="o">&lt;&lt;</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">char</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;size of unsigned char:&quot;</span> <span class="o">&lt;&lt;</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">char</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;size of float:&quot;</span> <span class="o">&lt;&lt;</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">float</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;size of double:&quot;</span> <span class="o">&lt;&lt;</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">double</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;size of long double:&quot;</span> <span class="o">&lt;&lt;</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">long</span> <span class="kt">double</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;size of bool:&quot;</span> <span class="o">&lt;&lt;</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">bool</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="p">}</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;size of int:&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;size of unsigned:&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">unsigned</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;size of short:&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">short</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;size of unsigned short:&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;size of long:&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">long</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;size of unsigned long:&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;size of long long:&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;size of char:&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">char</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;size of unsigned char:&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;size of float:&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">float</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;size of double:&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">double</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;size of long double:&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">long</span><span class="w"> </span><span class="kt">double</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;size of bool:&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">bool</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
 <span class="c1">// 输出:</span>
-<span class="n">size</span> <span class="n">of</span> <span class="kt">int</span><span class="o">:</span><span class="mi">4</span>
-<span class="n">size</span> <span class="n">of</span> <span class="kt">unsigned</span><span class="o">:</span><span class="mi">4</span>
-<span class="n">size</span> <span class="n">of</span> <span class="kt">short</span><span class="o">:</span><span class="mi">2</span>
-<span class="n">size</span> <span class="n">of</span> <span class="kt">unsigned</span> <span class="kt">short</span><span class="o">:</span><span class="mi">2</span>
-<span class="n">size</span> <span class="n">of</span> <span class="kt">long</span><span class="o">:</span><span class="mi">8</span>
-<span class="n">size</span> <span class="n">of</span> <span class="kt">unsigned</span> <span class="kt">long</span><span class="o">:</span><span class="mi">8</span>
-<span class="n">size</span> <span class="n">of</span> <span class="kt">long</span> <span class="kt">long</span><span class="o">:</span><span class="mi">8</span>
-<span class="n">size</span> <span class="n">of</span> <span class="kt">char</span><span class="o">:</span><span class="mi">1</span>
-<span class="n">size</span> <span class="n">of</span> <span class="kt">unsigned</span> <span class="kt">char</span><span class="o">:</span><span class="mi">1</span>
-<span class="n">size</span> <span class="n">of</span> <span class="kt">float</span><span class="o">:</span><span class="mi">4</span>
-<span class="n">size</span> <span class="n">of</span> <span class="kt">double</span><span class="o">:</span><span class="mi">8</span>
-<span class="n">size</span> <span class="n">of</span> <span class="kt">long</span> <span class="kt">double</span><span class="o">:</span><span class="mi">16</span>
-<span class="n">size</span> <span class="n">of</span> <span class="kt">bool</span><span class="o">:</span><span class="mi">1</span>
+<span class="n">size</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="kt">int</span><span class="o">:</span><span class="mi">4</span><span class="w"></span>
+<span class="n">size</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="kt">unsigned</span><span class="o">:</span><span class="mi">4</span><span class="w"></span>
+<span class="n">size</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="kt">short</span><span class="o">:</span><span class="mi">2</span><span class="w"></span>
+<span class="n">size</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="o">:</span><span class="mi">2</span><span class="w"></span>
+<span class="n">size</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="kt">long</span><span class="o">:</span><span class="mi">8</span><span class="w"></span>
+<span class="n">size</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="o">:</span><span class="mi">8</span><span class="w"></span>
+<span class="n">size</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="o">:</span><span class="mi">8</span><span class="w"></span>
+<span class="n">size</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="kt">char</span><span class="o">:</span><span class="mi">1</span><span class="w"></span>
+<span class="n">size</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="o">:</span><span class="mi">1</span><span class="w"></span>
+<span class="n">size</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="kt">float</span><span class="o">:</span><span class="mi">4</span><span class="w"></span>
+<span class="n">size</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="kt">double</span><span class="o">:</span><span class="mi">8</span><span class="w"></span>
+<span class="n">size</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="kt">double</span><span class="o">:</span><span class="mi">16</span><span class="w"></span>
+<span class="n">size</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="kt">bool</span><span class="o">:</span><span class="mi">1</span><span class="w"></span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="literal">
-<h2>字面值常量literal<a class="headerlink" href="#literal" title="永久链接至标题">¶</a></h2>
-<div class="section" id="id4">
-<h3>1. 整形和浮点型字面量<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="literal">
+<h2>字面值常量literal<a class="headerlink" href="#literal" title="永久链接至标题"></a></h2>
+<section id="id4">
+<h3>1. 整形和浮点型字面量<a class="headerlink" href="#id4" title="永久链接至标题"></a></h3>
 <p>以0开头的整数表示八进制，以0x或者0X开头的整数表示十六进制，我们可以用下面三种方式表示20：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="mi">20</span>    <span class="c1">// 十进制</span>
-<span class="mo">024</span>   <span class="c1">// 八进制</span>
-<span class="mh">0x14</span>  <span class="c1">// 十六进制</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="mi">20</span><span class="w">    </span><span class="c1">// 十进制</span>
+<span class="mo">024</span><span class="w">   </span><span class="c1">// 八进制</span>
+<span class="mh">0x14</span><span class="w">  </span><span class="c1">// 十六进制</span>
 </pre></div>
 </div>
 <p>浮点型字面量是一个double，其中指数部分用E或者e标识：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="mf">3.14159</span>
-<span class="mf">3.14159E0</span>
-<span class="mf">0.</span>
-<span class="mf">0e0</span>
-<span class="mf">.001</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="mf">3.14159</span><span class="w"></span>
+<span class="mf">3.14159E0</span><span class="w"></span>
+<span class="mf">0.</span><span class="w"></span>
+<span class="mf">0e0</span><span class="w"></span>
+<span class="mf">.001</span><span class="w"></span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id5">
-<h3>2. 字符和字符串字面量<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id5">
+<h3>2. 字符和字符串字面量<a class="headerlink" href="#id5" title="永久链接至标题"></a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">'a'</span></code>表示一个字符；<code class="docutils literal notranslate"><span class="pre">&quot;a&quot;</span></code>字符串字面量包含字母<code class="docutils literal notranslate"><span class="pre">a</span></code>和空字符<code class="docutils literal notranslate"><span class="pre">\0</span></code>。当书写的字符串字面量比较长，我们可以采取分开书写的方式：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;line one&quot;</span>
-             <span class="s">&quot;line two&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;line one&quot;</span><span class="w"></span>
+<span class="w">             </span><span class="s">&quot;line two&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id6">
-<h3>3. 布尔字面量与指针字面量<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id6">
+<h3>3. 布尔字面量与指针字面量<a class="headerlink" href="#id6" title="永久链接至标题"></a></h3>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">true</span></code>和<code class="docutils literal notranslate"><span class="pre">false</span></code>和布尔类型的字面量</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">nullptr</span></code>是指针类型的字面量</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="id7">
-<h2>引用<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
+</section>
+</section>
+<section id="id7">
+<h2>引用<a class="headerlink" href="#id7" title="永久链接至标题"></a></h2>
 <blockquote>
 <div><p>C++11新增了右值引用的概念，我们这里只提及左值引用。</p>
 </div></blockquote>
-<div class="section" id="id8">
-<h3>1. 引用概念<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
+<section id="id8">
+<h3>1. 引用概念<a class="headerlink" href="#id8" title="永久链接至标题"></a></h3>
 <p>引用为对象起了另一个名字，定义引用时程序把引用和它的初始值绑定在一起，一旦初始化完成引用将一直和它的初始值对象绑定在一起。</p>
 <ul class="simple">
 <li><p>因为无法令引用重新绑定到另一个对象，因此引用必须初始化</p></li>
 <li><p>因为引用不是一个对象，所以不能定义引用的引用</p></li>
 </ul>
-</div>
-<div class="section" id="id9">
-<h3>2. 使用引用的原因<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id9">
+<h3>2. 使用引用的原因<a class="headerlink" href="#id9" title="永久链接至标题"></a></h3>
 <ul class="simple">
 <li><p>引用类型可以避免对元素拷贝</p></li>
 <li><p>引用类型可以修改元素（如果仅仅是为了避免拷贝可以使用常量引用）</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="id10">
-<h2>指针<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h2>
+</section>
+</section>
+<section id="id10">
+<h2>指针<a class="headerlink" href="#id10" title="永久链接至标题"></a></h2>
 <p>指针是指向（point to）另外一种类型的复合类型。</p>
-<div class="section" id="id11">
-<h3>1. 操作符&amp;与*<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h3>
+<section id="id11">
+<h3>1. 操作符&amp;与*<a class="headerlink" href="#id11" title="永久链接至标题"></a></h3>
 <p>获取对象地址时可以用<code class="docutils literal notranslate"><span class="pre">&amp;</span></code>取地址符，利用指针访问对象时可以用<code class="docutils literal notranslate"><span class="pre">*</span></code>解引用符。</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">iVal</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
-<span class="kt">int</span> <span class="o">*</span><span class="n">p</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">iVal</span><span class="p">;</span>  <span class="c1">// p是指向iVal变量的指针</span>
-<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">p</span><span class="p">;</span>      <span class="c1">// 解引用获得p指向的对象 </span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">iVal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">42</span><span class="p">;</span><span class="w"></span>
+<span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">iVal</span><span class="p">;</span><span class="w">  </span><span class="c1">// p是指向iVal变量的指针</span>
+<span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">;</span><span class="w">      </span><span class="c1">// 解引用获得p指向的对象 </span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id12">
-<h3>2. 空指针<a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id12">
+<h3>2. 空指针<a class="headerlink" href="#id12" title="永久链接至标题"></a></h3>
 <blockquote>
 <div><p>Tips：建议初始化所有指针，不清楚指向何处时初始化为<code class="docutils literal notranslate"><span class="pre">nullptr</span></code>。</p>
 <p>使用未经初始化的指针是引发运行时错误的一大原因，如果使用了未经初始化的指针，那么指针所占空间的当前内容将被当成一个地址值，当这个地址值指向的内存空间中正好有内容时，就可能引发难以预料的后果。实际开发过程中，我们尽量等定义了对象之后再定义指向它的指针，如果实在不清楚指针应该指向何处，那么将它初始化为<code class="docutils literal notranslate"><span class="pre">nullptr</span></code>，这样程序就能检测并指导它有没有指向任何具体的对象了。</p>
 </div></blockquote>
 <p>C++11中我们可以用字面量<code class="docutils literal notranslate"><span class="pre">nullptr</span></code>初始化指针来得到空指针，它可以被转化成任意其他的指针类型。</p>
-</div>
-<div class="section" id="void">
-<h3>3. void*<a class="headerlink" href="#void" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="void">
+<h3>3. void*<a class="headerlink" href="#void" title="永久链接至标题"></a></h3>
 <blockquote>
 <div><p>Tips：由于我们不知道<code class="docutils literal notranslate"><span class="pre">void*</span></code>指针指向什么类型的对象，因此不能直接操作它所指向的对象。</p>
 </div></blockquote>
@@ -451,67 +357,50 @@
 <li><p>作为函数的输入输出</p></li>
 <li><p>赋值给另一个<code class="docutils literal notranslate"><span class="pre">void*</span></code>指针</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="id13">
-<h2>自定义数据结构<a class="headerlink" href="#id13" title="永久链接至标题">¶</a></h2>
+</section>
+</section>
+<section id="id13">
+<h2>自定义数据结构<a class="headerlink" href="#id13" title="永久链接至标题"></a></h2>
 <p>C++允许用户以类的形式自定义数据类型，关于类的知识我们主要在后面的面向对象编程中讲解，这里简单给出一个例子：</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// C++11支持为数据成员提供一个类内初始值, 没有初始值的成员将被默认初始化</span>
-<span class="k">struct</span> <span class="nc">bar</span> <span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">name</span><span class="p">;</span>
-    <span class="kt">int</span> <span class="n">foo</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">};</span>
+<span class="k">struct</span> <span class="nc">bar</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">name</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">foo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="1.3%20C%E9%A3%8E%E6%A0%BC%E5%AD%97%E7%AC%A6%E4%B8%B2.html" class="btn btn-neutral float-right" title="1.3 C风格字符串" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="1.1%20%E5%8F%98%E9%87%8F%E5%A3%B0%E6%98%8E%E4%B8%8E%E5%AE%9A%E4%B9%89.html" class="btn btn-neutral float-left" title="1.1 变量声明与定义" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="1.3%20C%E9%A3%8E%E6%A0%BC%E5%AD%97%E7%AC%A6%E4%B8%B2.html" class="btn btn-neutral float-right" title="1.3 C风格字符串" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; 版权所有 2021, TOMOCAT.
-
-    </p>
+    <p>&#169; 版权所有 2021, TOMOCAT.</p>
   </div>
-    
-    
-    
-    利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
-    
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
-    
-    由 <a href="https://readthedocs.org">Read the Docs</a>开发. 
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

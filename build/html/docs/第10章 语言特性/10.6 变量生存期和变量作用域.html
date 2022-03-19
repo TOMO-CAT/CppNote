@@ -1,74 +1,35 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="zh-CN" >
 <head>
-  <meta charset="utf-8" />
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>10.6 变量生存期和变量作用域 &mdash; C++语法笔记 v1.0 文档</title>
-  
-
-  
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script src="../../_static/translations.js"></script>
-    
-    <script type="text/javascript" src="../../_static/js/theme.js"></script>
-
-    
+    <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
     <link rel="next" title="10.7 标准类型转换模板" href="10.7%20%E6%A0%87%E5%87%86%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E6%A8%A1%E6%9D%BF.html" />
     <link rel="prev" title="10.5 命名规范" href="10.5%20%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="../../index.html" class="icon icon-home"> C++语法笔记
-          
-
-          
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="在文档中搜索" />
@@ -76,18 +37,7 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC1%E7%AB%A0%20%E5%8F%98%E9%87%8F%E4%B8%8E%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B/index.html">第1章 变量与基本类型</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC2%E7%AB%A0%20%E8%AF%AD%E5%8F%A5/index.html">第2章 语句</a></li>
@@ -96,7 +46,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC5%E7%AB%A0%20%E7%B1%BB/index.html">第5章类</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC6%E7%AB%A0%20%E6%A0%87%E5%87%86%E5%BA%93%E7%B1%BB%E5%9E%8B/index.html">第6章 标准库类型</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC7%E7%AB%A0%20%E6%A8%A1%E6%9D%BF/index.html">第7章 模板</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC8%E7%AB%A0%20%E5%85%B3%E9%94%AE%E5%AD%97%E6%A6%82%E5%BF%B5/index.html">第8章 关键字概念</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC9%E7%AB%A0%20%E7%AE%97%E6%B3%95/index.html">第9章 算法</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">第10章 语法特性</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="10.1%20%E5%A4%B4%E6%96%87%E4%BB%B6.html">10.1 头文件</a></li>
@@ -110,22 +59,22 @@
 <li class="toctree-l3"><a class="reference internal" href="#id4">变量分类：作用域和生存期</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id5">变量的存储类别</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id6">四种类型说明符</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#auto">1.自动变量的类型说明符auto</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#auto">1. 自动变量的类型说明符auto</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#extern">2. 外部变量的说明符extern</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#static">静态变量static</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#id7">1. 静态局部变量</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id8">2.静态全局变量</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id9">3.总结</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id8">2. 静态全局变量</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id9">3. 总结</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#register">寄存器变量register</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id10">四种变量的作用域、生命周期和内存分布</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id11">全局变量</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id12">全局静态变量</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id13">静态局部变量</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id14">局部变量</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id11">1. 全局变量</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id12">2. 全局静态变量</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id13">3. 静态局部变量</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id14">4. 局部变量</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#reference">Reference</a></li>
@@ -139,6 +88,7 @@
 <li class="toctree-l2"><a class="reference internal" href="10.12%20%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86.html">10.12 异常处理</a></li>
 <li class="toctree-l2"><a class="reference internal" href="10.13%20%E5%86%85%E5%AD%98%E5%88%86%E5%B8%83.html">10.13 内存分布</a></li>
 <li class="toctree-l2"><a class="reference internal" href="10.14%20%E8%B0%83%E8%AF%95%E5%B8%AE%E5%8A%A9.html">10.14 调试帮助</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10.15%20%E7%BC%96%E8%AF%91%E9%93%BE%E6%8E%A5%E5%8E%9F%E7%90%86.html">10.15 编译链接原理</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC11%E7%AB%A0%20C%2B%2B11%E6%96%B0%E6%A0%87%E5%87%86/index.html">第11章 C++11新标准</a></li>
@@ -147,84 +97,42 @@
 <li class="toctree-l1"><a class="reference internal" href="../README.html">README</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../index.html">C++语法笔记</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-        
           <li><a href="index.html">第10章 语法特性</a> &raquo;</li>
-        
       <li>10.6 变量生存期和变量作用域</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
             <a href="../../_sources/docs/第10章 语言特性/10.6 变量生存期和变量作用域.md.txt" rel="nofollow"> 查看页面源码</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="id1">
-<h1>10.6 变量生存期和变量作用域<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
-<div class="section" id="id2">
-<h2>作用域与生存期<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+             
+  <section id="id1">
+<h1>10.6 变量生存期和变量作用域<a class="headerlink" href="#id1" title="永久链接至标题"></a></h1>
+<section id="id2">
+<h2>作用域与生存期<a class="headerlink" href="#id2" title="永久链接至标题"></a></h2>
 <ul class="simple">
 <li><p>作用域：一个变量可以被引用的范围，包括全局作用域、文件作用域和条件作用域</p></li>
 <li><p>生命周期：变量可以被引用的时间段，一个程序的内存分为代码区、全局数据区、堆区和栈区，不同的内存区域对应不同的生命周期</p></li>
 </ul>
-</div>
-<div class="section" id="id3">
-<h2>内存区域<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+</section>
+<section id="id3">
+<h2>内存区域<a class="headerlink" href="#id3" title="永久链接至标题"></a></h2>
 <p>一个程序将操作系统分配给其运行的内存块分为四块区域：</p>
 <ul class="simple">
 <li><p>代码区：存放程序的代码</p></li>
@@ -232,9 +140,9 @@
 <li><p>堆区：存放程序的动态数据</p></li>
 <li><p>栈区：存放程序的局部数据，即各个函数中的数据</p></li>
 </ul>
-</div>
-<div class="section" id="id4">
-<h2>变量分类：作用域和生存期<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+</section>
+<section id="id4">
+<h2>变量分类：作用域和生存期<a class="headerlink" href="#id4" title="永久链接至标题"></a></h2>
 <p>从变量作用域（全局作用域、文件作用域和局部作用域）来分，可以分为：</p>
 <ul class="simple">
 <li><p>全局变量：函数外部定义，作用域是整个源程序（静态全局变量的作用域是该文件范围，即文件作用域）</p></li>
@@ -245,9 +153,9 @@
 <li><p>静态存储方式：在程序运行期间，系统对变量分配固定的存储空间</p></li>
 <li><p>动态存储方式：在程序运行期间，系统对变量分配动态（不固定）的存储空间</p></li>
 </ul>
-</div>
-<div class="section" id="id5">
-<h2>变量的存储类别<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+</section>
+<section id="id5">
+<h2>变量的存储类别<a class="headerlink" href="#id5" title="永久链接至标题"></a></h2>
 <p>生存周期仅仅和变量存储的位置相关，变量的存储类别可以分为<strong>静态存储方式</strong>和<strong>动态存储方式</strong></p>
 <p>变量存储类型说明包括：</p>
 <ul class="simple">
@@ -256,27 +164,27 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">register</span></code>：寄存器变量，动态存储方式</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">extern</span></code>：外部变量，静态存储方式</p></li>
 </ul>
-</div>
-<div class="section" id="id6">
-<h2>四种类型说明符<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
-<div class="section" id="auto">
-<h3>1.自动变量的类型说明符auto<a class="headerlink" href="#auto" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id6">
+<h2>四种类型说明符<a class="headerlink" href="#id6" title="永久链接至标题"></a></h2>
+<section id="auto">
+<h3>1. 自动变量的类型说明符auto<a class="headerlink" href="#auto" title="永久链接至标题"></a></h3>
 <p>C语言规定，<strong>函数内</strong>凡是未加存储类型说明的变量均视为自动变量，即自动变量可省去<code class="docutils literal notranslate"><span class="pre">auto</span></code>说明符。例如：</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">;</span>
-<span class="kt">char</span> <span class="n">c</span><span class="p">;</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="p">;</span><span class="w"></span>
+<span class="kt">char</span><span class="w"> </span><span class="n">c</span><span class="p">;</span><span class="w"></span>
 
 <span class="c1">// 等价于</span>
-<span class="k">auto</span> <span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">;</span>
-<span class="k">auto</span> <span class="kt">char</span> <span class="n">c</span><span class="p">;</span>
+<span class="k">auto</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="p">;</span><span class="w"></span>
+<span class="k">auto</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">c</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
 <ul class="simple">
 <li><p>自动变量的作用域仅限于定义该变量的个体内，比如函数中定义的自动变量仅在函数内有效，复合语句（==比如<code class="docutils literal notranslate"><span class="pre">if</span></code>后的复合语句中定义的变量==）中定义的自动变量仅在该符合语句中有效</p></li>
 <li><p>自动变量属于动态存储方式，<strong>只有在定义该变量的函数被调用时才给它分配存储单元</strong>，开始它的生存期，函数调用结束后释放存储单元结束生存期。因此函数调用结束后，自动变量的值不能保留。</p></li>
 </ul>
-</div>
-<div class="section" id="extern">
-<h3>2. 外部变量的说明符extern<a class="headerlink" href="#extern" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="extern">
+<h3>2. 外部变量的说明符extern<a class="headerlink" href="#extern" title="永久链接至标题"></a></h3>
 <ul class="simple">
 <li><p>外部变量和全局变量是对同一类变量的两种角度的提法，全局变量是从它的作用域提出的，而外部变量是从它的存储方式提出的，表示了它的生存期。</p></li>
 <li><p>==当一个源程序由若干个源文件组成时，在一个源文件中定义的外部变量在其他的源文件中也有效==</p></li>
@@ -286,35 +194,35 @@
 <div><p>在<code class="docutils literal notranslate"><span class="pre">foo1.c</span></code>和<code class="docutils literal notranslate"><span class="pre">foo2.c</span></code>中都需要使用<code class="docutils literal notranslate"><span class="pre">a,b,c</span></code>三个变量，在<code class="docutils literal notranslate"><span class="pre">foo1.c</span></code>中把这三个变量都定义为外部变量，在<code class="docutils literal notranslate"><span class="pre">foo2.c</span></code>中再用<code class="docutils literal notranslate"><span class="pre">extern</span></code>把三个变量说明为外部变量，表示这些变量已经在其他文件中定义，编译器不再为这些变量分配内存空间。</p>
 </div></blockquote>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="c1">// foo1.c</span>
-<span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">;</span>  <span class="cm">/* 外部变量定义 */</span>
-<span class="kt">char</span> <span class="n">c</span><span class="p">;</span>   <span class="cm">/* 外部变量定义 */</span>
-<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="c1">//...</span>
-<span class="p">}</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w">  </span><span class="cm">/* 外部变量定义 */</span><span class="w"></span>
+<span class="kt">char</span><span class="w"> </span><span class="n">c</span><span class="p">;</span><span class="w">   </span><span class="cm">/* 外部变量定义 */</span><span class="w"></span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">//...</span>
+<span class="p">}</span><span class="w"></span>
 
 <span class="c1">// foo2.c</span>
-<span class="k">extern</span> <span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">;</span>   <span class="cm">/* 外部变量说明 */</span>
-<span class="k">extern</span> <span class="kt">char</span> <span class="n">c</span><span class="p">;</span>    <span class="cm">/* 外部变量说明 */</span>
-<span class="kt">int</span> <span class="nf">func</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="c1">//...</span>
-<span class="p">}</span>
+<span class="k">extern</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w">   </span><span class="cm">/* 外部变量说明 */</span><span class="w"></span>
+<span class="k">extern</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">c</span><span class="p">;</span><span class="w">    </span><span class="cm">/* 外部变量说明 */</span><span class="w"></span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">func</span><span class="w"> </span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">//...</span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="static">
-<h2>静态变量static<a class="headerlink" href="#static" title="永久链接至标题">¶</a></h2>
+</section>
+</section>
+<section id="static">
+<h2>静态变量static<a class="headerlink" href="#static" title="永久链接至标题"></a></h2>
 <p>静态变量的类型说明符是<code class="docutils literal notranslate"><span class="pre">static</span></code>，属于静态存储方式，但是静态存储方式的变量不一定就是静态变量，例如外部变量属于静态存储方式但不一定是静态变量，必须由static加以定义后才能成为静态外部变量，或称静态全局变量。对于自动变量，前面已经介绍它属于动态存储方式，但是也可以用<code class="docutils literal notranslate"><span class="pre">static</span></code>定义它为静态自动变量，或称静态局部变量，从而成为静态存储方式。</p>
-<div class="section" id="id7">
-<h3>1. 静态局部变量<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
+<section id="id7">
+<h3>1. 静态局部变量<a class="headerlink" href="#id7" title="永久链接至标题"></a></h3>
 <blockquote>
 <div><p>在局部变量前面加上<code class="docutils literal notranslate"><span class="pre">static</span></code>说明符就构成静态局部变量</p>
 </div></blockquote>
 <p>例如：</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">static</span> <span class="kt">int</span> <span class="n">a</span><span class="p">;</span>
-<span class="k">static</span> <span class="n">floatarray</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="o">=</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">};</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">;</span><span class="w"></span>
+<span class="k">static</span><span class="w"> </span><span class="n">floatarray</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="o">=</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">};</span><span class="w"></span>
 </pre></div>
 </div>
 <ul class="simple">
@@ -327,51 +235,51 @@
 <div><p>根据静态局部变量的特点，它的生存期为整个源程序，==在离开定义它的函数（作用域）但再次调用定义它的函数时，它又可继续使用，而且保存了前次被调用后留下的值。==因此，当多次调用一个函数且要求在调用之间保留某些变量的值时，可考虑采用静态局部变量，虽然用全局变量也可以达到上述目的，但全局变量有时会造成意外的副作用，因此最好采用局部静态变量。</p>
 </div></blockquote>
 <p>例子：</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
-    <span class="kt">void</span> <span class="n">function</span><span class="p">();</span> <span class="cm">/* 函数声明 */</span>
-    <span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;=</span><span class="mi">5</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">function</span><span class="p">();</span> <span class="cm">/* 函数调用 */</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">function</span><span class="p">();</span><span class="w"> </span><span class="cm">/* 函数声明 */</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">&lt;=</span><span class="mi">5</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">function</span><span class="p">();</span><span class="w"> </span><span class="cm">/* 函数调用 */</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="kt">void</span> <span class="nf">f</span><span class="p">()</span> <span class="cm">/* 函数定义 */</span>
-<span class="p">{</span>
-    <span class="k">auto</span> <span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
-    
-    <span class="n">Static</span> <span class="kt">int</span> <span class="n">k</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
-    <span class="o">++</span><span class="n">j</span><span class="p">;</span>
-    <span class="o">++</span><span class="n">k</span><span class="p">;</span>
-    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d %d/n&quot;</span><span class="p">,</span> <span class="n">j</span> <span class="p">,</span> <span class="n">k</span><span class="p">);</span>
-<span class="p">}</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">f</span><span class="p">()</span><span class="w"> </span><span class="cm">/* 函数定义 */</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span>
+<span class="w">    </span><span class="n">Static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="o">++</span><span class="n">j</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="o">++</span><span class="n">k</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d %d/n&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="n">k</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <blockquote>
 <div><p>程序中定义了函数<code class="docutils literal notranslate"><span class="pre">f</span></code>，其中的变量<code class="docutils literal notranslate"><span class="pre">j</span></code>说明为自动变量并赋予初始值为0。当<code class="docutils literal notranslate"><span class="pre">main</span></code>中多次调用<code class="docutils literal notranslate"><span class="pre">f</span></code>时，<code class="docutils literal notranslate"><span class="pre">j</span></code>均赋值为0，故每次输出值都是1。而<code class="docutils literal notranslate"><span class="pre">k</span></code>为<code class="docutils literal notranslate"><span class="pre">static</span></code>型变量，每次保留之前值所以依次为1,2,3,4,5。</p>
 </div></blockquote>
-</div>
-<div class="section" id="id8">
-<h3>2.静态全局变量<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id8">
+<h3>2. 静态全局变量<a class="headerlink" href="#id8" title="永久链接至标题"></a></h3>
 <p>全局变量（外部变量）的说明之前加上<code class="docutils literal notranslate"><span class="pre">static</span></code>就构成了静态的全局变量，==全局变量本身就是静态存储变量，静态全局变量当然也是静态存储方式==。这两者在存储方式上并无不同，这两者的区别在于非静态全局变量的作用域是整个源程序，当一个源程序由多个源程序组成时，非静态的全局变量在各个源文件中都是有效的，而==静态全局变量则限制了其作用域，即只在定义该变量的源文件内有效==，在同一源程序的其他源文件中不能使用它。</p>
 <blockquote>
 <div><p>由于静态全局变量的作用域局限于一个源文件内，只能为该源文件内的函数使用，因此可以避免在其他源文件中不能使用它。</p>
 </div></blockquote>
-</div>
-<div class="section" id="id9">
-<h3>3.总结<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id9">
+<h3>3. 总结<a class="headerlink" href="#id9" title="永久链接至标题"></a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">static</span></code>这个说明符在不同地方所起的作用域是不同的，比如把局部变量改变为静态变量后是改变了它的存储方式即改变了它的生存期，把全局变量改变为静态变量后是改变了它的作用域，限制了它的使用范围。</p>
-</div>
-</div>
-<div class="section" id="register">
-<h2>寄存器变量register<a class="headerlink" href="#register" title="永久链接至标题">¶</a></h2>
+</section>
+</section>
+<section id="register">
+<h2>寄存器变量register<a class="headerlink" href="#register" title="永久链接至标题"></a></h2>
 <p>变量一般都存放在存储器内，因此对一个变量频繁读写时，必须要反复访问内存储器，从而花费大量的存取时间。</p>
 <p>为此，C语言提供了一种寄存器变量。这种变量存放在CPU的寄存器中，使用时不需求访问内存，而直接从寄存器中读写，这样可提高效率。寄存器变量的说明符是<code class="docutils literal notranslate"><span class="pre">register</span></code>，对于循环次数较多的循环控制变量及循环体内反复使用的变量均可定义为寄存器变量。</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">register</span> <span class="n">i</span><span class="p">,</span> <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-<span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">200</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
-<span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="n">i</span><span class="p">;</span>
-<span class="n">printf</span><span class="p">(</span><span class="s">&quot;s=%d/n&quot;</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">register</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">200</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"></span>
+<span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w"></span>
+<span class="n">printf</span><span class="p">(</span><span class="s">&quot;s=%d/n&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 <p>在本程序循环200次，<code class="docutils literal notranslate"><span class="pre">i</span></code>和<code class="docutils literal notranslate"><span class="pre">s</span></code>都将频繁使用，因此可定义为寄存器变量，对寄存器变量需要说明以下几点：</p>
@@ -380,11 +288,11 @@
 <li><p>在Turbo C， MS C等微机上使用的C语言中，实际上是把寄存器变量当成自动变量处理的。因此速度并不能提高，而在程序中允许使用寄存器变量只是为了与标准C保持一致</p></li>
 <li><p>即使能真正使用寄存器变量的机器，由于CPU中寄存器的个数是有限的，因此使用寄存器变量的个数都是有限的</p></li>
 </ul>
-</div>
-<div class="section" id="id10">
-<h2>四种变量的作用域、生命周期和内存分布<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h2>
-<div class="section" id="id11">
-<h3>全局变量<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id10">
+<h2>四种变量的作用域、生命周期和内存分布<a class="headerlink" href="#id10" title="永久链接至标题"></a></h2>
+<section id="id11">
+<h3>1. 全局变量<a class="headerlink" href="#id11" title="永久链接至标题"></a></h3>
 <ul class="simple">
 <li><p>作用域：全局作用域（全局变量只需要在一个源文件中定义，就可以作用于所有的源文件）</p></li>
 <li><p>生命周期：程序运行期一直存在</p></li>
@@ -394,21 +302,21 @@
 <li><p>例子：</p></li>
 </ul>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="c1">// define.cpp</span>
-<span class="kt">int</span> <span class="n">varFoo</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">varFoo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
 
 <span class="c1">// main.cpp</span>
-<span class="k">extern</span> <span class="kt">int</span> <span class="n">varFoo</span><span class="p">;</span>
+<span class="k">extern</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">varFoo</span><span class="p">;</span><span class="w"></span>
 
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">varFoo</span><span class="p">;</span>
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">varFoo</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id12">
-<h3>全局静态变量<a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id12">
+<h3>2. 全局静态变量<a class="headerlink" href="#id12" title="永久链接至标题"></a></h3>
 <ul class="simple">
 <li><p>作用域：文件作用域（只在被定义的文件中可见）</p></li>
 <li><p>生命周期：程序运行期间一直存在</p></li>
@@ -417,19 +325,19 @@
 <li><p>注意：只要文件不相互包含，在两个不同的文件中是可以定义完全相同的两个静态变量的，它们是两个完全不同的变量</p></li>
 <li><p>例子：</p></li>
 </ul>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">const</span> <span class="kt">int</span> <span class="n">varFoo1</span><span class="p">;</span>
-<span class="k">static</span> <span class="k">const</span> <span class="kt">int</span> <span class="n">varFoo2</span><span class="p">;</span>
-<span class="k">static</span> <span class="kt">int</span> <span class="n">varFoo3</span><span class="p">;</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">varFoo1</span><span class="p">;</span><span class="w"></span>
+<span class="k">static</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">varFoo2</span><span class="p">;</span><span class="w"></span>
+<span class="k">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">varFoo3</span><span class="p">;</span><span class="w"></span>
 
-<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id13">
-<h3>静态局部变量<a class="headerlink" href="#id13" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id13">
+<h3>3. 静态局部变量<a class="headerlink" href="#id13" title="永久链接至标题"></a></h3>
 <ul class="simple">
 <li><p>作用域：局部作用域（只在局部作用域可见）</p></li>
 <li><p>生命周期：程序运行期一直存在</p></li>
@@ -438,75 +346,58 @@
 <li><p>注意：只被初始化一次，多线程中需加锁保护</p></li>
 <li><p>例子：</p></li>
 </ul>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">fooFunction</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="k">static</span> <span class="kt">int</span> <span class="n">varFoo</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">fooFunction</span><span class="p">()</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">varFoo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id14">
-<h3>局部变量<a class="headerlink" href="#id14" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id14">
+<h3>4. 局部变量<a class="headerlink" href="#id14" title="永久链接至标题"></a></h3>
 <ul class="simple">
 <li><p>作用域：局部作用域（只在局部作用域内可见）</p></li>
 <li><p>生命周期：程序运行出局部作用域既被销毁</p></li>
 <li><p>内存分布：栈区</p></li>
 <li><p>注意：使用<code class="docutils literal notranslate"><span class="pre">auto</span></code>说明符标识</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="reference">
-<h2>Reference<a class="headerlink" href="#reference" title="永久链接至标题">¶</a></h2>
+</section>
+</section>
+<section id="reference">
+<h2>Reference<a class="headerlink" href="#reference" title="永久链接至标题"></a></h2>
 <p>[1] https://blog.csdn.net/u012679707/article/details/80188124</p>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="10.7%20%E6%A0%87%E5%87%86%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E6%A8%A1%E6%9D%BF.html" class="btn btn-neutral float-right" title="10.7 标准类型转换模板" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="10.5%20%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83.html" class="btn btn-neutral float-left" title="10.5 命名规范" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="10.7%20%E6%A0%87%E5%87%86%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E6%A8%A1%E6%9D%BF.html" class="btn btn-neutral float-right" title="10.7 标准类型转换模板" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; 版权所有 2021, TOMOCAT.
-
-    </p>
+    <p>&#169; 版权所有 2021, TOMOCAT.</p>
   </div>
-    
-    
-    
-    利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
-    
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
-    
-    由 <a href="https://readthedocs.org">Read the Docs</a>开发. 
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

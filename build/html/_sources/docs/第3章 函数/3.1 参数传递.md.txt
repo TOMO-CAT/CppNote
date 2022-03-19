@@ -8,7 +8,7 @@
 
 > Tips：当形参是指针类型时，形参和实参也是两个完全不同的指针，只不过他们指向同个对象。因为指针使我们可以间接地访问它所指向的对象，因此通过指针可以修改它所指对象的值。
 
-熟悉C语言的程序员常常使用指针类型的形参访问函数外部的对象，在C++语言中，建议使用引用类型的形参替代指针。
+熟悉C语言的程序员常常使用指针类型的形参访问函数外部的对象，**在C++语言中，建议使用引用类型的形参替代指针**。
 
 #### 2. 引用传递
 
@@ -197,7 +197,7 @@ argv[5] = 0;
 有时候我们无法知道应该向函数提供几个实参，为了编写能处理不同数量实参的函数，C++11新标准提供了两种主要的方法：
 
 * 如果所有的实参类型相同，传递名为`initializer_list`的标准库类型
-* 如果实参的类型不同，可以编写可变参数模板（TODO：p618页介绍）
+* 如果实参的类型不同，可以编写可变参数模板
 
 C++还提供了一种特殊的形参类型（即省略符），可以用于传递可变数量的实参，不过这种功能一般只用于与C函数交互的接口程序。
 
@@ -229,14 +229,42 @@ int main() {
 
 > Tips：省略符形参只能出现在形参列表的最后一个位置，并且仅仅用于C和C++通用的类型。
 
-省略符形参是为了便于C++程序访问某些特殊的C代码而设置的，这些代码使用了名为varargs的C标准库功能。
+省略符形参是为了便于C++程序访问某些特殊的C代码而设置的，这些代码使用了名为varargs的C标准库功能。它包含如下几个宏：
+
+* `va_list`：定义了一个指针`arg_ptr,` 用于指示可选的参数
+* `va_start(arg_ptr, argN)`：使参数列表指针`arg_ptr`指向函数参数列表中的第一个可选参数，`argN`是位于第一个可选参数之前的固定参数, 或者说最后一个固定参数
+* `va_arg(arg_ptr, type)`：返回参数列表中指针`arg_ptr`所指的参数, 返回类型为`type`. 并使指针`arg_ptr`指向参数列表中下一个参数.返回的是可选参数, 不包括固定参数
+* `va_end(arg_ptr)`：清空参数列表, 并置参数指针`arg_ptr`无效
+
+```c++
+#include <stdarg.h>
+#include <string>
+
+std::string format_string(const char* fmt, ... ) {
+    const int SIZE = 500;
+    char res[SIZE + 1];
+    res[SIZE] = NULL;
+    va_list va;
+    va_start(va, fmt);
+    vsnprintf(res, SIZE, fmt, va);
+    va_end(va);
+    return res;
+}
+
+int main() {
+    printf("%s\n", format_string("str:%s int:%d float:%.2f", "cat", 102, 3.1415).c_str());
+    return 0;
+}
+```
 
 #### 4. 可变参数函数模板
 
+###### 4.1 参数包
+
 可变参数函数模板指的是接收可变数目参数的模板函数。可变数目的参数被称为参数包，包括两种参数包：
 
-* 模板参数包：表示零个或多个模板参数
-* 函数参数包：表示零个或多个函数参数
+- 模板参数包：表示零个或多个模板参数
+- 函数参数包：表示零个或多个函数参数
 
 ```c++
 // Args: 模板参数包
@@ -245,7 +273,7 @@ template <typename T, typename... Args>
 void foo(const T &t, const Args&... rest);
 ```
 
-###### 4.1 sizeof...运算符
+###### 4.2 sizeof...运算符
 
 我们可以使用`sizeof...`运算符来获取参数包中元素个数：
 
@@ -256,22 +284,27 @@ template <typename... Args> void bar(Args... args) {
 }
 ```
 
-###### 4.2 编写可变参数函数模板
+###### 4.3 例子
 
 > Tips：可变参数函数模板通常是递归的。当定义可变参数版本的print时，非可变参数版本的声明必须在作用域中，否则可变参数版本会无限递归。
 
 ```c++
+#include <iostream>
+
 // 用来终止递归并打印最后一个元素的函数, 必须在可变参数版本的print定义之前声明
 template <typename T>
-ostream &print(ostream &os, const T &t) {
-    return os << t;
+void print(const T &t) {
+    std::cout << t << std::endl;
 }
 
-// 包中除最后一个元素之外的其他元素都会调用这个版本的print
+// 参数包中除最后一个元素之外的其他元素都会调用这个版本的print
 template <typename T, typename... Args>
-ostream &print(ostream &os, const T &t, const Args&... rest) {
-    os << t << ", ";
-    return print(os, rest...);
+void print(const T &t, const Args&... rest) {
+    std::cout << t << std::endl;
+    print(rest...);
+}
+
+int main() {
+    print("tomo", "cat", "tomocat");
 }
 ```
-

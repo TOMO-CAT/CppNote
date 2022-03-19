@@ -322,7 +322,9 @@ r = q;  // 给r赋值, 令它指向另一个地址
 ```
 
 #### 5. shared_ptr自动销毁管理的对象
+
 当指向对象的最后一个`shared_ptr`被销毁时，`shared_ptr`类会自动销毁此对象。它是通过另一个特殊的成员函数——析构函数`destructor`完成销毁工作的。
+
 > 就像构造函数控制初始化一样，析构函数控制此类型的对象销毁时做什么操作。
 
 析构函数一般用于释放对象所分配的资源。例如`string`的构造函数会分配内存来保存构成`string`的字符，`string`的析构函数就负责释放这些内存。`vector`的若干操作都会分配内存来保存元素，`vector`的析构函数就负责销毁这些元素，并释放它们占用的内存。
@@ -330,6 +332,7 @@ r = q;  // 给r赋值, 令它指向另一个地址
 > `shared_ptr`的析构函数会递减它所指向的对象的引用计数，如果引用计数变为0，`shared_ptr`的析构函数就会销毁对象，并释放它占用的内存。
 
 #### 6. 智能指针忘记释放内存的场景
+
 对于某个对象，由于在最后一个`shared_ptr`被销毁前内存都不会释放，保证`shared_ptr`在无用之后不再保留就非常重要了。`shared_ptr`在无用之后仍然保留的一种可能情况是，你将`shared_ptr`存放在一个容器中，随后重排了容器，从而不再需要某些元素，在这种情况下，你应该确保用`erase`删除那些不再需要的`shared_ptr`元素。
 
 #### 7. shared_ptr和new结合使用
@@ -456,8 +459,6 @@ if (shared_ptr<int> np = wp.lock()) {
 }
 ```
 
-
-
 ## 智能指针和哑类
 
 包括所有标准库在内的很多C++类都定义了析构函数，负责清理对象使用的资源。但是不是所有的类都是这么良好定义的，特别是哪些为C和C++两种语言设计的类，通常都要求用户显式地释放所使用的任何资源。
@@ -543,6 +544,47 @@ for (size_t i = 0; i != 10; ++i) {
 sp.reset();
 ```
 
+## 编码规范：以独立语句将newed对象置入智能指针
+
+> Effective C++：Store newed objects in smart pointers in standalone statements.
+>
+> * 以独立语句将newed对象存储于（置入）智能指针内。如果不这样做，一旦异常被抛出，有可能导致难以察觉的资源泄露。
+
+​	假设我们有一个函数用来揭示处理程序的优先级，另一个函数用来在某动态分配所得的Widget上进行某些带有优先权的处理：
+
+```c++
+int priority();  // 可能抛出异常
+void processWidget(std::shared_ptr<Widget>pw, int priority);
+```
+
+调用过程如下：
+
+```c++
+processWidget(std::shared_ptr<Widget>(new Widget), priority());
+```
+
+在调用`processWidget()`之前，编译器必须创建代码做如下三件事情：
+
+* 调用`priority()`
+* 执行`new Widget`
+* 调用`std::shared_ptr<Widget>`构造函数
+
+C++编译器以什么样的次序完成这些事情呢，这和其他语言如Java和C#不同，那两种语言总是以特定次序完成函数参数的核算。可以确定的是`new Widget`一定执行于`std::shared_ptr`构造函数被调用之前，因为这个表达式结果还要被传递作为`std::shared_ptr<Widget>`构造函数的一个实参，但对`priority`的调用则可以排在第一或第二或第三执行。如果编译器选择以第二顺序执行它（说不定可因此生成更高效的代码），最终获得这样的操作序列：
+
+* 执行`new Widget`
+* 调用`priority()`
+* 调用`std::shared_ptr<Widget>`构造函数
+
+万一对priority的调用导致异常，此时`new Widget`返回的指针会遗失，因为它尚未被置入`std::shared_ptr<Widget>`内，后者是我们期盼用来防卫资源泄露的武器。在对`processWidget`的调用过程中可能发生资源泄露，因为在“资源被创建”和“资源被转换为资源管理对象”两个时间点之间可能发生异常干扰。
+
+避免这类问题办法就是使用分离语句：
+
+```c++
+// 在单独语句内以智能指针存储newed所得对象
+std::shared_ptr<Widget> pw(new Widget);
+// 这个调用动作绝不至于造成泄露
+processWidget(pw, priority());
+```
 
 ## Reference
 

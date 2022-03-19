@@ -1,74 +1,35 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="zh-CN" >
 <head>
-  <meta charset="utf-8" />
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>5.12 局部类 &mdash; C++语法笔记 v1.0 文档</title>
-  
-
-  
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script src="../../_static/translations.js"></script>
-    
-    <script type="text/javascript" src="../../_static/js/theme.js"></script>
-
-    
+    <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
     <link rel="next" title="第6章 标准库类型" href="../%E7%AC%AC6%E7%AB%A0%20%E6%A0%87%E5%87%86%E5%BA%93%E7%B1%BB%E5%9E%8B/index.html" />
     <link rel="prev" title="5.11 嵌套类" href="5.11%20%E5%B5%8C%E5%A5%97%E7%B1%BB.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="../../index.html" class="icon icon-home"> C++语法笔记
-          
-
-          
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="在文档中搜索" />
@@ -76,18 +37,7 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC1%E7%AB%A0%20%E5%8F%98%E9%87%8F%E4%B8%8E%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B/index.html">第1章 变量与基本类型</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC2%E7%AB%A0%20%E8%AF%AD%E5%8F%A5/index.html">第2章 语句</a></li>
@@ -117,7 +67,6 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC6%E7%AB%A0%20%E6%A0%87%E5%87%86%E5%BA%93%E7%B1%BB%E5%9E%8B/index.html">第6章 标准库类型</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC7%E7%AB%A0%20%E6%A8%A1%E6%9D%BF/index.html">第7章 模板</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC8%E7%AB%A0%20%E5%85%B3%E9%94%AE%E5%AD%97%E6%A6%82%E5%BF%B5/index.html">第8章 关键字概念</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC9%E7%AB%A0%20%E7%AE%97%E6%B3%95/index.html">第9章 算法</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC10%E7%AB%A0%20%E8%AF%AD%E8%A8%80%E7%89%B9%E6%80%A7/index.html">第10章 语法特性</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC11%E7%AB%A0%20C%2B%2B11%E6%96%B0%E6%A0%87%E5%87%86/index.html">第11章 C++11新标准</a></li>
@@ -126,181 +75,122 @@
 <li class="toctree-l1"><a class="reference internal" href="../README.html">README</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../index.html">C++语法笔记</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-        
           <li><a href="index.html">第5章类</a> &raquo;</li>
-        
       <li>5.12 局部类</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
             <a href="../../_sources/docs/第5章 类/5.12 局部类.md.txt" rel="nofollow"> 查看页面源码</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="id1">
-<h1>5.12 局部类<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
-<div class="section" id="id2">
-<h2>简介<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+             
+  <section id="id1">
+<h1>5.12 局部类<a class="headerlink" href="#id1" title="永久链接至标题"></a></h1>
+<section id="id2">
+<h2>简介<a class="headerlink" href="#id2" title="永久链接至标题"></a></h2>
 <p>类可以定义在某个函数的内部，我们称这样的类为局部类<code class="docutils literal notranslate"><span class="pre">local</span> <span class="pre">class</span></code>。</p>
 <ul class="simple">
 <li><p>局部类的成员必须完整定义在类的内部，所以成员函数的复杂性不能太高，一般只有几行代码</p></li>
 <li><p>在局部类中不允许声明静态数据成员</p></li>
 </ul>
-</div>
-<div class="section" id="id3">
-<h2>局部类不能使用函数作用域中的变量<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+</section>
+<section id="id3">
+<h2>局部类不能使用函数作用域中的变量<a class="headerlink" href="#id3" title="永久链接至标题"></a></h2>
 <p>局部类只能访问外层作用域定义的类型名、静态变量以及枚举成员。如果局部类定义在某个函数内部，则该函数的普通局部变量不能被该局部类使用：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="n">val</span><span class="p">;</span>
-<span class="kt">void</span> <span class="nf">foo</span><span class="p">(</span><span class="kt">int</span> <span class="n">val</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">static</span> <span class="kt">int</span> <span class="n">si</span><span class="p">;</span>
-    <span class="k">enum</span> <span class="nc">Loc</span> <span class="p">{</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">1024</span><span class="p">,</span> <span class="n">b</span> <span class="p">};</span>
-    <span class="c1">// Bar是foo的局部类</span>
-    <span class="k">struct</span> <span class="nc">Bar</span> <span class="p">{</span>
-        <span class="n">Loc</span> <span class="n">locVal</span><span class="p">;</span>          <span class="c1">// 正确: 使用一个局部类型名</span>
-        <span class="kt">int</span> <span class="n">barVal</span><span class="p">;</span>
-        
-        <span class="kt">void</span> <span class="n">fooBar</span><span class="p">(</span><span class="n">Loc</span> <span class="n">l</span> <span class="o">=</span> <span class="n">a</span><span class="p">)</span> <span class="p">{</span>
-            <span class="n">barVal</span> <span class="o">=</span> <span class="n">val</span><span class="p">;</span>    <span class="c1">// 错误: val是foo的局部变量</span>
-            <span class="n">barVal</span> <span class="o">=</span> <span class="o">::</span><span class="n">val</span><span class="p">;</span>  <span class="c1">// 正确: 使用一个全局变量</span>
-            <span class="n">barVal</span> <span class="o">=</span> <span class="n">si</span><span class="p">;</span>     <span class="c1">// 正确: 使用一个静态局部对象</span>
-            <span class="n">locVal</span> <span class="o">=</span> <span class="n">b</span><span class="p">;</span>      <span class="c1">// 正确: 使用一个美剧成员</span>
-        <span class="p">}</span>
-    <span class="p">};</span>
-    <span class="c1">// ...</span>
-<span class="p">}</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">val</span><span class="p">;</span><span class="w"></span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">foo</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">val</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">si</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">enum</span> <span class="nc">Loc</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1024</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// Bar是foo的局部类</span>
+<span class="w">    </span><span class="k">struct</span> <span class="nc">Bar</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">Loc</span><span class="w"> </span><span class="n">locVal</span><span class="p">;</span><span class="w">          </span><span class="c1">// 正确: 使用一个局部类型名</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">barVal</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span>
+<span class="w">        </span><span class="kt">void</span><span class="w"> </span><span class="n">fooBar</span><span class="p">(</span><span class="n">Loc</span><span class="w"> </span><span class="n">l</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">barVal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">val</span><span class="p">;</span><span class="w">    </span><span class="c1">// 错误: val是foo的局部变量</span>
+<span class="w">            </span><span class="n">barVal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">::</span><span class="n">val</span><span class="p">;</span><span class="w">  </span><span class="c1">// 正确: 使用一个全局变量</span>
+<span class="w">            </span><span class="n">barVal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">si</span><span class="p">;</span><span class="w">     </span><span class="c1">// 正确: 使用一个静态局部对象</span>
+<span class="w">            </span><span class="n">locVal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w">      </span><span class="c1">// 正确: 使用一个美剧成员</span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">};</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// ...</span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id4">
-<h2>常规的访问保护规则对局部类同样适用<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+</section>
+<section id="id4">
+<h2>常规的访问保护规则对局部类同样适用<a class="headerlink" href="#id4" title="永久链接至标题"></a></h2>
 <p>外层函数对局部类的私有成员没有任何访问特权。当然，局部类可以将外层函数声明为友元；或者更常见的是局部类将其成员声明成公有的。在程序中有权访问局部类的代码非常有限，局部类已经封装在函数作用域中，通过信息隐藏进一步封装就显得没有必要。</p>
-</div>
-<div class="section" id="id5">
-<h2>局部类中的名字查找<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+</section>
+<section id="id5">
+<h2>局部类中的名字查找<a class="headerlink" href="#id5" title="永久链接至标题"></a></h2>
 <p>局部类内部的名字查找次序与其他类相似。在声明类的成员时，必须先确保用到的名字位于作用域中，然后再使用该名字。定义成员时用到的名字可以出现在类的任意位置，如果某个名字不是局部类的成员，则继续在外层函数函数作用域中查找。如果还是没有找到，则在外层函数所在的作用域中查找。</p>
-</div>
-<div class="section" id="id6">
-<h2>嵌套的局部类<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
+</section>
+<section id="id6">
+<h2>嵌套的局部类<a class="headerlink" href="#id6" title="永久链接至标题"></a></h2>
 <p>可以在局部类的内部再嵌套一个类。此时嵌套类的定义可以出现在局部类之外，不过嵌套类必须定义在于局部类相同的作用域中。</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">foo</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">class</span> <span class="nc">Bar</span> <span class="p">{</span>
-     <span class="k">public</span><span class="o">:</span>
-        <span class="c1">// ...</span>
-        <span class="k">class</span> <span class="nc">Nested</span><span class="p">;</span>
-    <span class="p">};</span>
-    
-    <span class="k">class</span> <span class="nc">Bar</span><span class="o">::</span><span class="n">Nested</span> <span class="p">{</span>
-        <span class="c1">// ...</span>
-    <span class="p">};</span>
-<span class="p">}</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">foo</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">class</span> <span class="nc">Bar</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">     </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// ...</span>
+<span class="w">        </span><span class="k">class</span> <span class="nc">Nested</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">};</span><span class="w"></span>
+<span class="w">    </span>
+<span class="w">    </span><span class="k">class</span> <span class="nc">Bar</span><span class="o">::</span><span class="n">Nested</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// ...</span>
+<span class="w">    </span><span class="p">};</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>局部类内的嵌套类也是一个局部类，必须遵循局部类的各种规定。嵌套类的所有成员都必须定义在嵌套类内部。</p>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="../%E7%AC%AC6%E7%AB%A0%20%E6%A0%87%E5%87%86%E5%BA%93%E7%B1%BB%E5%9E%8B/index.html" class="btn btn-neutral float-right" title="第6章 标准库类型" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="5.11%20%E5%B5%8C%E5%A5%97%E7%B1%BB.html" class="btn btn-neutral float-left" title="5.11 嵌套类" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../%E7%AC%AC6%E7%AB%A0%20%E6%A0%87%E5%87%86%E5%BA%93%E7%B1%BB%E5%9E%8B/index.html" class="btn btn-neutral float-right" title="第6章 标准库类型" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; 版权所有 2021, TOMOCAT.
-
-    </p>
+    <p>&#169; 版权所有 2021, TOMOCAT.</p>
   </div>
-    
-    
-    
-    利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
-    
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
-    
-    由 <a href="https://readthedocs.org">Read the Docs</a>开发. 
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

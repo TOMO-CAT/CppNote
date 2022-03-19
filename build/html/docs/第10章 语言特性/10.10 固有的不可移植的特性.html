@@ -1,74 +1,35 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="zh-CN" >
 <head>
-  <meta charset="utf-8" />
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>10.10 固有的不可移植的特性 &mdash; C++语法笔记 v1.0 文档</title>
-  
-
-  
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script src="../../_static/translations.js"></script>
-    
-    <script type="text/javascript" src="../../_static/js/theme.js"></script>
-
-    
+    <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
     <link rel="next" title="10.11 运行时类型识别" href="10.11%20%E8%BF%90%E8%A1%8C%E6%97%B6%E7%B1%BB%E5%9E%8B%E8%AF%86%E5%88%AB.html" />
     <link rel="prev" title="10.9 并行和并发" href="10.9%20%E5%B9%B6%E8%A1%8C%E5%92%8C%E5%B9%B6%E5%8F%91.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="../../index.html" class="icon icon-home"> C++语法笔记
-          
-
-          
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="在文档中搜索" />
@@ -76,18 +37,7 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC1%E7%AB%A0%20%E5%8F%98%E9%87%8F%E4%B8%8E%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B/index.html">第1章 变量与基本类型</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC2%E7%AB%A0%20%E8%AF%AD%E5%8F%A5/index.html">第2章 语句</a></li>
@@ -96,7 +46,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC5%E7%AB%A0%20%E7%B1%BB/index.html">第5章类</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC6%E7%AB%A0%20%E6%A0%87%E5%87%86%E5%BA%93%E7%B1%BB%E5%9E%8B/index.html">第6章 标准库类型</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC7%E7%AB%A0%20%E6%A8%A1%E6%9D%BF/index.html">第7章 模板</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC8%E7%AB%A0%20%E5%85%B3%E9%94%AE%E5%AD%97%E6%A6%82%E5%BF%B5/index.html">第8章 关键字概念</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC9%E7%AB%A0%20%E7%AE%97%E6%B3%95/index.html">第9章 算法</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">第10章 语法特性</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="10.1%20%E5%A4%B4%E6%96%87%E4%BB%B6.html">10.1 头文件</a></li>
@@ -127,6 +76,7 @@
 <li class="toctree-l2"><a class="reference internal" href="10.12%20%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86.html">10.12 异常处理</a></li>
 <li class="toctree-l2"><a class="reference internal" href="10.13%20%E5%86%85%E5%AD%98%E5%88%86%E5%B8%83.html">10.13 内存分布</a></li>
 <li class="toctree-l2"><a class="reference internal" href="10.14%20%E8%B0%83%E8%AF%95%E5%B8%AE%E5%8A%A9.html">10.14 调试帮助</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10.15%20%E7%BC%96%E8%AF%91%E9%93%BE%E6%8E%A5%E5%8E%9F%E7%90%86.html">10.15 编译链接原理</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC11%E7%AB%A0%20C%2B%2B11%E6%96%B0%E6%A0%87%E5%87%86/index.html">第11章 C++11新标准</a></li>
@@ -135,102 +85,60 @@
 <li class="toctree-l1"><a class="reference internal" href="../README.html">README</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../index.html">C++语法笔记</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-        
           <li><a href="index.html">第10章 语法特性</a> &raquo;</li>
-        
       <li>10.10 固有的不可移植的特性</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
             <a href="../../_sources/docs/第10章 语言特性/10.10 固有的不可移植的特性.md.txt" rel="nofollow"> 查看页面源码</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="id1">
-<h1>10.10 固有的不可移植的特性<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
-<div class="section" id="id2">
-<h2>简介<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+             
+  <section id="id1">
+<h1>10.10 固有的不可移植的特性<a class="headerlink" href="#id1" title="永久链接至标题"></a></h1>
+<section id="id2">
+<h2>简介<a class="headerlink" href="#id2" title="永久链接至标题"></a></h2>
 <p>为了支持低层编程，C++定义了一些固有的不可移植的特性。所谓不可移植的特性是指因机器而异的特性，当我们将不可移植特性的程序从一台机器转移到另一台机器上时，通常需要重新编写该程序。算术类型的大小在不同机器上不一样，这是我们使用过的不可移植特性的一个典型示例。</p>
-</div>
-<div class="section" id="id3">
-<h2>位域<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+</section>
+<section id="id3">
+<h2>位域<a class="headerlink" href="#id3" title="永久链接至标题"></a></h2>
 <p>类可以将其（非静态）数据成员定义成位域<code class="docutils literal notranslate"><span class="pre">bit-field</span></code>，在一个位域中含有一定数量的二进制位。当一个程序需要向其他程序或者硬件设备传递二进制数据时，通常会用到位域。</p>
 <blockquote>
 <div><p>Tips：位域在内存中的布局是与机器相关的。</p>
 </div></blockquote>
 <p>位域的类型必须是整型或者枚举类型。因为带符号位域的行为是由具体实现确定的，所以在通常情况下我们使用无符号类型保存一个位域。位域的声明形式是在成员名字之后紧跟一个冒号以及一个常量表达式，该表达式用于指定成员所占的二进制位数：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span> <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">Bit</span><span class="p">;</span>
-<span class="k">class</span> <span class="nc">File</span> <span class="p">{</span>
-    <span class="n">Bit</span> <span class="nl">mode</span><span class="p">:</span> <span class="mi">2</span><span class="p">;</span>         <span class="c1">// mode占两位</span>
-    <span class="n">Bit</span> <span class="nl">modified</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>     <span class="c1">// modified占1位</span>
-    <span class="n">Bit</span> <span class="nl">prot_owner</span><span class="p">:</span> <span class="mi">3</span><span class="p">;</span>   <span class="c1">// 占3位</span>
-    <span class="n">Bit</span> <span class="nl">prot_group</span><span class="p">:</span> <span class="mi">3</span><span class="p">;</span>   <span class="c1">// 占3位</span>
-    <span class="n">Bit</span> <span class="nl">prot_world</span><span class="p">:</span> <span class="mi">3</span><span class="p">;</span>   <span class="c1">// 占3位</span>
- <span class="k">public</span><span class="o">:</span>
-    <span class="c1">// 文件以八进制的形式表示</span>
-    <span class="k">enum</span> <span class="nc">modes</span> <span class="p">{</span> <span class="n">READ</span> <span class="o">=</span> <span class="mo">01</span><span class="p">,</span> <span class="n">WRITE</span> <span class="o">=</span> <span class="mo">02</span><span class="p">,</span> <span class="n">EXECUTE</span> <span class="o">=</span> <span class="mo">03</span> <span class="p">};</span>
-    <span class="n">File</span> <span class="o">&amp;</span><span class="nf">opne</span><span class="p">(</span><span class="n">modes</span><span class="p">);</span>
-    <span class="kt">void</span> <span class="nf">close</span><span class="p">();</span>
-    <span class="kt">void</span> <span class="nf">write</span><span class="p">();</span>
-    <span class="kt">bool</span> <span class="nf">isRead</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
-    <span class="kt">void</span> <span class="nf">setWrite</span><span class="p">();</span>
-<span class="p">};</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">Bit</span><span class="p">;</span><span class="w"></span>
+<span class="k">class</span> <span class="nc">File</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">Bit</span><span class="w"> </span><span class="nl">mode</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w">         </span><span class="c1">// mode占两位</span>
+<span class="w">    </span><span class="n">Bit</span><span class="w"> </span><span class="nl">modified</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">     </span><span class="c1">// modified占1位</span>
+<span class="w">    </span><span class="n">Bit</span><span class="w"> </span><span class="nl">prot_owner</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w">   </span><span class="c1">// 占3位</span>
+<span class="w">    </span><span class="n">Bit</span><span class="w"> </span><span class="nl">prot_group</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w">   </span><span class="c1">// 占3位</span>
+<span class="w">    </span><span class="n">Bit</span><span class="w"> </span><span class="nl">prot_world</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w">   </span><span class="c1">// 占3位</span>
+<span class="w"> </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// 文件以八进制的形式表示</span>
+<span class="w">    </span><span class="k">enum</span> <span class="nc">modes</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">READ</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mo">01</span><span class="p">,</span><span class="w"> </span><span class="n">WRITE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mo">02</span><span class="p">,</span><span class="w"> </span><span class="n">EXECUTE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mo">03</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
+<span class="w">    </span><span class="n">File</span><span class="w"> </span><span class="o">&amp;</span><span class="nf">opne</span><span class="p">(</span><span class="n">modes</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">close</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">write</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">isRead</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">setWrite</span><span class="p">();</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
 </pre></div>
 </div>
 <blockquote>
@@ -240,125 +148,108 @@
 <li><p>最好将位域设为无符号类型，存储在带符号类型中的位域的行为将因具体实现而定</p></li>
 </ul>
 </div></blockquote>
-</div>
-<div class="section" id="volatile">
-<h2>volatile限定符<a class="headerlink" href="#volatile" title="永久链接至标题">¶</a></h2>
+</section>
+<section id="volatile">
+<h2>volatile限定符<a class="headerlink" href="#volatile" title="永久链接至标题"></a></h2>
 <p>直接处理硬件的程序通常包含这样的数据元素，它们的值由程序直接控制之外的过程控制。例如程序可能包含一个由系统时钟定时更新的变量。当对象的值可能在程序的控制或检测之外被改变时，应该将该对象声明为<code class="docutils literal notranslate"><span class="pre">volatile</span></code>，告诉编译器不应对这样的对象进行优化。</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// 该int值可能发生改变</span>
-<span class="k">volatile</span> <span class="kt">int</span> <span class="n">display_register</span><span class="p">;</span>
+<span class="k">volatile</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">display_register</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="extern-c">
-<h2>链接指示: extern “C”<a class="headerlink" href="#extern-c" title="永久链接至标题">¶</a></h2>
+</section>
+<section id="extern-c">
+<h2>链接指示: extern “C”<a class="headerlink" href="#extern-c" title="永久链接至标题"></a></h2>
 <p>C++程序有时候需要调用其他语言编写的函数（比如C语言）。其他语言中的函数名字也必须在C++中进行声明，并且该声明必须指定返回类型和形参类别。对于其他语言编写的函数来说，编译器检查其调用的方式与处理普通C++函数的方式相同，但是生成的代码有所区别。C++使用链接指示指出任意非C++函数所用的语言。</p>
-<div class="section" id="c">
-<h3>1. 声明一个非C++函数<a class="headerlink" href="#c" title="永久链接至标题">¶</a></h3>
+<section id="c">
+<h3>1. 声明一个非C++函数<a class="headerlink" href="#c" title="永久链接至标题"></a></h3>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// cstring头文件中C函数的声明</span>
 <span class="c1">// 单语句链接指示</span>
-<span class="k">extern</span> <span class="s">&quot;C&quot;</span> <span class="kt">size_t</span> <span class="n">strlen</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="p">);</span>
+<span class="k">extern</span><span class="w"> </span><span class="s">&quot;C&quot;</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">strlen</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="p">);</span><span class="w"></span>
 <span class="c1">// 复合语句链接指示</span>
-<span class="k">extern</span> <span class="s">&quot;C&quot;</span> <span class="p">{</span>
-	<span class="kt">int</span> <span class="nf">strcmp</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span><span class="o">*</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span><span class="o">*</span><span class="p">);</span>
-	<span class="kt">char</span> <span class="o">*</span><span class="nf">strcat</span><span class="p">(</span><span class="kt">char</span><span class="o">*</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span><span class="o">*</span><span class="p">);</span>
-<span class="p">}</span>
+<span class="k">extern</span><span class="w"> </span><span class="s">&quot;C&quot;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">	</span><span class="kt">int</span><span class="w"> </span><span class="nf">strcmp</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="p">);</span><span class="w"></span>
+<span class="w">	</span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="nf">strcat</span><span class="p">(</span><span class="kt">char</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id4">
-<h3>2. 链接指示与头文件<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id4">
+<h3>2. 链接指示与头文件<a class="headerlink" href="#id4" title="永久链接至标题"></a></h3>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// 复合语句链接指示</span>
-<span class="k">extern</span> <span class="s">&quot;C&quot;</span> <span class="p">{</span>
-<span class="cp">#include</span> <span class="cpf">&lt;string.h&gt;</span><span class="c1">  // 操作C风格字符串的C函数</span><span class="cp"></span>
-<span class="p">}</span>
+<span class="k">extern</span><span class="w"> </span><span class="s">&quot;C&quot;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string.h&gt;</span><span class="c1">  // 操作C风格字符串的C函数</span><span class="cp"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>上面的写法意味着头文件中所有普通函数声明都被认为是由链接指示的语言编写的。</p>
-</div>
-<div class="section" id="id5">
-<h3>3. 指向extern “C”函数的指针<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id5">
+<h3>3. 指向extern “C”函数的指针<a class="headerlink" href="#id5" title="永久链接至标题"></a></h3>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// pf指向一个C函数, 该函数接受一个int返回void</span>
-<span class="k">extern</span> <span class="s">&quot;C&quot;</span> <span class="kt">void</span> <span class="p">(</span><span class="o">*</span><span class="n">pf</span><span class="p">)(</span><span class="kt">int</span><span class="p">);</span>
+<span class="k">extern</span><span class="w"> </span><span class="s">&quot;C&quot;</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">pf</span><span class="p">)(</span><span class="kt">int</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 <blockquote>
 <div><p>Tips：指向C函数的指针和指向C++函数的指针是不一样的类型</p>
 </div></blockquote>
-</div>
-<div class="section" id="id6">
-<h3>4. 链接指示对整个声明都有效<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id6">
+<h3>4. 链接指示对整个声明都有效<a class="headerlink" href="#id6" title="永久链接至标题"></a></h3>
 <p>当我们使用链接指示时，它不仅对函数有效，而且对作为返回类型或形参类型的函数指针也有效。</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// f1是一个C函数, 它的形参是一个指向C函数的指针</span>
-<span class="k">extern</span> <span class="s">&quot;C&quot;</span> <span class="kt">void</span> <span class="n">f1</span><span class="p">(</span><span class="kt">void</span><span class="p">(</span><span class="o">*</span><span class="p">)(</span><span class="kt">int</span><span class="p">));</span>
+<span class="k">extern</span><span class="w"> </span><span class="s">&quot;C&quot;</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">f1</span><span class="p">(</span><span class="kt">void</span><span class="p">(</span><span class="o">*</span><span class="p">)(</span><span class="kt">int</span><span class="p">));</span><span class="w"></span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id7">
-<h3>5. 导出C++函数到其他语言<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id7">
+<h3>5. 导出C++函数到其他语言<a class="headerlink" href="#id7" title="永久链接至标题"></a></h3>
 <p>通过链接指针对函数进行定义，我们可以令一个C++函数在其他语言编写的程序中可用：</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// calc函数可以被C程序调用</span>
-<span class="k">extern</span> <span class="s">&quot;C&quot;</span> <span class="kt">double</span> <span class="n">calc</span><span class="p">(</span><span class="kt">double</span> <span class="n">dparm</span><span class="p">)</span> <span class="p">{</span> <span class="cm">/*...*/</span><span class="p">)</span> <span class="p">}</span>
+<span class="k">extern</span><span class="w"> </span><span class="s">&quot;C&quot;</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">calc</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">dparm</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/*...*/</span><span class="p">)</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id8">
-<h3>6. 重载函数与链接指示<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id8">
+<h3>6. 重载函数与链接指示<a class="headerlink" href="#id8" title="永久链接至标题"></a></h3>
 <p>C语言不支持函数重载，因为也就不难理解一个C链接指示只能用于说明一组重载函数中的某一个了：</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// 错误: 两个extern &quot;C&quot;函数的名字相同</span>
-<span class="k">extern</span> <span class="s">&quot;C&quot;</span> <span class="kt">void</span> <span class="n">print</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span><span class="o">*</span><span class="p">);</span>
-<span class="k">extern</span> <span class="s">&quot;C&quot;</span> <span class="kt">void</span> <span class="n">print</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span>
+<span class="k">extern</span><span class="w"> </span><span class="s">&quot;C&quot;</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">print</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="p">);</span><span class="w"></span>
+<span class="k">extern</span><span class="w"> </span><span class="s">&quot;C&quot;</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">print</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="10.11%20%E8%BF%90%E8%A1%8C%E6%97%B6%E7%B1%BB%E5%9E%8B%E8%AF%86%E5%88%AB.html" class="btn btn-neutral float-right" title="10.11 运行时类型识别" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="10.9%20%E5%B9%B6%E8%A1%8C%E5%92%8C%E5%B9%B6%E5%8F%91.html" class="btn btn-neutral float-left" title="10.9 并行和并发" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="10.11%20%E8%BF%90%E8%A1%8C%E6%97%B6%E7%B1%BB%E5%9E%8B%E8%AF%86%E5%88%AB.html" class="btn btn-neutral float-right" title="10.11 运行时类型识别" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; 版权所有 2021, TOMOCAT.
-
-    </p>
+    <p>&#169; 版权所有 2021, TOMOCAT.</p>
   </div>
-    
-    
-    
-    利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
-    
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
-    
-    由 <a href="https://readthedocs.org">Read the Docs</a>开发. 
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

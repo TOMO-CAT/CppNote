@@ -1,74 +1,35 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="zh-CN" >
 <head>
-  <meta charset="utf-8" />
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>6.1 标准库类型：string &mdash; C++语法笔记 v1.0 文档</title>
-  
-
-  
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script src="../../_static/translations.js"></script>
-    
-    <script type="text/javascript" src="../../_static/js/theme.js"></script>
-
-    
+    <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
     <link rel="next" title="6.2 标准库类型：vector" href="6.2%20%E6%A0%87%E5%87%86%E5%BA%93%E7%B1%BB%E5%9E%8Bvector.html" />
     <link rel="prev" title="第6章 标准库类型" href="index.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="../../index.html" class="icon icon-home"> C++语法笔记
-          
-
-          
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="在文档中搜索" />
@@ -76,18 +37,7 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC1%E7%AB%A0%20%E5%8F%98%E9%87%8F%E4%B8%8E%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B/index.html">第1章 变量与基本类型</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC2%E7%AB%A0%20%E8%AF%AD%E5%8F%A5/index.html">第2章 语句</a></li>
@@ -128,7 +78,6 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC7%E7%AB%A0%20%E6%A8%A1%E6%9D%BF/index.html">第7章 模板</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC8%E7%AB%A0%20%E5%85%B3%E9%94%AE%E5%AD%97%E6%A6%82%E5%BF%B5/index.html">第8章 关键字概念</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC9%E7%AB%A0%20%E7%AE%97%E6%B3%95/index.html">第9章 算法</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC10%E7%AB%A0%20%E8%AF%AD%E8%A8%80%E7%89%B9%E6%80%A7/index.html">第10章 语法特性</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC11%E7%AB%A0%20C%2B%2B11%E6%96%B0%E6%A0%87%E5%87%86/index.html">第11章 C++11新标准</a></li>
@@ -137,107 +86,65 @@
 <li class="toctree-l1"><a class="reference internal" href="../README.html">README</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../index.html">C++语法笔记</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-        
           <li><a href="index.html">第6章 标准库类型</a> &raquo;</li>
-        
       <li>6.1 标准库类型：string</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
             <a href="../../_sources/docs/第6章 标准库类型/6.1 标准库类型string.md.txt" rel="nofollow"> 查看页面源码</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="string">
-<h1>6.1 标准库类型：string<a class="headerlink" href="#string" title="永久链接至标题">¶</a></h1>
-<div class="section" id="id1">
-<h2>头文件<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
-<span class="k">using</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">;</span>
+             
+  <section id="string">
+<h1>6.1 标准库类型：string<a class="headerlink" href="#string" title="永久链接至标题"></a></h1>
+<section id="id1">
+<h2>头文件<a class="headerlink" href="#id1" title="永久链接至标题"></a></h2>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span><span class="cp"></span>
+<span class="k">using</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id2">
-<h2>定义与初始化<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+</section>
+<section id="id2">
+<h2>定义与初始化<a class="headerlink" href="#id2" title="永久链接至标题"></a></h2>
 <p>初始化string对象的方法比较多，下面列出最常用的几种：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
 
-<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">using</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">using</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">;</span><span class="w"></span>
 
-    <span class="n">string</span> <span class="n">s1</span><span class="p">;</span>              <span class="c1">// 默认初始化: 空串</span>
-    <span class="n">string</span> <span class="n">s2</span> <span class="o">=</span> <span class="s">&quot;tomocat&quot;</span><span class="p">;</span>  <span class="c1">// s2是字面值&quot;tomocat&quot;的副本, 等价于s2(&quot;tomocat&quot;)</span>
-    <span class="n">string</span> <span class="n">s3</span> <span class="o">=</span> <span class="n">s2</span><span class="p">;</span>         <span class="c1">// s3是s2的副本, 等价于s3(s2)</span>
-    <span class="n">string</span> <span class="n">s4</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="sc">&#39;a&#39;</span><span class="p">);</span>      <span class="c1">// 5个a组成的字符串</span>
+<span class="w">    </span><span class="n">string</span><span class="w"> </span><span class="n">s1</span><span class="p">;</span><span class="w">              </span><span class="c1">// 默认初始化: 空串</span>
+<span class="w">    </span><span class="n">string</span><span class="w"> </span><span class="n">s2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;tomocat&quot;</span><span class="p">;</span><span class="w">  </span><span class="c1">// s2是字面值&quot;tomocat&quot;的副本, 等价于s2(&quot;tomocat&quot;)</span>
+<span class="w">    </span><span class="n">string</span><span class="w"> </span><span class="n">s3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s2</span><span class="p">;</span><span class="w">         </span><span class="c1">// s3是s2的副本, 等价于s3(s2)</span>
+<span class="w">    </span><span class="n">string</span><span class="w"> </span><span class="n">s4</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;a&#39;</span><span class="p">);</span><span class="w">      </span><span class="c1">// 5个a组成的字符串</span>
 
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;s1:&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">s1</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;s2:&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">s2</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;s3:&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">s3</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;s4:&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">s4</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="p">}</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;s1:&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">s1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;s2:&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">s2</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;s3:&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">s3</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;s4:&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">s4</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
 <span class="c1">// 输出:</span>
-<span class="nl">s1</span><span class="p">:</span>
-<span class="nl">s2</span><span class="p">:</span><span class="n">tomocat</span>
-<span class="nl">s3</span><span class="p">:</span><span class="n">tomocat</span>
-<span class="nl">s4</span><span class="p">:</span><span class="n">aaaaa</span>
+<span class="nl">s1</span><span class="p">:</span><span class="w"></span>
+<span class="nl">s2</span><span class="p">:</span><span class="n">tomocat</span><span class="w"></span>
+<span class="nl">s3</span><span class="p">:</span><span class="n">tomocat</span><span class="w"></span>
+<span class="nl">s4</span><span class="p">:</span><span class="n">aaaaa</span><span class="w"></span>
 </pre></div>
 </div>
 <p>string对象还支持从C风格字符串提取子串的三个构造函数：</p>
@@ -266,63 +173,63 @@
 <td>若<code>pos2 &gt; s2.size()</code>，则构造函数的行为未定义，不管len2的值是多少，构造函数至多拷贝<code>s2.size() - pos2</code>个字符</td>
 </tr>
 </tbody>
-</table></div>
-<div class="section" id="id3">
-<h2>string对象上的操作<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
-<div class="section" id="id4">
-<h3>1. 读写string<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+</table></section>
+<section id="id3">
+<h2>string对象上的操作<a class="headerlink" href="#id3" title="永久链接至标题"></a></h2>
+<section id="id4">
+<h3>1. 读写string<a class="headerlink" href="#id4" title="永久链接至标题"></a></h3>
 <p>string对象提供了<code class="docutils literal notranslate"><span class="pre">&lt;&lt;</span></code>和<code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code>操作符，可用于读写：</p>
 <blockquote>
 <div><p>Tips：注意这种写法在执行读取操作时，会自动忽略开头的空白（空格符、换行符和制表符等），从第一个真正的字符开始读起，直到遇到下一处空白停下。举个例子，如果用户输入<code class="docutils literal notranslate"><span class="pre">&quot;</span>&#160; <span class="pre">Tomo</span>&#160; <span class="pre">Cat</span> <span class="pre">&quot;</span></code>，那么最终将输出<code class="docutils literal notranslate"><span class="pre">&quot;Tomo&quot;</span></code>。</p>
 </div></blockquote>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
 
-<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">s</span><span class="p">;</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">s</span><span class="p">;</span>                <span class="c1">// 将string对象读入cin, 遇到空白停止</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">s</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>  <span class="c1">// 将string对象输出到cout</span>
-<span class="p">}</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">s</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">s</span><span class="p">;</span><span class="w">                </span><span class="c1">// 将string对象读入cin, 遇到空白停止</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w">  </span><span class="c1">// 将string对象输出到cout</span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>上面的程序每次仅能读取一个单词，如果我们要读取多个string对象，那么可以写成：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
 
-<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">word</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">word</span><span class="p">;</span><span class="w"></span>
 
-    <span class="k">while</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">word</span><span class="p">)</span> <span class="p">{</span>  <span class="c1">// 遇到文件结束标记或者非法输入时退出循环</span>
-        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">word</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">word</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="c1">// 遇到文件结束标记或者非法输入时退出循环</span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">word</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>如果我们希望读取到的string对象保留输入时的空白符，应该使用<code class="docutils literal notranslate"><span class="pre">getline</span></code>函数，它接收一个输入流和一个string对象作为参数，函数从给定的输入流中读入文件，直到遇到换行符为止（注意换行符也会被读入），然后把所读的内容存入到string对象中去（注意不存换行符）。<code class="docutils literal notranslate"><span class="pre">getline</span></code>函数只要一遇到换行符就结束读取操作并返回结果，如果输入的就是一个换行符，那么返回空string。</p>
 <blockquote>
 <div><p>Tips：<code class="docutils literal notranslate"><span class="pre">getline</span></code>函数会读取到输入的换行符，但是返回时将换行符丢弃了。</p>
 </div></blockquote>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
 
-<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">line</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">line</span><span class="p">;</span><span class="w"></span>
 
-    <span class="c1">// 每次读入一整行, 直到到达文件末尾</span>
-    <span class="k">while</span> <span class="p">(</span><span class="n">getline</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="p">,</span> <span class="n">line</span><span class="p">))</span> <span class="p">{</span>
-        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">line</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
+<span class="w">    </span><span class="c1">// 每次读入一整行, 直到到达文件末尾</span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">getline</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="p">,</span><span class="w"> </span><span class="n">line</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">line</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id5">
-<h3>2. 常用的成员函数<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">s</span><span class="p">;</span>
-<span class="n">s</span><span class="p">.</span><span class="n">empty</span><span class="p">();</span>  <span class="c1">// 字符串s为空时返回true, 否则返回false</span>
-<span class="n">s</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>   <span class="c1">// 返回字符串s中的字符个数</span>
+</section>
+<section id="id5">
+<h3>2. 常用的成员函数<a class="headerlink" href="#id5" title="永久链接至标题"></a></h3>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">s</span><span class="p">;</span><span class="w"></span>
+<span class="n">s</span><span class="p">.</span><span class="n">empty</span><span class="p">();</span><span class="w">  </span><span class="c1">// 字符串s为空时返回true, 否则返回false</span>
+<span class="n">s</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="w">   </span><span class="c1">// 返回字符串s中的字符个数</span>
 </pre></div>
 </div>
 <p>注意string类型的<code class="docutils literal notranslate"><span class="pre">size()</span></code>函数返回的是<code class="docutils literal notranslate"><span class="pre">string::size_type</span></code>类型，它具有如下几个特点：</p>
@@ -335,65 +242,65 @@
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// 注意下面这段程序几乎每次都会非预期地输出error, 尽管s.size()返回一个正数, 不可能小于-1</span>
 <span class="c1">// 但是混用带符号数和无符号数会将n转换成一个比较大的无符号数</span>
 
-<span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
 
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">s</span> <span class="o">=</span> <span class="s">&quot;tomocat&quot;</span><span class="p">;</span>
-    <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">-1</span><span class="p">;</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;error&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;tomocat&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;error&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id6">
-<h3>3. 比较string对象<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">s1</span><span class="p">,</span> <span class="n">s2</span><span class="p">;</span>
-<span class="n">s1</span> <span class="o">==</span> <span class="n">s2</span>       <span class="c1">// 包含字符的内容和顺序都相同</span>
-<span class="n">s1</span> <span class="o">!=</span> <span class="n">s2</span>       <span class="c1">// 依赖于==的定义</span>
-<span class="o">&lt;</span><span class="p">,</span> <span class="o">&lt;=</span><span class="p">,</span> <span class="o">&gt;</span><span class="p">,</span> <span class="o">&gt;=</span>   <span class="c1">// 利用字符在字段中的额顺序进行比较，且对字母的大小写敏感</span>
+</section>
+<section id="id6">
+<h3>3. 比较string对象<a class="headerlink" href="#id6" title="永久链接至标题"></a></h3>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">s1</span><span class="p">,</span><span class="w"> </span><span class="n">s2</span><span class="p">;</span><span class="w"></span>
+<span class="n">s1</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">s2</span><span class="w">       </span><span class="c1">// 包含字符的内容和顺序都相同</span>
+<span class="n">s1</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">s2</span><span class="w">       </span><span class="c1">// 依赖于==的定义</span>
+<span class="o">&lt;</span><span class="p">,</span><span class="w"> </span><span class="o">&lt;=</span><span class="p">,</span><span class="w"> </span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="o">&gt;=</span><span class="w">   </span><span class="c1">// 利用字符在字段中的额顺序进行比较，且对字母的大小写敏感</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id7">
-<h3>4. 字符串拼接<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id7">
+<h3>4. 字符串拼接<a class="headerlink" href="#id7" title="永久链接至标题"></a></h3>
 <blockquote>
 <div><p>Tips：基于历史原因，C++语言中的字符串字面值并不是标准库类型string的对象。</p>
 </div></blockquote>
 <p>两个string对象可以通过加法运算符（+）或者复合赋值运算符（+=）直接拼接：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">s1</span> <span class="o">=</span> <span class="s">&quot;tomo&quot;</span><span class="p">;</span>
-<span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">s2</span> <span class="o">=</span> <span class="s">&quot;cat&quot;</span><span class="p">;</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">s1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;tomo&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">s2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;cat&quot;</span><span class="p">;</span><span class="w"></span>
 
-<span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">s3</span> <span class="o">=</span> <span class="n">s1</span> <span class="o">+</span> <span class="n">s2</span><span class="p">;</span>  <span class="c1">// s3是&quot;tomocat&quot;</span>
-<span class="n">s1</span> <span class="o">+=</span> <span class="n">s2</span><span class="p">;</span>                  <span class="c1">// s1变成&quot;tomocat&quot;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">s3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">s2</span><span class="p">;</span><span class="w">  </span><span class="c1">// s3是&quot;tomocat&quot;</span>
+<span class="n">s1</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">s2</span><span class="p">;</span><span class="w">                  </span><span class="c1">// s1变成&quot;tomocat&quot;</span>
 </pre></div>
 </div>
 <p>标准库允许我们将字符字面值和字符串字面值转换成string对象，前提是每个加法运算符（+）两侧的运算对象至少有一个是string：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span><span class="cp"></span>
 
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-    <span class="c1">// 正确: 两个string相加</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">s1</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">(</span><span class="s">&quot;tomo&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">(</span><span class="s">&quot;cat&quot;</span><span class="p">);</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;s1:&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">s1</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// 正确: 两个string相加</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">s1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">(</span><span class="s">&quot;tomo&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">(</span><span class="s">&quot;cat&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;s1:&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">s1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
 
-    <span class="c1">// 正确: +号两边至少有一个string对象, 字面值字面值与字符串字面值会自动转换成string对象</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">s2</span> <span class="o">=</span> <span class="s">&quot;tomo&quot;</span> <span class="o">+</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">(</span><span class="s">&quot;cat&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="sc">&#39;!&#39;</span><span class="p">;</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;s2:&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">s2</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">    </span><span class="c1">// 正确: +号两边至少有一个string对象, 字面值字面值与字符串字面值会自动转换成string对象</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">s2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;tomo&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">(</span><span class="s">&quot;cat&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="sc">&#39;!&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;s2:&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">s2</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
 
-    <span class="c1">// 错误: 两个运算对象都不是string</span>
-    <span class="c1">// std::string s3 = &quot;tomo&quot; + &quot;cat&quot;;</span>
-<span class="p">}</span>
+<span class="w">    </span><span class="c1">// 错误: 两个运算对象都不是string</span>
+<span class="w">    </span><span class="c1">// std::string s3 = &quot;tomo&quot; + &quot;cat&quot;;</span>
+<span class="p">}</span><span class="w"></span>
 
 <span class="c1">// 输出:</span>
-<span class="nl">s1</span><span class="p">:</span><span class="n">tomocat</span>
-<span class="nl">s2</span><span class="p">:</span><span class="n">tomocat</span><span class="o">!</span>
+<span class="nl">s1</span><span class="p">:</span><span class="n">tomocat</span><span class="w"></span>
+<span class="nl">s2</span><span class="p">:</span><span class="n">tomocat</span><span class="o">!</span><span class="w"></span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="substr">
-<h3>5. substr提取子串<a class="headerlink" href="#substr" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="substr">
+<h3>5. substr提取子串<a class="headerlink" href="#substr" title="永久链接至标题"></a></h3>
 <blockquote>
 <div><p>Tips：substr可以提取一个string的子串。</p>
 </div></blockquote>
@@ -412,9 +319,9 @@
 <td>pos的默认值为0，n的默认值为<code>s.size() - pos</code>，即拷贝从pos开始的所有字符；如果开始位置超过了string的大小，那么substr函数会抛出一个<code>out_of_range</code>异常，如果开始位置加上计数值大于string的大小，则substr会调整计数值只拷贝到string的末尾</td>
 </tr>
 </tbody>
-</table></div>
-<div class="section" id="id8">
-<h3>6. 改变string的方法<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
+</table></section>
+<section id="id8">
+<h3>6. 改变string的方法<a class="headerlink" href="#id8" title="永久链接至标题"></a></h3>
 <p>string类型支持顺序容器的赋值运算符以及assign、insert和erase操作，除此之外还定义了额外的insert和erase版本。</p>
 <table border="1" class="docutils">
 <thead>
@@ -525,9 +432,9 @@
 <td>是</td>
 </tr>
 </tbody>
-</table></div>
-<div class="section" id="id9">
-<h3>7. string搜索操作<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h3>
+</table></section>
+<section id="id9">
+<h3>7. string搜索操作<a class="headerlink" href="#id9" title="永久链接至标题"></a></h3>
 <blockquote>
 <div><p>Tips：string搜索函数返回<code class="docutils literal notranslate"><span class="pre">string::size_type</span></code>值，该类型是一个<code class="docutils literal notranslate"><span class="pre">unsigned</span></code>类型，用一个int或其他带符号类型来保存这些函数的返回值不是一个好主意。</p>
 </div></blockquote>
@@ -579,9 +486,9 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">cp,</span> <span class="pre">pos</span></code>：从s中位置pos开始查找指针cp指向的以空字符结尾的C风格字符串，pos默认为0</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">cp,</span> <span class="pre">pos,</span> <span class="pre">n</span></code>：从s中位置pos开始查找指针cp指向的数组的前n个字符，pos和n无默认值</p></li>
 </ul>
-</div>
-<div class="section" id="id10">
-<h3>8. string比较操作<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id10">
+<h3>8. string比较操作<a class="headerlink" href="#id10" title="永久链接至标题"></a></h3>
 <p>除了关系运算符外，标准库string类型还提供了一组compare函数，根据s是等于、大于还是小于参数指定的字符串，<code class="docutils literal notranslate"><span class="pre">s.compare</span></code>返回0、正数或负数。</p>
 <p><code class="docutils literal notranslate"><span class="pre">s.compare</span></code>根据参数形式共有6个版本：</p>
 <table border="1" class="docutils">
@@ -624,9 +531,9 @@
 <td></td>
 </tr>
 </tbody>
-</table></div>
-<div class="section" id="id11">
-<h3>9. 数值转换<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h3>
+</table></section>
+<section id="id11">
+<h3>9. 数值转换<a class="headerlink" href="#id11" title="永久链接至标题"></a></h3>
 <p>新标准引入了多个函数可以实现数值数据与标准库string之间的转换，如果string不能转换为一个数组，则这些函数抛出一个<code class="docutils literal notranslate"><span class="pre">invalid_argument</span></code>的异常，如果转换的数值无法用任何类型表示，则抛出一个<code class="docutils literal notranslate"><span class="pre">out_of_range</span></code>异常：</p>
 <table border="1" class="docutils">
 <thead>
@@ -653,12 +560,12 @@
 <td>参数p的作用与整数转换函数中一样</td>
 </tr>
 </tbody>
-</table></div>
-</div>
-<div class="section" id="id12">
-<h2>处理string对象的单个字符<a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h2>
-<div class="section" id="cctype">
-<h3>1. cctype头文件提供的字符操作函数<a class="headerlink" href="#cctype" title="永久链接至标题">¶</a></h3>
+</table></section>
+</section>
+<section id="id12">
+<h2>处理string对象的单个字符<a class="headerlink" href="#id12" title="永久链接至标题"></a></h2>
+<section id="cctype">
+<h3>1. cctype头文件提供的字符操作函数<a class="headerlink" href="#cctype" title="永久链接至标题"></a></h3>
 <p>在<code class="docutils literal notranslate"><span class="pre">cctype</span></code>头文件中定义了一组标准库函数用于单个字符，下面是主要的函数名及其含义：</p>
 <table border="1" class="docutils">
 <thead>
@@ -717,83 +624,66 @@
 <td>如果c是小写字母，输出对应的大写字母，否则原样输出c</td>
 </tr>
 </tbody>
-</table></div>
-<div class="section" id="id13">
-<h3>2. 遍历string中的字符<a class="headerlink" href="#id13" title="永久链接至标题">¶</a></h3>
+</table></section>
+<section id="id13">
+<h3>2. 遍历string中的字符<a class="headerlink" href="#id13" title="永久链接至标题"></a></h3>
 <p>使用时注意：</p>
 <ul class="simple">
 <li><p>string对象的下标必须大于等于0而小于<code class="docutils literal notranslate"><span class="pre">s.size()</span></code>，使用超出此范围的下标将引发不可预知的错误（如果s为空string对象，那么s[0]的结果是未定义的）</p></li>
 <li><p>最好使用C++11新标准提供的范围for循环语句</p></li>
 <li><p>不要混用带符号数与服务好书，因此最好设置下标类型为<code class="docutils literal notranslate"><span class="pre">string::size_type</span></code></p></li>
 </ul>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span><span class="cp"></span>
 
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">s</span> <span class="o">=</span> <span class="s">&quot;tomocat&quot;</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;tomocat&quot;</span><span class="p">;</span><span class="w"></span>
 
-    <span class="c1">// 传统方法</span>
-    <span class="k">for</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">::</span><span class="n">size_type</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">!=</span> <span class="n">s</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="c1">// 传统方法</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">::</span><span class="n">size_type</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
 
-    <span class="c1">// C++11新标准: 范围for循环</span>
-    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="nl">c</span> <span class="p">:</span> <span class="n">s</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">c</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<span class="w">    </span><span class="c1">// C++11新标准: 范围for循环</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="nl">c</span> <span class="p">:</span><span class="w"> </span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="6.2%20%E6%A0%87%E5%87%86%E5%BA%93%E7%B1%BB%E5%9E%8Bvector.html" class="btn btn-neutral float-right" title="6.2 标准库类型：vector" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="index.html" class="btn btn-neutral float-left" title="第6章 标准库类型" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="6.2%20%E6%A0%87%E5%87%86%E5%BA%93%E7%B1%BB%E5%9E%8Bvector.html" class="btn btn-neutral float-right" title="6.2 标准库类型：vector" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; 版权所有 2021, TOMOCAT.
-
-    </p>
+    <p>&#169; 版权所有 2021, TOMOCAT.</p>
   </div>
-    
-    
-    
-    利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
-    
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
-    
-    由 <a href="https://readthedocs.org">Read the Docs</a>开发. 
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>1.5 枚举类型 &mdash; C++语法笔记 v1.0 文档</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/translations.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> C++语法笔记
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">第1章 变量与基本类型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC2%E7%AB%A0%20%E8%AF%AD%E5%8F%A5/index.html">第2章 语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC3%E7%AB%A0%20%E5%87%BD%E6%95%B0/index.html">第3章 函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC4%E7%AB%A0%20%E8%BF%90%E7%AE%97%E7%AC%A6/index.html">第4章 运算符</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC5%E7%AB%A0%20%E7%B1%BB/index.html">第5章类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC6%E7%AB%A0%20%E6%A0%87%E5%87%86%E5%BA%93%E7%B1%BB%E5%9E%8B/index.html">第6章 标准库类型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC7%E7%AB%A0%20%E6%A8%A1%E6%9D%BF/index.html">第7章 模板</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC9%E7%AB%A0%20%E7%AE%97%E6%B3%95/index.html">第9章 算法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC10%E7%AB%A0%20%E8%AF%AD%E8%A8%80%E7%89%B9%E6%80%A7/index.html">第10章 语法特性</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC11%E7%AB%A0%20C%2B%2B11%E6%96%B0%E6%A0%87%E5%87%86/index.html">第11章 C++11新标准</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../README.html">README</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">C++语法笔记</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>1.5 枚举类型</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/docs/第1章 变量与基本类型/1.5 枚举类型 2.md.txt" rel="nofollow"> 查看页面源码</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="id1">
+<h1>1.5 枚举类型<a class="headerlink" href="#id1" title="永久链接至标题"></a></h1>
+<section id="id2">
+<h2>简介<a class="headerlink" href="#id2" title="永久链接至标题"></a></h2>
+<p>C++包含两种枚举：限定作用域和不限定作用域的。C++新标准引入了限定作用域的枚举类型。</p>
+<section id="id3">
+<h3>1. 限定作用域的枚举类型<a class="headerlink" href="#id3" title="永久链接至标题"></a></h3>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">enum</span> <span class="k">class</span><span class="w"> </span><span class="nc">open_modes</span><span class="w"> </span><span class="p">{</span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="n">output</span><span class="p">,</span><span class="w"> </span><span class="n">append</span><span class="p">};</span><span class="w"></span>
+<span class="c1">// 等价</span>
+<span class="k">enum</span> <span class="k">struct</span><span class="w"> </span><span class="nc">open_modes</span><span class="w"> </span><span class="p">{</span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="n">output</span><span class="p">,</span><span class="w"> </span><span class="n">append</span><span class="p">};</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+<section id="id4">
+<h3>2. 不限定作用域的枚举类型<a class="headerlink" href="#id4" title="永久链接至标题"></a></h3>
+<ul class="simple">
+<li><p>省略掉关键字<code class="docutils literal notranslate"><span class="pre">class</span></code></p></li>
+<li><p>枚举名字是可选的</p></li>
+</ul>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// 不限定作用域的枚举类型</span>
+<span class="k">enum</span> <span class="nc">color</span><span class="w"> </span><span class="p">{</span><span class="n">red</span><span class="p">,</span><span class="w"> </span><span class="n">yellow</span><span class="p">,</span><span class="w"> </span><span class="n">green</span><span class="p">};</span><span class="w"></span>
+<span class="c1">// 未命名的、不限定作用域的枚举类型</span>
+<span class="k">enum</span> <span class="p">{</span><span class="n">floatPrec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="n">doublePrec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="n">double_doublePrec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">};</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="id5">
+<h2>枚举也可以定义新的类型<a class="headerlink" href="#id5" title="永久链接至标题"></a></h2>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">enum</span> <span class="nc">color</span><span class="w"> </span><span class="p">{</span><span class="n">red</span><span class="p">,</span><span class="w"> </span><span class="n">yellow</span><span class="p">,</span><span class="w"> </span><span class="n">green</span><span class="p">};</span><span class="w">          </span><span class="c1">// 不限定作用域的枚举类型</span>
+<span class="k">enum</span> <span class="nc">stoplight</span><span class="w"> </span><span class="p">{</span><span class="n">red</span><span class="p">,</span><span class="w"> </span><span class="n">yellow</span><span class="p">,</span><span class="w"> </span><span class="n">green</span><span class="p">};</span><span class="w">      </span><span class="c1">// 错误: 重复定义了枚举成员</span>
+<span class="k">enum</span> <span class="k">class</span><span class="w"> </span><span class="nc">peppers</span><span class="w"> </span><span class="p">{</span><span class="n">red</span><span class="p">,</span><span class="w"> </span><span class="n">yellow</span><span class="p">,</span><span class="w"> </span><span class="n">green</span><span class="p">};</span><span class="w">  </span><span class="c1">// 正确: 枚举成员被隐藏了</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">color</span><span class="o">::</span><span class="n">red</span><span class="p">;</span><span class="w">     </span><span class="c1">// 正确: 不限定作用域的枚举类型的枚举成员隐式地转换成int</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">peppers</span><span class="o">::</span><span class="n">red</span><span class="p">;</span><span class="w">   </span><span class="c1">// 错误: 限定作用域的枚举类型不会进行隐式转换</span>
+</pre></div>
+</div>
+</section>
+<section id="enum">
+<h2>指定enum的大小<a class="headerlink" href="#enum" title="永久链接至标题"></a></h2>
+<p>尽管每个<code class="docutils literal notranslate"><span class="pre">enum</span></code>都定义了唯一的类型，但是实际上<code class="docutils literal notranslate"><span class="pre">enum</span></code>是由某种整数类型表示的。在C++11新标准中，我们可以在<code class="docutils literal notranslate"><span class="pre">enum</span></code>的名字后加上冒号以及我们想在该<code class="docutils literal notranslate"><span class="pre">enum</span></code>使用的类型：</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">enum</span> <span class="nc">intValues</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">charTyp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">255</span><span class="p">,</span><span class="w"> </span><span class="n">shortTyp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">65535</span><span class="p">,</span><span class="w"> </span><span class="n">intTyp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">65535</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">longTyp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4394967295UL</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">long_longTyp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">18446744073709551615ULL</span><span class="n">L</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+<section id="id6">
+<h2>形参匹配与枚举类型<a class="headerlink" href="#id6" title="永久链接至标题"></a></h2>
+<p>要想初始化一个<code class="docutils literal notranslate"><span class="pre">enum</span></code>对象，必须使用该<code class="docutils literal notranslate"><span class="pre">enum</span></code>类型的另一个对象或者它的一个枚举成员。因此，即使某个整型值恰好与枚举成员的值相等，它也不能作为函数的<code class="docutils literal notranslate"><span class="pre">enum</span></code>实参使用：</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// 不限定作用域的枚举类型，潜在类型因机器而异</span>
+<span class="k">enum</span> <span class="nc">Tokens</span><span class="w"> </span><span class="p">{</span><span class="n">INLINE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">128</span><span class="p">,</span><span class="w"> </span><span class="n">VIRTUAL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">129</span><span class="p">};</span><span class="w"></span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">ff</span><span class="p">(</span><span class="n">Tokens</span><span class="p">);</span><span class="w"></span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">ff</span><span class="p">(</span><span class="kt">int</span><span class="p">);</span><span class="w"></span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">Tokens</span><span class="w"> </span><span class="n">curTok</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">INLINE</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">ff</span><span class="p">(</span><span class="mi">128</span><span class="p">);</span><span class="w">        </span><span class="c1">// 精确匹配ff(int)</span>
+<span class="w">    </span><span class="n">ff</span><span class="p">(</span><span class="n">INLINE</span><span class="p">);</span><span class="w">     </span><span class="c1">// 精确匹配ff(Tokens)</span>
+<span class="w">    </span><span class="n">ff</span><span class="p">(</span><span class="n">curTok</span><span class="p">);</span><span class="w">     </span><span class="c1">// 精确匹配ff(Tokens)</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>尽管我们不能将整型值传递给<code class="docutils literal notranslate"><span class="pre">enum</span></code>形参，但是可以将一个不限定作用域的枚举类型的对象或枚举成员传给整型形参。此时<code class="docutils literal notranslate"><span class="pre">enum</span></code>的值提升为<code class="docutils literal notranslate"><span class="pre">int</span></code>或更大的整型，实际提升的结果由枚举类型的潜在类型决定：</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">newf</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="p">);</span><span class="w"></span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">newf</span><span class="p">(</span><span class="kt">int</span><span class="p">);</span><span class="w"></span>
+<span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">uc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">VIRTUAL</span><span class="p">;</span><span class="w"></span>
+<span class="n">newf</span><span class="p">(</span><span class="n">VIRTUAL</span><span class="p">);</span><span class="w">  </span><span class="c1">// 调用newf(int)</span>
+<span class="n">newf</span><span class="p">(</span><span class="n">uc</span><span class="p">);</span><span class="w">       </span><span class="c1">// 调用newf(unsigned char)</span>
+</pre></div>
+</div>
+</section>
+<section id="id7">
+<h2>类内enum值<a class="headerlink" href="#id7" title="永久链接至标题"></a></h2>
+<p>某些enum值只服务于某个类，我们可以将其声明在类的作用域内，避免污染全局作用域。</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
+<span class="k">class</span> <span class="nc">Foo</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w"> </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="w">    </span><span class="k">enum</span> <span class="nc">type</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">One</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="n">Two</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="n">Three</span><span class="w"></span>
+<span class="w">    </span><span class="p">};</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// 其他public成员</span>
+
+<span class="w"> </span><span class="k">private</span><span class="o">:</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// 其他private成员</span>
+<span class="p">};</span><span class="w"></span>
+
+<span class="c1">// 使用方法</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">Foo</span><span class="o">::</span><span class="n">Three</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w">  </span><span class="c1">// 预期输出3</span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>上面这种做法等价于在Foo类中定义常量，实际开发中更通用的是我们可以在Foo声明一个enum类（只有C++11及以上支持）：</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
+<span class="k">class</span> <span class="nc">Foo</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w"> </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="w">    </span><span class="k">enum</span> <span class="k">class</span><span class="w"> </span><span class="nc">type</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">One</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="n">Two</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="n">Three</span><span class="w"></span>
+<span class="w">    </span><span class="p">};</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// 其他public成员</span>
+
+<span class="w"> </span><span class="k">private</span><span class="o">:</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// 其他private成员</span>
+<span class="p">};</span><span class="w"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">Foo</span><span class="o">::</span><span class="n">type</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Foo</span><span class="o">::</span><span class="n">type</span><span class="o">::</span><span class="n">Three</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="kt">int</span><span class="p">(</span><span class="n">type</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w">  </span><span class="c1">// 预期输出3</span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>编译运行：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">$g</span>++ test.cpp -std<span class="o">=</span>c++11 -o <span class="nb">test</span>
+$./test 
+<span class="m">3</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2021, TOMOCAT.</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

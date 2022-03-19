@@ -1,74 +1,35 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="zh-CN" >
 <head>
-  <meta charset="utf-8" />
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>1.6 类型转换 &mdash; C++语法笔记 v1.0 文档</title>
-  
-
-  
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script src="../../_static/translations.js"></script>
-    
-    <script type="text/javascript" src="../../_static/js/theme.js"></script>
-
-    
+    <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
     <link rel="next" title="1.7 初始化" href="1.7%20%E5%88%9D%E5%A7%8B%E5%8C%96.html" />
-    <link rel="prev" title="1.5 枚举类型" href="1.5%20%E6%9E%9A%E4%B8%BE%E7%B1%BB%E5%9E%8B.html" /> 
+    <link rel="prev" title="1.4 数组" href="1.4%20%E6%95%B0%E7%BB%84.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="../../index.html" class="icon icon-home"> C++语法笔记
-          
-
-          
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="在文档中搜索" />
@@ -76,25 +37,13 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">第1章 变量与基本类型</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="1.1%20%E5%8F%98%E9%87%8F%E5%A3%B0%E6%98%8E%E4%B8%8E%E5%AE%9A%E4%B9%89.html">1.1 变量声明与定义</a></li>
 <li class="toctree-l2"><a class="reference internal" href="1.2%20%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B.html">1.2 数据类型</a></li>
 <li class="toctree-l2"><a class="reference internal" href="1.3%20C%E9%A3%8E%E6%A0%BC%E5%AD%97%E7%AC%A6%E4%B8%B2.html">1.3 C风格字符串</a></li>
 <li class="toctree-l2"><a class="reference internal" href="1.4%20%E6%95%B0%E7%BB%84.html">1.4 数组</a></li>
-<li class="toctree-l2"><a class="reference internal" href="1.5%20%E6%9E%9A%E4%B8%BE%E7%B1%BB%E5%9E%8B.html">1.5 枚举类型</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">1.6 类型转换</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#id2">简介</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id3">隐式转换</a><ul>
@@ -129,7 +78,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC5%E7%AB%A0%20%E7%B1%BB/index.html">第5章类</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC6%E7%AB%A0%20%E6%A0%87%E5%87%86%E5%BA%93%E7%B1%BB%E5%9E%8B/index.html">第6章 标准库类型</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC7%E7%AB%A0%20%E6%A8%A1%E6%9D%BF/index.html">第7章 模板</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC8%E7%AB%A0%20%E5%85%B3%E9%94%AE%E5%AD%97%E6%A6%82%E5%BF%B5/index.html">第8章 关键字概念</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC9%E7%AB%A0%20%E7%AE%97%E6%B3%95/index.html">第9章 算法</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC10%E7%AB%A0%20%E8%AF%AD%E8%A8%80%E7%89%B9%E6%80%A7/index.html">第10章 语法特性</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC11%E7%AB%A0%20C%2B%2B11%E6%96%B0%E6%A0%87%E5%87%86/index.html">第11章 C++11新标准</a></li>
@@ -138,91 +86,49 @@
 <li class="toctree-l1"><a class="reference internal" href="../README.html">README</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../index.html">C++语法笔记</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-        
           <li><a href="index.html">第1章 变量与基本类型</a> &raquo;</li>
-        
       <li>1.6 类型转换</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
             <a href="../../_sources/docs/第1章 变量与基本类型/1.6 类型转换.md.txt" rel="nofollow"> 查看页面源码</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="id1">
-<h1>1.6 类型转换<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
-<div class="section" id="id2">
-<h2>简介<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+             
+  <section id="id1">
+<h1>1.6 类型转换<a class="headerlink" href="#id1" title="永久链接至标题"></a></h1>
+<section id="id2">
+<h2>简介<a class="headerlink" href="#id2" title="永久链接至标题"></a></h2>
 <p>在C++语言中，如果两种类型有关联，那么当程序需要其中一种类型的运算对象时，可以用另一种关联类型的对象或值代替。</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// C++不会直接将两个不同类型的值相加, 会先将3的int类型隐式转换为double类型, 再执行两个double类型相加</span>
 <span class="c1">// 初始化i的过程中由于i的类型无法改变, 因此加法运算得到的double类型的结果会被转换为int类型的值用于初始化i</span>
-<span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mf">3.14</span> <span class="o">+</span> <span class="mi">3</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.14</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id3">
-<h2>隐式转换<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
-<div class="section" id="id4">
-<h3>1. 隐式转换发生的场景<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id3">
+<h2>隐式转换<a class="headerlink" href="#id3" title="永久链接至标题"></a></h2>
+<section id="id4">
+<h3>1. 隐式转换发生的场景<a class="headerlink" href="#id4" title="永久链接至标题"></a></h3>
 <p>在下面这些场景中，编译器会自动地转换运算对象的类型：</p>
 <ul class="simple">
-<li><p>比int类型小的整型值首先提升为比较大的证书类型</p></li>
+<li><p>比int类型小的整型值首先提升为比较大的整数类型</p></li>
 <li><p>在条件中，非布尔值转换为布尔类型（指针或者算术类型的值为0，则自动转换为false）</p></li>
 <li><p>初始化过程中，初始值转换成变量的类型；在赋值语句中，右侧运算对象转换成左侧运算对象的类型</p></li>
 <li><p>如果算数运算或关系运算的运算对象有多种类型，需要转换成同一种类型</p></li>
@@ -231,179 +137,162 @@
 <li><p>常量整数值0或者字面值<code class="docutils literal notranslate"><span class="pre">nullptr</span></code>能转换成任意指针类型，指向任意非常量的指针能转换为<code class="docutils literal notranslate"><span class="pre">void*</span></code>，指向任意对象的指针能转换为<code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">void*</span></code></p></li>
 <li><p>转换成常量：允许指向非常量类型的指针/引用转换为指向相应的常量类型的指针/引用</p></li>
 </ul>
-</div>
-<div class="section" id="id5">
-<h3>2. 算数转换<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id5">
+<h3>2. 算数转换<a class="headerlink" href="#id5" title="永久链接至标题"></a></h3>
 <p>算数转换的含义是指把一种算数类型转换为另一种算数类型，有如下一些规则：</p>
 <ul class="simple">
 <li><p>运算符的运算对象将转换成最宽的类型：例如一个对象是long double类型，那么无论另一个对象是什么类型都会转化为long double类型；表达式中既有浮点类型又有整数类型时，整数值将转换为对应的浮点类型</p></li>
 <li><p>如果运算对象是无符号对象和有符号对象，且无符号类型不小于带符号类型，那么带符号的类型会转化为无符号类型：例如两个类型分别是unsigned int和int，那么int类型的运算对象会转换为unsigned int，此时如果int运算对象为负值，那么存在后面提到的副作用</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="id6">
-<h2>无符号数与有符号数<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
-<div class="section" id="id7">
-<h3>1. 无符号数超过表示范围<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
+</section>
+</section>
+<section id="id6">
+<h2>无符号数与有符号数<a class="headerlink" href="#id6" title="永久链接至标题"></a></h2>
+<section id="id7">
+<h3>1. 无符号数超过表示范围<a class="headerlink" href="#id7" title="永久链接至标题"></a></h3>
 <p>当我们赋给无符号类型一个超过它表示范围的值时，结果是初始值对无符号类型表示数值总数取模后的余数。比如8比特大小的<code class="docutils literal notranslate"><span class="pre">unsigned</span> <span class="pre">char</span></code>可以表示0~255，如果我们将-1赋给它将会得到255。</p>
-</div>
-<div class="section" id="id8">
-<h3>2. 有符号数超过表示范围<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id8">
+<h3>2. 有符号数超过表示范围<a class="headerlink" href="#id8" title="永久链接至标题"></a></h3>
 <p>当我们赋给带符号类型一个超出它表示范围的值时，结果是<strong>未定义</strong>的，程序可能会继续工作、可能崩溃，也可能产生垃圾数据。</p>
-</div>
-<div class="section" id="id9">
-<h3>3. 不要混用有符号数和无符号数<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id9">
+<h3>3. 不要混用有符号数和无符号数<a class="headerlink" href="#id9" title="永久链接至标题"></a></h3>
 <p>当一个算数表达式中既有无符号类型又有带符号类型时，带符号数会自动转化为无符号数，结果可能是出乎意料的：</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// 切勿混用带符号类型和无符号类型</span>
-<span class="kt">unsigned</span> <span class="n">u</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
-<span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">-42</span><span class="p">;</span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">+</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// -84</span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">+</span> <span class="n">u</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// 如果int占32位则输出4294967264</span>
+<span class="kt">unsigned</span><span class="w"> </span><span class="n">u</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"></span>
+<span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">-42</span><span class="p">;</span><span class="w"></span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"> </span><span class="c1">// -84</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">u</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"> </span><span class="c1">// 如果int占32位则输出4294967264</span>
 </pre></div>
 </div>
 <p>尤其在我们通过标准库类型的<code class="docutils literal notranslate"><span class="pre">size()</span></code>成员函数返回一个无符号类型时：</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// 注意下面这段程序几乎每次都会非预期地输出error, 尽管s.size()返回一个正数, 不可能小于-1</span>
 <span class="c1">// 但是混用带符号数和无符号数会将n转换成一个比较大的无符号数</span>
 
-<span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
 
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">s</span> <span class="o">=</span> <span class="s">&quot;tomocat&quot;</span><span class="p">;</span>
-    <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">-1</span><span class="p">;</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;error&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;tomocat&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;error&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="id10">
-<h2>类的转换<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h2>
+</section>
+</section>
+<section id="id10">
+<h2>类的转换<a class="headerlink" href="#id10" title="永久链接至标题"></a></h2>
 <p>类类型可以定义由编译器自动执行的转换，不过编译器每次只能执行一种类类型的转换。例如：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">string</span> <span class="n">s</span> <span class="o">=</span> <span class="s">&quot;tomocat&quot;</span><span class="p">;</span>  <span class="c1">// 字符串字面量转换成string类型</span>
-<span class="k">while</span> <span class="p">(</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">s</span><span class="p">);</span>      <span class="c1">// IO库定义了从istream到布尔值转换的规则, 如果读入成功则为true</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">string</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;tomocat&quot;</span><span class="p">;</span><span class="w">  </span><span class="c1">// 字符串字面量转换成string类型</span>
+<span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">s</span><span class="p">);</span><span class="w">      </span><span class="c1">// IO库定义了从istream到布尔值转换的规则, 如果读入成功则为true</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id11">
-<h2>显式转换<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h2>
-<div class="section" id="static-cast">
-<h3>1. static_cast<a class="headerlink" href="#static-cast" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id11">
+<h2>显式转换<a class="headerlink" href="#id11" title="永久链接至标题"></a></h2>
+<section id="static-cast">
+<h3>1. static_cast<a class="headerlink" href="#static-cast" title="永久链接至标题"></a></h3>
 <p>任何具有明确定义的类型转换，只要不包含底层const就可以使用<code class="docutils literal notranslate"><span class="pre">static_cast</span></code>。例如将int运算对象强制转换为double类型就可以使表达式执行浮点数除法：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">;</span>
-<span class="kt">double</span> <span class="n">slope</span> <span class="o">=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="n">j</span><span class="p">)</span> <span class="o">/</span> <span class="n">i</span><span class="p">;</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="p">;</span><span class="w"></span>
+<span class="kt">double</span><span class="w"> </span><span class="n">slope</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">static_cast</span></code>也常用于编译器无法自动执行的类型转换，例如我们可以使用<code class="docutils literal notranslate"><span class="pre">static_cast</span></code>找回存在于<code class="docutils literal notranslate"><span class="pre">void*</span></code>的指针：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span> <span class="n">d</span><span class="p">;</span>
-<span class="kt">void</span> <span class="o">*</span><span class="n">p</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">d</span><span class="p">;</span>
-<span class="kt">double</span> <span class="o">*</span><span class="n">dp</span> <span class="o">=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">p</span><span class="p">);</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="n">d</span><span class="p">;</span><span class="w"></span>
+<span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">d</span><span class="p">;</span><span class="w"></span>
+<span class="kt">double</span><span class="w"> </span><span class="o">*</span><span class="n">dp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">p</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="const-cast">
-<h3>2. const_cast<a class="headerlink" href="#const-cast" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="const-cast">
+<h3>2. const_cast<a class="headerlink" href="#const-cast" title="永久链接至标题"></a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">const_cast</span></code>只能用于改变运算对象的底层const，用于将常量对象改成非常量对象。一旦我们去掉了某个对象的const性质，编译器就不会再组织我们对该对象进行写操作了。如果对象本身不是一个常量，使用强制类型转换获得写权限是合法的行为，如果对象是一个常量，再使用<code class="docutils literal notranslate"><span class="pre">const_cast</span></code>执行写操作就会产生未定义的后果。</p>
 <p>只有<code class="docutils literal notranslate"><span class="pre">const_cast</span></code>能改变表达式的常量属性，使用其他形式的强制类型转换改变表达式的常量属性都将引发编译错误。同样地，也不能用<code class="docutils literal notranslate"><span class="pre">const_cast</span></code>改变表达式的类型：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">cp</span><span class="p">;</span>
-<span class="kt">char</span> <span class="o">*</span><span class="n">q</span> <span class="o">=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">cp</span><span class="p">);</span>  <span class="c1">// 错误: static_cast不能去掉const性质</span>
-<span class="k">static_cast</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="p">(</span><span class="n">cp</span><span class="p">);</span>           <span class="c1">// 正确: 字符串字面量转换为string类型</span>
-<span class="k">const_cast</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="p">(</span><span class="n">cp</span><span class="p">);</span>            <span class="c1">// 错误: const_cast只能改变常量属性</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">cp</span><span class="p">;</span><span class="w"></span>
+<span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">q</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">cp</span><span class="p">);</span><span class="w">  </span><span class="c1">// 错误: static_cast不能去掉const性质</span>
+<span class="k">static_cast</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="p">(</span><span class="n">cp</span><span class="p">);</span><span class="w">           </span><span class="c1">// 正确: 字符串字面量转换为string类型</span>
+<span class="k">const_cast</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="p">(</span><span class="n">cp</span><span class="p">);</span><span class="w">            </span><span class="c1">// 错误: const_cast只能改变常量属性</span>
 </pre></div>
 </div>
 <blockquote>
 <div><p>Tips：<code class="docutils literal notranslate"><span class="pre">const_cast</span></code>最常用于重载函数的情景。</p>
 </div></blockquote>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// 常量引用的函数版本</span>
-<span class="k">const</span> <span class="n">string</span> <span class="o">&amp;</span><span class="nf">shorterString</span><span class="p">(</span><span class="k">const</span> <span class="n">string</span> <span class="o">&amp;</span><span class="n">s1</span><span class="p">,</span> <span class="k">const</span> <span class="n">string</span> <span class="o">&amp;</span><span class="n">s2</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="n">s1</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="n">s2</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">?</span> <span class="nl">s1</span> <span class="p">:</span> <span class="n">s2</span><span class="p">;</span>
-<span class="p">}</span>
+<span class="k">const</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="nf">shorterString</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="n">s1</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="n">s2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">s1</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">s2</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="nl">s1</span> <span class="p">:</span><span class="w"> </span><span class="n">s2</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
 <span class="c1">// 非常量引用的函数版本复用常量引用的函数版本</span>
-<span class="n">string</span> <span class="o">&amp;</span><span class="nf">shorterString</span><span class="p">(</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">s1</span><span class="p">,</span> <span class="n">string</span> <span class="o">&amp;</span><span class="n">s2</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">const</span> <span class="n">string</span> <span class="o">&amp;</span><span class="n">r</span> <span class="o">=</span> <span class="n">shorterString</span><span class="p">(</span><span class="k">const_cast</span><span class="o">&lt;</span><span class="k">const</span> <span class="n">string</span><span class="o">&amp;&gt;</span><span class="p">(</span><span class="n">s1</span><span class="p">),</span>
-                                    <span class="k">const_cast</span><span class="o">&lt;</span><span class="k">const</span> <span class="n">string</span><span class="o">&amp;&gt;</span><span class="p">(</span><span class="n">s2</span><span class="p">));</span>
-    <span class="k">return</span> <span class="k">const_cast</span><span class="o">&lt;</span><span class="n">string</span> <span class="o">&amp;&gt;</span><span class="p">(</span><span class="n">r</span><span class="p">);</span>
-<span class="p">}</span>
+<span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="nf">shorterString</span><span class="p">(</span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="n">s1</span><span class="p">,</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="n">s2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">shorterString</span><span class="p">(</span><span class="k">const_cast</span><span class="o">&lt;</span><span class="k">const</span><span class="w"> </span><span class="n">string</span><span class="o">&amp;&gt;</span><span class="p">(</span><span class="n">s1</span><span class="p">),</span><span class="w"></span>
+<span class="w">                                    </span><span class="k">const_cast</span><span class="o">&lt;</span><span class="k">const</span><span class="w"> </span><span class="n">string</span><span class="o">&amp;&gt;</span><span class="p">(</span><span class="n">s2</span><span class="p">));</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">const_cast</span><span class="o">&lt;</span><span class="n">string</span><span class="w"> </span><span class="o">&amp;&gt;</span><span class="p">(</span><span class="n">r</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="reinterpret-cast">
-<h3>3. reinterpret_cast<a class="headerlink" href="#reinterpret-cast" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="reinterpret-cast">
+<h3>3. reinterpret_cast<a class="headerlink" href="#reinterpret-cast" title="永久链接至标题"></a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">reinterpret_cast</span></code>通常为运算对象的位模式提供较低层次上的重新解释，例如：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="o">*</span><span class="n">ip</span><span class="p">;</span>
-<span class="kt">char</span> <span class="o">*</span><span class="n">cp</span> <span class="o">=</span> <span class="k">reinterpret_cast</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">ip</span><span class="p">);</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">ip</span><span class="p">;</span><span class="w"></span>
+<span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">cp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">reinterpret_cast</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">ip</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 <p>我们必须牢记pc所指的真实对象是一个int而非char，如果把pc当成普通字符指针使用就可能在运行时发生错误。</p>
-</div>
-<div class="section" id="dynamic-cast">
-<h3>4. dynamic_cast<a class="headerlink" href="#dynamic-cast" title="永久链接至标题">¶</a></h3>
-<p>TODO</p>
-</div>
-<div class="section" id="id12">
-<h3>5. 旧式的强制类型转换<a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="dynamic-cast">
+<h3>4. dynamic_cast<a class="headerlink" href="#dynamic-cast" title="永久链接至标题"></a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">dynamic_cast</span></code>主要用来执行“安全向下转型”（safe downcasting），也就是用来决定某对象是否归属继承体系中的某个类型。它是唯一无法由旧式语法执行的动作，也是唯一可能耗费重大运行成本的转型动作。</p>
+</section>
+<section id="id12">
+<h3>5. 旧式的强制类型转换<a class="headerlink" href="#id12" title="永久链接至标题"></a></h3>
 <p>在早期版本的C++语言中，显式地进行强制类型转换包含两种形式：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">type</span><span class="p">(</span><span class="n">expr</span><span class="p">);</span>  <span class="c1">// 函数形式的强制类型转换</span>
-<span class="p">(</span><span class="n">type</span><span class="p">)</span><span class="n">expr</span><span class="p">;</span>  <span class="c1">// C语言风格的强制类型转换</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">type</span><span class="p">(</span><span class="n">expr</span><span class="p">);</span><span class="w">  </span><span class="c1">// 函数形式的强制类型转换</span>
+<span class="p">(</span><span class="n">type</span><span class="p">)</span><span class="n">expr</span><span class="p">;</span><span class="w">  </span><span class="c1">// C语言风格的强制类型转换</span>
 </pre></div>
 </div>
 <p>根据所涉及的类型不同，旧式的强制类型转换分别具有与<code class="docutils literal notranslate"><span class="pre">const_cast</span></code>、<code class="docutils literal notranslate"><span class="pre">static_cast</span></code>和<code class="docutils literal notranslate"><span class="pre">reinterpret_cast</span></code>相似的行为，例如转换后不合法，则旧式强制类型转换与<code class="docutils literal notranslate"><span class="pre">reinterpret_cast</span></code>具有相似的功能：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="o">*</span><span class="n">ip</span><span class="p">;</span>
-<span class="kt">char</span> <span class="o">*</span><span class="n">cp</span> <span class="o">=</span> <span class="p">(</span><span class="kt">char</span><span class="o">*</span><span class="p">)</span><span class="n">ip</span><span class="p">;</span>  <span class="c1">// 等价于使用reinterpret_cast</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">ip</span><span class="p">;</span><span class="w"></span>
+<span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">cp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">char</span><span class="o">*</span><span class="p">)</span><span class="n">ip</span><span class="p">;</span><span class="w">  </span><span class="c1">// 等价于使用reinterpret_cast</span>
 </pre></div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="1.4%20%E6%95%B0%E7%BB%84.html" class="btn btn-neutral float-left" title="1.4 数组" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
         <a href="1.7%20%E5%88%9D%E5%A7%8B%E5%8C%96.html" class="btn btn-neutral float-right" title="1.7 初始化" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="1.5%20%E6%9E%9A%E4%B8%BE%E7%B1%BB%E5%9E%8B.html" class="btn btn-neutral float-left" title="1.5 枚举类型" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; 版权所有 2021, TOMOCAT.
-
-    </p>
+    <p>&#169; 版权所有 2021, TOMOCAT.</p>
   </div>
-    
-    
-    
-    利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
-    
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
-    
-    由 <a href="https://readthedocs.org">Read the Docs</a>开发. 
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

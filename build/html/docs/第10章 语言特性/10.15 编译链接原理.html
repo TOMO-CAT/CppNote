@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>10.15 编译链接原理 &mdash; C++语法笔记 v1.0 文档</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/translations.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="第11章 C++11新标准" href="../%E7%AC%AC11%E7%AB%A0%20C%2B%2B11%E6%96%B0%E6%A0%87%E5%87%86/index.html" />
+    <link rel="prev" title="10.14 调试帮助" href="10.14%20%E8%B0%83%E8%AF%95%E5%B8%AE%E5%8A%A9.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> C++语法笔记
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC1%E7%AB%A0%20%E5%8F%98%E9%87%8F%E4%B8%8E%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B/index.html">第1章 变量与基本类型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC2%E7%AB%A0%20%E8%AF%AD%E5%8F%A5/index.html">第2章 语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC3%E7%AB%A0%20%E5%87%BD%E6%95%B0/index.html">第3章 函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC4%E7%AB%A0%20%E8%BF%90%E7%AE%97%E7%AC%A6/index.html">第4章 运算符</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC5%E7%AB%A0%20%E7%B1%BB/index.html">第5章类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC6%E7%AB%A0%20%E6%A0%87%E5%87%86%E5%BA%93%E7%B1%BB%E5%9E%8B/index.html">第6章 标准库类型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC7%E7%AB%A0%20%E6%A8%A1%E6%9D%BF/index.html">第7章 模板</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC9%E7%AB%A0%20%E7%AE%97%E6%B3%95/index.html">第9章 算法</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">第10章 语法特性</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="10.1%20%E5%A4%B4%E6%96%87%E4%BB%B6.html">10.1 头文件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10.2%20%E5%9C%A8main%E5%87%BD%E6%95%B0%E4%B9%8B%E5%89%8D%E6%88%96%E4%B9%8B%E5%90%8E%E6%89%93%E5%8D%B0%E6%B6%88%E6%81%AF.html">10.2 在main函数之前或者之后打印消息</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10.3%20%E5%B7%A6%E5%80%BC%E4%B8%8E%E5%8F%B3%E5%80%BC.html">10.3 左值与右值</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10.4%20%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4.html">10.4 命名空间</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10.5%20%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83.html">10.5 命名规范</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10.6%20%E5%8F%98%E9%87%8F%E7%94%9F%E5%AD%98%E6%9C%9F%E5%92%8C%E5%8F%98%E9%87%8F%E4%BD%9C%E7%94%A8%E5%9F%9F.html">10.6 变量生存期和变量作用域</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10.7%20%E6%A0%87%E5%87%86%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E6%A8%A1%E6%9D%BF.html">10.7 标准类型转换模板</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10.8%20%E6%89%8B%E5%8A%A8%E7%AE%A1%E7%90%86%E5%86%85%E5%AD%98.html">10.8 手动管理内存</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10.9%20%E5%B9%B6%E8%A1%8C%E5%92%8C%E5%B9%B6%E5%8F%91.html">10.9 并行和并发</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10.10%20%E5%9B%BA%E6%9C%89%E7%9A%84%E4%B8%8D%E5%8F%AF%E7%A7%BB%E6%A4%8D%E7%9A%84%E7%89%B9%E6%80%A7.html">10.10 固有的不可移植的特性</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10.11%20%E8%BF%90%E8%A1%8C%E6%97%B6%E7%B1%BB%E5%9E%8B%E8%AF%86%E5%88%AB.html">10.11 运行时类型识别</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10.12%20%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86.html">10.12 异常处理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10.13%20%E5%86%85%E5%AD%98%E5%88%86%E5%B8%83.html">10.13 内存分布</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10.14%20%E8%B0%83%E8%AF%95%E5%B8%AE%E5%8A%A9.html">10.14 调试帮助</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">10.15 编译链接原理</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">简介</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#image-20210919154449115"></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">预处理</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id4">1. 宏</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id7">2. 条件编译</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id10">3. 展开头文件</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id11">编译</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id12">1. 编译的主要含义</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id13">2. 编译的步骤</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id14">汇编</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id15">链接</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id16">1. 动态链接</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id17">2. 静态链接</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#reference">Reference</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC11%E7%AB%A0%20C%2B%2B11%E6%96%B0%E6%A0%87%E5%87%86/index.html">第11章 C++11新标准</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../README.html">README</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">C++语法笔记</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">第10章 语法特性</a> &raquo;</li>
+      <li>10.15 编译链接原理</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/docs/第10章 语言特性/10.15 编译链接原理.md.txt" rel="nofollow"> 查看页面源码</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="id1">
+<h1>10.15 编译链接原理<a class="headerlink" href="#id1" title="永久链接至标题"></a></h1>
+<section id="id2">
+<h2>简介<a class="headerlink" href="#id2" title="永久链接至标题"></a></h2>
+<p>程序员编写完代码后，编译工具GCC将C++等高级语言“翻译”成低级语言（汇编语言甚至是机器码），进而形成可执行文件。<code class="docutils literal notranslate"><span class="pre">gcc</span></code>指令编译<code class="docutils literal notranslate"><span class="pre">.cpp</span></code>文件主要包含四个流程：预处理<code class="docutils literal notranslate"><span class="pre">Preprocessing</span></code>、编译<code class="docutils literal notranslate"><span class="pre">Compilation</span></code>、汇编<code class="docutils literal notranslate"><span class="pre">Assembly</span></code>和链接<code class="docutils literal notranslate"><span class="pre">Linking</span></code>。</p>
+<p>以最简单的一个C++程序<code class="docutils literal notranslate"><span class="pre">hello.cpp</span></code>为例：</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span>i#include &lt;iostream&gt;
+
+int main() {
+    std::cout &lt;&lt; &quot;Hello, world!&quot; &lt;&lt; std::endl;
+    return 0;
+}
+</pre></div>
+</div>
+</section>
+<section id="image-20210919154449115">
+<h2><img alt="image-20210919154449115" src="../../_images/image-20210919154449115.png" /><a class="headerlink" href="#image-20210919154449115" title="永久链接至标题"></a></h2>
+<p>GCC（GNU Compiler Collection，GNU编译器套件），支持编译C、C++、Go和Object-C等多种语言编写的程序，几乎所有的Linux发行版上都默认安装了GCC编译器。我们可以通过<code class="docutils literal notranslate"><span class="pre">gcc</span></code>和<code class="docutils literal notranslate"><span class="pre">g++</span></code>调用GCC编译器来编译C或者C++程序，但是实际中我们更倾向于使用<code class="docutils literal notranslate"><span class="pre">gcc</span></code>来编译C程序，使用<code class="docutils literal notranslate"><span class="pre">g++</span></code>来编译C++程序。</p>
+<p><code class="docutils literal notranslate"><span class="pre">g++</span></code>和<code class="docutils literal notranslate"><span class="pre">gcc</span></code>指令包含几点不同：</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">gcc</span></code>是GCC编译器的通用编译指令，可以根据文件后缀名自动推断出编译语言类型；而<code class="docutils literal notranslate"><span class="pre">g++</span></code>无论目标文件的后缀是什么都会以编译C++的方式编译目标文件</p></li>
+<li><p>由于C++的标准语法相当于C语言更加严格，因此对于不兼容C++标准语法<code class="docutils literal notranslate"><span class="pre">.c</span></code>文件而言，使用<code class="docutils literal notranslate"><span class="pre">g++</span></code>可能编译无法通过</p></li>
+<li><p>如果在<code class="docutils literal notranslate"><span class="pre">.cpp</span></code>文件中使用了C++标准库，那么<code class="docutils literal notranslate"><span class="pre">g++</span></code>在编译C++程序时可以轻松通过，但是<code class="docutils literal notranslate"><span class="pre">gcc</span></code>指令必须手动添加<code class="docutils literal notranslate"><span class="pre">-lstdc++</span> <span class="pre">-shared-libgcc</span></code>等指令表明链接对应的C++标准库</p></li>
+</ul>
+<blockquote>
+<div><p>简单理解，<code class="docutils literal notranslate"><span class="pre">g++</span></code>和<code class="docutils literal notranslate"><span class="pre">gcc</span></code>都是GCC的调用指令，其中<code class="docutils literal notranslate"><span class="pre">g++</span></code>等同于<code class="docutils literal notranslate"><span class="pre">gcc</span> <span class="pre">-xc++</span> <span class="pre">-lstdc++</span> <span class="pre">-shared-libgcc</span></code>。我们最好使用<code class="docutils literal notranslate"><span class="pre">gcc</span></code>编译C程序，使用<code class="docutils literal notranslate"><span class="pre">g++</span></code>编译C++程序。</p>
+</div></blockquote>
+</section>
+<section id="id3">
+<h2>预处理<a class="headerlink" href="#id3" title="永久链接至标题"></a></h2>
+<p>预处理主要包含如下几步：</p>
+<ul class="simple">
+<li><p>展开头文件</p></li>
+<li><p>宏替换</p></li>
+<li><p>去掉注释</p></li>
+<li><p>条件编译</p></li>
+</ul>
+<section id="id4">
+<h3>1. 宏<a class="headerlink" href="#id4" title="永久链接至标题"></a></h3>
+<p>C++中用<code class="docutils literal notranslate"><span class="pre">#define</span> <span class="pre">&lt;宏名&gt;</span> <span class="pre">&lt;字符串&gt;</span></code>命令定义宏，在代码中将字符串替换宏名出现的位置。定义宏的方式根据是否包含参数可以分为两种：</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#define &lt;宏名&gt; &lt;字符串&gt;</span>
+<span class="cp">#define PI 3.1415926</span>
+
+<span class="cp">#define &lt;宏名&gt;(&lt;参数列表&gt;) &lt;宏体&gt;</span>
+<span class="cp">#define A(x) x</span>
+</pre></div>
+</div>
+<section id="id5">
+<h4>1.1 使用宏的原因<a class="headerlink" href="#id5" title="永久链接至标题"></a></h4>
+<p>在预处理阶段的宏替换仅仅是将目标字符串替换宏名，在代码中对宏的使用必须极其谨慎，否则很容易写出有问题的程序。定义宏的主要有两个场景：</p>
+<ul class="simple">
+<li><p>通过宏定义常量：在常量变更时仅需要修改宏的定义而不需要修改所有使用到常量的位置</p></li>
+<li><p>带参数的宏可以减少系统调用函数的开销：对于一些特别简单的函数而言，函数的调用开销不可忽视，带参数的宏在预处理阶段就进行了宏展开，提高了程序的运行效率</p></li>
+</ul>
+</section>
+<section id="id6">
+<h4>1.2 宏定义中的三个特殊符号<a class="headerlink" href="#id6" title="永久链接至标题"></a></h4>
+<p>宏定义包含三个特殊符号：</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">x##y</span></code>：将<code class="docutils literal notranslate"><span class="pre">x</span></code>和<code class="docutils literal notranslate"><span class="pre">y</span></code>拼接到一起</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#&#64;x</span></code>：给<code class="docutils literal notranslate"><span class="pre">x</span></code>加上单引号，返回<code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">char</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#x</span></code>：给<code class="docutils literal notranslate"><span class="pre">x</span></code>加上双引号</p></li>
+</ul>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#define Cat(x,y) x##y</span>
+<span class="cp">#define ToChar(x) #@x</span>
+<span class="cp">#define ToString(x) #x</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="id7">
+<h3>2. 条件编译<a class="headerlink" href="#id7" title="永久链接至标题"></a></h3>
+<p>条件编译的指令包括<code class="docutils literal notranslate"><span class="pre">#ifdef</span></code>、<code class="docutils literal notranslate"><span class="pre">#ifndef</span></code>、<code class="docutils literal notranslate"><span class="pre">else</span></code>、<code class="docutils literal notranslate"><span class="pre">elif</span></code>和<code class="docutils literal notranslate"><span class="pre">#endif</span></code>等。</p>
+<blockquote>
+<div><p>条件编译类似于程序中<code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">else</span></code>语句，会选择性执行对应的代码。不过前者是在预编译阶段执行的条件选择，后者是在程序运行时执行的条件选择。</p>
+</div></blockquote>
+<section id="id8">
+<h4>2.1 头文件保护符<a class="headerlink" href="#id8" title="永久链接至标题"></a></h4>
+<p>头文件通常包含那些只能被定义一次的实体，如类、<code class="docutils literal notranslate"><span class="pre">const</span></code>和<code class="docutils literal notranslate"><span class="pre">constexpr</span></code>变量等，C++会使用头文件保护符来防止包含多份相同的头文件：</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm">foo.h</span>
+<span class="cm">*/</span><span class="w"></span>
+<span class="cp">#ifndef FOO_H</span>
+<span class="cp">#define FOO_H</span>
+
+<span class="c1">// ...</span>
+
+<span class="cp">#endif</span>
+</pre></div>
+</div>
+</section>
+<section id="id9">
+<h4>2.2 跨平台编译<a class="headerlink" href="#id9" title="永久链接至标题"></a></h4>
+<p>条件编译另一个常用场景即跨系统开发时兼容不同的平台。比如：</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#if _WIN32</span>
+<span class="c1">// windows下的逻辑</span>
+<span class="cp">#elif __linux__</span>
+<span class="c1">// linux下的逻辑</span>
+<span class="cp">#else</span>
+<span class="c1">// 其他平台</span>
+<span class="cp">#endif</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="id10">
+<h3>3. 展开头文件<a class="headerlink" href="#id10" title="永久链接至标题"></a></h3>
+<p>在C++中调用一个函数之前必须先有函数的声明，因此我们将各种要调用的函数声明打包成头文件，在<code class="docutils literal notranslate"><span class="pre">.cpp</span></code>文件的开头<code class="docutils literal notranslate"><span class="pre">#include</span></code>该头文件就可以保证声明置于调用之前。举个例子，C++中<code class="docutils literal notranslate"><span class="pre">#include</span> <span class="pre">&quot;foo.h&quot;</span></code>语句的含义是在预处理阶段用<code class="docutils literal notranslate"><span class="pre">foo.h</span></code>文件的内容插入到这条语句的位置。</p>
+<blockquote>
+<div><p>C++中包含头文件可以写成<code class="docutils literal notranslate"><span class="pre">#include</span> <span class="pre">&lt;foo.h&gt;</span></code>或者<code class="docutils literal notranslate"><span class="pre">#include</span> <span class="pre">&quot;foo.h&quot;</span></code>，这两者表示编译器搜索头文件的顺序不同：</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;foo.h&gt;</span></code>表示从系统目录下开始搜索，再搜索<code class="docutils literal notranslate"><span class="pre">$PATH</span></code>环境变量的目录，不搜索当前目录</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;foo.h&quot;</span></code>表示从当前目录开始搜索，然后是系统目录和<code class="docutils literal notranslate"><span class="pre">$PATH</span></code>环境变量的目录</p></li>
+</ul>
+<p>如果我们知道文件不在当前目录下的话，可以通过<code class="docutils literal notranslate"><span class="pre">&lt;foo.h&gt;</span></code>来加快搜索速度。</p>
+</div></blockquote>
+</section>
+</section>
+<section id="id11">
+<h2>编译<a class="headerlink" href="#id11" title="永久链接至标题"></a></h2>
+<blockquote>
+<div><p>编译指的是将预处理阶段获得的程序代码，经过一系列的词法分析、语法分析、语义分析以及优化，加工成当前机器支持的汇编代码。</p>
+</div></blockquote>
+<p>需要注意的是编译阶段是以一个单独的<code class="docutils literal notranslate"><span class="pre">.cpp</span></code>文件作为编译单元的（每个<code class="docutils literal notranslate"><span class="pre">.cpp</span></code>源文件对应一个<code class="docutils literal notranslate"><span class="pre">.o</span></code>目标文件），这意味着我们在编译<code class="docutils literal notranslate"><span class="pre">.cpp</span></code>时可以调用一个函数而不必给出函数的定义（但必须在调用之前获得函数的声明）。事实上<code class="docutils literal notranslate"><span class="pre">.cpp</span></code>前面<code class="docutils literal notranslate"><span class="pre">#include</span></code>的文件往往也只给出了函数的声明，至于函数是如何定义的需要等到链接<code class="docutils literal notranslate"><span class="pre">Linking</span></code>阶段再去找到函数的入口地址。</p>
+<section id="id12">
+<h3>1. 编译的主要含义<a class="headerlink" href="#id12" title="永久链接至标题"></a></h3>
+<p>编译阶段可以认为主要分成两步：</p>
+<ul class="simple">
+<li><p>检查函数和变量是否存在声明</p></li>
+<li><p>检查语句是否符合C++语法</p></li>
+</ul>
+</section>
+<section id="id13">
+<h3>2. 编译的步骤<a class="headerlink" href="#id13" title="永久链接至标题"></a></h3>
+<blockquote>
+<div><p>Q：预处理阶段已经删掉注释了，为什么编译阶段步骤三内还包含源文件的注释？</p>
+<p>A：这里的“编译”指的是广义的编译，包含前面提到的预编译步骤</p>
+</div></blockquote>
+<p>标准C和C++将编译过程定义为9个阶段：</p>
+<section id="phase1">
+<h4>2.1 Phase1：字符映射<a class="headerlink" href="#phase1" title="永久链接至标题"></a></h4>
+<p>源文件的字符被映射到源字符集中，特别是依赖于操作系统的行尾指示符会被换行符替换。其中源字符集由如下96个字符组成：</p>
+<ul class="simple">
+<li><p>5种空格字符：空格、水平制表符、垂直制表符、换页符和换行符</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">0~9</span></code>的十个数字符号</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">a~z</span></code>和<code class="docutils literal notranslate"><span class="pre">A~Z</span></code>的52个英文字母符号</p></li>
+<li><p>29个标点符号<code class="docutils literal notranslate"><span class="pre">_</span> <span class="pre">{</span> <span class="pre">}</span> <span class="pre">[</span> <span class="pre">]</span> <span class="pre">#</span> <span class="pre">(</span> <span class="pre">)</span> <span class="pre">&lt;</span> <span class="pre">&gt;</span> <span class="pre">%</span> <span class="pre">:</span> <span class="pre">;</span> <span class="pre">.</span> <span class="pre">?</span> <span class="pre">*</span> <span class="pre">+</span> <span class="pre">-</span> <span class="pre">/</span> <span class="pre">^</span> <span class="pre">&amp;</span> <span class="pre">|</span> <span class="pre">~</span> <span class="pre">!</span> <span class="pre">=</span> <span class="pre">,</span> <span class="pre">\</span> <span class="pre">&quot;</span> <span class="pre">’</span></code></p></li>
+</ul>
+</section>
+<section id="phase2">
+<h4>2.2 Phase2：反斜杠行合并<a class="headerlink" href="#phase2" title="永久链接至标题"></a></h4>
+<p>以反斜杠<code class="docutils literal notranslate"><span class="pre">\</span></code>结束的行会和它接下来的行进行合并。</p>
+</section>
+<section id="phase3">
+<h4>2.3 Phase3：标记化<a class="headerlink" href="#phase3" title="永久链接至标题"></a></h4>
+<p>源文件会被分解成注释、空白字符序列（空格、水平制表符、垂直制表符、换页符和换行符）以及预处理标记。</p>
+</section>
+<section id="phase4">
+<h4>2.4 Phase4：预处理<a class="headerlink" href="#phase4" title="永久链接至标题"></a></h4>
+<p>执行预处理器进行宏展开（使用<code class="docutils literal notranslate"><span class="pre">#include</span></code>指令引入的每个文件都会递归地执行前面的Phase1~4）。这个阶段结束后，所有预处理器指令都会从源代码删除。</p>
+</section>
+<section id="phase5">
+<h4>2.5 Phase5：字符集映射<a class="headerlink" href="#phase5" title="永久链接至标题"></a></h4>
+<p>源字符集成员和转义序列被转换为他们在执行字符集中的等价符号，对于微软C和C++，源字符集和执行字符集都是ASCII。</p>
+</section>
+<section id="phase6">
+<h4>2.6 Phase6：字符串连接<a class="headerlink" href="#phase6" title="永久链接至标题"></a></h4>
+<p>相邻的字符串会被连接到一起。</p>
+</section>
+<section id="phase7">
+<h4>2.7 Phase7：翻译<a class="headerlink" href="#phase7" title="永久链接至标题"></a></h4>
+<p>在语法和语义上分析所有的符号，翻译成目标代码。</p>
+</section>
+<section id="phase8">
+<h4>2.8 Phase8：处理模板<a class="headerlink" href="#phase8" title="永久链接至标题"></a></h4>
+<p>处理模板实例。</p>
+</section>
+<section id="phase9">
+<h4>2.9 Phase9：连接<a class="headerlink" href="#phase9" title="永久链接至标题"></a></h4>
+<p>所有的外部引用均被解析以创建可执行文件或者动态链接库。</p>
+</section>
+</section>
+</section>
+<section id="id14">
+<h2>汇编<a class="headerlink" href="#id14" title="永久链接至标题"></a></h2>
+<p>汇编是将前一步得到的<code class="docutils literal notranslate"><span class="pre">.s</span></code>汇编语言文件翻译成<code class="docutils literal notranslate"><span class="pre">.o</span></code>二进制机器指令文件的过程。</p>
+</section>
+<section id="id15">
+<h2>链接<a class="headerlink" href="#id15" title="永久链接至标题"></a></h2>
+<p>到目前为止，我们将每个<code class="docutils literal notranslate"><span class="pre">.cpp</span></code>源文件都编译成一个<code class="docutils literal notranslate"><span class="pre">.o</span></code>二进制目标文件，但是这些文件并不能被执行（因为某个源文件生成的<code class="docutils literal notranslate"><span class="pre">.o</span></code>文件中可能引用了另一个<code class="docutils literal notranslate"><span class="pre">.o</span></code>文件或者某个库文件的符号，比如变量或者函数调用等）。</p>
+<p>链接是编译的最后一步，会将前面编译好的<code class="docutils literal notranslate"><span class="pre">.o</span></code>文件、系统库的<code class="docutils literal notranslate"><span class="pre">.o</span></code>文件和库文件彼此相连接，把某个目标文件中引用的符号同另一个文件中的定义链接起来，将所有编译好的单元组成一个可执行文件。</p>
+<blockquote>
+<div><p>由于前面编译单元都是单个<code class="docutils literal notranslate"><span class="pre">.cpp</span></code>文件，因此直到链接阶段才能检查全局空间是否存在<strong>重复定义或者缺失定义</strong>的问题。这也是为什么我们一般不在头文件中出现定义的原因，因为头文件可能被多个源文件包含，每个源文件单独编译后就会在全局空间出现多个定义。</p>
+</div></blockquote>
+<section id="id16">
+<h3>1. 动态链接<a class="headerlink" href="#id16" title="永久链接至标题"></a></h3>
+<p>动态链接在编译链接时并不会把库文件的代码加到可执行文件中，而是在运行时加载所需要的动态库。动态链接生成的程序往往占用空间更小，但是系统环境缺少所需的动态库则无法运行。动态库文件一般后缀名为<code class="docutils literal notranslate"><span class="pre">.so</span></code>。</p>
+</section>
+<section id="id17">
+<h3>2. 静态链接<a class="headerlink" href="#id17" title="永久链接至标题"></a></h3>
+<p>与动态链接相反，静态链接在编译链接阶段就将库文件的所有代码加到可执行文件中，因此生成的程序体积更大，其后缀名一般为<code class="docutils literal notranslate"><span class="pre">.a</span></code>。</p>
+</section>
+</section>
+<section id="reference">
+<h2>Reference<a class="headerlink" href="#reference" title="永久链接至标题"></a></h2>
+<p>[1] https://blog.csdn.net/Zhangyanfeng1/article/details/111028540</p>
+<p>[2] https://blog.csdn.net/weixin_42517021/article/details/104363967</p>
+<p>[3] http://c.biancheng.net/view/7930.html</p>
+<p>[4] http://c.biancheng.net/view/7936.html</p>
+<p>[5] https://blog.csdn.net/Zhangyanfeng1/article/details/110928755</p>
+<p>[6] https://cloud.tencent.com/developer/article/1176744</p>
+<p>[7] https://blog.csdn.net/elfprincexu/article/details/45043971</p>
+<p>[8] https://blog.csdn.net/qq_43133135/article/details/82865618</p>
+<p>[9] https://www.cnblogs.com/fnlingnzb-learner/p/6903966.html</p>
+<p>[10] http://www.cppblog.com/woaidongmao/archive/2008/11/08/66311.html</p>
+<p>[11] https://www.cnblogs.com/CarpenterLee/p/5994681.html#top</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="10.14%20%E8%B0%83%E8%AF%95%E5%B8%AE%E5%8A%A9.html" class="btn btn-neutral float-left" title="10.14 调试帮助" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../%E7%AC%AC11%E7%AB%A0%20C%2B%2B11%E6%96%B0%E6%A0%87%E5%87%86/index.html" class="btn btn-neutral float-right" title="第11章 C++11新标准" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2021, TOMOCAT.</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

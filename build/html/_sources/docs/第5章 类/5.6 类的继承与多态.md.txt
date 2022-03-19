@@ -161,6 +161,53 @@ Base
 
 > Tips：通常情况下，只有成员函数（或友元）中的代码才需要使用作用域运算符来回避虚函数的机制。
 
+#### 4. 编码规范：绝不在构造和析构过程中调用virtual函数
+
+> Effective C++：Never call virtual functions during construction or destruction.
+>
+> * 在构造和析构期间不要调用virtual函数，因为这类调用不下降至derived class（比起当前执行构造函数和析构函数那层）。
+
+在构造函数或者析构函数中调用virtual函数可能带来非预期的结果：
+
+```c++
+#include <iostream>
+
+class Base {
+ public:
+    Base() {
+        foo();  // 在基类的构造函数中调用virtual函数
+    }
+    virtual void foo() const {
+        std::cout << "Base::foo()" << std::endl;
+    }
+};
+
+class Derived : public Base {
+ public:
+    void foo() const override {
+        std::cout << "Derived::foo()" << std::endl;
+    }
+};
+
+int main() {
+    Derived d;
+
+    return 0;
+}
+
+// 编译:
+$g++ -g test.cpp -std=c++11 -o test
+// 输出:
+$./test 
+Base::foo()
+```
+
+注意我们构造的是派生类对象`Derived`，但是调用的virtual函数却是基类版本`Base::foo()`。这意味在基类构造期间virtual函数绝不会下降到派生类层次。非正式的说法可能更加传神：在基类构造期间，virtual函数不是virtual函数。
+
+这是因为基类构造函数执行要早于派生类构造函数，当基类构造函数执行时派生类的成员变量尚未初始化。在此期间调用的virtual函数如果下降至派生类层次就有可能访问到尚未初始化的派生类成员变量，这是一个危险的操作，所以C++不允许你走这条路。
+
+相同道理也适用于析构函数。一旦派生类的析构函数开始执行，对象内的派生类成员变量便呈现出未定义值，所以C++把它们当作不存在。进入基类析构函数后对象就被C++当作一个基类对象。
+
 ## 抽象基类
 
 #### 1. 纯虚函数
@@ -634,3 +681,10 @@ int main() {
 }
 ```
 
+## 编码规范：确定你的public继承模拟出is-a关系
+
+> Effective C++：Make sure public inheritance models "is-a".
+>
+> * “public继承”意味着“is-a”，适用于base class身上的每一件事情一定也适用于derived class身上，因为每一个derived class对象也都是一个base class对象。
+
+is-a并非是唯一存在于classes之间的关系。另两个常见的关系是has-a（有一个）和is-implemented-in-terms-of（根据某物实现出）。将上述这些重要的相互关系中的任何一个误塑为is-a而造成的错误设计，在C++中并不罕见。所以你应该确定你确实了解这些个“class相互关系”之间的差异，并直到如何在C++中更好地塑造它们。
