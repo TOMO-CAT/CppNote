@@ -11,3 +11,5 @@
     8.5 static
     8.6 extern
     8.7 explicit
+    8.8 mutable
+    8.9 inline
