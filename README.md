@@ -3,7 +3,7 @@
 ## 说明
 
 ReadTheDocs电子书链接：
-> https://golangnote.readthedocs.io/en/latest/index.html
+> https://cpp-note.readthedocs.io/zh/latest/
 
 网络不好的同学可以看下面的语雀链接（尽量同步更新）：
 > 
