@@ -26,7 +26,7 @@ FilePath: \cpp_dictionary\source\conf.py
 
 # -- Project information -----------------------------------------------------
 
-project = 'C++语法笔记'
+project = 'C++ Note'
 copyright = '2021, TOMOCAT'
 author = 'TOMOCAT'
 
