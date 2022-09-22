@@ -1,35 +1,74 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="zh-CN" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  <meta charset="utf-8" />
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>6.8 标准库类型：tuple &mdash; C++语法笔记 v1.0 文档</title>
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+  <title>6.8 标准库类型：tuple &mdash; C++ Note v1.0 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script src="../../_static/translations.js"></script>
-    <script src="../../_static/js/theme.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
     <link rel="next" title="6.9 标准库类型：bitset" href="6.9%20%E6%A0%87%E5%87%86%E5%BA%93%E7%B1%BB%E5%9E%8Bbitset.html" />
     <link rel="prev" title="6.7 标准库：关联容器" href="6.7%20%E6%A0%87%E5%87%86%E5%BA%93%E5%85%B3%E8%81%94%E5%AE%B9%E5%99%A8.html" /> 
 </head>
 
-<body class="wy-body-for-nav"> 
+<body class="wy-body-for-nav">
+
+   
   <div class="wy-grid-for-nav">
+    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../../index.html" class="icon icon-home"> C++语法笔记
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> C++ Note
+          
+
+          
           </a>
+
+          
+            
+            
+          
+
+          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="在文档中搜索" />
@@ -37,7 +76,18 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC1%E7%AB%A0%20%E5%8F%98%E9%87%8F%E4%B8%8E%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B/index.html">第1章 变量与基本类型</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC2%E7%AB%A0%20%E8%AF%AD%E5%8F%A5/index.html">第2章 语句</a></li>
@@ -73,42 +123,84 @@
 <li class="toctree-l1"><a class="reference internal" href="../README.html">README</a></li>
 </ul>
 
+            
+          
         </div>
+        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../index.html">C++语法笔记</a>
+          <a href="../../index.html">C++ Note</a>
+        
       </nav>
 
+
       <div class="wy-nav-content">
+        
         <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
+    
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
           <li><a href="index.html">第6章 标准库类型</a> &raquo;</li>
+        
       <li>6.8 标准库类型：tuple</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
+        
+          
             <a href="../../_sources/docs/第6章 标准库类型/6.8 标准库类型tuple.md.txt" rel="nofollow"> 查看页面源码</a>
+          
+        
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-             
-  <section id="tuple">
-<h1>6.8 标准库类型：tuple<a class="headerlink" href="#tuple" title="永久链接至标题"></a></h1>
-<section id="id1">
-<h2>简介<a class="headerlink" href="#id1" title="永久链接至标题"></a></h2>
+            
+  <div class="section" id="tuple">
+<h1>6.8 标准库类型：tuple<a class="headerlink" href="#tuple" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id1">
+<h2>简介<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">tuple</span></code>是类似<code class="docutils literal notranslate"><span class="pre">pair</span></code>的模板，每个<code class="docutils literal notranslate"><span class="pre">pair</span></code>的成员类型都不相同，但是每个<code class="docutils literal notranslate"><span class="pre">pair</span></code>恰好有两个成员。我们希望将一些数据组合成单一对象，但又不想麻烦地定义一个新数据结构来表示这些数据，这时候就可以用到<code class="docutils literal notranslate"><span class="pre">tuple</span></code>。</p>
 <blockquote>
 <div><p>Tips：我们可以将<code class="docutils literal notranslate"><span class="pre">tuple</span></code>当做一个”快速而随意”的数据结构。</p>
 </div></blockquote>
-</section>
-<section id="id2">
-<h2>操作<a class="headerlink" href="#id2" title="永久链接至标题"></a></h2>
+</div>
+<div class="section" id="id2">
+<h2>操作<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>它支持的操作包括：</p>
 <table border="1" class="docutils">
 <thead>
@@ -151,73 +243,90 @@
 <td>一个类模板，可以通过一个整型常量和一个<code>tuple</code>类型初始化，返回<code>tuple</code>类型中指定成员的类型</td>
 </tr>
 </tbody>
-</table></section>
-<section id="id3">
-<h2>定义和初始化tuple<a class="headerlink" href="#id3" title="永久链接至标题"></a></h2>
+</table></div>
+<div class="section" id="id3">
+<h2>定义和初始化tuple<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <p>使用构造函数：</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// 三个成员都值初始化为0</span>
-<span class="n">std</span><span class="o">::</span><span class="n">tuple</span><span class="o">&lt;</span><span class="kt">size_t</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="o">&gt;</span><span class="w"> </span><span class="n">threeD</span><span class="p">;</span><span class="w"></span>
+<span class="n">std</span><span class="o">::</span><span class="n">tuple</span><span class="o">&lt;</span><span class="kt">size_t</span><span class="p">,</span> <span class="kt">size_t</span><span class="p">,</span> <span class="kt">size_t</span><span class="o">&gt;</span> <span class="n">threeD</span><span class="p">;</span>
 <span class="c1">// 为每个成员提供初始值</span>
-<span class="n">std</span><span class="o">::</span><span class="n">tuple</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">someValue</span><span class="p">(</span><span class="s">&quot;constants&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="mf">3.14</span><span class="p">,</span><span class="w"> </span><span class="mf">2.718</span><span class="p">},</span><span class="w"> </span><span class="mi">42</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">});</span><span class="w"></span>
+<span class="n">std</span><span class="o">::</span><span class="n">tuple</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">,</span> <span class="kt">int</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">someValue</span><span class="p">(</span><span class="s">&quot;constants&quot;</span><span class="p">,</span> <span class="p">{</span><span class="mf">3.14</span><span class="p">,</span> <span class="mf">2.718</span><span class="p">},</span> <span class="mi">42</span><span class="p">,</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">});</span>
 
 <span class="c1">// 注意tuple这个构造函数是explicit的, 因此我们必须使用直接初始化语法</span>
-<span class="n">std</span><span class="o">::</span><span class="n">tuple</span><span class="o">&lt;</span><span class="kt">size_t</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="o">&gt;</span><span class="w"> </span><span class="n">threeD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">};</span><span class="w">    </span><span class="c1">// 错误</span>
-<span class="n">std</span><span class="o">::</span><span class="n">tuple</span><span class="o">&lt;</span><span class="kt">size_t</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="o">&gt;</span><span class="w"> </span><span class="n">threeD</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span><span class="w">       </span><span class="c1">// 正确</span>
-<span class="n">std</span><span class="o">::</span><span class="n">tuple</span><span class="o">&lt;</span><span class="kt">size_t</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="o">&gt;</span><span class="w"> </span><span class="n">threeD</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">};</span><span class="w">       </span><span class="c1">// 正确: 列表初始化</span>
+<span class="n">std</span><span class="o">::</span><span class="n">tuple</span><span class="o">&lt;</span><span class="kt">size_t</span><span class="p">,</span> <span class="kt">size_t</span><span class="p">,</span> <span class="kt">size_t</span><span class="o">&gt;</span> <span class="n">threeD</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">};</span>    <span class="c1">// 错误</span>
+<span class="n">std</span><span class="o">::</span><span class="n">tuple</span><span class="o">&lt;</span><span class="kt">size_t</span><span class="p">,</span> <span class="kt">size_t</span><span class="p">,</span> <span class="kt">size_t</span><span class="o">&gt;</span> <span class="n">threeD</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>       <span class="c1">// 正确</span>
+<span class="n">std</span><span class="o">::</span><span class="n">tuple</span><span class="o">&lt;</span><span class="kt">size_t</span><span class="p">,</span> <span class="kt">size_t</span><span class="p">,</span> <span class="kt">size_t</span><span class="o">&gt;</span> <span class="n">threeD</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">};</span>       <span class="c1">// 正确: 列表初始化</span>
 </pre></div>
 </div>
 <p>也可以使用<code class="docutils literal notranslate"><span class="pre">make_tuple</span></code>：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">auto</span><span class="w"> </span><span class="n">item</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">make_tuple</span><span class="p">(</span><span class="s">&quot;0-999-78345-X&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mf">20.00</span><span class="p">);</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">auto</span> <span class="n">item</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_tuple</span><span class="p">(</span><span class="s">&quot;0-999-78345-X&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mf">20.00</span><span class="p">);</span>
 </pre></div>
 </div>
-</section>
-<section id="id4">
-<h2>访问tuple的成员<a class="headerlink" href="#id4" title="永久链接至标题"></a></h2>
+</div>
+<div class="section" id="id4">
+<h2>访问tuple的成员<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
 <p>使用<code class="docutils literal notranslate"><span class="pre">get&lt;i&gt;(t)</span></code>即可返回<code class="docutils literal notranslate"><span class="pre">tuple</span></code>第<code class="docutils literal notranslate"><span class="pre">i</span></code>个成员的引用，如果我们不知道<code class="docutils literal notranslate"><span class="pre">tuple</span></code>准备的类型细节，可以使用两个辅助类模板来查询<code class="docutils literal notranslate"><span class="pre">tuple</span></code>成员的数量和类型：</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// trans类型是item的类型(某种tuple)</span>
-<span class="k">typedef</span><span class="w"> </span><span class="k">decltype</span><span class="p">(</span><span class="n">item</span><span class="p">)</span><span class="w"> </span><span class="n">trans</span><span class="p">;</span><span class="w">          </span>
+<span class="k">typedef</span> <span class="k">decltype</span><span class="p">(</span><span class="n">item</span><span class="p">)</span> <span class="n">trans</span><span class="p">;</span>          
 <span class="c1">// 返回trans中成员数量: 返回3</span>
-<span class="kt">size_t</span><span class="w"> </span><span class="n">sz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tuple_size</span><span class="o">&lt;</span><span class="n">trans</span><span class="o">&gt;::</span><span class="n">value</span><span class="p">;</span><span class="w"></span>
+<span class="kt">size_t</span> <span class="n">sz</span> <span class="o">=</span> <span class="n">tuple_size</span><span class="o">&lt;</span><span class="n">trans</span><span class="o">&gt;::</span><span class="n">value</span><span class="p">;</span>
 <span class="c1">// cnt的类型与item中第二个成员相同: int</span>
-<span class="n">tuple_element</span><span class="o">&lt;</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">trans</span><span class="o">&gt;::</span><span class="n">type</span><span class="w"> </span><span class="n">cnt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">get</span><span class="o">&lt;</span><span class="mi">1</span><span class="o">&gt;</span><span class="p">(</span><span class="n">item</span><span class="p">);</span><span class="w"></span>
+<span class="n">tuple_element</span><span class="o">&lt;</span><span class="mi">1</span><span class="p">,</span> <span class="n">trans</span><span class="o">&gt;::</span><span class="n">type</span> <span class="n">cnt</span> <span class="o">=</span> <span class="n">get</span><span class="o">&lt;</span><span class="mi">1</span><span class="o">&gt;</span><span class="p">(</span><span class="n">item</span><span class="p">);</span>
 </pre></div>
 </div>
-</section>
-<section id="id5">
-<h2>使用tuple返回多个值<a class="headerlink" href="#id5" title="永久链接至标题"></a></h2>
+</div>
+<div class="section" id="id5">
+<h2>使用tuple返回多个值<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">tuple</span></code>的一个常见用途就是从一个函数返回多个相关的值，如果函数返回两个值我们可以使用<code class="docutils literal notranslate"><span class="pre">pair</span></code>，返回三个值及以上我们就可以使用<code class="docutils literal notranslate"><span class="pre">tuple</span></code>了。</p>
-</section>
-</section>
+</div>
+</div>
 
 
            </div>
+           
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="6.7%20%E6%A0%87%E5%87%86%E5%BA%93%E5%85%B3%E8%81%94%E5%AE%B9%E5%99%A8.html" class="btn btn-neutral float-left" title="6.7 标准库：关联容器" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
         <a href="6.9%20%E6%A0%87%E5%87%86%E5%BA%93%E7%B1%BB%E5%9E%8Bbitset.html" class="btn btn-neutral float-right" title="6.9 标准库类型：bitset" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="6.7%20%E6%A0%87%E5%87%86%E5%BA%93%E5%85%B3%E8%81%94%E5%AE%B9%E5%99%A8.html" class="btn btn-neutral float-left" title="6.7 标准库：关联容器" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; 版权所有 2021, TOMOCAT.</p>
-  </div>
+    <p>
+        &#169; 版权所有 2021, TOMOCAT.
 
-  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    </p>
+  </div>
+    
+    
+    
+    利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
-    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
-   
+    
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发. 
 
 </footer>
         </div>
       </div>
+
     </section>
+
   </div>
-  <script>
+  
+
+  <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

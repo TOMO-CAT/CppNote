@@ -1,35 +1,74 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="zh-CN" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  <meta charset="utf-8" />
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>6.9 标准库类型：bitset &mdash; C++语法笔记 v1.0 文档</title>
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+  <title>6.9 标准库类型：bitset &mdash; C++ Note v1.0 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script src="../../_static/translations.js"></script>
-    <script src="../../_static/js/theme.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
     <link rel="next" title="第7章 模板" href="../%E7%AC%AC7%E7%AB%A0%20%E6%A8%A1%E6%9D%BF/index.html" />
     <link rel="prev" title="6.8 标准库类型：tuple" href="6.8%20%E6%A0%87%E5%87%86%E5%BA%93%E7%B1%BB%E5%9E%8Btuple.html" /> 
 </head>
 
-<body class="wy-body-for-nav"> 
+<body class="wy-body-for-nav">
+
+   
   <div class="wy-grid-for-nav">
+    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../../index.html" class="icon icon-home"> C++语法笔记
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> C++ Note
+          
+
+          
           </a>
+
+          
+            
+            
+          
+
+          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="在文档中搜索" />
@@ -37,7 +76,18 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC1%E7%AB%A0%20%E5%8F%98%E9%87%8F%E4%B8%8E%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B/index.html">第1章 变量与基本类型</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC2%E7%AB%A0%20%E8%AF%AD%E5%8F%A5/index.html">第2章 语句</a></li>
@@ -71,41 +121,83 @@
 <li class="toctree-l1"><a class="reference internal" href="../README.html">README</a></li>
 </ul>
 
+            
+          
         </div>
+        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../index.html">C++语法笔记</a>
+          <a href="../../index.html">C++ Note</a>
+        
       </nav>
 
+
       <div class="wy-nav-content">
+        
         <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
+    
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
           <li><a href="index.html">第6章 标准库类型</a> &raquo;</li>
+        
       <li>6.9 标准库类型：bitset</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
+        
+          
             <a href="../../_sources/docs/第6章 标准库类型/6.9 标准库类型bitset.md.txt" rel="nofollow"> 查看页面源码</a>
+          
+        
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-             
-  <section id="bitset">
-<h1>6.9 标准库类型：bitset<a class="headerlink" href="#bitset" title="永久链接至标题"></a></h1>
-<section id="id1">
-<h2>简介<a class="headerlink" href="#id1" title="永久链接至标题"></a></h2>
+            
+  <div class="section" id="bitset">
+<h1>6.9 标准库类型：bitset<a class="headerlink" href="#bitset" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id1">
+<h2>简介<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <p>标准库定义了<code class="docutils literal notranslate"><span class="pre">bitset</span></code>类让位运算的使用更加容易，并且能够处理超过最长整形类型大小的位集合。<code class="docutils literal notranslate"><span class="pre">bitset</span></code>类定义在头文件<code class="docutils literal notranslate"><span class="pre">bitset</span></code>中。</p>
-</section>
-<section id="id2">
-<h2>定义和初始化bitset<a class="headerlink" href="#id2" title="永久链接至标题"></a></h2>
+</div>
+<div class="section" id="id2">
+<h2>定义和初始化bitset<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">bitset</span></code>类似于<code class="docutils literal notranslate"><span class="pre">array</span></code>类，具有固定的大小。当我们定义一个<code class="docutils literal notranslate"><span class="pre">bitset</span></code>时需要声明它包含多少个二进制位：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">bitset</span><span class="o">&lt;</span><span class="mi">32</span><span class="o">&gt;</span><span class="w"> </span><span class="n">bitvec</span><span class="p">(</span><span class="mi">1U</span><span class="p">);</span><span class="w">  </span><span class="c1">// 32位, 低位为1其他位为0</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">bitset</span><span class="o">&lt;</span><span class="mi">32</span><span class="o">&gt;</span> <span class="n">bitvec</span><span class="p">(</span><span class="mi">1U</span><span class="p">);</span>  <span class="c1">// 32位, 低位为1其他位为0</span>
 </pre></div>
 </div>
 <p>初始化的方法：</p>
@@ -134,9 +226,9 @@
 <td>和上面类似，只不过从<code>cp</code>指向的字符数组中拷贝字符</td>
 </tr>
 </tbody>
-</table></section>
-<section id="id3">
-<h2>bitset操作<a class="headerlink" href="#id3" title="永久链接至标题"></a></h2>
+</table></div>
+<div class="section" id="id3">
+<h2>bitset操作<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">b.any()</span></code>：<code class="docutils literal notranslate"><span class="pre">b</span></code>中是否存在置位的二进制位</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">b.all()</span></code>：<code class="docutils literal notranslate"><span class="pre">b</span></code>中所有位都置位了吗</p></li>
@@ -157,38 +249,55 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">os</span> <span class="pre">&lt;&lt;</span> <span class="pre">b</span></code>：将<code class="docutils literal notranslate"><span class="pre">b</span></code>中二进制位打印为字符<code class="docutils literal notranslate"><span class="pre">1</span></code>或者<code class="docutils literal notranslate"><span class="pre">0</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">is</span> <span class="pre">&gt;&gt;</span> <span class="pre">b</span></code>：从<code class="docutils literal notranslate"><span class="pre">is</span></code>读取字符存入<code class="docutils literal notranslate"><span class="pre">b</span></code>，当下一个字符不是<code class="docutils literal notranslate"><span class="pre">1</span></code>或<code class="docutils literal notranslate"><span class="pre">0</span></code>，或者已经读入<code class="docutils literal notranslate"><span class="pre">b.size()</span></code>个位时停止</p></li>
 </ul>
-</section>
-</section>
+</div>
+</div>
 
 
            </div>
+           
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="6.8%20%E6%A0%87%E5%87%86%E5%BA%93%E7%B1%BB%E5%9E%8Btuple.html" class="btn btn-neutral float-left" title="6.8 标准库类型：tuple" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
         <a href="../%E7%AC%AC7%E7%AB%A0%20%E6%A8%A1%E6%9D%BF/index.html" class="btn btn-neutral float-right" title="第7章 模板" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="6.8%20%E6%A0%87%E5%87%86%E5%BA%93%E7%B1%BB%E5%9E%8Btuple.html" class="btn btn-neutral float-left" title="6.8 标准库类型：tuple" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; 版权所有 2021, TOMOCAT.</p>
-  </div>
+    <p>
+        &#169; 版权所有 2021, TOMOCAT.
 
-  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    </p>
+  </div>
+    
+    
+    
+    利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
-    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
-   
+    
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发. 
 
 </footer>
         </div>
       </div>
+
     </section>
+
   </div>
-  <script>
+  
+
+  <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

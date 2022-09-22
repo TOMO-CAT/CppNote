@@ -1,35 +1,74 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="zh-CN" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  <meta charset="utf-8" />
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>11.6 标准库function类型 &mdash; C++语法笔记 v1.0 文档</title>
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+  <title>11.6 标准库function类型 &mdash; C++ Note v1.0 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script src="../../_static/translations.js"></script>
-    <script src="../../_static/js/theme.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
     <link rel="next" title="README" href="../README.html" />
     <link rel="prev" title="11.5 初始化列表" href="11.5%20%E5%88%9D%E5%A7%8B%E5%8C%96%E5%88%97%E8%A1%A8.html" /> 
 </head>
 
-<body class="wy-body-for-nav"> 
+<body class="wy-body-for-nav">
+
+   
   <div class="wy-grid-for-nav">
+    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../../index.html" class="icon icon-home"> C++语法笔记
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> C++ Note
+          
+
+          
           </a>
+
+          
+            
+            
+          
+
+          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="在文档中搜索" />
@@ -37,7 +76,18 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC1%E7%AB%A0%20%E5%8F%98%E9%87%8F%E4%B8%8E%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B/index.html">第1章 变量与基本类型</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC2%E7%AB%A0%20%E8%AF%AD%E5%8F%A5/index.html">第2章 语句</a></li>
@@ -73,60 +123,102 @@
 <li class="toctree-l1"><a class="reference internal" href="../README.html">README</a></li>
 </ul>
 
+            
+          
         </div>
+        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../index.html">C++语法笔记</a>
+          <a href="../../index.html">C++ Note</a>
+        
       </nav>
 
+
       <div class="wy-nav-content">
+        
         <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
+    
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
           <li><a href="index.html">第11章 C++11新标准</a> &raquo;</li>
+        
       <li>11.6 标准库function类型</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
+        
+          
             <a href="../../_sources/docs/第11章 C++11新标准/11.6 标准库function类型.md.txt" rel="nofollow"> 查看页面源码</a>
+          
+        
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-             
-  <section id="function">
-<h1>11.6 标准库function类型<a class="headerlink" href="#function" title="永久链接至标题"></a></h1>
-<section id="id1">
-<h2>可调用对象与调用形式<a class="headerlink" href="#id1" title="永久链接至标题"></a></h2>
+            
+  <div class="section" id="function">
+<h1>11.6 标准库function类型<a class="headerlink" href="#function" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id1">
+<h2>可调用对象与调用形式<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <p>C++语言中有几种可调用的对象：函数、函数指针、<code class="docutils literal notranslate"><span class="pre">lambda</span></code>表达式、<code class="docutils literal notranslate"><span class="pre">bind</span></code>创建的对象以及重载了函数调用运算符的类。可调用的对象和其他对象一样都有类型（比如每个<code class="docutils literal notranslate"><span class="pre">lambda</span></code>有它自己唯一的（未命名）类类型，函数及函数指针的类型则由其返回值类型和实参类型决定），然而两个不同类型的可调用对象缺可能共享同一种调用形式<code class="docutils literal notranslate"><span class="pre">call</span> <span class="pre">signature</span></code>。</p>
 <p>调用形式指明了调用返回的类型以及传递给调用的实参类型，一种调用形式对应一个函数类型，例如：</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// 函数类型: 接受两个int并返回一个int</span>
-<span class="kt">int</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="p">);</span><span class="w"></span>
+<span class="kt">int</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>下面三种不同的可调用对象都实现了该函数类型：</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// 普通函数</span>
-<span class="kt">int</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">j</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="kt">int</span> <span class="nf">add</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="kt">int</span> <span class="n">j</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">i</span> <span class="o">+</span> <span class="n">j</span><span class="p">;</span> <span class="p">}</span>
 <span class="c1">// lambda表达式</span>
-<span class="k">auto</span><span class="w"> </span><span class="n">mod</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[](</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">j</span><span class="p">;</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
+<span class="k">auto</span> <span class="n">mod</span> <span class="o">=</span> <span class="p">[](</span><span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="kt">int</span> <span class="n">j</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">i</span> <span class="o">%</span> <span class="n">j</span><span class="p">;</span> <span class="p">};</span>
 <span class="c1">// 重载了函数调用运算符的类</span>
-<span class="k">struct</span> <span class="nc">divide</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="nf">operator</span><span class="p">()(</span><span class="kt">int</span><span class="w"> </span><span class="n">denominator</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">divisor</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">denominator</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">divisor</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
+<span class="k">struct</span> <span class="nc">divide</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="nf">operator</span><span class="p">()(</span><span class="kt">int</span> <span class="n">denominator</span><span class="p">,</span> <span class="kt">int</span> <span class="n">divisor</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">denominator</span> <span class="o">/</span> <span class="n">divisor</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
 </pre></div>
 </div>
-</section>
-<section id="id2">
-<h2>标准库function类型<a class="headerlink" href="#id2" title="永久链接至标题"></a></h2>
+</div>
+<div class="section" id="id2">
+<h2>标准库function类型<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">function</span></code>定义在<code class="docutils literal notranslate"><span class="pre">functional</span></code>头文件中，可以将可调用对象按照调用形式进行分类。</p>
-<section id="id3">
-<h3>1. 操作<a class="headerlink" href="#id3" title="永久链接至标题"></a></h3>
+<div class="section" id="id3">
+<h3>1. 操作<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
 <table border="1" class="docutils">
 <thead>
 <tr>
@@ -156,9 +248,9 @@
 <td>调用<code>f</code>中的对象，参数是<code>args</code></td>
 </tr>
 </tbody>
-</table></section>
-<section id="id4">
-<h3>2. 类型成员<a class="headerlink" href="#id4" title="永久链接至标题"></a></h3>
+</table></div>
+<div class="section" id="id4">
+<h3>2. 类型成员<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
 <table border="1" class="docutils">
 <thead>
 <tr>
@@ -176,85 +268,102 @@
 <td>当<code>T</code>有一个或两个实参时定义的类型，如果<code>T</code>只有一个实参，则<code>argument_type</code>是该类型的同义词；如果<code>T</code>有两个实参，则<code>first_argument_type</code>和<code>second_argument_type</code>分别代表两个实参的类型</td>
 </tr>
 </tbody>
-</table></section>
-<section id="id5">
-<h3>3. 例子<a class="headerlink" href="#id5" title="永久链接至标题"></a></h3>
+</table></div>
+<div class="section" id="id5">
+<h3>3. 例子<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
 <span class="cp">#include</span><span class="cpf">&lt;functional&gt;</span><span class="cp"></span>
 
 <span class="c1">// 普通函数</span>
-<span class="kt">int</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">j</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="kt">int</span> <span class="nf">add</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="kt">int</span> <span class="n">j</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">i</span> <span class="o">+</span> <span class="n">j</span><span class="p">;</span> <span class="p">}</span>
 <span class="c1">// lambda表达式</span>
-<span class="k">auto</span><span class="w"> </span><span class="n">mod</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[](</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">j</span><span class="p">;</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
+<span class="k">auto</span> <span class="n">mod</span> <span class="o">=</span> <span class="p">[](</span><span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="kt">int</span> <span class="n">j</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">i</span> <span class="o">%</span> <span class="n">j</span><span class="p">;</span> <span class="p">};</span>
 <span class="c1">// 重载了函数调用运算符的类</span>
-<span class="k">struct</span> <span class="nc">divide</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="nf">operator</span><span class="p">()(</span><span class="kt">int</span><span class="w"> </span><span class="n">denominator</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">divisor</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">denominator</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">divisor</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
+<span class="k">struct</span> <span class="nc">divide</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="nf">operator</span><span class="p">()(</span><span class="kt">int</span> <span class="n">denominator</span><span class="p">,</span> <span class="kt">int</span> <span class="n">divisor</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">denominator</span> <span class="o">/</span> <span class="n">divisor</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
 
-<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="p">)</span><span class="o">&gt;</span><span class="w"> </span><span class="n">f1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">add</span><span class="p">;</span><span class="w">                                 </span><span class="c1">// 函数指针</span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="p">)</span><span class="o">&gt;</span><span class="w"> </span><span class="n">f2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">divide</span><span class="p">();</span><span class="w">                            </span><span class="c1">// 函数对象类的对象</span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="p">)</span><span class="o">&gt;</span><span class="w"> </span><span class="n">f3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[](</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">j</span><span class="p">;</span><span class="w"> </span><span class="p">};</span><span class="w">  </span><span class="c1">// lambda</span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">f1</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w">  </span><span class="c1">// 打印6</span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">f2</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w">  </span><span class="c1">// 打印2</span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">f3</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w">  </span><span class="c1">// 打印8</span>
-<span class="p">}</span><span class="w"></span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">f1</span> <span class="o">=</span> <span class="n">add</span><span class="p">;</span>                                 <span class="c1">// 函数指针</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">f2</span> <span class="o">=</span> <span class="n">divide</span><span class="p">();</span>                            <span class="c1">// 函数对象类的对象</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">f3</span> <span class="o">=</span> <span class="p">[](</span><span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="kt">int</span> <span class="n">j</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">i</span> <span class="o">*</span> <span class="n">j</span><span class="p">;</span> <span class="p">};</span>  <span class="c1">// lambda</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">f1</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>  <span class="c1">// 打印6</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">f2</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>  <span class="c1">// 打印2</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">f3</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>  <span class="c1">// 打印8</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>我们把所有可调用对象，包括函数指针、<code class="docutils literal notranslate"><span class="pre">lambda</span></code>或者函数对象都添加到<code class="docutils literal notranslate"><span class="pre">map</span></code>中：</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// 列举了可调用对象与二元运算符对应关系的表格</span>
 <span class="c1">// 可调用对象需要接收两个int，返回一个int</span>
 <span class="c1">// 其中的元素可以是函数指针、函数对象或者lambda</span>
-<span class="n">std</span><span class="o">::</span><span class="n">map</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="p">)</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">binops</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="p">{</span><span class="s">&quot;+&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">add</span><span class="p">},</span><span class="w">                                </span><span class="c1">// 函数指针</span>
-<span class="w">    </span><span class="p">{</span><span class="s">&quot;-&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">minus</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">()},</span><span class="w">                  </span><span class="c1">// 标准库函数对象</span>
-<span class="w">    </span><span class="p">{</span><span class="s">&quot;/&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">divide</span><span class="p">()},</span><span class="w">                           </span><span class="c1">// 用户定义的函数对象</span>
-<span class="w">    </span><span class="p">{</span><span class="s">&quot;*&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">[](</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="k">return</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">j</span><span class="p">;}</span><span class="w"> </span><span class="p">},</span><span class="w">  </span><span class="c1">// 未命名的lambda</span>
-<span class="w">    </span><span class="p">{</span><span class="s">&quot;%&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">mod</span><span class="p">}};</span><span class="w">                               </span><span class="c1">// 命名了的mod对象</span>
+<span class="n">std</span><span class="o">::</span><span class="n">map</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">)</span><span class="o">&gt;&gt;</span> <span class="n">binops</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="p">{</span><span class="s">&quot;+&quot;</span><span class="p">,</span> <span class="n">add</span><span class="p">},</span>                                <span class="c1">// 函数指针</span>
+    <span class="p">{</span><span class="s">&quot;-&quot;</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">minus</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">()},</span>                  <span class="c1">// 标准库函数对象</span>
+    <span class="p">{</span><span class="s">&quot;/&quot;</span><span class="p">,</span> <span class="n">divide</span><span class="p">()},</span>                           <span class="c1">// 用户定义的函数对象</span>
+    <span class="p">{</span><span class="s">&quot;*&quot;</span><span class="p">,</span> <span class="p">[](</span><span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="kt">int</span> <span class="n">j</span><span class="p">)</span> <span class="p">{</span><span class="k">return</span> <span class="n">i</span> <span class="o">*</span> <span class="n">j</span><span class="p">;}</span> <span class="p">},</span>  <span class="c1">// 未命名的lambda</span>
+    <span class="p">{</span><span class="s">&quot;%&quot;</span><span class="p">,</span> <span class="n">mod</span><span class="p">}};</span>                               <span class="c1">// 命名了的mod对象</span>
 
 <span class="c1">// 调用方式</span>
-<span class="n">binops</span><span class="p">[</span><span class="s">&quot;+&quot;</span><span class="p">](</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">);</span><span class="w">  </span><span class="c1">// 调用add(10, 5)</span>
-<span class="n">binops</span><span class="p">[</span><span class="s">&quot;-&quot;</span><span class="p">](</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">);</span><span class="w">  </span><span class="c1">// 调用minus&lt;int&gt;对象的调用运算符</span>
-<span class="n">binops</span><span class="p">[</span><span class="s">&quot;/&quot;</span><span class="p">](</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">);</span><span class="w">  </span><span class="c1">// 调用divide对象的调用运算符</span>
-<span class="n">binops</span><span class="p">[</span><span class="s">&quot;*&quot;</span><span class="p">](</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">);</span><span class="w">  </span><span class="c1">// 调用lambda对象</span>
-<span class="n">binops</span><span class="p">[</span><span class="s">&quot;%&quot;</span><span class="p">](</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">);</span><span class="w">  </span><span class="c1">// 调用lambda对象</span>
+<span class="n">binops</span><span class="p">[</span><span class="s">&quot;+&quot;</span><span class="p">](</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>  <span class="c1">// 调用add(10, 5)</span>
+<span class="n">binops</span><span class="p">[</span><span class="s">&quot;-&quot;</span><span class="p">](</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>  <span class="c1">// 调用minus&lt;int&gt;对象的调用运算符</span>
+<span class="n">binops</span><span class="p">[</span><span class="s">&quot;/&quot;</span><span class="p">](</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>  <span class="c1">// 调用divide对象的调用运算符</span>
+<span class="n">binops</span><span class="p">[</span><span class="s">&quot;*&quot;</span><span class="p">](</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>  <span class="c1">// 调用lambda对象</span>
+<span class="n">binops</span><span class="p">[</span><span class="s">&quot;%&quot;</span><span class="p">](</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>  <span class="c1">// 调用lambda对象</span>
 </pre></div>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
            </div>
+           
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="11.5%20%E5%88%9D%E5%A7%8B%E5%8C%96%E5%88%97%E8%A1%A8.html" class="btn btn-neutral float-left" title="11.5 初始化列表" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
         <a href="../README.html" class="btn btn-neutral float-right" title="README" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="11.5%20%E5%88%9D%E5%A7%8B%E5%8C%96%E5%88%97%E8%A1%A8.html" class="btn btn-neutral float-left" title="11.5 初始化列表" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; 版权所有 2021, TOMOCAT.</p>
-  </div>
+    <p>
+        &#169; 版权所有 2021, TOMOCAT.
 
-  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    </p>
+  </div>
+    
+    
+    
+    利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
-    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
-   
+    
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发. 
 
 </footer>
         </div>
       </div>
+
     </section>
+
   </div>
-  <script>
+  
+
+  <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

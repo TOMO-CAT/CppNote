@@ -1,35 +1,74 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="zh-CN" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  <meta charset="utf-8" />
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>6.3 标准库类型：IO库 &mdash; C++语法笔记 v1.0 文档</title>
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+  <title>6.3 标准库类型：IO库 &mdash; C++ Note v1.0 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script src="../../_static/translations.js"></script>
-    <script src="../../_static/js/theme.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
     <link rel="next" title="6.4 标准库类型：迭代器" href="6.4%20%E6%A0%87%E5%87%86%E5%BA%93%E7%B1%BB%E5%9E%8B%E8%BF%AD%E4%BB%A3%E5%99%A8.html" />
     <link rel="prev" title="6.2 标准库类型：vector" href="6.2%20%E6%A0%87%E5%87%86%E5%BA%93%E7%B1%BB%E5%9E%8Bvector.html" /> 
 </head>
 
-<body class="wy-body-for-nav"> 
+<body class="wy-body-for-nav">
+
+   
   <div class="wy-grid-for-nav">
+    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../../index.html" class="icon icon-home"> C++语法笔记
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> C++ Note
+          
+
+          
           </a>
+
+          
+            
+            
+          
+
+          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="在文档中搜索" />
@@ -37,7 +76,18 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC1%E7%AB%A0%20%E5%8F%98%E9%87%8F%E4%B8%8E%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B/index.html">第1章 变量与基本类型</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC2%E7%AB%A0%20%E8%AF%AD%E5%8F%A5/index.html">第2章 语句</a></li>
@@ -88,35 +138,77 @@
 <li class="toctree-l1"><a class="reference internal" href="../README.html">README</a></li>
 </ul>
 
+            
+          
         </div>
+        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../index.html">C++语法笔记</a>
+          <a href="../../index.html">C++ Note</a>
+        
       </nav>
 
+
       <div class="wy-nav-content">
+        
         <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
+    
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
           <li><a href="index.html">第6章 标准库类型</a> &raquo;</li>
+        
       <li>6.3 标准库类型：IO库</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
+        
+          
             <a href="../../_sources/docs/第6章 标准库类型/6.3 标准库类型IO类.md.txt" rel="nofollow"> 查看页面源码</a>
+          
+        
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-             
-  <section id="io">
-<h1>6.3 标准库类型：IO库<a class="headerlink" href="#io" title="永久链接至标题"></a></h1>
-<section id="id1">
-<h2>简介<a class="headerlink" href="#id1" title="永久链接至标题"></a></h2>
+            
+  <div class="section" id="io">
+<h1>6.3 标准库类型：IO库<a class="headerlink" href="#io" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id1">
+<h2>简介<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <p>iostream定义了读写流的基本类型，fstream定义了读写命名文件的类型，sstream定义了读写内存string对象的类型。</p>
 <blockquote>
 <div><p>Tips：为了支持使用宽字符的语言，标准库定义了一组类型和对象来操纵<code class="docutils literal notranslate"><span class="pre">wchar_t</span></code>类型的数据，例如wcin、wcout和wcerr分别对应cin、cout和cerr的宽字符版对象。</p>
@@ -142,25 +234,25 @@
 <td>istringstream和wistringstream：从string读取数据<br/>ostringstream和wostringstream：向string写入数据<br/>stringstream和wstringstream：读写string</td>
 </tr>
 </tbody>
-</table></section>
-<section id="id2">
-<h2>IO类<a class="headerlink" href="#id2" title="永久链接至标题"></a></h2>
-<section id="id3">
-<h3>1. 不同IO类型的联系<a class="headerlink" href="#id3" title="永久链接至标题"></a></h3>
+</table></div>
+<div class="section" id="id2">
+<h2>IO类<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id3">
+<h3>1. 不同IO类型的联系<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
 <p>类型ifstream和istringstream都继承自istream，即我们可以像使用istream对象一样来使用ifstream和istringstream。也就是说我们是如何使用cin的，就可以同样地使用ifstream和istringstream类型的对象。例如，可以对一下ifstream或istringstream对象调用getline，也可以使用<code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code>从一个ifstream或者istringstream对象中读取数据。</p>
-</section>
-<section id="id4">
-<h3>2. IO对象无拷贝或者赋值<a class="headerlink" href="#id4" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="id4">
+<h3>2. IO对象无拷贝或者赋值<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
 <p>我们不能拷贝或者对IO对象赋值，因此也不能将形参或者返回类型设置为流类型。进行IO操作的函数通常以引用方式传递和返回流，读写一个IO对象会改变其状态，因此传递和返回的引用不能是const的。</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">ofstream</span><span class="w"> </span><span class="n">out1</span><span class="p">,</span><span class="w"> </span><span class="n">out2</span><span class="p">;</span><span class="w"></span>
-<span class="n">out1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">out2</span><span class="p">;</span><span class="w">               </span><span class="c1">// 错误: 不能对流对象赋值</span>
-<span class="n">ofstream</span><span class="w"> </span><span class="nf">print</span><span class="p">(</span><span class="n">ofstream</span><span class="p">);</span><span class="w">  </span><span class="c1">// 错误: 不能初始化ofstream参数</span>
-<span class="n">out2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">print</span><span class="p">(</span><span class="n">out2</span><span class="p">);</span><span class="w">        </span><span class="c1">// 错误: 不能拷贝流对象</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">ofstream</span> <span class="n">out1</span><span class="p">,</span> <span class="n">out2</span><span class="p">;</span>
+<span class="n">out1</span> <span class="o">=</span> <span class="n">out2</span><span class="p">;</span>               <span class="c1">// 错误: 不能对流对象赋值</span>
+<span class="n">ofstream</span> <span class="nf">print</span><span class="p">(</span><span class="n">ofstream</span><span class="p">);</span>  <span class="c1">// 错误: 不能初始化ofstream参数</span>
+<span class="n">out2</span> <span class="o">=</span> <span class="n">print</span><span class="p">(</span><span class="n">out2</span><span class="p">);</span>        <span class="c1">// 错误: 不能拷贝流对象</span>
 </pre></div>
 </div>
-</section>
-<section id="id5">
-<h3>3. IO类的条件状态<a class="headerlink" href="#id5" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="id5">
+<h3>3. IO类的条件状态<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
 <p>IO操作一个与生俱来的问题就是可能发生错误，下面列举出了IO类所定义的一些函数和标志，用于帮助我们访问和操纵流的条件状态：</p>
 <table border="1" class="docutils">
 <thead>
@@ -218,26 +310,26 @@
 </table><p>举个IO错误的例子：</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// 如果我们在标准输入上键入Boo, cin就会进入错误状态</span>
 <span class="c1">// 如果我们输入一个文件结束标识, cin也会进入错误状态</span>
-<span class="kt">int</span><span class="w"> </span><span class="n">ival</span><span class="p">;</span><span class="w"></span>
-<span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">ival</span><span class="p">;</span><span class="w"></span>
+<span class="kt">int</span> <span class="n">ival</span><span class="p">;</span>
+<span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">ival</span><span class="p">;</span>
 </pre></div>
 </div>
 <blockquote>
 <div><p>Tips：一旦一个流发生错误，其上后续的IO操作都会失败。只有当一个流处于无措状态时，我们才可以从它读取数据或者向它写入数据。由于流可能处于错误状态，因此代码通常在使用一个流之前检查它是否处于良好状态：</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// 确定一个流对象状态的最简单方法是将它作为一个条件来使用</span>
-<span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">word</span><span class="p">)</span><span class="w"></span>
-<span class="w"> </span><span class="c1">// ok: 读操作成功</span>
+<span class="k">while</span> <span class="p">(</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">word</span><span class="p">)</span>
+ <span class="c1">// ok: 读操作成功</span>
 </pre></div>
 </div>
 </div></blockquote>
-</section>
-<section id="id6">
-<h3>4. 管理输出缓冲<a class="headerlink" href="#id6" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="id6">
+<h3>4. 管理输出缓冲<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
 <blockquote>
 <div><p>Tips：有了缓冲机制，操作系统就可以将程序的多个输出组合成单一的系统级写操作。由于设备的写操作可能很耗时，允许操作系统将多个输出操作组合成单一的设备写操作可以带来很大的性能提升。</p>
 </div></blockquote>
 <p>举个例子，当我们执行如下代码时，字符串可能会立即打印出来，也可能被操作系统保存在缓冲区中，随后再打印。</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;tomocat&quot;</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;tomocat&quot;</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>导致缓冲刷新（即数据真正写到输出设备或文件）的原因有很多：</p>
@@ -248,23 +340,23 @@
 <li><p>在每个输出操作之后，我们可以使用操纵符unitbuf设置流的内部状态来清空缓冲区（默认清空下对cerr是设置unitbuf的，因此写到cerr的内容都是立即刷新的）</p></li>
 <li><p>一个输出流可能被关联到另一个流，在这种情况下当读写被关联的流时，关联到的流的缓冲区会被刷新（默认情况下cin和cerr都关联到cout，因此读cin或写cerr都会导致cout的缓冲区被刷新）</p></li>
 </ul>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;cat&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w">   </span><span class="c1">// 输出cat和一个换行符, 然后刷新缓冲区</span>
-<span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;cat&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">flush</span><span class="p">;</span><span class="w">  </span><span class="c1">// 输出cat, 然后刷新缓冲区</span>
-<span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;cat&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">ends</span><span class="p">;</span><span class="w">   </span><span class="c1">// 输出cat和一个空字符, 然后刷新缓冲区</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;cat&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>   <span class="c1">// 输出cat和一个换行符, 然后刷新缓冲区</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;cat&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">flush</span><span class="p">;</span>  <span class="c1">// 输出cat, 然后刷新缓冲区</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;cat&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">ends</span><span class="p">;</span>   <span class="c1">// 输出cat和一个空字符, 然后刷新缓冲区</span>
 
-<span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">unitbuf</span><span class="p">;</span><span class="w">    </span><span class="c1">// 所有输出操作后都会立即刷新缓冲区</span>
-<span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">nounitbuf</span><span class="p">;</span><span class="w">  </span><span class="c1">// 恢复到正常的缓冲方式</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">unitbuf</span><span class="p">;</span>    <span class="c1">// 所有输出操作后都会立即刷新缓冲区</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">nounitbuf</span><span class="p">;</span>  <span class="c1">// 恢复到正常的缓冲方式</span>
 </pre></div>
 </div>
 <blockquote>
 <div><p>Tips：如果程序异常终止，输出缓冲区是不会被刷新的。当一个程序崩溃后，它所输出的数据很可能停留在输出缓冲区中等待打印。</p>
 </div></blockquote>
-</section>
-</section>
-<section id="id7">
-<h2>文件输入输出<a class="headerlink" href="#id7" title="永久链接至标题"></a></h2>
-<section id="id8">
-<h3>1. 操作<a class="headerlink" href="#id8" title="永久链接至标题"></a></h3>
+</div>
+</div>
+<div class="section" id="id7">
+<h2>文件输入输出<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id8">
+<h3>1. 操作<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
 <p>头文件fstream定义了三个类型来支持文件IO：ifstream从一个给定文件读取数据，ofstream向一个给定文件写入数据，以及fstream可以读写给定文件。除了继承自iostream类型的行为之外，fstream中定义的类型还增加了一些新的成员来管理与流相关联的文件。下面列举了这些操作，我们可以对fstream、ifstream和ofstream对象调用这些操作：</p>
 <table border="1" class="docutils">
 <thead>
@@ -299,44 +391,44 @@
 <td>返回一个bool值，指出与fstrm关联的问价是否成功打开且尚未关闭</td>
 </tr>
 </tbody>
-</table></section>
-<section id="id9">
-<h3>2. 例子<a class="headerlink" href="#id9" title="永久链接至标题"></a></h3>
+</table></div>
+<div class="section" id="id9">
+<h3>2. 例子<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h3>
 <blockquote>
 <div><p>Tips：每个文件流类都定义了一个名为open的成员函数，它完成一些系统相关的操作，来定位给定的文件，并视情况打开为读或写模式。创建文件流对象时，如果提供了一个文件名，那么open会自动被调用。</p>
 </div></blockquote>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">ifstream</span><span class="w"> </span><span class="nf">in</span><span class="p">(</span><span class="n">ifile</span><span class="p">);</span><span class="w">         </span><span class="c1">// 构造一个ifstream并打开给定文件</span>
-<span class="n">ofstream</span><span class="w"> </span><span class="n">out</span><span class="p">;</span><span class="w">               </span><span class="c1">// 输出文件流未关联到任何文件</span>
-<span class="n">out</span><span class="p">.</span><span class="n">open</span><span class="p">(</span><span class="n">ifile</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;.copy&quot;</span><span class="p">);</span><span class="w">  </span><span class="c1">// 打开指定文件</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">ifstream</span> <span class="nf">in</span><span class="p">(</span><span class="n">ifile</span><span class="p">);</span>         <span class="c1">// 构造一个ifstream并打开给定文件</span>
+<span class="n">ofstream</span> <span class="n">out</span><span class="p">;</span>               <span class="c1">// 输出文件流未关联到任何文件</span>
+<span class="n">out</span><span class="p">.</span><span class="n">open</span><span class="p">(</span><span class="n">ifile</span> <span class="o">+</span> <span class="s">&quot;.copy&quot;</span><span class="p">);</span>  <span class="c1">// 打开指定文件</span>
 
 <span class="c1">// 如果调用open失败, failbit会被置位, 所以在使用open后需要检查open是否成功</span>
-<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">out</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// 检查open是否成功</span>
-<span class="w">	</span><span class="c1">// do something</span>
-<span class="p">}</span><span class="w"></span>
+<span class="k">if</span> <span class="p">(</span><span class="n">out</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 检查open是否成功</span>
+	<span class="c1">// do something</span>
+<span class="p">}</span>
 
 <span class="c1">// 一旦一个文件流已经打开, 它就会保持与对应文件的关联, 对一个已经打开的文件流调用open会失败, 导致failbit被置位</span>
 <span class="c1">// 为了将文件流关联到另一个文件, 必须首先关闭已经关联的文件</span>
-<span class="n">in</span><span class="p">.</span><span class="n">close</span><span class="p">();</span><span class="w">            </span><span class="c1">// 关闭文件</span>
-<span class="n">in</span><span class="p">.</span><span class="n">open</span><span class="p">(</span><span class="n">ifile</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;2&quot;</span><span class="p">);</span><span class="w">  </span><span class="c1">// 打开另一个文件 </span>
+<span class="n">in</span><span class="p">.</span><span class="n">close</span><span class="p">();</span>            <span class="c1">// 关闭文件</span>
+<span class="n">in</span><span class="p">.</span><span class="n">open</span><span class="p">(</span><span class="n">ifile</span> <span class="o">+</span> <span class="s">&quot;2&quot;</span><span class="p">);</span>  <span class="c1">// 打开另一个文件 </span>
 </pre></div>
 </div>
 <blockquote>
 <div><p>Tips：当一个fstream对象被销毁时，close会自动被调用。</p>
 </div></blockquote>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// 对每个传递给程序的文件执行循环操作</span>
-<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">argv</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">argv</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">argc</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">p</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">ifstream</span><span class="w"> </span><span class="nf">input</span><span class="p">(</span><span class="o">*</span><span class="n">p</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">input</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">process</span><span class="p">(</span><span class="n">input</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">cerr</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;couldn&#39;t open: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">string</span><span class="p">(</span><span class="o">*</span><span class="n">p</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"> </span><span class="c1">// 每个循环步input都会离开作用域, 因此会被自动销毁, 与之关联的文件会被自动关闭</span>
+<span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">p</span> <span class="o">=</span> <span class="n">argv</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="n">p</span> <span class="o">!=</span> <span class="n">argv</span> <span class="o">+</span> <span class="n">argc</span><span class="p">;</span> <span class="o">++</span><span class="n">p</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">ifstream</span> <span class="nf">input</span><span class="p">(</span><span class="o">*</span><span class="n">p</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">input</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">process</span><span class="p">(</span><span class="n">input</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;couldn&#39;t open: &quot;</span> <span class="o">+</span> <span class="n">string</span><span class="p">(</span><span class="o">*</span><span class="n">p</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span> <span class="c1">// 每个循环步input都会离开作用域, 因此会被自动销毁, 与之关联的文件会被自动关闭</span>
 </pre></div>
 </div>
-</section>
-<section id="id10">
-<h3>3. 文件模式<a class="headerlink" href="#id10" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="id10">
+<h3>3. 文件模式<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h3>
 <p>每个流都有一个关联的文件模式，用来指出如何使用文件：</p>
 <table border="1" class="docutils">
 <thead>
@@ -391,19 +483,19 @@
 <blockquote>
 <div><p>Tips：每个文件流类型都定义了一个默认的文件模式。与ifstream关联的文件默认以in模式打开，与ofstream关联的文件默认以out模式打开，与fstream关联的文件默认以in和out模式打开。</p>
 </div></blockquote>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">ofstream</span><span class="w"> </span><span class="n">out</span><span class="p">;</span><span class="w">                      </span><span class="c1">// 未指定文件打开模式</span>
-<span class="n">out</span><span class="p">.</span><span class="n">open</span><span class="p">(</span><span class="s">&quot;a.txt&quot;</span><span class="p">);</span><span class="w">                 </span><span class="c1">// 模式隐式设置为out和trunc</span>
-<span class="n">out</span><span class="p">.</span><span class="n">close</span><span class="p">();</span><span class="w">                       </span><span class="c1">// 关闭out, 以便我们可以打开其他文件</span>
-<span class="n">out</span><span class="p">.</span><span class="n">open</span><span class="p">(</span><span class="s">&quot;b.txt&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">ofstream</span><span class="o">::</span><span class="n">app</span><span class="p">);</span><span class="w">  </span><span class="c1">// 模式显式设置为out和app</span>
-<span class="n">out</span><span class="p">.</span><span class="n">close</span><span class="p">();</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">ofstream</span> <span class="n">out</span><span class="p">;</span>                      <span class="c1">// 未指定文件打开模式</span>
+<span class="n">out</span><span class="p">.</span><span class="n">open</span><span class="p">(</span><span class="s">&quot;a.txt&quot;</span><span class="p">);</span>                 <span class="c1">// 模式隐式设置为out和trunc</span>
+<span class="n">out</span><span class="p">.</span><span class="n">close</span><span class="p">();</span>                       <span class="c1">// 关闭out, 以便我们可以打开其他文件</span>
+<span class="n">out</span><span class="p">.</span><span class="n">open</span><span class="p">(</span><span class="s">&quot;b.txt&quot;</span><span class="p">,</span> <span class="n">ofstream</span><span class="o">::</span><span class="n">app</span><span class="p">);</span>  <span class="c1">// 模式显式设置为out和app</span>
+<span class="n">out</span><span class="p">.</span><span class="n">close</span><span class="p">();</span>
 </pre></div>
 </div>
-</section>
-</section>
-<section id="string">
-<h2>string流<a class="headerlink" href="#string" title="永久链接至标题"></a></h2>
-<section id="id11">
-<h3>1. 操作<a class="headerlink" href="#id11" title="永久链接至标题"></a></h3>
+</div>
+</div>
+<div class="section" id="string">
+<h2>string流<a class="headerlink" href="#string" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id11">
+<h3>1. 操作<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h3>
 <p>sstream头文件定义了三个类型来支持内存IO，将string当做一个流来处理：</p>
 <ul class="simple">
 <li><p>istringstream：从string读取数据</p></li>
@@ -436,16 +528,16 @@
 <td>将string s拷贝到strm中，返回void</td>
 </tr>
 </tbody>
-</table></section>
-<section id="istringstream">
-<h3>2. 使用istringstream<a class="headerlink" href="#istringstream" title="永久链接至标题"></a></h3>
+</table></div>
+<div class="section" id="istringstream">
+<h3>2. 使用istringstream<a class="headerlink" href="#istringstream" title="永久链接至标题">¶</a></h3>
 <blockquote>
 <div><p>Tips：从string中读取数据可以使用ostringstream。</p>
 </div></blockquote>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span> <span class="nc">PersonInfo</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">string</span><span class="w"> </span><span class="n">name</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">phones</span><span class="p">;</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span> <span class="nc">PersonInfo</span> <span class="p">{</span>
+    <span class="n">string</span> <span class="n">name</span><span class="p">;</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">phones</span><span class="p">;</span>
+<span class="p">};</span>
 
 <span class="cm">/* </span>
 <span class="cm">输入样例:</span>
@@ -453,78 +545,95 @@
 <span class="cm">morgan 2015552368 8625550123</span>
 <span class="cm">drew 9735550130</span>
 <span class="cm">lee 6095550132 2015550175 8005550000</span>
-<span class="cm"> */</span><span class="w"></span>
-<span class="n">string</span><span class="w"> </span><span class="n">line</span><span class="p">,</span><span class="w"> </span><span class="n">word</span><span class="p">;</span><span class="w"></span>
-<span class="n">vector</span><span class="o">&lt;</span><span class="n">PersonInfo</span><span class="o">&gt;</span><span class="w"> </span><span class="n">people</span><span class="p">;</span><span class="w"></span>
-<span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">getline</span><span class="p">(</span><span class="n">cin</span><span class="p">,</span><span class="w"> </span><span class="n">line</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">PersonInfo</span><span class="w"> </span><span class="n">info</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="n">istringstream</span><span class="w"> </span><span class="nf">record</span><span class="p">(</span><span class="n">line</span><span class="p">);</span><span class="w">  </span><span class="c1">// 将istringstream绑定到刚输入的行</span>
-<span class="w">    </span><span class="n">record</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">info</span><span class="p">.</span><span class="n">name</span><span class="p">;</span><span class="w">         </span><span class="c1">// 从istringstream中读取数据</span>
-<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">record</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">word</span><span class="p">)</span><span class="w"></span>
-<span class="w">        </span><span class="n">info</span><span class="p">.</span><span class="n">phones</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">word</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">people</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">info</span><span class="p">);</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="cm"> */</span>
+<span class="n">string</span> <span class="n">line</span><span class="p">,</span> <span class="n">word</span><span class="p">;</span>
+<span class="n">vector</span><span class="o">&lt;</span><span class="n">PersonInfo</span><span class="o">&gt;</span> <span class="n">people</span><span class="p">;</span>
+<span class="k">while</span> <span class="p">(</span><span class="n">getline</span><span class="p">(</span><span class="n">cin</span><span class="p">,</span> <span class="n">line</span><span class="p">))</span> <span class="p">{</span>
+    <span class="n">PersonInfo</span> <span class="n">info</span><span class="p">;</span>
+    <span class="n">istringstream</span> <span class="nf">record</span><span class="p">(</span><span class="n">line</span><span class="p">);</span>  <span class="c1">// 将istringstream绑定到刚输入的行</span>
+    <span class="n">record</span> <span class="o">&gt;&gt;</span> <span class="n">info</span><span class="p">.</span><span class="n">name</span><span class="p">;</span>         <span class="c1">// 从istringstream中读取数据</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">record</span> <span class="o">&gt;&gt;</span> <span class="n">word</span><span class="p">)</span>
+        <span class="n">info</span><span class="p">.</span><span class="n">phones</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">word</span><span class="p">);</span>
+    <span class="n">people</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">info</span><span class="p">);</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-</section>
-<section id="ostringstream">
-<h3>3. 使用ostringstream<a class="headerlink" href="#ostringstream" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="ostringstream">
+<h3>3. 使用ostringstream<a class="headerlink" href="#ostringstream" title="永久链接至标题">¶</a></h3>
 <blockquote>
 <div><p>Tips：向string中写入内容可以用ostringstream。</p>
 </div></blockquote>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="nl">entry</span> <span class="p">:</span><span class="w"> </span><span class="n">people</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">ostringstream</span><span class="w"> </span><span class="n">formatted</span><span class="p">,</span><span class="w"> </span><span class="n">badNums</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="nl">num</span> <span class="p">:</span><span class="w"> </span><span class="n">entry</span><span class="p">.</span><span class="n">phones</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">valid</span><span class="p">(</span><span class="n">nums</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="n">badNums</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">nums</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="n">forrmatted</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">format</span><span class="p">(</span><span class="n">nums</span><span class="p">);</span><span class="w"></span>
-<span class="w">        </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">badNums</span><span class="p">.</span><span class="n">str</span><span class="p">().</span><span class="n">empty</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">entry</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="w"></span>
-<span class="w">             </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">formatted</span><span class="p">.</span><span class="n">str</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">cerr</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;input error: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">entry</span><span class="p">.</span><span class="n">name</span><span class="w"></span>
-<span class="w">             </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; invalid numbers(s) &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">badNums</span><span class="p">.</span><span class="n">str</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span> <span class="o">&amp;</span><span class="nl">entry</span> <span class="p">:</span> <span class="n">people</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">ostringstream</span> <span class="n">formatted</span><span class="p">,</span> <span class="n">badNums</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span> <span class="o">&amp;</span><span class="nl">num</span> <span class="p">:</span> <span class="n">entry</span><span class="p">.</span><span class="n">phones</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">valid</span><span class="p">(</span><span class="n">nums</span><span class="p">))</span> <span class="p">{</span>
+            <span class="n">badNums</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">nums</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="n">forrmatted</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">format</span><span class="p">(</span><span class="n">nums</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    
+    <span class="k">if</span> <span class="p">(</span><span class="n">badNums</span><span class="p">.</span><span class="n">str</span><span class="p">().</span><span class="n">empty</span><span class="p">())</span> <span class="p">{</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">entry</span><span class="p">.</span><span class="n">name</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span>
+             <span class="o">&lt;&lt;</span> <span class="n">formatted</span><span class="p">.</span><span class="n">str</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;input error: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">entry</span><span class="p">.</span><span class="n">name</span>
+             <span class="o">&lt;&lt;</span> <span class="s">&quot; invalid numbers(s) &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">badNums</span><span class="p">.</span><span class="n">str</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
            </div>
+           
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="6.2%20%E6%A0%87%E5%87%86%E5%BA%93%E7%B1%BB%E5%9E%8Bvector.html" class="btn btn-neutral float-left" title="6.2 标准库类型：vector" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
         <a href="6.4%20%E6%A0%87%E5%87%86%E5%BA%93%E7%B1%BB%E5%9E%8B%E8%BF%AD%E4%BB%A3%E5%99%A8.html" class="btn btn-neutral float-right" title="6.4 标准库类型：迭代器" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="6.2%20%E6%A0%87%E5%87%86%E5%BA%93%E7%B1%BB%E5%9E%8Bvector.html" class="btn btn-neutral float-left" title="6.2 标准库类型：vector" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; 版权所有 2021, TOMOCAT.</p>
-  </div>
+    <p>
+        &#169; 版权所有 2021, TOMOCAT.
 
-  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    </p>
+  </div>
+    
+    
+    
+    利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
-    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
-   
+    
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发. 
 
 </footer>
         </div>
       </div>
+
     </section>
+
   </div>
-  <script>
+  
+
+  <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

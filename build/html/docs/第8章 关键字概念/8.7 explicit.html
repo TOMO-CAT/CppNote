@@ -1,35 +1,74 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="zh-CN" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  <meta charset="utf-8" />
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>8.7 关键字：explicit &mdash; C++语法笔记 v1.0 文档</title>
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+  <title>8.7 关键字：explicit &mdash; C++ Note v1.0 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script src="../../_static/translations.js"></script>
-    <script src="../../_static/js/theme.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
     <link rel="next" title="8.8 关键字：mutable" href="8.8%20mutable.html" />
     <link rel="prev" title="8.6 关键字：extern" href="8.6%20extern.html" /> 
 </head>
 
-<body class="wy-body-for-nav"> 
+<body class="wy-body-for-nav">
+
+   
   <div class="wy-grid-for-nav">
+    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../../index.html" class="icon icon-home"> C++语法笔记
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> C++ Note
+          
+
+          
           </a>
+
+          
+            
+            
+          
+
+          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="在文档中搜索" />
@@ -37,7 +76,18 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC1%E7%AB%A0%20%E5%8F%98%E9%87%8F%E4%B8%8E%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B/index.html">第1章 变量与基本类型</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC2%E7%AB%A0%20%E8%AF%AD%E5%8F%A5/index.html">第2章 语句</a></li>
@@ -74,75 +124,117 @@
 <li class="toctree-l1"><a class="reference internal" href="../README.html">README</a></li>
 </ul>
 
+            
+          
         </div>
+        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../index.html">C++语法笔记</a>
+          <a href="../../index.html">C++ Note</a>
+        
       </nav>
 
+
       <div class="wy-nav-content">
+        
         <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
+    
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
           <li><a href="index.html">第8章 关键字概念</a> &raquo;</li>
+        
       <li>8.7 关键字：explicit</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
+        
+          
             <a href="../../_sources/docs/第8章 关键字概念/8.7 explicit.md.txt" rel="nofollow"> 查看页面源码</a>
+          
+        
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-             
-  <section id="explicit">
-<h1>8.7 关键字：explicit<a class="headerlink" href="#explicit" title="永久链接至标题"></a></h1>
-<section id="id1">
-<h2>构造函数与explicit<a class="headerlink" href="#id1" title="永久链接至标题"></a></h2>
-<section id="id2">
-<h3>1.  拷贝构造函数不应该是explicit的<a class="headerlink" href="#id2" title="永久链接至标题"></a></h3>
+            
+  <div class="section" id="explicit">
+<h1>8.7 关键字：explicit<a class="headerlink" href="#explicit" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id1">
+<h2>构造函数与explicit<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id2">
+<h3>1.  拷贝构造函数不应该是explicit的<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
 <p>拷贝构造函数通常不应该是<code class="docutils literal notranslate"><span class="pre">explicit</span></code>的，因为它确实在一些情况下会被隐式地使用。</p>
-</section>
-<section id="id3">
-<h3>2. 转换构造函数应该是explicit的<a class="headerlink" href="#id3" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="id3">
+<h3>2. 转换构造函数应该是explicit的<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
 <p>我们可以将构造函数声明为explicit来阻止构造函数定义的隐式类类型转换，需要注意如下几点：</p>
 <ul class="simple">
 <li><p>关键字explicit只对一个实参的构造函数有效：需要多个实参的构造函数不能用于执行隐式转换，因此无需将这些构造函数指定为explicit</p></li>
 <li><p>只能在类内声明构造函数时使用explicit关键字，在类外部定义时不应该重复</p></li>
 <li><p>explicit声明的构造函数只能以直接初始化的形式使用</p></li>
 </ul>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Foo</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w"> </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
-<span class="w">    </span><span class="c1">// 阻止隐式类类型转换</span>
-<span class="w">    </span><span class="k">explicit</span><span class="w"> </span><span class="n">Foo</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">str</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
-<span class="w"> </span><span class="k">private</span><span class="o">:</span><span class="w"></span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">str</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Foo</span> <span class="p">{</span>
+ <span class="k">public</span><span class="o">:</span>
+    <span class="c1">// 阻止隐式类类型转换</span>
+    <span class="k">explicit</span> <span class="n">Foo</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">s</span><span class="p">)</span> <span class="o">:</span> <span class="n">str</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+ <span class="k">private</span><span class="o">:</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">str</span><span class="p">;</span>
+<span class="p">}</span>
 
-<span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;tomocat&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">str</span> <span class="o">=</span> <span class="s">&quot;tomocat&quot;</span><span class="p">;</span>
 <span class="c1">// 错误: 不支持string到Foo类型的隐式初始化</span>
-<span class="n">Foo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">str</span><span class="p">;</span><span class="w"></span>
+<span class="n">Foo</span> <span class="o">=</span> <span class="n">str</span><span class="p">;</span>
 <span class="c1">// 正确: 显式初始化</span>
-<span class="n">Foo</span><span class="p">(</span><span class="n">str</span><span class="p">);</span><span class="w"></span>
-<span class="k">static_cast</span><span class="o">&lt;</span><span class="n">Foo</span><span class="o">&gt;</span><span class="p">(</span><span class="n">str</span><span class="p">);</span><span class="w"></span>
+<span class="n">Foo</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
+<span class="k">static_cast</span><span class="o">&lt;</span><span class="n">Foo</span><span class="o">&gt;</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
 </pre></div>
 </div>
-</section>
-</section>
-<section id="id4">
-<h2>类型转换运算符与explicit<a class="headerlink" href="#id4" title="永久链接至标题"></a></h2>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>类型转换运算符与explicit<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
 <blockquote>
 <div><p>Tips：实践中类很少提供类型转换运算符，所以类型转换运算符常被<code class="docutils literal notranslate"><span class="pre">explicit</span></code>修饰以阻止隐式转换。</p>
 </div></blockquote>
 <p>在实践中类很少提供类型转换运算符，在大多数情况下，如果类型转换自动发生，用户可能会感觉比较意外，而不是感觉受到了帮助。然而这条经验法则存在一种例外情况：对于类来说，定义向<code class="docutils literal notranslate"><span class="pre">bool</span></code>的类型转换还是比较普遍的现象。但是这种类型转换可能引发意想不到的结果，特别是当<code class="docutils literal notranslate"><span class="pre">istream</span></code>含有向<code class="docutils literal notranslate"><span class="pre">bool</span></code>的类型转换时，下面的代码仍然编译通过：</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// 如果向bool的类型转换不是显式的，则该代码在编译器看来将是合法的</span>
 <span class="c1">// 因为istream本身并没有定义&lt;&lt;运算符，所以本来这段代码应该产生错误</span>
-<span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">42</span><span class="p">;</span><span class="w"></span>
-<span class="n">cin</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w"></span>
+<span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
+<span class="n">cin</span> <span class="o">&lt;&lt;</span> <span class="n">i</span><span class="p">;</span>
 
 <span class="c1">// 执行过程如下:</span>
 <span class="c1">// 1) istream的bool类型转换符将cin转换为bool</span>
@@ -151,61 +243,78 @@
 </pre></div>
 </div>
 <p>为了防止这样的异常发生，<code class="docutils literal notranslate"><span class="pre">C++</span></code>新标准引入了显式的类型转换运算符：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">SmallInt</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w"> </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
-<span class="w">    </span><span class="c1">// 转换构造函数: 编译支持int到SmallInt的隐式转换</span>
-<span class="w">    </span><span class="n">SmallInt</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">val_</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">255</span><span class="p">)</span><span class="w"></span>
-<span class="w">            </span><span class="k">throw</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">out_of_range</span><span class="p">(</span><span class="s">&quot;Bad SmallInt value&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="c1">// 类类型转换运算符: 编译器不支持SmallInt到int的隐式转换</span>
-<span class="w">    </span><span class="k">explicit</span><span class="w"> </span><span class="k">operator</span><span class="w"> </span><span class="kt">int</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">val_</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="c1">// ...其他成员</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">SmallInt</span> <span class="p">{</span>
+ <span class="k">public</span><span class="o">:</span>
+    <span class="c1">// 转换构造函数: 编译支持int到SmallInt的隐式转换</span>
+    <span class="n">SmallInt</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> <span class="o">:</span> <span class="n">val_</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">255</span><span class="p">)</span>
+            <span class="k">throw</span> <span class="n">std</span><span class="o">::</span><span class="n">out_of_range</span><span class="p">(</span><span class="s">&quot;Bad SmallInt value&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="c1">// 类类型转换运算符: 编译器不支持SmallInt到int的隐式转换</span>
+    <span class="k">explicit</span> <span class="k">operator</span> <span class="kt">int</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">val_</span><span class="p">;</span> <span class="p">}</span>
+    <span class="c1">// ...其他成员</span>
 
-<span class="w"> </span><span class="k">private</span><span class="o">:</span><span class="w"></span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">val_</span><span class="p">;</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
+ <span class="k">private</span><span class="o">:</span>
+    <span class="kt">int</span> <span class="n">val_</span><span class="p">;</span>
+<span class="p">};</span>
 
 <span class="c1">// 正确：SmallInt的构造函数不是显式的</span>
-<span class="n">SmallInt</span><span class="w"> </span><span class="n">si</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"></span>
+<span class="n">SmallInt</span> <span class="n">si</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
 <span class="c1">// 错误: 此处需要隐式的类型转换，但类的运算符是显式的</span>
-<span class="n">si</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"></span>
+<span class="n">si</span> <span class="o">+</span> <span class="mi">3</span><span class="p">;</span>
 <span class="c1">// 正确: 显式地请求类型转换</span>
-<span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">si</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"></span>
+<span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">si</span><span class="p">)</span> <span class="o">+</span> <span class="mi">3</span><span class="p">;</span>
 </pre></div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
            </div>
+           
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="8.6%20extern.html" class="btn btn-neutral float-left" title="8.6 关键字：extern" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
         <a href="8.8%20mutable.html" class="btn btn-neutral float-right" title="8.8 关键字：mutable" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="8.6%20extern.html" class="btn btn-neutral float-left" title="8.6 关键字：extern" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; 版权所有 2021, TOMOCAT.</p>
-  </div>
+    <p>
+        &#169; 版权所有 2021, TOMOCAT.
 
-  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    </p>
+  </div>
+    
+    
+    
+    利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
-    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
-   
+    
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发. 
 
 </footer>
         </div>
       </div>
+
     </section>
+
   </div>
-  <script>
+  
+
+  <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

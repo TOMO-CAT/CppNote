@@ -1,35 +1,74 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="zh-CN" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  <meta charset="utf-8" />
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>10.13 内存分布 &mdash; C++语法笔记 v1.0 文档</title>
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+  <title>10.13 内存分布 &mdash; C++ Note v1.0 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script src="../../_static/translations.js"></script>
-    <script src="../../_static/js/theme.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
     <link rel="next" title="10.14 调试帮助" href="10.14%20%E8%B0%83%E8%AF%95%E5%B8%AE%E5%8A%A9.html" />
     <link rel="prev" title="10.12 异常处理" href="10.12%20%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86.html" /> 
 </head>
 
-<body class="wy-body-for-nav"> 
+<body class="wy-body-for-nav">
+
+   
   <div class="wy-grid-for-nav">
+    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../../index.html" class="icon icon-home"> C++语法笔记
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> C++ Note
+          
+
+          
           </a>
+
+          
+            
+            
+          
+
+          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="在文档中搜索" />
@@ -37,7 +76,18 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC1%E7%AB%A0%20%E5%8F%98%E9%87%8F%E4%B8%8E%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B/index.html">第1章 变量与基本类型</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC2%E7%AB%A0%20%E8%AF%AD%E5%8F%A5/index.html">第2章 语句</a></li>
@@ -88,39 +138,81 @@
 <li class="toctree-l1"><a class="reference internal" href="../README.html">README</a></li>
 </ul>
 
+            
+          
         </div>
+        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../index.html">C++语法笔记</a>
+          <a href="../../index.html">C++ Note</a>
+        
       </nav>
 
+
       <div class="wy-nav-content">
+        
         <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
+    
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
           <li><a href="index.html">第10章 语法特性</a> &raquo;</li>
+        
       <li>10.13 内存分布</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
+        
+          
             <a href="../../_sources/docs/第10章 语言特性/10.13 内存分布.md.txt" rel="nofollow"> 查看页面源码</a>
+          
+        
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-             
-  <section id="id1">
-<h1>10.13 内存分布<a class="headerlink" href="#id1" title="永久链接至标题"></a></h1>
-<section id="linux">
-<h2>Linux虚拟内存分区<a class="headerlink" href="#linux" title="永久链接至标题"></a></h2>
+            
+  <div class="section" id="id1">
+<h1>10.13 内存分布<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<div class="section" id="linux">
+<h2>Linux虚拟内存分区<a class="headerlink" href="#linux" title="永久链接至标题">¶</a></h2>
 <p><img alt="../../_images/virtual_memory-16474403454371.jpg" src="../../_images/virtual_memory-16474403454371.jpg" /></p>
 <p>Linux虚拟内存按照虚拟地址从低到高增长方向可以分为五区：</p>
-<section id="text-segment">
-<h3>1. 代码段（Text Segment）<a class="headerlink" href="#text-segment" title="永久链接至标题"></a></h3>
+<div class="section" id="text-segment">
+<h3>1. 代码段（Text Segment）<a class="headerlink" href="#text-segment" title="永久链接至标题">¶</a></h3>
 <p>代码段存放程序执行代码的一段内存区域，这部分区域的大小在程序运行前就已经确定，并且内存区域通常属于只读（不过某些架构也允许修改程序）。代码段中的指令包括操作码和被操作对象（或对象地址引用）。</p>
 <ul class="simple">
 <li><p>只读变量：只包含在代码段中</p></li>
@@ -130,27 +222,27 @@
 <blockquote>
 <div><p>TODO：C++中只读变量与常量的区别？通过代码验证什么样的内容是只读变量，什么样的内容是常量，它们分别存储在哪个区。</p>
 </div></blockquote>
-</section>
-<section id="data-segment">
-<h3>2. 数据段（Data Segment）<a class="headerlink" href="#data-segment" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="data-segment">
+<h3>2. 数据段（Data Segment）<a class="headerlink" href="#data-segment" title="永久链接至标题">¶</a></h3>
 <p>静态内存分配，存放静态变量、初始化的全局变量和常量。</p>
-</section>
-<section id="block-started-by-symbol-bss-segment">
-<h3>3. Block Started by Symbol（BSS Segment）<a class="headerlink" href="#block-started-by-symbol-bss-segment" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="block-started-by-symbol-bss-segment">
+<h3>3. Block Started by Symbol（BSS Segment）<a class="headerlink" href="#block-started-by-symbol-bss-segment" title="永久链接至标题">¶</a></h3>
 <p>静态内存分配，包含了程序中未初始化的全局变量，==在内存中BSS段全部置为零==。</p>
-</section>
-<section id="heap">
-<h3>4. 堆（heap）<a class="headerlink" href="#heap" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="heap">
+<h3>4. 堆（heap）<a class="headerlink" href="#heap" title="永久链接至标题">¶</a></h3>
 <p>动态内存分配，当进程调用malloc等函数分配内存时，堆会扩张用于存放新申请的变量，使用free等函数释放内存时，被释放的内存从堆中删除。</p>
-</section>
-<section id="stack">
-<h3>5. 栈（stack）<a class="headerlink" href="#stack" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="stack">
+<h3>5. 栈（stack）<a class="headerlink" href="#stack" title="永久链接至标题">¶</a></h3>
 <p>存放函数的局部变量（即在函数括弧<code class="docutils literal notranslate"><span class="pre">{}</span></code>中定义的变量），除此之外在函数被调用时参数也会被压入栈中，函数调用结束后函数的返回值也会被存放在栈中。</p>
 <p>另外，栈具有后进先出的特点，经常用于保存/恢复调用现场，这也是我们在程序crash时打印stack的原因。</p>
-</section>
-</section>
-<section id="c">
-<h2>C++程序的内存分配<a class="headerlink" href="#c" title="永久链接至标题"></a></h2>
+</div>
+</div>
+<div class="section" id="c">
+<h2>C++程序的内存分配<a class="headerlink" href="#c" title="永久链接至标题">¶</a></h2>
 <p>一个由C/C++编译的程序占用的内存分为如下几个部分：</p>
 <ul class="simple">
 <li><p>栈区（stack）：由编译器自动分配释放，存放函数的参数值、局部变量值等，其操作方式类似于数据结构中的栈（后进先出）。</p></li>
@@ -160,27 +252,27 @@
 <li><p>常量存储区：存放不允许修改的常量（不过也可以通过非正当手段修改）。</p></li>
 <li><p>程序代码区：存储函数体（类的成员函数和全局函数）的二进制代码。</p></li>
 </ul>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w">  </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">  </span><span class="c1">// 全局初始化区</span>
-<span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">p1</span><span class="p">;</span><span class="w">    </span><span class="c1">// 全局未初始化区</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span>  <span class="n">a</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>  <span class="c1">// 全局初始化区</span>
+<span class="kt">char</span> <span class="o">*</span><span class="n">p1</span><span class="p">;</span>    <span class="c1">// 全局未初始化区</span>
 
-<span class="kt">int</span><span class="w">  </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kt">int</span><span class="w">  </span><span class="n">b</span><span class="p">;</span><span class="w">           </span><span class="c1">// 栈区</span>
-<span class="w">    </span><span class="kt">char</span><span class="w">  </span><span class="n">s</span><span class="p">[]</span><span class="o">=</span><span class="s">&quot;abc&quot;</span><span class="p">;</span><span class="w">  </span><span class="c1">// 栈区</span>
-<span class="w">    </span><span class="kt">char</span><span class="w">  </span><span class="o">*</span><span class="n">p2</span><span class="p">;</span><span class="w">        </span><span class="c1">// 栈区</span>
+<span class="kt">int</span>  <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kt">int</span>  <span class="n">b</span><span class="p">;</span>           <span class="c1">// 栈区</span>
+    <span class="kt">char</span>  <span class="n">s</span><span class="p">[]</span><span class="o">=</span><span class="s">&quot;abc&quot;</span><span class="p">;</span>  <span class="c1">// 栈区</span>
+    <span class="kt">char</span>  <span class="o">*</span><span class="n">p2</span><span class="p">;</span>        <span class="c1">// 栈区</span>
 
-<span class="w">    </span><span class="kt">char</span><span class="w">  </span><span class="o">*</span><span class="n">p3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;123456&quot;</span><span class="p">;</span><span class="w">  </span><span class="c1">// &quot;123456&quot;在常量区, p3在栈区</span>
+    <span class="kt">char</span>  <span class="o">*</span><span class="n">p3</span> <span class="o">=</span> <span class="s">&quot;123456&quot;</span><span class="p">;</span>  <span class="c1">// &quot;123456&quot;在常量区, p3在栈区</span>
 
-<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">      </span><span class="c1">// 全局初始化区</span>
-<span class="p">}</span><span class="w"></span>
+    <span class="k">static</span> <span class="kt">int</span> <span class="n">c</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>      <span class="c1">// 全局初始化区</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-</section>
-<section id="c-linux">
-<h2>C++和Linux内存分区的区别<a class="headerlink" href="#c-linux" title="永久链接至标题"></a></h2>
+</div>
+<div class="section" id="c-linux">
+<h2>C++和Linux内存分区的区别<a class="headerlink" href="#c-linux" title="永久链接至标题">¶</a></h2>
 <p>对于运行在Linux上的C++程序， C++和Linux虚拟内存的内存分布中栈区、堆区和程序代码区是相互对应的。Linux虚拟内存中data段存储了C++已经初始化的全局变量和静态变量和常量，BSS段存储了未初始化的全局变量和静态变量，这些未初始化的数据在程序执行前会自动被操作系统置零。</p>
-</section>
-<section id="free-storeheap">
-<h2>自由存储区free store与堆heap的区别<a class="headerlink" href="#free-storeheap" title="永久链接至标题"></a></h2>
+</div>
+<div class="section" id="free-storeheap">
+<h2>自由存储区free store与堆heap的区别<a class="headerlink" href="#free-storeheap" title="永久链接至标题">¶</a></h2>
 <p>很多编译器的<code class="docutils literal notranslate"><span class="pre">new</span></code>和<code class="docutils literal notranslate"><span class="pre">delete</span></code>都是通过<code class="docutils literal notranslate"><span class="pre">malloc</span></code>和<code class="docutils literal notranslate"><span class="pre">free</span></code>来实现的，那么有一个问题：</p>
 <blockquote>
 <div><p>Q：以<code class="docutils literal notranslate"><span class="pre">malloc</span></code>实现的<code class="docutils literal notranslate"><span class="pre">new</span></code>，所申请的内存是在堆上还是在自由存储区上？</p>
@@ -192,9 +284,9 @@
 <blockquote>
 <div><p>A：C++编译器默认使用堆来实现自由存储，即缺省的全局运算符<code class="docutils literal notranslate"><span class="pre">new</span></code>和<code class="docutils literal notranslate"><span class="pre">delete</span></code>是通过<code class="docutils literal notranslate"><span class="pre">malloc</span></code>和<code class="docutils literal notranslate"><span class="pre">free</span></code>来实现的。这时候以<code class="docutils literal notranslate"><span class="pre">malloc</span></code>实现的<code class="docutils literal notranslate"><span class="pre">new</span></code>既可以说是在堆上也可以说在自由存储区上（前者是具象的概念，后者是抽象的概念）。不过程序员可以通过重载<code class="docutils literal notranslate"><span class="pre">new</span></code>操作符来使用其他内存实现自由存储，此时自由存储区和堆就不是同一个概念了。</p>
 </div></blockquote>
-</section>
-<section id="id2">
-<h2>堆栈区别<a class="headerlink" href="#id2" title="永久链接至标题"></a></h2>
+</div>
+<div class="section" id="id2">
+<h2>堆栈区别<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <table border="1" class="docutils">
 <thead>
 <tr>
@@ -257,53 +349,70 @@
 <li><p>可能引发用户态和核心态的切换</p></li>
 </ul>
 <p>因此在平时编程过程中我们应该尽量使用栈空间，不过栈空间不是那么灵活，在分配大量内存空间时使用堆空间更好一点。</p>
-</section>
-<section id="id3">
-<h2>静态内存、栈内存和堆<a class="headerlink" href="#id3" title="永久链接至标题"></a></h2>
+</div>
+<div class="section" id="id3">
+<h2>静态内存、栈内存和堆<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
 <li><p>静态内存：用于保存局部<code class="docutils literal notranslate"><span class="pre">static</span></code>、类<code class="docutils literal notranslate"><span class="pre">static</span></code>数据成员和定义在任何函数之外的变量</p></li>
 <li><p>栈内存：保存定义在函数内的非<code class="docutils literal notranslate"><span class="pre">static</span></code>对象</p></li>
 </ul>
 <p>分配在静态内存或者栈内存的对象由编译器自动创建和销毁，对于栈对象仅在其定义的程序块运行时才存在，<code class="docutils literal notranslate"><span class="pre">static</span></code>对象在使用之前分配，在程序结束时销毁。</p>
 <p>C++程序还拥有一个内存池（被称为自由空间<code class="docutils literal notranslate"><span class="pre">free</span> <span class="pre">store</span></code>或者堆<code class="docutils literal notranslate"><span class="pre">heap</span></code>，两者的区别在前面已经描述了），程序用内存池来存储动态分配的对象，当动态对象不再使用时，我们的代码必须显式销毁他们。</p>
-</section>
-<section id="reference">
-<h2>Reference<a class="headerlink" href="#reference" title="永久链接至标题"></a></h2>
+</div>
+<div class="section" id="reference">
+<h2>Reference<a class="headerlink" href="#reference" title="永久链接至标题">¶</a></h2>
 <p>[1] https://blog.csdn.net/u013007900/article/details/79338653</p>
 <p>[2] https://chenqx.github.io/2014/09/25/Cpp-Memory-Management/</p>
 <p>[3] https://www.cnblogs.com/QG-whz/p/5060894.html</p>
-</section>
-</section>
+</div>
+</div>
 
 
            </div>
+           
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="10.12%20%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86.html" class="btn btn-neutral float-left" title="10.12 异常处理" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
         <a href="10.14%20%E8%B0%83%E8%AF%95%E5%B8%AE%E5%8A%A9.html" class="btn btn-neutral float-right" title="10.14 调试帮助" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="10.12%20%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86.html" class="btn btn-neutral float-left" title="10.12 异常处理" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; 版权所有 2021, TOMOCAT.</p>
-  </div>
+    <p>
+        &#169; 版权所有 2021, TOMOCAT.
 
-  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    </p>
+  </div>
+    
+    
+    
+    利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
-    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
-   
+    
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发. 
 
 </footer>
         </div>
       </div>
+
     </section>
+
   </div>
-  <script>
+  
+
+  <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

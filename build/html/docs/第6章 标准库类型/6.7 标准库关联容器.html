@@ -1,35 +1,74 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="zh-CN" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  <meta charset="utf-8" />
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>6.7 标准库：关联容器 &mdash; C++语法笔记 v1.0 文档</title>
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+  <title>6.7 标准库：关联容器 &mdash; C++ Note v1.0 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script src="../../_static/translations.js"></script>
-    <script src="../../_static/js/theme.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
     <link rel="next" title="6.8 标准库类型：tuple" href="6.8%20%E6%A0%87%E5%87%86%E5%BA%93%E7%B1%BB%E5%9E%8Btuple.html" />
     <link rel="prev" title="6.6 标准库类型：容器适配器" href="6.6%20%E6%A0%87%E5%87%86%E5%BA%93%E5%AE%B9%E5%99%A8%E9%80%82%E9%85%8D%E5%99%A8.html" /> 
 </head>
 
-<body class="wy-body-for-nav"> 
+<body class="wy-body-for-nav">
+
+   
   <div class="wy-grid-for-nav">
+    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../../index.html" class="icon icon-home"> C++语法笔记
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> C++ Note
+          
+
+          
           </a>
+
+          
+            
+            
+          
+
+          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="在文档中搜索" />
@@ -37,7 +76,18 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC1%E7%AB%A0%20%E5%8F%98%E9%87%8F%E4%B8%8E%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B/index.html">第1章 变量与基本类型</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC2%E7%AB%A0%20%E8%AF%AD%E5%8F%A5/index.html">第2章 语句</a></li>
@@ -88,35 +138,77 @@
 <li class="toctree-l1"><a class="reference internal" href="../README.html">README</a></li>
 </ul>
 
+            
+          
         </div>
+        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../index.html">C++语法笔记</a>
+          <a href="../../index.html">C++ Note</a>
+        
       </nav>
 
+
       <div class="wy-nav-content">
+        
         <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
+    
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
           <li><a href="index.html">第6章 标准库类型</a> &raquo;</li>
+        
       <li>6.7 标准库：关联容器</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
+        
+          
             <a href="../../_sources/docs/第6章 标准库类型/6.7 标准库关联容器.md.txt" rel="nofollow"> 查看页面源码</a>
+          
+        
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-             
-  <section id="id1">
-<h1>6.7 标准库：关联容器<a class="headerlink" href="#id1" title="永久链接至标题"></a></h1>
-<section id="id2">
-<h2>简介<a class="headerlink" href="#id2" title="永久链接至标题"></a></h2>
+            
+  <div class="section" id="id1">
+<h1>6.7 标准库：关联容器<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id2">
+<h2>简介<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>标准库提供<code class="docutils literal notranslate"><span class="pre">8</span></code>个关联容器：</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">map</span></code>：关联数组</p></li>
@@ -128,22 +220,22 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">unordered_multimap</span></code>：哈希组织的<code class="docutils literal notranslate"><span class="pre">multimap</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">unordered_multiset</span></code>：哈希组织的<code class="docutils literal notranslate"><span class="pre">multiset</span></code></p></li>
 </ul>
-<section id="id3">
-<h3>1. 定义关联容器<a class="headerlink" href="#id3" title="永久链接至标题"></a></h3>
+<div class="section" id="id3">
+<h3>1. 定义关联容器<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
 <p>可以通过列表初始化的方式定义<code class="docutils literal notranslate"><span class="pre">map</span></code>或者<code class="docutils literal notranslate"><span class="pre">set</span></code>：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">set</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">exclude</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;the&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;but&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;and&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;or&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;an&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;a&quot;</span><span class="p">};</span><span class="w"></span>
-<span class="n">map</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="n">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">authors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;Joyce&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;James&quot;</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;Austen&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Jane&quot;</span><span class="p">},</span><span class="w"> </span><span class="s">&quot;Dickens&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Charles&quot;</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">set</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">exclude</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;the&quot;</span><span class="p">,</span> <span class="s">&quot;but&quot;</span><span class="p">,</span> <span class="s">&quot;and&quot;</span><span class="p">,</span> <span class="s">&quot;or&quot;</span><span class="p">,</span> <span class="s">&quot;an&quot;</span><span class="p">,</span> <span class="s">&quot;a&quot;</span><span class="p">};</span>
+<span class="n">map</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span> <span class="n">string</span><span class="o">&gt;</span> <span class="n">authors</span> <span class="o">=</span> <span class="p">{</span> <span class="p">{</span><span class="s">&quot;Joyce&quot;</span><span class="p">,</span> <span class="s">&quot;James&quot;</span><span class="p">},</span> <span class="p">{</span><span class="s">&quot;Austen&quot;</span><span class="p">,</span> <span class="s">&quot;Jane&quot;</span><span class="p">},</span> <span class="s">&quot;Dickens&quot;</span><span class="p">,</span> <span class="s">&quot;Charles&quot;</span> <span class="p">}</span>
 </pre></div>
 </div>
-</section>
-<section id="id4">
-<h3>2. 关键字类型的要求<a class="headerlink" href="#id4" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="id4">
+<h3>2. 关键字类型的要求<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
 <p>对于有序容器，关键字类型必须定义元素比较的方法。默认情况下，标准库使用关键字类型的<code class="docutils literal notranslate"><span class="pre">&lt;</span></code>运算符来比较两个关键字。</p>
-</section>
-<section id="pair">
-<h3>3. pair类型<a class="headerlink" href="#pair" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="pair">
+<h3>3. pair类型<a class="headerlink" href="#pair" title="永久链接至标题">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">pair</span></code>定义在头文件<code class="docutils literal notranslate"><span class="pre">utility</span></code>中，保存两个数据成员：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">pair</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="o">&gt;</span><span class="w"> </span><span class="n">word_count</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">pair</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span> <span class="kt">size_t</span><span class="o">&gt;</span> <span class="n">word_count</span><span class="p">;</span>
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">pair</span></code>的数据成员是<code class="docutils literal notranslate"><span class="pre">public</span></code>的，两个成员分别被命名为<code class="docutils literal notranslate"><span class="pre">first</span></code>与<code class="docutils literal notranslate"><span class="pre">seconnd</span></code>，<code class="docutils literal notranslate"><span class="pre">pair</span></code>的操作包括：</p>
@@ -156,51 +248,51 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">p1</span> <span class="pre">relop</span> <span class="pre">p2</span></code>：关系运算符<code class="docutils literal notranslate"><span class="pre">&lt;,</span> <span class="pre">&gt;,</span> <span class="pre">&lt;=,</span> <span class="pre">&gt;=</span></code>按字典序定义</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">p1</span> <span class="pre">==</span> <span class="pre">p2,</span> <span class="pre">p1</span> <span class="pre">!=</span> <span class="pre">p2</span></code>：当<code class="docutils literal notranslate"><span class="pre">first</span></code>和<code class="docutils literal notranslate"><span class="pre">second</span></code>分别相等时，两个<code class="docutils literal notranslate"><span class="pre">pair</span></code>相等</p></li>
 </ul>
-</section>
-</section>
-<section id="id5">
-<h2>关联容器操作<a class="headerlink" href="#id5" title="永久链接至标题"></a></h2>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>关联容器操作<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">C++</span></code>中用下面这些类型表示容器关键字和值的类型：</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">key_type</span></code>：关键字类型</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">mapped_type</span></code>：每个关键字关联的类型，仅用于<code class="docutils literal notranslate"><span class="pre">map</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">value_type</span></code>：对于<code class="docutils literal notranslate"><span class="pre">set</span></code>与<code class="docutils literal notranslate"><span class="pre">key_type</span></code>相同，对于<code class="docutils literal notranslate"><span class="pre">map</span></code>，为<code class="docutils literal notranslate"><span class="pre">pair&lt;const</span> <span class="pre">key_type,</span> <span class="pre">mapped_type&gt;</span></code></p></li>
 </ul>
-<section id="id6">
-<h3>1. 关联容器迭代器<a class="headerlink" href="#id6" title="永久链接至标题"></a></h3>
+<div class="section" id="id6">
+<h3>1. 关联容器迭代器<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
 <p>当解引用一个关联容器迭代器时，我们会得到一个类型为容器的<code class="docutils literal notranslate"><span class="pre">value_type</span></code>的值：</p>
 <ul class="simple">
 <li><p>对于<code class="docutils literal notranslate"><span class="pre">map</span></code>是一个<code class="docutils literal notranslate"><span class="pre">pair</span></code>，我们不能改变<code class="docutils literal notranslate"><span class="pre">first</span></code>成员的<code class="docutils literal notranslate"><span class="pre">const</span></code>关键字</p></li>
 <li><p>虽然<code class="docutils literal notranslate"><span class="pre">set</span></code>同时定义了<code class="docutils literal notranslate"><span class="pre">iterator</span></code>和<code class="docutils literal notranslate"><span class="pre">const_iterator</span></code>类型，但这两种类型都只允许只读<code class="docutils literal notranslate"><span class="pre">set</span></code>中的元素但不能修改</p></li>
 </ul>
 <p>使用迭代器可以遍历<code class="docutils literal notranslate"><span class="pre">map</span></code>：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">auto</span><span class="w"> </span><span class="n">map_it</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">word_count</span><span class="p">.</span><span class="n">cbegin</span><span class="p">();</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">auto</span> <span class="n">map_it</span> <span class="o">=</span> <span class="n">word_count</span><span class="p">.</span><span class="n">cbegin</span><span class="p">();</span>
 
-<span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">map_it</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">word_count</span><span class="p">.</span><span class="n">cend</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">map_it</span><span class="o">-&gt;</span><span class="n">first</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; occurs &quot;</span><span class="w"></span>
-<span class="w">         </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">map_it</span><span class="o">-&gt;</span><span class="n">second</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; times&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="o">++</span><span class="n">map_it</span><span class="p">;</span><span class="w"> </span><span class="c1">// 递增迭代器, 移动到下一个元素</span>
-<span class="p">}</span><span class="w"></span>
+<span class="k">while</span> <span class="p">(</span><span class="n">map_it</span> <span class="o">!=</span> <span class="n">word_count</span><span class="p">.</span><span class="n">cend</span><span class="p">())</span> <span class="p">{</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">map_it</span><span class="o">-&gt;</span><span class="n">first</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; occurs &quot;</span>
+         <span class="o">&lt;&lt;</span> <span class="n">map_it</span><span class="o">-&gt;</span><span class="n">second</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; times&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="o">++</span><span class="n">map_it</span><span class="p">;</span> <span class="c1">// 递增迭代器, 移动到下一个元素</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <blockquote>
 <div><p>注意我们通常不对关联容器使用泛型算法，一方面是因为关键字是<code class="docutils literal notranslate"><span class="pre">const</span></code>这一特性意味着我们不能将关联容器传递给修改或者重排容器元素的算法；另一方面虽然关联容器可用于只读取元素的算法，但是这类算法很多都需要搜索序列，由于关联容器不支持通过关键字进行<strong>快速查找</strong>，因此使用泛型搜索算法几乎总是一个坏主意。</p>
 </div></blockquote>
 <p>在实际编程中，如果我们真的要对一个关联容器使用算法，要么是将它当做一个源序列，要么当做一个目的位置。比如使用<code class="docutils literal notranslate"><span class="pre">copy</span></code>算法将元素从一个关联容器拷贝到另一个序列，类似的可以用<code class="docutils literal notranslate"><span class="pre">inserter</span></code>将一个插入器绑定到一个关联容器从而将关联容器作为一个目的位置来调用另一个算法。</p>
-</section>
-<section id="id7">
-<h3>2. 添加元素<a class="headerlink" href="#id7" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="id7">
+<h3>2. 添加元素<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// set</span>
-<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">ivec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">};</span><span class="w"></span>
-<span class="n">set</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">set2</span><span class="p">;</span><span class="w"> </span><span class="c1">// 构造空集合</span>
-<span class="n">set2</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">ivec</span><span class="p">.</span><span class="n">cbegin</span><span class="p">(),</span><span class="w"> </span><span class="n">ivec</span><span class="p">.</span><span class="n">cend</span><span class="p">());</span><span class="w"> </span><span class="c1">// set2包含四个元素：2, 4, 6, 8</span>
-<span class="n">set2</span><span class="p">.</span><span class="n">insert</span><span class="p">({</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">});</span><span class="w">   </span><span class="c1">// set2包含8个元素: 1, 2, 3, 4, 5, 6, 7, 8</span>
+<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">ivec</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">};</span>
+<span class="n">set</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">set2</span><span class="p">;</span> <span class="c1">// 构造空集合</span>
+<span class="n">set2</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">ivec</span><span class="p">.</span><span class="n">cbegin</span><span class="p">(),</span> <span class="n">ivec</span><span class="p">.</span><span class="n">cend</span><span class="p">());</span> <span class="c1">// set2包含四个元素：2, 4, 6, 8</span>
+<span class="n">set2</span><span class="p">.</span><span class="n">insert</span><span class="p">({</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">});</span>   <span class="c1">// set2包含8个元素: 1, 2, 3, 4, 5, 6, 7, 8</span>
 
 <span class="c1">// map使用insert的四种方法</span>
-<span class="n">word_count</span><span class="p">.</span><span class="n">insert</span><span class="p">({</span><span class="n">word</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">});</span><span class="w"></span>
-<span class="n">word_count</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">make_pair</span><span class="p">(</span><span class="n">word</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">));</span><span class="w"></span>
-<span class="n">word_count</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">pair</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="o">&gt;</span><span class="p">(</span><span class="n">word</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">));</span><span class="w"></span>
-<span class="n">word_count</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">map</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="o">&gt;::</span><span class="n">value_type</span><span class="p">(</span><span class="n">word</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">));</span><span class="w"></span>
+<span class="n">word_count</span><span class="p">.</span><span class="n">insert</span><span class="p">({</span><span class="n">word</span><span class="p">,</span> <span class="mi">1</span><span class="p">});</span>
+<span class="n">word_count</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">make_pair</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="mi">1</span><span class="p">));</span>
+<span class="n">word_count</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">pair</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span> <span class="kt">size_t</span><span class="o">&gt;</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="mi">1</span><span class="p">));</span>
+<span class="n">word_count</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">map</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span> <span class="kt">size_t</span><span class="o">&gt;::</span><span class="n">value_type</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="mi">1</span><span class="p">));</span>
 </pre></div>
 </div>
 <p>关联容器支持的<code class="docutils literal notranslate"><span class="pre">insert</span></code>操作如下：</p>
@@ -215,25 +307,25 @@
 <blockquote>
 <div><p><code class="docutils literal notranslate"><span class="pre">insert</span></code>或<code class="docutils literal notranslate"><span class="pre">emplace</span></code>返回值依赖于容器类型和参数。对于不包含重复关键字的容器，添加单一元素的<code class="docutils literal notranslate"><span class="pre">insert</span></code>和<code class="docutils literal notranslate"><span class="pre">emplace</span></code>版本返回一个<code class="docutils literal notranslate"><span class="pre">pair</span></code>，其<code class="docutils literal notranslate"><span class="pre">first</span></code>成员是一个迭代器指向具有给定关键字的元素，其<code class="docutils literal notranslate"><span class="pre">second</span></code>成员是一个<code class="docutils literal notranslate"><span class="pre">bool</span></code>值表示元素是插入成功还是已经存在于容器中。对于允许重复关键字的容器，接收单个元素的<code class="docutils literal notranslate"><span class="pre">insert</span></code>操作返回指向新元素的迭代器而不会返回<code class="docutils literal notranslate"><span class="pre">bool</span></code>值。</p>
 </div></blockquote>
-</section>
-<section id="id8">
-<h3>3. 删除元素<a class="headerlink" href="#id8" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="id8">
+<h3>3. 删除元素<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">c.erase(k)</span></code>：从<code class="docutils literal notranslate"><span class="pre">c</span></code>中删除每个关键字为<code class="docutils literal notranslate"><span class="pre">k</span></code>的元素，返回一个<code class="docutils literal notranslate"><span class="pre">size_type</span></code>的值表示删除的元素的数量</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">c.erase(p)</span></code>：从<code class="docutils literal notranslate"><span class="pre">c</span></code>中删除迭代器<code class="docutils literal notranslate"><span class="pre">p</span></code>指定的元素，返回一个指向<code class="docutils literal notranslate"><span class="pre">p</span></code>之后元素的迭代器</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">c.erase(b,</span> <span class="pre">e)</span></code>：删除迭代器对<code class="docutils literal notranslate"><span class="pre">b</span></code>和<code class="docutils literal notranslate"><span class="pre">e</span></code>所表示范围中的元素，返回<code class="docutils literal notranslate"><span class="pre">e</span></code></p></li>
 </ul>
-</section>
-<section id="map">
-<h3>4. map的下标操作<a class="headerlink" href="#map" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="map">
+<h3>4. map的下标操作<a class="headerlink" href="#map" title="永久链接至标题">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">map</span></code>和<code class="docutils literal notranslate"><span class="pre">unordered_map</span></code>容器提供了下标运算符和一个对应的<code class="docutils literal notranslate"><span class="pre">at</span></code>函数。<code class="docutils literal notranslate"><span class="pre">set</span></code>类型因为没有与关键字相关联的“值”，因此不支持下标。对一个<code class="docutils literal notranslate"><span class="pre">map</span></code>使用下标时，如果该关键字不在容器中，那么会添加一个具有此关键字的元素到<code class="docutils literal notranslate"><span class="pre">map</span></code>中。</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">c[k]</span></code>：返回关键字为<code class="docutils literal notranslate"><span class="pre">k</span></code>的元素，如果找不到的话则添加一个关键字为<code class="docutils literal notranslate"><span class="pre">k</span></code>的元素并对其进行值初始化</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">c.at(k)</span></code>：访问关键字为<code class="docutils literal notranslate"><span class="pre">k</span></code>的元素，如果查找不到的话抛出<code class="docutils literal notranslate"><span class="pre">out_of_range</span></code>异常</p></li>
 </ul>
-</section>
-<section id="id9">
-<h3>5. 访问元素<a class="headerlink" href="#id9" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="id9">
+<h3>5. 访问元素<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h3>
 <p>在关联容器中查找元素的操作包括：</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">c.find(k)</span></code>：返回一个迭代器，指向第一个关键字为<code class="docutils literal notranslate"><span class="pre">k</span></code>的元素</p></li>
@@ -247,49 +339,49 @@
 <li><p>由于在关键字不存在的情况下使用下标操作会在<code class="docutils literal notranslate"><span class="pre">map</span></code>中插入一个新元素，因此对于<code class="docutils literal notranslate"><span class="pre">map</span></code>最好用<code class="docutils literal notranslate"><span class="pre">find</span></code>替代下标操作</p></li>
 <li><p>对于允许重复关键字的容器查找给定关键字，则可以通过<code class="docutils literal notranslate"><span class="pre">find</span></code>和<code class="docutils literal notranslate"><span class="pre">count</span></code>打印这些相邻存储的元素：</p></li>
 </ul>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">string</span><span class="w"> </span><span class="nf">search_item</span><span class="p">(</span><span class="s">&quot;Alain de Botton&quot;</span><span class="p">);</span><span class="w">     </span><span class="c1">// 要查找的作者</span>
-<span class="k">auto</span><span class="w"> </span><span class="n">entries</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">authors</span><span class="p">.</span><span class="n">count</span><span class="p">(</span><span class="n">search_item</span><span class="p">);</span><span class="w"> </span><span class="c1">// 元素的数量</span>
-<span class="k">auto</span><span class="w"> </span><span class="n">iter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">authors</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">search_item</span><span class="p">);</span><span class="w">     </span><span class="c1">// 此作者的第一本书</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">string</span> <span class="nf">search_item</span><span class="p">(</span><span class="s">&quot;Alain de Botton&quot;</span><span class="p">);</span>     <span class="c1">// 要查找的作者</span>
+<span class="k">auto</span> <span class="n">entries</span> <span class="o">=</span> <span class="n">authors</span><span class="p">.</span><span class="n">count</span><span class="p">(</span><span class="n">search_item</span><span class="p">);</span> <span class="c1">// 元素的数量</span>
+<span class="k">auto</span> <span class="n">iter</span> <span class="o">=</span> <span class="n">authors</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">search_item</span><span class="p">);</span>     <span class="c1">// 此作者的第一本书</span>
 <span class="c1">// 通过循环遍历该作者的书</span>
-<span class="k">while</span><span class="p">(</span><span class="n">entries</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">iter</span><span class="o">-&gt;</span><span class="n">second</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="o">++</span><span class="n">iter</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="o">--</span><span class="n">entries</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="k">while</span><span class="p">(</span><span class="n">entries</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">iter</span><span class="o">-&gt;</span><span class="n">second</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="o">++</span><span class="n">iter</span><span class="p">;</span>
+    <span class="o">--</span><span class="n">entries</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <ul class="simple">
 <li><p>如果关键字在容器中，那么<code class="docutils literal notranslate"><span class="pre">lower_bound</span></code>返回的迭代器指向第一个具有给定关键字的元素，<code class="docutils literal notranslate"><span class="pre">upper_bound</span></code>返回的迭代器指向最后一个匹配给定关键字的元素之后的位置。如果<code class="docutils literal notranslate"><span class="pre">lower_bound</span></code>和<code class="docutils literal notranslate"><span class="pre">upper_bound</span></code>指向同一个迭代器的话，那么说明给定的关键字不在容器中。</p></li>
 </ul>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">beg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">authrors</span><span class="p">.</span><span class="n">lower_bound</span><span class="p">(</span><span class="n">search_item</span><span class="p">),</span><span class="w"></span>
-<span class="w">        </span><span class="n">end</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">authors</span><span class="p">.</span><span class="n">upper_bound</span><span class="p">(</span><span class="n">search_item</span><span class="p">);</span><span class="w"></span>
-<span class="w">        </span><span class="n">beg</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">end</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">beg</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">beg</span><span class="o">-&gt;</span><span class="n">second</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">beg</span> <span class="o">=</span> <span class="n">authrors</span><span class="p">.</span><span class="n">lower_bound</span><span class="p">(</span><span class="n">search_item</span><span class="p">),</span>
+        <span class="n">end</span> <span class="o">=</span> <span class="n">authors</span><span class="p">.</span><span class="n">upper_bound</span><span class="p">(</span><span class="n">search_item</span><span class="p">);</span>
+        <span class="n">beg</span> <span class="o">!=</span> <span class="n">end</span><span class="p">;</span> <span class="o">++</span><span class="n">beg</span><span class="p">)</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">beg</span><span class="o">-&gt;</span><span class="n">second</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
 </pre></div>
 </div>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">equal_bound</span></code>可以接受一个关键字并返回一个迭代器<code class="docutils literal notranslate"><span class="pre">pair</span></code>。若关键字存在则第一个迭代器指向第一个与关键字匹配的元素，第二个迭代器指向最后一个匹配元素之后的位置。若未找到匹配元素，则这两个迭代器都指向关键字可以插入的位置。</p></li>
 </ul>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">pos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">authors</span><span class="p">.</span><span class="n">equal_range</span><span class="p">(</span><span class="n">search_item</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">pos</span><span class="p">.</span><span class="n">first</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">pos</span><span class="p">.</span><span class="n">second</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">pos</span><span class="p">.</span><span class="n">first</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">pos</span><span class="p">.</span><span class="n">first</span><span class="o">-&gt;</span><span class="n">second</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">pos</span> <span class="o">=</span> <span class="n">authors</span><span class="p">.</span><span class="n">equal_range</span><span class="p">(</span><span class="n">search_item</span><span class="p">);</span>
+    <span class="n">pos</span><span class="p">.</span><span class="n">first</span> <span class="o">!=</span> <span class="n">pos</span><span class="p">.</span><span class="n">second</span><span class="p">;</span> <span class="o">++</span><span class="n">pos</span><span class="p">.</span><span class="n">first</span><span class="p">)</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">pos</span><span class="p">.</span><span class="n">first</span><span class="o">-&gt;</span><span class="n">second</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
 </pre></div>
 </div>
-</section>
-</section>
-<section id="id10">
-<h2>无序容器<a class="headerlink" href="#id10" title="永久链接至标题"></a></h2>
+</div>
+</div>
+<div class="section" id="id10">
+<h2>无序容器<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h2>
 <p>新标准定义了<code class="docutils literal notranslate"><span class="pre">4</span></code>个无序关联容器，这些容器不是使用比较运算符来组织元素，而是使用一个哈希函数<code class="docutils literal notranslate"><span class="pre">hash</span> <span class="pre">function</span></code>和关键字类型的<code class="docutils literal notranslate"><span class="pre">==</span></code>运算符。</p>
-<section id="id11">
-<h3>1. 管理桶<a class="headerlink" href="#id11" title="永久链接至标题"></a></h3>
+<div class="section" id="id11">
+<h3>1. 管理桶<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h3>
 <p>无序容器在存储上组织为一组桶，每个桶保存零个或者多个元素。无序容器使用一个哈希函数将元素映射到桶。为了访问一个元素，首先计算元素的哈希值然后决定搜索哪个桶。<strong>因此，无序容器的性能依赖于哈希函数的质量和桶的大小。</strong></p>
 <ul class="simple">
 <li><p>计算一个元素的哈希值和在桶中搜索通常都是很快的操作</p></li>
 <li><p>如果一个桶中能够保存了很多元素，那么查找一个特定元素就需要大量比较操作</p></li>
 </ul>
-</section>
-<section id="id12">
-<h3>2. 无序容器管理操作<a class="headerlink" href="#id12" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="id12">
+<h3>2. 无序容器管理操作<a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h3>
 <p>桶接口：</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">c.bucket_count()</span></code>：正在使用的桶的数目</p></li>
@@ -311,43 +403,60 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">c.rehash(n)</span></code>：重新存储，使得<code class="docutils literal notranslate"><span class="pre">bucket_count&gt;=n</span></code>且<code class="docutils literal notranslate"><span class="pre">bucket_count&gt;size/max_load_factor</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">c.reserve(n)</span></code>：重新存储，使得<code class="docutils literal notranslate"><span class="pre">c</span></code>可以保存<code class="docutils literal notranslate"><span class="pre">n</span></code>个元素而不必<code class="docutils literal notranslate"><span class="pre">rehash</span></code></p></li>
 </ul>
-</section>
-<section id="id13">
-<h3>3. 无序容器对关键字类型的要求<a class="headerlink" href="#id13" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="id13">
+<h3>3. 无序容器对关键字类型的要求<a class="headerlink" href="#id13" title="永久链接至标题">¶</a></h3>
 <p>默认情况下无序容器使用关键字类型的<code class="docutils literal notranslate"><span class="pre">==</span></code>运算符来比较元素，还使用一个<code class="docutils literal notranslate"><span class="pre">hash&lt;key_type&gt;</span></code>类型的对象来生成每个元素的哈希值。标准库为内置类型（包括指针）和一些标准库类型（<code class="docutils literal notranslate"><span class="pre">string</span></code>和智能指针）等类型定义了<code class="docutils literal notranslate"><span class="pre">hash</span></code>模板。因此我们可以直接定义关键字是内置类型（包括指针）、<code class="docutils literal notranslate"><span class="pre">string</span></code>和智能指针等类型的无序容器。</p>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
            </div>
+           
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="6.6%20%E6%A0%87%E5%87%86%E5%BA%93%E5%AE%B9%E5%99%A8%E9%80%82%E9%85%8D%E5%99%A8.html" class="btn btn-neutral float-left" title="6.6 标准库类型：容器适配器" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
         <a href="6.8%20%E6%A0%87%E5%87%86%E5%BA%93%E7%B1%BB%E5%9E%8Btuple.html" class="btn btn-neutral float-right" title="6.8 标准库类型：tuple" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="6.6%20%E6%A0%87%E5%87%86%E5%BA%93%E5%AE%B9%E5%99%A8%E9%80%82%E9%85%8D%E5%99%A8.html" class="btn btn-neutral float-left" title="6.6 标准库类型：容器适配器" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; 版权所有 2021, TOMOCAT.</p>
-  </div>
+    <p>
+        &#169; 版权所有 2021, TOMOCAT.
 
-  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    </p>
+  </div>
+    
+    
+    
+    利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
-    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
-   
+    
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发. 
 
 </footer>
         </div>
       </div>
+
     </section>
+
   </div>
-  <script>
+  
+
+  <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

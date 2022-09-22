@@ -1,35 +1,74 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="zh-CN" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  <meta charset="utf-8" />
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>11.3 智能指针 &mdash; C++语法笔记 v1.0 文档</title>
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+  <title>11.3 智能指针 &mdash; C++ Note v1.0 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script src="../../_static/translations.js"></script>
-    <script src="../../_static/js/theme.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
     <link rel="next" title="11.4 右值引用" href="11.4%20%E5%8F%B3%E5%80%BC%E5%BC%95%E7%94%A8.html" />
     <link rel="prev" title="11.2 Lambda表达式" href="11.2%20Lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F.html" /> 
 </head>
 
-<body class="wy-body-for-nav"> 
+<body class="wy-body-for-nav">
+
+   
   <div class="wy-grid-for-nav">
+    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../../index.html" class="icon icon-home"> C++语法笔记
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> C++ Note
+          
+
+          
           </a>
+
+          
+            
+            
+          
+
+          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="在文档中搜索" />
@@ -37,7 +76,18 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC1%E7%AB%A0%20%E5%8F%98%E9%87%8F%E4%B8%8E%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B/index.html">第1章 变量与基本类型</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC2%E7%AB%A0%20%E8%AF%AD%E5%8F%A5/index.html">第2章 语句</a></li>
@@ -113,62 +163,104 @@
 <li class="toctree-l1"><a class="reference internal" href="../README.html">README</a></li>
 </ul>
 
+            
+          
         </div>
+        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../index.html">C++语法笔记</a>
+          <a href="../../index.html">C++ Note</a>
+        
       </nav>
 
+
       <div class="wy-nav-content">
+        
         <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
+    
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
           <li><a href="index.html">第11章 C++11新标准</a> &raquo;</li>
+        
       <li>11.3 智能指针</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
+        
+          
             <a href="../../_sources/docs/第11章 C++11新标准/11.3 智能指针.md.txt" rel="nofollow"> 查看页面源码</a>
+          
+        
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-             
-  <section id="id1">
-<h1>11.3 智能指针<a class="headerlink" href="#id1" title="永久链接至标题"></a></h1>
-<section id="c">
-<h2>C++内存<a class="headerlink" href="#c" title="永久链接至标题"></a></h2>
+            
+  <div class="section" id="id1">
+<h1>11.3 智能指针<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<div class="section" id="c">
+<h2>C++内存<a class="headerlink" href="#c" title="永久链接至标题">¶</a></h2>
 <p>我们的C++程序主要包含如下三种内存：</p>
 <ul class="simple">
 <li><p>静态内存：保存局部<code class="docutils literal notranslate"><span class="pre">static</span></code>对象、类<code class="docutils literal notranslate"><span class="pre">static</span></code>数据成员以及定义在任何函数之外的变量</p></li>
 <li><p>栈内存：保存定义在函数内的非<code class="docutils literal notranslate"><span class="pre">static</span></code>对象</p></li>
 <li><p>自由空间/堆：存储动态分配的对象，即在程序运行时分配的对象</p></li>
 </ul>
-</section>
-<section id="id2">
-<h2>从动态内存到智能指针<a class="headerlink" href="#id2" title="永久链接至标题"></a></h2>
-<section id="id3">
-<h3>1. 动态内存管理<a class="headerlink" href="#id3" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="id2">
+<h2>从动态内存到智能指针<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id3">
+<h3>1. 动态内存管理<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
 <p>在C++中，动态内存的管理是通过一对运算符来完成的：</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">new</span></code>：在动态内存中为对象分配空间并返回一个指向该对象的指针</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">delete</span></code>：接受一个动态对象的指针，销毁该对象，并释放与之关联的内存</p></li>
 </ul>
-</section>
-<section id="id4">
-<h3>2. 手动管理动态内存的问题<a class="headerlink" href="#id4" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="id4">
+<h3>2. 手动管理动态内存的问题<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
 <p>由于确保在正确的时间释放内存是极其困难的，动态内存的使用很容易出问题：</p>
 <ul class="simple">
 <li><p>忘记释放内存时会产生内存泄漏</p></li>
 <li><p>在尚有指针引用内存的情况下就释放内存，会产生引用非法内存的指针</p></li>
 </ul>
-</section>
-<section id="id5">
-<h3>3. 智能指针<a class="headerlink" href="#id5" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="id5">
+<h3>3. 智能指针<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
 <blockquote>
 <div><p>Tips：下述三种智能指针都定义在<code class="docutils literal notranslate"><span class="pre">memory</span></code>头文件中。</p>
 </div></blockquote>
@@ -178,22 +270,22 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">unique_ptr</span></code>：“独占”所指向的对象</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">weak_ptr</span></code>：弱引用，指向<code class="docutils literal notranslate"><span class="pre">shared_ptr</span></code>所管理的对象</p></li>
 </ul>
-</section>
-</section>
-<section id="id6">
-<h2>C++类使用动态生存期资源的原因<a class="headerlink" href="#id6" title="永久链接至标题"></a></h2>
+</div>
+</div>
+<div class="section" id="id6">
+<h2>C++类使用动态生存期资源的原因<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
 <p>在C++类外使用动态生存期资源可能是为了手动管理对象的生命周期或者是因为栈空间不足，而在C++类中使用动态生存期资源主要出于如下三种原因：</p>
 <ul class="simple">
 <li><p>程序不知道自己需要多少对象</p></li>
 <li><p>程序不知道所需对象的准确类型</p></li>
 <li><p>程序需要在多个对象间共享数据</p></li>
 </ul>
-<section id="id7">
-<h3>1. 程序不知道自己需要多少对象<a class="headerlink" href="#id7" title="永久链接至标题"></a></h3>
+<div class="section" id="id7">
+<h3>1. 程序不知道自己需要多少对象<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
 <p>某些类需要在运行时分配可变大小的内存空间，这些类通常可以（如果确实可以的话，一般应该）使用标准库容器来保存它们的数据。容器类就是出于第一种原因而使用动态内存的典型例子。</p>
-</section>
-<section id="id8">
-<h3>2. 程序不知道所需对象的准确类型<a class="headerlink" href="#id8" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="id8">
+<h3>2. 程序不知道所需对象的准确类型<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
 <p>当我们希望在容器中存放具有继承关系的对象时，我们实际上存放的通常是基类的指针（更好的选择是智能指针），这些指针所指对象的动态类型可能是基类类型，也可能是派生类类型：</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span>// 我们可以将一个派生类的(智能)指针转换为基类的(智能)指针, make_shared&lt;Bulk_quote&gt;返回shared_ptr&lt;Bulk_quote&gt;, 但是调用push_back时该对象被转换为shared_ptr&lt;Quote&gt;
 vector&lt;shared_ptr&lt;Quote&gt;&gt; basket;
@@ -205,89 +297,89 @@ cout &lt;&lt; basket.back()-&gt;net_price(15) &lt;&lt; endl;
 </pre></div>
 </div>
 <p>因为<code class="docutils literal notranslate"><span class="pre">basket</span></code>存放着<code class="docutils literal notranslate"><span class="pre">shared_ptr</span></code>，所以我们必须解引用<code class="docutils literal notranslate"><span class="pre">basket.back()</span></code>的返回值以获得运行<code class="docutils literal notranslate"><span class="pre">net_price</span></code>的对象，实际上调用的<code class="docutils literal notranslate"><span class="pre">net_price</span></code>版本取决于指针所指对象的动态类型。</p>
-</section>
-<section id="id9">
-<h3>3. 程序需要在多个对象间共享数据<a class="headerlink" href="#id9" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="id9">
+<h3>3. 程序需要在多个对象间共享数据<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h3>
 <p>到目前为止，我们使用的类分配的资源都与对应对象生存期一致。例如每个<code class="docutils literal notranslate"><span class="pre">vector</span></code>“拥有”自己的元素，当我们拷贝一个“vector”时，原<code class="docutils literal notranslate"><span class="pre">vector</span></code>和副本<code class="docutils literal notranslate"><span class="pre">vector</span></code>中的元素是相互分离的。但是某些类分配的资源具有与原对象相独立的生存期。</p>
 <p>例如假定我们希望定义一个名为<code class="docutils literal notranslate"><span class="pre">StrBlob</span></code>的类，保存一组<code class="docutils literal notranslate"><span class="pre">string</span></code>元素。与容器不同，我们希望<code class="docutils literal notranslate"><span class="pre">Blob</span></code>对象的不同拷贝之间共享相同的元素。即当我们拷贝一个<code class="docutils literal notranslate"><span class="pre">StrBlob</span></code>时，原<code class="docutils literal notranslate"><span class="pre">StrBlob</span></code>对象及其拷贝应该引用相同的底层元素。</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;memory&gt;</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdexcept&gt;</span><span class="cp"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;memory&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;stdexcept&gt;</span><span class="cp"></span>
 
-<span class="k">using</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="p">;</span><span class="w"></span>
+<span class="k">using</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="p">;</span>
 
 <span class="c1">// StrBlob: 管理string的类, StrBlob对象的不同拷贝之间共享相同的底层数据</span>
-<span class="k">class</span> <span class="nc">StrBlob</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w"> </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
-<span class="w">    </span><span class="k">typedef</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;::</span><span class="n">size_type</span><span class="w"> </span><span class="n">size_type</span><span class="p">;</span><span class="w"></span>
+<span class="k">class</span> <span class="nc">StrBlob</span> <span class="p">{</span>
+ <span class="k">public</span><span class="o">:</span>
+    <span class="k">typedef</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;::</span><span class="n">size_type</span> <span class="n">size_type</span><span class="p">;</span>
 
-<span class="w">    </span><span class="c1">// 默认构造函数</span>
-<span class="w">    </span><span class="n">StrBlob</span><span class="p">()</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">data</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;&gt;</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="c1">// 接收初始化列表的构造函数</span>
-<span class="w">    </span><span class="n">StrBlob</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">initializer_list</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">il</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"></span>
-<span class="w">        </span><span class="n">data</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;&gt;</span><span class="p">(</span><span class="n">il</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+    <span class="c1">// 默认构造函数</span>
+    <span class="n">StrBlob</span><span class="p">()</span> <span class="o">:</span> <span class="n">data</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;&gt;</span><span class="p">())</span> <span class="p">{</span> <span class="p">}</span>
+    <span class="c1">// 接收初始化列表的构造函数</span>
+    <span class="n">StrBlob</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">initializer_list</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">il</span><span class="p">)</span> <span class="o">:</span>
+        <span class="n">data</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;&gt;</span><span class="p">(</span><span class="n">il</span><span class="p">))</span> <span class="p">{</span> <span class="p">}</span>
 
-<span class="w">    </span><span class="c1">// 返回data的大小</span>
-<span class="w">    </span><span class="n">size_type</span><span class="w"> </span><span class="n">size</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">data</span><span class="o">-&gt;</span><span class="n">size</span><span class="p">();</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="c1">// 返回data是否为空</span>
-<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">empty</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">data</span><span class="o">-&gt;</span><span class="n">empty</span><span class="p">();</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="c1">// 添加元素</span>
-<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">push_back</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="n">t</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">data</span><span class="o">-&gt;</span><span class="n">push_back</span><span class="p">(</span><span class="n">t</span><span class="p">);</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="c1">// 删除元素</span>
-<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">pop_back</span><span class="p">();</span><span class="w"></span>
-<span class="w">    </span><span class="c1">// 元素访问</span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="nf">front</span><span class="p">();</span><span class="w"></span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="nf">back</span><span class="p">();</span><span class="w"></span>
+    <span class="c1">// 返回data的大小</span>
+    <span class="n">size_type</span> <span class="n">size</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">data</span><span class="o">-&gt;</span><span class="n">size</span><span class="p">();</span> <span class="p">}</span>
+    <span class="c1">// 返回data是否为空</span>
+    <span class="kt">bool</span> <span class="n">empty</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">data</span><span class="o">-&gt;</span><span class="n">empty</span><span class="p">();</span> <span class="p">}</span>
+    <span class="c1">// 添加元素</span>
+    <span class="kt">void</span> <span class="n">push_back</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">t</span><span class="p">)</span> <span class="p">{</span> <span class="n">data</span><span class="o">-&gt;</span><span class="n">push_back</span><span class="p">(</span><span class="n">t</span><span class="p">);</span> <span class="p">}</span>
+    <span class="c1">// 删除元素</span>
+    <span class="kt">void</span> <span class="n">pop_back</span><span class="p">();</span>
+    <span class="c1">// 元素访问</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="nf">front</span><span class="p">();</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="nf">back</span><span class="p">();</span>
 
-<span class="w"> </span><span class="k">private</span><span class="o">:</span><span class="w"></span>
-<span class="w">    </span><span class="c1">// StrBlob对象的底层数据</span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">data</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="c1">// 如果data[i]不合法, 则抛出异常</span>
-<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">check</span><span class="p">(</span><span class="n">size_type</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="n">msg</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">data</span><span class="o">-&gt;</span><span class="n">size</span><span class="p">())</span><span class="w"></span>
-<span class="w">            </span><span class="k">throw</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">out_of_range</span><span class="p">(</span><span class="n">msg</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
+ <span class="k">private</span><span class="o">:</span>
+    <span class="c1">// StrBlob对象的底层数据</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;&gt;</span> <span class="n">data</span><span class="p">;</span>
+    <span class="c1">// 如果data[i]不合法, 则抛出异常</span>
+    <span class="kt">void</span> <span class="nf">check</span><span class="p">(</span><span class="n">size_type</span> <span class="n">i</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">msg</span><span class="p">)</span> <span class="k">const</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">&gt;=</span> <span class="n">data</span><span class="o">-&gt;</span><span class="n">size</span><span class="p">())</span>
+            <span class="k">throw</span> <span class="n">std</span><span class="o">::</span><span class="n">out_of_range</span><span class="p">(</span><span class="n">msg</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">};</span>
 
-<span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="nf">StrBlob::front</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">check</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;front on empty StrBlob&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">data</span><span class="o">-&gt;</span><span class="n">front</span><span class="p">();</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="nf">StrBlob::front</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">check</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s">&quot;front on empty StrBlob&quot;</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">data</span><span class="o">-&gt;</span><span class="n">front</span><span class="p">();</span>
+<span class="p">}</span>
 
-<span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="nf">StrBlob::back</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">check</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;back on empty StrBlob&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">data</span><span class="o">-&gt;</span><span class="n">back</span><span class="p">();</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="nf">StrBlob::back</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">check</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s">&quot;back on empty StrBlob&quot;</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">data</span><span class="o">-&gt;</span><span class="n">back</span><span class="p">();</span>
+<span class="p">}</span>
 
-<span class="kt">void</span><span class="w"> </span><span class="nf">StrBlob::pop_back</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">check</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;pop_back on empty StrBlob&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">data</span><span class="o">-&gt;</span><span class="n">pop_back</span><span class="p">();</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="kt">void</span> <span class="nf">StrBlob::pop_back</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">check</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s">&quot;pop_back on empty StrBlob&quot;</span><span class="p">);</span>
+    <span class="n">data</span><span class="o">-&gt;</span><span class="n">pop_back</span><span class="p">();</span>
+<span class="p">}</span>
 
-<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="c1">// 空StrBlob</span>
-<span class="w">    </span><span class="n">StrBlob</span><span class="w"> </span><span class="n">b1</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="c1">// 此时b1管理的底层data为空</span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;b1.size(): &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">b1</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// 空StrBlob</span>
+    <span class="n">StrBlob</span> <span class="n">b1</span><span class="p">;</span>
+    <span class="c1">// 此时b1管理的底层data为空</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;b1.size(): &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">b1</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 
-<span class="w">    </span><span class="p">{</span><span class="w">   </span><span class="c1">// 新作用域</span>
-<span class="w">        </span><span class="n">StrBlob</span><span class="w"> </span><span class="n">b2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;tomo&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;cat&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;tomocat&quot;</span><span class="p">};</span><span class="w"></span>
-<span class="w">        </span><span class="n">b1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b2</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w">   </span><span class="c1">// 离开作用域, b2被销毁, 但b1指向最初由b2创建的元素</span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;b1.size(): &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">b1</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+    <span class="p">{</span>   <span class="c1">// 新作用域</span>
+        <span class="n">StrBlob</span> <span class="n">b2</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;tomo&quot;</span><span class="p">,</span> <span class="s">&quot;cat&quot;</span><span class="p">,</span> <span class="s">&quot;tomocat&quot;</span><span class="p">};</span>
+        <span class="n">b1</span> <span class="o">=</span> <span class="n">b2</span><span class="p">;</span>
+    <span class="p">}</span>   <span class="c1">// 离开作用域, b2被销毁, 但b1指向最初由b2创建的元素</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;b1.size(): &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">b1</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
 
 <span class="c1">// 输出:</span>
-<span class="n">b1</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
-<span class="n">b1</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="mi">3</span><span class="w"></span>
+<span class="n">b1</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="o">:</span> <span class="mi">0</span>
+<span class="n">b1</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="o">:</span> <span class="mi">3</span>
 </pre></div>
 </div>
-</section>
-</section>
-<section id="id10">
-<h2>C++类管理动态生存期资源的表现：行为像值或者指针<a class="headerlink" href="#id10" title="永久链接至标题"></a></h2>
+</div>
+</div>
+<div class="section" id="id10">
+<h2>C++类管理动态生存期资源的表现：行为像值或者指针<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h2>
 <p>通常管理类外资源的类需要通过析构函数来释放对象所分配的资源，根据“三/五原则”它也必须自定义拷贝构造函数和拷贝赋值运算符（<code class="docutils literal notranslate"><span class="pre">delete</span></code>拷贝构造函数和拷贝赋值运算符也算自定义的一种）。</p>
 <p>对于管理类外资源的类，根据如何拷贝指针成员我们可以大致分为如下三类：</p>
 <ul class="simple">
@@ -295,57 +387,57 @@ cout &lt;&lt; basket.back()-&gt;net_price(15) &lt;&lt; endl;
 <li><p>行为像值的类：标准库容器和<code class="docutils literal notranslate"><span class="pre">string</span></code>类</p></li>
 <li><p>行为像指针的类：<code class="docutils literal notranslate"><span class="pre">shared_ptr</span></code></p></li>
 </ul>
-<section id="id11">
-<h3>1. 行为像值的类<a class="headerlink" href="#id11" title="永久链接至标题"></a></h3>
+<div class="section" id="id11">
+<h3>1. 行为像值的类<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h3>
 <p>为了提供类值的行为，对于类管理的资源，每个对象都应该有自己的一份拷贝。以管理<code class="docutils literal notranslate"><span class="pre">string</span></code>资源的类<code class="docutils literal notranslate"><span class="pre">HasPtr</span></code>的类而言：</p>
 <ul class="simple">
 <li><p>拷贝构造函数：完成<code class="docutils literal notranslate"><span class="pre">string</span></code>的拷贝而不是拷贝指针</p></li>
 <li><p>析构函数：释放<code class="docutils literal notranslate"><span class="pre">string</span></code>对象</p></li>
 <li><p>拷贝赋值运算符：释放对象当前的<code class="docutils literal notranslate"><span class="pre">string</span></code>，并从右侧运算对象拷贝<code class="docutils literal notranslate"><span class="pre">string</span></code></p></li>
 </ul>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">HasPtr</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w"> </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
-<span class="w">    </span><span class="c1">// 构造函数: 分配string动态内存</span>
-<span class="w">    </span><span class="k">explicit</span><span class="w"> </span><span class="n">HasPtr</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">ps_</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">(</span><span class="n">s</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="c1">// 拷贝构造函数</span>
-<span class="w">    </span><span class="n">HasPtr</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">HasPtr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">p</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">ps_</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">(</span><span class="o">*</span><span class="n">p</span><span class="p">.</span><span class="n">ps_</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="c1">// 拷贝赋值运算符</span>
-<span class="w">    </span><span class="n">HasPtr</span><span class="o">&amp;</span><span class="w"> </span><span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">HasPtr</span><span class="w"> </span><span class="o">&amp;</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="c1">// 析构函数: 释放构造函数中分配的动态内存</span>
-<span class="w">    </span><span class="o">~</span><span class="n">HasPtr</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">delete</span><span class="w"> </span><span class="n">ps_</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="c1">// 类自定义的swap成员函数</span>
-<span class="w">    </span><span class="k">friend</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">swap</span><span class="p">(</span><span class="n">HasPtr</span><span class="o">&amp;</span><span class="p">,</span><span class="w"> </span><span class="n">HasPtr</span><span class="o">&amp;</span><span class="p">);</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">HasPtr</span> <span class="p">{</span>
+ <span class="k">public</span><span class="o">:</span>
+    <span class="c1">// 构造函数: 分配string动态内存</span>
+    <span class="k">explicit</span> <span class="n">HasPtr</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">s</span><span class="p">)</span> <span class="o">:</span> <span class="n">ps_</span><span class="p">(</span><span class="k">new</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">(</span><span class="n">s</span><span class="p">))</span> <span class="p">{</span> <span class="p">}</span>
+    <span class="c1">// 拷贝构造函数</span>
+    <span class="n">HasPtr</span><span class="p">(</span><span class="k">const</span> <span class="n">HasPtr</span> <span class="o">&amp;</span><span class="n">p</span><span class="p">)</span> <span class="o">:</span> <span class="n">ps_</span><span class="p">(</span><span class="k">new</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">(</span><span class="o">*</span><span class="n">p</span><span class="p">.</span><span class="n">ps_</span><span class="p">))</span> <span class="p">{</span> <span class="p">}</span>
+    <span class="c1">// 拷贝赋值运算符</span>
+    <span class="n">HasPtr</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span> <span class="n">HasPtr</span> <span class="o">&amp;</span><span class="p">);</span>
+    <span class="c1">// 析构函数: 释放构造函数中分配的动态内存</span>
+    <span class="o">~</span><span class="n">HasPtr</span><span class="p">()</span> <span class="p">{</span> <span class="k">delete</span> <span class="n">ps_</span><span class="p">;</span> <span class="p">}</span>
+    <span class="c1">// 类自定义的swap成员函数</span>
+    <span class="k">friend</span> <span class="kt">void</span> <span class="n">swap</span><span class="p">(</span><span class="n">HasPtr</span><span class="o">&amp;</span><span class="p">,</span> <span class="n">HasPtr</span><span class="o">&amp;</span><span class="p">);</span>
 
-<span class="w"> </span><span class="k">private</span><span class="o">:</span><span class="w"></span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="o">*</span><span class="n">ps_</span><span class="p">;</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
+ <span class="k">private</span><span class="o">:</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">*</span><span class="n">ps_</span><span class="p">;</span>
+<span class="p">};</span>
 
 <span class="c1">// 拷贝赋值运算符:</span>
 <span class="c1">// 1) 组合了析构函数和拷贝构造函数: 先销毁左侧运算对象资源, 然后从右侧运算对象拷贝数据</span>
 <span class="c1">// 2) 自赋值安全: 如果将一个对象赋予它自身, 赋值运算符必须能正确工作</span>
 <span class="c1">// 3) 异常安全: 当异常发生时能将左侧运算对象置于一个有意义的状态</span>
-<span class="n">HasPtr</span><span class="o">&amp;</span><span class="w"> </span><span class="n">HasPtr</span><span class="o">::</span><span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">HasPtr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">rhs</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">newp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">(</span><span class="o">*</span><span class="n">rhs</span><span class="p">.</span><span class="n">ps_</span><span class="p">);</span><span class="w">  </span><span class="c1">// 拷贝底层string</span>
-<span class="w">    </span><span class="k">delete</span><span class="w"> </span><span class="n">ps_</span><span class="p">;</span><span class="w">                             </span><span class="c1">// 释放本对象的旧内存</span>
-<span class="w">    </span><span class="n">ps_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">newp</span><span class="p">;</span><span class="w">                             </span><span class="c1">// 从右侧运算对象拷贝数据到本对象</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="o">*</span><span class="k">this</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="n">HasPtr</span><span class="o">&amp;</span> <span class="n">HasPtr</span><span class="o">::</span><span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span> <span class="n">HasPtr</span> <span class="o">&amp;</span><span class="n">rhs</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">auto</span> <span class="n">newp</span> <span class="o">=</span> <span class="k">new</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">(</span><span class="o">*</span><span class="n">rhs</span><span class="p">.</span><span class="n">ps_</span><span class="p">);</span>  <span class="c1">// 拷贝底层string</span>
+    <span class="k">delete</span> <span class="n">ps_</span><span class="p">;</span>                             <span class="c1">// 释放本对象的旧内存</span>
+    <span class="n">ps_</span> <span class="o">=</span> <span class="n">newp</span><span class="p">;</span>                             <span class="c1">// 从右侧运算对象拷贝数据到本对象</span>
+    <span class="k">return</span> <span class="o">*</span><span class="k">this</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-</section>
-<section id="id12">
-<h3>2. 行为像指针的类<a class="headerlink" href="#id12" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="id12">
+<h3>2. 行为像指针的类<a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h3>
 <p>令一个类展现类似指针的行为的最好方法是使用<code class="docutils literal notranslate"><span class="pre">shared_ptr</span></code>来管理类中的资源，拷贝（或赋值）一个<code class="docutils literal notranslate"><span class="pre">shared_ptr</span></code>会拷贝（或赋值）<code class="docutils literal notranslate"><span class="pre">shared_ptr</span></code>所指向的指针。<code class="docutils literal notranslate"><span class="pre">shared_ptr</span></code>类会自己记录有多少用户共享它所指向的对象，当没有用户使用对象时，<code class="docutils literal notranslate"><span class="pre">shared_ptr</span></code>类负责释放资源。</p>
-</section>
-<section id="swap">
-<h3>3. swap交换操作<a class="headerlink" href="#swap" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="swap">
+<h3>3. swap交换操作<a class="headerlink" href="#swap" title="永久链接至标题">¶</a></h3>
 <blockquote>
 <div><p>Tips：管理动态资源的类通常除了自定义拷贝控制成员外，还需要定义一个名为<code class="docutils literal notranslate"><span class="pre">swap</span></code>的函数。如果一个类定义了自己的<code class="docutils literal notranslate"><span class="pre">swap</span></code>成员函数，那么算法将使用类自定义版本，否则算法将使用标准库定义的<code class="docutils literal notranslate"><span class="pre">swap</span></code>。</p>
 </div></blockquote>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// 交换指针而非string数据, 提高性能</span>
-<span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">swap</span><span class="p">(</span><span class="n">HasPtr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">lhs</span><span class="p">,</span><span class="w"> </span><span class="n">HasPtr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">rhs</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">swap</span><span class="p">(</span><span class="n">lhs</span><span class="p">.</span><span class="n">ps_</span><span class="p">,</span><span class="w"> </span><span class="n">rhs</span><span class="p">.</span><span class="n">ps_</span><span class="p">);</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="kr">inline</span> <span class="kt">void</span> <span class="nf">swap</span><span class="p">(</span><span class="n">HasPtr</span> <span class="o">&amp;</span><span class="n">lhs</span><span class="p">,</span> <span class="n">HasPtr</span> <span class="o">&amp;</span><span class="n">rhs</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">swap</span><span class="p">(</span><span class="n">lhs</span><span class="p">.</span><span class="n">ps_</span><span class="p">,</span> <span class="n">rhs</span><span class="p">.</span><span class="n">ps_</span><span class="p">);</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>定义了<code class="docutils literal notranslate"><span class="pre">swap</span></code>的类通常用<code class="docutils literal notranslate"><span class="pre">swap</span></code>来定义它们的“拷贝并交换赋值运算符”，这些运算符使用了一种名为拷贝并交换<code class="docutils literal notranslate"><span class="pre">copy</span> <span class="pre">and</span> <span class="pre">swap</span></code>的技术，将左侧运算对象与右侧运算对象的一个副本进行交换：</p>
@@ -360,32 +452,32 @@ cout &lt;&lt; basket.back()-&gt;net_price(15) &lt;&lt; endl;
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// 拷贝并交换赋值运算符既是移动赋值运算符也是拷贝赋值运算符:</span>
 <span class="c1">// 1) 参数并不是一个引用: 调用拷贝/移动构造函数以值传递传入一个右侧运算对象的副本</span>
 <span class="c1">// 2) 交换左侧运算对象与右侧运算对象的副本</span>
-<span class="n">HasPtr</span><span class="o">&amp;</span><span class="w"> </span><span class="n">HasPtr</span><span class="o">::</span><span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="n">HasPtr</span><span class="w"> </span><span class="n">rhs</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">swap</span><span class="p">(</span><span class="o">*</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w">  </span><span class="c1">// rhs现在指向本对象曾经使用过的内存</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="o">*</span><span class="k">this</span><span class="p">;</span><span class="w">      </span><span class="c1">// rhs销毁, 从而delete了rhs中的指针</span>
-<span class="p">}</span><span class="w"></span>
+<span class="n">HasPtr</span><span class="o">&amp;</span> <span class="n">HasPtr</span><span class="o">::</span><span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="n">HasPtr</span> <span class="n">rhs</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">swap</span><span class="p">(</span><span class="o">*</span><span class="k">this</span><span class="p">,</span> <span class="n">rhs</span><span class="p">);</span>  <span class="c1">// rhs现在指向本对象曾经使用过的内存</span>
+    <span class="k">return</span> <span class="o">*</span><span class="k">this</span><span class="p">;</span>      <span class="c1">// rhs销毁, 从而delete了rhs中的指针</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-</section>
-</section>
-<section id="shared-ptr">
-<h2>shared_ptr类<a class="headerlink" href="#shared-ptr" title="永久链接至标题"></a></h2>
-<section id="id13">
-<h3>1. 简介<a class="headerlink" href="#id13" title="永久链接至标题"></a></h3>
+</div>
+</div>
+<div class="section" id="shared-ptr">
+<h2>shared_ptr类<a class="headerlink" href="#shared-ptr" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id13">
+<h3>1. 简介<a class="headerlink" href="#id13" title="永久链接至标题">¶</a></h3>
 <p>类似于<code class="docutils literal notranslate"><span class="pre">vector</span></code>，<code class="docutils literal notranslate"><span class="pre">shared_ptr</span></code>也是模板，因此当我们创建一个智能指针时必须提供额外的信息——指针可以指向的类型。</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// 默认初始化的智能指针中保存一个空指针</span>
-<span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">p1</span><span class="p">;</span><span class="w">     </span><span class="c1">// shared_ptr, 可以指向string</span>
-<span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">p2</span><span class="p">;</span><span class="w">  </span><span class="c1">// shared_ptr, 可以指向int的list</span>
+<span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">p1</span><span class="p">;</span>     <span class="c1">// shared_ptr, 可以指向string</span>
+<span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">p2</span><span class="p">;</span>  <span class="c1">// shared_ptr, 可以指向int的list</span>
 
 <span class="c1">// 解引用一个智能指针返回它指向的对象</span>
 <span class="c1">// 如果p1不为空, 检查它是否指向一个空string</span>
-<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">p1</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">p1</span><span class="o">-&gt;</span><span class="n">empty</span><span class="p">())</span><span class="w"></span>
-<span class="w">	</span><span class="o">*</span><span class="n">p1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;hi&quot;</span><span class="p">;</span><span class="w">  </span><span class="c1">// 如果p1指向一个空string, 解引用p1并赋予一个新值</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">p1</span> <span class="o">&amp;&amp;</span> <span class="n">p1</span><span class="o">-&gt;</span><span class="n">empty</span><span class="p">())</span>
+	<span class="o">*</span><span class="n">p1</span> <span class="o">=</span> <span class="s">&quot;hi&quot;</span><span class="p">;</span>  <span class="c1">// 如果p1指向一个空string, 解引用p1并赋予一个新值</span>
 </pre></div>
 </div>
-</section>
-<section id="id14">
-<h3>2. 提供的操作<a class="headerlink" href="#id14" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="id14">
+<h3>2. 提供的操作<a class="headerlink" href="#id14" title="永久链接至标题">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">shared_ptr</span></code>和<code class="docutils literal notranslate"><span class="pre">unique_ptr</span></code>都支持的操作：</p>
 <table border="1" class="docutils">
 <thead>
@@ -493,28 +585,28 @@ cout &lt;&lt; basket.back()-&gt;net_price(15) &lt;&lt; endl;
 <td>若<code>p</code>是唯一指向其对象的<code>shared_ptr</code>，<code>reset</code>会释放此对象</td>
 </tr>
 </tbody>
-</table></section>
-<section id="make-shared">
-<h3>3. make_shared函数<a class="headerlink" href="#make-shared" title="永久链接至标题"></a></h3>
+</table></div>
+<div class="section" id="make-shared">
+<h3>3. make_shared函数<a class="headerlink" href="#make-shared" title="永久链接至标题">¶</a></h3>
 <p>最安全的分配和使用动态内存的方法是调用一个名为<code class="docutils literal notranslate"><span class="pre">make_shared</span></code>的标准库函数，此函数在动态内存中分配一个对象并初始化它，返回指向该对象的<code class="docutils literal notranslate"><span class="pre">shared_ptr</span></code>。</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// p1指向一个值为42的int的shared_ptr</span>
-<span class="n">shared_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">p1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_shared</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">42</span><span class="p">);</span><span class="w"></span>
+<span class="n">shared_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">p1</span> <span class="o">=</span> <span class="n">make_shared</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">42</span><span class="p">);</span>
 <span class="c1">// p2指向一个值为&quot;9999999999&quot;的string</span>
-<span class="n">shared_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">p2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;9&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="n">shared_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">p2</span> <span class="o">=</span> <span class="n">make_shared</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="sc">&#39;9&#39;</span><span class="p">);</span>
 <span class="c1">// p3指向一个值初始化的int, 即值为0</span>
-<span class="n">shared_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">p3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_shared</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">();</span><span class="w"></span>
+<span class="n">shared_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">p3</span> <span class="o">=</span> <span class="n">make_shared</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">();</span>
 </pre></div>
 </div>
 <blockquote>
 <div><p>类似于顺序容器的<code class="docutils literal notranslate"><span class="pre">emplace</span></code>成员，<code class="docutils literal notranslate"><span class="pre">make_shared</span></code>用其参数来构造给定类型的对象。例如，调用<code class="docutils literal notranslate"><span class="pre">make_shared&lt;string&gt;</span></code>时传递的参数必须与<code class="docutils literal notranslate"><span class="pre">string</span></code>的某个构造函数相匹配，调用<code class="docutils literal notranslate"><span class="pre">make_shared&lt;int&gt;</span></code>时传递的参数必须能用来初始化一个<code class="docutils literal notranslate"><span class="pre">int</span></code>。如果我们不传递任何参数，那么就会进行值初始化。</p>
 </div></blockquote>
-</section>
-<section id="id15">
-<h3>4. shared_ptr的拷贝和赋值<a class="headerlink" href="#id15" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="id15">
+<h3>4. shared_ptr的拷贝和赋值<a class="headerlink" href="#id15" title="永久链接至标题">¶</a></h3>
 <blockquote>
 <div><p>当进行拷贝或者赋值时，每个<code class="docutils literal notranslate"><span class="pre">shared_ptr</span></code>都会记录有多少个其他的<code class="docutils literal notranslate"><span class="pre">shared_ptr</span></code>指向相同的对象：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">auto</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_shared</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">42</span><span class="p">);</span><span class="w">  </span><span class="c1">// p指向的对象只有p一个引用者</span>
-<span class="k">auto</span><span class="w"> </span><span class="n">q</span><span class="p">(</span><span class="n">p</span><span class="p">);</span><span class="w">                      </span><span class="c1">// q是p的拷贝, p和q指向相同对象, 此对象有两个引用者</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">auto</span> <span class="n">p</span> <span class="o">=</span> <span class="n">make_shared</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">42</span><span class="p">);</span>  <span class="c1">// p指向的对象只有p一个引用者</span>
+<span class="k">auto</span> <span class="n">q</span><span class="p">(</span><span class="n">p</span><span class="p">);</span>                      <span class="c1">// q是p的拷贝, p和q指向相同对象, 此对象有两个引用者</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -533,16 +625,16 @@ cout &lt;&lt; basket.back()-&gt;net_price(15) &lt;&lt; endl;
 <blockquote>
 <div><p>一旦一个<code class="docutils literal notranslate"><span class="pre">shared_ptr</span></code>的计数器变为0，它就会自动释放自己管理的对象。</p>
 </div></blockquote>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">auto</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_shared</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">42</span><span class="p">);</span><span class="w">   </span><span class="c1">// r指向的int只有一个引用者</span>
-<span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">q</span><span class="p">;</span><span class="w">  </span><span class="c1">// 给r赋值, 令它指向另一个地址</span>
-<span class="w">        </span><span class="c1">// 递增q指向对象的引用计数</span>
-<span class="w">        </span><span class="c1">// 递减r原来指向对象的引用计数</span>
-<span class="w">        </span><span class="c1">// r原来指向的对象已没有引用者, 会自动释放</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">auto</span> <span class="n">r</span> <span class="o">=</span> <span class="n">make_shared</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">42</span><span class="p">);</span>   <span class="c1">// r指向的int只有一个引用者</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">q</span><span class="p">;</span>  <span class="c1">// 给r赋值, 令它指向另一个地址</span>
+        <span class="c1">// 递增q指向对象的引用计数</span>
+        <span class="c1">// 递减r原来指向对象的引用计数</span>
+        <span class="c1">// r原来指向的对象已没有引用者, 会自动释放</span>
 </pre></div>
 </div>
-</section>
-<section id="id16">
-<h3>5. shared_ptr自动销毁管理的对象<a class="headerlink" href="#id16" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="id16">
+<h3>5. shared_ptr自动销毁管理的对象<a class="headerlink" href="#id16" title="永久链接至标题">¶</a></h3>
 <p>当指向对象的最后一个<code class="docutils literal notranslate"><span class="pre">shared_ptr</span></code>被销毁时，<code class="docutils literal notranslate"><span class="pre">shared_ptr</span></code>类会自动销毁此对象。它是通过另一个特殊的成员函数——析构函数<code class="docutils literal notranslate"><span class="pre">destructor</span></code>完成销毁工作的。</p>
 <blockquote>
 <div><p>就像构造函数控制初始化一样，析构函数控制此类型的对象销毁时做什么操作。</p>
@@ -551,56 +643,56 @@ cout &lt;&lt; basket.back()-&gt;net_price(15) &lt;&lt; endl;
 <blockquote>
 <div><p><code class="docutils literal notranslate"><span class="pre">shared_ptr</span></code>的析构函数会递减它所指向的对象的引用计数，如果引用计数变为0，<code class="docutils literal notranslate"><span class="pre">shared_ptr</span></code>的析构函数就会销毁对象，并释放它占用的内存。</p>
 </div></blockquote>
-</section>
-<section id="id17">
-<h3>6. 智能指针忘记释放内存的场景<a class="headerlink" href="#id17" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="id17">
+<h3>6. 智能指针忘记释放内存的场景<a class="headerlink" href="#id17" title="永久链接至标题">¶</a></h3>
 <p>对于某个对象，由于在最后一个<code class="docutils literal notranslate"><span class="pre">shared_ptr</span></code>被销毁前内存都不会释放，保证<code class="docutils literal notranslate"><span class="pre">shared_ptr</span></code>在无用之后不再保留就非常重要了。<code class="docutils literal notranslate"><span class="pre">shared_ptr</span></code>在无用之后仍然保留的一种可能情况是，你将<code class="docutils literal notranslate"><span class="pre">shared_ptr</span></code>存放在一个容器中，随后重排了容器，从而不再需要某些元素，在这种情况下，你应该确保用<code class="docutils literal notranslate"><span class="pre">erase</span></code>删除那些不再需要的<code class="docutils literal notranslate"><span class="pre">shared_ptr</span></code>元素。</p>
-</section>
-<section id="shared-ptrnew">
-<h3>7. shared_ptr和new结合使用<a class="headerlink" href="#shared-ptrnew" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="shared-ptrnew">
+<h3>7. shared_ptr和new结合使用<a class="headerlink" href="#shared-ptrnew" title="永久链接至标题">¶</a></h3>
 <p>我们可以用<code class="docutils literal notranslate"><span class="pre">new</span></code>返回的指针来初始化只能指针：</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// 接受指针参数的智能指针构造函数是explicit的, 我们无法将一个内置指针隐式地转换为一个智能指针</span>
-<span class="n">shared_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">p1</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="p">(</span><span class="mi">42</span><span class="p">));</span><span class="w">     </span><span class="c1">// 正确</span>
-<span class="n">shared_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">p2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="p">(</span><span class="mi">1024</span><span class="p">);</span><span class="w">  </span><span class="c1">// 错误: 必须使用直接初始化形式</span>
+<span class="n">shared_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">p1</span><span class="p">(</span><span class="k">new</span> <span class="kt">int</span><span class="p">(</span><span class="mi">42</span><span class="p">));</span>     <span class="c1">// 正确</span>
+<span class="n">shared_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">p2</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">(</span><span class="mi">1024</span><span class="p">);</span>  <span class="c1">// 错误: 必须使用直接初始化形式</span>
 </pre></div>
 </div>
-</section>
-</section>
-<section id="id18">
-<h2>智能指针与异常<a class="headerlink" href="#id18" title="永久链接至标题"></a></h2>
+</div>
+</div>
+<div class="section" id="id18">
+<h2>智能指针与异常<a class="headerlink" href="#id18" title="永久链接至标题">¶</a></h2>
 <p>如果使用智能指针，那么即使程序块过早结束，那么智能指针类也能确保在内存不再需要时将其释放：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">f</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">shared_prt</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">sp</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="p">(</span><span class="mi">42</span><span class="p">));</span><span class="w">  </span><span class="c1">// 分配一个新对象</span>
-<span class="w">    </span><span class="c1">// 这段代码抛出异常, 且在f中未被捕获</span>
-<span class="p">}</span><span class="w">   </span><span class="c1">// 函数结束时shared_ptr自动释放内存</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">f</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">shared_prt</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">sp</span><span class="p">(</span><span class="k">new</span> <span class="kt">int</span><span class="p">(</span><span class="mi">42</span><span class="p">));</span>  <span class="c1">// 分配一个新对象</span>
+    <span class="c1">// 这段代码抛出异常, 且在f中未被捕获</span>
+<span class="p">}</span>   <span class="c1">// 函数结束时shared_ptr自动释放内存</span>
 </pre></div>
 </div>
 <p>与之相对的是，如果使用内置指针管理内存 ，且在<code class="docutils literal notranslate"><span class="pre">new</span></code>之后在对应的<code class="docutils literal notranslate"><span class="pre">delete</span></code>之前发生了异常，则内存不会被释放：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">f</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">pi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="p">(</span><span class="mi">42</span><span class="p">);</span><span class="w">  </span><span class="c1">// 动态分配一个新对象</span>
-<span class="w">    </span><span class="c1">// 这段代码抛出异常, 且在f中未被捕获</span>
-<span class="w">    </span><span class="k">delete</span><span class="w"> </span><span class="n">pi</span><span class="p">;</span><span class="w">              </span><span class="c1">// 抛出异常后不会走到这里, 这块内存不会被释放</span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">f</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="o">*</span><span class="n">pi</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">(</span><span class="mi">42</span><span class="p">);</span>  <span class="c1">// 动态分配一个新对象</span>
+    <span class="c1">// 这段代码抛出异常, 且在f中未被捕获</span>
+    <span class="k">delete</span> <span class="n">pi</span><span class="p">;</span>              <span class="c1">// 抛出异常后不会走到这里, 这块内存不会被释放</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-</section>
-<section id="unique-ptr">
-<h2>unique_ptr<a class="headerlink" href="#unique-ptr" title="永久链接至标题"></a></h2>
+</div>
+<div class="section" id="unique-ptr">
+<h2>unique_ptr<a class="headerlink" href="#unique-ptr" title="永久链接至标题">¶</a></h2>
 <blockquote>
 <div><p>编码规范：如果必须使用动态内存分配，那么更倾向于将所有权保存在分配者手中，如果其他地方要使用这个对象，最好用<code class="docutils literal notranslate"><span class="pre">std::unique_ptr</span></code>来明确所有权传递，例如：</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// 分配动态内存</span>
-<span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">Foo</span><span class="o">&gt;</span><span class="w"> </span><span class="n">FooFactory</span><span class="p">();</span><span class="w"></span>
+<span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">Foo</span><span class="o">&gt;</span> <span class="n">FooFactory</span><span class="p">();</span>
 <span class="c1">// 使用动态内存</span>
-<span class="kt">void</span><span class="w"> </span><span class="nf">FooConsumer</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">Foo</span><span class="o">&gt;</span><span class="w"> </span><span class="n">ptr</span><span class="p">);</span><span class="w"></span>
+<span class="kt">void</span> <span class="nf">FooConsumer</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">Foo</span><span class="o">&gt;</span> <span class="n">ptr</span><span class="p">);</span>
 </pre></div>
 </div>
 </div></blockquote>
-<section id="id19">
-<h3>1. 简介<a class="headerlink" href="#id19" title="永久链接至标题"></a></h3>
+<div class="section" id="id19">
+<h3>1. 简介<a class="headerlink" href="#id19" title="永久链接至标题">¶</a></h3>
 <p>一个<code class="docutils literal notranslate"><span class="pre">unique_ptr</span></code>“拥有”它所指向的对象，与<code class="docutils literal notranslate"><span class="pre">shared_ptr</span></code>不同，某个时刻只能有一个<code class="docutils literal notranslate"><span class="pre">unique_ptr</span></code>指向一个给定对象。当<code class="docutils literal notranslate"><span class="pre">unique_ptr</span></code>被销毁时，它所指向的对象也被销毁。</p>
-</section>
-<section id="id20">
-<h3>2. 提供的操作<a class="headerlink" href="#id20" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="id20">
+<h3>2. 提供的操作<a class="headerlink" href="#id20" title="永久链接至标题">¶</a></h3>
 <table border="1" class="docutils">
 <thead>
 <tr>
@@ -641,49 +733,49 @@ cout &lt;&lt; basket.back()-&gt;net_price(15) &lt;&lt; endl;
 <td></td>
 </tr>
 </tbody>
-</table></section>
-<section id="id21">
-<h3>3. 转移unique_ptr指针的所有权<a class="headerlink" href="#id21" title="永久链接至标题"></a></h3>
+</table></div>
+<div class="section" id="id21">
+<h3>3. 转移unique_ptr指针的所有权<a class="headerlink" href="#id21" title="永久链接至标题">¶</a></h3>
 <blockquote>
 <div><p>Tips：<code class="docutils literal notranslate"><span class="pre">reset()</span></code>方法接受一个可选的指针参数，令<code class="docutils literal notranslate"><span class="pre">unique_ptr</span></code>重新指向给定的指针，如果<code class="docutils literal notranslate"><span class="pre">unique_ptr</span></code>不为空，则它原来指向的对象将被释放。调用<code class="docutils literal notranslate"><span class="pre">release()</span></code>方法会切断<code class="docutils literal notranslate"><span class="pre">unique_ptr</span></code>和它原来管理的对象之间的联系，<code class="docutils literal notranslate"><span class="pre">release()</span></code>方法返回的指针通常被用来初始化另一个智能指针或者给另一个智能指针赋值。如果我们不用另一个智能指针来保存<code class="docutils literal notranslate"><span class="pre">release()</span></code>返回的指针，那么我们的程序就必须负责资源的释放。</p>
 </div></blockquote>
 <p>虽然我们不能拷贝或赋值<code class="docutils literal notranslate"><span class="pre">unique_ptr</span></code>，但是我们可以通过<code class="docutils literal notranslate"><span class="pre">release</span></code>或<code class="docutils literal notranslate"><span class="pre">reset</span></code>将指针的所有权从一个非<code class="docutils literal notranslate"><span class="pre">const</span></code>的<code class="docutils literal notranslate"><span class="pre">unique_ptr</span></code>转移到另一个<code class="docutils literal notranslate"><span class="pre">unique_ptr</span></code>：</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// release()将指针所有权从p1转向p2, 并将p1置为空</span>
-<span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">p1</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">string</span><span class="p">(</span><span class="s">&quot;tomocat&quot;</span><span class="p">));</span><span class="w"></span>
-<span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">p2</span><span class="p">(</span><span class="n">p1</span><span class="p">.</span><span class="n">release</span><span class="p">());</span><span class="w"></span>
+<span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">p1</span><span class="p">(</span><span class="k">new</span> <span class="n">string</span><span class="p">(</span><span class="s">&quot;tomocat&quot;</span><span class="p">));</span>
+<span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">p2</span><span class="p">(</span><span class="n">p1</span><span class="p">.</span><span class="n">release</span><span class="p">());</span>
 
 <span class="c1">// 将所有权从p3转向p2</span>
-<span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">p3</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">string</span><span class="p">(</span><span class="s">&quot;cat&quot;</span><span class="p">));</span><span class="w"></span>
-<span class="n">p2</span><span class="p">.</span><span class="n">reset</span><span class="p">(</span><span class="n">p3</span><span class="p">.</span><span class="n">release</span><span class="p">());</span><span class="w"></span>
+<span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">p3</span><span class="p">(</span><span class="k">new</span> <span class="n">string</span><span class="p">(</span><span class="s">&quot;cat&quot;</span><span class="p">));</span>
+<span class="n">p2</span><span class="p">.</span><span class="n">reset</span><span class="p">(</span><span class="n">p3</span><span class="p">.</span><span class="n">release</span><span class="p">());</span>
 </pre></div>
 </div>
 <p>不能拷贝<code class="docutils literal notranslate"><span class="pre">unique_ptr</span></code>有一个例外：我们可以拷贝或赋值将要被销毁的<code class="docutils literal notranslate"><span class="pre">unique_ptr</span></code>，最常见的例子就是从函数返回一个<code class="docutils literal notranslate"><span class="pre">unique_ptr</span></code>：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">clone</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">p</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="c1">// 正确: 从int*创建一个unique_ptr&lt;int&gt;</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="p">(</span><span class="n">p</span><span class="p">));</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">clone</span><span class="p">(</span><span class="kt">int</span> <span class="n">p</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// 正确: 从int*创建一个unique_ptr&lt;int&gt;</span>
+    <span class="k">return</span> <span class="n">unique_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="k">new</span> <span class="kt">int</span><span class="p">(</span><span class="n">p</span><span class="p">));</span>
+<span class="p">}</span>
 
 <span class="c1">// 还可以返回一个局部对象的拷贝</span>
-<span class="n">unique_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">clone</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">p</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">ret</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="p">(</span><span class="n">p</span><span class="p">));</span><span class="w"></span>
-<span class="w">    </span><span class="c1">// ...</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">ret</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="n">unique_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">clone</span><span class="p">(</span><span class="kt">int</span> <span class="n">p</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">unique_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">ret</span><span class="p">(</span><span class="k">new</span> <span class="kt">int</span><span class="p">(</span><span class="n">p</span><span class="p">));</span>
+    <span class="c1">// ...</span>
+    <span class="k">return</span> <span class="n">ret</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-</section>
-</section>
-<section id="weak-ptr">
-<h2>weak_ptr<a class="headerlink" href="#weak-ptr" title="永久链接至标题"></a></h2>
-<section id="id22">
-<h3>1. 简介<a class="headerlink" href="#id22" title="永久链接至标题"></a></h3>
+</div>
+</div>
+<div class="section" id="weak-ptr">
+<h2>weak_ptr<a class="headerlink" href="#weak-ptr" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id22">
+<h3>1. 简介<a class="headerlink" href="#id22" title="永久链接至标题">¶</a></h3>
 <blockquote>
 <div><p>Tips：一旦最后一个指向对象的<code class="docutils literal notranslate"><span class="pre">shared_ptr</span></code>被销毁，即使有<code class="docutils literal notranslate"><span class="pre">weak_ptr</span></code>指向对象，该对象也还是会被释放。</p>
 </div></blockquote>
 <p><code class="docutils literal notranslate"><span class="pre">weak_ptr</span></code>是一种不控制所指向对象生存期的智能指针，它指向一个<code class="docutils literal notranslate"><span class="pre">shared_ptr</span></code>管理的对象，但是将一个<code class="docutils literal notranslate"><span class="pre">weak_ptr</span></code>绑定到一个<code class="docutils literal notranslate"><span class="pre">shared_ptr</span></code>不会改变<code class="docutils literal notranslate"><span class="pre">shared_ptr</span></code>的引用计数。</p>
-</section>
-<section id="id23">
-<h3>2. 提供的操作<a class="headerlink" href="#id23" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="id23">
+<h3>2. 提供的操作<a class="headerlink" href="#id23" title="永久链接至标题">¶</a></h3>
 <table border="1" class="docutils">
 <thead>
 <tr>
@@ -729,24 +821,24 @@ cout &lt;&lt; basket.back()-&gt;net_price(15) &lt;&lt; endl;
 <td></td>
 </tr>
 </tbody>
-</table></section>
-<section id="id24">
-<h3>3. 访问对象<a class="headerlink" href="#id24" title="永久链接至标题"></a></h3>
+</table></div>
+<div class="section" id="id24">
+<h3>3. 访问对象<a class="headerlink" href="#id24" title="永久链接至标题">¶</a></h3>
 <p>由于对象可能不存在，因此我们不能直接使用<code class="docutils literal notranslate"><span class="pre">weak_ptr</span></code>访问对象，必须调用<code class="docutils literal notranslate"><span class="pre">lock</span></code>函数检查指向的对象是否仍存在：</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// 初始化一个weak_ptr</span>
-<span class="k">auto</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_shared</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">42</span><span class="p">);</span><span class="w"></span>
-<span class="n">weak_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">wp</span><span class="p">(</span><span class="n">p</span><span class="p">);</span><span class="w"></span>
+<span class="k">auto</span> <span class="n">p</span> <span class="o">=</span> <span class="n">make_shared</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">42</span><span class="p">);</span>
+<span class="n">weak_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">wp</span><span class="p">(</span><span class="n">p</span><span class="p">);</span>
 
 <span class="c1">// 判断weak_ptr指向的对象是否仍存在</span>
-<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">np</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">wp</span><span class="p">.</span><span class="n">lock</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="c1">// do something</span>
-<span class="p">}</span><span class="w"></span>
+<span class="k">if</span> <span class="p">(</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">np</span> <span class="o">=</span> <span class="n">wp</span><span class="p">.</span><span class="n">lock</span><span class="p">())</span> <span class="p">{</span>
+    <span class="c1">// do something</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-</section>
-</section>
-<section id="id25">
-<h2>智能指针和哑类<a class="headerlink" href="#id25" title="永久链接至标题"></a></h2>
+</div>
+</div>
+<div class="section" id="id25">
+<h2>智能指针和哑类<a class="headerlink" href="#id25" title="永久链接至标题">¶</a></h2>
 <p>包括所有标准库在内的很多C++类都定义了析构函数，负责清理对象使用的资源。但是不是所有的类都是这么良好定义的，特别是哪些为C和C++两种语言设计的类，通常都要求用户显式地释放所使用的任何资源。</p>
 <blockquote>
 <div><p>Tips：那些分配了资源，但是又没有定义析构函数来释放这些资源的类，可能会遇到与使用动态内存相同的错误——程序员非常容易忘记释放内存。另外，如果在资源分配和释放之间发生了异常，程序也会发生资源泄漏。</p>
@@ -754,36 +846,36 @@ cout &lt;&lt; basket.back()-&gt;net_price(15) &lt;&lt; endl;
 <p>假定我们在使用一个C和C++都使用的网络库，其中<code class="docutils literal notranslate"><span class="pre">connection</span></code>没有析构函数来释放它的资源，我们可以使用<code class="docutils literal notranslate"><span class="pre">shared_ptr</span></code>来保证<code class="docutils literal notranslate"><span class="pre">connection</span></code>被正确关闭：</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cm">/*</span>
 <span class="cm"> * 未使用shared_ptr时</span>
-<span class="cm"> */</span><span class="w"></span>
-<span class="k">struct</span> <span class="nc">destination</span><span class="p">;</span><span class="w">                 </span><span class="c1">// 表示我们正在连接什么</span>
-<span class="k">struct</span> <span class="nc">connection</span><span class="p">;</span><span class="w">                  </span><span class="c1">// 使用连接所需的信息</span>
-<span class="n">connection</span><span class="w"> </span><span class="nf">connect</span><span class="p">(</span><span class="n">destination</span><span class="o">*</span><span class="p">);</span><span class="w">   </span><span class="c1">// 打开连接</span>
-<span class="kt">void</span><span class="w"> </span><span class="nf">disconnect</span><span class="p">(</span><span class="n">connection</span><span class="p">);</span><span class="w">        </span><span class="c1">// 关闭给定的连接</span>
+<span class="cm"> */</span>
+<span class="k">struct</span> <span class="nc">destination</span><span class="p">;</span>                 <span class="c1">// 表示我们正在连接什么</span>
+<span class="k">struct</span> <span class="nc">connection</span><span class="p">;</span>                  <span class="c1">// 使用连接所需的信息</span>
+<span class="n">connection</span> <span class="nf">connect</span><span class="p">(</span><span class="n">destination</span><span class="o">*</span><span class="p">);</span>   <span class="c1">// 打开连接</span>
+<span class="kt">void</span> <span class="nf">disconnect</span><span class="p">(</span><span class="n">connection</span><span class="p">);</span>        <span class="c1">// 关闭给定的连接</span>
 
-<span class="kt">void</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">destination</span><span class="w"> </span><span class="o">&amp;</span><span class="n">d</span><span class="w"> </span><span class="cm">/* 其他参数 */</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="c1">// 获得一个连接, 程序员需要保证在使用后关闭它</span>
-<span class="w">    </span><span class="n">connection</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">connect</span><span class="p">(</span><span class="o">&amp;</span><span class="n">d</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="c1">// 使用连接</span>
-<span class="w">    </span><span class="c1">// 如果我们在f退出前忘记调用disconnect, 就无法关闭c了</span>
-<span class="p">}</span><span class="w"></span>
+<span class="kt">void</span> <span class="nf">f</span><span class="p">(</span><span class="n">destination</span> <span class="o">&amp;</span><span class="n">d</span> <span class="cm">/* 其他参数 */</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// 获得一个连接, 程序员需要保证在使用后关闭它</span>
+    <span class="n">connection</span> <span class="n">c</span> <span class="o">=</span> <span class="n">connect</span><span class="p">(</span><span class="o">&amp;</span><span class="n">d</span><span class="p">);</span>
+    <span class="c1">// 使用连接</span>
+    <span class="c1">// 如果我们在f退出前忘记调用disconnect, 就无法关闭c了</span>
+<span class="p">}</span>
 
 <span class="cm">/*</span>
 <span class="cm"> * 使用shared_ptr</span>
-<span class="cm"> */</span><span class="w"></span>
+<span class="cm"> */</span>
 
 <span class="c1">// 自定义一个删除器</span>
-<span class="kt">void</span><span class="w"> </span><span class="nf">end_connection</span><span class="p">(</span><span class="n">connection</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">disconnect</span><span class="p">(</span><span class="o">*</span><span class="n">p</span><span class="p">);</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
-<span class="kt">void</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">destination</span><span class="w"> </span><span class="o">&amp;</span><span class="n">d</span><span class="w"> </span><span class="cm">/* 其他参数 */</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">connection</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">connect</span><span class="p">(</span><span class="o">&amp;</span><span class="n">d</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">connection</span><span class="o">&gt;</span><span class="w"> </span><span class="n">p</span><span class="p">(</span><span class="o">&amp;</span><span class="n">c</span><span class="p">,</span><span class="w"> </span><span class="n">end_connection</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="c1">// 使用连接</span>
-<span class="w">    </span><span class="c1">// 当f退出时(即使是因为异常而退出), connection也会被正确关闭</span>
-<span class="p">}</span><span class="w"></span>
+<span class="kt">void</span> <span class="nf">end_connection</span><span class="p">(</span><span class="n">connection</span> <span class="o">*</span><span class="n">p</span><span class="p">)</span> <span class="p">{</span> <span class="n">disconnect</span><span class="p">(</span><span class="o">*</span><span class="n">p</span><span class="p">);</span> <span class="p">}</span>
+<span class="kt">void</span> <span class="nf">f</span><span class="p">(</span><span class="n">destination</span> <span class="o">&amp;</span><span class="n">d</span> <span class="cm">/* 其他参数 */</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="n">connection</span> <span class="n">c</span> <span class="o">=</span> <span class="n">connect</span><span class="p">(</span><span class="o">&amp;</span><span class="n">d</span><span class="p">);</span>
+    <span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">connection</span><span class="o">&gt;</span> <span class="n">p</span><span class="p">(</span><span class="o">&amp;</span><span class="n">c</span><span class="p">,</span> <span class="n">end_connection</span><span class="p">);</span>
+    <span class="c1">// 使用连接</span>
+    <span class="c1">// 当f退出时(即使是因为异常而退出), connection也会被正确关闭</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-</section>
-<section id="id26">
-<h2>智能指针陷阱<a class="headerlink" href="#id26" title="永久链接至标题"></a></h2>
+</div>
+<div class="section" id="id26">
+<h2>智能指针陷阱<a class="headerlink" href="#id26" title="永久链接至标题">¶</a></h2>
 <p>智能指针可以提供对动态分配的内存安全而又方便的管理，但这建立在正确使用的前提下。为了正确使用智能指针，我们必须坚持一些基本规范：</p>
 <ul class="simple">
 <li><p>不使用相同的内置指针值初始化（或<code class="docutils literal notranslate"><span class="pre">reset</span></code>）多个智能指针</p></li>
@@ -792,9 +884,9 @@ cout &lt;&lt; basket.back()-&gt;net_price(15) &lt;&lt; endl;
 <li><p>如果你使用<code class="docutils literal notranslate"><span class="pre">get()</span></code>返回的指针，记得当最后一个对应的智能指针销毁后，你的指针就失效了</p></li>
 <li><p>如果你使用智能指针管理的资源不是<code class="docutils literal notranslate"><span class="pre">new</span></code>分配的内存，记住传递给它一个删除器</p></li>
 </ul>
-</section>
-<section id="id27">
-<h2>智能指针与动态数组<a class="headerlink" href="#id27" title="永久链接至标题"></a></h2>
+</div>
+<div class="section" id="id27">
+<h2>智能指针与动态数组<a class="headerlink" href="#id27" title="永久链接至标题">¶</a></h2>
 <p>标准库提供了一个可以管理<code class="docutils literal notranslate"><span class="pre">new</span></code>分配数组的<code class="docutils literal notranslate"><span class="pre">unique_ptr</span></code>版本，对应的操作如下：</p>
 <blockquote>
 <div><p>Tips：指向动态数组的<code class="docutils literal notranslate"><span class="pre">unique_ptr</span></code>不支持成员访问运算符（点和箭头运算符），其他<code class="docutils literal notranslate"><span class="pre">unique_ptr</span></code>操作不变。</p>
@@ -821,30 +913,30 @@ cout &lt;&lt; basket.back()-&gt;net_price(15) &lt;&lt; endl;
 </tr>
 </tbody>
 </table><div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// up指向10个未初始化的int数组, 当up销毁它管理的指针时会自动使用delete[]</span>
-<span class="n">unique_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">[]</span><span class="o">&gt;</span><span class="w"> </span><span class="n">up</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="p">[</span><span class="mi">10</span><span class="p">]);</span><span class="w"></span>
+<span class="n">unique_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">[]</span><span class="o">&gt;</span> <span class="n">up</span><span class="p">(</span><span class="k">new</span> <span class="kt">int</span><span class="p">[</span><span class="mi">10</span><span class="p">]);</span>
 
 <span class="c1">// 使用下标运算符来访问数组元素</span>
-<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">up</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">size_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">!=</span> <span class="mi">10</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">up</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">shared_ptr</span></code>不支持管理动态数组，强行管理的话必须提供自己定义的删除器：</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// 定义一个shared_ptr管理int数组, 传递一个lambda表达式作为删除器</span>
-<span class="n">shared_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">sp</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="p">[</span><span class="mi">10</span><span class="p">],</span><span class="w"> </span><span class="p">[](</span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">delete</span><span class="p">[]</span><span class="w"> </span><span class="n">p</span><span class="p">;</span><span class="w"> </span><span class="p">});</span><span class="w"></span>
+<span class="n">shared_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">sp</span><span class="p">(</span><span class="k">new</span> <span class="kt">int</span><span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="p">[](</span><span class="kt">int</span> <span class="o">*</span><span class="n">p</span><span class="p">)</span> <span class="p">{</span> <span class="k">delete</span><span class="p">[]</span> <span class="n">p</span><span class="p">;</span> <span class="p">});</span>
 
 <span class="c1">// shared_ptr未定义下标运算符, 并且不支持指针的算数运算</span>
-<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="o">*</span><span class="p">(</span><span class="n">sp</span><span class="p">.</span><span class="n">get</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">size_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">!=</span> <span class="mi">10</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+    <span class="o">*</span><span class="p">(</span><span class="n">sp</span><span class="p">.</span><span class="n">get</span><span class="p">()</span> <span class="o">+</span> <span class="n">i</span><span class="p">)</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+<span class="p">}</span>
 
 <span class="c1">// 使用lambda释放数组</span>
-<span class="n">sp</span><span class="p">.</span><span class="n">reset</span><span class="p">();</span><span class="w"></span>
+<span class="n">sp</span><span class="p">.</span><span class="n">reset</span><span class="p">();</span>
 </pre></div>
 </div>
-</section>
-<section id="newed">
-<h2>编码规范：以独立语句将newed对象置入智能指针<a class="headerlink" href="#newed" title="永久链接至标题"></a></h2>
+</div>
+<div class="section" id="newed">
+<h2>编码规范：以独立语句将newed对象置入智能指针<a class="headerlink" href="#newed" title="永久链接至标题">¶</a></h2>
 <blockquote>
 <div><p>Effective C++：Store newed objects in smart pointers in standalone statements.</p>
 <ul class="simple">
@@ -852,12 +944,12 @@ cout &lt;&lt; basket.back()-&gt;net_price(15) &lt;&lt; endl;
 </ul>
 </div></blockquote>
 <p>​	假设我们有一个函数用来揭示处理程序的优先级，另一个函数用来在某动态分配所得的Widget上进行某些带有优先权的处理：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="nf">priority</span><span class="p">();</span><span class="w">  </span><span class="c1">// 可能抛出异常</span>
-<span class="kt">void</span><span class="w"> </span><span class="nf">processWidget</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Widget</span><span class="o">&gt;</span><span class="n">pw</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">priority</span><span class="p">);</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="nf">priority</span><span class="p">();</span>  <span class="c1">// 可能抛出异常</span>
+<span class="kt">void</span> <span class="nf">processWidget</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Widget</span><span class="o">&gt;</span><span class="n">pw</span><span class="p">,</span> <span class="kt">int</span> <span class="n">priority</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>调用过程如下：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">processWidget</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Widget</span><span class="o">&gt;</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Widget</span><span class="p">),</span><span class="w"> </span><span class="n">priority</span><span class="p">());</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">processWidget</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Widget</span><span class="o">&gt;</span><span class="p">(</span><span class="k">new</span> <span class="n">Widget</span><span class="p">),</span> <span class="n">priority</span><span class="p">());</span>
 </pre></div>
 </div>
 <p>在调用<code class="docutils literal notranslate"><span class="pre">processWidget()</span></code>之前，编译器必须创建代码做如下三件事情：</p>
@@ -875,48 +967,65 @@ cout &lt;&lt; basket.back()-&gt;net_price(15) &lt;&lt; endl;
 <p>万一对priority的调用导致异常，此时<code class="docutils literal notranslate"><span class="pre">new</span> <span class="pre">Widget</span></code>返回的指针会遗失，因为它尚未被置入<code class="docutils literal notranslate"><span class="pre">std::shared_ptr&lt;Widget&gt;</span></code>内，后者是我们期盼用来防卫资源泄露的武器。在对<code class="docutils literal notranslate"><span class="pre">processWidget</span></code>的调用过程中可能发生资源泄露，因为在“资源被创建”和“资源被转换为资源管理对象”两个时间点之间可能发生异常干扰。</p>
 <p>避免这类问题办法就是使用分离语句：</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// 在单独语句内以智能指针存储newed所得对象</span>
-<span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Widget</span><span class="o">&gt;</span><span class="w"> </span><span class="n">pw</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Widget</span><span class="p">);</span><span class="w"></span>
+<span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Widget</span><span class="o">&gt;</span> <span class="n">pw</span><span class="p">(</span><span class="k">new</span> <span class="n">Widget</span><span class="p">);</span>
 <span class="c1">// 这个调用动作绝不至于造成泄露</span>
-<span class="n">processWidget</span><span class="p">(</span><span class="n">pw</span><span class="p">,</span><span class="w"> </span><span class="n">priority</span><span class="p">());</span><span class="w"></span>
+<span class="n">processWidget</span><span class="p">(</span><span class="n">pw</span><span class="p">,</span> <span class="n">priority</span><span class="p">());</span>
 </pre></div>
 </div>
-</section>
-<section id="reference">
-<h2>Reference<a class="headerlink" href="#reference" title="永久链接至标题"></a></h2>
+</div>
+<div class="section" id="reference">
+<h2>Reference<a class="headerlink" href="#reference" title="永久链接至标题">¶</a></h2>
 <p>[1] https://www.cnblogs.com/tenosdoit/p/3456704.html</p>
 <p>[2] https://zhuanlan.zhihu.com/p/54078587</p>
-</section>
-</section>
+</div>
+</div>
 
 
            </div>
+           
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="11.2%20Lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F.html" class="btn btn-neutral float-left" title="11.2 Lambda表达式" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
         <a href="11.4%20%E5%8F%B3%E5%80%BC%E5%BC%95%E7%94%A8.html" class="btn btn-neutral float-right" title="11.4 右值引用" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="11.2%20Lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F.html" class="btn btn-neutral float-left" title="11.2 Lambda表达式" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; 版权所有 2021, TOMOCAT.</p>
-  </div>
+    <p>
+        &#169; 版权所有 2021, TOMOCAT.
 
-  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    </p>
+  </div>
+    
+    
+    
+    利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
-    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
-   
+    
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发. 
 
 </footer>
         </div>
       </div>
+
     </section>
+
   </div>
-  <script>
+  
+
+  <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

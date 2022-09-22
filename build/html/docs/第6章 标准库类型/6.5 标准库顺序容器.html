@@ -1,35 +1,74 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="zh-CN" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  <meta charset="utf-8" />
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>6.5 标准库类型：顺序容器 &mdash; C++语法笔记 v1.0 文档</title>
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+  <title>6.5 标准库类型：顺序容器 &mdash; C++ Note v1.0 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script src="../../_static/translations.js"></script>
-    <script src="../../_static/js/theme.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
     <link rel="next" title="6.6 标准库类型：容器适配器" href="6.6%20%E6%A0%87%E5%87%86%E5%BA%93%E5%AE%B9%E5%99%A8%E9%80%82%E9%85%8D%E5%99%A8.html" />
     <link rel="prev" title="6.4 标准库类型：迭代器" href="6.4%20%E6%A0%87%E5%87%86%E5%BA%93%E7%B1%BB%E5%9E%8B%E8%BF%AD%E4%BB%A3%E5%99%A8.html" /> 
 </head>
 
-<body class="wy-body-for-nav"> 
+<body class="wy-body-for-nav">
+
+   
   <div class="wy-grid-for-nav">
+    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../../index.html" class="icon icon-home"> C++语法笔记
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> C++ Note
+          
+
+          
           </a>
+
+          
+            
+            
+          
+
+          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="在文档中搜索" />
@@ -37,7 +76,18 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC1%E7%AB%A0%20%E5%8F%98%E9%87%8F%E4%B8%8E%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B/index.html">第1章 变量与基本类型</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC2%E7%AB%A0%20%E8%AF%AD%E5%8F%A5/index.html">第2章 语句</a></li>
@@ -87,35 +137,77 @@
 <li class="toctree-l1"><a class="reference internal" href="../README.html">README</a></li>
 </ul>
 
+            
+          
         </div>
+        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../index.html">C++语法笔记</a>
+          <a href="../../index.html">C++ Note</a>
+        
       </nav>
 
+
       <div class="wy-nav-content">
+        
         <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
+    
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
           <li><a href="index.html">第6章 标准库类型</a> &raquo;</li>
+        
       <li>6.5 标准库类型：顺序容器</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
+        
+          
             <a href="../../_sources/docs/第6章 标准库类型/6.5 标准库顺序容器.md.txt" rel="nofollow"> 查看页面源码</a>
+          
+        
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-             
-  <section id="id1">
-<h1>6.5 标准库类型：顺序容器<a class="headerlink" href="#id1" title="永久链接至标题"></a></h1>
-<section id="id2">
-<h2>概述<a class="headerlink" href="#id2" title="永久链接至标题"></a></h2>
+            
+  <div class="section" id="id1">
+<h1>6.5 标准库类型：顺序容器<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id2">
+<h2>概述<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>除我们介绍过的string和vector这两种外，C++标准库还包含其他的顺序容器，他们在下述两种方面存在不同的性能折中：</p>
 <ul class="simple">
 <li><p>向容器添加或从容器中删除元素的代价</p></li>
@@ -154,9 +246,9 @@
 <td>和vector相似的容器，但专门用于保存字符，支持快速随机访问，在尾部插入/删除速度快</td>
 </tr>
 </tbody>
-</table></section>
-<section id="id3">
-<h2>选择顺序容器的基本原则<a class="headerlink" href="#id3" title="永久链接至标题"></a></h2>
+</table></div>
+<div class="section" id="id3">
+<h2>选择顺序容器的基本原则<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
 <li><p>除非你有很好的理由选择其他容器，否则优先用vector</p></li>
 <li><p>如果你的程序有很多小元素，且空间的额外开销很重要，那么不要使用list或者<code class="docutils literal notranslate"><span class="pre">forward_list</span></code></p></li>
@@ -169,12 +261,12 @@
 </ul>
 </li>
 </ul>
-</section>
-<section id="id4">
-<h2>容器库概览<a class="headerlink" href="#id4" title="永久链接至标题"></a></h2>
+</div>
+<div class="section" id="id4">
+<h2>容器库概览<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
 <p>以下列举所有容器（顺序容器和关联容器）都支持的操作。</p>
-<section id="id5">
-<h3>1. 容器类型别名<a class="headerlink" href="#id5" title="永久链接至标题"></a></h3>
+<div class="section" id="id5">
+<h3>1. 容器类型别名<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
 <p>通过类型别名，我们可以在不了解容器汇总元素类型的情况下使用它：</p>
 <table border="1" class="docutils">
 <thead>
@@ -221,17 +313,17 @@
 <td>元素的const左值类型，与<code>const value_type&amp;</code>含义相同</td>
 </tr>
 </tbody>
-</table></section>
-<section id="beginend">
-<h3>2. 容器的begin和end成员<a class="headerlink" href="#beginend" title="永久链接至标题"></a></h3>
+</table></div>
+<div class="section" id="beginend">
+<h3>2. 容器的begin和end成员<a class="headerlink" href="#beginend" title="永久链接至标题">¶</a></h3>
 <p>begin和end操作生成指向容器中第一个元素和尾元素之后位置的迭代器，它们包含多个版本：</p>
 <ul class="simple">
 <li><p>带<code class="docutils literal notranslate"><span class="pre">r</span></code>的版本返回反向迭代器</p></li>
 <li><p>带<code class="docutils literal notranslate"><span class="pre">c</span></code>的版本返回const迭代器</p></li>
 </ul>
-</section>
-<section id="id6">
-<h3>3. 容器定义和初始化<a class="headerlink" href="#id6" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="id6">
+<h3>3. 容器定义和初始化<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
 <p>容器定义和初始化的操作包括：</p>
 <table border="1" class="docutils">
 <thead>
@@ -273,9 +365,9 @@
 <td>array不适用</td>
 </tr>
 </tbody>
-</table></section>
-<section id="swap">
-<h3>4. 容器赋值和swap<a class="headerlink" href="#swap" title="永久链接至标题"></a></h3>
+</table></div>
+<div class="section" id="swap">
+<h3>4. 容器赋值和swap<a class="headerlink" href="#swap" title="永久链接至标题">¶</a></h3>
 <blockquote>
 <div><p>Tips：assign操作不适用于关联容器和array</p>
 </div></blockquote>
@@ -324,9 +416,9 @@
 <li><p>与其他容器不同，swap两个array会真正交换它们的元素，因此交换两个array所需的时间与array中元素的数目成正比</p></li>
 <li><p>赋值相关操作会导致左边容器内部的迭代器、引用和指针失效，而swap操作将容器内容交换不会导致指向容器的迭代器、引用和指针失效（容器类型为array和string的情况除外）</p></li>
 </ul>
-</section>
-<section id="id7">
-<h3>5. 容器大小操作<a class="headerlink" href="#id7" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="id7">
+<h3>5. 容器大小操作<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
 <table border="1" class="docutils">
 <thead>
 <tr>
@@ -352,8 +444,8 @@
 <td></td>
 </tr>
 </tbody>
-</table><section id="id8">
-<h4>6. 容器的关系运算符<a class="headerlink" href="#id8" title="永久链接至标题"></a></h4>
+</table><div class="section" id="id8">
+<h4>6. 容器的关系运算符<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h4>
 <blockquote>
 <div><p>Tips：无序关联容器不支持关系运算符。</p>
 </div></blockquote>
@@ -366,13 +458,13 @@
 <li><p>如果两个容器都不是另一个容器的前缀子序列，则它们的比较结果取决于第一个不相等元素的比较结果</p></li>
 </ul>
 </div></blockquote>
-</section>
-</section>
-</section>
-<section id="id9">
-<h2>顺序容器操作<a class="headerlink" href="#id9" title="永久链接至标题"></a></h2>
-<section id="id10">
-<h3>1. 向顺序容器添加元素<a class="headerlink" href="#id10" title="永久链接至标题"></a></h3>
+</div>
+</div>
+</div>
+<div class="section" id="id9">
+<h2>顺序容器操作<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id10">
+<h3>1. 向顺序容器添加元素<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h3>
 <blockquote>
 <div><p>Tips：除array外，所有标准库容器都提供灵活的内存管理，运行时可以动态添加或者删除元素来改变容器大小。</p>
 </div></blockquote>
@@ -429,9 +521,9 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">push_back()</span></code>会先使用构造函数构造临时对象，然后需要调用拷贝构造函数将这个临时对象放入容器中，最后释放临时对象。这样造成的问题就是临时对象申请资源的浪费。</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">emplact_back()</span></code>在容器尾部添加一个元素，不需要触发拷贝构造和转移构造</p></li>
 </ul>
-</section>
-<section id="id11">
-<h3>2. 访问元素<a class="headerlink" href="#id11" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="id11">
+<h3>2. 访问元素<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h3>
 <blockquote>
 <div><p>Tips：at和下标操作只适用于string、vector、deque和array；back不适用于<code class="docutils literal notranslate"><span class="pre">forward_list</span></code></p>
 </div></blockquote>
@@ -471,9 +563,9 @@
 <td>如果下标越界，则抛出<code>out_of_range</code>异常</td>
 </tr>
 </tbody>
-</table></section>
-<section id="id12">
-<h3>3. 删除元素<a class="headerlink" href="#id12" title="永久链接至标题"></a></h3>
+</table></div>
+<div class="section" id="id12">
+<h3>3. 删除元素<a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h3>
 <blockquote>
 <div><p>Tips：删除deque除首尾元素之外的任何元素都会使所有迭代器、引用和指针失效；指向vector或string中删除点之后位置的迭代器、引用和指针都会失效。</p>
 </div></blockquote>
@@ -518,9 +610,9 @@
 <td></td>
 </tr>
 </tbody>
-</table></section>
-<section id="id13">
-<h3>4. 改变容器大小<a class="headerlink" href="#id13" title="永久链接至标题"></a></h3>
+</table></div>
+<div class="section" id="id13">
+<h3>4. 改变容器大小<a class="headerlink" href="#id13" title="永久链接至标题">¶</a></h3>
 <blockquote>
 <div><p>Tips：如果resize缩小元素，那么指向被删除元素的迭代器、引用和指针都会失效；对vector、string或者deque进行resize可能导致迭代器、指针和引用失效。</p>
 </div></blockquote>
@@ -544,9 +636,9 @@
 <td>不适用于array</td>
 </tr>
 </tbody>
-</table></section>
-<section id="id14">
-<h3>5. 容器操作可能使得迭代器失效<a class="headerlink" href="#id14" title="永久链接至标题"></a></h3>
+</table></div>
+<div class="section" id="id14">
+<h3>5. 容器操作可能使得迭代器失效<a class="headerlink" href="#id14" title="永久链接至标题">¶</a></h3>
 <p>向容器中添加元素和从容器中删除元素的操作可能使得指向容器元素的指针、引用或者迭代器失效。</p>
 <blockquote>
 <div><p>Tips：使用失效的指针、引用或者迭代器是一种严重的程序设计错误，很可能引用与使用未初始化指针一样的问题。</p>
@@ -579,10 +671,10 @@
 </li>
 <li><p>vector和string：指向被删元素之前元素的迭代器、引用和指针仍然有效</p></li>
 </ul>
-</section>
-</section>
-<section id="forward-list">
-<h2>特殊的forward_list操作<a class="headerlink" href="#forward-list" title="永久链接至标题"></a></h2>
+</div>
+</div>
+<div class="section" id="forward-list">
+<h2>特殊的forward_list操作<a class="headerlink" href="#forward-list" title="永久链接至标题">¶</a></h2>
 <p>从一个单向链表中添加或删除元素时，还会改变其前一个元素指向的下一个元素。由于这些操作与其他容器上的操作实现方式不同，因此<code class="docutils literal notranslate"><span class="pre">forward_list</span></code>并未定义<code class="docutils literal notranslate"><span class="pre">insert</span></code>、<code class="docutils literal notranslate"><span class="pre">emplace</span></code>和<code class="docutils literal notranslate"><span class="pre">erase</span></code>，而是定义了名为<code class="docutils literal notranslate"><span class="pre">insert_after</span></code>、<code class="docutils literal notranslate"><span class="pre">emplace_after</span></code>和<code class="docutils literal notranslate"><span class="pre">erase_after</span></code>的操作。&gt; Tips：为了支持这些操作，<code class="docutils literal notranslate"><span class="pre">forward_list</span></code>定义了<code class="docutils literal notranslate"><span class="pre">before_begin</span></code>首前迭代器。</p>
 <table border="1" class="docutils">
 <thead>
@@ -614,38 +706,55 @@
 <td>返回一个指向被删元素之后的迭代器，若不存在这样的元素则返回尾后迭代器，如果p指向lst的尾元素或者一个尾后迭代器则函数行为未定义</td>
 </tr>
 </tbody>
-</table></section>
-</section>
+</table></div>
+</div>
 
 
            </div>
+           
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="6.4%20%E6%A0%87%E5%87%86%E5%BA%93%E7%B1%BB%E5%9E%8B%E8%BF%AD%E4%BB%A3%E5%99%A8.html" class="btn btn-neutral float-left" title="6.4 标准库类型：迭代器" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
         <a href="6.6%20%E6%A0%87%E5%87%86%E5%BA%93%E5%AE%B9%E5%99%A8%E9%80%82%E9%85%8D%E5%99%A8.html" class="btn btn-neutral float-right" title="6.6 标准库类型：容器适配器" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="6.4%20%E6%A0%87%E5%87%86%E5%BA%93%E7%B1%BB%E5%9E%8B%E8%BF%AD%E4%BB%A3%E5%99%A8.html" class="btn btn-neutral float-left" title="6.4 标准库类型：迭代器" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; 版权所有 2021, TOMOCAT.</p>
-  </div>
+    <p>
+        &#169; 版权所有 2021, TOMOCAT.
 
-  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    </p>
+  </div>
+    
+    
+    
+    利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
-    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
-   
+    
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发. 
 
 </footer>
         </div>
       </div>
+
     </section>
+
   </div>
-  <script>
+  
+
+  <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

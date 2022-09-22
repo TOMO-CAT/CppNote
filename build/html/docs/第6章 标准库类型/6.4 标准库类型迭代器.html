@@ -1,35 +1,74 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="zh-CN" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  <meta charset="utf-8" />
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>6.4 标准库类型：迭代器 &mdash; C++语法笔记 v1.0 文档</title>
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+  <title>6.4 标准库类型：迭代器 &mdash; C++ Note v1.0 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script src="../../_static/translations.js"></script>
-    <script src="../../_static/js/theme.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
     <link rel="next" title="6.5 标准库类型：顺序容器" href="6.5%20%E6%A0%87%E5%87%86%E5%BA%93%E9%A1%BA%E5%BA%8F%E5%AE%B9%E5%99%A8.html" />
     <link rel="prev" title="6.3 标准库类型：IO库" href="6.3%20%E6%A0%87%E5%87%86%E5%BA%93%E7%B1%BB%E5%9E%8BIO%E7%B1%BB.html" /> 
 </head>
 
-<body class="wy-body-for-nav"> 
+<body class="wy-body-for-nav">
+
+   
   <div class="wy-grid-for-nav">
+    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../../index.html" class="icon icon-home"> C++语法笔记
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> C++ Note
+          
+
+          
           </a>
+
+          
+            
+            
+          
+
+          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="在文档中搜索" />
@@ -37,7 +76,18 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC1%E7%AB%A0%20%E5%8F%98%E9%87%8F%E4%B8%8E%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B/index.html">第1章 变量与基本类型</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC2%E7%AB%A0%20%E8%AF%AD%E5%8F%A5/index.html">第2章 语句</a></li>
@@ -83,65 +133,107 @@
 <li class="toctree-l1"><a class="reference internal" href="../README.html">README</a></li>
 </ul>
 
+            
+          
         </div>
+        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../index.html">C++语法笔记</a>
+          <a href="../../index.html">C++ Note</a>
+        
       </nav>
 
+
       <div class="wy-nav-content">
+        
         <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
+    
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
           <li><a href="index.html">第6章 标准库类型</a> &raquo;</li>
+        
       <li>6.4 标准库类型：迭代器</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
+        
+          
             <a href="../../_sources/docs/第6章 标准库类型/6.4 标准库类型迭代器.md.txt" rel="nofollow"> 查看页面源码</a>
+          
+        
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-             
-  <section id="id1">
-<h1>6.4 标准库类型：迭代器<a class="headerlink" href="#id1" title="永久链接至标题"></a></h1>
-<section id="id2">
-<h2>简介<a class="headerlink" href="#id2" title="永久链接至标题"></a></h2>
+            
+  <div class="section" id="id1">
+<h1>6.4 标准库类型：迭代器<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id2">
+<h2>简介<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>所有标准库类型都可以使用迭代器，但是其中只有少数几种才同时支持下标运算符，有迭代器的类型都拥有<code class="docutils literal notranslate"><span class="pre">begin()</span></code>和<code class="docutils literal notranslate"><span class="pre">end()</span></code>的成员函数：</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cm">/*</span>
 <span class="cm"> * b和e类型相同</span>
 <span class="cm"> * 1) b: 表示v的第一个元素</span>
 <span class="cm"> * 2) e: 尾后迭代器, 表示尾元素的下一个位置</span>
-<span class="cm"> */</span><span class="w"></span>
-<span class="k">auto</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v</span><span class="p">.</span><span class="n">end</span><span class="p">();</span><span class="w"></span>
+<span class="cm"> */</span>
+<span class="k">auto</span> <span class="n">b</span> <span class="o">=</span> <span class="n">v</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">e</span> <span class="o">=</span> <span class="n">v</span><span class="p">.</span><span class="n">end</span><span class="p">();</span>
 </pre></div>
 </div>
 <blockquote>
 <div><p>Tips：如果容器为空，那么<code class="docutils literal notranslate"><span class="pre">begin()</span></code>和<code class="docutils literal notranslate"><span class="pre">end()</span></code>返回的都是尾后迭代器。</p>
 </div></blockquote>
-</section>
-<section id="id3">
-<h2>迭代器类型<a class="headerlink" href="#id3" title="永久链接至标题"></a></h2>
+</div>
+<div class="section" id="id3">
+<h2>迭代器类型<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <p>就像不知道string或vector的<code class="docutils literal notranslate"><span class="pre">size_type</span></code>成员到底是什么类型一样，一般情况下我们也不知道（其实是无须知道）迭代器的精确类型。拥有迭代器的标准库类型使用<code class="docutils literal notranslate"><span class="pre">iterator</span></code>和<code class="docutils literal notranslate"><span class="pre">const_iterator</span></code>来表示迭代器类型：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cm">/* 可读写元素的迭代器 */</span><span class="w"></span>
-<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;::</span><span class="n">iterator</span><span class="w"> </span><span class="n">it1</span><span class="p">;</span><span class="w"></span>
-<span class="n">string</span><span class="o">::</span><span class="n">iterator</span><span class="w"> </span><span class="n">it2</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cm">/* 可读写元素的迭代器 */</span>
+<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;::</span><span class="n">iterator</span> <span class="n">it1</span><span class="p">;</span>
+<span class="n">string</span><span class="o">::</span><span class="n">iterator</span> <span class="n">it2</span><span class="p">;</span>
 
-<span class="cm">/* 只能读而不能写的迭代器 */</span><span class="w"></span>
-<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;::</span><span class="n">const_iterator</span><span class="w"> </span><span class="n">it3</span><span class="p">;</span><span class="w"></span>
-<span class="n">string</span><span class="o">::</span><span class="n">const_iterator</span><span class="w"> </span><span class="n">it4</span><span class="p">;</span><span class="w"></span>
+<span class="cm">/* 只能读而不能写的迭代器 */</span>
+<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;::</span><span class="n">const_iterator</span> <span class="n">it3</span><span class="p">;</span>
+<span class="n">string</span><span class="o">::</span><span class="n">const_iterator</span> <span class="n">it4</span><span class="p">;</span>
 </pre></div>
 </div>
-</section>
-<section id="id4">
-<h2>迭代器运算符<a class="headerlink" href="#id4" title="永久链接至标题"></a></h2>
-<section id="id5">
-<h3>1. 普通运算符<a class="headerlink" href="#id5" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="id4">
+<h2>迭代器运算符<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id5">
+<h3>1. 普通运算符<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
 <blockquote>
 <div><p>Tips：因为<code class="docutils literal notranslate"><span class="pre">end()</span></code>返回的迭代器类并不实际指向某个元素，所以不能对其进行递增或者解引用的操作。</p>
 </div></blockquote>
@@ -153,19 +245,19 @@
 <span class="n">iter1</span> <span class="o">!=</span> <span class="n">iter2</span>
 </pre></div>
 </div>
-</section>
-<section id="beginend">
-<h3>2. begin和end运算符<a class="headerlink" href="#beginend" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="beginend">
+<h3>2. begin和end运算符<a class="headerlink" href="#beginend" title="永久链接至标题">¶</a></h3>
 <p>前面我们提到迭代器有<code class="docutils literal notranslate"><span class="pre">begin</span></code>和<code class="docutils literal notranslate"><span class="pre">end</span></code>运算符，它们返回的具体类型取决于对象是否是常量。如果对象是常量，那么<code class="docutils literal notranslate"><span class="pre">begin</span></code>和<code class="docutils literal notranslate"><span class="pre">end</span></code>返回<code class="docutils literal notranslate"><span class="pre">const_iterator</span></code>，否则返回<code class="docutils literal notranslate"><span class="pre">iterator</span></code>。</p>
 <p>有时候这种默认的行为并非我们想要，如果对象只需读操作而无需写操作时最好使用常量类型，C++11新标准引入了两个新函数用于返回<code class="docutils literal notranslate"><span class="pre">const_iterator</span></code>：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">vi</span><span class="p">;</span><span class="w"></span>
-<span class="k">auto</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vi</span><span class="p">.</span><span class="n">cbegin</span><span class="p">();</span><span class="w">  </span><span class="c1">// it的类型是vector&lt;int&gt;::const_iterator</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">vi</span><span class="p">;</span>
+<span class="k">auto</span> <span class="n">it</span> <span class="o">=</span> <span class="n">vi</span><span class="p">.</span><span class="n">cbegin</span><span class="p">();</span>  <span class="c1">// it的类型是vector&lt;int&gt;::const_iterator</span>
 </pre></div>
 </div>
-</section>
-</section>
-<section id="id6">
-<h2>迭代器运算<a class="headerlink" href="#id6" title="永久链接至标题"></a></h2>
+</div>
+</div>
+<div class="section" id="id6">
+<h2>迭代器运算<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>// 迭代器加上(减去)一个整数仍得到一个迭代器, 指向的新位置与原来相比向前(向后)移动了n个位置, 结果迭代器指向容器内的一个元素或者尾后元素
 iter + n
 iter - n
@@ -180,9 +272,9 @@ iter1 - iter2
 &gt;、&gt;=、&lt;、&lt;=
 </pre></div>
 </div>
-</section>
-<section id="id7">
-<h2>再探迭代器类型<a class="headerlink" href="#id7" title="永久链接至标题"></a></h2>
+</div>
+<div class="section" id="id7">
+<h2>再探迭代器类型<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
 <p>除了前面提到的为每个容器定义的迭代器之外，标准库还在头文件<code class="docutils literal notranslate"><span class="pre">iterator</span></code>中定义了额外几种迭代器：</p>
 <ul class="simple">
 <li><p>插入迭代器：这些迭代器被绑定到一个容器上，可以用来向容器插入元素</p></li>
@@ -190,8 +282,8 @@ iter1 - iter2
 <li><p>反向迭代器：这些迭代器向后而不是向前移动，除了<code class="docutils literal notranslate"><span class="pre">forward_list</span></code>之外的标准库容器都有反向迭代器</p></li>
 <li><p>移动迭代器：这些专用的迭代器不是拷贝其中的元素，而是移动它们</p></li>
 </ul>
-<section id="id8">
-<h3>1. 插入迭代器<a class="headerlink" href="#id8" title="永久链接至标题"></a></h3>
+<div class="section" id="id8">
+<h3>1. 插入迭代器<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
 <p>插入迭代器是一种“迭代器适配器”，它接受一个容器生成一个迭代器，能实现向给定容器添加元素。支持的操作如下：</p>
 <table border="1" class="docutils">
 <thead>
@@ -219,24 +311,24 @@ iter1 - iter2
 <li><p><code class="docutils literal notranslate"><span class="pre">front_inserter</span></code>：创建一个使用<code class="docutils literal notranslate"><span class="pre">push_front</span></code>的迭代器</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">inserter</span></code>：创建一个使用<code class="docutils literal notranslate"><span class="pre">inserter</span></code>的迭代器，此函数接受第二个参数（指向给定容器的迭代器），元素将被插入到给定迭代器所表示的元素之前</p></li>
 </ul>
-</section>
-<section id="iostream">
-<h3>2. iostream迭代器<a class="headerlink" href="#iostream" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="iostream">
+<h3>2. iostream迭代器<a class="headerlink" href="#iostream" title="永久链接至标题">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">istream_iterator</span></code>读取输入流，<code class="docutils literal notranslate"><span class="pre">ostream_iterator</span></code>向一个输出流写入数据，这些迭代器将它们对应的流当做一个特定类型的元素序列来处理。通过使用流迭代器，我们可以使用泛型算法从流对象读取数据以及向其写入数据。</p>
-<section id="istram-iterator">
-<h4>2.1 istram_iterator操作<a class="headerlink" href="#istram-iterator" title="永久链接至标题"></a></h4>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">istream_iterator</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">in_iter</span><span class="p">(</span><span class="n">cin</span><span class="p">);</span><span class="w">  </span><span class="c1">// 从cin读取int</span>
-<span class="n">istream_iterator</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">eof</span><span class="p">;</span><span class="w">           </span><span class="c1">// istream尾后迭代器</span>
-<span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">in_iter</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">eof</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="c1">// 后置递增运算读取流, 返回迭代器的旧值</span>
-<span class="w">    </span><span class="c1">// 解引用迭代器, 获得从流读取的前一个值</span>
-<span class="w">    </span><span class="n">vec</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="o">*</span><span class="n">in_iter</span><span class="o">++</span><span class="p">);</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="section" id="istram-iterator">
+<h4>2.1 istram_iterator操作<a class="headerlink" href="#istram-iterator" title="永久链接至标题">¶</a></h4>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">istream_iterator</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">in_iter</span><span class="p">(</span><span class="n">cin</span><span class="p">);</span>  <span class="c1">// 从cin读取int</span>
+<span class="n">istream_iterator</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">eof</span><span class="p">;</span>           <span class="c1">// istream尾后迭代器</span>
+<span class="k">while</span> <span class="p">(</span><span class="n">in_iter</span> <span class="o">!=</span> <span class="n">eof</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// 后置递增运算读取流, 返回迭代器的旧值</span>
+    <span class="c1">// 解引用迭代器, 获得从流读取的前一个值</span>
+    <span class="n">vec</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="o">*</span><span class="n">in_iter</span><span class="o">++</span><span class="p">);</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>我们可以将程序重写为如下形式，它体现了<code class="docutils literal notranslate"><span class="pre">istream_iterator</span></code>更有用的地方：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">istream_iterator</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">in_iter</span><span class="p">(</span><span class="n">cin</span><span class="p">),</span><span class="w"> </span><span class="n">eof</span><span class="p">;</span><span class="w"></span>
-<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">vec</span><span class="p">(</span><span class="n">in_iter</span><span class="p">,</span><span class="w"> </span><span class="n">eof</span><span class="p">);</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">istream_iterator</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">in_iter</span><span class="p">(</span><span class="n">cin</span><span class="p">),</span> <span class="n">eof</span><span class="p">;</span>
+<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">vec</span><span class="p">(</span><span class="n">in_iter</span><span class="p">,</span> <span class="n">eof</span><span class="p">);</span>
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">istream_iterator</span></code>提供的操作如下：</p>
@@ -269,9 +361,9 @@ iter1 - iter2
 <td>使用元素类型定义的<code>&gt;&gt;</code>运算符从输入流中读取下一个值，前置版本返回一个指向递增后迭代器的引用，后置版本返回旧值</td>
 </tr>
 </tbody>
-</table></section>
-<section id="ostream-iterator">
-<h4>2.2 ostream_iterator<a class="headerlink" href="#ostream-iterator" title="永久链接至标题"></a></h4>
+</table></div>
+<div class="section" id="ostream-iterator">
+<h4>2.2 ostream_iterator<a class="headerlink" href="#ostream-iterator" title="永久链接至标题">¶</a></h4>
 <p>我们可以对任何具有输出运算符（<code class="docutils literal notranslate"><span class="pre">&lt;&lt;</span></code>运算符）的类型定义<code class="docutils literal notranslate"><span class="pre">ostream_iterator</span></code>。当创建一个<code class="docutils literal notranslate"><span class="pre">ostream_iterator</span></code>时，我们可以提供（可选的）第二参数，它是一个C风格字符串，在输出每个元素后都会打印此字符串。</p>
 <table border="1" class="docutils">
 <thead>
@@ -298,96 +390,113 @@ iter1 - iter2
 <td>这些运算符是存在的，但是不会对<code>out</code>做任何事情，每个运算符都返回<code>out</code></td>
 </tr>
 </tbody>
-</table></section>
-</section>
-<section id="id9">
-<h3>3. 反向迭代器<a class="headerlink" href="#id9" title="永久链接至标题"></a></h3>
+</table></div>
+</div>
+<div class="section" id="id9">
+<h3>3. 反向迭代器<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h3>
 <p>反向迭代器就是在容器中从尾元素向首元素反向移动，递增一个反向迭代器<code class="docutils literal notranslate"><span class="pre">++it</span></code>会移动到前一个元素，递减一个迭代器<code class="docutils literal notranslate"><span class="pre">--it</span></code>会移动到下一个元素。</p>
 <blockquote>
 <div><p>Tips：除了<code class="docutils literal notranslate"><span class="pre">forward_list</span></code>外，其他容器都支持反向迭代器。</p>
 </div></blockquote>
 <p>反向迭代器可以使得我们用算法透明地向前或者向后处理容器，比如向<code class="docutils literal notranslate"><span class="pre">sort</span></code>传递一对反向迭代器将<code class="docutils literal notranslate"><span class="pre">vector</span></code>降序：</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// 升序</span>
-<span class="n">sort</span><span class="p">(</span><span class="n">vec</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">vec</span><span class="p">.</span><span class="n">end</span><span class="p">());</span><span class="w"> </span>
+<span class="n">sort</span><span class="p">(</span><span class="n">vec</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">vec</span><span class="p">.</span><span class="n">end</span><span class="p">());</span> 
 
 <span class="c1">// 降序</span>
-<span class="n">sort</span><span class="p">(</span><span class="n">vec</span><span class="p">.</span><span class="n">rbegin</span><span class="p">(),</span><span class="w"> </span><span class="n">vec</span><span class="p">.</span><span class="n">rend</span><span class="p">());</span><span class="w"></span>
+<span class="n">sort</span><span class="p">(</span><span class="n">vec</span><span class="p">.</span><span class="n">rbegin</span><span class="p">(),</span> <span class="n">vec</span><span class="p">.</span><span class="n">rend</span><span class="p">());</span>
 </pre></div>
 </div>
 <p>我们可以通过<code class="docutils literal notranslate"><span class="pre">reverse_iterator</span></code>的<code class="docutils literal notranslate"><span class="pre">base</span></code>成员函数将其转换为一个普通迭代器，但是他们指向的不是同一元素了。举个例子，我们需要在一个逗号分隔的<code class="docutils literal notranslate"><span class="pre">string</span></code>中打印最后一个元素：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">string</span><span class="w"> </span><span class="n">line</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;FIRST, MIDDLE, LAST&quot;</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">string</span> <span class="n">line</span> <span class="o">=</span> <span class="s">&quot;FIRST, MIDDLE, LAST&quot;</span><span class="p">;</span>
 
 <span class="c1">// rcomma会指向line中最后一个逗号，如何找不到则指向line.crend()</span>
-<span class="k">auto</span><span class="w"> </span><span class="n">rcomma</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">find</span><span class="p">(</span><span class="n">line</span><span class="p">.</span><span class="n">crbegin</span><span class="p">(),</span><span class="w"> </span><span class="n">line</span><span class="p">.</span><span class="n">crend</span><span class="p">(),</span><span class="w"> </span><span class="sc">&#39;,&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="k">auto</span> <span class="n">rcomma</span> <span class="o">=</span> <span class="n">find</span><span class="p">(</span><span class="n">line</span><span class="p">.</span><span class="n">crbegin</span><span class="p">(),</span> <span class="n">line</span><span class="p">.</span><span class="n">crend</span><span class="p">(),</span> <span class="sc">&#39;,&#39;</span><span class="p">);</span>
 
 <span class="c1">// 如果我们要打印这个单词, 那么会反向输出TSAL，因为反向迭代器会反向遍历line</span>
-<span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">string</span><span class="p">(</span><span class="n">line</span><span class="p">.</span><span class="n">crbegin</span><span class="p">(),</span><span class="w"> </span><span class="n">rcomma</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">string</span><span class="p">(</span><span class="n">line</span><span class="p">.</span><span class="n">crbegin</span><span class="p">(),</span> <span class="n">rcomma</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
 
 <span class="c1">// 我们将rcomma转化为普通迭代器以便在line中正向移动</span>
-<span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">string</span><span class="p">(</span><span class="n">rcomma</span><span class="p">.</span><span class="n">base</span><span class="p">(),</span><span class="w"> </span><span class="n">line</span><span class="p">.</span><span class="n">cend</span><span class="p">())</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">string</span><span class="p">(</span><span class="n">rcomma</span><span class="p">.</span><span class="n">base</span><span class="p">(),</span> <span class="n">line</span><span class="p">.</span><span class="n">cend</span><span class="p">())</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
 </pre></div>
 </div>
 <blockquote>
 <div><p>需要注意的是<code class="docutils literal notranslate"><span class="pre">[line.crbegin(),</span> <span class="pre">rcomma)</span></code>和<code class="docutils literal notranslate"><span class="pre">rcomma.base(),</span> <span class="pre">line.cend()</span></code>指向的是同一个元素范围。因此<code class="docutils literal notranslate"><span class="pre">rcomma</span></code>和<code class="docutils literal notranslate"><span class="pre">rcomma.base()</span></code>必须指向相邻的位置而非同一个位置，<code class="docutils literal notranslate"><span class="pre">crbegin()</span></code>和<code class="docutils literal notranslate"><span class="pre">cend()</span></code>也是相邻位置。</p>
 </div></blockquote>
 <p><img alt="反向迭代器" src="../../_images/1.jpg" /></p>
-</section>
-<section id="id10">
-<h3>4. 移动迭代器<a class="headerlink" href="#id10" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="id10">
+<h3>4. 移动迭代器<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h3>
 <p>新标准库定义了一种移动迭代器<code class="docutils literal notranslate"><span class="pre">move</span> <span class="pre">iterator</span></code>适配器，一个移动迭代器通过改变迭代器的解引用运算符来适配此迭代器。一般来说，一个迭代器的解引用运算符返回一个指向元素的左值，移动迭代器的解引用运算符生成一个右值引用。</p>
 <blockquote>
 <div><p>TIps：下例中<code class="docutils literal notranslate"><span class="pre">uninitialized_copy</span></code>对输入序列中每个元素调用<code class="docutils literal notranslate"><span class="pre">construct</span></code>来讲元素“拷贝”到目的位置，此算法使用迭代器的解引用运算符从输入序列中提取元素。由于我们传递给它的是移动迭代器，因此解引用运算符生成的是一个右值引用，这意味着<code class="docutils literal notranslate"><span class="pre">construct</span></code>将使用移动构造函数来构造元素。</p>
 </div></blockquote>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">StrVec::reallocate</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="c1">// 分配大小两倍于当前规模的内存空间</span>
-<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">newcapacity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">size</span><span class="p">()</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">size</span><span class="p">()</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">first</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">alloc</span><span class="p">.</span><span class="n">allocate</span><span class="p">(</span><span class="n">newcapacity</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="c1">// 移动元素</span>
-<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">last</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">uninitialized_copy</span><span class="p">(</span><span class="n">make_move_iterator</span><span class="p">(</span><span class="n">begin</span><span class="p">()),</span><span class="w"></span>
-<span class="w">                                  </span><span class="n">make_move_iterator</span><span class="p">(</span><span class="n">end</span><span class="p">()),</span><span class="w"></span>
-<span class="w">                                  </span><span class="n">first</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="c1">// 释放旧空间</span>
-<span class="w">    </span><span class="n">free</span><span class="p">();</span><span class="w"></span>
-<span class="w">    </span><span class="c1">// 更新指针</span>
-<span class="w">    </span><span class="n">element</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">first</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="n">first_free</span><span class="o">=</span><span class="w"> </span><span class="n">last</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="n">cap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">elements</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">newcapacity</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">StrVec::reallocate</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// 分配大小两倍于当前规模的内存空间</span>
+    <span class="k">auto</span> <span class="n">newcapacity</span> <span class="o">=</span> <span class="n">size</span><span class="p">()</span> <span class="o">?</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">size</span><span class="p">()</span> <span class="o">:</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">auto</span> <span class="n">first</span> <span class="o">=</span> <span class="n">alloc</span><span class="p">.</span><span class="n">allocate</span><span class="p">(</span><span class="n">newcapacity</span><span class="p">);</span>
+    <span class="c1">// 移动元素</span>
+    <span class="k">auto</span> <span class="n">last</span> <span class="o">=</span> <span class="n">uninitialized_copy</span><span class="p">(</span><span class="n">make_move_iterator</span><span class="p">(</span><span class="n">begin</span><span class="p">()),</span>
+                                  <span class="n">make_move_iterator</span><span class="p">(</span><span class="n">end</span><span class="p">()),</span>
+                                  <span class="n">first</span><span class="p">);</span>
+    <span class="c1">// 释放旧空间</span>
+    <span class="n">free</span><span class="p">();</span>
+    <span class="c1">// 更新指针</span>
+    <span class="n">element</span> <span class="o">=</span> <span class="n">first</span><span class="p">;</span>
+    <span class="n">first_free</span><span class="o">=</span> <span class="n">last</span><span class="p">;</span>
+    <span class="n">cap</span> <span class="o">=</span> <span class="n">elements</span> <span class="o">+</span> <span class="n">newcapacity</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
            </div>
+           
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="6.3%20%E6%A0%87%E5%87%86%E5%BA%93%E7%B1%BB%E5%9E%8BIO%E7%B1%BB.html" class="btn btn-neutral float-left" title="6.3 标准库类型：IO库" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
         <a href="6.5%20%E6%A0%87%E5%87%86%E5%BA%93%E9%A1%BA%E5%BA%8F%E5%AE%B9%E5%99%A8.html" class="btn btn-neutral float-right" title="6.5 标准库类型：顺序容器" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="6.3%20%E6%A0%87%E5%87%86%E5%BA%93%E7%B1%BB%E5%9E%8BIO%E7%B1%BB.html" class="btn btn-neutral float-left" title="6.3 标准库类型：IO库" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; 版权所有 2021, TOMOCAT.</p>
-  </div>
+    <p>
+        &#169; 版权所有 2021, TOMOCAT.
 
-  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    </p>
+  </div>
+    
+    
+    
+    利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
-    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
-   
+    
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发. 
 
 </footer>
         </div>
       </div>
+
     </section>
+
   </div>
-  <script>
+  
+
+  <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

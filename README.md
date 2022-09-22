@@ -2,11 +2,26 @@
 
 ## 说明
 
-ReadTheDocs电子书链接：
+ReadTheDocs 电子书链接：
 > https://cpp-note.readthedocs.io/zh/latest/
 
 网络不好的同学可以看下面的语雀链接（尽量同步更新）：
-> 
+> https://www.yuque.com/tomocat/txc11h/atgr07
+
+或者 gitee 仓库：
+> https://gitee.com/tomocat/CppNote
+
+## 搭建电子书方法
+
+```bash
+# optional: 安装 Sphinx
+# $pip install -i https://pypi.tuna.tsinghua.edu.cn/simple sphinx
+
+# 安装第三方库
+$pip install -r requirements.txt
+
+$make html
+```
 
 ## 参考书籍
 
@@ -36,7 +51,7 @@ ReadTheDocs电子书链接：
 
 #### 4. 自完善性
 
-当你在查看本文档时，可能会发现有部分重复的内容，比方说map初始化这个知识点同时涉及初始化和关联容器map，那么它就会同时出现在两个地方，保证每篇独立文档的自完善性。
+当你在查看本文档时，可能会发现有部分重复的内容，比方说 map 初始化这个知识点同时涉及初始化和关联容器 map，那么它就会同时出现在两个地方，保证每篇独立文档的自完善性。
 
 #### 5. 专题梳理
 

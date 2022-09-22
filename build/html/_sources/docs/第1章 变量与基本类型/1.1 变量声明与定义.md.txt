@@ -279,13 +279,6 @@ const int *pi1 = nullptr;      // 底层const: pi1是指向整型常量的普通
 constexpr int *pi2 = nullptr;  // 顶层const: pi2是指向整型的常量指针
 ```
 
-我们也可以让`constexpr`指针指向常量：
-
-```c++
-constexpr int i = 10;
-constexpr const int *pi = &i;  // 顶层const + 底层const 
-```
-
 ## Reference
 
 [1] https://www.cnblogs.com/lca1826/p/6503194.html

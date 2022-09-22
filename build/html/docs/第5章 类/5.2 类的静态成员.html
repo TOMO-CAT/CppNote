@@ -1,35 +1,74 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="zh-CN" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  <meta charset="utf-8" />
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>5.2 类的静态成员 &mdash; C++语法笔记 v1.0 文档</title>
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+  <title>5.2 类的静态成员 &mdash; C++ Note v1.0 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script src="../../_static/translations.js"></script>
-    <script src="../../_static/js/theme.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
     <link rel="next" title="5.3 类的访问控制" href="5.3%20%E7%B1%BB%E7%9A%84%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6.html" />
     <link rel="prev" title="5.1 类的成员" href="5.1%20%E7%B1%BB%E7%9A%84%E6%88%90%E5%91%98.html" /> 
 </head>
 
-<body class="wy-body-for-nav"> 
+<body class="wy-body-for-nav">
+
+   
   <div class="wy-grid-for-nav">
+    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../../index.html" class="icon icon-home"> C++语法笔记
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> C++ Note
+          
+
+          
           </a>
+
+          
+            
+            
+          
+
+          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="在文档中搜索" />
@@ -37,7 +76,18 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC1%E7%AB%A0%20%E5%8F%98%E9%87%8F%E4%B8%8E%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B/index.html">第1章 变量与基本类型</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC2%E7%AB%A0%20%E8%AF%AD%E5%8F%A5/index.html">第2章 语句</a></li>
@@ -85,159 +135,218 @@
 <li class="toctree-l1"><a class="reference internal" href="../README.html">README</a></li>
 </ul>
 
+            
+          
         </div>
+        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../index.html">C++语法笔记</a>
+          <a href="../../index.html">C++ Note</a>
+        
       </nav>
 
+
       <div class="wy-nav-content">
+        
         <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
+    
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
           <li><a href="index.html">第5章类</a> &raquo;</li>
+        
       <li>5.2 类的静态成员</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
+        
+          
             <a href="../../_sources/docs/第5章 类/5.2 类的静态成员.md.txt" rel="nofollow"> 查看页面源码</a>
+          
+        
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-             
-  <section id="id1">
-<h1>5.2 类的静态成员<a class="headerlink" href="#id1" title="永久链接至标题"></a></h1>
-<section id="id2">
-<h2>简介<a class="headerlink" href="#id2" title="永久链接至标题"></a></h2>
+            
+  <div class="section" id="id1">
+<h1>5.2 类的静态成员<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id2">
+<h2>简介<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>有的时候类需要它的一些成员与类本身直接相关，而不是与类的各个对象保持关联。</p>
-</section>
-<section id="id3">
-<h2>声明静态成员<a class="headerlink" href="#id3" title="永久链接至标题"></a></h2>
+</div>
+<div class="section" id="id3">
+<h2>声明静态成员<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <p>我们可以在成员的声明之前加上关键字<code class="docutils literal notranslate"><span class="pre">static</span></code>使得其与类关联在一起，静态成员可以是<code class="docutils literal notranslate"><span class="pre">public</span></code>或者<code class="docutils literal notranslate"><span class="pre">private</span></code>的，它的类型可以是常量、引用、指针或者类类型等。</p>
 <blockquote>
 <div><p>Tips：静态成员函数不与任何对象绑定在一起，因此它们不包含<code class="docutils literal notranslate"><span class="pre">this</span></code>指针，也不能声明成<code class="docutils literal notranslate"><span class="pre">const</span></code>的。</p>
 </div></blockquote>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Account</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="k">public</span><span class="o">:</span><span class="w"></span>
-<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">Calculate</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">amount</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">amount</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">interestRate</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">rate</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">interestRate</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">rate</span><span class="p">(</span><span class="kt">double</span><span class="p">);</span><span class="w"></span>
-<span class="k">private</span><span class="o">:</span><span class="w"></span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">owner</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">amount</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="c1">// interestRate对象被所有的Account对象共享</span>
-<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">interestRate</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">initRate</span><span class="p">();</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Account</span> <span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="kt">void</span> <span class="n">Calculate</span><span class="p">()</span> <span class="p">{</span> <span class="n">amount</span> <span class="o">+=</span> <span class="n">amount</span> <span class="o">*</span> <span class="n">interestRate</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">static</span> <span class="kt">double</span> <span class="n">rate</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="n">interestRate</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">static</span> <span class="kt">void</span> <span class="n">rate</span><span class="p">(</span><span class="kt">double</span><span class="p">);</span>
+<span class="k">private</span><span class="o">:</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">owner</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">amount</span><span class="p">;</span>
+    <span class="c1">// interestRate对象被所有的Account对象共享</span>
+    <span class="k">static</span> <span class="kt">double</span> <span class="n">interestRate</span><span class="p">;</span>
+    <span class="k">static</span> <span class="kt">double</span> <span class="nf">initRate</span><span class="p">();</span>
+<span class="p">};</span>
 </pre></div>
 </div>
-</section>
-<section id="id4">
-<h2>使用静态成员<a class="headerlink" href="#id4" title="永久链接至标题"></a></h2>
+</div>
+<div class="section" id="id4">
+<h2>使用静态成员<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
 <p>我们可以使用作用域直接访问静态成员：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Account</span><span class="o">::</span><span class="n">rate</span><span class="p">();</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span> <span class="n">r</span> <span class="o">=</span> <span class="n">Account</span><span class="o">::</span><span class="n">rate</span><span class="p">();</span>
 </pre></div>
 </div>
 <p>虽然静态成员不属于类的某个对象，但是我们仍然可以使用类的对象、引用或者指针来访问静态成员：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">Account</span><span class="w"> </span><span class="n">ac1</span><span class="p">;</span><span class="w"></span>
-<span class="n">Account</span><span class="w"> </span><span class="o">*</span><span class="n">ac2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">ac1</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">Account</span> <span class="n">ac1</span><span class="p">;</span>
+<span class="n">Account</span> <span class="o">*</span><span class="n">ac2</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">ac1</span><span class="p">;</span>
 
-<span class="kt">double</span><span class="w"> </span><span class="n">r</span><span class="p">;</span><span class="w"></span>
-<span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ac1</span><span class="p">.</span><span class="n">rate</span><span class="p">();</span><span class="w"></span>
-<span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ac2</span><span class="o">-&gt;</span><span class="n">rate</span><span class="p">();</span><span class="w"></span>
+<span class="kt">double</span> <span class="n">r</span><span class="p">;</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">ac1</span><span class="p">.</span><span class="n">rate</span><span class="p">();</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">ac2</span><span class="o">-&gt;</span><span class="n">rate</span><span class="p">();</span>
 </pre></div>
 </div>
-</section>
-<section id="id5">
-<h2>定义静态成员<a class="headerlink" href="#id5" title="永久链接至标题"></a></h2>
-<section id="id6">
-<h3>1. 定义静态函数成员<a class="headerlink" href="#id6" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="id5">
+<h2>定义静态成员<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id6">
+<h3>1. 定义静态函数成员<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
 <p>和其他的成员函数一样，我们既可以在类的内部也可以在类的外部定义静态成员函数。当在类的外部定义静态成员时，不能重复<code class="docutils literal notranslate"><span class="pre">static</span></code>关键字（类似<code class="docutils literal notranslate"><span class="pre">explicit</span></code>关键字），该关键字只出现在类内部的声明语句：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">Accout::rate</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">newRate</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">interestRate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">newRate</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">Accout::rate</span><span class="p">(</span><span class="kt">double</span> <span class="n">newRate</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">interestRate</span> <span class="o">=</span> <span class="n">newRate</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-</section>
-<section id="id7">
-<h3>2. 定义静态数据成员<a class="headerlink" href="#id7" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="id7">
+<h3>2. 定义静态数据成员<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
 <blockquote>
 <div><p>Tips：类似于全部变量，静态数据成员被定义在任何函数之外，因为一旦它被定义，就将一直存在于程序的整个生命周期中。不要在头文件<code class="docutils literal notranslate"><span class="pre">foo.h</span></code>中定义静态数据成员，会存在重复定义的问题（<code class="docutils literal notranslate"><span class="pre">foo.cpp</span></code>和<code class="docutils literal notranslate"><span class="pre">main.cpp</span></code>中都有该静态数据成员的定义）。</p>
 </div></blockquote>
 <p>由于静态数据成员不属于类的任何一个对象，所以它们并不是在创建类的对象时被定义的，这意味着它们不是由类的构造函数初始化的。而且一般而言我们不能在类的内部初始化静态成员，而应该在类的外部定义和初始化每个静态数据成员。</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// 定义并初始化一个静态成员</span>
-<span class="kt">double</span><span class="w"> </span><span class="n">Account</span><span class="o">::</span><span class="n">interestRate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">initRate</span><span class="p">();</span><span class="w"></span>
+<span class="kt">double</span> <span class="n">Account</span><span class="o">::</span><span class="n">interestRate</span> <span class="o">=</span> <span class="n">initRate</span><span class="p">();</span>
 </pre></div>
 </div>
 <blockquote>
 <div><p>Tips：要确保静态数据成员只定义一次，最好是把静态数据成员的定义与其他非内联函数的定义放在同一个文件中（放在源文件<code class="docutils literal notranslate"><span class="pre">foo.cpp</span></code>中）。</p>
 </div></blockquote>
-</section>
-<section id="id8">
-<h3>3. 静态数据成员的类内初始化<a class="headerlink" href="#id8" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="id8">
+<h3>3. 静态数据成员的类内初始化<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
 <p>通常情况下，类的静态成员不应该在类的内部初始化。但是我们可以给静态成员提供<code class="docutils literal notranslate"><span class="pre">const</span></code>整数类型的类内初始值，不过要求静态成员必须是字面值常量类型的<code class="docutils literal notranslate"><span class="pre">constexpr</span></code>。</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Account</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w"> </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
-<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">rate</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">interestRate</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">rate</span><span class="p">(</span><span class="kt">double</span><span class="p">);</span><span class="w"></span>
-<span class="w"> </span><span class="k">private</span><span class="o">:</span><span class="w"></span>
-<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">constexpr</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">period</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">30</span><span class="p">;</span><span class="w">  </span><span class="c1">// period是常量表达式</span>
-<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">daily_tbl</span><span class="p">[</span><span class="n">period</span><span class="p">];</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Account</span> <span class="p">{</span>
+ <span class="k">public</span><span class="o">:</span>
+    <span class="k">static</span> <span class="kt">double</span> <span class="n">rate</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="n">interestRate</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">static</span> <span class="kt">void</span> <span class="n">rate</span><span class="p">(</span><span class="kt">double</span><span class="p">);</span>
+ <span class="k">private</span><span class="o">:</span>
+    <span class="k">static</span> <span class="k">constexpr</span> <span class="kt">int</span> <span class="n">period</span> <span class="o">=</span> <span class="mi">30</span><span class="p">;</span>  <span class="c1">// period是常量表达式</span>
+    <span class="kt">double</span> <span class="n">daily_tbl</span><span class="p">[</span><span class="n">period</span><span class="p">];</span>
+<span class="p">};</span>
 
 <span class="c1">// 即使一个常量静态数据成员在类内部被初始化了, 通常情况下也应该在类的外部定义一下该成员</span>
-<span class="k">constexpr</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">Account</span><span class="o">::</span><span class="n">period</span><span class="p">;</span><span class="w"></span>
+<span class="k">constexpr</span> <span class="kt">int</span> <span class="n">Account</span><span class="o">::</span><span class="n">period</span><span class="p">;</span>
 </pre></div>
 </div>
-</section>
-</section>
-<section id="id9">
-<h2>继承与静态成员<a class="headerlink" href="#id9" title="永久链接至标题"></a></h2>
-<section id="id10">
-<h3>1. 基类中的静态成员只有唯一实例<a class="headerlink" href="#id10" title="永久链接至标题"></a></h3>
+</div>
+</div>
+<div class="section" id="id9">
+<h2>继承与静态成员<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id10">
+<h3>1. 基类中的静态成员只有唯一实例<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h3>
 <p>如果一个基类定义了一个静态成员，则在整个继承体系中只存在该成员的唯一定义。不论从基类中派生出多少个派生类，对于每个静态成员来说都只存在唯一的实例。</p>
-</section>
-<section id="id11">
-<h3>2. 基类中的静态成员的访问控制规则<a class="headerlink" href="#id11" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="id11">
+<h3>2. 基类中的静态成员的访问控制规则<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h3>
 <p>基类中的静态成员遵循通用的访问控制规则：如果基类中的静态成员是<code class="docutils literal notranslate"><span class="pre">private</span></code>的，则派生类无权访问它；如果基类中的静态成员是可访问的，则我们既可以通过基类使用它也可以通过派生类使用它。</p>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
            </div>
+           
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="5.1%20%E7%B1%BB%E7%9A%84%E6%88%90%E5%91%98.html" class="btn btn-neutral float-left" title="5.1 类的成员" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
         <a href="5.3%20%E7%B1%BB%E7%9A%84%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6.html" class="btn btn-neutral float-right" title="5.3 类的访问控制" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="5.1%20%E7%B1%BB%E7%9A%84%E6%88%90%E5%91%98.html" class="btn btn-neutral float-left" title="5.1 类的成员" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; 版权所有 2021, TOMOCAT.</p>
-  </div>
+    <p>
+        &#169; 版权所有 2021, TOMOCAT.
 
-  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    </p>
+  </div>
+    
+    
+    
+    利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
-    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
-   
+    
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发. 
 
 </footer>
         </div>
       </div>
+
     </section>
+
   </div>
-  <script>
+  
+
+  <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

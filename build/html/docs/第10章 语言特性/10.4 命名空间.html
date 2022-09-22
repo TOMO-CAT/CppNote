@@ -1,35 +1,74 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="zh-CN" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  <meta charset="utf-8" />
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>10.4 命名空间 &mdash; C++语法笔记 v1.0 文档</title>
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+  <title>10.4 命名空间 &mdash; C++ Note v1.0 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script src="../../_static/translations.js"></script>
-    <script src="../../_static/js/theme.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
     <link rel="next" title="10.5 命名规范" href="10.5%20%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83.html" />
     <link rel="prev" title="10.3 左值与右值" href="10.3%20%E5%B7%A6%E5%80%BC%E4%B8%8E%E5%8F%B3%E5%80%BC.html" /> 
 </head>
 
-<body class="wy-body-for-nav"> 
+<body class="wy-body-for-nav">
+
+   
   <div class="wy-grid-for-nav">
+    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../../index.html" class="icon icon-home"> C++语法笔记
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> C++ Note
+          
+
+          
           </a>
+
+          
+            
+            
+          
+
+          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="在文档中搜索" />
@@ -37,7 +76,18 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC1%E7%AB%A0%20%E5%8F%98%E9%87%8F%E4%B8%8E%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B/index.html">第1章 变量与基本类型</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC2%E7%AB%A0%20%E8%AF%AD%E5%8F%A5/index.html">第2章 语句</a></li>
@@ -91,135 +141,177 @@
 <li class="toctree-l1"><a class="reference internal" href="../README.html">README</a></li>
 </ul>
 
+            
+          
         </div>
+        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../index.html">C++语法笔记</a>
+          <a href="../../index.html">C++ Note</a>
+        
       </nav>
 
+
       <div class="wy-nav-content">
+        
         <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
+    
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
           <li><a href="index.html">第10章 语法特性</a> &raquo;</li>
+        
       <li>10.4 命名空间</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
+        
+          
             <a href="../../_sources/docs/第10章 语言特性/10.4 命名空间.md.txt" rel="nofollow"> 查看页面源码</a>
+          
+        
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-             
-  <section id="id1">
-<h1>10.4 命名空间<a class="headerlink" href="#id1" title="永久链接至标题"></a></h1>
-<section id="id2">
-<h2>简介<a class="headerlink" href="#id2" title="永久链接至标题"></a></h2>
+            
+  <div class="section" id="id1">
+<h1>10.4 命名空间<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id2">
+<h2>简介<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>大型程序往往会使用多个独立开发的库，这些库会定义大量的全局名字，如类、函数和模板等，不可避免会出现某些名字相互冲突的情况。命名空间<code class="docutils literal notranslate"><span class="pre">namespace</span></code>分割了全局命名空间，其中每个命名空间是一个作用域。</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">namespace</span><span class="w"> </span><span class="nn">foo</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">class</span> <span class="nc">Bar</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/*...*/</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
-<span class="p">}</span><span class="w">  </span><span class="c1">// 命名空间结束后无需分号</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">namespace</span> <span class="nn">foo</span> <span class="p">{</span>
+    <span class="k">class</span> <span class="nc">Bar</span> <span class="p">{</span> <span class="cm">/*...*/</span> <span class="p">};</span>
+<span class="p">}</span>  <span class="c1">// 命名空间结束后无需分号</span>
 </pre></div>
 </div>
-</section>
-<section id="id3">
-<h2>命名空间定义<a class="headerlink" href="#id3" title="永久链接至标题"></a></h2>
-<section id="id4">
-<h3>1. 每个命名空间都是一个作用域<a class="headerlink" href="#id4" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="id3">
+<h2>命名空间定义<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id4">
+<h3>1. 每个命名空间都是一个作用域<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
 <p>同其他作用域类似，命名空间中的每个名字都必须表示该空间内的唯一实体。因为不同命名空间的作用域不同，所以在不同命名空间内可以有相同名字的成员。</p>
-<section id="id5">
-<h4>2. 命名空间可以不连续<a class="headerlink" href="#id5" title="永久链接至标题"></a></h4>
+<div class="section" id="id5">
+<h4>2. 命名空间可以不连续<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h4>
 <p>命名空间的定义可以不连续的特性使得我们可以将几个独立的接口和实现文件组成一个命名空间，定义多个类型不相关的命名空间也应该使用单独的文件分别表示每个类型。</p>
-</section>
-<section id="id6">
-<h4>3. 模板特例化<a class="headerlink" href="#id6" title="永久链接至标题"></a></h4>
+</div>
+<div class="section" id="id6">
+<h4>3. 模板特例化<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h4>
 <p>模板特例化必须定义在原始模板所属的命名空间中，和其他命名空间名字类似，只要我们在命名空间中声明了特例化，就能在命名空间外部定义它了：</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// 我们必须将模板特例化声明成std的成员</span>
-<span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">template</span><span class="w"> </span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="k">struct</span> <span class="nc">hash</span><span class="o">&lt;</span><span class="n">Foo</span><span class="o">&gt;</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="k">namespace</span> <span class="nn">std</span> <span class="p">{</span>
+    <span class="k">template</span> <span class="o">&lt;&gt;</span> <span class="k">struct</span> <span class="nc">hash</span><span class="o">&lt;</span><span class="n">Foo</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="p">}</span>
 
 <span class="c1">// 在std中添加了模板特例化的声明后，我们就可以在命名空间std的外部定义它了</span>
-<span class="k">template</span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="k">struct</span> <span class="nc">std</span><span class="o">::</span><span class="n">hash</span><span class="o">&lt;</span><span class="n">Foo</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kt">size_t</span><span class="w"> </span><span class="nf">operator</span><span class="p">()(</span><span class="k">const</span><span class="w"> </span><span class="n">Foo</span><span class="o">&amp;</span><span class="w"> </span><span class="n">f</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">hash</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="p">()(</span><span class="n">f</span><span class="p">.</span><span class="n">str</span><span class="p">)</span><span class="w"> </span><span class="o">^</span><span class="w"></span>
-<span class="w">            </span><span class="n">hash</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">()(</span><span class="n">f</span><span class="p">.</span><span class="n">d</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
+<span class="k">template</span><span class="o">&lt;&gt;</span> <span class="k">struct</span> <span class="nc">std</span><span class="o">::</span><span class="n">hash</span><span class="o">&lt;</span><span class="n">Foo</span><span class="o">&gt;</span> <span class="p">{</span>
+    <span class="kt">size_t</span> <span class="nf">operator</span><span class="p">()(</span><span class="k">const</span> <span class="n">Foo</span><span class="o">&amp;</span> <span class="n">f</span><span class="p">)</span> <span class="k">const</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">hash</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="p">()(</span><span class="n">f</span><span class="p">.</span><span class="n">str</span><span class="p">)</span> <span class="o">^</span>
+            <span class="n">hash</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">()(</span><span class="n">f</span><span class="p">.</span><span class="n">d</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">};</span>
 </pre></div>
 </div>
-</section>
-<section id="id7">
-<h4>4. 全局命名空间<a class="headerlink" href="#id7" title="永久链接至标题"></a></h4>
+</div>
+<div class="section" id="id7">
+<h4>4. 全局命名空间<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h4>
 <p>全局作用域中定义的名字（即在所有类、函数以及命名空间之外定义的名字）也就是定义在全局命名空间<code class="docutils literal notranslate"><span class="pre">global</span> <span class="pre">namespace</span></code>中。全局作用域是隐式的，所以它并没有名字，下面的形式表示全局命名空间中一个成员：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="o">::</span><span class="n">member_name</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="o">::</span><span class="n">member_name</span>
 </pre></div>
 </div>
-</section>
-<section id="id8">
-<h4>5. 嵌套的命名空间<a class="headerlink" href="#id8" title="永久链接至标题"></a></h4>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">namespace</span><span class="w"> </span><span class="nn">foo</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">namespace</span><span class="w"> </span><span class="nn">bar</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="k">class</span> <span class="nc">Cat</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/*...*/</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+</div>
+<div class="section" id="id8">
+<h4>5. 嵌套的命名空间<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h4>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">namespace</span> <span class="nn">foo</span> <span class="p">{</span>
+    <span class="k">namespace</span> <span class="nn">bar</span> <span class="p">{</span>
+        <span class="k">class</span> <span class="nc">Cat</span> <span class="p">{</span> <span class="cm">/*...*/</span> <span class="p">};</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
 <span class="c1">// 调用方式</span>
-<span class="n">foo</span><span class="o">::</span><span class="n">bar</span><span class="o">::</span><span class="n">Cat</span><span class="w"></span>
+<span class="n">foo</span><span class="o">::</span><span class="n">bar</span><span class="o">::</span><span class="n">Cat</span>
 </pre></div>
 </div>
-</section>
-<section id="id9">
-<h4>6. 内联命名空间<a class="headerlink" href="#id9" title="永久链接至标题"></a></h4>
+</div>
+<div class="section" id="id9">
+<h4>6. 内联命名空间<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h4>
 <p>C++11新标准引入了一种新的嵌套命名空间，称为内联命名空间<code class="docutils literal notranslate"><span class="pre">inline</span> <span class="pre">namespace</span></code>。内联命名空间可以被外层命名空间直接使用。定义内联命名空间的方式是在关键字<code class="docutils literal notranslate"><span class="pre">namespace</span></code>前添加关键字<code class="docutils literal notranslate"><span class="pre">inline</span></code>：</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// inline必须出现在命名空间第一次出现的地方</span>
-<span class="kr">inline</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">FifthEd</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">	</span><span class="c1">// ...</span>
-<span class="p">}</span><span class="w"></span>
+<span class="kr">inline</span> <span class="k">namespace</span> <span class="nn">FifthEd</span> <span class="p">{</span>
+	<span class="c1">// ...</span>
+<span class="p">}</span>
 <span class="c1">// 后续再打开命名空间的时候可以写inline也可以不写</span>
-<span class="k">namespace</span><span class="w"> </span><span class="nn">FifthEd</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="c1">// 隐式内敛</span>
-<span class="w">    </span><span class="c1">// ...</span>
-<span class="p">}</span><span class="w"></span>
+<span class="k">namespace</span> <span class="nn">FifthEd</span> <span class="p">{</span>  <span class="c1">// 隐式内敛</span>
+    <span class="c1">// ...</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>当应用程序的代码在一次发布和另一次发布之间发生改变时，常使用内联命名空间。例如我们把第五版<code class="docutils literal notranslate"><span class="pre">FifthEd</span></code>的所有代码放在一个内联命名空间中，而之前版本的代码都放在一个非内联命名空间中：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">namespace</span><span class="w"> </span><span class="nn">FourthEd</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="c1">// 第4版用到的其他代码</span>
-<span class="w">    </span><span class="k">class</span> <span class="nc">Cat</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/*...*/</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">namespace</span> <span class="nn">FourthEd</span> <span class="p">{</span>
+    <span class="c1">// 第4版用到的其他代码</span>
+    <span class="k">class</span> <span class="nc">Cat</span> <span class="p">{</span> <span class="cm">/*...*/</span> <span class="p">};</span>
+<span class="p">}</span>
 
 <span class="c1">// 命名空间cplusplus_primer将同时使用这两个命名空间</span>
-<span class="k">namespace</span><span class="w"> </span><span class="nn">foo</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;FifthEd.h&quot;</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;FoutthEd.h&quot;</span><span class="cp"></span>
-<span class="p">}</span><span class="w"> </span>
+<span class="k">namespace</span> <span class="nn">foo</span> <span class="p">{</span>
+<span class="cp">#include</span> <span class="cpf">&quot;FifthEd.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;FoutthEd.h&quot;</span><span class="cp"></span>
+<span class="p">}</span> 
 </pre></div>
 </div>
 <p>因为<code class="docutils literal notranslate"><span class="pre">FifthEd</span></code>是内联的，所以形如<code class="docutils literal notranslate"><span class="pre">foo::</span></code>的代码可以直接获得<code class="docutils literal notranslate"><span class="pre">FifthEd</span></code>的成员，如果我们想用到早期版本的代码，则必须像其他嵌套的命名空间一样加上完整的外层命名空间名字：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">foo</span><span class="o">::</span><span class="n">FourthEd</span><span class="o">::</span><span class="n">Cat</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">foo</span><span class="o">::</span><span class="n">FourthEd</span><span class="o">::</span><span class="n">Cat</span>
 </pre></div>
 </div>
-</section>
-<section id="id10">
-<h4>7. 未命名的命名空间<a class="headerlink" href="#id10" title="永久链接至标题"></a></h4>
+</div>
+<div class="section" id="id10">
+<h4>7. 未命名的命名空间<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h4>
 <p>关键字<code class="docutils literal notranslate"><span class="pre">namespace</span></code>后紧跟花括号括起来的一系列声明语句是未命名的命名空间<code class="docutils literal notranslate"><span class="pre">unnamed</span> <span class="pre">namespace</span></code>。未命名的命名空间中定义的变量具有静态生命周期：它们在第一次使用前被创建，直到程序结束时才销毁。</p>
 <blockquote>
 <div><p>Tips：每个文件定义自己的未命名的命名空间，如果两个文件都含有未命名的命名空间，则这两个空间互相无关。在这两个未命名的命名空间里面可以定义相同的名字，并且这些定义表示的是不同实体。如果一个头文件定义了未命名的命名空间，则该命名空间中定义的名字将在每个包含了该头文件的文件中对应不同实体。</p>
 </div></blockquote>
 <p>和其他命名空间不同，未命名的命名空间仅在特定的文件内部有效，其作用范围不会横跨多个不同的文件。未命名的命名空间中定义的名字的作用域与该命名空间所在的作用域相同，如果未命名的命名空间定义在文件的最外层作用域中，则该命名空间一定要与全局作用域中的名字有所区别：</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// i的全局声明</span>
-<span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w"></span>
+<span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
 <span class="c1">// i在未命名的命名空间中的声明</span>
-<span class="k">namespace</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w">  </span>
-<span class="p">}</span><span class="w"></span>
+<span class="k">namespace</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">i</span><span class="p">;</span>  
+<span class="p">}</span>
 <span class="c1">// 二义性错误: i的定义既出现在全局作用域中, 又出现在未嵌套的未命名的命名空间中</span>
-<span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"></span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
 </pre></div>
 </div>
 <blockquote>
@@ -227,30 +319,30 @@
 <p>在标准C++引入命名空间的概念之前，程序需要将名字声明成<code class="docutils literal notranslate"><span class="pre">static</span></code>的以使其对于整个文件有效。在文件中进行静态声明的做法是从C语言继承而来的。在C语言中，声明为<code class="docutils literal notranslate"><span class="pre">static</span></code>的全局实体在其所在的文件外不可见。</p>
 <p><strong>在文件中进行静态声明的做法已经被C++标准取消了，现在的做法是使用未命名的命名空间。</strong></p>
 </div></blockquote>
-</section>
-</section>
-</section>
-<section id="id11">
-<h2>使用命名空间成员<a class="headerlink" href="#id11" title="永久链接至标题"></a></h2>
-<section id="id12">
-<h3>1. 命名空间别名<a class="headerlink" href="#id12" title="永久链接至标题"></a></h3>
+</div>
+</div>
+</div>
+<div class="section" id="id11">
+<h2>使用命名空间成员<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id12">
+<h3>1. 命名空间别名<a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h3>
 <p>命名空间的别名使得我们可以为命名空间的名字设定一个短得多的同义词：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">namespace</span><span class="w"> </span><span class="nn">foo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nn">tomocat_foo</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">namespace</span> <span class="nn">foo</span> <span class="o">=</span> <span class="nn">tomocat_foo</span><span class="p">;</span>
 <span class="c1">// 命名空间的别名也可以指向一个嵌套的命名空间</span>
-<span class="k">namespace</span><span class="w"> </span><span class="nn">foo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nn">tomocat</span><span class="o">::</span><span class="nn">tomocat_foo</span><span class="p">;</span><span class="w"></span>
+<span class="k">namespace</span> <span class="nn">foo</span> <span class="o">=</span> <span class="nn">tomocat</span><span class="o">::</span><span class="nn">tomocat_foo</span><span class="p">;</span>
 </pre></div>
 </div>
-</section>
-<section id="using">
-<h3>2. using声明<a class="headerlink" href="#using" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="using">
+<h3>2. using声明<a class="headerlink" href="#using" title="永久链接至标题">¶</a></h3>
 <ul class="simple">
 <li><p>有效范围从<code class="docutils literal notranslate"><span class="pre">using</span></code>声明的地方开始，一直到<code class="docutils literal notranslate"><span class="pre">using</span></code>声明所在的作用域结束为止</p></li>
 <li><p>未加限定的名字只能在<code class="docutils literal notranslate"><span class="pre">using</span></code>声明所在的作用域以及内层作用域中使用</p></li>
 <li><p>一条<code class="docutils literal notranslate"><span class="pre">using</span></code>声明可以出现在全局作用域、局部作用域、命名空间作用域以及类的作用域中；在类的作用域中，这样的声明语句只能指向基类成员（因为派生类只能为那些它可以访问的名字提供<code class="docutils literal notranslate"><span class="pre">using</span></code>声明）</p></li>
 </ul>
-</section>
-<section id="id13">
-<h3>3. using指示<a class="headerlink" href="#id13" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="id13">
+<h3>3. using指示<a class="headerlink" href="#id13" title="永久链接至标题">¶</a></h3>
 <blockquote>
 <div><p>Tips：实际编程中禁止使用<code class="docutils literal notranslate"><span class="pre">using</span></code>指示，这样会引入整个命名空间的标识符号从而污染命名空间。</p>
 </div></blockquote>
@@ -260,83 +352,100 @@
 <li><p>和<code class="docutils literal notranslate"><span class="pre">using</span></code>声明不同，我们无法控制那些名字是可见的，因为所有名字都是可见的</p></li>
 </ul>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// 禁止使用using指示: 会污染命名空间</span>
-<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">foo</span><span class="p">;</span><span class="w"></span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="nn">foo</span><span class="p">;</span>
 </pre></div>
 </div>
-</section>
-<section id="id14">
-<h3>4. 头文件与using声明或指示<a class="headerlink" href="#id14" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="id14">
+<h3>4. 头文件与using声明或指示<a class="headerlink" href="#id14" title="永久链接至标题">¶</a></h3>
 <p>头文件如果在其顶层作用域中含有<code class="docutils literal notranslate"><span class="pre">using</span></code>指示或<code class="docutils literal notranslate"><span class="pre">using</span></code>声明，则会将名字注入到所有包含该头文件的文件中。通常情况下，头文件应该只负责定义接口部分的名字，而不定义实现部分的名字。因此头文件最多只能在它的函数或命名空间中使用<code class="docutils literal notranslate"><span class="pre">using</span></code>指示或<code class="docutils literal notranslate"><span class="pre">using</span></code>声明。</p>
 <blockquote>
 <div><p>Tips：<code class="docutils literal notranslate"><span class="pre">using</span></code>指示一次性注入某个命名空间中的所有名字，这种用法充满风险：命名空间中所有的成员变得可见了。相比于使用<code class="docutils literal notranslate"><span class="pre">using</span></code>指示，在程序中对命名空间的每个成员分别使用<code class="docutils literal notranslate"><span class="pre">using</span></code>声明效果更好，这样可以减少注入到命名空间中的名字数量。<code class="docutils literal notranslate"><span class="pre">using</span></code>指示也并非一无是处，例如在命名空间本身的实现文件中就可以使用。</p>
 </div></blockquote>
-</section>
-</section>
-<section id="id15">
-<h2>重载与命名空间<a class="headerlink" href="#id15" title="永久链接至标题"></a></h2>
-<section id="id16">
-<h3>1. 重载与using声明<a class="headerlink" href="#id16" title="永久链接至标题"></a></h3>
+</div>
+</div>
+<div class="section" id="id15">
+<h2>重载与命名空间<a class="headerlink" href="#id15" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id16">
+<h3>1. 重载与using声明<a class="headerlink" href="#id16" title="永久链接至标题">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">using</span></code>声明语句声明的是一个名字，而非一个特定的函数：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="n">NS</span><span class="o">::</span><span class="n">print</span><span class="p">(</span><span class="kt">int</span><span class="p">);</span><span class="w">   </span><span class="c1">// 错误: 不能指定形参列表</span>
-<span class="k">using</span><span class="w"> </span><span class="n">NS</span><span class="o">::</span><span class="n">print</span><span class="p">;</span><span class="w">        </span><span class="c1">// 正确: using声明只声明一个名字</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">using</span> <span class="n">NS</span><span class="o">::</span><span class="n">print</span><span class="p">(</span><span class="kt">int</span><span class="p">);</span>   <span class="c1">// 错误: 不能指定形参列表</span>
+<span class="k">using</span> <span class="n">NS</span><span class="o">::</span><span class="n">print</span><span class="p">;</span>        <span class="c1">// 正确: using声明只声明一个名字</span>
 </pre></div>
 </div>
 <p>我们为函数书写<code class="docutils literal notranslate"><span class="pre">using</span></code>声明时，该函数的所有版本都被引入到当前作用域中。</p>
-</section>
-<section id="id17">
-<h3>2. 跨越多个using指示的重载<a class="headerlink" href="#id17" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="id17">
+<h3>2. 跨越多个using指示的重载<a class="headerlink" href="#id17" title="永久链接至标题">¶</a></h3>
 <p>如果存在多个<code class="docutils literal notranslate"><span class="pre">using</span></code>指示，则来自每个命名空间的名字都会成为候选函数的一部分：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">namespace</span><span class="w"> </span><span class="nn">AW</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="nf">print</span><span class="p">(</span><span class="kt">int</span><span class="p">);</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-<span class="k">namespace</span><span class="w"> </span><span class="nn">Primer</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="nf">print</span><span class="p">(</span><span class="kt">double</span><span class="p">);</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">namespace</span> <span class="nn">AW</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="nf">print</span><span class="p">(</span><span class="kt">int</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">namespace</span> <span class="nn">Primer</span> <span class="p">{</span>
+    <span class="kt">double</span> <span class="nf">print</span><span class="p">(</span><span class="kt">double</span><span class="p">);</span>
+<span class="p">}</span>
 
 <span class="c1">// using指示从不同的命名空间中创建了一个重载函数集合</span>
-<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">AW</span><span class="p">;</span><span class="w"></span>
-<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">Primer</span><span class="p">;</span><span class="w"></span>
-<span class="kt">long</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">print</span><span class="p">(</span><span class="kt">long</span><span class="w"> </span><span class="kt">double</span><span class="p">);</span><span class="w"></span>
-<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">print</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="w">   </span><span class="c1">// 调用AW::print(int)</span>
-<span class="w">    </span><span class="n">print</span><span class="p">(</span><span class="mf">3.1</span><span class="p">);</span><span class="w"> </span><span class="c1">// 调用Primer::print(double)</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="nn">AW</span><span class="p">;</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="nn">Primer</span><span class="p">;</span>
+<span class="kt">long</span> <span class="kt">double</span> <span class="n">print</span><span class="p">(</span><span class="kt">long</span> <span class="kt">double</span><span class="p">);</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">print</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>   <span class="c1">// 调用AW::print(int)</span>
+    <span class="n">print</span><span class="p">(</span><span class="mf">3.1</span><span class="p">);</span> <span class="c1">// 调用Primer::print(double)</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
            </div>
+           
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="10.3%20%E5%B7%A6%E5%80%BC%E4%B8%8E%E5%8F%B3%E5%80%BC.html" class="btn btn-neutral float-left" title="10.3 左值与右值" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
         <a href="10.5%20%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83.html" class="btn btn-neutral float-right" title="10.5 命名规范" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="10.3%20%E5%B7%A6%E5%80%BC%E4%B8%8E%E5%8F%B3%E5%80%BC.html" class="btn btn-neutral float-left" title="10.3 左值与右值" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; 版权所有 2021, TOMOCAT.</p>
-  </div>
+    <p>
+        &#169; 版权所有 2021, TOMOCAT.
 
-  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    </p>
+  </div>
+    
+    
+    
+    利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
-    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
-   
+    
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发. 
 
 </footer>
         </div>
       </div>
+
     </section>
+
   </div>
-  <script>
+  
+
+  <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

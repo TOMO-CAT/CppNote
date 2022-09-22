@@ -1,35 +1,74 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="zh-CN" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  <meta charset="utf-8" />
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>8.2 关键字：const &mdash; C++语法笔记 v1.0 文档</title>
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+  <title>8.2 关键字：const &mdash; C++ Note v1.0 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script src="../../_static/translations.js"></script>
-    <script src="../../_static/js/theme.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
     <link rel="next" title="8.3 关键字：using" href="8.3%20using.html" />
     <link rel="prev" title="8.1 关键字：auto" href="8.1%20auto.html" /> 
 </head>
 
-<body class="wy-body-for-nav"> 
+<body class="wy-body-for-nav">
+
+   
   <div class="wy-grid-for-nav">
+    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../../index.html" class="icon icon-home"> C++语法笔记
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> C++ Note
+          
+
+          
           </a>
+
+          
+            
+            
+          
+
+          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="在文档中搜索" />
@@ -37,7 +76,18 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC1%E7%AB%A0%20%E5%8F%98%E9%87%8F%E4%B8%8E%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B/index.html">第1章 变量与基本类型</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC2%E7%AB%A0%20%E8%AF%AD%E5%8F%A5/index.html">第2章 语句</a></li>
@@ -89,95 +139,137 @@
 <li class="toctree-l1"><a class="reference internal" href="../README.html">README</a></li>
 </ul>
 
+            
+          
         </div>
+        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../index.html">C++语法笔记</a>
+          <a href="../../index.html">C++ Note</a>
+        
       </nav>
 
+
       <div class="wy-nav-content">
+        
         <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
+    
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
           <li><a href="index.html">第8章 关键字概念</a> &raquo;</li>
+        
       <li>8.2 关键字：const</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
+        
+          
             <a href="../../_sources/docs/第8章 关键字概念/8.2 const.md.txt" rel="nofollow"> 查看页面源码</a>
+          
+        
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-             
-  <section id="const">
-<h1>8.2 关键字：const<a class="headerlink" href="#const" title="永久链接至标题"></a></h1>
-<section id="id1">
-<h2>const对象必须初始化<a class="headerlink" href="#id1" title="永久链接至标题"></a></h2>
+            
+  <div class="section" id="const">
+<h1>8.2 关键字：const<a class="headerlink" href="#const" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id1">
+<h2>const对象必须初始化<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <p>因为const对象一旦创建后其值就不能再改变，因此const对象必须初始化，其初始值可以是任意复杂的表达式：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">get_size</span><span class="p">();</span><span class="w">  </span><span class="c1">// 正确: 运行时初始化</span>
-<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">42</span><span class="p">;</span><span class="w">          </span><span class="c1">// 正确: 编译时初始化</span>
-<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="p">;</span><span class="w">               </span><span class="c1">// 错误: 未经初始化的const变量</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">const</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">get_size</span><span class="p">();</span>  <span class="c1">// 正确: 运行时初始化</span>
+<span class="k">const</span> <span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>          <span class="c1">// 正确: 编译时初始化</span>
+<span class="k">const</span> <span class="kt">int</span> <span class="n">k</span><span class="p">;</span>               <span class="c1">// 错误: 未经初始化的const变量</span>
 </pre></div>
 </div>
-</section>
-<section id="id2">
-<h2>const对象仅在文件内有效<a class="headerlink" href="#id2" title="永久链接至标题"></a></h2>
+</div>
+<div class="section" id="id2">
+<h2>const对象仅在文件内有效<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>举个例子，我们在编译时初始化一个const对象：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">const</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>编译器会在编译过程把用到该变量的地方都替换为对应的值。为了执行这个替换，编译器必须知道变量的初始值，如果程序包含多个文件，那么每个用了这个const对象的文件都必须得能访问到它的初始值才行（即每个文件都要定义const对象）。为了避免对同一变量的重复定义，当多个文件中出现同名的const对象时，其实等同于在不同文件中分别定义了独立的变量。</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cm">/*</span>
 <span class="cm"> * 下面是合法的, 不存在变量i重复定义问题</span>
-<span class="cm"> */</span><span class="w"></span>
+<span class="cm"> */</span>
 
 <span class="c1">// foo.cpp</span>
-<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"></span>
+<span class="k">const</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
 
 <span class="c1">// bar.cpp</span>
-<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"></span>
+<span class="k">const</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>如果想在多个文件之间共享const对象，那么必须在变量的定义之前添加extern关键字：</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cm">/*</span>
 <span class="cm"> * 下面是合法的, main.cpp和foo.cpp中的const int对象是同一个</span>
-<span class="cm"> */</span><span class="w"></span>
+<span class="cm"> */</span>
 
 <span class="c1">// foo.cpp</span>
-<span class="k">extern</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"></span>
+<span class="k">extern</span> <span class="k">const</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
 
 <span class="c1">// main.cpp</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
 
-<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">extern</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;i:&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">extern</span> <span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;i:&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-</section>
-<section id="id3">
-<h2>允许常量引用绑定非常量对象、字面值甚至一般表达式<a class="headerlink" href="#id3" title="永久链接至标题"></a></h2>
+</div>
+<div class="section" id="id3">
+<h2>允许常量引用绑定非常量对象、字面值甚至一般表达式<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <p>一般而言，引用的类型必须与其所引用对象的类型一致，但是有两个例外：</p>
 <ul class="simple">
 <li><p>初始化常量引用时允许用任意表达式作为初始值，只要该表达式的结果能转换成引用类型即可，允许为一个常量引用绑定非常量的对象、字面值甚至是一个一般表达式（如下）</p></li>
 <li><p>可以将基类的指针或引用绑定到派生类对象上（后续面向对象章节再探讨）</p></li>
 </ul>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
 
-<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">&amp;</span><span class="n">ri1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w">      </span><span class="c1">// 合法: 绑定到非常量对象</span>
-<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">&amp;</span><span class="n">ri2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span><span class="w">    </span><span class="c1">// 合法: 绑定到字面值</span>
-<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">&amp;</span><span class="n">ri3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">  </span><span class="c1">// 合法: 绑定到一般表达式</span>
+<span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">ri1</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>      <span class="c1">// 合法: 绑定到非常量对象</span>
+<span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">ri2</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>    <span class="c1">// 合法: 绑定到字面值</span>
+<span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">ri3</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>  <span class="c1">// 合法: 绑定到一般表达式</span>
 </pre></div>
 </div>
-</section>
-<section id="constconst">
-<h2>顶层const与底层const<a class="headerlink" href="#constconst" title="永久链接至标题"></a></h2>
+</div>
+<div class="section" id="constconst">
+<h2>顶层const与底层const<a class="headerlink" href="#constconst" title="永久链接至标题">¶</a></h2>
 <p>指针本身是一个对象，因此指针本身是不是常量与指针所指对象是不是常量是两个独立的问题，前者被称为顶层const，后者被称为底层const。</p>
 <blockquote>
 <div><p>Tips：</p>
@@ -187,53 +279,53 @@
 </ul>
 </div></blockquote>
 <p>顶层const用于表示任意的对象是常量，包括算数类型、类和指针等，底层const用于表示引用和指针等复合类型的基本类型部分是否是常量。</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
 
-<span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="k">const</span><span class="w"> </span><span class="n">p1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">i</span><span class="p">;</span><span class="w">        </span><span class="c1">// 顶层const: 不能改变p1的值</span>
-<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">p2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">i</span><span class="p">;</span><span class="w">        </span><span class="c1">// 底层const: 不能通过p2改变i的值</span>
-<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="k">const</span><span class="w"> </span><span class="n">p3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">i</span><span class="p">;</span><span class="w">  </span><span class="c1">// 底层const + 顶层const</span>
+<span class="kt">int</span> <span class="o">*</span><span class="k">const</span> <span class="n">p1</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">i</span><span class="p">;</span>        <span class="c1">// 顶层const: 不能改变p1的值</span>
+<span class="k">const</span> <span class="kt">int</span> <span class="o">*</span><span class="n">p2</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">i</span><span class="p">;</span>        <span class="c1">// 底层const: 不能通过p2改变i的值</span>
+<span class="k">const</span> <span class="kt">int</span> <span class="o">*</span><span class="k">const</span> <span class="n">p3</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">i</span><span class="p">;</span>  <span class="c1">// 底层const + 顶层const</span>
 
-<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">&amp;</span><span class="n">r1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w">         </span><span class="c1">// 底层const: 不能通过r1改变i的值</span>
+<span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">r1</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>         <span class="c1">// 底层const: 不能通过r1改变i的值</span>
 </pre></div>
 </div>
-</section>
-<section id="const-define">
-<h2>以const替换#define<a class="headerlink" href="#const-define" title="永久链接至标题"></a></h2>
-<section id="id4">
-<h3>1. 原因<a class="headerlink" href="#id4" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="const-define">
+<h2>以const替换#define<a class="headerlink" href="#const-define" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id4">
+<h3>1. 原因<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
 <p>程序编译分为预处理、编译和链接三个阶段。<code class="docutils literal notranslate"><span class="pre">#define</span></code>是不被视为语言的一部分，在预处理阶段就会进行宏展开替换所有的宏，因此进入第二步编译阶段是如果遇到了编译错误，那么错误信息可能会提到<code class="docutils literal notranslate"><span class="pre">3.14</span></code>而不是<code class="docutils literal notranslate"><span class="pre">PI</span></code>，导致错误信息不够明朗。</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// 不推荐</span>
 <span class="cp">#define PI 3.14</span>
 
 <span class="c1">// 推荐</span>
-<span class="k">const</span><span class="w"> </span><span class="n">doule</span><span class="w"> </span><span class="n">Pi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.14</span><span class="p">;</span><span class="w"></span>
+<span class="k">const</span> <span class="n">doule</span> <span class="n">Pi</span> <span class="o">=</span> <span class="mf">3.14</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>宏定义的记号名称<code class="docutils literal notranslate"><span class="pre">PI</span></code>在编译器开始处理源码之前就被预处理器移走了，于是记号名称<code class="docutils literal notranslate"><span class="pre">PI</span></code>有可能没进入记号表（symbol table）内。当你运用此常量但获得一个编译器错误信息时，可能会带来困惑，因为这个错误信息也许会提到<code class="docutils literal notranslate"><span class="pre">3.14</span></code>而非<code class="docutils literal notranslate"><span class="pre">PI</span></code>。与此相反，double变量<code class="docutils literal notranslate"><span class="pre">Pi</span></code>肯定会被编译器看到，自然就会进入记号表内。</p>
 <p>此外，使用常量可能比使用<code class="docutils literal notranslate"><span class="pre">#define</span></code>导致较小量的码，因为预处理器盲目地将宏名称<code class="docutils literal notranslate"><span class="pre">PI</span></code>替换为<code class="docutils literal notranslate"><span class="pre">3.14</span></code>可能导致目标码（object code）出现多份<code class="docutils literal notranslate"><span class="pre">3.14</span></code>，若使用常量绝不会出现这个问题。</p>
-</section>
-<section id="id5">
-<h3>2. 特殊情况<a class="headerlink" href="#id5" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="id5">
+<h3>2. 特殊情况<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
 <p>当我们以常量替换<code class="docutils literal notranslate"><span class="pre">#define</span></code>时，需要考虑两种特殊情况。</p>
-<section id="id6">
-<h4>2.1 特殊情况一：定义常量指针<a class="headerlink" href="#id6" title="永久链接至标题"></a></h4>
+<div class="section" id="id6">
+<h4>2.1 特殊情况一：定义常量指针<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h4>
 <p>由于常量定义式通常被放在头文件内（以便被不同的源码文件含入），因此有必要（而不只是指针所指之物）声明为const。</p>
 <p>例如要在头文件内定义一个常量的C风格字符串，你必须写const两次：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;foo&quot;</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="k">const</span> <span class="n">str</span> <span class="o">=</span> <span class="s">&quot;foo&quot;</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>在C++中string对象往往比C风格字符串更合适，因此更好的常量字符串定义方法是：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;foo&quot;</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">str</span> <span class="o">=</span> <span class="s">&quot;foo&quot;</span><span class="p">;</span>
 </pre></div>
 </div>
-</section>
-<section id="class">
-<h4>2.2 特殊情况二：class专属常量<a class="headerlink" href="#class" title="永久链接至标题"></a></h4>
+</div>
+<div class="section" id="class">
+<h4>2.2 特殊情况二：class专属常量<a class="headerlink" href="#class" title="永久链接至标题">¶</a></h4>
 <p>为了将常量的作用域（scope）限制于class内，你必须让它成为class的一个成员（member）；而为了确保此常量只有一份实体，你必须让它成为一个static成员：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Foo</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w"> </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
-<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">IntValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">  </span><span class="c1">// 类内常量声明式获得初始值, 仅支持整数类型</span>
-<span class="p">};</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Foo</span> <span class="p">{</span>
+ <span class="k">public</span><span class="o">:</span>
+    <span class="k">static</span> <span class="k">const</span> <span class="kt">int</span> <span class="n">IntValue</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>  <span class="c1">// 类内常量声明式获得初始值, 仅支持整数类型</span>
+<span class="p">};</span>
 </pre></div>
 </div>
 <p><strong>通常C++要求你对你所使用的任何东西提供一个定义式，但是如果它是个class专属常量又是static且为整数类型（integral type，例如ints、chars和bools），那么只要不取它们的地址你就可以声明并使用它们而无须提供定义式</strong>。</p>
@@ -250,109 +342,109 @@ test.h:5:39: error: ‘constexpr’ needed for in-class initialization of static
 </div>
 <p>正确的写法如下：</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// Foo.h</span>
-<span class="k">class</span> <span class="nc">Foo</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w"> </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
-<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">DoubleValue</span><span class="p">;</span><span class="w">  </span><span class="c1">// 在头文件中声明</span>
-<span class="p">};</span><span class="w"></span>
+<span class="k">class</span> <span class="nc">Foo</span> <span class="p">{</span>
+ <span class="k">public</span><span class="o">:</span>
+    <span class="k">static</span> <span class="k">const</span> <span class="kt">double</span> <span class="n">DoubleValue</span><span class="p">;</span>  <span class="c1">// 在头文件中声明</span>
+<span class="p">};</span>
 
 <span class="c1">// Foo.cpp</span>
-<span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">Foo</span><span class="o">::</span><span class="n">DoubleValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.14</span><span class="p">;</span><span class="w">  </span><span class="c1">// 在实现文件中定义</span>
+<span class="k">const</span> <span class="kt">double</span> <span class="n">Foo</span><span class="o">::</span><span class="n">DoubleValue</span> <span class="o">=</span> <span class="mf">3.14</span><span class="p">;</span>  <span class="c1">// 在实现文件中定义</span>
 </pre></div>
 </div>
-</section>
-</section>
-</section>
-<section id="enumconst">
-<h2>以enum替换const<a class="headerlink" href="#enumconst" title="永久链接至标题"></a></h2>
-<section id="enum">
-<h3>1. 取enum值地址是非法的<a class="headerlink" href="#enum" title="永久链接至标题"></a></h3>
+</div>
+</div>
+</div>
+<div class="section" id="enumconst">
+<h2>以enum替换const<a class="headerlink" href="#enumconst" title="永久链接至标题">¶</a></h2>
+<div class="section" id="enum">
+<h3>1. 取enum值地址是非法的<a class="headerlink" href="#enum" title="永久链接至标题">¶</a></h3>
 <p>某种程度上enum的行为相比于const更像<code class="docutils literal notranslate"><span class="pre">#define</span></code>，有时候这正是我们想要的。例如取一个const的地址是合法的，但是取一个enum值的地址就不合法，而取一个<code class="docutils literal notranslate"><span class="pre">#define</span></code>的地址通常也不合法。如果你不想让别人获得一个pointer或reference指向你的某个整数常量，enum可以帮助你实现这个约束。</p>
-</section>
-<section id="id7">
-<h3>2. enum可以避免非必要的内存分配<a class="headerlink" href="#id7" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="id7">
+<h3>2. enum可以避免非必要的内存分配<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
 <p>优秀的编译器不会为“整数型const对象”设定另外的存储空间（除非你创建一个pointer或reference指向该对象），不够优秀的编译器却可能如此，而这可能是你不想要的。</p>
 <p><strong>enum和#define一样绝不会导致非必要的内存分配</strong>。</p>
-</section>
-</section>
-<section id="id8">
-<h2>const与迭代器<a class="headerlink" href="#id8" title="永久链接至标题"></a></h2>
+</div>
+</div>
+<div class="section" id="id8">
+<h2>const与迭代器<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h2>
 <p>STL迭代器是以指针为依据塑造的，所以迭代器的作用就像一个<code class="docutils literal notranslate"><span class="pre">T*</span></code>指针。声明迭代器为const就像声明指针为const一样（即声明一个<code class="docutils literal notranslate"><span class="pre">T*</span> <span class="pre">const</span></code>指针），但它指向的对象值是可以改变的。</p>
 <p>如果你希望迭代器所指的对象值不可被改变（即希望STL模拟一个<code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">T*</span></code>指针），你需要的是<code class="docutils literal notranslate"><span class="pre">const_iterator</span></code>：</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// 顶层const: T* const</span>
-<span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">vi</span><span class="p">;</span><span class="w"></span>
-<span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;::</span><span class="n">iterator</span><span class="w"> </span><span class="n">iter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vi</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span><span class="w"></span>
-<span class="o">*</span><span class="n">iter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w">  </span><span class="c1">// 正确</span>
-<span class="n">iter</span><span class="o">++</span><span class="p">;</span><span class="w">      </span><span class="c1">// 错误</span>
+<span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">vi</span><span class="p">;</span>
+<span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;::</span><span class="n">iterator</span> <span class="n">iter</span> <span class="o">=</span> <span class="n">vi</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+<span class="o">*</span><span class="n">iter</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>  <span class="c1">// 正确</span>
+<span class="n">iter</span><span class="o">++</span><span class="p">;</span>      <span class="c1">// 错误</span>
 
 <span class="c1">// 顶层const: T* const</span>
-<span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">vi</span><span class="p">;</span><span class="w"></span>
-<span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;::</span><span class="n">const_iterator</span><span class="w"> </span><span class="n">iter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vi</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span><span class="w"></span>
-<span class="o">*</span><span class="n">iter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w">  </span><span class="c1">// 错误</span>
-<span class="n">iter</span><span class="o">++</span><span class="p">;</span><span class="w">      </span><span class="c1">// 正确</span>
+<span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">vi</span><span class="p">;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;::</span><span class="n">const_iterator</span> <span class="n">iter</span> <span class="o">=</span> <span class="n">vi</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+<span class="o">*</span><span class="n">iter</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>  <span class="c1">// 错误</span>
+<span class="n">iter</span><span class="o">++</span><span class="p">;</span>      <span class="c1">// 正确</span>
 </pre></div>
 </div>
-</section>
-<section id="id9">
-<h2>const与函数声明<a class="headerlink" href="#id9" title="永久链接至标题"></a></h2>
+</div>
+<div class="section" id="id9">
+<h2>const与函数声明<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h2>
 <p>const最具威力的用法是面对函数声明时的应用。在一个函数声明中，const可以和函数返回值、参数和函数自身（如果是成员函数）等产生关联。</p>
-<section id="id10">
-<h3>1. const与函数返回值<a class="headerlink" href="#id10" title="永久链接至标题"></a></h3>
+<div class="section" id="id10">
+<h3>1. const与函数返回值<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h3>
 <p>令函数返回一个常量值往往可以降低客户端错误代码造成的意外，而又不至于放弃安全性和高效性。举个例子，考虑有理数（rational numbers）的<code class="docutils literal notranslate"><span class="pre">operator*</span></code>声明：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Rational</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
-<span class="k">const</span><span class="w"> </span><span class="n">Rational</span><span class="w"> </span><span class="k">operator</span><span class="o">*</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Rational</span><span class="o">&amp;</span><span class="w"> </span><span class="n">lhs</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Rational</span><span class="o">&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Rational</span> <span class="p">{</span> <span class="p">...</span> <span class="p">};</span>
+<span class="k">const</span> <span class="n">Rational</span> <span class="k">operator</span><span class="o">*</span><span class="p">(</span><span class="k">const</span> <span class="n">Rational</span><span class="o">&amp;</span> <span class="n">lhs</span><span class="p">,</span> <span class="k">const</span> <span class="n">Rational</span><span class="o">&amp;</span> <span class="n">rhs</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>由于<code class="docutils literal notranslate"><span class="pre">operator*</span></code>返回const对象，因此客户端无法实现如下的错误代码：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">Rational</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="p">;</span><span class="w"></span>
-<span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c</span><span class="p">;</span><span class="w">  </span><span class="c1">// 在 (a * b) 的结果上调用 operator=</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">Rational</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">;</span>
+<span class="p">(</span><span class="n">a</span> <span class="o">*</span> <span class="n">b</span><span class="p">)</span> <span class="o">=</span> <span class="n">c</span><span class="p">;</span>  <span class="c1">// 在 (a * b) 的结果上调用 operator=</span>
 </pre></div>
 </div>
 <p>正常程序员一般不会对两个数值的乘积再做一次赋值（assignment），但有时候因为打字错误（以及一个可被隐式转换为bool的类型）就很容易写出这种bug：</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// 错误写法</span>
-<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span>
+<span class="k">if</span> <span class="p">(</span><span class="n">a</span> <span class="o">*</span> <span class="n">b</span> <span class="o">=</span> <span class="n">c</span><span class="p">)</span>
+    
 <span class="c1">// 正确写法</span>
-<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">c</span><span class="p">)</span><span class="w"></span>
+<span class="k">if</span> <span class="p">(</span><span class="n">a</span> <span class="o">*</span> <span class="n">b</span> <span class="o">==</span> <span class="n">c</span><span class="p">)</span>
 </pre></div>
 </div>
-</section>
-<section id="id11">
-<h3>2. const与函数参数<a class="headerlink" href="#id11" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="id11">
+<h3>2. const与函数参数<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h3>
 <p>除非你有需要改动参数或局部对象，否则请将它们声明为const。只不过多打6个字符就可以避免很多恼人的错误，例如将<code class="docutils literal notranslate"><span class="pre">==</span></code>意外写成<code class="docutils literal notranslate"><span class="pre">=</span></code>。</p>
-</section>
-<section id="id12">
-<h3>3. const成员函数<a class="headerlink" href="#id12" title="永久链接至标题"></a></h3>
-<section id="id13">
-<h4>3.1 使用const成员函数的原因<a class="headerlink" href="#id13" title="永久链接至标题"></a></h4>
+</div>
+<div class="section" id="id12">
+<h3>3. const成员函数<a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id13">
+<h4>3.1 使用const成员函数的原因<a class="headerlink" href="#id13" title="永久链接至标题">¶</a></h4>
 <p>在类内定义const成员函数，是为了确认该成员函数可作用于const对象。const成员函数之所以重要主要有两个原因：</p>
 <ul class="simple">
 <li><p>它们使class接口更容易被理解，可以通过函数声明直到哪个函数可以改动对象内容而哪个函数不行。</p></li>
 <li><p>它们使“操作const对象”成为可能，这对编写高效代码是个关键，因为改善C++程序效率的一个根本方法是以pass by reference to const方式传递对象，而此技术可能的前提是我们有const成员函数可用来处理取得（并非修饰而成）的const对象。</p></li>
 </ul>
-</section>
-<section id="id14">
-<h4>3.2 const成员函数与重载<a class="headerlink" href="#id14" title="永久链接至标题"></a></h4>
+</div>
+<div class="section" id="id14">
+<h4>3.2 const成员函数与重载<a class="headerlink" href="#id14" title="永久链接至标题">¶</a></h4>
 <p>**两个成员函数如果只是常量性（constness）不同，可以被重载。**这是一个非常重要的C++特性。</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TextBlock</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w"> </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
-<span class="w">    </span><span class="c1">// operator[] for const对象</span>
-<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">&amp;</span><span class="w"> </span><span class="k">operator</span><span class="p">[](</span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="w"> </span><span class="n">position</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">text_</span><span class="p">[</span><span class="n">position</span><span class="p">];</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="c1">// opeartor[] for non-const对象</span>
-<span class="w">    </span><span class="kt">char</span><span class="o">&amp;</span><span class="w"> </span><span class="k">operator</span><span class="p">[](</span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="w"> </span><span class="n">position</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">text_</span><span class="p">[</span><span class="n">position</span><span class="p">];</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TextBlock</span> <span class="p">{</span>
+ <span class="k">public</span><span class="o">:</span>
+    <span class="c1">// operator[] for const对象</span>
+    <span class="k">const</span> <span class="kt">char</span><span class="o">&amp;</span> <span class="k">operator</span><span class="p">[](</span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span> <span class="n">position</span><span class="p">)</span> <span class="k">const</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">text_</span><span class="p">[</span><span class="n">position</span><span class="p">];</span>
+    <span class="p">}</span>
+    <span class="c1">// opeartor[] for non-const对象</span>
+    <span class="kt">char</span><span class="o">&amp;</span> <span class="k">operator</span><span class="p">[](</span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span> <span class="n">position</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">text_</span><span class="p">[</span><span class="n">position</span><span class="p">];</span>
+    <span class="p">}</span>
 
-<span class="w"> </span><span class="k">private</span><span class="o">:</span><span class="w"></span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">text_</span><span class="p">;</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
+ <span class="k">private</span><span class="o">:</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">text_</span><span class="p">;</span>
+<span class="p">};</span>
 </pre></div>
 </div>
 <p>以上面的代码为例，只要重载<code class="docutils literal notranslate"><span class="pre">operator[]</span></code>并对不同的版本给予不同的返回类型，就可以令const和non-const TextBlock获得不同的处理。</p>
-</section>
-<section id="bitwise-constnesslogical-constness">
-<h4>3.3 bitwise constness与logical constness<a class="headerlink" href="#bitwise-constnesslogical-constness" title="永久链接至标题"></a></h4>
+</div>
+<div class="section" id="bitwise-constnesslogical-constness">
+<h4>3.3 bitwise constness与logical constness<a class="headerlink" href="#bitwise-constnesslogical-constness" title="永久链接至标题">¶</a></h4>
 <p>关于const成员函数有两类说法：</p>
 <ul class="simple">
 <li><p>bitwise constness（或称physical constness）：成员函数只有在不更改对象任何成员变量（static除外）时才可以说是const的，即不更改对象内的任何一个bit。</p></li>
@@ -364,104 +456,104 @@ test.h:5:39: error: ‘constexpr’ needed for in-class initialization of static
 </div></blockquote>
 <p>不幸的是许多成员函数虽然不十足具备const性质但却能通过bitwise测试。更具体地说，一个更改了“指针所指物”的成员函数虽然不能算是const，但如果只有指针（而非其所指物）隶属于对象，那么称此函数为bitwise const不会引发编译器异议。</p>
 <p>举个例子，CTextBlock类返回一个reference指向对象内部值，但是却不适当地将其<code class="docutils literal notranslate"><span class="pre">operator[]</span></code>声明为const成员函数。不过<code class="docutils literal notranslate"><span class="pre">operator[]</span></code>实现代码并不更改<code class="docutils literal notranslate"><span class="pre">text_ptr_</span></code>，因此编译器认为它是bitwise constness并产出目标码。</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">CTextBlock</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w"> </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
-<span class="w">    </span><span class="k">explicit</span><span class="w"> </span><span class="n">CTextBlock</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">text</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">text_ptr_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">char</span><span class="p">[</span><span class="n">std</span><span class="o">::</span><span class="n">strlen</span><span class="p">(</span><span class="n">text</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">];</span><span class="w"></span>
-<span class="w">        </span><span class="n">snprintf</span><span class="p">(</span><span class="n">text_ptr_</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">strlen</span><span class="p">(</span><span class="n">text</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">text</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="o">~</span><span class="n">CTextBlock</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="k">delete</span><span class="w"> </span><span class="n">text_ptr_</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span><span class="n">text_ptr_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">print</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">text_ptr_</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="kt">char</span><span class="o">&amp;</span><span class="w"> </span><span class="k">operator</span><span class="p">[](</span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="w"> </span><span class="n">position</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">text_ptr_</span><span class="p">[</span><span class="n">position</span><span class="p">];</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="w"> </span><span class="k">private</span><span class="o">:</span><span class="w"></span>
-<span class="w">    </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">text_ptr_</span><span class="p">;</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">CTextBlock</span> <span class="p">{</span>
+ <span class="k">public</span><span class="o">:</span>
+    <span class="k">explicit</span> <span class="n">CTextBlock</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">text</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">text_ptr_</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">char</span><span class="p">[</span><span class="n">std</span><span class="o">::</span><span class="n">strlen</span><span class="p">(</span><span class="n">text</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">];</span>
+        <span class="n">snprintf</span><span class="p">(</span><span class="n">text_ptr_</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">strlen</span><span class="p">(</span><span class="n">text</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">text</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="o">~</span><span class="n">CTextBlock</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">delete</span> <span class="n">text_ptr_</span><span class="p">;</span>
+        <span class="n">text_ptr_</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="kt">void</span> <span class="n">print</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">text_ptr_</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="kt">char</span><span class="o">&amp;</span> <span class="k">operator</span><span class="p">[](</span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span> <span class="n">position</span><span class="p">)</span> <span class="k">const</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">text_ptr_</span><span class="p">[</span><span class="n">position</span><span class="p">];</span>
+    <span class="p">}</span>
+ <span class="k">private</span><span class="o">:</span>
+    <span class="kt">char</span><span class="o">*</span> <span class="n">text_ptr_</span><span class="p">;</span>
+<span class="p">};</span>
 
-<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">CTextBlock</span><span class="w"> </span><span class="n">foo</span><span class="p">(</span><span class="s">&quot;Cat&quot;</span><span class="p">);</span><span class="w">  </span><span class="c1">// 声明一个常量</span>
-<span class="w">    </span><span class="n">foo</span><span class="p">.</span><span class="n">print</span><span class="p">();</span><span class="w"></span>
-<span class="w">    </span><span class="n">foo</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">&#39;D&#39;</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="n">foo</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">&#39;o&#39;</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="n">foo</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">&#39;g&#39;</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="n">foo</span><span class="p">.</span><span class="n">print</span><span class="p">();</span><span class="w"></span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">const</span> <span class="n">CTextBlock</span> <span class="n">foo</span><span class="p">(</span><span class="s">&quot;Cat&quot;</span><span class="p">);</span>  <span class="c1">// 声明一个常量</span>
+    <span class="n">foo</span><span class="p">.</span><span class="n">print</span><span class="p">();</span>
+    <span class="n">foo</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="sc">&#39;D&#39;</span><span class="p">;</span>
+    <span class="n">foo</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="sc">&#39;o&#39;</span><span class="p">;</span>
+    <span class="n">foo</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="sc">&#39;g&#39;</span><span class="p">;</span>
+    <span class="n">foo</span><span class="p">.</span><span class="n">print</span><span class="p">();</span>
 
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
 
 <span class="c1">// 输出:</span>
-<span class="n">$g</span><span class="o">++</span><span class="w"> </span><span class="o">-</span><span class="n">g</span><span class="w"> </span><span class="n">test</span><span class="p">.</span><span class="n">cpp</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="n">test</span><span class="w"> </span><span class="o">-</span><span class="n">std</span><span class="o">=</span><span class="n">c</span><span class="o">++</span><span class="mi">11</span><span class="w"></span>
-<span class="n">$</span><span class="p">.</span><span class="o">/</span><span class="n">test</span><span class="w"> </span>
-<span class="n">Cat</span><span class="w"></span>
-<span class="n">Dog</span><span class="w"></span>
-<span class="n">root</span><span class="w"></span>
+<span class="n">$g</span><span class="o">++</span> <span class="o">-</span><span class="n">g</span> <span class="n">test</span><span class="p">.</span><span class="n">cpp</span> <span class="o">-</span><span class="n">o</span> <span class="n">test</span> <span class="o">-</span><span class="n">std</span><span class="o">=</span><span class="n">c</span><span class="o">++</span><span class="mi">11</span>
+<span class="n">$</span><span class="p">.</span><span class="o">/</span><span class="n">test</span> 
+<span class="n">Cat</span>
+<span class="n">Dog</span>
+<span class="n">root</span>
 </pre></div>
 </div>
 <p>在上面的例子中，我们创建了一个常量CTextBlock且调用了它的const成员函数<code class="docutils literal notranslate"><span class="pre">operator[]</span></code>，最终还是修改了它的值。</p>
 <p>这种情况导出所谓的logic constness，这一派拥护者主张一个const成员函数可以修改它所处理的对象内的某些bits，但只有在客户端侦测不出的情况下才得如此。例如你的CTextBlock类有可能高速缓存（cache）文本区块的长度以便应付询问。</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">CTextBlock</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w"> </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="w"> </span><span class="n">length</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">length_is_valid_</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="n">text_length_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">strlen</span><span class="p">(</span><span class="n">text_ptr_</span><span class="p">);</span><span class="w">  </span><span class="c1">// 编译不通过, 在const成员函数</span>
-<span class="w">            </span><span class="n">length_is_valid_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span><span class="w">                </span><span class="c1">// 内不能给成员变量赋值</span>
-<span class="w">        </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">CTextBlock</span> <span class="p">{</span>
+ <span class="k">public</span><span class="o">:</span>
+    <span class="n">std</span><span class="o">::</span><span class="kt">size_t</span> <span class="n">length</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">length_is_valid_</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">text_length_</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">strlen</span><span class="p">(</span><span class="n">text_ptr_</span><span class="p">);</span>  <span class="c1">// 编译不通过, 在const成员函数</span>
+            <span class="n">length_is_valid_</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>                <span class="c1">// 内不能给成员变量赋值</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
 
-<span class="w"> </span><span class="k">private</span><span class="o">:</span><span class="w"></span>
-<span class="w">    </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">text_ptr_</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="w"> </span><span class="n">text_length_</span><span class="p">;</span><span class="w">  </span><span class="c1">// 最近一次计算的文本区块长度</span>
-<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">length_is_valid_</span><span class="p">;</span><span class="w">     </span><span class="c1">// 目前的长度是否有效</span>
-<span class="p">};</span><span class="w"></span>
+ <span class="k">private</span><span class="o">:</span>
+    <span class="kt">char</span><span class="o">*</span> <span class="n">text_ptr_</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="kt">size_t</span> <span class="n">text_length_</span><span class="p">;</span>  <span class="c1">// 最近一次计算的文本区块长度</span>
+    <span class="kt">bool</span> <span class="n">length_is_valid_</span><span class="p">;</span>     <span class="c1">// 目前的长度是否有效</span>
+<span class="p">};</span>
 </pre></div>
 </div>
 <p>成员函数<code class="docutils literal notranslate"><span class="pre">length()</span></code>并不是bitwise const的，因为<code class="docutils literal notranslate"><span class="pre">text_length_</span></code>和<code class="docutils literal notranslate"><span class="pre">length_is_valid_</span></code>变量都可能被修改。这两个成员变量被修改对const CTextBlock变量而言是可以接受的，但是编译器并不接受（编译器只同意bitwise constness），这该怎么办？</p>
 <p>解决方法很简单：利用C++一个与const相关的关键字：mutable（可变的），它可以释放掉non-static变量的bitwise constness约束。</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">CTextBlock</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w"> </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="w"> </span><span class="n">length</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">length_is_valid_</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="n">text_length_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">strlen</span><span class="p">(</span><span class="n">text_ptr_</span><span class="p">);</span><span class="w">  </span><span class="c1">// 这些成员变量可能被修改, 即使</span>
-<span class="w">            </span><span class="n">length_is_valid_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span><span class="w">                </span><span class="c1">// 在const成员函数内部</span>
-<span class="w">        </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">CTextBlock</span> <span class="p">{</span>
+ <span class="k">public</span><span class="o">:</span>
+    <span class="n">std</span><span class="o">::</span><span class="kt">size_t</span> <span class="n">length</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">length_is_valid_</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">text_length_</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">strlen</span><span class="p">(</span><span class="n">text_ptr_</span><span class="p">);</span>  <span class="c1">// 这些成员变量可能被修改, 即使</span>
+            <span class="n">length_is_valid_</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>                <span class="c1">// 在const成员函数内部</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
 
-<span class="w"> </span><span class="k">private</span><span class="o">:</span><span class="w"></span>
-<span class="w">    </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">text_ptr_</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">mutable</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="w"> </span><span class="n">text_length_</span><span class="p">;</span><span class="w">  </span><span class="c1">// 最近一次计算的文本区块长度</span>
-<span class="w">    </span><span class="k">mutable</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">length_is_valid_</span><span class="p">;</span><span class="w">     </span><span class="c1">// 目前的长度是否有效</span>
-<span class="p">};</span><span class="w"></span>
+ <span class="k">private</span><span class="o">:</span>
+    <span class="kt">char</span><span class="o">*</span> <span class="n">text_ptr_</span><span class="p">;</span>
+    <span class="k">mutable</span> <span class="n">std</span><span class="o">::</span><span class="kt">size_t</span> <span class="n">text_length_</span><span class="p">;</span>  <span class="c1">// 最近一次计算的文本区块长度</span>
+    <span class="k">mutable</span> <span class="kt">bool</span> <span class="n">length_is_valid_</span><span class="p">;</span>     <span class="c1">// 目前的长度是否有效</span>
+<span class="p">};</span>
 </pre></div>
 </div>
-</section>
-<section id="constnon-const">
-<h4>3.4 在const和non-const成员函数中避免重复<a class="headerlink" href="#constnon-const" title="永久链接至标题"></a></h4>
+</div>
+<div class="section" id="constnon-const">
+<h4>3.4 在const和non-const成员函数中避免重复<a class="headerlink" href="#constnon-const" title="永久链接至标题">¶</a></h4>
 <blockquote>
 <div><p>当const和non-const成员函数有着<strong>实质等价的实现</strong>时，令non-const版本调用const版本可以避免代码重复。</p>
 </div></blockquote>
 <p>一般情况下一个成员函数的const和non-const版本内部逻辑基本上是一致的，唯一的不同在于const版本的返回类型多了一个const修饰。所以令non-const <code class="docutils literal notranslate"><span class="pre">operator[]</span></code>调用其const兄弟是一个避免代码重复的安全做法：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TextBlock</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w"> </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
-<span class="w">    </span><span class="c1">// operator[] const版本</span>
-<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">&amp;</span><span class="w"> </span><span class="k">operator</span><span class="p">[](</span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="w"> </span><span class="n">position</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">text_</span><span class="p">[</span><span class="n">position</span><span class="p">];</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="c1">// opeartor[] non-const版本</span>
-<span class="w">    </span><span class="kt">char</span><span class="o">&amp;</span><span class="w"> </span><span class="k">operator</span><span class="p">[](</span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="w"> </span><span class="n">position</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">const_cast</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">&amp;&gt;</span><span class="p">(</span><span class="w">                 </span><span class="c1">// 移除operator[]返回值的const</span>
-<span class="w">            </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="k">const</span><span class="w"> </span><span class="n">TextBlock</span><span class="o">&amp;&gt;</span><span class="p">(</span><span class="o">*</span><span class="k">this</span><span class="p">)</span><span class="w">  </span><span class="c1">// 为*this加上const</span>
-<span class="w">            </span><span class="p">[</span><span class="n">position</span><span class="p">]);</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TextBlock</span> <span class="p">{</span>
+ <span class="k">public</span><span class="o">:</span>
+    <span class="c1">// operator[] const版本</span>
+    <span class="k">const</span> <span class="kt">char</span><span class="o">&amp;</span> <span class="k">operator</span><span class="p">[](</span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span> <span class="n">position</span><span class="p">)</span> <span class="k">const</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">text_</span><span class="p">[</span><span class="n">position</span><span class="p">];</span>
+    <span class="p">}</span>
+    <span class="c1">// opeartor[] non-const版本</span>
+    <span class="kt">char</span><span class="o">&amp;</span> <span class="k">operator</span><span class="p">[](</span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span> <span class="n">position</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">const_cast</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">&amp;&gt;</span><span class="p">(</span>                 <span class="c1">// 移除operator[]返回值的const</span>
+            <span class="k">static_cast</span><span class="o">&lt;</span><span class="k">const</span> <span class="n">TextBlock</span><span class="o">&amp;&gt;</span><span class="p">(</span><span class="o">*</span><span class="k">this</span><span class="p">)</span>  <span class="c1">// 为*this加上const</span>
+            <span class="p">[</span><span class="n">position</span><span class="p">]);</span>
+    <span class="p">}</span>
 
-<span class="w"> </span><span class="k">private</span><span class="o">:</span><span class="w"></span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">text_</span><span class="p">;</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
+ <span class="k">private</span><span class="o">:</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">text_</span><span class="p">;</span>
+<span class="p">};</span>
 </pre></div>
 </div>
 <p>上述代码存在两个转型动作：</p>
@@ -472,40 +564,57 @@ test.h:5:39: error: ‘constexpr’ needed for in-class initialization of static
 <blockquote>
 <div><p>需要注意的是，反向做法（令const版本调用non-const版本）是不合适的。因为const成员函数承诺绝不改变其对象的逻辑状态（logical state），non-const成员函数却没有这个承诺。如果在const函数内调用non-const函数，就是冒了这样的风险：你曾经承诺不改动的对象被改动了。</p>
 </div></blockquote>
-</section>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
+</div>
 
 
            </div>
+           
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="8.1%20auto.html" class="btn btn-neutral float-left" title="8.1 关键字：auto" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
         <a href="8.3%20using.html" class="btn btn-neutral float-right" title="8.3 关键字：using" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="8.1%20auto.html" class="btn btn-neutral float-left" title="8.1 关键字：auto" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; 版权所有 2021, TOMOCAT.</p>
-  </div>
+    <p>
+        &#169; 版权所有 2021, TOMOCAT.
 
-  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    </p>
+  </div>
+    
+    
+    
+    利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
-    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
-   
+    
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发. 
 
 </footer>
         </div>
       </div>
+
     </section>
+
   </div>
-  <script>
+  
+
+  <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

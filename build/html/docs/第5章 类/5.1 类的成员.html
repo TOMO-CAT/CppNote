@@ -1,35 +1,74 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="zh-CN" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  <meta charset="utf-8" />
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>5.1 类的成员 &mdash; C++语法笔记 v1.0 文档</title>
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+  <title>5.1 类的成员 &mdash; C++ Note v1.0 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script src="../../_static/translations.js"></script>
-    <script src="../../_static/js/theme.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
     <link rel="next" title="5.2 类的静态成员" href="5.2%20%E7%B1%BB%E7%9A%84%E9%9D%99%E6%80%81%E6%88%90%E5%91%98.html" />
     <link rel="prev" title="第5章类" href="index.html" /> 
 </head>
 
-<body class="wy-body-for-nav"> 
+<body class="wy-body-for-nav">
+
+   
   <div class="wy-grid-for-nav">
+    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../../index.html" class="icon icon-home"> C++语法笔记
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> C++ Note
+          
+
+          
           </a>
+
+          
+            
+            
+          
+
+          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="在文档中搜索" />
@@ -37,7 +76,18 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC1%E7%AB%A0%20%E5%8F%98%E9%87%8F%E4%B8%8E%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B/index.html">第1章 变量与基本类型</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC2%E7%AB%A0%20%E8%AF%AD%E5%8F%A5/index.html">第2章 语句</a></li>
@@ -88,244 +138,303 @@
 <li class="toctree-l1"><a class="reference internal" href="../README.html">README</a></li>
 </ul>
 
+            
+          
         </div>
+        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../index.html">C++语法笔记</a>
+          <a href="../../index.html">C++ Note</a>
+        
       </nav>
 
+
       <div class="wy-nav-content">
+        
         <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
+    
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
           <li><a href="index.html">第5章类</a> &raquo;</li>
+        
       <li>5.1 类的成员</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
+        
+          
             <a href="../../_sources/docs/第5章 类/5.1 类的成员.md.txt" rel="nofollow"> 查看页面源码</a>
+          
+        
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-             
-  <section id="id1">
-<h1>5.1 类的成员<a class="headerlink" href="#id1" title="永久链接至标题"></a></h1>
-<section id="id2">
-<h2>类的类型成员<a class="headerlink" href="#id2" title="永久链接至标题"></a></h2>
+            
+  <div class="section" id="id1">
+<h1>5.1 类的成员<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id2">
+<h2>类的类型成员<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>除了定义数据和函数成员外，类还可以自定义某种类型在类中的别名。由类定义的类型名字和其他成员一样存在访问限制：</p>
 <blockquote>
 <div><p>Tips：用来定义类型的成员和普通成员不同，必须先定义后使用，因此类型成员通常出现在类开始的地方。</p>
 </div></blockquote>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Screen</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w"> </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
-<span class="w">    </span><span class="c1">// 类型别名, 等价于: using pos = std::string::size_type</span>
-<span class="w">    </span><span class="k">typedef</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">::</span><span class="n">size_type</span><span class="w"> </span><span class="n">pos</span><span class="p">;</span><span class="w"></span>
-<span class="w"> </span><span class="k">private</span><span class="o">:</span><span class="w"></span>
-<span class="w">    </span><span class="n">pos</span><span class="w"> </span><span class="n">cursor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="n">pos</span><span class="w"> </span><span class="n">height</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">contents</span><span class="p">;</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Screen</span> <span class="p">{</span>
+ <span class="k">public</span><span class="o">:</span>
+    <span class="c1">// 类型别名, 等价于: using pos = std::string::size_type</span>
+    <span class="k">typedef</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">::</span><span class="n">size_type</span> <span class="n">pos</span><span class="p">;</span>
+ <span class="k">private</span><span class="o">:</span>
+    <span class="n">pos</span> <span class="n">cursor</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">pos</span> <span class="n">height</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">contents</span><span class="p">;</span>
+<span class="p">};</span>
 </pre></div>
 </div>
-</section>
-<section id="id3">
-<h2>类的函数成员<a class="headerlink" href="#id3" title="永久链接至标题"></a></h2>
-<section id="id4">
-<h3>1. 声明与定义<a class="headerlink" href="#id4" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="id3">
+<h2>类的函数成员<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id4">
+<h3>1. 声明与定义<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
 <blockquote>
 <div><p>Tips：定义在类内部的函数是隐式的inline函数。</p>
 </div></blockquote>
 <p>类的成员函数必须在类的内部声明，但是它的定义既可以在类的内部也可以在类的外部。</p>
-</section>
-<section id="this">
-<h3>2. this指针<a class="headerlink" href="#this" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="this">
+<h3>2. this指针<a class="headerlink" href="#this" title="永久链接至标题">¶</a></h3>
 <blockquote>
 <div><p>Tips：this是一个常量指针，不允许改变this中保存的地址。</p>
 </div></blockquote>
 <p>成员函数通过一个名为this的隐式参数来访问调用它的哪个对象，当我们调用一个成员函数时，用请求该函数的对象地址初始化this。</p>
-</section>
-<section id="const">
-<h3>3. const限定符<a class="headerlink" href="#const" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="const">
+<h3>3. const限定符<a class="headerlink" href="#const" title="永久链接至标题">¶</a></h3>
 <blockquote>
 <div><p>Tips：常量对象，以及常量对象的引用或指针都只能调用常量成员函数，因此如果一个成员函数不改变调用它的对象的内容，那么最好申明成const成员函数。</p>
 </div></blockquote>
 <p>默认情况下this是指向类类型非常量版本的常量指针，C++语言允许把const关键字放在成员函数的参数列表之后，用于表示this是一个指向常量类类型的常量指针。</p>
-</section>
-<section id="id5">
-<h3>4. 返回this对象的函数<a class="headerlink" href="#id5" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="id5">
+<h3>4. 返回this对象的函数<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
 <blockquote>
 <div><p>Tips：一个const成员函数如果以引用的形式返回<code class="docutils literal notranslate"><span class="pre">*this</span></code>，那么它的返回类型将是常量引用。</p>
 </div></blockquote>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// 将this对象作为左值返回: 返回的是对象本身而非对象的副本</span>
-<span class="k">return</span><span class="w"> </span><span class="o">*</span><span class="k">this</span><span class="p">;</span><span class="w"></span>
+<span class="k">return</span> <span class="o">*</span><span class="k">this</span><span class="p">;</span>
 </pre></div>
 </div>
-</section>
-<section id="id6">
-<h3>5. 内联函数<a class="headerlink" href="#id6" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="id6">
+<h3>5. 内联函数<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
 <blockquote>
 <div><p>Tips：和我们在头文件中定义inline函数的原因一样，inline成员函数也应该与相应的类定义在同一个头文件中。</p>
 </div></blockquote>
 <p>在类中常有一些规模较小的函数适合于被声明成内联函数，其中定义在类内部的成员函数或者友元函数是自动inline的，在类的外部我们可以用inline关键字修饰函数定义将其显式声明为内联函数。</p>
-</section>
-<section id="id7">
-<h3>6. 友元函数<a class="headerlink" href="#id7" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="id7">
+<h3>6. 友元函数<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
 <p>类的友元函数包括两种，它们都可以访问类的私有成员：</p>
 <ul class="simple">
 <li><p>普通的非成员函数作为友元</p></li>
 <li><p>另一个类的成员函数作为友元</p></li>
 </ul>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Foo</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="c1">// 非成员函数作为友元</span>
-<span class="w">    </span><span class="k">friend</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">istream</span><span class="w"> </span><span class="o">&amp;</span><span class="nf">read</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">istream</span><span class="o">&amp;</span><span class="p">,</span><span class="w"> </span><span class="n">Foo</span><span class="o">&amp;</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span>
-<span class="w">    </span><span class="c1">// 另一个类的成员函数作为友元</span>
-<span class="w">    </span><span class="n">firend</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">Bar</span><span class="o">::</span><span class="n">clear</span><span class="p">();</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Foo</span> <span class="p">{</span>
+    <span class="c1">// 非成员函数作为友元</span>
+    <span class="k">friend</span> <span class="n">std</span><span class="o">::</span><span class="n">istream</span> <span class="o">&amp;</span><span class="nf">read</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">istream</span><span class="o">&amp;</span><span class="p">,</span> <span class="n">Foo</span><span class="o">&amp;</span><span class="p">);</span>
+    
+    <span class="c1">// 另一个类的成员函数作为友元</span>
+    <span class="n">firend</span> <span class="kt">void</span> <span class="n">Bar</span><span class="o">::</span><span class="n">clear</span><span class="p">();</span>
+<span class="p">};</span>
 </pre></div>
 </div>
-</section>
-<section id="id8">
-<h3>7. 引用限定符<a class="headerlink" href="#id8" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="id8">
+<h3>7. 引用限定符<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
 <p>通常情况下我们在一个对象上调用成员函数不需要管该对象是一个左值还是右值，比如：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">string</span><span class="w"> </span><span class="n">s1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;tomo&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">s2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;cat&quot;</span><span class="p">;</span><span class="w"></span>
-<span class="k">auto</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">s1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">s2</span><span class="p">).</span><span class="n">find</span><span class="p">(</span><span class="sc">&#39;a&#39;</span><span class="p">);</span><span class="w">  </span><span class="c1">// 在一个string右值上调用find成员</span>
-<span class="n">s1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">s2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;test&quot;</span><span class="p">;</span><span class="w">              </span><span class="c1">// 对一个string右值赋值</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">string</span> <span class="n">s1</span> <span class="o">=</span> <span class="s">&quot;tomo&quot;</span><span class="p">,</span> <span class="n">s2</span> <span class="o">=</span> <span class="s">&quot;cat&quot;</span><span class="p">;</span>
+<span class="k">auto</span> <span class="n">n</span> <span class="o">=</span> <span class="p">(</span><span class="n">s1</span> <span class="o">+</span> <span class="n">s2</span><span class="p">).</span><span class="n">find</span><span class="p">(</span><span class="sc">&#39;a&#39;</span><span class="p">);</span>  <span class="c1">// 在一个string右值上调用find成员</span>
+<span class="n">s1</span> <span class="o">+</span> <span class="n">s2</span> <span class="o">=</span> <span class="s">&quot;test&quot;</span><span class="p">;</span>              <span class="c1">// 对一个string右值赋值</span>
 </pre></div>
 </div>
 <p>在旧标准中我们无法阻止上述这种使用方式，为了维持向后兼容性，新标准库类仍然允许向右值赋值。但是在新标准中如果我们想在自定义的类中阻止这种用法，可以强制左侧运算对象（即<code class="docutils literal notranslate"><span class="pre">this</span></code>指针指向的对象）是一个左值。</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Foo</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w"> </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
-<span class="w">    </span><span class="c1">// 左值引用限定符: 拷贝赋值运算符只可向可修改的左值赋值</span>
-<span class="w">    </span><span class="n">Foo</span><span class="w"> </span><span class="o">&amp;</span><span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Foo</span><span class="w"> </span><span class="o">&amp;</span><span class="n">rhs</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="o">*</span><span class="k">this</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Foo</span> <span class="p">{</span>
+ <span class="k">public</span><span class="o">:</span>
+    <span class="c1">// 左值引用限定符: 拷贝赋值运算符只可向可修改的左值赋值</span>
+    <span class="n">Foo</span> <span class="o">&amp;</span><span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span> <span class="n">Foo</span> <span class="o">&amp;</span><span class="n">rhs</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="o">*</span><span class="k">this</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
 
-<span class="n">Foo</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w"></span>
-<span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w">             </span><span class="c1">// 正确</span>
-<span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w">  </span><span class="c1">// 错误: 不可向右值赋值</span>
+<span class="n">Foo</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">;</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">b</span><span class="p">;</span>             <span class="c1">// 正确</span>
+<span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">=</span> <span class="n">b</span><span class="p">;</span>  <span class="c1">// 错误: 不可向右值赋值</span>
 </pre></div>
 </div>
 <p>和左值引用限定符用法相似，右值引用限定符<code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code>表示该成员函数只可应用于右值。我们可以综合引用限定符和<code class="docutils literal notranslate"><span class="pre">const</span></code>限定符来区分一个成员函数的重载版本：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Foo</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w"> </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
-<span class="w">    </span><span class="c1">// 用于类型Foo的可改变的右值: 提高排序性能</span>
-<span class="w">    </span><span class="n">Foo</span><span class="w"> </span><span class="n">sorted</span><span class="p">()</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="c1">// 本对象为右值, 可以原址排序</span>
-<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">sort</span><span class="p">(</span><span class="n">data_</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">data_</span><span class="p">.</span><span class="n">end</span><span class="p">());</span><span class="w"></span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="o">*</span><span class="k">this</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="c1">// 可用于任何类型的Foo</span>
-<span class="w">    </span><span class="n">Foo</span><span class="w"> </span><span class="n">sorted</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="c1">// 本对象是const或者一个左值, 不能原址排序</span>
-<span class="w">        </span><span class="n">Foo</span><span class="w"> </span><span class="nf">ret</span><span class="p">(</span><span class="o">*</span><span class="k">this</span><span class="p">);</span><span class="w"></span>
-<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">sort</span><span class="p">(</span><span class="n">ret</span><span class="p">.</span><span class="n">data_</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">ret</span><span class="p">.</span><span class="n">data_</span><span class="p">.</span><span class="n">end</span><span class="p">());</span><span class="w"></span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">ret</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="w"> </span><span class="k">private</span><span class="o">:</span><span class="w"></span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">data_</span><span class="p">;</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Foo</span> <span class="p">{</span>
+ <span class="k">public</span><span class="o">:</span>
+    <span class="c1">// 用于类型Foo的可改变的右值: 提高排序性能</span>
+    <span class="n">Foo</span> <span class="n">sorted</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="p">{</span>
+        <span class="c1">// 本对象为右值, 可以原址排序</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">sort</span><span class="p">(</span><span class="n">data_</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">data_</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+        <span class="k">return</span> <span class="o">*</span><span class="k">this</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="c1">// 可用于任何类型的Foo</span>
+    <span class="n">Foo</span> <span class="n">sorted</span><span class="p">()</span> <span class="k">const</span> <span class="o">&amp;</span> <span class="p">{</span>
+        <span class="c1">// 本对象是const或者一个左值, 不能原址排序</span>
+        <span class="n">Foo</span> <span class="nf">ret</span><span class="p">(</span><span class="o">*</span><span class="k">this</span><span class="p">);</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">sort</span><span class="p">(</span><span class="n">ret</span><span class="p">.</span><span class="n">data_</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">ret</span><span class="p">.</span><span class="n">data_</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+        <span class="k">return</span> <span class="n">ret</span><span class="p">;</span>
+    <span class="p">}</span>
+ <span class="k">private</span><span class="o">:</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">data_</span><span class="p">;</span>
+<span class="p">};</span>
 </pre></div>
 </div>
-</section>
-</section>
-<section id="id9">
-<h2>类的数据成员<a class="headerlink" href="#id9" title="永久链接至标题"></a></h2>
+</div>
+</div>
+<div class="section" id="id9">
+<h2>类的数据成员<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h2>
 <blockquote>
 <div><p>编码规范：最好将所有数据成员声明为<code class="docutils literal notranslate"><span class="pre">private</span></code>，除非是<code class="docutils literal notranslate"><span class="pre">static</span> <span class="pre">const</span></code>类型成员，数据成员的存取函数一般内联在头文件中。</p>
 </div></blockquote>
-<section id="id10">
-<h3>1. 类数据成员的初始值<a class="headerlink" href="#id10" title="永久链接至标题"></a></h3>
+<div class="section" id="id10">
+<h3>1. 类数据成员的初始值<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h3>
 <blockquote>
 <div><p>Tips：当我们提供类内初始值时，必须以符号=或者花括号表示。</p>
 </div></blockquote>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span> <span class="nc">Foo</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="c1">// 默认构造函数</span>
-<span class="w">    </span><span class="n">Foo</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="c1">// 接受一个参数的构造函数: d和i使用类内初始值值初始化</span>
-<span class="w">    </span><span class="n">Foo</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">str</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="c1">// 接受三个参数的构造函数: 通过构造函数初始值列表初始化</span>
-<span class="w">    </span><span class="n">Foo</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">d</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">str</span><span class="p">(</span><span class="n">s</span><span class="p">),</span><span class="w"> </span><span class="n">d</span><span class="p">(</span><span class="n">d</span><span class="p">),</span><span class="w"> </span><span class="n">i</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span> <span class="nc">Foo</span> <span class="p">{</span>
+    <span class="c1">// 默认构造函数</span>
+    <span class="n">Foo</span><span class="p">()</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
+    <span class="c1">// 接受一个参数的构造函数: d和i使用类内初始值值初始化</span>
+    <span class="n">Foo</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">s</span><span class="p">)</span> <span class="o">:</span> <span class="n">str</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+    <span class="c1">// 接受三个参数的构造函数: 通过构造函数初始值列表初始化</span>
+    <span class="n">Foo</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">s</span><span class="p">,</span> <span class="kt">double</span> <span class="n">d</span><span class="p">,</span> <span class="kt">int</span> <span class="n">i</span><span class="p">)</span> <span class="o">:</span> <span class="n">str</span><span class="p">(</span><span class="n">s</span><span class="p">),</span> <span class="n">d</span><span class="p">(</span><span class="n">d</span><span class="p">),</span> <span class="n">i</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
 
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">str</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="c1">// 类内初始值: 等于号=表示</span>
-<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.14</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="c1">// 类内初始值: 花括号表示</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">{</span><span class="mi">5</span><span class="p">};</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">str</span><span class="p">;</span>
+    <span class="c1">// 类内初始值: 等于号=表示</span>
+    <span class="kt">double</span> <span class="n">d</span> <span class="o">=</span> <span class="mf">3.14</span><span class="p">;</span>
+    <span class="c1">// 类内初始值: 花括号表示</span>
+    <span class="kt">int</span> <span class="n">i</span><span class="p">{</span><span class="mi">5</span><span class="p">};</span>
+<span class="p">};</span>
 </pre></div>
 </div>
-</section>
-<section id="id11">
-<h3>2. 可变数据成员<a class="headerlink" href="#id11" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="id11">
+<h3>2. 可变数据成员<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h3>
 <blockquote>
 <div><p>Tips：一个可变数据成员<code class="docutils literal notranslate"><span class="pre">mutable</span> <span class="pre">data</span> <span class="pre">member</span></code>永远不会是<code class="docutils literal notranslate"><span class="pre">const</span></code>，即使它是<code class="docutils literal notranslate"><span class="pre">const</span></code>对象的成员。</p>
 </div></blockquote>
 <p>有时我们希望能修改类的每某个数据成员（即使是在一个<code class="docutils literal notranslate"><span class="pre">const</span></code>成员函数内），可以通过在变量的声明中加入<code class="docutils literal notranslate"><span class="pre">mutable</span></code>关键字来实现。</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Screen</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="k">public</span><span class="o">:</span><span class="w"></span>
-<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">some_member</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span><span class="w"></span>
-<span class="k">private</span><span class="o">:</span><span class="w"></span>
-<span class="w">    </span><span class="k">mutable</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">access_ctr</span><span class="p">;</span><span class="w">  </span><span class="c1">// 可变数据成员, 用于记录成员函数被调用的次数</span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Screen</span> <span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="kt">void</span> <span class="n">some_member</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
+<span class="k">private</span><span class="o">:</span>
+    <span class="k">mutable</span> <span class="kt">size_t</span> <span class="n">access_ctr</span><span class="p">;</span>  <span class="c1">// 可变数据成员, 用于记录成员函数被调用的次数</span>
+<span class="p">}</span>
 
-<span class="kt">void</span><span class="w"> </span><span class="n">Screen</span><span class="o">::</span><span class="n">some_member</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="o">++</span><span class="n">access_ctr</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="c1">// do something</span>
-<span class="p">}</span><span class="w"></span>
+<span class="kt">void</span> <span class="n">Screen</span><span class="o">::</span><span class="n">some_member</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span>
+    <span class="o">++</span><span class="n">access_ctr</span><span class="p">;</span>
+    <span class="c1">// do something</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-</section>
-<section id="id12">
-<h3>3. 类的友元类<a class="headerlink" href="#id12" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="id12">
+<h3>3. 类的友元类<a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h3>
 <blockquote>
 <div><p>Tips：友元关系不存在传递性，类的友元的友元不是它的友元。</p>
 </div></blockquote>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Foo</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="c1">// Bar的成员可以访问Foo类的私有成员</span>
-<span class="w">    </span><span class="k">friend</span><span class="w"> </span><span class="k">class</span> <span class="nc">Bar</span><span class="p">;</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Foo</span> <span class="p">{</span>
+    <span class="c1">// Bar的成员可以访问Foo类的私有成员</span>
+    <span class="k">friend</span> <span class="k">class</span> <span class="nc">Bar</span><span class="p">;</span>
+<span class="p">};</span>
 </pre></div>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
            </div>
+           
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="index.html" class="btn btn-neutral float-left" title="第5章类" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
         <a href="5.2%20%E7%B1%BB%E7%9A%84%E9%9D%99%E6%80%81%E6%88%90%E5%91%98.html" class="btn btn-neutral float-right" title="5.2 类的静态成员" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="index.html" class="btn btn-neutral float-left" title="第5章类" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; 版权所有 2021, TOMOCAT.</p>
-  </div>
+    <p>
+        &#169; 版权所有 2021, TOMOCAT.
 
-  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    </p>
+  </div>
+    
+    
+    
+    利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
-    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
-   
+    
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发. 
 
 </footer>
         </div>
       </div>
+
     </section>
+
   </div>
-  <script>
+  
+
+  <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

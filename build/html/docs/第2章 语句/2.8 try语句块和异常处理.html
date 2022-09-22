@@ -1,35 +1,74 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="zh-CN" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  <meta charset="utf-8" />
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>2.8 try语句块和异常处理 &mdash; C++语法笔记 v1.0 文档</title>
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+  <title>2.8 try语句块和异常处理 &mdash; C++ Note v1.0 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script src="../../_static/translations.js"></script>
-    <script src="../../_static/js/theme.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
     <link rel="next" title="第3章 函数" href="../%E7%AC%AC3%E7%AB%A0%20%E5%87%BD%E6%95%B0/index.html" />
     <link rel="prev" title="2.7 goto语句" href="2.7%20goto%E8%AF%AD%E5%8F%A5.html" /> 
 </head>
 
-<body class="wy-body-for-nav"> 
+<body class="wy-body-for-nav">
+
+   
   <div class="wy-grid-for-nav">
+    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../../index.html" class="icon icon-home"> C++语法笔记
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> C++ Note
+          
+
+          
           </a>
+
+          
+            
+            
+          
+
+          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="在文档中搜索" />
@@ -37,7 +76,18 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC1%E7%AB%A0%20%E5%8F%98%E9%87%8F%E4%B8%8E%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B/index.html">第1章 变量与基本类型</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">第2章 语句</a><ul class="current">
@@ -76,84 +126,126 @@
 <li class="toctree-l1"><a class="reference internal" href="../README.html">README</a></li>
 </ul>
 
+            
+          
         </div>
+        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../index.html">C++语法笔记</a>
+          <a href="../../index.html">C++ Note</a>
+        
       </nav>
 
+
       <div class="wy-nav-content">
+        
         <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
+    
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
           <li><a href="index.html">第2章 语句</a> &raquo;</li>
+        
       <li>2.8 try语句块和异常处理</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
+        
+          
             <a href="../../_sources/docs/第2章 语句/2.8 try语句块和异常处理.md.txt" rel="nofollow"> 查看页面源码</a>
+          
+        
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-             
-  <section id="try">
-<h1>2.8 try语句块和异常处理<a class="headerlink" href="#try" title="永久链接至标题"></a></h1>
-<section id="id1">
-<h2>简介<a class="headerlink" href="#id1" title="永久链接至标题"></a></h2>
+            
+  <div class="section" id="try">
+<h1>2.8 try语句块和异常处理<a class="headerlink" href="#try" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id1">
+<h2>简介<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <p>典型的异常包括失去数据库连接以及遇到意外输入等，异常处理机制为程序中异常检测和异常处理两部分的协作提供支持：</p>
 <ul class="simple">
 <li><p>thorw表达式：throw表达式用于表示它遇到了无法处理的问题，我们说throw引发了异常</p></li>
 <li><p>try语句块：异常处理部分使用try语句块处理异常，它以关键字try开始，并以一个或多个catch子句结束</p></li>
 <li><p>异常类：用于在throw表达式和catch子句之间传递异常的具体信息</p></li>
 </ul>
-</section>
-<section id="throw">
-<h2>throw表达式<a class="headerlink" href="#throw" title="永久链接至标题"></a></h2>
+</div>
+<div class="section" id="throw">
+<h2>throw表达式<a class="headerlink" href="#throw" title="永久链接至标题">¶</a></h2>
 <p>程序的异常检测部分用throw表达式抛出一个异常：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdexcept&gt;</span><span class="cp"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdexcept&gt;</span><span class="cp"></span>
 
-<span class="k">throw</span><span class="w"> </span><span class="n">runtime_error</span><span class="p">(</span><span class="s">&quot;tomocat&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="k">throw</span> <span class="n">runtime_error</span><span class="p">(</span><span class="s">&quot;tomocat&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
-</section>
-<section id="id2">
-<h2>try语句块<a class="headerlink" href="#id2" title="永久链接至标题"></a></h2>
+</div>
+<div class="section" id="id2">
+<h2>try语句块<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>try语句块的语法是：</p>
 <blockquote>
 <div><p>Tips：try语句块内声明的变量在块外部无法访问，特别是在catch子句内也无法访问。</p>
 </div></blockquote>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">	</span><span class="n">program</span><span class="o">-</span><span class="n">statements</span><span class="w"></span>
-<span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">exception</span><span class="o">-</span><span class="n">declaration</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">	</span><span class="n">handler</span><span class="o">-</span><span class="n">statements</span><span class="w"></span>
-<span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">exception</span><span class="o">-</span><span class="n">declaration</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">	</span><span class="n">handler</span><span class="o">-</span><span class="n">statements</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">try</span> <span class="p">{</span>
+	<span class="n">program</span><span class="o">-</span><span class="n">statements</span>
+<span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">exception</span><span class="o">-</span><span class="n">declaration</span><span class="p">)</span> <span class="p">{</span>
+	<span class="n">handler</span><span class="o">-</span><span class="n">statements</span>
+<span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">exception</span><span class="o">-</span><span class="n">declaration</span><span class="p">)</span> <span class="p">{</span>
+	<span class="n">handler</span><span class="o">-</span><span class="n">statements</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>例子：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">item1</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">item2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="c1">// 执行item1和item2的操作, 失败了抛出runtime_error异常</span>
-<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">runtime_error</span><span class="w"> </span><span class="n">err</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">err</span><span class="p">.</span><span class="n">what</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="p">(</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">item1</span> <span class="o">&gt;&gt;</span> <span class="n">item2</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">try</span> <span class="p">{</span>
+        <span class="c1">// 执行item1和item2的操作, 失败了抛出runtime_error异常</span>
+    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">runtime_error</span> <span class="n">err</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">err</span><span class="p">.</span><span class="n">what</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <blockquote>
 <div><p>Tips：如果一个程序没有try语句块且发生了异常，系统会调用terminate函数并终止当前程序的执行。当异常被抛出时，首先搜索该异常的函数，如果没能找到匹配的catch子句，那么终止该函数并在调用该函数的函数中继续寻找。如果还是没找到匹配的catch子句，这个新的函数也被终止，继续搜索调用它的函数。如果最终还是没能找到任何匹配的catch子句，系统会调用terminate函数并终止当前程序的执行。</p>
 </div></blockquote>
-</section>
-<section id="id3">
-<h2>标准异常<a class="headerlink" href="#id3" title="永久链接至标题"></a></h2>
-<section id="c">
-<h3>1. C++标准库异常<a class="headerlink" href="#c" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="id3">
+<h2>标准异常<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<div class="section" id="c">
+<h3>1. C++标准库异常<a class="headerlink" href="#c" title="永久链接至标题">¶</a></h3>
 <p>C++标准库定义了一组类用于报告标准库遇到的问题，它们分别定义在4个头文件中：</p>
 <ul class="simple">
 <li><p>exception头文件中定义了最通用的异常类exception，它只报告异常的发生，不提供任何额外信息</p></li>
@@ -161,9 +253,9 @@
 <li><p>new头文件中定义了<code class="docutils literal notranslate"><span class="pre">bad_alloc</span></code>异常类型</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">type_info</span></code>头文件中定义了<code class="docutils literal notranslate"><span class="pre">bad_cast</span></code>异常类型</p></li>
 </ul>
-</section>
-<section id="stdexcept">
-<h3>2. stdexcept定义的异常<a class="headerlink" href="#stdexcept" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="stdexcept">
+<h3>2. stdexcept定义的异常<a class="headerlink" href="#stdexcept" title="永久链接至标题">¶</a></h3>
 <p>stdexcept头文件中定义的异常类如下：</p>
 <table border="1" class="docutils">
 <thead>
@@ -214,48 +306,65 @@
 <td>逻辑错误：使用一个超出有效范围的值</td>
 </tr>
 </tbody>
-</table></section>
-<section id="id4">
-<h3>3. 注意事项<a class="headerlink" href="#id4" title="永久链接至标题"></a></h3>
+</table></div>
+<div class="section" id="id4">
+<h3>3. 注意事项<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
 <ul class="simple">
 <li><p>我们只能以默认初始化的方式初始化exception、<code class="docutils literal notranslate"><span class="pre">bad_alloc</span></code>和<code class="docutils literal notranslate"><span class="pre">bad_cast</span></code></p></li>
 <li><p>对于除exception、<code class="docutils literal notranslate"><span class="pre">bad_alloc</span></code>和<code class="docutils literal notranslate"><span class="pre">bad_cast</span></code>的异常类，我们应该用string对象或者C风格字符串初始化这些类型的对象，不允许使用默认初始化的方式</p></li>
 <li><p>异常类只定义了一个名为what的成员函数，返回一个提供错误信息的C风格字符串</p></li>
 <li><p>如果异常类型有一个字符串初始值，那么what方法返回该字符串；对于其他无初始值的异常类型来说，what返回的内容由编译器决定</p></li>
 </ul>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
            </div>
+           
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="2.7%20goto%E8%AF%AD%E5%8F%A5.html" class="btn btn-neutral float-left" title="2.7 goto语句" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
         <a href="../%E7%AC%AC3%E7%AB%A0%20%E5%87%BD%E6%95%B0/index.html" class="btn btn-neutral float-right" title="第3章 函数" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="2.7%20goto%E8%AF%AD%E5%8F%A5.html" class="btn btn-neutral float-left" title="2.7 goto语句" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; 版权所有 2021, TOMOCAT.</p>
-  </div>
+    <p>
+        &#169; 版权所有 2021, TOMOCAT.
 
-  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    </p>
+  </div>
+    
+    
+    
+    利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
-    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
-   
+    
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发. 
 
 </footer>
         </div>
       </div>
+
     </section>
+
   </div>
-  <script>
+  
+
+  <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

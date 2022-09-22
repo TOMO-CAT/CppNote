@@ -1,35 +1,74 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="zh-CN" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  <meta charset="utf-8" />
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>5.4 类的构造函数 &mdash; C++语法笔记 v1.0 文档</title>
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+  <title>5.4 类的构造函数 &mdash; C++ Note v1.0 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script src="../../_static/translations.js"></script>
-    <script src="../../_static/js/theme.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
     <link rel="next" title="5.5 类的拷贝控制操作" href="5.5%20%E7%B1%BB%E7%9A%84%E6%8B%B7%E8%B4%9D%E6%8E%A7%E5%88%B6%E6%93%8D%E4%BD%9C.html" />
     <link rel="prev" title="5.3 类的访问控制" href="5.3%20%E7%B1%BB%E7%9A%84%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6.html" /> 
 </head>
 
-<body class="wy-body-for-nav"> 
+<body class="wy-body-for-nav">
+
+   
   <div class="wy-grid-for-nav">
+    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../../index.html" class="icon icon-home"> C++语法笔记
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> C++ Note
+          
+
+          
           </a>
+
+          
+            
+            
+          
+
+          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="在文档中搜索" />
@@ -37,7 +76,18 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC1%E7%AB%A0%20%E5%8F%98%E9%87%8F%E4%B8%8E%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B/index.html">第1章 变量与基本类型</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC2%E7%AB%A0%20%E8%AF%AD%E5%8F%A5/index.html">第2章 语句</a></li>
@@ -92,35 +142,77 @@
 <li class="toctree-l1"><a class="reference internal" href="../README.html">README</a></li>
 </ul>
 
+            
+          
         </div>
+        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../index.html">C++语法笔记</a>
+          <a href="../../index.html">C++ Note</a>
+        
       </nav>
 
+
       <div class="wy-nav-content">
+        
         <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
+    
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
           <li><a href="index.html">第5章类</a> &raquo;</li>
+        
       <li>5.4 类的构造函数</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
+        
+          
             <a href="../../_sources/docs/第5章 类/5.4 类的构造函数.md.txt" rel="nofollow"> 查看页面源码</a>
+          
+        
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-             
-  <section id="id1">
-<h1>5.4 类的构造函数<a class="headerlink" href="#id1" title="永久链接至标题"></a></h1>
-<section id="id2">
-<h2>简介<a class="headerlink" href="#id2" title="永久链接至标题"></a></h2>
+            
+  <div class="section" id="id1">
+<h1>5.4 类的构造函数<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id2">
+<h2>简介<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>类通过一个或几个特殊的成员函数来控制其对象的初始化过程，这些函数被称为构造函数。构造函数的主要任务是初始化对象的数据成员，无论何时只要类的对象被创建，就会执行构造函数。</p>
 <p>构造函数具有如下特点：</p>
 <blockquote>
@@ -132,203 +224,220 @@
 <li><p>类可以包含多个构造函数，不同的构造函数之间必须在参数数量或者参数类型上有所区别</p></li>
 <li><p>构造函数不能被声明为<code class="docutils literal notranslate"><span class="pre">const</span></code>的</p></li>
 </ul>
-</section>
-<section id="id3">
-<h2>默认构造函数<a class="headerlink" href="#id3" title="永久链接至标题"></a></h2>
+</div>
+<div class="section" id="id3">
+<h2>默认构造函数<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <blockquote>
 <div><p>Tips：无须任何实参的构造函数被称为默认构造函数，编译器创建的构造函数又被称为合成的默认构造函数。</p>
 </div></blockquote>
 <p>当我们没有为类的对象提供初始值时，类会通过默认构造函数来控制其默认初始化过程。</p>
-<section id="id4">
-<h3>1. 合成的默认构造函数<a class="headerlink" href="#id4" title="永久链接至标题"></a></h3>
+<div class="section" id="id4">
+<h3>1. 合成的默认构造函数<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
 <p>编译器合成的默认构造函数会按照如下规则初始化类的数据成员：</p>
 <ul class="simple">
 <li><p>如果存在类内初始值，则用它来初始化成员</p></li>
 <li><p>否则默认初始化该成员</p></li>
 </ul>
-</section>
-<section id="id5">
-<h3>2. 不能依赖合成的默认构造函数的类<a class="headerlink" href="#id5" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="id5">
+<h3>2. 不能依赖合成的默认构造函数的类<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
 <p>编译器自动合成的默认构造函数只适用于非常简单的类，对于一个普通的类而言必须定义它自己的默认构造函数，主要原因有三点：</p>
 <ul class="simple">
 <li><p>编译器只有在类不包含任何构造函数的情况下才会替我们合成一个默认构造函数，一旦我们定义了其他的构造函数，那么除非我们再定义一个默认构造函数，否则类将没有默认构造函数</p></li>
 <li><p>对于某些类而言，合成的默认构造函数可能执行错误的操作：如果定义在块中的内置类型或复合类型的对象被默认初始化，那么它们的值是未定义的</p></li>
 <li><p>某些情况下编译器不能为某些类合成默认构造函数：类中包含一个没有默认构造函数的类类型成员</p></li>
 </ul>
-</section>
-</section>
-<section id="default">
-<h2>=default<a class="headerlink" href="#default" title="永久链接至标题"></a></h2>
+</div>
+</div>
+<div class="section" id="default">
+<h2>=default<a class="headerlink" href="#default" title="永久链接至标题">¶</a></h2>
 <p>C++11新标准中，如果我们需要合成的默认构造函数，那么可以在参数列表后面写上<code class="docutils literal notranslate"><span class="pre">=default</span></code>来要求编译器生成默认构造函数。</p>
-</section>
-<section id="id6">
-<h2>构造函数初始值列表<a class="headerlink" href="#id6" title="永久链接至标题"></a></h2>
-<section id="id7">
-<h3>1. 构造函数初始值列表初始化数据成员<a class="headerlink" href="#id7" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="id6">
+<h2>构造函数初始值列表<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id7">
+<h3>1. 构造函数初始值列表初始化数据成员<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
 <p>冒号和花括号之间的代码被称为构造函数初始值列表，它负责为新创建的对象的一个或几个数据成员赋初始值。</p>
 <blockquote>
 <div><p>Tips：如果没有在构造函数的初始值列表中显式地初始化成员，则成员将在构造函数体之前执行默认初始化。</p>
 </div></blockquote>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span> <span class="nc">Foo</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">str</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">price</span><span class="p">;</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span> <span class="nc">Foo</span> <span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">str</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">price</span><span class="p">;</span>
+<span class="p">};</span>
 
-<span class="n">Foo</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">str</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
-<span class="n">Foo</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">d</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">str</span><span class="p">(</span><span class="n">s</span><span class="p">),</span><span class="w"> </span><span class="n">price</span><span class="p">(</span><span class="n">d</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="n">Foo</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">s</span><span class="p">)</span> <span class="o">:</span> <span class="n">str</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+<span class="n">Foo</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">s</span><span class="p">,</span> <span class="kt">double</span> <span class="n">d</span><span class="p">)</span> <span class="o">:</span> <span class="n">str</span><span class="p">(</span><span class="n">s</span><span class="p">),</span> <span class="n">price</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
 </pre></div>
 </div>
-</section>
-<section id="id8">
-<h3>2. 构造函数的初始值有时必不可少<a class="headerlink" href="#id8" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="id8">
+<h3>2. 构造函数的初始值有时必不可少<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
 <blockquote>
 <div><p>Tips：如果成员是<code class="docutils literal notranslate"><span class="pre">const</span></code>、引用或者是属于某种未提供默认构造函数的类类型，我们必须通过构造函数初始值列表为这些成员提供初始值。</p>
 </div></blockquote>
 <p>在大多数时候我们可以忽略类数据成员初始化（构造函数初始值列表）和赋值（构造函数体内赋值）之间的差异。如果成员是<code class="docutils literal notranslate"><span class="pre">const</span></code>或者是引用的话，必须将其初始化。类似的，当成员属于某种类类型且该类没有定义默认构造函数时，也必须将这个成员初始化。</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ConstRef</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w"> </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
-<span class="w">    </span><span class="n">constRef</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">ii</span><span class="p">);</span><span class="w"></span>
-<span class="w"> </span><span class="k">private</span><span class="o">:</span><span class="w"></span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">ci</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="o">&amp;</span><span class="n">ri</span><span class="p">;</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ConstRef</span> <span class="p">{</span>
+ <span class="k">public</span><span class="o">:</span>
+    <span class="n">constRef</span><span class="p">(</span><span class="kt">int</span> <span class="n">ii</span><span class="p">);</span>
+ <span class="k">private</span><span class="o">:</span>
+    <span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
+    <span class="k">const</span> <span class="kt">int</span> <span class="n">ci</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="o">&amp;</span><span class="n">ri</span><span class="p">;</span>
+<span class="p">};</span>
 </pre></div>
 </div>
 <p>随着构造函数体一开始执行，初始化就完成了。我们初始化const或者引用类型的数据成员的唯一机会就是通过构造函数初始值，因此该构造函数的正确形式应该是：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">ConstRef</span><span class="o">::</span><span class="n">ConstRef</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">ii</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">i</span><span class="p">(</span><span class="n">ii</span><span class="p">),</span><span class="w"> </span><span class="n">ci</span><span class="p">(</span><span class="n">ii</span><span class="p">),</span><span class="w"> </span><span class="n">ri</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">ConstRef</span><span class="o">::</span><span class="n">ConstRef</span><span class="p">(</span><span class="kt">int</span> <span class="n">ii</span><span class="p">)</span> <span class="o">:</span> <span class="n">i</span><span class="p">(</span><span class="n">ii</span><span class="p">),</span> <span class="n">ci</span><span class="p">(</span><span class="n">ii</span><span class="p">),</span> <span class="n">ri</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
 </pre></div>
 </div>
-</section>
-<section id="id9">
-<h3>3. 成员初始化的顺序<a class="headerlink" href="#id9" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="id9">
+<h3>3. 成员初始化的顺序<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h3>
 <blockquote>
 <div><p>Tips：最好令构造函数初始值的顺序与成员声明的顺序保持一致，而且如果可能的话，尽量避免使用某些成员初始化其他成员。最好是使用构造函数的参数作为成员的初始值，而尽量避免使用同一个对象的其他成员，这样的好处是可以不必考虑成员的初始化顺序。</p>
 </div></blockquote>
 <p>成员的初始化顺序与它们在类定义中出现顺序一致：第一个成员先被初始化，然后第二个，以此类推。构造函数初始值列表中初始值的前后位置关系不会影响实际的初始化顺序。</p>
-</section>
-</section>
-<section id="id10">
-<h2>默认实参和构造函数<a class="headerlink" href="#id10" title="永久链接至标题"></a></h2>
+</div>
+</div>
+<div class="section" id="id10">
+<h2>默认实参和构造函数<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h2>
 <blockquote>
 <div><p>Tips：如果一个构造函数为所有参数都提供了默认实参，那么它实际上也定义了默认的构造函数。</p>
 </div></blockquote>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Foo</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w"> </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
-<span class="w">    </span><span class="c1">// 定义默认构造函数: 与只接受一个string实参的构造函数功能相同</span>
-<span class="w">    </span><span class="n">Foo</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">str</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
-<span class="w"> </span><span class="k">private</span><span class="o">:</span><span class="w"></span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">str</span><span class="p">;</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Foo</span> <span class="p">{</span>
+ <span class="k">public</span><span class="o">:</span>
+    <span class="c1">// 定义默认构造函数: 与只接受一个string实参的构造函数功能相同</span>
+    <span class="n">Foo</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">s</span> <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">)</span> <span class="o">:</span> <span class="n">str</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+ <span class="k">private</span><span class="o">:</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">str</span><span class="p">;</span>
+<span class="p">};</span>
 </pre></div>
 </div>
-</section>
-<section id="id11">
-<h2>委托构造函数<a class="headerlink" href="#id11" title="永久链接至标题"></a></h2>
+</div>
+<div class="section" id="id11">
+<h2>委托构造函数<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h2>
 <p>C++11新标准扩展了构造函数初始值的功能，使得我们可以定义所谓的委托构造函数，一个委托构造函数使用它所属类的其它构造函数执行它自己的初始化过程，或者它把它自己的一些（或者全部）职责委托给了其他构造函数。</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Foo</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w"> </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
-<span class="w">    </span><span class="c1">// 非委托构造函数</span>
-<span class="w">    </span><span class="n">Foo</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">d</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">var_str</span><span class="p">(</span><span class="n">s</span><span class="p">),</span><span class="w"> </span><span class="n">var_d</span><span class="p">(</span><span class="n">d</span><span class="p">),</span><span class="w"> </span><span class="n">var_i</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span>
-<span class="w">    </span><span class="c1">// 其余构造函数委托给另一个构造函数</span>
-<span class="w">    </span><span class="n">Foo</span><span class="p">()</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Foo</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">3.14</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="n">Foo</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Foo</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span>
-<span class="w"> </span><span class="k">private</span><span class="o">:</span><span class="w"></span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">var_str</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">var_i</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">var_d</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Foo</span> <span class="p">{</span>
+ <span class="k">public</span><span class="o">:</span>
+    <span class="c1">// 非委托构造函数</span>
+    <span class="n">Foo</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">s</span><span class="p">,</span> <span class="kt">double</span> <span class="n">d</span><span class="p">,</span> <span class="kt">int</span> <span class="n">i</span><span class="p">)</span> <span class="o">:</span> <span class="n">var_str</span><span class="p">(</span><span class="n">s</span><span class="p">),</span> <span class="n">var_d</span><span class="p">(</span><span class="n">d</span><span class="p">),</span> <span class="n">var_i</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+    
+    <span class="c1">// 其余构造函数委托给另一个构造函数</span>
+    <span class="n">Foo</span><span class="p">()</span> <span class="o">:</span> <span class="n">Foo</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+    <span class="n">Foo</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">s</span><span class="p">)</span> <span class="o">:</span> <span class="n">Foo</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+    
+ <span class="k">private</span><span class="o">:</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">var_str</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">var_i</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">var_d</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-</section>
-<section id="id12">
-<h2>转换构造函数：隐式的类类型转换<a class="headerlink" href="#id12" title="永久链接至标题"></a></h2>
-<section id="id13">
-<h3>1. 简介<a class="headerlink" href="#id13" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="id12">
+<h2>转换构造函数：隐式的类类型转换<a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id13">
+<h3>1. 简介<a class="headerlink" href="#id13" title="永久链接至标题">¶</a></h3>
 <blockquote>
 <div><p>Tips：能通过一个实参调用的构造函数定义了从构造函数的参数类型向类类型隐式转换的规则。</p>
 </div></blockquote>
 <p>C++在不同的内置类型之间定义了几种自动转换规则，同样地我们也可以为类定义隐式转换规则。如果构造函数只接受一个实参，则它实际上定义了转换为此类类型的隐式转换机制，我们也将这种构造函数称为转换构造函数。</p>
 <p>举个简单的例子：如果一个类包含接受一个<code class="docutils literal notranslate"><span class="pre">string</span></code>类型的构造函数，那么它也就定义了从<code class="docutils literal notranslate"><span class="pre">string</span></code>类型到该类隐式转换的规则。</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Foo</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w"> </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
-<span class="w">    </span><span class="c1">// 定义从std::string到Foo类型的隐式转换规则</span>
-<span class="w">    </span><span class="n">Foo</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">str</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
-<span class="w"> </span><span class="k">private</span><span class="o">:</span><span class="w"></span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">str</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Foo</span> <span class="p">{</span>
+ <span class="k">public</span><span class="o">:</span>
+    <span class="c1">// 定义从std::string到Foo类型的隐式转换规则</span>
+    <span class="n">Foo</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">s</span><span class="p">)</span> <span class="o">:</span> <span class="n">str</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+ <span class="k">private</span><span class="o">:</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">str</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-</section>
-<section id="id14">
-<h3>2. 只允许一步类类型转换<a class="headerlink" href="#id14" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="id14">
+<h3>2. 只允许一步类类型转换<a class="headerlink" href="#id14" title="永久链接至标题">¶</a></h3>
 <p>编译器只会自动地执行一步类型转换，例如下面代码隐式地使用了两种转换规则，因此它是错误的：</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// 错误: 需要用户定义的两种转换:</span>
 <span class="c1">// 1) 把&quot;tomocat&quot;转换成string</span>
 <span class="c1">// 2) 再把这个临时的string转换成Foo类型</span>
-<span class="n">Foo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;tomocat&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="n">Foo</span> <span class="o">=</span> <span class="s">&quot;tomocat&quot;</span><span class="p">;</span>
 </pre></div>
 </div>
-</section>
-<section id="id15">
-<h3>3. 抑制构造函数定义的隐式转换<a class="headerlink" href="#id15" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="id15">
+<h3>3. 抑制构造函数定义的隐式转换<a class="headerlink" href="#id15" title="永久链接至标题">¶</a></h3>
 <p>我们可以将构造函数声明为<code class="docutils literal notranslate"><span class="pre">explicit</span></code>来阻止构造函数定义的隐式类类型转换，需要注意如下几点：</p>
 <ul class="simple">
 <li><p>关键字<code class="docutils literal notranslate"><span class="pre">explicit</span></code>只对一个实参的构造函数有效：需要多个实参的构造函数不能用于执行隐式转换，因此无需将这些构造函数指定为<code class="docutils literal notranslate"><span class="pre">explicit</span></code></p></li>
 <li><p>只能在类内声明构造函数时使用<code class="docutils literal notranslate"><span class="pre">explicit</span></code>关键字，在类外部定义时不应该重复</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">explicit</span></code>声明的构造函数只能以直接初始化的形式使用</p></li>
 </ul>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Foo</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w"> </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
-<span class="w">    </span><span class="c1">// 阻止隐式类类型转换</span>
-<span class="w">    </span><span class="k">explicit</span><span class="w"> </span><span class="n">Foo</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">str</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
-<span class="w"> </span><span class="k">private</span><span class="o">:</span><span class="w"></span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">str</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Foo</span> <span class="p">{</span>
+ <span class="k">public</span><span class="o">:</span>
+    <span class="c1">// 阻止隐式类类型转换</span>
+    <span class="k">explicit</span> <span class="n">Foo</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">s</span><span class="p">)</span> <span class="o">:</span> <span class="n">str</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+ <span class="k">private</span><span class="o">:</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">str</span><span class="p">;</span>
+<span class="p">}</span>
 
-<span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;tomocat&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">str</span> <span class="o">=</span> <span class="s">&quot;tomocat&quot;</span><span class="p">;</span>
 <span class="c1">// 错误: 不支持string到Foo类型的隐式初始化</span>
-<span class="n">Foo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">str</span><span class="p">;</span><span class="w"></span>
+<span class="n">Foo</span> <span class="o">=</span> <span class="n">str</span><span class="p">;</span>
 <span class="c1">// 正确: 显式初始化</span>
-<span class="n">Foo</span><span class="p">(</span><span class="n">str</span><span class="p">);</span><span class="w"></span>
-<span class="k">static_cast</span><span class="o">&lt;</span><span class="n">Foo</span><span class="o">&gt;</span><span class="p">(</span><span class="n">str</span><span class="p">);</span><span class="w"></span>
+<span class="n">Foo</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
+<span class="k">static_cast</span><span class="o">&lt;</span><span class="n">Foo</span><span class="o">&gt;</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
 </pre></div>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
            </div>
+           
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="5.3%20%E7%B1%BB%E7%9A%84%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6.html" class="btn btn-neutral float-left" title="5.3 类的访问控制" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
         <a href="5.5%20%E7%B1%BB%E7%9A%84%E6%8B%B7%E8%B4%9D%E6%8E%A7%E5%88%B6%E6%93%8D%E4%BD%9C.html" class="btn btn-neutral float-right" title="5.5 类的拷贝控制操作" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="5.3%20%E7%B1%BB%E7%9A%84%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6.html" class="btn btn-neutral float-left" title="5.3 类的访问控制" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; 版权所有 2021, TOMOCAT.</p>
-  </div>
+    <p>
+        &#169; 版权所有 2021, TOMOCAT.
 
-  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    </p>
+  </div>
+    
+    
+    
+    利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
-    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
-   
+    
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发. 
 
 </footer>
         </div>
       </div>
+
     </section>
+
   </div>
-  <script>
+  
+
+  <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>
