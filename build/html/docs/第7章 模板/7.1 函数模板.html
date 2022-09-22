@@ -93,7 +93,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC2%E7%AB%A0%20%E8%AF%AD%E5%8F%A5/index.html">第2章 语句</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC3%E7%AB%A0%20%E5%87%BD%E6%95%B0/index.html">第3章 函数</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC4%E7%AB%A0%20%E8%BF%90%E7%AE%97%E7%AC%A6/index.html">第4章 运算符</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC5%E7%AB%A0%20%E7%B1%BB/index.html">第5章类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC5%E7%AB%A0%20%E7%B1%BB/index.html">第5章 类</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC6%E7%AB%A0%20%E6%A0%87%E5%87%86%E5%BA%93%E7%B1%BB%E5%9E%8B/index.html">第6章 标准库类型</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">第7章 模板</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">7.1 函数模板</a><ul>
@@ -234,7 +234,7 @@
 <h2>实例化函数模板<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <p>当我们调用一个函数模板时，编译器通常用函数实参为我们推断模板实参，然后用推断出来的模板参数来为我们实例化一个特定版本的函数。例如：</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// T为int, 实例化出int compare(const int&amp;, const int&amp;)</span>
-<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">compare</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">compare</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
@@ -397,8 +397,8 @@
 </ul>
 </div></blockquote>
 <p>将两个例外规则组合起来，意味着我们可以对一个左值调用<code class="docutils literal notranslate"><span class="pre">f3</span></code>：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">f3</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>   <span class="c1">// i是一个int, 模板参数T是int&amp;</span>
-<span class="n">f3</span><span class="p">(</span><span class="n">ci</span><span class="p">);</span>  <span class="c1">// ci是一个const int, 模板参数T是一个const int&amp;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>f3<span class="o">(</span>i<span class="o">)</span><span class="p">;</span>   // i是一个int, 模板参数T是int<span class="p">&amp;</span>
+f3<span class="o">(</span>ci<span class="o">)</span><span class="p">;</span>  // ci是一个const int, 模板参数T是一个const int<span class="p">&amp;</span>
 </pre></div>
 </div>
 <blockquote>
@@ -602,12 +602,12 @@
 </div>
 <p>我们可以这样使用这些函数：</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// 传递的是一个非指针对象, 因此只有第一个版本的debug_rep是可行的</span>
-<span class="n">string</span> <span class="nf">s</span><span class="p">(</span><span class="s">&quot;hi&quot;</span><span class="p">);</span>
-<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">debug_rep</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="nf">s</span><span class="p">(</span><span class="s">&quot;hi&quot;</span><span class="p">);</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">debug_rep</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>如果我们用一个指针调用<code class="docutils literal notranslate"><span class="pre">debug_rep</span></code>：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">debug_rep</span><span class="p">(</span><span class="o">&amp;</span><span class="n">s</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="p">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">debug_rep</span><span class="p">(</span><span class="o">&amp;</span><span class="n">s</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="p">::</span><span class="n">endl</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>那么两个函数都生成可行的实例：</p>
@@ -618,7 +618,7 @@
 <p>第二个版本的实例是此调用的精确匹配，第一个版本需要进行普通指针到<code class="docutils literal notranslate"><span class="pre">const</span></code>指针的转换，编译器会选择第二个<code class="docutils literal notranslate"><span class="pre">debug_rep</span></code>版本。</p>
 <p>考虑下面这个例子，它提供了多个可行模板：</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">const</span> <span class="n">string</span> <span class="o">*</span><span class="n">sp</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">s</span><span class="p">;</span>
-<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">debug_rep</span><span class="p">(</span><span class="n">sp</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">debug_rep</span><span class="p">(</span><span class="n">sp</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>此时两个模板都是可行的，而且都是精确匹配：</p>
@@ -638,14 +638,14 @@
 <div><p>Tips：对于一个调用，如果一个非函数模板与一个函数模板提供同样好的匹配，则选择非模板版本。</p>
 </div></blockquote>
 <p>我们再定义一个普通非模板版本的<code class="docutils literal notranslate"><span class="pre">debug_rep</span></code>：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span>string debug_rep(const string &amp;s) {
-    return &#39;&quot;&quot;&#39; + s + &#39;&quot;&quot;&#39;;
-}
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="p">::</span><span class="n">string</span> <span class="n">debug_rep</span><span class="p">(</span><span class="n">const</span> <span class="n">std</span><span class="p">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">s</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="s1">&#39;&quot;&quot;&#39;</span> <span class="o">+</span> <span class="n">s</span> <span class="o">+</span> <span class="s1">&#39;&quot;&quot;&#39;</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>此时我们对一个<code class="docutils literal notranslate"><span class="pre">string</span></code>调用<code class="docutils literal notranslate"><span class="pre">debug_rep</span></code>时：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">string</span> <span class="nf">s</span><span class="p">(</span><span class="s">&quot;hi&quot;</span><span class="p">);</span>
-<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">debug_rep</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="p">::</span><span class="n">string</span> <span class="n">s</span><span class="p">(</span><span class="s2">&quot;hi&quot;</span><span class="p">);</span>
+<span class="n">std</span><span class="p">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">debug_rep</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="p">::</span><span class="n">endl</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>有两个同样好的可行函数：</p>
@@ -659,7 +659,7 @@
 <h3>5. 类型转换与模板重载<a class="headerlink" href="#id27" title="永久链接至标题">¶</a></h3>
 <p>对于C风格字符串和字符串字面常量而言，考虑如下调用：</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// 调用debug_rep(T*)</span>
-<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">debug_rep</span><span class="p">(</span><span class="s">&quot;tomocat&quot;</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">debug_rep</span><span class="p">(</span><span class="s">&quot;tomocat&quot;</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>下面三个<code class="docutils literal notranslate"><span class="pre">debug_rep</span></code>版本都是可行的：</p>

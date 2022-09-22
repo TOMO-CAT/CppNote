@@ -93,7 +93,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC2%E7%AB%A0%20%E8%AF%AD%E5%8F%A5/index.html">第2章 语句</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC3%E7%AB%A0%20%E5%87%BD%E6%95%B0/index.html">第3章 函数</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC4%E7%AB%A0%20%E8%BF%90%E7%AE%97%E7%AC%A6/index.html">第4章 运算符</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC5%E7%AB%A0%20%E7%B1%BB/index.html">第5章类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC5%E7%AB%A0%20%E7%B1%BB/index.html">第5章 类</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC6%E7%AB%A0%20%E6%A0%87%E5%87%86%E5%BA%93%E7%B1%BB%E5%9E%8B/index.html">第6章 标准库类型</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC7%E7%AB%A0%20%E6%A8%A1%E6%9D%BF/index.html">第7章 模板</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC8%E7%AB%A0%20%E5%85%B3%E9%94%AE%E5%AD%97%E6%A6%82%E5%BF%B5/index.html">第8章 关键字概念</a></li>
@@ -221,8 +221,8 @@
 <div class="section" id="id4">
 <h3>1. 只读算法<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
 <p>一些算法只会读取其输入范围内的元素而不会改变元素，比如<code class="docutils literal notranslate"><span class="pre">find</span></code>、<code class="docutils literal notranslate"><span class="pre">count</span></code>和<code class="docutils literal notranslate"><span class="pre">accumulate</span></code>。对于只读取而不改变元素的算法，通常最好使用<code class="docutils literal notranslate"><span class="pre">cbegin()</span></code>和<code class="docutils literal notranslate"><span class="pre">cend()</span></code>。<br />有一些算法比如<code class="docutils literal notranslate"><span class="pre">equal</span></code>可以用于确定两个序列是否保存相同的值，接收三个迭代器，前两个表示第一个序列中的元素范围，第三个参数表示第二个序列的首元素：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// roster2中的元素数目至少要和roster1一样多</span>
-<span class="n">equal</span><span class="p">(</span><span class="n">roster1</span><span class="p">.</span><span class="n">cbegin</span><span class="p">(),</span> <span class="n">roster1</span><span class="p">.</span><span class="n">cend</span><span class="p">(),</span> <span class="n">roster2</span><span class="p">.</span><span class="n">cbegin</span><span class="p">());</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="n">roster2中的元素数目至少要和roster1一样多</span>
+<span class="n">equal</span><span class="p">(</span><span class="n">roster1</span><span class="o">.</span><span class="n">cbegin</span><span class="p">(),</span> <span class="n">roster1</span><span class="o">.</span><span class="n">cend</span><span class="p">(),</span> <span class="n">roster2</span><span class="o">.</span><span class="n">cbegin</span><span class="p">());</span>
 </pre></div>
 </div>
 <blockquote>
@@ -237,11 +237,11 @@
 <li><p>拷贝算法：<code class="docutils literal notranslate"><span class="pre">copy</span></code>算法是另一个向目的位置迭代器指向的输出序列中的元素写入数据的算法，参数中前两个迭代器表示一个输入范围，第三个参数表示目的序列的起始位置</p></li>
 </ul>
 <p>很多算法都提供所谓的“拷贝”版本，这些算法计算新元素的值但是不会将它们放置在输入序列的末尾，而是创建一个新序列保存结果，这样就不会被覆盖掉。例如<code class="docutils literal notranslate"><span class="pre">replace</span></code>算法可以以将容器所有值为<code class="docutils literal notranslate"><span class="pre">0</span></code>的元素改成<code class="docutils literal notranslate"><span class="pre">42</span></code>：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">replace</span><span class="p">(</span><span class="n">ilist</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">ilist</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">42</span><span class="p">);</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">replace</span><span class="p">(</span><span class="n">ilist</span><span class="o">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">ilist</span><span class="o">.</span><span class="n">end</span><span class="p">(),</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">42</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>如果我们希望原序列保持不变，那我们可以使用“拷贝”版本，该算法接受第三个迭代器参数，指出调整后序列的保存位置：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">replace_copy</span><span class="p">(</span><span class="n">ilist</span><span class="p">.</span><span class="n">cbegin</span><span class="p">(),</span> <span class="n">ilist</span><span class="p">.</span><span class="n">cend</span><span class="p">(),</span> <span class="n">back_inserter</span><span class="p">(</span><span class="n">ivec</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">42</span><span class="p">);</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">replace_copy</span><span class="p">(</span><span class="n">ilist</span><span class="o">.</span><span class="n">cbegin</span><span class="p">(),</span> <span class="n">ilist</span><span class="o">.</span><span class="n">cend</span><span class="p">(),</span> <span class="n">back_inserter</span><span class="p">(</span><span class="n">ivec</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">42</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -271,7 +271,7 @@
 <div class="section" id="lambda">
 <h3>2. lambda表达式<a class="headerlink" href="#lambda" title="永久链接至标题">¶</a></h3>
 <p>我们可以向一个算法传递任何类型的可调用对象<code class="docutils literal notranslate"><span class="pre">callable</span> <span class="pre">object</span></code>，到目前为止我们仅使用过两种可调用对象：函数和函数指针。还包括其他两种可调用对象：<code class="docutils literal notranslate"><span class="pre">14</span></code>章介绍的重载了函数调用运算符的类和<code class="docutils literal notranslate"><span class="pre">lambda</span></code>表达式。一个<code class="docutils literal notranslate"><span class="pre">lambda</span></code>表达式表示一个可调用的代码单元，我们将其理解为一个未命名的内联函数，具有返回类型、一个函数列表和一个函数体：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">capture</span> <span class="n">list</span><span class="p">](</span><span class="n">parameter</span> <span class="n">list</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="k">return</span> <span class="n">type</span> <span class="p">{</span> <span class="n">function</span> <span class="n">body</span> <span class="p">}</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">capture</span> <span class="nb">list</span><span class="p">](</span><span class="n">parameter</span> <span class="nb">list</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="k">return</span> <span class="nb">type</span> <span class="p">{</span> <span class="n">function</span> <span class="n">body</span> <span class="p">}</span>
 </pre></div>
 </div>
 <p>我们可以忽略参数列表和返回类型，但必须包括捕获列表和函数体，我们定义一个可调用对象<code class="docutils literal notranslate"><span class="pre">f</span></code>，它不接受参数直接返回<code class="docutils literal notranslate"><span class="pre">42</span></code>：</p>
@@ -347,8 +347,8 @@
 <h3>3. 算法命名规范<a class="headerlink" href="#id14" title="永久链接至标题">¶</a></h3>
 <div class="section" id="id15">
 <h4>3.1 使用重载形式传递一个谓词<a class="headerlink" href="#id15" title="永久链接至标题">¶</a></h4>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">unique</span><span class="p">(</span><span class="n">beg</span><span class="p">,</span> <span class="n">end</span><span class="p">);</span>        <span class="c1">// 使用==运算符比较元素</span>
-<span class="n">unique</span><span class="p">(</span><span class="n">beg</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">comp</span><span class="p">);</span>  <span class="c1">// 使用comp比较元素</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">unique</span><span class="p">(</span><span class="n">beg</span><span class="p">,</span> <span class="n">end</span><span class="p">);</span>        <span class="o">//</span> <span class="n">使用</span><span class="o">==</span><span class="n">运算符比较元素</span>
+<span class="n">unique</span><span class="p">(</span><span class="n">beg</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">comp</span><span class="p">);</span>  <span class="o">//</span> <span class="n">使用comp比较元素</span>
 </pre></div>
 </div>
 <p>这两个调用都会重整给定序列，将相邻的重复元素删除。两个版本的函数在参数个数上不相等，因此具体调用哪个版本不会产生歧义。</p>
@@ -356,15 +356,15 @@
 <div class="section" id="if">
 <h4>3.2 _if版本<a class="headerlink" href="#if" title="永久链接至标题">¶</a></h4>
 <p>接收一个元素值的算法通常有另一个不同名（非重载）版本呢，该版本接收一个谓词来代替元素值：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">find</span><span class="p">(</span><span class="n">beg</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">val</span><span class="p">);</span> <span class="c1">// 查找输入范围内val第一次出现的位置</span>
-<span class="n">find_if</span><span class="p">(</span><span class="n">beg</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">pred</span><span class="p">);</span> <span class="c1">// 查找第一个令pred为真的元素</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">find</span><span class="p">(</span><span class="n">beg</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">val</span><span class="p">);</span> <span class="o">//</span> <span class="n">查找输入范围内val第一次出现的位置</span>
+<span class="n">find_if</span><span class="p">(</span><span class="n">beg</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">pred</span><span class="p">);</span> <span class="o">//</span> <span class="n">查找第一个令pred为真的元素</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="id16">
 <h4>3.3 区分拷贝元素的版本和不拷贝元素的版本<a class="headerlink" href="#id16" title="永久链接至标题">¶</a></h4>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">reverse</span><span class="p">(</span><span class="n">beg</span><span class="p">,</span> <span class="n">end</span><span class="p">);</span>             <span class="c1">// 反转输入与范围中元素的顺序</span>
-<span class="n">reverse_copy</span><span class="p">(</span><span class="n">beg</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">dest</span><span class="p">);</span>  <span class="c1">// 将元素逆序拷贝到dest</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">reverse</span><span class="p">(</span><span class="n">beg</span><span class="p">,</span> <span class="n">end</span><span class="p">);</span>             <span class="o">//</span> <span class="n">反转输入与范围中元素的顺序</span>
+<span class="n">reverse_copy</span><span class="p">(</span><span class="n">beg</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">dest</span><span class="p">);</span>  <span class="o">//</span> <span class="n">将元素逆序拷贝到dest</span>
 </pre></div>
 </div>
 <p>有一些函数算法同时支持<code class="docutils literal notranslate"><span class="pre">_copy</span></code>和<code class="docutils literal notranslate"><span class="pre">_if</span></code>版本：</p>
@@ -413,7 +413,7 @@
 <div class="section" id="splice">
 <h3>2. splice成员<a class="headerlink" href="#splice" title="永久链接至标题">¶</a></h3>
 <p>链表定义了<code class="docutils literal notranslate"><span class="pre">splice</span></code>算法，是链表所特有的：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span>lst.splice(args)或flst.splice_after(args)
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">lst</span><span class="o">.</span><span class="n">splice</span><span class="p">(</span><span class="n">args</span><span class="p">)</span><span class="n">或flst</span><span class="o">.</span><span class="n">splice_after</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>参数<code class="docutils literal notranslate"><span class="pre">args</span></code>包括：</p>

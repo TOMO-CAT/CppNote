@@ -7,7 +7,7 @@
 以最简单的一个C++程序`hello.cpp`为例：
 
 ```c++
-i#include <iostream>
+#include <iostream>
 
 int main() {
     std::cout << "Hello, world!" << std::endl;

@@ -140,7 +140,7 @@ class Foo {
 
 上例中的“in-class”初值设定只允许对整数常量进行，对于非整数类型无法编译通过：
 
-```c++
+```
 class Foo {
  public:
     static const double DoubleValue = 3.14;  // 错误
@@ -211,7 +211,7 @@ const Rational operator*(const Rational& lhs, const Rational& rhs);
 
 由于`operator*`返回const对象，因此客户端无法实现如下的错误代码：
 
-```c++
+```
 Rational a, b, c;
 (a * b) = c;  // 在 (a * b) 的结果上调用 operator=
 ```

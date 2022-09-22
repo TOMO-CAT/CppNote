@@ -20,7 +20,11 @@ ReadTheDocs 电子书链接：
 # 安装第三方库
 $pip install -r requirements.txt
 
+# 编译
 $make html
+
+# 部署
+$sphinx-autobuild source build/html
 ```
 
 ## 参考书籍

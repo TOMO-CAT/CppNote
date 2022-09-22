@@ -129,7 +129,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC2%E7%AB%A0%20%E8%AF%AD%E5%8F%A5/index.html">第2章 语句</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC3%E7%AB%A0%20%E5%87%BD%E6%95%B0/index.html">第3章 函数</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC4%E7%AB%A0%20%E8%BF%90%E7%AE%97%E7%AC%A6/index.html">第4章 运算符</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC5%E7%AB%A0%20%E7%B1%BB/index.html">第5章类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC5%E7%AB%A0%20%E7%B1%BB/index.html">第5章 类</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC6%E7%AB%A0%20%E6%A0%87%E5%87%86%E5%BA%93%E7%B1%BB%E5%9E%8B/index.html">第6章 标准库类型</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC7%E7%AB%A0%20%E6%A8%A1%E6%9D%BF/index.html">第7章 模板</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC8%E7%AB%A0%20%E5%85%B3%E9%94%AE%E5%AD%97%E6%A6%82%E5%BF%B5/index.html">第8章 关键字概念</a></li>
@@ -356,18 +356,18 @@
 <div><p>Tips：只要指针指向的是数组中元素(或者尾后元素)都可以执行下标运算，另外注意内置的下标运算符所用的索引值不是无符号类型（可以为负），这点与<code class="docutils literal notranslate"><span class="pre">vector</span></code>和<code class="docutils literal notranslate"><span class="pre">string</span></code>不同。</p>
 </div></blockquote>
 <p>前面提到编译器会自动执行数组名字到数组首元素指针的转换，当对数组使用下标运算的时候也不例外：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span>二维数组 #include &lt;iostream&gt;
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
 
-int main() {
-    int arr[] = {0, 1, 2, 3, 4};
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">arr</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">};</span>
 
-    int *p = arr;                     // p是指向数组首元素的指针
-    std::cout &lt;&lt; p[3] &lt;&lt; std::endl;   // 可以直接对数组指针使用下标运算, 输出3
+    <span class="kt">int</span> <span class="o">*</span><span class="n">p</span> <span class="o">=</span> <span class="n">arr</span><span class="p">;</span>                     <span class="c1">// p是指向数组首元素的指针</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">p</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>   <span class="c1">// 可以直接对数组指针使用下标运算, 输出3</span>
 
-    int *q = &amp;arr[2];                 // p是指向数组第三个元素的指针
-    std::cout &lt;&lt; q[1] &lt;&lt; std::endl;   // 等价于*(q + 1), 输出3
-    std::cout &lt;&lt; q[-2] &lt;&lt; std::endl; // 下标可以为负, 等价于*(q - 2), 输出0
-}
+    <span class="kt">int</span> <span class="o">*</span><span class="n">q</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">arr</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>                 <span class="c1">// p是指向数组第三个元素的指针</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">q</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>   <span class="c1">// 等价于*(q + 1), 输出3</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">q</span><span class="p">[</span><span class="mi">-2</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// 下标可以为负, 等价于*(q - 2), 输出0</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>

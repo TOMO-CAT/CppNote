@@ -50,7 +50,7 @@
 
 当我们希望在容器中存放具有继承关系的对象时，我们实际上存放的通常是基类的指针（更好的选择是智能指针），这些指针所指对象的动态类型可能是基类类型，也可能是派生类类型：
 
-```c++
+```
 // 我们可以将一个派生类的(智能)指针转换为基类的(智能)指针, make_shared<Bulk_quote>返回shared_ptr<Bulk_quote>, 但是调用push_back时该对象被转换为shared_ptr<Quote>
 vector<shared_ptr<Quote>> basket;
 basket.push_back(make_shared<Quote>("0-201-82470-1", 50));

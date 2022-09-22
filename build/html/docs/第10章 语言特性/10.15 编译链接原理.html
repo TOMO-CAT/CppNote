@@ -93,7 +93,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC2%E7%AB%A0%20%E8%AF%AD%E5%8F%A5/index.html">第2章 语句</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC3%E7%AB%A0%20%E5%87%BD%E6%95%B0/index.html">第3章 函数</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC4%E7%AB%A0%20%E8%BF%90%E7%AE%97%E7%AC%A6/index.html">第4章 运算符</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC5%E7%AB%A0%20%E7%B1%BB/index.html">第5章类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC5%E7%AB%A0%20%E7%B1%BB/index.html">第5章 类</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC6%E7%AB%A0%20%E6%A0%87%E5%87%86%E5%BA%93%E7%B1%BB%E5%9E%8B/index.html">第6章 标准库类型</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC7%E7%AB%A0%20%E6%A8%A1%E6%9D%BF/index.html">第7章 模板</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../%E7%AC%AC8%E7%AB%A0%20%E5%85%B3%E9%94%AE%E5%AD%97%E6%A6%82%E5%BF%B5/index.html">第8章 关键字概念</a></li>
@@ -217,12 +217,12 @@
 <h2>简介<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>程序员编写完代码后，编译工具GCC将C++等高级语言“翻译”成低级语言（汇编语言甚至是机器码），进而形成可执行文件。<code class="docutils literal notranslate"><span class="pre">gcc</span></code>指令编译<code class="docutils literal notranslate"><span class="pre">.cpp</span></code>文件主要包含四个流程：预处理<code class="docutils literal notranslate"><span class="pre">Preprocessing</span></code>、编译<code class="docutils literal notranslate"><span class="pre">Compilation</span></code>、汇编<code class="docutils literal notranslate"><span class="pre">Assembly</span></code>和链接<code class="docutils literal notranslate"><span class="pre">Linking</span></code>。</p>
 <p>以最简单的一个C++程序<code class="docutils literal notranslate"><span class="pre">hello.cpp</span></code>为例：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span>i#include &lt;iostream&gt;
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
 
-int main() {
-    std::cout &lt;&lt; &quot;Hello, world!&quot; &lt;&lt; std::endl;
-    return 0;
-}
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Hello, world!&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
