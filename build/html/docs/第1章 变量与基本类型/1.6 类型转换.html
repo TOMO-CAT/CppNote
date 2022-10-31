@@ -304,7 +304,7 @@
 </div>
 <div class="section" id="const-cast">
 <h3>2. const_cast<a class="headerlink" href="#const-cast" title="永久链接至标题">¶</a></h3>
-<p><code class="docutils literal notranslate"><span class="pre">const_cast</span></code>只能用于改变运算对象的底层const，用于将常量对象改成非常量对象。一旦我们去掉了某个对象的const性质，编译器就不会再组织我们对该对象进行写操作了。如果对象本身不是一个常量，使用强制类型转换获得写权限是合法的行为，如果对象是一个常量，再使用<code class="docutils literal notranslate"><span class="pre">const_cast</span></code>执行写操作就会产生未定义的后果。</p>
+<p><code class="docutils literal notranslate"><span class="pre">const_cast</span></code>只能用于改变运算对象的底层const，用于将常量对象改成非常量对象。一旦我们去掉了某个对象的const性质，编译器就不会再阻止我们对该对象进行写操作了。如果对象本身不是一个常量，使用强制类型转换获得写权限是合法的行为，如果对象是一个常量，再使用<code class="docutils literal notranslate"><span class="pre">const_cast</span></code>执行写操作就会产生未定义的后果。</p>
 <p>只有<code class="docutils literal notranslate"><span class="pre">const_cast</span></code>能改变表达式的常量属性，使用其他形式的强制类型转换改变表达式的常量属性都将引发编译错误。同样地，也不能用<code class="docutils literal notranslate"><span class="pre">const_cast</span></code>改变表达式的类型：</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">cp</span><span class="p">;</span>
 <span class="kt">char</span> <span class="o">*</span><span class="n">q</span> <span class="o">=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">cp</span><span class="p">);</span>  <span class="c1">// 错误: static_cast不能去掉const性质</span>
